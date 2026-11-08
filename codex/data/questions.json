@@ -60,7 +60,7 @@
       },
       {
         "id": "reading",
-        "label": "閱讀專練 · 全題庫 76 題",
+        "label": "閱讀專練 · 全題庫 90 題",
         "groupIds": [
           "g-r01",
           "g-r02",
@@ -110,9 +110,12 @@
           "g-extra-r-07",
           "g-extra-r-08",
           "g-extra-r-09",
-          "g-extra-r-10"
+          "g-extra-r-10",
+          "g-new-read-a",
+          "g-new-read-b",
+          "g-new-part6-a"
         ],
-        "durationMin": 45
+        "durationMin": 68
       },
       {
         "id": "challenge03",
@@ -221,6 +224,20 @@
           "g-photo-02"
         ],
         "durationMin": 5
+      },
+      {
+        "id": "practice-crossref-26",
+        "label": "進階練習 B · 對話、獨白與多篇閱讀（26 題）",
+        "groupIds": [
+          "g-new-cv-a",
+          "g-new-cv-b",
+          "g-new-talk-a",
+          "g-new-talk-b",
+          "g-new-read-a",
+          "g-new-read-b",
+          "g-new-part6-a"
+        ],
+        "durationMin": 32
       }
     ]
   },
@@ -3297,6 +3314,476 @@
           ],
           "answer": 2,
           "explanation": "A man is pushing a wheeled cart carrying boxes. The bicycle is parked, and there is no truck-loading or staircase in the picture."
+        }
+      ]
+    },
+    {
+      "id": "g-new-cv-a",
+      "section": "listening",
+      "part": 3,
+      "title": "供應商交期",
+      "script": [
+        {
+          "speaker": "W",
+          "text": "The supplier says the display stands can reach our stores on Tuesday, but the printed signs will not arrive until Thursday."
+        },
+        {
+          "speaker": "M",
+          "text": "The promotion begins Wednesday. Could we use the signs left from last month for the first day?"
+        },
+        {
+          "speaker": "W",
+          "text": "Those signs show the old discount. I will ask the print shop whether it can deliver the updated signs directly to each store."
+        }
+      ],
+      "questions": [
+        {
+          "id": "CV-A-1",
+          "skill": "l-conversation",
+          "prompt": "What problem do the speakers discuss?",
+          "options": [
+            "Updated signs may arrive after a promotion starts.",
+            "Display stands have been sent to the wrong warehouse.",
+            "A store has canceled its promotion.",
+            "A supplier has increased the price of signs."
+          ],
+          "answer": 0,
+          "explanation": "The promotion starts Wednesday, but the updated signs are expected Thursday."
+        },
+        {
+          "id": "CV-A-2",
+          "skill": "l-inference",
+          "prompt": "Why does the woman reject the man’s suggestion?",
+          "options": [
+            "The older signs were never printed.",
+            "The older signs advertise a different discount.",
+            "The stores do not have enough display stands.",
+            "The supplier has prohibited reusable signs."
+          ],
+          "answer": 1,
+          "explanation": "She says last month’s signs show the old discount."
+        },
+        {
+          "id": "CV-A-3",
+          "skill": "l-inference",
+          "prompt": "What will the woman probably do next?",
+          "options": [
+            "Postpone the promotion until Thursday.",
+            "Remove the stands from the stores.",
+            "Contact a print shop about direct delivery.",
+            "Approve a new discount for the supplier."
+          ],
+          "answer": 2,
+          "explanation": "She offers to ask the print shop about delivering updated signs directly to each store."
+        }
+      ]
+    },
+    {
+      "id": "g-new-cv-b",
+      "section": "listening",
+      "part": 3,
+      "title": "會議安排",
+      "script": [
+        {
+          "speaker": "M",
+          "text": "I reserved Room 204 for the training session, but the registration list now has forty-six names."
+        },
+        {
+          "speaker": "W",
+          "text": "That room seats only forty. Room 310 holds sixty, although its projector is being repaired."
+        },
+        {
+          "speaker": "M",
+          "text": "We can borrow the portable projector from Marketing. I will change the room booking if you can let the attendees know."
+        },
+        {
+          "speaker": "W",
+          "text": "Certainly. I will update the calendar invitation this afternoon."
+        }
+      ],
+      "questions": [
+        {
+          "id": "CV-B-1",
+          "skill": "l-conversation",
+          "prompt": "Why is a different room needed?",
+          "options": [
+            "More people registered than Room 204 can seat.",
+            "The first room is closed for repairs.",
+            "The training has been moved to another building.",
+            "The presenters need a larger projector."
+          ],
+          "answer": 0,
+          "explanation": "Room 204 seats forty, while forty-six people have registered."
+        },
+        {
+          "id": "CV-B-2",
+          "skill": "l-inference",
+          "prompt": "How will the speakers address the equipment problem?",
+          "options": [
+            "They will cancel the visual presentation.",
+            "They will borrow a portable projector.",
+            "They will move the training online.",
+            "They will purchase a new projector."
+          ],
+          "answer": 1,
+          "explanation": "The man proposes borrowing a portable projector from Marketing."
+        },
+        {
+          "id": "CV-B-3",
+          "skill": "l-conversation",
+          "prompt": "What does the woman agree to do?",
+          "options": [
+            "Repair the projector in Room 310.",
+            "Change the room reservation herself.",
+            "Update the invitation for attendees.",
+            "Reduce the registration list."
+          ],
+          "answer": 2,
+          "explanation": "She says she will update the calendar invitation."
+        }
+      ]
+    },
+    {
+      "id": "g-new-talk-a",
+      "section": "listening",
+      "part": 4,
+      "title": "場館公告",
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Good morning, visitors. The design gallery on the second floor will close at noon today for a private event. The photography exhibition on the first floor will remain open until five. If you purchased a combined ticket and have not yet visited the design gallery, please speak with the information desk before you leave. Staff can arrange a return visit at no additional charge."
+        }
+      ],
+      "questions": [
+        {
+          "id": "TK-A-1",
+          "skill": "l-talk",
+          "prompt": "What is being announced?",
+          "options": [
+            "An early closure of one gallery.",
+            "A change in the price of all tickets.",
+            "The opening of a new information desk.",
+            "The cancellation of a photography exhibition."
+          ],
+          "answer": 0,
+          "explanation": "The design gallery will close at noon for a private event."
+        },
+        {
+          "id": "TK-A-2",
+          "skill": "l-inference",
+          "prompt": "Who should speak with the information desk?",
+          "options": [
+            "Visitors who have already received a refund.",
+            "Combined-ticket holders who missed the design gallery.",
+            "People attending a private event.",
+            "Everyone who entered the photography exhibition."
+          ],
+          "answer": 1,
+          "explanation": "The announcement addresses combined-ticket holders who have not visited the design gallery."
+        },
+        {
+          "id": "TK-A-3",
+          "skill": "l-talk",
+          "prompt": "What can the staff arrange?",
+          "options": [
+            "A private tour before noon.",
+            "A replacement ticket for another museum.",
+            "A return visit without an extra fee.",
+            "An extension of the photography exhibition."
+          ],
+          "answer": 2,
+          "explanation": "The staff can arrange a return visit at no additional charge."
+        }
+      ]
+    },
+    {
+      "id": "g-new-talk-b",
+      "section": "listening",
+      "part": 4,
+      "title": "物流電話留言",
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Hello, this is Maria from Northline Delivery. I am calling about your office furniture order. We can deliver the chairs on Monday morning, as planned, but the desks are still at the assembly center. They should be ready by Wednesday. If a split delivery is inconvenient, call us by three this afternoon and we will bring everything together on Thursday. Otherwise, we will keep the Monday appointment for the chairs."
+        }
+      ],
+      "questions": [
+        {
+          "id": "TK-B-1",
+          "skill": "l-talk",
+          "prompt": "What is the purpose of the message?",
+          "options": [
+            "To explain a change affecting part of an order.",
+            "To request payment for an office order.",
+            "To confirm that all furniture was delivered.",
+            "To announce the closure of an assembly center."
+          ],
+          "answer": 0,
+          "explanation": "The chairs remain scheduled for Monday, while the desks will be ready later."
+        },
+        {
+          "id": "TK-B-2",
+          "skill": "l-inference",
+          "prompt": "What will happen if the recipient does not call?",
+          "options": [
+            "All furniture will arrive together Thursday.",
+            "The chairs will still be delivered Monday.",
+            "The desk order will be canceled.",
+            "The chairs will remain at the assembly center."
+          ],
+          "answer": 1,
+          "explanation": "The caller says the Monday appointment for the chairs will be kept unless the customer requests a combined delivery."
+        },
+        {
+          "id": "TK-B-3",
+          "skill": "l-talk",
+          "prompt": "When must the recipient call to request a combined delivery?",
+          "options": [
+            "Before Monday morning.",
+            "By Wednesday evening.",
+            "By three this afternoon.",
+            "After the desks arrive."
+          ],
+          "answer": 2,
+          "explanation": "The caller specifies three this afternoon as the deadline."
+        }
+      ]
+    },
+    {
+      "id": "g-new-read-a",
+      "section": "reading",
+      "part": 7,
+      "title": "雙篇・課程與報名",
+      "passage": {
+        "docs": [
+          {
+            "label": "EMAIL",
+            "text": "From: Training Office\nSubject: Advanced Excel sessions\n\nStaff may attend either the Tuesday morning or Thursday afternoon workshop. Each session covers the same material and has 24 seats. Registration closes at noon on Friday. Employees who need an accessible workstation should indicate this on the form; we will confirm the arrangement separately."
+          },
+          {
+            "label": "REGISTRATION UPDATE",
+            "text": "Friday, 10:00 a.m.\n\nThe Tuesday session is full. Eight seats remain for Thursday. The training office has received access requests from three registrants and will email those employees by Monday. Anyone who has not received a confirmation by Tuesday should contact the office."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "RD-A-1",
+          "skill": "r-purpose",
+          "prompt": "Why was the email sent?",
+          "options": [
+            "To describe workshop options and registration instructions.",
+            "To announce that a workshop has been canceled.",
+            "To collect payment for training materials.",
+            "To request that staff teach a course."
+          ],
+          "answer": 0,
+          "explanation": "The email presents two sessions, their capacity, and the registration process."
+        },
+        {
+          "id": "RD-A-2",
+          "skill": "r-detail",
+          "prompt": "What is indicated about the two workshops?",
+          "options": [
+            "They are limited to managers.",
+            "They cover the same material.",
+            "They take place on the same morning.",
+            "They require different registration forms."
+          ],
+          "answer": 1,
+          "explanation": "The email explicitly states that both sessions cover the same material."
+        },
+        {
+          "id": "RD-A-3",
+          "skill": "r-crossref",
+          "prompt": "At 10:00 a.m. Friday, which option is still available to a new registrant?",
+          "options": [
+            "Tuesday morning.",
+            "Either session.",
+            "Thursday afternoon.",
+            "Neither session."
+          ],
+          "answer": 2,
+          "explanation": "The update says Tuesday is full and eight Thursday seats remain."
+        },
+        {
+          "id": "RD-A-4",
+          "skill": "r-crossref",
+          "prompt": "What should an employee needing an accessible workstation do first?",
+          "options": [
+            "Wait until Tuesday to send a request.",
+            "Purchase a separate workstation.",
+            "Contact the venue after the workshop.",
+            "Indicate the need on the registration form."
+          ],
+          "answer": 3,
+          "explanation": "The email asks employees to indicate the need on the form; the office later confirms arrangements."
+        },
+        {
+          "id": "RD-A-5",
+          "skill": "r-inference",
+          "prompt": "When should a registrant contact the office about a missing confirmation?",
+          "options": [
+            "If it has not arrived by Tuesday.",
+            "Immediately at 10:00 a.m. Friday.",
+            "Only after the Thursday session.",
+            "Before completing the registration form."
+          ],
+          "answer": 0,
+          "explanation": "The update instructs anyone without confirmation by Tuesday to contact the office."
+        }
+      ]
+    },
+    {
+      "id": "g-new-read-b",
+      "section": "reading",
+      "part": 7,
+      "title": "雙篇・訂單與付款",
+      "passage": {
+        "docs": [
+          {
+            "label": "ORDER CONFIRMATION",
+            "text": "Order 4182 — received September 3\n\n12 desk lamps at $40 each: $480\nStandard delivery: $20\nTotal: $500\n\nOrders are normally dispatched within five business days. Customers may change the delivery address before dispatch by replying to this email."
+          },
+          {
+            "label": "SUPPLIER MESSAGE",
+            "text": "September 5\n\nYour lamps are packed, but the standard courier cannot deliver to your original address this week because of roadworks. We can use an alternative courier for the same $20 delivery charge if you confirm the address by September 6. Otherwise, the order will remain at our warehouse until you contact us. No additional payment is required for the alternative courier."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "RD-B-1",
+          "skill": "r-detail",
+          "prompt": "What was included in the original total?",
+          "options": [
+            "Twelve lamps and standard delivery.",
+            "Twelve lamps and an installation service.",
+            "Ten lamps and expedited delivery.",
+            "An additional fee for changing the address."
+          ],
+          "answer": 0,
+          "explanation": "The confirmation lists twelve lamps for $480 plus $20 standard delivery."
+        },
+        {
+          "id": "RD-B-2",
+          "skill": "r-purpose",
+          "prompt": "Why did the supplier send the second message?",
+          "options": [
+            "To announce that the lamps are out of stock.",
+            "To explain a delivery problem and propose an alternative.",
+            "To request payment for an installation.",
+            "To cancel the order permanently."
+          ],
+          "answer": 1,
+          "explanation": "The supplier explains the roadworks and offers an alternative courier."
+        },
+        {
+          "id": "RD-B-3",
+          "skill": "r-crossref",
+          "prompt": "How much additional payment is required for the alternative courier?",
+          "options": [
+            "$20.",
+            "$40.",
+            "None.",
+            "$500."
+          ],
+          "answer": 2,
+          "explanation": "The second message explicitly says no additional payment is required."
+        },
+        {
+          "id": "RD-B-4",
+          "skill": "r-crossref",
+          "prompt": "What must the customer do to use the alternative courier?",
+          "options": [
+            "Place another order for the lamps.",
+            "Pay a surcharge by September 5.",
+            "Collect the lamps in person.",
+            "Confirm the address by September 6."
+          ],
+          "answer": 3,
+          "explanation": "The supplier asks for address confirmation by September 6."
+        },
+        {
+          "id": "RD-B-5",
+          "skill": "r-inference",
+          "prompt": "What will happen if the customer does not respond?",
+          "options": [
+            "The order will remain at the warehouse.",
+            "The original courier will deliver it this week.",
+            "The order will automatically be refunded.",
+            "The alternative courier will deliver it on September 6."
+          ],
+          "answer": 0,
+          "explanation": "The supplier says it will hold the order at the warehouse until the customer contacts it."
+        }
+      ]
+    },
+    {
+      "id": "g-new-part6-a",
+      "section": "reading",
+      "part": 6,
+      "title": "段落填空・內部通知",
+      "passage": {
+        "docs": [
+          {
+            "label": "INTERNAL NOTICE",
+            "text": "To: All employees\nSubject: Shared meeting rooms\n\nBeginning next month, all shared meeting rooms must be reserved through the new calendar system. This change will make room availability easier to [1] and reduce duplicate bookings.\n\nEmployees who have already made reservations for next month do not need to enter them again. The facilities team will [2] those bookings to the new system by Friday.\n\n[3] If a room is no longer needed, please cancel the reservation promptly so another team can use it.\n\nFor help with access, contact the service desk. A short user guide will also be [4] on the staff portal."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "P6-A-1",
+          "skill": "r-vocabulary",
+          "prompt": "Which word best completes blank [1]?",
+          "options": [
+            "check",
+            "postpone",
+            "deliver",
+            "repair"
+          ],
+          "answer": 0,
+          "explanation": "Check room availability means see whether rooms are free; the other verbs do not fit the purpose."
+        },
+        {
+          "id": "P6-A-2",
+          "skill": "r-vocabulary",
+          "prompt": "Which word best completes blank [2]?",
+          "options": [
+            "decline",
+            "transfer",
+            "replace",
+            "interrupt"
+          ],
+          "answer": 1,
+          "explanation": "Transfer means move the existing bookings to the new system without asking employees to enter them again."
+        },
+        {
+          "id": "P6-A-3",
+          "skill": "r-inference",
+          "prompt": "Which sentence best completes blank [3]?",
+          "options": [
+            "The cafeteria will be closed for renovation.",
+            "No meeting rooms are available next month.",
+            "Please review your existing reservations once they appear.",
+            "All employees must buy a new computer."
+          ],
+          "answer": 2,
+          "explanation": "Reviewing transferred reservations connects the migration notice with the instruction to cancel unneeded rooms."
+        },
+        {
+          "id": "P6-A-4",
+          "skill": "r-grammar",
+          "prompt": "Which word best completes blank [4]?",
+          "options": [
+            "availability",
+            "availably",
+            "avail",
+            "available"
+          ],
+          "answer": 3,
+          "explanation": "The linking verb be requires an adjective: available. The other forms do not fit the sentence."
         }
       ]
     }
