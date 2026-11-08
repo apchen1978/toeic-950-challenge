@@ -60,7 +60,7 @@
       },
       {
         "id": "reading",
-        "label": "閱讀專練 · 全題庫 51 題",
+        "label": "閱讀專練 · 全題庫 66 題",
         "groupIds": [
           "g-r01",
           "g-r02",
@@ -93,7 +93,14 @@
           "s03-sentence7",
           "s03-text",
           "s03-single",
-          "s03-double"
+          "s03-double",
+          "g-reading04-delivery",
+          "g-reading04-training",
+          "g-a-p5-01",
+          "g-a-p5-02",
+          "g-a-p5-03",
+          "g-a-p5-04",
+          "g-a-p5-05"
         ],
         "durationMin": 45
       },
@@ -149,6 +156,23 @@
         "groupIds": [
           "g-reading04-delivery",
           "g-reading04-training"
+        ],
+        "durationMin": 12
+      },
+      {
+        "id": "batch-a-pilot",
+        "label": "Batch A 試做 · Part 2＋Part 5（10 題）",
+        "groupIds": [
+          "g-a-p2-01",
+          "g-a-p2-02",
+          "g-a-p2-03",
+          "g-a-p2-04",
+          "g-a-p2-05",
+          "g-a-p5-01",
+          "g-a-p5-02",
+          "g-a-p5-03",
+          "g-a-p5-04",
+          "g-a-p5-05"
         ],
         "durationMin": 12
       }
@@ -2481,6 +2505,166 @@
           "explanation": "The policy and Finance notice require both a receipt and a completion certificate."
         }
       ]
+    },
+    {
+      "id": "g-a-p2-01",
+      "section": "listening",
+      "part": 2,
+      "spokenOptions": true,
+      "script": [{ "speaker": "M", "text": "Can the supplier still deliver the replacement sensors before Friday?" }],
+      "questions": [{
+        "id": "PA2-01",
+        "skill": "l-response",
+        "prompt": "Mark your answer.",
+        "options": [
+          "Only if we approve its revised quotation today.",
+          "The revised quotation includes expedited freight.",
+          "It delivered the previous batch on Tuesday."
+        ],
+        "answer": 0,
+        "explanation": "A gives a condition that determines whether the deadline is still achievable. B describes a shipping option without confirming the supplier's schedule, and C refers to an earlier delivery."
+      }]
+    },
+    {
+      "id": "g-a-p2-02",
+      "section": "listening",
+      "part": 2,
+      "spokenOptions": true,
+      "script": [{ "speaker": "W", "text": "Who can confirm which clients received the revised rate sheet?" }],
+      "questions": [{
+        "id": "PA2-02",
+        "skill": "l-response",
+        "prompt": "Mark your answer.",
+        "options": [
+          "Javier in account services keeps the dispatch log.",
+          "The dispatch log was archived with last quarter's files.",
+          "Those rates take effect after the next renewal cycle."
+        ],
+        "answer": 0,
+        "explanation": "A identifies a person who can verify distribution through the dispatch log. B mentions the record but does not identify who can check it, while C gives the rates' effective timing."
+      }]
+    },
+    {
+      "id": "g-a-p2-03",
+      "section": "listening",
+      "part": 2,
+      "spokenOptions": true,
+      "script": [{ "speaker": "M", "text": "Has the vendor confirmed that the replacement pumps will arrive before the inspection?" }],
+      "questions": [{
+        "id": "PA2-03",
+        "skill": "l-inference",
+        "prompt": "Mark your answer.",
+        "options": [
+          "Not yet; the carrier has acknowledged pickup, but not the delivery window.",
+          "The inspection was moved to Friday afternoon.",
+          "The vendor's updated estimate arrived this morning."
+        ],
+        "answer": 0,
+        "explanation": "A indirectly indicates that the deadline is still unconfirmed. B changes the inspection time, and C mentions a vendor document; neither confirms when the pumps will arrive."
+      }]
+    },
+    {
+      "id": "g-a-p2-04",
+      "section": "listening",
+      "part": 2,
+      "spokenOptions": true,
+      "script": [{ "speaker": "W", "text": "Why wasn't the signed contract attached to the invitation?" }],
+      "questions": [{
+        "id": "PA2-04",
+        "skill": "l-response",
+        "prompt": "Mark your answer.",
+        "options": [
+          "Legal is still revising the indemnity clause.",
+          "The invitation went to committee members yesterday.",
+          "The final contract is valid through December."
+        ],
+        "answer": 0,
+        "explanation": "A gives the reason the contract is not ready to attach. B describes the invitation's recipients, and C states a signing requirement without explaining the omission."
+      }]
+    },
+    {
+      "id": "g-a-p2-05",
+      "section": "listening",
+      "part": 2,
+      "spokenOptions": true,
+      "script": [{ "speaker": "M", "text": "Would you rather review the figures now or wait until Mei finishes the variance analysis?" }],
+      "questions": [{
+        "id": "PA2-05",
+        "skill": "l-inference",
+        "prompt": "Mark your answer.",
+        "options": [
+          "Let's wait; she expects to find another discrepancy in freight costs.",
+          "We usually circulate the figures before the quarterly review.",
+          "Mei was assigned to the analysis after the budget meeting."
+        ],
+        "answer": 0,
+        "explanation": "A selects waiting and gives a reason tied to the unfinished analysis. B describes the figures' format, and C gives a general schedule rather than choosing when to review them."
+      }]
+    },
+    {
+      "id": "g-a-p5-01",
+      "section": "reading",
+      "part": 5,
+      "questions": [{
+        "id": "PA5-01",
+        "skill": "r-vocabulary",
+        "prompt": "To honor the rates quoted in May, the supplier agreed to ------ the fuel surcharge on orders placed before the June price change.",
+        "options": ["waive", "defer", "revise", "allocate"],
+        "answer": 0,
+        "explanation": "Waive means the supplier will not charge the surcharge, honoring the earlier quoted rates. Defer would delay the charge, revise would change it, and allocate would assign it to an account or category."
+      }]
+    },
+    {
+      "id": "g-a-p5-02",
+      "section": "reading",
+      "part": 5,
+      "questions": [{
+        "id": "PA5-02",
+        "skill": "r-vocabulary",
+        "prompt": "The audit covers invoices submitted from July onward; documents dated earlier than July fall outside the ------ of this review.",
+        "options": ["scope", "purpose", "capacity", "schedule"],
+        "answer": 0,
+        "explanation": "Scope refers to the subjects and time period included in a review. Purpose is its objective, capacity is its ability or limit, and schedule is its timetable."
+      }]
+    },
+    {
+      "id": "g-a-p5-03",
+      "section": "reading",
+      "part": 5,
+      "questions": [{
+        "id": "PA5-03",
+        "skill": "r-vocabulary",
+        "prompt": "The agency will ------ the existing agreement by adding a clause that extends the service period through March.",
+        "options": ["amend", "renew", "execute", "repeal"],
+        "answer": 0,
+        "explanation": "Amend means to change a contract by adding or revising a clause. Renew would begin another term, execute would formally sign or carry out the agreement, and repeal would revoke it."
+      }]
+    },
+    {
+      "id": "g-a-p5-04",
+      "section": "reading",
+      "part": 5,
+      "questions": [{
+        "id": "PA5-04",
+        "skill": "r-vocabulary",
+        "prompt": "The reservation can be canceled without penalty if written notice is received at least 48 hours before arrival; requests received later are not ------ for a full refund.",
+        "options": ["eligible", "available", "responsible", "capable"],
+        "answer": 0,
+        "explanation": "Eligible for means meeting the conditions for a benefit; the late cancellation fails the stated timing condition. Available describes whether something can be obtained, responsible assigns duty, and capable describes ability."
+      }]
+    },
+    {
+      "id": "g-a-p5-05",
+      "section": "reading",
+      "part": 5,
+      "questions": [{
+        "id": "PA5-05",
+        "skill": "r-grammar",
+        "prompt": "The revised reimbursement rates will take effect only after the schedule has been ------ by the finance director, who is responsible for authorizing rate changes.",
+        "options": ["approved", "reviewed", "circulated", "prepared"],
+        "answer": 0,
+        "explanation": "Only approval gives the schedule authorization to change reimbursement rates. Reviewing checks it, circulating distributes it, and preparing creates it; none of those actions grants the required authority."
+      }]
     }
   ]
 }
