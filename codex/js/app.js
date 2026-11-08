@@ -1,5 +1,5 @@
 import * as audio from "./audio.js";
-import { flatten, score, estimateScaled, mergeSkillStats, weakest, groupsForSkill, formatDuration } from "./scoring.js";
+import { flatten, score, estimateScaled, mergeSkillStats, weakest, groupsForSkill, updateWrongAnswerQueue, formatDuration } from "./scoring.js";
 import { SKILLS, skillLabel } from "./skills.js";
 
 const EXAM_DATE = "2026-11-29";
@@ -8,6 +8,7 @@ const LETTERS = ["A", "B", "C", "D"];
 const STORAGE_PREFIX = location.pathname.includes('/codex/') ? 'toeic950.codex' : 'toeic950';
 const KEY_SESSION = `${STORAGE_PREFIX}.session.v1`;
 const KEY_HISTORY = `${STORAGE_PREFIX}.history.v1`;
+const KEY_WRONG_QUEUE = `${STORAGE_PREFIX}.wrong-answers.v1`;
 
 const app = document.getElementById("app");
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -19,6 +20,7 @@ const store = {
 
 let bank = null;
 let session = null;
+let wrongQueue = {};
 let timerId = null;
 let activePlay = null;
 
@@ -35,7 +37,7 @@ function allowSession(ids) {
 }
 
 const groupById = (id) => bank.groups.find((g) => g.id === id);
-const sessionQuestions = () => flatten(bank, session.groupIds);
+const sessionQuestions = () => flatten(bank, session.groupIds).filter((q) => !session.questionIds || session.questionIds.includes(q.id));
 const saveSession = () => store.set(KEY_SESSION, session);
 
 async function init() {
@@ -48,6 +50,7 @@ async function init() {
   }
   session = store.get(KEY_SESSION, null);
   if (session && session.bankVersion !== bank.meta.version) session = null;
+  wrongQueue = store.get(KEY_WRONG_QUEUE, {});
   renderHome();
 }
 
@@ -60,6 +63,8 @@ function renderHome() {
   const weak = weakest(mergeSkillStats(history), 3, 2);
   const last = history[history.length - 1];
   const n = flatten(bank).length;
+  const queuedQuestions = flatten(bank).filter((q) => wrongQueue[q.id]);
+  const queueCount = queuedQuestions.length;
 
   app.innerHTML = `
     <h1>TOEIC 950+ Challenge</h1>
@@ -84,6 +89,12 @@ function renderHome() {
         : `<p class="muted">完成第一次診斷後，這裡會列出你最弱的題型與練習建議。</p>`}
     </section>
 
+    <section class="card">
+      <h2>錯題複習</h2>
+      <p>${queueCount ? `有 ${queueCount} 題待複習。答對後會自動從錯題清單移除；再答錯就繼續保留。` : "目前沒有待複習錯題。測驗中答錯的題目會自動加入。"}</p>
+      <button class="btn primary" data-action="review-wrong" ${queueCount ? "" : "disabled"}>${queueCount ? `開始複習 ${queueCount} 題` : "錯題清單是空的"}</button>
+    </section>
+
     <section class="card" id="voicecard"><h2>聽力音色</h2><p class="muted">先試聽，再開始。音色依此裝置與瀏覽器提供，清單優先排列較自然的候選音色。</p><label for="speech-rate">語速</label> <select class="btn" id="speech-rate"><option value="0.85">0.85× · 精聽</option><option value="1">1× · 正常</option><option value="1.1">1.1× · 挑戰</option></select><div id="voices" class="muted">載入語音中…</div></section>
     <section class="card"><h2>官方樣題與練習方式</h2><p>先做一套 30 題，再從錯題解析找失分原因；閱讀可獨立練習。本題庫是短套練習，並非完整 200 題模考，目前不含 Part 1 圖片題。</p><p><a href="https://www.ets.org/pdfs/toeic/toeic-listening-reading-sample-test.pdf" target="_blank" rel="noopener">ETS 官方公開樣題 PDF（含解答與聽力稿）</a> · <a href="https://toeic.com.tw/toeic/listening-reading/about/content/" target="_blank" rel="noopener">台灣官方題型與時間</a></p><p class="muted">官方內容於來源頁開啟；本機題庫與官方樣題分開。正式閱讀為 100 題、75 分鐘。</p></section>
     <section class="card"><h2>正式考試與素材庫</h2><p>正式 Listening 100 題／約 45 分鐘；Reading 100 題／75 分鐘。實際作答約 2 小時，連基本資料及問卷約 2.5 小時。</p><details><summary>查看正式題數分配</summary><p>Part 1 照片 6 題 · Part 2 應答 25 題 · Part 3 對話 39 題 · Part 4 獨白 30 題。</p><p>Part 5 句子填空 30 題 · Part 6 段落填空 16 題 · Part 7 單篇 29 題、多篇 25 題。</p></details><p>台灣官方範例（在來源頁練習與核對答案）：</p><ul><li><a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample03.html" target="_blank" rel="noopener">Part 3 聽力對話</a> · <a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample04.html" target="_blank" rel="noopener">Part 4 聽力獨白</a></li><li><a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample05.html" target="_blank" rel="noopener">Part 5 句子填空</a> · <a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample06.html" target="_blank" rel="noopener">Part 6 段落填空</a> · <a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample07_03.html" target="_blank" rel="noopener">Part 7 多篇閱讀</a></li></ul><p class="muted">新增挑戰 03：聽力 20 題＋閱讀 20 題；也可只選閱讀 03。官方題庫到貨後，再按你挑選的範例調整練習方向。素材核對：2026-11-08。</p></section>
@@ -96,7 +107,7 @@ function renderHome() {
       </div></section>` : ""}
 
     ${history.length ? `<section class="card"><h2>作答紀錄</h2><table><thead><tr><th>日期</th><th>類型</th><th>正確率</th><th>耗時</th><th></th></tr></thead><tbody>
-      ${history.slice().reverse().slice(0, 15).map((h) => `<tr><td>${new Date(h.date).toLocaleString("zh-TW", { hour12: false })}</td><td>${h.mode === "diagnostic" ? "診斷" : "弱項練習"}</td><td>${Math.round((h.correct / h.total) * 100)}%</td><td>${formatDuration(h.secUsed)}</td><td><button class="btn small" data-action="view" data-id="${h.id}">檢視</button></td></tr>`).join("")}
+      ${history.slice().reverse().slice(0, 15).map((h) => `<tr><td>${new Date(h.date).toLocaleString("zh-TW", { hour12: false })}</td><td>${h.mode === "diagnostic" ? "診斷" : h.mode === "review" ? "錯題複習" : "弱項練習"}</td><td>${Math.round((h.correct / h.total) * 100)}%</td><td>${formatDuration(h.secUsed)}</td><td><button class="btn small" data-action="view" data-id="${h.id}">檢視</button></td></tr>`).join("")}
       </tbody></table></section>` : ""}
   `;
   document.getElementById('speech-rate').value = String(audio.getRate());
@@ -130,11 +141,11 @@ if (audio.supported()) speechSynthesis.addEventListener?.('voiceschanged', () =>
 });
 
 /* ---------- Session ---------- */
-function startSession(mode, groupIds, minutes) {
+function startSession(mode, groupIds, minutes, questionIds = null) {
   if (!allowSession(groupIds)) return;
   const now = Date.now();
   session = {
-    bankVersion: bank.meta.version, mode, groupIds, answers: {}, flags: {}, plays: {},
+    bankVersion: bank.meta.version, mode, groupIds, questionIds, answers: {}, flags: {}, plays: {},
     cur: 0, startedAt: now, endsAt: now + minutes * 60000, minutes
   };
   saveSession();
@@ -172,14 +183,14 @@ function renderTest() {
 
   app.innerHTML = `
     <div class="topbar">
-      <div><span class="tag">${g.section === "listening" ? "Listening" : "Reading"}</span><span class="tag">Part ${g.part}</span><span class="muted">${esc(g.title ?? "")}</span></div>
+      <div><span class="tag">${session.mode === "review" ? "錯題複習" : g.section === "listening" ? "Listening" : "Reading"}</span><span class="tag">Part ${g.part}</span><span class="muted">${esc(g.title ?? "")}</span></div>
       <div class="row"><span class="muted" id="count">${answeredCount}/${qs.length} 已答</span><span class="timer" id="timer">--:--</span><button class="btn small primary" data-action="submit">交卷</button></div>
     </div>
 
     <section class="card">
       ${g.script ? audioBlock(g) : ""}
       ${g.passage ? g.passage.docs.map((d) => `<div class="doclabel">${esc(d.label)}</div><div class="passage">${esc(d.text)}</div>`).join("") : ""}
-      ${g.questions.map((q) => questionBlock(q, qs, spoken)).join("")}
+      ${g.questions.filter((q) => !session.questionIds || session.questionIds.includes(q.id)).map((q) => questionBlock(q, qs, spoken)).join("")}
     </section>
 
     <div class="row" style="justify-content:space-between">
@@ -291,10 +302,12 @@ function submit(auto = false) {
   stopTimer();
   audio.stop();
   const result = score(qs, session.answers);
+  wrongQueue = updateWrongAnswerQueue(wrongQueue, qs, session.answers);
+  store.set(KEY_WRONG_QUEUE, wrongQueue);
   const entry = {
     id: String(Date.now()), date: Date.now(), mode: session.mode,
     secUsed: Math.min(Math.round((Date.now() - session.startedAt) / 1000), session.minutes * 60),
-    groupIds: session.groupIds, answers: session.answers,
+    groupIds: session.groupIds, questionIds: session.questionIds ?? null, answers: session.answers,
     correct: result.correct, total: result.total, bySkill: result.bySkill, bySection: result.bySection
   };
   const history = store.get(KEY_HISTORY, []);
@@ -309,7 +322,7 @@ function submit(auto = false) {
 function renderResult(entry, showAll = false) {
   stopTimer();
   audio.stop();
-  const qs = flatten(bank, entry.groupIds);
+  const qs = flatten(bank, entry.groupIds).filter((q) => !entry.questionIds || entry.questionIds.includes(q.id));
   const r = score(qs, entry.answers);
   const L = estimateScaled(r.bySection.listening.c, r.bySection.listening.t);
   const R = estimateScaled(r.bySection.reading.c, r.bySection.reading.t);
@@ -352,7 +365,7 @@ function reviewGroup(g, entry) {
     <div class="doclabel">Part ${g.part} ${esc(g.title ?? "")}</div>
     ${g.script ? `<div class="script"><b>Transcript</b>${g.script.map((l) => `<p><span class="tag">${l.speaker === "M" ? "Man" : l.speaker === "W" ? "Woman" : "Narrator"}</span>${esc(l.text)}</p>`).join("")}</div>` : ""}
     ${g.passage ? g.passage.docs.map((d) => `<div class="doclabel">${esc(d.label)}</div><div class="passage">${esc(d.text)}</div>`).join("") : ""}
-    ${g.questions.map((q) => {
+    ${g.questions.filter((q) => !entry.questionIds || entry.questionIds.includes(q.id)).map((q) => {
       const a = entry.answers[q.id];
       const num = qs.findIndex((x) => x.id === q.id) + 1;
       return `<div class="q"><b>${num}. ${esc(q.prompt)}</b>
@@ -376,6 +389,14 @@ app.addEventListener("click", (e) => {
       const ids = groupsForSkill(bank, d.skill);
       const n = flatten(bank, ids).length;
       startSession("practice", orderedGroupIds(ids), Math.max(5, Math.ceil(n * 1.2)));
+      break;
+    }
+    case "review-wrong": {
+      const qs = flatten(bank).filter((q) => wrongQueue[q.id]);
+      if (!qs.length) { wrongQueue = {}; store.set(KEY_WRONG_QUEUE, wrongQueue); renderHome(); break; }
+      const questionIds = qs.map((q) => q.id);
+      const ids = orderedGroupIds([...new Set(qs.map((q) => q.groupId))]);
+      startSession("review", ids, Math.max(5, Math.ceil(qs.length * 1.2)), questionIds);
       break;
     }
     case "view": renderResult(store.get(KEY_HISTORY, []).find((h) => h.id === d.id)); break;
