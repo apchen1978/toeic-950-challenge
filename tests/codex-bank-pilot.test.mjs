@@ -68,5 +68,13 @@ test("Batch A pilot: stems do not duplicate existing question or listening promp
 
 test("reading-all set includes every current reading question", () => {
   const set = bank.meta.sets.find((item) => item.id === "reading");
-  assert.equal(flatten(bank, set.groupIds).filter((question) => question.section === "reading").length, 66);
+  assert.equal(flatten(bank, set.groupIds).filter((question) => question.section === "reading").length, 76);
+});
+
+test("extra practice set contains ten listening and ten reading questions", () => {
+  const set = bank.meta.sets.find((item) => item.id === "extra-a-20");
+  assert.ok(set);
+  const questions = flatten(bank, set.groupIds);
+  assert.equal(questions.filter((question) => question.section === "listening").length, 10);
+  assert.equal(questions.filter((question) => question.section === "reading").length, 10);
 });

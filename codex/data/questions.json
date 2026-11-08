@@ -60,7 +60,7 @@
       },
       {
         "id": "reading",
-        "label": "閱讀專練 · 全題庫 66 題",
+        "label": "閱讀專練 · 全題庫 76 題",
         "groupIds": [
           "g-r01",
           "g-r02",
@@ -100,7 +100,17 @@
           "g-a-p5-02",
           "g-a-p5-03",
           "g-a-p5-04",
-          "g-a-p5-05"
+          "g-a-p5-05",
+          "g-extra-r-01",
+          "g-extra-r-02",
+          "g-extra-r-03",
+          "g-extra-r-04",
+          "g-extra-r-05",
+          "g-extra-r-06",
+          "g-extra-r-07",
+          "g-extra-r-08",
+          "g-extra-r-09",
+          "g-extra-r-10"
         ],
         "durationMin": 45
       },
@@ -175,6 +185,33 @@
           "g-a-p5-05"
         ],
         "durationMin": 12
+      },
+      {
+        "id": "extra-a-20",
+        "label": "進階練習 A · 聽力＋閱讀 20 題",
+        "groupIds": [
+          "g-extra-l-01",
+          "g-extra-l-02",
+          "g-extra-l-03",
+          "g-extra-l-04",
+          "g-extra-l-05",
+          "g-extra-l-06",
+          "g-extra-l-07",
+          "g-extra-l-08",
+          "g-extra-l-09",
+          "g-extra-l-10",
+          "g-extra-r-01",
+          "g-extra-r-02",
+          "g-extra-r-03",
+          "g-extra-r-04",
+          "g-extra-r-05",
+          "g-extra-r-06",
+          "g-extra-r-07",
+          "g-extra-r-08",
+          "g-extra-r-09",
+          "g-extra-r-10"
+        ],
+        "durationMin": 24
       }
     ]
   },
@@ -2511,160 +2548,690 @@
       "section": "listening",
       "part": 2,
       "spokenOptions": true,
-      "script": [{ "speaker": "M", "text": "Can the supplier still deliver the replacement sensors before Friday?" }],
-      "questions": [{
-        "id": "PA2-01",
-        "skill": "l-response",
-        "prompt": "Mark your answer.",
-        "options": [
-          "Only if we approve its revised quotation today.",
-          "The revised quotation includes expedited freight.",
-          "It delivered the previous batch on Tuesday."
-        ],
-        "answer": 0,
-        "explanation": "A gives a condition that determines whether the deadline is still achievable. B describes a shipping option without confirming the supplier's schedule, and C refers to an earlier delivery."
-      }]
+      "script": [
+        {
+          "speaker": "M",
+          "text": "Can the supplier still deliver the replacement sensors before Friday?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "PA2-01",
+          "skill": "l-response",
+          "prompt": "Mark your answer.",
+          "options": [
+            "Only if we approve its revised quotation today.",
+            "The revised quotation includes expedited freight.",
+            "It delivered the previous batch on Tuesday."
+          ],
+          "answer": 0,
+          "explanation": "A gives a condition that determines whether the deadline is still achievable. B describes a shipping option without confirming the supplier's schedule, and C refers to an earlier delivery."
+        }
+      ]
     },
     {
       "id": "g-a-p2-02",
       "section": "listening",
       "part": 2,
       "spokenOptions": true,
-      "script": [{ "speaker": "W", "text": "Who can confirm which clients received the revised rate sheet?" }],
-      "questions": [{
-        "id": "PA2-02",
-        "skill": "l-response",
-        "prompt": "Mark your answer.",
-        "options": [
-          "Javier in account services keeps the dispatch log.",
-          "The dispatch log was archived with last quarter's files.",
-          "Those rates take effect after the next renewal cycle."
-        ],
-        "answer": 0,
-        "explanation": "A identifies a person who can verify distribution through the dispatch log. B mentions the record but does not identify who can check it, while C gives the rates' effective timing."
-      }]
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Who can confirm which clients received the revised rate sheet?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "PA2-02",
+          "skill": "l-response",
+          "prompt": "Mark your answer.",
+          "options": [
+            "Javier in account services keeps the dispatch log.",
+            "The dispatch log was archived with last quarter's files.",
+            "Those rates take effect after the next renewal cycle."
+          ],
+          "answer": 0,
+          "explanation": "A identifies a person who can verify distribution through the dispatch log. B mentions the record but does not identify who can check it, while C gives the rates' effective timing."
+        }
+      ]
     },
     {
       "id": "g-a-p2-03",
       "section": "listening",
       "part": 2,
       "spokenOptions": true,
-      "script": [{ "speaker": "M", "text": "Has the vendor confirmed that the replacement pumps will arrive before the inspection?" }],
-      "questions": [{
-        "id": "PA2-03",
-        "skill": "l-inference",
-        "prompt": "Mark your answer.",
-        "options": [
-          "Not yet; the carrier has acknowledged pickup, but not the delivery window.",
-          "The inspection was moved to Friday afternoon.",
-          "The vendor's updated estimate arrived this morning."
-        ],
-        "answer": 0,
-        "explanation": "A indirectly indicates that the deadline is still unconfirmed. B changes the inspection time, and C mentions a vendor document; neither confirms when the pumps will arrive."
-      }]
+      "script": [
+        {
+          "speaker": "M",
+          "text": "Has the vendor confirmed that the replacement pumps will arrive before the inspection?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "PA2-03",
+          "skill": "l-inference",
+          "prompt": "Mark your answer.",
+          "options": [
+            "Not yet; the carrier has acknowledged pickup, but not the delivery window.",
+            "The inspection was moved to Friday afternoon.",
+            "The vendor's updated estimate arrived this morning."
+          ],
+          "answer": 0,
+          "explanation": "A indirectly indicates that the deadline is still unconfirmed. B changes the inspection time, and C mentions a vendor document; neither confirms when the pumps will arrive."
+        }
+      ]
     },
     {
       "id": "g-a-p2-04",
       "section": "listening",
       "part": 2,
       "spokenOptions": true,
-      "script": [{ "speaker": "W", "text": "Why wasn't the signed contract attached to the invitation?" }],
-      "questions": [{
-        "id": "PA2-04",
-        "skill": "l-response",
-        "prompt": "Mark your answer.",
-        "options": [
-          "Legal is still revising the indemnity clause.",
-          "The invitation went to committee members yesterday.",
-          "The final contract is valid through December."
-        ],
-        "answer": 0,
-        "explanation": "A gives the reason the contract is not ready to attach. B describes the invitation's recipients, and C states a signing requirement without explaining the omission."
-      }]
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Why wasn't the signed contract attached to the invitation?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "PA2-04",
+          "skill": "l-response",
+          "prompt": "Mark your answer.",
+          "options": [
+            "Legal is still revising the indemnity clause.",
+            "The invitation went to committee members yesterday.",
+            "The final contract is valid through December."
+          ],
+          "answer": 0,
+          "explanation": "A gives the reason the contract is not ready to attach. B describes the invitation's recipients, and C states a signing requirement without explaining the omission."
+        }
+      ]
     },
     {
       "id": "g-a-p2-05",
       "section": "listening",
       "part": 2,
       "spokenOptions": true,
-      "script": [{ "speaker": "M", "text": "Would you rather review the figures now or wait until Mei finishes the variance analysis?" }],
-      "questions": [{
-        "id": "PA2-05",
-        "skill": "l-inference",
-        "prompt": "Mark your answer.",
-        "options": [
-          "Let's wait; she expects to find another discrepancy in freight costs.",
-          "We usually circulate the figures before the quarterly review.",
-          "Mei was assigned to the analysis after the budget meeting."
-        ],
-        "answer": 0,
-        "explanation": "A selects waiting and gives a reason tied to the unfinished analysis. B describes the figures' format, and C gives a general schedule rather than choosing when to review them."
-      }]
+      "script": [
+        {
+          "speaker": "M",
+          "text": "Would you rather review the figures now or wait until Mei finishes the variance analysis?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "PA2-05",
+          "skill": "l-inference",
+          "prompt": "Mark your answer.",
+          "options": [
+            "Let's wait; she expects to find another discrepancy in freight costs.",
+            "We usually circulate the figures before the quarterly review.",
+            "Mei was assigned to the analysis after the budget meeting."
+          ],
+          "answer": 0,
+          "explanation": "A selects waiting and gives a reason tied to the unfinished analysis. B describes the figures' format, and C gives a general schedule rather than choosing when to review them."
+        }
+      ]
     },
     {
       "id": "g-a-p5-01",
       "section": "reading",
       "part": 5,
-      "questions": [{
-        "id": "PA5-01",
-        "skill": "r-vocabulary",
-        "prompt": "To honor the rates quoted in May, the supplier agreed to ------ the fuel surcharge on orders placed before the June price change.",
-        "options": ["waive", "defer", "revise", "allocate"],
-        "answer": 0,
-        "explanation": "Waive means the supplier will not charge the surcharge, honoring the earlier quoted rates. Defer would delay the charge, revise would change it, and allocate would assign it to an account or category."
-      }]
+      "questions": [
+        {
+          "id": "PA5-01",
+          "skill": "r-vocabulary",
+          "prompt": "To honor the rates quoted in May, the supplier agreed to ------ the fuel surcharge on orders placed before the June price change.",
+          "options": [
+            "waive",
+            "defer",
+            "revise",
+            "allocate"
+          ],
+          "answer": 0,
+          "explanation": "Waive means the supplier will not charge the surcharge, honoring the earlier quoted rates. Defer would delay the charge, revise would change it, and allocate would assign it to an account or category."
+        }
+      ]
     },
     {
       "id": "g-a-p5-02",
       "section": "reading",
       "part": 5,
-      "questions": [{
-        "id": "PA5-02",
-        "skill": "r-vocabulary",
-        "prompt": "The audit covers invoices submitted from July onward; documents dated earlier than July fall outside the ------ of this review.",
-        "options": ["scope", "purpose", "capacity", "schedule"],
-        "answer": 0,
-        "explanation": "Scope refers to the subjects and time period included in a review. Purpose is its objective, capacity is its ability or limit, and schedule is its timetable."
-      }]
+      "questions": [
+        {
+          "id": "PA5-02",
+          "skill": "r-vocabulary",
+          "prompt": "The audit covers invoices submitted from July onward; documents dated earlier than July fall outside the ------ of this review.",
+          "options": [
+            "scope",
+            "purpose",
+            "capacity",
+            "schedule"
+          ],
+          "answer": 0,
+          "explanation": "Scope refers to the subjects and time period included in a review. Purpose is its objective, capacity is its ability or limit, and schedule is its timetable."
+        }
+      ]
     },
     {
       "id": "g-a-p5-03",
       "section": "reading",
       "part": 5,
-      "questions": [{
-        "id": "PA5-03",
-        "skill": "r-vocabulary",
-        "prompt": "The agency will ------ the existing agreement by adding a clause that extends the service period through March.",
-        "options": ["amend", "renew", "execute", "repeal"],
-        "answer": 0,
-        "explanation": "Amend means to change a contract by adding or revising a clause. Renew would begin another term, execute would formally sign or carry out the agreement, and repeal would revoke it."
-      }]
+      "questions": [
+        {
+          "id": "PA5-03",
+          "skill": "r-vocabulary",
+          "prompt": "The agency will ------ the existing agreement by adding a clause that extends the service period through March.",
+          "options": [
+            "amend",
+            "renew",
+            "execute",
+            "repeal"
+          ],
+          "answer": 0,
+          "explanation": "Amend means to change a contract by adding or revising a clause. Renew would begin another term, execute would formally sign or carry out the agreement, and repeal would revoke it."
+        }
+      ]
     },
     {
       "id": "g-a-p5-04",
       "section": "reading",
       "part": 5,
-      "questions": [{
-        "id": "PA5-04",
-        "skill": "r-vocabulary",
-        "prompt": "The reservation can be canceled without penalty if written notice is received at least 48 hours before arrival; requests received later are not ------ for a full refund.",
-        "options": ["eligible", "available", "responsible", "capable"],
-        "answer": 0,
-        "explanation": "Eligible for means meeting the conditions for a benefit; the late cancellation fails the stated timing condition. Available describes whether something can be obtained, responsible assigns duty, and capable describes ability."
-      }]
+      "questions": [
+        {
+          "id": "PA5-04",
+          "skill": "r-vocabulary",
+          "prompt": "The reservation can be canceled without penalty if written notice is received at least 48 hours before arrival; requests received later are not ------ for a full refund.",
+          "options": [
+            "eligible",
+            "available",
+            "responsible",
+            "capable"
+          ],
+          "answer": 0,
+          "explanation": "Eligible for means meeting the conditions for a benefit; the late cancellation fails the stated timing condition. Available describes whether something can be obtained, responsible assigns duty, and capable describes ability."
+        }
+      ]
     },
     {
       "id": "g-a-p5-05",
       "section": "reading",
       "part": 5,
-      "questions": [{
-        "id": "PA5-05",
-        "skill": "r-grammar",
-        "prompt": "The revised reimbursement rates will take effect only after the schedule has been ------ by the finance director, who is responsible for authorizing rate changes.",
-        "options": ["approved", "reviewed", "circulated", "prepared"],
-        "answer": 0,
-        "explanation": "Only approval gives the schedule authorization to change reimbursement rates. Reviewing checks it, circulating distributes it, and preparing creates it; none of those actions grants the required authority."
-      }]
+      "questions": [
+        {
+          "id": "PA5-05",
+          "skill": "r-grammar",
+          "prompt": "The revised reimbursement rates will take effect only after the schedule has been ------ by the finance director, who is responsible for authorizing rate changes.",
+          "options": [
+            "approved",
+            "reviewed",
+            "circulated",
+            "prepared"
+          ],
+          "answer": 0,
+          "explanation": "Only approval gives the schedule authorization to change reimbursement rates. Reviewing checks it, circulating distributes it, and preparing creates it; none of those actions grants the required authority."
+        }
+      ]
+    },
+    {
+      "id": "g-extra-l-01",
+      "section": "listening",
+      "part": 2,
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "M",
+          "text": "When will the revised figures be ready for the board?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "EXL01",
+          "skill": "l-response",
+          "prompt": "Mark your answer.",
+          "options": [
+            "After Finance reconciles the overseas accounts.",
+            "The board meets in the larger room.",
+            "The figures were presented by the controller."
+          ],
+          "answer": 0,
+          "explanation": "The first response gives a condition for readiness; the others identify a location or presenter."
+        }
+      ]
+    },
+    {
+      "id": "g-extra-l-02",
+      "section": "listening",
+      "part": 2,
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Could the shipment reach Kaohsiung by Thursday?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "EXL02",
+          "skill": "l-response",
+          "prompt": "Mark your answer.",
+          "options": [
+            "The shipment contains replacement parts.",
+            "Only if the customs documents are cleared today.",
+            "The warehouse closes at six."
+          ],
+          "answer": 1,
+          "explanation": "The conditional response addresses whether the deadline can still be met; the others describe contents or hours."
+        }
+      ]
+    },
+    {
+      "id": "g-extra-l-03",
+      "section": "listening",
+      "part": 2,
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "M",
+          "text": "Who is covering the client briefing while Lena is away?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "EXL03",
+          "skill": "l-response",
+          "prompt": "Mark your answer.",
+          "options": [
+            "The briefing was moved to the conference hall.",
+            "Lena returns after the holiday.",
+            "Marcus from the regional office volunteered."
+          ],
+          "answer": 2,
+          "explanation": "Marcus is the substitute; the other replies give a location or return date."
+        }
+      ]
+    },
+    {
+      "id": "g-extra-l-04",
+      "section": "listening",
+      "part": 2,
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Why was the workshop moved to a different venue?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "EXL04",
+          "skill": "l-response",
+          "prompt": "Mark your answer.",
+          "options": [
+            "The original room could not accommodate the interpreters.",
+            "The workshop begins at nine thirty.",
+            "The new venue sent the invoice yesterday."
+          ],
+          "answer": 0,
+          "explanation": "The capacity problem explains the move; the other replies concern timing or billing."
+        }
+      ]
+    },
+    {
+      "id": "g-extra-l-05",
+      "section": "listening",
+      "part": 2,
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "M",
+          "text": "Has the vendor approved our revised payment schedule?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "EXL05",
+          "skill": "l-response",
+          "prompt": "Mark your answer.",
+          "options": [
+            "The payment was recorded under another account.",
+            "Not yet; its legal team is still reviewing the terms.",
+            "The schedule has three columns."
+          ],
+          "answer": 1,
+          "explanation": "The first reply indicates approval is pending; the others do not address the decision."
+        }
+      ]
+    },
+    {
+      "id": "g-extra-l-06",
+      "section": "listening",
+      "part": 2,
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Should I send the draft now or wait for the sales figures?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "EXL06",
+          "skill": "l-response",
+          "prompt": "Mark your answer.",
+          "options": [
+            "The sales meeting was productive.",
+            "The draft is saved in the shared folder.",
+            "Please wait until the regional totals are confirmed."
+          ],
+          "answer": 2,
+          "explanation": "The first reply chooses to wait and states the condition; the others do not choose."
+        }
+      ]
+    },
+    {
+      "id": "g-extra-l-07",
+      "section": "listening",
+      "part": 2,
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "M",
+          "text": "Where can I find the updated reimbursement form?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "EXL07",
+          "skill": "l-response",
+          "prompt": "Mark your answer.",
+          "options": [
+            "The latest version is on the finance portal.",
+            "The reimbursement was processed last week.",
+            "The finance team meets every Tuesday."
+          ],
+          "answer": 0,
+          "explanation": "The portal identifies where to find the form; the other replies concern a payment and a meeting."
+        }
+      ]
+    },
+    {
+      "id": "g-extra-l-08",
+      "section": "listening",
+      "part": 2,
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Wasn’t the maintenance visit scheduled for this morning?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "EXL08",
+          "skill": "l-response",
+          "prompt": "Mark your answer.",
+          "options": [
+            "The maintenance contract lasts two years.",
+            "It was, but the technician called to postpone it.",
+            "The technician usually takes the train."
+          ],
+          "answer": 1,
+          "explanation": "The first reply confirms and explains the change; the alternatives do not resolve the schedule."
+        }
+      ]
+    },
+    {
+      "id": "g-extra-l-09",
+      "section": "listening",
+      "part": 2,
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "M",
+          "text": "How did the client respond to the revised proposal?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "EXL09",
+          "skill": "l-response",
+          "prompt": "Mark your answer.",
+          "options": [
+            "The proposal was revised on Monday.",
+            "The client’s office is near the station.",
+            "She requested a breakdown of the installation costs."
+          ],
+          "answer": 2,
+          "explanation": "The request describes the client’s response; the others give a date or location."
+        }
+      ]
+    },
+    {
+      "id": "g-extra-l-10",
+      "section": "listening",
+      "part": 2,
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Would you mind checking whether the meeting room is available at two?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "EXL10",
+          "skill": "l-response",
+          "prompt": "Mark your answer.",
+          "options": [
+            "I will look at the booking calendar.",
+            "The meeting ended at two yesterday.",
+            "The room has a large display."
+          ],
+          "answer": 0,
+          "explanation": "The first reply agrees to check availability; the others describe an earlier meeting or the room."
+        }
+      ]
+    },
+    {
+      "id": "g-extra-r-01",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "EXR01",
+          "skill": "r-vocabulary",
+          "prompt": "Before approving the expansion, the lender asked the retailer for a cash-flow ------ covering the next 12 months.",
+          "options": [
+            "forecast",
+            "receipt",
+            "warranty",
+            "agenda"
+          ],
+          "answer": 0,
+          "explanation": "A forecast projects future cash flows. A receipt records a payment, a warranty promises coverage, and an agenda lists meeting topics."
+        }
+      ]
+    },
+    {
+      "id": "g-extra-r-02",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "EXR02",
+          "skill": "r-vocabulary",
+          "prompt": "To prevent an outdated brochure from being circulated, the coordinator marked the previous version as ------.",
+          "options": [
+            "eligible",
+            "obsolete",
+            "accessible",
+            "confidential"
+          ],
+          "answer": 1,
+          "explanation": "Obsolete identifies a version that is no longer current. Eligible means qualified, accessible means obtainable, and confidential concerns restricted access."
+        }
+      ]
+    },
+    {
+      "id": "g-extra-r-03",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "EXR03",
+          "skill": "r-vocabulary",
+          "prompt": "Each branch must ------ its own forecast before the regional director combines the figures.",
+          "options": [
+            "withdraw",
+            "suspend",
+            "submit",
+            "relocate"
+          ],
+          "answer": 2,
+          "explanation": "Submit means provide the forecast for consolidation; the alternatives remove, pause or move it."
+        }
+      ]
+    },
+    {
+      "id": "g-extra-r-04",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "EXR04",
+          "skill": "r-vocabulary",
+          "prompt": "The conference room remains ------ until noon, when another department has reserved it.",
+          "options": [
+            "responsible",
+            "eligible",
+            "capable",
+            "available"
+          ],
+          "answer": 3,
+          "explanation": "Available describes whether the room can be used; the alternatives refer to duty, qualification or ability."
+        }
+      ]
+    },
+    {
+      "id": "g-extra-r-05",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "EXR05",
+          "skill": "r-vocabulary",
+          "prompt": "The manufacturer issued a product ------ after discovering that a component might overheat.",
+          "options": [
+            "forecast",
+            "recall",
+            "agenda",
+            "renewal"
+          ],
+          "answer": 1,
+          "explanation": "A recall asks customers to return or stop using an affected product. A forecast projects future activity; an agenda lists topics; a renewal extends an agreement."
+        }
+      ]
+    },
+    {
+      "id": "g-extra-r-06",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "EXR06",
+          "skill": "r-vocabulary",
+          "prompt": "Because the proposed opening date coincides with a public holiday, the launch has been ------ until the following Monday.",
+          "options": [
+            "retained",
+            "postponed",
+            "allocated",
+            "completed"
+          ],
+          "answer": 1,
+          "explanation": "Postponed moves the launch later; retained, allocated and completed do not describe that schedule change."
+        }
+      ]
+    },
+    {
+      "id": "g-extra-r-07",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "EXR07",
+          "skill": "r-vocabulary",
+          "prompt": "The finance director requested an ------ breakdown showing the cost of each component separately.",
+          "options": [
+            "estimated",
+            "occasional",
+            "itemized",
+            "informal"
+          ],
+          "answer": 2,
+          "explanation": "Itemized means listed by individual component; estimated concerns precision, occasional frequency, and informal style."
+        }
+      ]
+    },
+    {
+      "id": "g-extra-r-08",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "EXR08",
+          "skill": "r-vocabulary",
+          "prompt": "The customer requested a written ------ that replacement parts would remain available for five years.",
+          "options": [
+            "assurance",
+            "departure",
+            "shortage",
+            "attendance"
+          ],
+          "answer": 0,
+          "explanation": "An assurance is a statement intended to provide confidence; the other nouns describe leaving, insufficient supply, or presence."
+        }
+      ]
+    },
+    {
+      "id": "g-extra-r-09",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "EXR09",
+          "skill": "r-vocabulary",
+          "prompt": "The training budget was increased to ------ the additional cost of hiring interpreters.",
+          "options": [
+            "postpone",
+            "cover",
+            "withdraw",
+            "exclude"
+          ],
+          "answer": 1,
+          "explanation": "Cover means pay for the additional cost. Postpone delays it, withdraw removes it, and exclude leaves it out."
+        }
+      ]
+    },
+    {
+      "id": "g-extra-r-10",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "EXR10",
+          "skill": "r-vocabulary",
+          "prompt": "To prevent duplicate payments, the system flags invoices with the same supplier name and invoice ------.",
+          "options": [
+            "capacity",
+            "number",
+            "reputation",
+            "attendance"
+          ],
+          "answer": 1,
+          "explanation": "An invoice number identifies the invoice for matching; the other nouns do not identify an invoice."
+        }
+      ]
     }
   ]
 }
