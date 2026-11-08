@@ -72,6 +72,22 @@ export function groupsForSkill(bank, skill) {
   return bank.groups.filter((g) => g.questions.some((q) => q.skill === skill)).map((g) => g.id);
 }
 
+/** Keep a local review queue: wrong answers are retained; a correct answer clears that question. */
+export function updateWrongAnswerQueue(queue, questions, answers, now = Date.now()) {
+  const next = { ...(queue ?? {}) };
+  for (const q of questions) {
+    const answer = answers[q.id];
+    if (answer === undefined || answer === null) continue;
+    if (answer === q.answer) {
+      delete next[q.id];
+    } else {
+      const previous = next[q.id];
+      next[q.id] = { wrongCount: (previous?.wrongCount ?? 0) + 1, lastWrongAt: now };
+    }
+  }
+  return next;
+}
+
 export function formatDuration(sec) {
   const m = Math.floor(sec / 60);
   const s = Math.floor(sec % 60);
