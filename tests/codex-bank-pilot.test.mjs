@@ -68,7 +68,20 @@ test("Batch A pilot: stems do not duplicate existing question or listening promp
 
 test("reading-all set includes every current reading question", () => {
   const set = bank.meta.sets.find((item) => item.id === "reading");
-  assert.equal(flatten(bank, set.groupIds).filter((question) => question.section === "reading").length, 76);
+  assert.equal(flatten(bank, set.groupIds).filter((question) => question.section === "reading").length, 90);
+});
+
+test("advanced practice includes dialogue, talks, text completion and paired documents", () => {
+  const set = bank.meta.sets.find((item) => item.id === "practice-crossref-26");
+  assert.ok(set);
+  const selected = set.groupIds.map((id) => groups.get(id));
+  assert.ok(selected.every(Boolean));
+  const questions = flatten(bank, set.groupIds);
+  assert.equal(questions.filter((q) => q.section === "listening").length, 12);
+  assert.equal(questions.filter((q) => q.section === "reading").length, 14);
+  assert.equal(selected.filter((g) => [3, 4].includes(g.part) && g.questions.length === 3).length, 4);
+  assert.equal(selected.filter((g) => g.part === 7 && g.passage.docs.length === 2).length, 2);
+  assert.equal(selected.filter((g) => g.part === 6 && g.questions.length === 4).length, 1);
 });
 
 test("extra practice set contains ten listening and ten reading questions", () => {
