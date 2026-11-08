@@ -212,6 +212,15 @@
           "g-extra-r-10"
         ],
         "durationMin": 24
+      },
+      {
+        "id": "photo-pilot",
+        "label": "照片題試做 · Part 1（2 題）",
+        "groupIds": [
+          "g-photo-01",
+          "g-photo-02"
+        ],
+        "durationMin": 5
       }
     ]
   },
@@ -3230,6 +3239,64 @@
           ],
           "answer": 1,
           "explanation": "An invoice number identifies the invoice for matching; the other nouns do not identify an invoice."
+        }
+      ]
+    },
+    {
+      "id": "g-photo-01",
+      "section": "listening",
+      "part": 1,
+      "title": "照片描述",
+      "image": "images/photo-meeting.png",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Look at the photograph."
+        }
+      ],
+      "questions": [
+        {
+          "id": "PHOTO01",
+          "skill": "l-photo",
+          "prompt": "聽四個敘述，選出最符合照片的一句。",
+          "options": [
+            "A woman is writing on a board.",
+            "A man is standing beside a window.",
+            "Some chairs are stacked against a wall.",
+            "A woman is working on a laptop."
+          ],
+          "answer": 0,
+          "explanation": "The woman is standing by the board with a marker. The man is seated, the chairs are not stacked, and the laptop is in front of the man."
+        }
+      ]
+    },
+    {
+      "id": "g-photo-02",
+      "section": "listening",
+      "part": 1,
+      "title": "照片描述",
+      "image": "images/photo-delivery.png",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Look at the photograph."
+        }
+      ],
+      "questions": [
+        {
+          "id": "PHOTO02",
+          "skill": "l-photo",
+          "prompt": "聽四個敘述，選出最符合照片的一句。",
+          "options": [
+            "A man is riding a bicycle.",
+            "A worker is loading boxes into a truck.",
+            "A man is pushing a cart loaded with boxes.",
+            "Some boxes are being carried up a staircase."
+          ],
+          "answer": 2,
+          "explanation": "A man is pushing a wheeled cart carrying boxes. The bicycle is parked, and there is no truck-loading or staircase in the picture."
         }
       ]
     }

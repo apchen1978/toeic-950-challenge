@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { flatten } from "../codex/js/scoring.js";
 import { SKILLS } from "../codex/js/skills.js";
 
@@ -77,4 +77,19 @@ test("extra practice set contains ten listening and ten reading questions", () =
   const questions = flatten(bank, set.groupIds);
   assert.equal(questions.filter((question) => question.section === "listening").length, 10);
   assert.equal(questions.filter((question) => question.section === "reading").length, 10);
+});
+
+test("photo practice has local images, four spoken choices and offline cache entries", () => {
+  const set = bank.meta.sets.find((item) => item.id === "photo-pilot");
+  assert.ok(set);
+  const worker = readFileSync(new URL("../codex/sw.js", import.meta.url), "utf8");
+  assert.equal(set.groupIds.length, 2);
+  for (const id of set.groupIds) {
+    const group = groups.get(id);
+    assert.equal(group.part, 1);
+    assert.equal(group.spokenOptions, true);
+    assert.equal(group.questions[0].options.length, 4);
+    assert.ok(existsSync(new URL(`../codex/${group.image}`, import.meta.url)));
+    assert.ok(worker.includes(group.image));
+  }
 });

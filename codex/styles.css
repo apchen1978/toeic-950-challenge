@@ -37,6 +37,7 @@ h3 { font-size: 1rem; margin: 0 0 .4em; }
 .passage { white-space: pre-wrap; background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 12px; margin: 8px 0; font-family: Georgia, "Times New Roman", serif; }
 .doclabel { font-size: .8rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin-top: 8px; }
 .audio { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; padding: 12px; border: 1px dashed var(--line); border-radius: 10px; }
+.question-image { display: block; width: 100%; height: auto; max-height: 65vh; object-fit: contain; margin: 0 auto 12px; background: var(--bg); border-radius: 8px; }
 .palette { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
 .pal { width: 40px; height: 40px; border-radius: 8px; border: 1px solid var(--line); background: var(--card); color: var(--ink); font: inherit; cursor: pointer; position: relative; }
 .pal.answered { background: var(--sel); border-color: var(--brand); }
@@ -61,4 +62,5 @@ th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line
 .practice-card .practice-count { font-size: 1.35rem; font-weight: 700; margin: 8px 0 0; }
 .practice-card .muted { min-height: 3.1em; margin: 2px 0 12px; }
 .practice-card .btn { width: 100%; }
+.practice-card .photo-entry { margin-top: 8px; }
 @media (max-width: 520px) { h1 { font-size: 1.35rem; } .pal { width: 36px; height: 36px; } .practice-grid { grid-template-columns: 1fr; } .practice-card .muted { min-height: 0; } }
