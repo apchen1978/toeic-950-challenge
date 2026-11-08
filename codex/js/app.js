@@ -63,6 +63,8 @@ function renderHome() {
   const weak = weakest(mergeSkillStats(history), 3, 2);
   const last = history[history.length - 1];
   const n = flatten(bank).length;
+  const listeningQuestions = flatten(bank).filter((q) => q.section === "listening").length;
+  const readingQuestions = flatten(bank).filter((q) => q.section === "reading").length;
   const queuedQuestions = flatten(bank).filter((q) => wrongQueue[q.id]);
   const queueCount = queuedQuestions.length;
 
@@ -70,13 +72,30 @@ function renderHome() {
     <h1>TOEIC 950+ Challenge</h1>
     <p class="muted">上次 955，這次挑戰更高。專注 Listening & Reading 的推論、細節與交叉比對。</p>
 
+    <section class="practice-grid" aria-label="Listening 聽力與 Reading 閱讀練習">
+      <article class="card practice-card listening-card">
+        <div class="section-label">LISTENING</div>
+        <h2>聽力練習</h2>
+        <p class="practice-count">${listeningQuestions} 題</p>
+        <p class="muted">集中練習聽力題組，逐組播放與作答。</p>
+        <button class="btn primary" data-action="start-section" data-section="listening">開始聽力練習</button>
+      </article>
+      <article class="card practice-card reading-card">
+        <div class="section-label">READING</div>
+        <h2>閱讀練習</h2>
+        <p class="practice-count">${readingQuestions} 題</p>
+        <p class="muted">直接進入純閱讀題，不會混入聽力。</p>
+        <button class="btn primary" data-action="start-section" data-section="reading">開始閱讀練習</button>
+      </article>
+    </section>
+
     <section class="card">
-      <h2>診斷測驗</h2>
+      <h2>完整／混合題組</h2>
       <p>題庫共 ${n} 題原創練習，分套作答；每題附答案與英文解析。聽力文字稿交卷後才顯示，每段最多播放 ${MAX_PLAYS} 次。</p>
       <label for="test-set">今天練哪一套？</label>
       <select id="test-set" class="btn">${bank.meta.sets.map(s=>`<option value="${s.id}">${esc(s.label)} · ${s.durationMin} 分鐘</option>`).join('')}</select>
       <div class="row">
-        ${session ? `<button class="btn primary" data-action="resume">繼續上次作答</button><button class="btn" data-action="discard">放棄並重新開始</button>` : `<button class="btn primary" data-action="start-diagnostic">開始診斷測驗</button>`}
+        ${session ? `<button class="btn primary" data-action="resume">繼續上次作答</button><button class="btn" data-action="discard">放棄並重新開始</button>` : `<button class="btn primary" data-action="start-diagnostic">開始完整／混合測驗</button>`}
       </div>
       <div id="unsupported-message">${audio.supported() ? '' : unsupportedNotice()}</div>
     </section>
@@ -107,7 +126,7 @@ function renderHome() {
       </div></section>` : ""}
 
     ${history.length ? `<section class="card"><h2>作答紀錄</h2><table><thead><tr><th>日期</th><th>類型</th><th>正確率</th><th>耗時</th><th></th></tr></thead><tbody>
-      ${history.slice().reverse().slice(0, 15).map((h) => `<tr><td>${new Date(h.date).toLocaleString("zh-TW", { hour12: false })}</td><td>${h.mode === "diagnostic" ? "診斷" : h.mode === "review" ? "錯題複習" : "弱項練習"}</td><td>${Math.round((h.correct / h.total) * 100)}%</td><td>${formatDuration(h.secUsed)}</td><td><button class="btn small" data-action="view" data-id="${h.id}">檢視</button></td></tr>`).join("")}
+      ${history.slice().reverse().slice(0, 15).map((h) => `<tr><td>${new Date(h.date).toLocaleString("zh-TW", { hour12: false })}</td><td>${h.mode === "diagnostic" ? "完整／混合" : h.mode === "review" ? "錯題複習" : h.mode === "reading" ? "閱讀專練" : h.mode === "listening" ? "聽力專練" : "弱項練習"}</td><td>${Math.round((h.correct / h.total) * 100)}%</td><td>${formatDuration(h.secUsed)}</td><td><button class="btn small" data-action="view" data-id="${h.id}">檢視</button></td></tr>`).join("")}
       </tbody></table></section>` : ""}
   `;
   document.getElementById('speech-rate').value = String(audio.getRate());
@@ -383,6 +402,13 @@ app.addEventListener("click", (e) => {
   const d = t.dataset;
   switch (d.action) {
     case "start-diagnostic": { const set=bank.meta.sets.find(s=>s.id===document.getElementById('test-set').value); startSession("diagnostic", orderedGroupIds(set.groupIds), set.durationMin); break; }
+    case "start-section": {
+      const groups = bank.groups.filter((g) => g.section === d.section);
+      const groupIds = groups.map((g) => g.id);
+      const questionCount = groups.reduce((sum, g) => sum + g.questions.length, 0);
+      startSession(d.section, groupIds, Math.max(5, Math.ceil(questionCount * 1.2)));
+      break;
+    }
     case "resume": if (allowSession(session.groupIds)) renderTest(); break;
     case "discard": if (confirm("放棄目前作答進度？")) { store.del(KEY_SESSION); session = null; renderHome(); } break;
     case "practice": {
