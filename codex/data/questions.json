@@ -142,6 +142,15 @@
           "s03-double"
         ],
         "durationMin": 18
+      },
+      {
+        "id": "reading04",
+        "label": "閱讀 04 · 多篇閱讀 10 題",
+        "groupIds": [
+          "g-reading04-delivery",
+          "g-reading04-training"
+        ],
+        "durationMin": 12
       }
     ]
   },
@@ -2292,6 +2301,184 @@
           ],
           "answer": 2,
           "explanation": "The customer explicitly keeps the plan to assemble the stands themselves. Standard delivery provides unloading, not installation."
+        }
+      ]
+    },
+    {
+      "id": "g-reading04-delivery",
+      "section": "reading",
+      "part": 7,
+      "title": "Revised delivery and invoice",
+      "passage": {
+        "docs": [
+          {
+            "label": "Supplier terms",
+            "text": "Northline Furnishings — Delivery terms\nOrders of $800 or more before tax qualify for free standard delivery. Orders below $800 incur a $50 delivery charge. Installation costs $100 per visit. An order may be changed without a fee until 5 p.m. two business days before dispatch."
+          },
+          {
+            "label": "Order confirmation — Monday, April 6",
+            "text": "Order 214: eight chairs at $90 each. Dispatch: Thursday, April 9. Standard delivery requested. Installation declined. Address: 14 Oak Street."
+          },
+          {
+            "label": "Email — Tuesday, April 7 at 10 a.m.",
+            "text": "Please add two chairs to order 214 at the same price. We will assemble them ourselves. The delivery address is unchanged. Please send a revised invoice before tax."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "R52",
+          "skill": "r-crossref",
+          "prompt": "What is the revised merchandise total before tax?",
+          "options": [
+            "$720",
+            "$800",
+            "$900",
+            "$950"
+          ],
+          "answer": 2,
+          "explanation": "Ten chairs at $90 each cost $900 before tax. The original eight chairs cost $720."
+        },
+        {
+          "id": "R53",
+          "skill": "r-crossref",
+          "prompt": "What is the revised total before tax including the specified charges?",
+          "options": [
+            "$900",
+            "$950",
+            "$1,000",
+            "$1,050"
+          ],
+          "answer": 0,
+          "explanation": "The merchandise total is $900, exceeding the $800 free-delivery threshold. Installation remains declined, and the change is timely."
+        },
+        {
+          "id": "R54",
+          "skill": "r-crossref",
+          "prompt": "Is the change request within the fee-free period, assuming no holidays?",
+          "options": [
+            "No, it must arrive before Monday.",
+            "No, it must arrive by Tuesday at 9 a.m.",
+            "Yes, all changes are free.",
+            "Yes, it arrives before 5 p.m. two business days before dispatch."
+          ],
+          "answer": 3,
+          "explanation": "Thursday dispatch makes Tuesday the second preceding business day. The request arrives at 10 a.m., before the 5 p.m. deadline."
+        },
+        {
+          "id": "R55",
+          "skill": "r-inference",
+          "prompt": "What will the customer most likely do after delivery?",
+          "options": [
+            "Request installation by Northline",
+            "Assemble the chairs themselves",
+            "Change the address again",
+            "Return the original eight chairs"
+          ],
+          "answer": 1,
+          "explanation": "The email explicitly says the customer will assemble the chairs. Installation was declined in the confirmation."
+        },
+        {
+          "id": "R56",
+          "skill": "r-detail",
+          "prompt": "Which detail remains unchanged in the revised order?",
+          "options": [
+            "The delivery address",
+            "The number of chairs",
+            "The merchandise total",
+            "The delivery charge"
+          ],
+          "answer": 0,
+          "explanation": "The email states that the address remains unchanged. The quantity and merchandise total increase, and the delivery charge changes under the threshold rule."
+        }
+      ]
+    },
+    {
+      "id": "g-reading04-training",
+      "section": "reading",
+      "part": 7,
+      "title": "Course approval and reimbursement",
+      "passage": {
+        "docs": [
+          {
+            "label": "Staff learning policy",
+            "text": "Employees may claim approved course fees up to $400 per calendar year. Approval must be obtained before registration. Travel and meals are not covered. Claims require a receipt and a completion certificate and must be submitted within 30 days after the course ends. Reimbursement counts toward the allowance for the year the course ends, regardless of payment date."
+          },
+          {
+            "label": "Manager email — November 3",
+            "text": "Hi Lin, I approve your enrollment in the negotiation course on December 12. The course fee is $360. Please register before November 10. The optional $25 lunch is your own expense. — Ravi"
+          },
+          {
+            "label": "Finance notice — December 15",
+            "text": "Claims received by December 20 will normally be included in December payroll. Later complete claims will be processed in January. Please attach your receipt and completion certificate. Lin completed the course on December 12 and submitted a complete claim on December 22."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "R57",
+          "skill": "r-crossref",
+          "prompt": "What maximum amount can Lin claim for this course, assuming no earlier claims?",
+          "options": [
+            "$25",
+            "$335",
+            "$360",
+            "$385"
+          ],
+          "answer": 2,
+          "explanation": "The $360 approved course fee is below the $400 allowance. The optional $25 lunch is excluded."
+        },
+        {
+          "id": "R58",
+          "skill": "r-crossref",
+          "prompt": "When was the approval obtained?",
+          "options": [
+            "Before registration was requested",
+            "After the course ended",
+            "After the claim was submitted",
+            "On December 22"
+          ],
+          "answer": 0,
+          "explanation": "The manager approved the course on November 3 and asked Lin to register before November 10, so the approval was given before the requested registration."
+        },
+        {
+          "id": "R59",
+          "skill": "r-crossref",
+          "prompt": "When will the complete claim normally be processed?",
+          "options": [
+            "In November",
+            "On December 12",
+            "In December payroll",
+            "In January"
+          ],
+          "answer": 3,
+          "explanation": "The claim was received December 22, after the December 20 cutoff, so it is normally processed in January."
+        },
+        {
+          "id": "R60",
+          "skill": "r-crossref",
+          "prompt": "Which year’s allowance does the claim use?",
+          "options": [
+            "The following year, because payment is in January",
+            "The year the course ended",
+            "Whichever year Lin chooses",
+            "The year the manager first joined"
+          ],
+          "answer": 1,
+          "explanation": "The policy assigns the claim to the calendar year in which the course ended, regardless of when reimbursement is paid."
+        },
+        {
+          "id": "R61",
+          "skill": "r-detail",
+          "prompt": "Which documents are required for a complete claim?",
+          "options": [
+            "An itinerary and a meal receipt",
+            "A manager’s résumé and course catalog",
+            "A receipt and a completion certificate",
+            "A travel ticket and invoice estimate"
+          ],
+          "answer": 2,
+          "explanation": "The policy and Finance notice require both a receipt and a completion certificate."
         }
       ]
     }
