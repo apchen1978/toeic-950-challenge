@@ -1,0 +1,2299 @@
+{
+  "meta": {
+    "version": 1,
+    "title": "TOEIC 955 → Higher — Listening & Reading",
+    "durationMin": 30,
+    "disclaimer": "All items are original practice material written for this app. Scores are unofficial estimates and are not equivalent to ETS TOEIC scores.",
+    "sets": [
+      {
+        "id": "original",
+        "label": "診斷 01 · 原版 30 題",
+        "groupIds": [
+          "g-l01",
+          "g-l02",
+          "g-l03",
+          "g-l04",
+          "g-l05",
+          "g-l06",
+          "g-l07",
+          "g-l08",
+          "g-l09",
+          "g-r01",
+          "g-r02",
+          "g-r03",
+          "g-r04",
+          "g-r05",
+          "g-r06",
+          "g-r07",
+          "g-r09",
+          "g-r11",
+          "g-r13",
+          "g-r15"
+        ],
+        "durationMin": 30
+      },
+      {
+        "id": "challenge",
+        "label": "挑戰 02 · 新增 30 題",
+        "groupIds": [
+          "g-new-l0",
+          "g-new-l1",
+          "g-new-l2",
+          "g-new-l3",
+          "g-new-l4",
+          "g-new-l5",
+          "g-new-conv1",
+          "g-new-conv2",
+          "g-new-talk",
+          "g-new-r0",
+          "g-new-r1",
+          "g-new-r2",
+          "g-new-r3",
+          "g-new-r4",
+          "g-new-r5",
+          "g-new-r6",
+          "g-new-r7",
+          "g-new-text",
+          "g-new-multi"
+        ],
+        "durationMin": 30
+      },
+      {
+        "id": "reading",
+        "label": "閱讀專練 · 全題庫 51 題",
+        "groupIds": [
+          "g-r01",
+          "g-r02",
+          "g-r03",
+          "g-r04",
+          "g-r05",
+          "g-r06",
+          "g-r07",
+          "g-r09",
+          "g-r11",
+          "g-r13",
+          "g-r15",
+          "g-new-r0",
+          "g-new-r1",
+          "g-new-r2",
+          "g-new-r3",
+          "g-new-r4",
+          "g-new-r5",
+          "g-new-r6",
+          "g-new-r7",
+          "g-new-text",
+          "g-new-multi",
+          "s03-sentence0",
+          "s03-sentence1",
+          "s03-sentence2",
+          "s03-sentence3",
+          "s03-sentence4",
+          "s03-sentence5",
+          "s03-sentence6",
+          "s03-sentence7",
+          "s03-text",
+          "s03-single",
+          "s03-double"
+        ],
+        "durationMin": 45
+      },
+      {
+        "id": "challenge03",
+        "label": "挑戰 03 · 新增 40 題",
+        "groupIds": [
+          "s03-l1",
+          "s03-l2",
+          "s03-l3",
+          "s03-l4",
+          "s03-l5",
+          "s03-conversation1",
+          "s03-conversation2",
+          "s03-conversation3",
+          "s03-talk1",
+          "s03-talk2",
+          "s03-sentence0",
+          "s03-sentence1",
+          "s03-sentence2",
+          "s03-sentence3",
+          "s03-sentence4",
+          "s03-sentence5",
+          "s03-sentence6",
+          "s03-sentence7",
+          "s03-text",
+          "s03-single",
+          "s03-double"
+        ],
+        "durationMin": 40
+      },
+      {
+        "id": "reading03",
+        "label": "閱讀 03 · 新增 20 題",
+        "groupIds": [
+          "s03-sentence0",
+          "s03-sentence1",
+          "s03-sentence2",
+          "s03-sentence3",
+          "s03-sentence4",
+          "s03-sentence5",
+          "s03-sentence6",
+          "s03-sentence7",
+          "s03-text",
+          "s03-single",
+          "s03-double"
+        ],
+        "durationMin": 18
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "g-l01",
+      "section": "listening",
+      "part": 2,
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Haven't the revised budget figures been circulated to the regional managers yet?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "L01",
+          "skill": "l-response",
+          "prompt": "Mark your answer.",
+          "options": [
+            "Only the ones in Asia-Pacific have them so far.",
+            "No, the figures were revised by Finance.",
+            "I prefer the circulation of the news magazine."
+          ],
+          "answer": 0,
+          "explanation": "A is a partial but direct answer: some regions have the figures, others do not. B repeats 'revised' without answering whether they were sent. C is a sound-alike distractor ('circulated' / 'circulation')."
+        }
+      ]
+    },
+    {
+      "id": "g-l02",
+      "section": "listening",
+      "part": 2,
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "M",
+          "text": "Who's in charge of renewing the maintenance contract this year?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "L02",
+          "skill": "l-response",
+          "prompt": "Mark your answer.",
+          "options": [
+            "Yes, it was renewed last March.",
+            "Didn't Ms. Okafor's team take that over?",
+            "The contract is about twelve pages long."
+          ],
+          "answer": 1,
+          "explanation": "B answers a 'who' question indirectly by naming a team, in the form of a confirming question. A is a Yes/No answer to a Wh- question. C reuses 'contract' but says nothing about who is responsible."
+        }
+      ]
+    },
+    {
+      "id": "g-l03",
+      "section": "listening",
+      "part": 2,
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Would you rather present the quarterly results yourself, or have Daniel do it?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "L03",
+          "skill": "l-response",
+          "prompt": "Mark your answer.",
+          "options": [
+            "Quarterly results are due on Friday.",
+            "I'm leaving for the airport right after lunch, so you'd better ask Daniel.",
+            "Yes, I'd rather present."
+          ],
+          "answer": 1,
+          "explanation": "B gives a reason the speaker cannot present and so implies the answer: Daniel. A repeats 'quarterly results'. C answers an either/or question with 'Yes'."
+        }
+      ]
+    },
+    {
+      "id": "g-l04",
+      "section": "listening",
+      "part": 2,
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "M",
+          "text": "Why was the shipment of display cases held up at customs?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "L04",
+          "skill": "l-response",
+          "prompt": "Mark your answer.",
+          "options": [
+            "Yes, the cases are in the showroom.",
+            "It's customary to hold them there.",
+            "A few of the forms were missing signatures."
+          ],
+          "answer": 2,
+          "explanation": "C gives a plausible reason. A starts with 'Yes' to a Wh- question. B is a sound-alike distractor ('customs' / 'customary') and misuses 'held'."
+        }
+      ]
+    },
+    {
+      "id": "g-l05",
+      "section": "listening",
+      "part": 2,
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "W",
+          "text": "I thought the training session was supposed to be mandatory."
+        }
+      ],
+      "questions": [
+        {
+          "id": "L05",
+          "skill": "l-response",
+          "prompt": "Mark your answer.",
+          "options": [
+            "The trainer arrives by train.",
+            "Yes, the supposed deadline is Monday.",
+            "It was, until the executive team revised the policy."
+          ],
+          "answer": 2,
+          "explanation": "A statement with 'I thought...' invites a correction. C ('It was, until...') corrects the assumption. A and B recycle sounds or words ('training' / 'train', 'supposed') without responding."
+        }
+      ]
+    },
+    {
+      "id": "g-l06",
+      "section": "listening",
+      "part": 3,
+      "title": "Conversation 1",
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Gregor, did you see the email from Halvorsen Packaging? They're pushing back the delivery of our new cartons to the twentieth."
+        },
+        {
+          "speaker": "M",
+          "text": "That's a week after the product launch. We can't ship pre-orders without packaging."
+        },
+        {
+          "speaker": "W",
+          "text": "I know. Our other supplier, Brightline, could fill the order, but their minimum quantity is double what we normally buy."
+        },
+        {
+          "speaker": "M",
+          "text": "Double is too much storage for our warehouse. How about asking Brightline to split the order into two deliveries, one now and one after the launch?"
+        },
+        {
+          "speaker": "W",
+          "text": "Good idea. I'll call them this afternoon. And could you let the marketing team know the launch date might need to be adjusted if that falls through?"
+        },
+        {
+          "speaker": "M",
+          "text": "Will do. I'll send them a note after lunch."
+        }
+      ],
+      "questions": [
+        {
+          "id": "L06",
+          "skill": "l-conversation",
+          "prompt": "What problem are the speakers discussing?",
+          "options": [
+            "A product launch has been cancelled.",
+            "A supplier will deliver late.",
+            "A warehouse has been flooded.",
+            "A pre-order was priced incorrectly."
+          ],
+          "answer": 1,
+          "explanation": "Halvorsen Packaging is 'pushing back' the delivery of cartons, which means the delivery will be late. The launch is not cancelled; its date might be adjusted only if the backup plan fails."
+        },
+        {
+          "id": "L07",
+          "skill": "l-conversation",
+          "prompt": "What does the man propose?",
+          "options": [
+            "Cancelling the pre-orders",
+            "Doubling the order quantity",
+            "Having the second supplier deliver in two shipments",
+            "Moving the launch to the twentieth"
+          ],
+          "answer": 2,
+          "explanation": "He suggests asking Brightline to 'split the order into two deliveries'. Doubling is the supplier's minimum, which he rejects because of storage space."
+        }
+      ]
+    },
+    {
+      "id": "g-l07",
+      "section": "listening",
+      "part": 3,
+      "title": "Conversation 2",
+      "script": [
+        {
+          "speaker": "M",
+          "text": "Priya, I looked over the vendor comparison. The Lisbon hotel is cheaper, but I noticed the quote doesn't include the conference room rental."
+        },
+        {
+          "speaker": "W",
+          "text": "Right, that's charged per half day. Once you add it, the two venues come within about two hundred euros of each other."
+        },
+        {
+          "speaker": "M",
+          "text": "Then it comes down to location. Most of our attendees will be flying into Madrid, and Lisbon adds a connecting flight for many of them."
+        },
+        {
+          "speaker": "W",
+          "text": "Good point. Let's go with Madrid. I'll tell the hotel we want to hold the block of rooms until Friday, so please send me the final headcount by Thursday."
+        },
+        {
+          "speaker": "M",
+          "text": "I'll have it to you by Wednesday."
+        }
+      ],
+      "questions": [
+        {
+          "id": "L08",
+          "skill": "l-inference",
+          "prompt": "Why does the man say, \"it comes down to location\"?",
+          "options": [
+            "The price difference is too large to ignore.",
+            "The Lisbon hotel is unavailable.",
+            "He is unfamiliar with Lisbon.",
+            "Cost no longer separates the two options."
+          ],
+          "answer": 3,
+          "explanation": "Once the room rental is added, the venues are within about 200 euros, so price is no longer the deciding factor and location is."
+        },
+        {
+          "id": "L09",
+          "skill": "l-conversation",
+          "prompt": "When will the man provide the headcount?",
+          "options": [
+            "On Wednesday",
+            "On Thursday",
+            "On Friday",
+            "Next week"
+          ],
+          "answer": 0,
+          "explanation": "The woman asks for it 'by Thursday', but the man promises it 'by Wednesday'. Friday is the hotel's room-hold deadline."
+        }
+      ]
+    },
+    {
+      "id": "g-l08",
+      "section": "listening",
+      "part": 3,
+      "title": "Conversation 3",
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Mr. Delgado, the auditors will be on site Monday, and the finance system has been sluggish since the update."
+        },
+        {
+          "speaker": "M",
+          "text": "IT told me the patch should be fixed by tonight, but I wouldn't count on it. Can your team export the quarter's transactions to a spreadsheet as a backup?"
+        },
+        {
+          "speaker": "W",
+          "text": "We can, though reconciling them manually would take two people the entire weekend."
+        },
+        {
+          "speaker": "M",
+          "text": "Then let's do it only if the system is still slow at six. Check with IT at that point and call me either way."
+        }
+      ],
+      "questions": [
+        {
+          "id": "L10",
+          "skill": "l-conversation",
+          "prompt": "What is the woman concerned about?",
+          "options": [
+            "A staff shortage",
+            "A budget overrun",
+            "Slow software before an audit",
+            "A missing spreadsheet"
+          ],
+          "answer": 2,
+          "explanation": "She mentions the upcoming audit on Monday and that the finance system has been sluggish."
+        },
+        {
+          "id": "L11",
+          "skill": "l-inference",
+          "prompt": "What will the woman most likely do at six o'clock?",
+          "options": [
+            "Export the data",
+            "Install the patch",
+            "Begin reconciling transactions",
+            "Contact IT and call the man"
+          ],
+          "answer": 3,
+          "explanation": "The man says to check with IT at six and call him either way. Exporting happens only if the system is still slow, and reconciling is a later, manual step."
+        }
+      ]
+    },
+    {
+      "id": "g-l09",
+      "section": "listening",
+      "part": 4,
+      "title": "Announcement",
+      "script": [
+        {
+          "speaker": "M",
+          "text": "Good morning, everyone. Before we start the shift, a quick update on the new safety procedures. Starting Monday, all visitors to the assembly floor must wear a badge in addition to protective eyewear. The badges will be issued at the front desk, not by individual supervisors as before. Also, because of the construction on Dock Road, delivery trucks will use the north gate between seven and nine a.m. If you normally park near the north gate, please use Lot C instead. Finally, the quarterly safety drill, originally planned for Tuesday, has been moved to Thursday afternoon so that it doesn't conflict with the inventory count. Questions can go to Ms. Tanaka in Facilities."
+        }
+      ],
+      "questions": [
+        {
+          "id": "L12",
+          "skill": "l-talk",
+          "prompt": "What is changing about the visitor badges?",
+          "options": [
+            "Their color",
+            "Who issues them",
+            "How long they are valid",
+            "Where they are returned"
+          ],
+          "answer": 1,
+          "explanation": "Badges will be issued at the front desk 'not by individual supervisors as before', so the issuer changes."
+        },
+        {
+          "id": "L13",
+          "skill": "l-talk",
+          "prompt": "Why are some employees asked to use Lot C?",
+          "options": [
+            "Delivery trucks will be using the north gate.",
+            "It is closer to the assembly floor.",
+            "A safety drill will be held nearby.",
+            "Visitors will park near the north gate."
+          ],
+          "answer": 0,
+          "explanation": "Trucks will use the north gate between seven and nine a.m. because of construction, so people who normally park there should use Lot C."
+        },
+        {
+          "id": "L14",
+          "skill": "l-talk",
+          "prompt": "What does the speaker say about the safety drill?",
+          "options": [
+            "It has been cancelled.",
+            "It will still take place on Tuesday.",
+            "It was rescheduled to avoid a conflict.",
+            "It will be longer than last time."
+          ],
+          "answer": 2,
+          "explanation": "It moved from Tuesday to Thursday afternoon so it would not conflict with the inventory count."
+        }
+      ]
+    },
+    {
+      "id": "g-r01",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "R01",
+          "skill": "r-grammar",
+          "prompt": "The warranty covers repairs ------ the product is used in accordance with the instruction manual.",
+          "options": [
+            "in case of",
+            "as long as",
+            "even though",
+            "so that"
+          ],
+          "answer": 1,
+          "explanation": "A conjunction expressing a condition is needed before a full clause. 'As long as' = on the condition that. 'In case of' needs a noun phrase; 'even though' is concessive; 'so that' expresses purpose."
+        }
+      ]
+    },
+    {
+      "id": "g-r02",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "R02",
+          "skill": "r-grammar",
+          "prompt": "Ms. Reyes, ------ proposal was approved last week, will lead the pilot program.",
+          "options": [
+            "who",
+            "whom",
+            "which",
+            "whose"
+          ],
+          "answer": 3,
+          "explanation": "A possessive relative pronoun is needed to link 'Ms. Reyes' and 'proposal': 'whose proposal'."
+        }
+      ]
+    },
+    {
+      "id": "g-r03",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "R03",
+          "skill": "r-vocabulary",
+          "prompt": "The auditor's report highlighted several ------ in the company's inventory tracking procedures.",
+          "options": [
+            "dispositions",
+            "dissents",
+            "discrepancies",
+            "dilemmas"
+          ],
+          "answer": 2,
+          "explanation": "'Discrepancies' = inconsistencies between records and reality, the usual collocation with auditing and inventory."
+        }
+      ]
+    },
+    {
+      "id": "g-r04",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "R04",
+          "skill": "r-grammar",
+          "prompt": "Neither the project manager nor the engineers ------ been informed of the revised deadline.",
+          "options": [
+            "has",
+            "is",
+            "have",
+            "were"
+          ],
+          "answer": 2,
+          "explanation": "With 'neither ... nor', the verb agrees with the nearer subject, 'engineers' (plural). 'Have been informed' also needs the perfect auxiliary, not 'were' or 'is'."
+        }
+      ]
+    },
+    {
+      "id": "g-r05",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "R05",
+          "skill": "r-grammar",
+          "prompt": "Sales of the new product line were ------ higher than projected, prompting the company to double its production.",
+          "options": [
+            "considerable",
+            "considerably",
+            "considerate",
+            "considering"
+          ],
+          "answer": 1,
+          "explanation": "An adverb is needed to modify the comparative adjective 'higher'."
+        }
+      ]
+    },
+    {
+      "id": "g-r06",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "R06",
+          "skill": "r-vocabulary",
+          "prompt": "The two departments will ------ their budgets to avoid duplicate software purchases.",
+          "options": [
+            "confiscate",
+            "consult",
+            "contradict",
+            "consolidate"
+          ],
+          "answer": 3,
+          "explanation": "'Consolidate' = combine into one, which is how duplicate purchases are avoided. The other verbs do not fit the object 'budgets'."
+        }
+      ]
+    },
+    {
+      "id": "g-r07",
+      "section": "reading",
+      "part": 7,
+      "title": "Email",
+      "passage": {
+        "docs": [
+          {
+            "label": "Email",
+            "text": "From: Helena Brandt, Procurement Manager\nTo: All Department Heads\nSubject: Revised approval limits for purchase requests\nDate: March 3\n\nDear colleagues,\n\nEffective April 1, purchase requests exceeding $2,500 will require the signature of a second approver in addition to the department head. This change follows an internal review that found several orders had been placed without comparing at least two quotes. Requests under the threshold will continue to follow the current one-step process, and recurring subscriptions are exempt provided they were approved before April 1.\n\nTo avoid delays, please submit larger requests at least five business days before the needed delivery date. A summary table and the new form are attached. If your team has pending orders that will cross the threshold, contact me before March 20 so that we can arrange an exception where appropriate.\n\nRegards,\nHelena Brandt"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "R07",
+          "skill": "r-purpose",
+          "prompt": "What is the main purpose of the email?",
+          "options": [
+            "To announce a change to an approval process",
+            "To request price quotes from vendors",
+            "To cancel recurring subscriptions",
+            "To introduce a new procurement manager"
+          ],
+          "answer": 0,
+          "explanation": "The email announces that, from April 1, larger purchase requests need a second approver."
+        },
+        {
+          "id": "R08",
+          "skill": "r-detail",
+          "prompt": "Who is asked to contact Ms. Brandt before March 20?",
+          "options": [
+            "Anyone buying items under $2,500",
+            "Employees whose subscriptions have expired",
+            "Vendors who want approval to supply goods",
+            "Department heads with pending orders that will exceed the threshold"
+          ],
+          "answer": 3,
+          "explanation": "Teams with pending orders that will cross the $2,500 threshold are asked to contact her so an exception can be arranged."
+        }
+      ]
+    },
+    {
+      "id": "g-r09",
+      "section": "reading",
+      "part": 7,
+      "title": "Notice",
+      "passage": {
+        "docs": [
+          {
+            "label": "Notice",
+            "text": "NOTICE TO TENANTS — Riverside Commerce Center\n\nThe building's central elevator bank (Elevators 1–4) will be closed for modernization from Monday, June 9 through Friday, June 20. During that period, tenants on floors 6 and above may use the service elevator at the rear of the building between 7:00 a.m. and 7:00 p.m. only; outside those hours, access to upper floors will be via the east stairwell. Deliveries over 50 pounds must be scheduled with the property office at least 48 hours in advance.\n\nTenants who anticipate hosting clients should inform visitors that the lobby entrance will remain open but that waiting times for the service elevator may be longer than usual during the lunch hour. We apologize for any inconvenience and appreciate your patience."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "R09",
+          "skill": "r-detail",
+          "prompt": "How can a tenant on the eighth floor reach the office at 8:00 p.m. during the closure?",
+          "options": [
+            "By using the central elevators",
+            "By using the service elevator",
+            "By taking the east stairwell",
+            "By scheduling a delivery"
+          ],
+          "answer": 2,
+          "explanation": "The service elevator runs only until 7:00 p.m.; after that, upper floors are reached via the east stairwell."
+        },
+        {
+          "id": "R10",
+          "skill": "r-inference",
+          "prompt": "What is suggested about the service elevator?",
+          "options": [
+            "It may be crowded around midday.",
+            "It is reserved for deliveries.",
+            "It serves only floors above the tenth.",
+            "It operates around the clock."
+          ],
+          "answer": 0,
+          "explanation": "The notice warns that waiting times may be longer than usual during the lunch hour, implying heavier use at midday."
+        }
+      ]
+    },
+    {
+      "id": "g-r11",
+      "section": "reading",
+      "part": 7,
+      "title": "Contract",
+      "passage": {
+        "docs": [
+          {
+            "label": "Services Agreement (excerpt)",
+            "text": "7. Termination\n\n7.1 Either party may terminate this Agreement for convenience upon sixty (60) days' written notice to the other party.\n\n7.2 Either party may terminate this Agreement immediately upon written notice if the other party materially breaches any provision and fails to cure such breach within thirty (30) days after receiving written notice specifying the breach.\n\n7.3 Upon termination, Supplier shall refund any prepaid fees attributable to services not yet performed, and Client shall pay for all services performed through the effective date of termination.\n\n7.4 Sections 5 (Confidentiality) and 9 (Limitation of Liability) shall survive termination."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "R11",
+          "skill": "r-contract",
+          "prompt": "According to the clause, what must happen before a party can end the agreement because of a breach?",
+          "options": [
+            "The other party must be given written notice and thirty days to fix the problem.",
+            "The terminating party must give sixty days' written notice.",
+            "The Supplier must refund all prepaid fees.",
+            "Both parties must agree in writing to the termination."
+          ],
+          "answer": 0,
+          "explanation": "Under 7.2, termination for breach is available only if the breaching party fails to cure within 30 days after written notice. The 60-day notice in 7.1 applies to termination for convenience."
+        },
+        {
+          "id": "R12",
+          "skill": "r-contract",
+          "prompt": "What is indicated about confidentiality obligations?",
+          "options": [
+            "They end when the agreement is terminated.",
+            "They apply only to the Supplier.",
+            "They continue after termination.",
+            "They are replaced by the Limitation of Liability."
+          ],
+          "answer": 2,
+          "explanation": "Section 7.4 says Sections 5 and 9 'survive termination', so confidentiality continues after the agreement ends."
+        }
+      ]
+    },
+    {
+      "id": "g-r13",
+      "section": "reading",
+      "part": 7,
+      "title": "Text-message chain",
+      "passage": {
+        "docs": [
+          {
+            "label": "Text-message chain",
+            "text": "Marcus Lee [2:14 P.M.]\nDid the Osaka client confirm the Thursday call?\n\nDana Whitfield [2:16 P.M.]\nNot yet. Their assistant said Mr. Ito is traveling and may only be reachable after his flight lands.\n\nMarcus Lee [2:17 P.M.]\nThen we may be presenting without the final pricing sheet. Legal still hasn't signed off on the discount tiers.\n\nDana Whitfield [2:19 P.M.]\nI wouldn't hold off. Legal usually clears things the same day they see them.\n\nMarcus Lee [2:20 P.M.]\nFair enough. I'll send them the draft now and flag it as urgent.\n\nDana Whitfield [2:21 P.M.]\nDo that. And I'll ask the assistant to propose a backup slot Friday morning."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "R13",
+          "skill": "r-intent",
+          "prompt": "At 2:19 P.M., what does Ms. Whitfield most likely mean when she writes, \"I wouldn't hold off\"?",
+          "options": [
+            "She does not want to host the call on Thursday.",
+            "She thinks the discount tiers should be changed.",
+            "She believes preparation should continue without waiting.",
+            "She plans to wait for the client's flight to land."
+          ],
+          "answer": 2,
+          "explanation": "Mr. Lee worries about presenting without the pricing sheet. She replies that Legal usually clears items quickly, so there is no need to delay (hold off) preparing."
+        },
+        {
+          "id": "R14",
+          "skill": "r-detail",
+          "prompt": "What will Mr. Lee most likely do next?",
+          "options": [
+            "Send a draft to Legal",
+            "Contact the Osaka client",
+            "Reschedule the call for Friday",
+            "Revise the discount tiers"
+          ],
+          "answer": 0,
+          "explanation": "He says, 'I'll send them the draft now and flag it as urgent.' 'Them' refers to Legal. Ms. Whitfield, not Mr. Lee, will ask about a Friday slot."
+        }
+      ]
+    },
+    {
+      "id": "g-r15",
+      "section": "reading",
+      "part": 7,
+      "title": "Two documents",
+      "passage": {
+        "docs": [
+          {
+            "label": "Web page",
+            "text": "Harbor Logistics Summit — Registration\n\nStandard registration: $450.\nEarly-bird rate: $360 for registrations completed before September 15.\nGroup discount: organizations registering four or more attendees from the same company receive 10 percent off each registration; this discount cannot be combined with the early-bird rate.\nCancellations: full refund until October 1; after that, a registration may be transferred to a colleague but not refunded.\nThe Workshop Pass (an additional $90) must be purchased at the time of registration."
+          },
+          {
+            "label": "Email",
+            "text": "To: events@harborsummit.example\nFrom: Sofia Marin, Northgate Freight\nDate: September 20\n\nHello,\n\nI'd like to register five colleagues and myself for the summit. I understand the early-bird deadline has passed, but I was wondering if you could still honor it, since our manager approved the budget on September 12 and the delay was due to our finance team. Also, two of my colleagues would like to attend the workshops. Please let me know the total cost.\n\nRegards,\nSofia Marin"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "R15",
+          "skill": "r-crossref",
+          "prompt": "What is the lowest per-person registration rate Ms. Marin's group qualifies for under the published terms?",
+          "options": [
+            "$360",
+            "$405",
+            "$450",
+            "$495"
+          ],
+          "answer": 1,
+          "explanation": "The early-bird rate expired on September 15. A group of six qualifies for 10 percent off the standard $450, which is $405."
+        },
+        {
+          "id": "R16",
+          "skill": "r-crossref",
+          "prompt": "What can be inferred about Ms. Marin's request?",
+          "options": [
+            "She wants a refund for the registrations.",
+            "She misunderstood the group discount.",
+            "She plans to transfer a registration to a colleague.",
+            "She is asking for a rate whose deadline has passed."
+          ],
+          "answer": 3,
+          "explanation": "She writes on September 20 and asks the organizers to honor the early-bird rate, whose deadline was September 15. She does not mention a refund or a transfer."
+        }
+      ]
+    },
+    {
+      "id": "g-new-l0",
+      "section": "listening",
+      "part": 2,
+      "title": "Indirect responses",
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Should we reserve the larger room, even though only twelve people have confirmed?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "L15",
+          "skill": "l-response",
+          "prompt": "Mark your answer.",
+          "options": [
+            "The reservation was canceled yesterday.",
+            "Let’s wait until the registration deadline tomorrow.",
+            "It is on the larger shelf."
+          ],
+          "answer": 1,
+          "explanation": "The reply proposes delaying the room decision until attendance is clearer. The other choices do not address which room to book."
+        }
+      ],
+      "spokenOptions": true
+    },
+    {
+      "id": "g-new-l1",
+      "section": "listening",
+      "part": 2,
+      "title": "Indirect responses",
+      "script": [
+        {
+          "speaker": "M",
+          "text": "Hasn’t the replacement scanner arrived yet?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "L16",
+          "skill": "l-response",
+          "prompt": "Mark your answer.",
+          "options": [
+            "No, I scanned it twice.",
+            "The receptionist starts at nine.",
+            "It was delivered, but it is still being configured."
+          ],
+          "answer": 2,
+          "explanation": "The equipment has arrived but is not ready for use. A repeats the action of scanning rather than answering the delivery question."
+        }
+      ],
+      "spokenOptions": true
+    },
+    {
+      "id": "g-new-l2",
+      "section": "listening",
+      "part": 2,
+      "title": "Indirect responses",
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Who can approve this expense while Elena is away?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "L17",
+          "skill": "l-response",
+          "prompt": "Mark your answer.",
+          "options": [
+            "Her deputy has signing authority.",
+            "The trip was quite expensive.",
+            "She approved the itinerary last month."
+          ],
+          "answer": 0,
+          "explanation": "The deputy is authorized to approve expenses. The past approval of an itinerary does not identify the substitute approver."
+        }
+      ],
+      "spokenOptions": true
+    },
+    {
+      "id": "g-new-l3",
+      "section": "listening",
+      "part": 2,
+      "title": "Indirect responses",
+      "script": [
+        {
+          "speaker": "M",
+          "text": "Would you mind checking the figures before I send the proposal?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "L18",
+          "skill": "l-response",
+          "prompt": "Mark your answer.",
+          "options": [
+            "The proposal arrived by courier.",
+            "Of course not; give me ten minutes.",
+            "I sent them last Tuesday."
+          ],
+          "answer": 1,
+          "explanation": "Of course not accepts a request phrased with Would you mind. The speaker asks for time to check the figures."
+        }
+      ],
+      "spokenOptions": true
+    },
+    {
+      "id": "g-new-l4",
+      "section": "listening",
+      "part": 2,
+      "title": "Indirect responses",
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Why don’t we use last year’s photographs in the brochure?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "L19",
+          "skill": "l-response",
+          "prompt": "Mark your answer.",
+          "options": [
+            "The photographer works upstairs.",
+            "I used to read that brochure.",
+            "They show the old packaging."
+          ],
+          "answer": 2,
+          "explanation": "The reply explains why reusing the photographs would be unsuitable: the product packaging has changed."
+        }
+      ],
+      "spokenOptions": true
+    },
+    {
+      "id": "g-new-l5",
+      "section": "listening",
+      "part": 2,
+      "title": "Indirect responses",
+      "script": [
+        {
+          "speaker": "M",
+          "text": "The maintenance team can come either this afternoon or Friday morning."
+        }
+      ],
+      "questions": [
+        {
+          "id": "L20",
+          "skill": "l-response",
+          "prompt": "Mark your answer.",
+          "options": [
+            "Friday works, provided they finish before our noon inspection.",
+            "Yes, the team maintained it.",
+            "The inspection report is in the folder."
+          ],
+          "answer": 0,
+          "explanation": "The response selects Friday and adds a condition. The other statements do not choose an appointment."
+        }
+      ],
+      "spokenOptions": true
+    },
+    {
+      "id": "g-new-conv1",
+      "section": "listening",
+      "part": 3,
+      "title": "A delivery workaround",
+      "script": [
+        {
+          "speaker": "W",
+          "text": "The new display panels won’t reach the shop until Wednesday. The preview is Tuesday evening."
+        },
+        {
+          "speaker": "M",
+          "text": "Could we move the preview?"
+        },
+        {
+          "speaker": "W",
+          "text": "Invitations have already gone out. But the supplier has two demonstration panels we could borrow. They would need collecting by four on Tuesday."
+        },
+        {
+          "speaker": "M",
+          "text": "I’m meeting a client until three thirty. I’ll ask Noor to collect them and I’ll handle the setup when I get back."
+        }
+      ],
+      "questions": [
+        {
+          "id": "L21",
+          "skill": "l-conversation",
+          "prompt": "What has caused a problem?",
+          "options": [
+            "A client canceled a meeting.",
+            "Invitations were not sent.",
+            "A store will close early.",
+            "Some display panels will arrive too late."
+          ],
+          "answer": 3,
+          "explanation": "The panels arrive Wednesday, after the Tuesday preview. Invitations have already been sent, which makes rescheduling difficult."
+        },
+        {
+          "id": "L22",
+          "skill": "l-inference",
+          "prompt": "Why does the woman mention the invitations?",
+          "options": [
+            "To request more copies",
+            "To explain why changing the event is inconvenient",
+            "To identify a printing error",
+            "To ask who was invited"
+          ],
+          "answer": 1,
+          "explanation": "Her response rejects the proposed date change by pointing out that guests have already been notified."
+        },
+        {
+          "id": "L23",
+          "skill": "l-inference",
+          "prompt": "What will the man do next?",
+          "options": [
+            "Contact Noor about collecting the panels",
+            "Collect the panels himself immediately",
+            "Cancel the supplier’s order",
+            "Move the preview to Wednesday"
+          ],
+          "answer": 0,
+          "explanation": "He says he will ask Noor to collect the demonstration panels. He will set them up later, after his client meeting."
+        }
+      ]
+    },
+    {
+      "id": "g-new-conv2",
+      "section": "listening",
+      "part": 3,
+      "title": "An updated estimate",
+      "script": [
+        {
+          "speaker": "M",
+          "text": "I thought the quote for the office move included packing."
+        },
+        {
+          "speaker": "W",
+          "text": "It covers crates and transport. Packing by the movers costs an extra six hundred dollars."
+        },
+        {
+          "speaker": "M",
+          "text": "Our team could pack the files, but not the monitors. Could they quote for the monitors only?"
+        },
+        {
+          "speaker": "W",
+          "text": "I’ll ask. We need a revised written estimate before Finance meets on Thursday."
+        },
+        {
+          "speaker": "M",
+          "text": "Please request it for Wednesday noon so I have time to check it."
+        }
+      ],
+      "questions": [
+        {
+          "id": "L24",
+          "skill": "l-conversation",
+          "prompt": "What is included in the current quote?",
+          "options": [
+            "Packing all office equipment",
+            "Replacing damaged monitors",
+            "Crates and transportation",
+            "Storage for one month"
+          ],
+          "answer": 2,
+          "explanation": "The woman explicitly states that crates and transport are included. Packing is an additional service."
+        },
+        {
+          "id": "L25",
+          "skill": "l-inference",
+          "prompt": "What does the man want the movers to pack?",
+          "options": [
+            "All office files",
+            "The monitors only",
+            "The crates only",
+            "Nothing at all"
+          ],
+          "answer": 1,
+          "explanation": "The staff can pack files, but not monitors. He requests a separate quote for packing only the monitors."
+        },
+        {
+          "id": "L26",
+          "skill": "l-conversation",
+          "prompt": "When does the man want the revised estimate?",
+          "options": [
+            "Thursday afternoon",
+            "Wednesday evening",
+            "Thursday morning",
+            "By noon on Wednesday"
+          ],
+          "answer": 3,
+          "explanation": "Finance meets Thursday, but the requested deadline is Wednesday noon to allow a review beforehand."
+        }
+      ]
+    },
+    {
+      "id": "g-new-talk",
+      "section": "listening",
+      "part": 4,
+      "title": "Museum membership update",
+      "script": [
+        {
+          "speaker": "N",
+          "text": "This message is for members of Harbor Museum. From June first, the west entrance will close for repairs. Please use the garden entrance, which is accessible from Pine Street. Members may still enter thirty minutes before public opening, except on Mondays, when staff training takes place. If you booked a June workshop before May twentieth, your confirmation may show the old entrance. Your booking remains valid; no new ticket is required."
+        }
+      ],
+      "questions": [
+        {
+          "id": "L27",
+          "skill": "l-talk",
+          "prompt": "What is the main purpose of the message?",
+          "options": [
+            "To announce a new exhibition",
+            "To explain a temporary entrance change",
+            "To recruit museum employees",
+            "To cancel all June workshops"
+          ],
+          "answer": 1,
+          "explanation": "The announcement explains where visitors should enter during repairs. Existing workshop bookings remain valid."
+        },
+        {
+          "id": "L28",
+          "skill": "l-talk",
+          "prompt": "When is early admission unavailable?",
+          "options": [
+            "Every Monday",
+            "Only on June first",
+            "On weekends",
+            "After May twentieth"
+          ],
+          "answer": 0,
+          "explanation": "The early-entry benefit continues except on Mondays because staff training takes place then."
+        },
+        {
+          "id": "L29",
+          "skill": "l-inference",
+          "prompt": "What should someone with an older workshop confirmation do?",
+          "options": [
+            "Buy a replacement ticket",
+            "Call to cancel the booking",
+            "Use the garden entrance with the existing booking",
+            "Wait until the repairs are finished"
+          ],
+          "answer": 2,
+          "explanation": "The entrance information may be outdated, but the booking remains valid and no replacement ticket is needed."
+        }
+      ]
+    },
+    {
+      "id": "g-new-r0",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "R17",
+          "skill": "r-grammar",
+          "prompt": "Not until the final inspection is complete _____ the equipment be put into service.",
+          "options": [
+            "will",
+            "has",
+            "does",
+            "being"
+          ],
+          "answer": 0,
+          "explanation": "An initial negative expression such as Not until requires auxiliary–subject inversion: will the equipment be put into service."
+        }
+      ]
+    },
+    {
+      "id": "g-new-r1",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "R18",
+          "skill": "r-vocabulary",
+          "prompt": "The hotel agreed to _____ the cancellation fee because the flight had been grounded.",
+          "options": [
+            "raise",
+            "waive",
+            "retain",
+            "collect"
+          ],
+          "answer": 1,
+          "explanation": "To waive a fee means to decide not to charge it. A canceled flight provides the reason for this exception."
+        }
+      ]
+    },
+    {
+      "id": "g-new-r2",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "R19",
+          "skill": "r-grammar",
+          "prompt": "Applications received after Friday will be considered only if positions remain _____.",
+          "options": [
+            "availability",
+            "availably",
+            "available",
+            "avail"
+          ],
+          "answer": 2,
+          "explanation": "Remain is a linking verb here and takes the adjective available, describing the positions."
+        }
+      ]
+    },
+    {
+      "id": "g-new-r3",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "R20",
+          "skill": "r-vocabulary",
+          "prompt": "The two departments must _____ their schedules before announcing a launch date.",
+          "options": [
+            "attribute",
+            "comply",
+            "retain",
+            "coordinate"
+          ],
+          "answer": 3,
+          "explanation": "Coordinate schedules means to organize them so that the activities work together. Comply requires with and does not take schedules directly."
+        }
+      ]
+    },
+    {
+      "id": "g-new-r4",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "R21",
+          "skill": "r-grammar",
+          "prompt": "The supplier, _____ proposal included on-site training, was selected unanimously.",
+          "options": [
+            "whose",
+            "which",
+            "whom",
+            "who"
+          ],
+          "answer": 0,
+          "explanation": "Whose expresses possession: the supplier’s proposal included training. The other relative pronouns cannot directly modify proposal here."
+        }
+      ]
+    },
+    {
+      "id": "g-new-r5",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "R22",
+          "skill": "r-grammar",
+          "prompt": "_____ the initial cost is higher, the new system should reduce maintenance expenses.",
+          "options": [
+            "Despite",
+            "Although",
+            "Unless",
+            "Because of"
+          ],
+          "answer": 1,
+          "explanation": "Although introduces a full concessive clause. Despite and Because of require a noun phrase; Unless would change the intended contrast."
+        }
+      ]
+    },
+    {
+      "id": "g-new-r6",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "R23",
+          "skill": "r-vocabulary",
+          "prompt": "The consultant’s report offers a _____ assessment of both the benefits and the risks.",
+          "options": [
+            "temporary",
+            "reluctant",
+            "balanced",
+            "vacant"
+          ],
+          "answer": 2,
+          "explanation": "A balanced assessment gives fair consideration to competing factors, here both benefits and risks."
+        }
+      ]
+    },
+    {
+      "id": "g-new-r7",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "R24",
+          "skill": "r-grammar",
+          "prompt": "The director requested that each invoice _____ checked against the purchase order.",
+          "options": [
+            "is",
+            "was",
+            "being",
+            "be"
+          ],
+          "answer": 3,
+          "explanation": "A request clause can use the mandative subjunctive: requested that each invoice be checked. Be remains in the base form regardless of the singular subject."
+        }
+      ]
+    },
+    {
+      "id": "g-new-text",
+      "section": "reading",
+      "part": 6,
+      "title": "A revised collection procedure",
+      "passage": {
+        "docs": [
+          {
+            "label": "Email",
+            "text": "To: Branch managers\nSubject: Equipment collection\n\nStarting July 8, used laptops must be sent to our central office rather than directly to the recycler. This change will allow our technicians to [1] that all business data has been removed.\n\nPlease attach a completed inventory form to each shipment. Packages [2] a form will be held until the sender supplies one. [3]\n\nThe new procedure applies to laptops only. Other equipment should [4] be sent directly to the approved recycler. Thank you for helping us keep accurate disposal records."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "R25",
+          "skill": "r-vocabulary",
+          "prompt": "Select the best word for [1].",
+          "options": [
+            "assume",
+            "suggest",
+            "verify",
+            "predict"
+          ],
+          "answer": 2,
+          "explanation": "Verify means confirm through checking. The technicians need to confirm data removal rather than assume or predict it."
+        },
+        {
+          "id": "R26",
+          "skill": "r-grammar",
+          "prompt": "Select the best word for [2].",
+          "options": [
+            "except",
+            "without",
+            "unless",
+            "despite"
+          ],
+          "answer": 1,
+          "explanation": "Without a form describes a package lacking the required document. Unless would need a clause."
+        },
+        {
+          "id": "R27",
+          "skill": "r-purpose",
+          "prompt": "Select the best sentence for [3].",
+          "options": [
+            "The recycler now offers lower prices.",
+            "New computers will arrive next month.",
+            "Employees may work remotely on Fridays.",
+            "A blank copy of the form is attached for your convenience."
+          ],
+          "answer": 3,
+          "explanation": "The paragraph explains the mandatory inventory form. A sentence pointing to an attached blank form directly supports that instruction."
+        },
+        {
+          "id": "R28",
+          "skill": "r-detail",
+          "prompt": "Select the best word for [4].",
+          "options": [
+            "still",
+            "never",
+            "instead",
+            "already"
+          ],
+          "answer": 0,
+          "explanation": "Still signals continuation: only the laptop procedure changes, while the existing route for other equipment remains in effect."
+        }
+      ]
+    },
+    {
+      "id": "g-new-multi",
+      "section": "reading",
+      "part": 7,
+      "title": "Workshop registration — three documents",
+      "passage": {
+        "docs": [
+          {
+            "label": "Workshop listing",
+            "text": "Northbridge Training: Negotiation Workshop\nOctober 16, 9:00–16:00. Registration: $240 per person, including lunch. Groups of at least four receive 15% off registration when booked together. Optional printed workbook: $20 per person; no discount applies to workbooks. Payment is due October 9. The workshop will be held at the Central Library unless more than 24 people register, in which case registered participants will receive an email with a new venue."
+          },
+          {
+            "label": "Email — October 7",
+            "text": "To: Northbridge Training\nFrom: Maya Chen, Alder Design\nPlease register four members of our team for October 16. All four would like printed workbooks. Please issue a single invoice. We will pay it tomorrow. Our colleague Ben may join later, but please do not include him yet."
+          },
+          {
+            "label": "Organizer update — October 12",
+            "text": "Dear participants,\nWe have now confirmed 28 registrations. Your workshop will take place in Room 3 at the Riverside Business Center, not at the Central Library. The starting time and lunch arrangements are unchanged. Please bring your confirmation email. Printed workbooks ordered in advance will be available at the reception desk."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "R29",
+          "skill": "r-crossref",
+          "prompt": "How much should Alder Design’s initial invoice total?",
+          "options": [
+            "$816",
+            "$884",
+            "$896",
+            "$1,040"
+          ],
+          "answer": 2,
+          "explanation": "Four registrations cost 4 × $240 × 0.85 = $816. Four undiscounted workbooks add $80, for a total of $896. Ben is not included."
+        },
+        {
+          "id": "R30",
+          "skill": "r-crossref",
+          "prompt": "Why was the workshop moved?",
+          "options": [
+            "The number of participants exceeded the venue threshold.",
+            "The library could not provide lunch.",
+            "Alder Design requested a larger room.",
+            "More workbooks were ordered than expected."
+          ],
+          "answer": 0,
+          "explanation": "The listing requires a venue change above 24 registrations. The update confirms 28, so that condition has been met."
+        },
+        {
+          "id": "R31",
+          "skill": "r-detail",
+          "prompt": "What can participants collect at reception?",
+          "options": [
+            "A replacement invoice",
+            "A parking permit",
+            "A lunch voucher",
+            "A workbook ordered in advance"
+          ],
+          "answer": 3,
+          "explanation": "The update says preordered printed workbooks will be available at reception. It does not mention any of the other items."
+        }
+      ]
+    },
+    {
+      "id": "s03-l1",
+      "section": "listening",
+      "part": 2,
+      "title": "Indirect responses",
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Didn’t the client ask for a digital copy as well?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "L30",
+          "skill": "l-response",
+          "prompt": "Mark your answer.",
+          "options": [
+            "I’ve attached one to my reply.",
+            "The copier is beside the door.",
+            "Yes, the client was very polite."
+          ],
+          "answer": 0,
+          "explanation": "The reply confirms the requested digital copy has been attached. The copier is a distraction based on copy; politeness does not answer the request."
+        }
+      ],
+      "spokenOptions": true
+    },
+    {
+      "id": "s03-l2",
+      "section": "listening",
+      "part": 2,
+      "title": "Indirect responses",
+      "script": [
+        {
+          "speaker": "M",
+          "text": "How soon can we get the revised drawings?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "L31",
+          "skill": "l-response",
+          "prompt": "Mark your answer.",
+          "options": [
+            "In the design department.",
+            "They were revised twice.",
+            "Not before the architect returns tomorrow."
+          ],
+          "answer": 2,
+          "explanation": "The reply gives the earliest possible time indirectly. A location and a revision count do not answer How soon."
+        }
+      ],
+      "spokenOptions": true
+    },
+    {
+      "id": "s03-l3",
+      "section": "listening",
+      "part": 2,
+      "title": "Indirect responses",
+      "script": [
+        {
+          "speaker": "W",
+          "text": "I’m not sure we have enough chairs for everyone."
+        }
+      ],
+      "questions": [
+        {
+          "id": "L32",
+          "skill": "l-response",
+          "prompt": "Mark your answer.",
+          "options": [
+            "The chairman will speak first.",
+            "I can borrow a few from the room next door.",
+            "Everyone has submitted a report."
+          ],
+          "answer": 1,
+          "explanation": "The offer to borrow chairs responds to the shortage. The other choices repeat sounds or words without solving the problem."
+        }
+      ],
+      "spokenOptions": true
+    },
+    {
+      "id": "s03-l4",
+      "section": "listening",
+      "part": 2,
+      "title": "Indirect responses",
+      "script": [
+        {
+          "speaker": "M",
+          "text": "Would the morning delivery slot suit you?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "L33",
+          "skill": "l-response",
+          "prompt": "Mark your answer.",
+          "options": [
+            "The suit is being cleaned.",
+            "It was delivered yesterday.",
+            "Only if the driver can arrive after ten."
+          ],
+          "answer": 2,
+          "explanation": "The response conditionally accepts the suggested slot. Suit here means be convenient, not an item of clothing."
+        }
+      ],
+      "spokenOptions": true
+    },
+    {
+      "id": "s03-l5",
+      "section": "listening",
+      "part": 2,
+      "title": "Indirect responses",
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Who should receive the signed agreement?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "L34",
+          "skill": "l-response",
+          "prompt": "Mark your answer.",
+          "options": [
+            "The legal team asked for the original.",
+            "The signature is at the bottom.",
+            "We reached an agreement last week."
+          ],
+          "answer": 0,
+          "explanation": "The legal team is identified as the intended recipient. Neither the location of a signature nor the agreement date answers Who."
+        }
+      ],
+      "spokenOptions": true
+    },
+    {
+      "id": "s03-conversation1",
+      "section": "listening",
+      "part": 3,
+      "title": "A room booking",
+      "script": [
+        {
+          "speaker": "W",
+          "text": "The client demonstration needs a wired connection. Room B is free at two, but it only has wireless internet."
+        },
+        {
+          "speaker": "M",
+          "text": "Room D has a cable connection. It is reserved until two thirty, though."
+        },
+        {
+          "speaker": "W",
+          "text": "The client can start at three. Could you change our reservation and ask Facilities to test the cable first?"
+        },
+        {
+          "speaker": "M",
+          "text": "Yes. I’ll book Room D for three and contact Facilities now."
+        }
+      ],
+      "questions": [
+        {
+          "id": "L35",
+          "skill": "l-conversation",
+          "prompt": "Why is Room B unsuitable?",
+          "options": [
+            "It is too small.",
+            "It lacks the required wired connection.",
+            "It is occupied all afternoon.",
+            "It has no projector."
+          ],
+          "answer": 1,
+          "explanation": "The demonstration specifically requires a wired connection. Room B has wireless internet only; no problem with size or projection is stated."
+        },
+        {
+          "id": "L36",
+          "skill": "l-conversation",
+          "prompt": "When will the demonstration begin?",
+          "options": [
+            "At two",
+            "At two thirty",
+            "At three",
+            "At three thirty"
+          ],
+          "answer": 2,
+          "explanation": "Two is the original room availability and two thirty is when Room D becomes free. The agreed demonstration time is three."
+        },
+        {
+          "id": "L37",
+          "skill": "l-inference",
+          "prompt": "What will the man ask Facilities to do?",
+          "options": [
+            "Move the client meeting",
+            "Reserve Room B",
+            "Install new wireless equipment",
+            "Check a cable connection"
+          ],
+          "answer": 3,
+          "explanation": "The woman asks for the cable to be tested before the demonstration, and the man agrees to contact Facilities."
+        }
+      ]
+    },
+    {
+      "id": "s03-conversation2",
+      "section": "listening",
+      "part": 3,
+      "title": "A catalog correction",
+      "script": [
+        {
+          "speaker": "M",
+          "text": "We found a price error on page twelve of the catalog. Only the printed version is affected; the website is correct."
+        },
+        {
+          "speaker": "W",
+          "text": "Has the shipment to dealers left?"
+        },
+        {
+          "speaker": "M",
+          "text": "Not yet, but the printer says a full reprint would take a week."
+        },
+        {
+          "speaker": "W",
+          "text": "Then let’s insert a correction sheet into each copy. I’ll send you the wording this morning."
+        },
+        {
+          "speaker": "M",
+          "text": "Good. I’ll ask the warehouse to hold the cartons until the inserts arrive."
+        }
+      ],
+      "questions": [
+        {
+          "id": "L38",
+          "skill": "l-conversation",
+          "prompt": "Where does the error appear?",
+          "options": [
+            "In a printed catalog",
+            "On the website",
+            "On a shipping label",
+            "In a dealer’s invoice"
+          ],
+          "answer": 0,
+          "explanation": "The man says only the printed version is affected. The website already has the correct information."
+        },
+        {
+          "id": "L39",
+          "skill": "l-inference",
+          "prompt": "Why do the speakers choose correction sheets?",
+          "options": [
+            "Dealers asked for a larger catalog.",
+            "The website cannot be updated.",
+            "A full reprint would delay the work.",
+            "The printer has run out of paper."
+          ],
+          "answer": 2,
+          "explanation": "A reprint would take a week. The correction inserts provide an alternative without waiting for all catalogs to be reprinted."
+        },
+        {
+          "id": "L40",
+          "skill": "l-inference",
+          "prompt": "What will the man arrange?",
+          "options": [
+            "An immediate website update",
+            "A temporary hold on the cartons",
+            "A new photography session",
+            "A refund for all dealers"
+          ],
+          "answer": 1,
+          "explanation": "He will ask the warehouse to hold the cartons until the correction inserts arrive; he does not arrange refunds."
+        }
+      ]
+    },
+    {
+      "id": "s03-conversation3",
+      "section": "listening",
+      "part": 3,
+      "title": "A job application",
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Your application mentions coordinating projects overseas. Did that involve managing staff?"
+        },
+        {
+          "speaker": "M",
+          "text": "I coordinated schedules with local partners, but I didn’t supervise their employees. I did manage a budget for each visit."
+        },
+        {
+          "speaker": "W",
+          "text": "That experience is useful. This role does not include direct reports, but there is considerable travel."
+        },
+        {
+          "speaker": "M",
+          "text": "That suits me. Could you tell me whether the trips are usually planned in advance?"
+        },
+        {
+          "speaker": "W",
+          "text": "Usually six weeks ahead, although occasional urgent visits are necessary."
+        }
+      ],
+      "questions": [
+        {
+          "id": "L41",
+          "skill": "l-conversation",
+          "prompt": "What has the man managed?",
+          "options": [
+            "A local partner’s staff",
+            "A recruitment office",
+            "A travel agency",
+            "Budgets for visits"
+          ],
+          "answer": 3,
+          "explanation": "He explicitly distinguishes coordinating partner schedules from supervising staff and states that he managed visit budgets."
+        },
+        {
+          "id": "L42",
+          "skill": "l-inference",
+          "prompt": "What is suggested about the position?",
+          "options": [
+            "It involves supervising a large team.",
+            "It includes frequent travel.",
+            "It is entirely remote.",
+            "It requires relocating permanently."
+          ],
+          "answer": 1,
+          "explanation": "The woman says there is considerable travel and no direct reports. Permanent relocation and remote-only work are not mentioned."
+        },
+        {
+          "id": "L43",
+          "skill": "l-conversation",
+          "prompt": "What does the woman say about travel arrangements?",
+          "options": [
+            "They are often scheduled six weeks ahead.",
+            "All visits are urgent.",
+            "Employees must book six months ahead.",
+            "Trips never change."
+          ],
+          "answer": 0,
+          "explanation": "Most travel is planned six weeks ahead, but the qualification about urgent visits rules out an absolute promise."
+        }
+      ]
+    },
+    {
+      "id": "s03-talk1",
+      "section": "listening",
+      "part": 4,
+      "title": "A shuttle announcement",
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Attention passengers traveling to the Lakeside exhibition. The nine fifteen shuttle is full. An additional shuttle will depart from bay four at nine twenty-five and will go directly to the exhibition hall. It will not stop at the railway station. Passengers needing the station should use the regular nine thirty service from bay two. Your existing shuttle ticket is valid on either service."
+        }
+      ],
+      "questions": [
+        {
+          "id": "L44",
+          "skill": "l-talk",
+          "prompt": "Why is an additional shuttle provided?",
+          "options": [
+            "The station is closed.",
+            "A driver is unavailable.",
+            "The earlier shuttle has reached capacity.",
+            "The exhibition has been canceled."
+          ],
+          "answer": 2,
+          "explanation": "The announcement begins by saying the nine fifteen shuttle is full, which explains the additional departure."
+        },
+        {
+          "id": "L45",
+          "skill": "l-talk",
+          "prompt": "Which service should a passenger for the railway station take?",
+          "options": [
+            "The nine thirty service from bay two",
+            "The nine twenty-five service from bay four",
+            "The nine fifteen service from bay four",
+            "Any service from bay four"
+          ],
+          "answer": 0,
+          "explanation": "The extra shuttle is direct to the exhibition. Station passengers are specifically directed to nine thirty from bay two."
+        },
+        {
+          "id": "L46",
+          "skill": "l-inference",
+          "prompt": "What is stated about tickets?",
+          "options": [
+            "They must be exchanged at bay four.",
+            "They are valid only on the earlier shuttle.",
+            "They cost more for the extra shuttle.",
+            "Existing shuttle tickets can be used."
+          ],
+          "answer": 3,
+          "explanation": "Passengers can use their existing tickets on either service; no exchange or surcharge is announced."
+        }
+      ]
+    },
+    {
+      "id": "s03-talk2",
+      "section": "listening",
+      "part": 4,
+      "title": "A product return message",
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Thank you for calling Willow Office Supplies. We have received your request to return a damaged desk lamp. A replacement has been reserved, but we cannot dispatch it until we receive a photograph of the damaged base. Please reply to the email we sent today with the photograph and your order number. There is no need to return the lamp at this stage. Once the photograph is approved, we will send the replacement within two business days."
+        }
+      ],
+      "questions": [
+        {
+          "id": "L47",
+          "skill": "l-talk",
+          "prompt": "Why is the replacement not being sent immediately?",
+          "options": [
+            "It is out of stock.",
+            "A photograph is required first.",
+            "The customer has not paid.",
+            "The original lamp must be returned."
+          ],
+          "answer": 1,
+          "explanation": "A replacement is reserved, but dispatch depends on receiving and approving a photograph. Stock and payment are not the stated issues."
+        },
+        {
+          "id": "L48",
+          "skill": "l-talk",
+          "prompt": "What should the customer include with the photograph?",
+          "options": [
+            "A new payment",
+            "A shipping label",
+            "An order number",
+            "A copy of a passport"
+          ],
+          "answer": 2,
+          "explanation": "The message asks the customer to reply with the photograph and order number. No new payment is requested."
+        },
+        {
+          "id": "L49",
+          "skill": "l-inference",
+          "prompt": "When does the two-business-day dispatch period begin?",
+          "options": [
+            "After the photograph is approved",
+            "When the customer buys a second lamp",
+            "When the damaged lamp is returned",
+            "After a new order is placed"
+          ],
+          "answer": 0,
+          "explanation": "The timing starts once the photograph is approved. The lamp does not need to be returned at this stage."
+        }
+      ]
+    },
+    {
+      "id": "s03-sentence0",
+      "section": "reading",
+      "part": 5,
+      "title": "Sentence completion",
+      "questions": [
+        {
+          "id": "R32",
+          "skill": "r-grammar",
+          "prompt": "The audit cannot begin until the records _____ available.",
+          "options": [
+            "are",
+            "be",
+            "being",
+            "to be"
+          ],
+          "answer": 0,
+          "explanation": "Until introduces a time clause with its own subject and finite verb. The plural subject records takes are."
+        }
+      ]
+    },
+    {
+      "id": "s03-sentence1",
+      "section": "reading",
+      "part": 5,
+      "title": "Sentence completion",
+      "questions": [
+        {
+          "id": "R33",
+          "skill": "r-vocabulary",
+          "prompt": "The manufacturer will _____ customers for reasonable shipping costs incurred during the recall.",
+          "options": [
+            "allocate",
+            "reimburse",
+            "subscribe",
+            "withdraw"
+          ],
+          "answer": 1,
+          "explanation": "Reimburse someone for costs means pay that person back. The other verbs do not fit this object and preposition pattern."
+        }
+      ]
+    },
+    {
+      "id": "s03-sentence2",
+      "section": "reading",
+      "part": 5,
+      "title": "Sentence completion",
+      "questions": [
+        {
+          "id": "R34",
+          "skill": "r-grammar",
+          "prompt": "The proposals submitted by the two finalists differ _____ in their maintenance requirements.",
+          "options": [
+            "consideration",
+            "considerate",
+            "considerably",
+            "considerable"
+          ],
+          "answer": 2,
+          "explanation": "An adverb is required to modify differ. Considerably means to a significant extent; the other options have the wrong grammatical role."
+        }
+      ]
+    },
+    {
+      "id": "s03-sentence3",
+      "section": "reading",
+      "part": 5,
+      "title": "Sentence completion",
+      "questions": [
+        {
+          "id": "R35",
+          "skill": "r-vocabulary",
+          "prompt": "Please retain the receipt as _____ of purchase.",
+          "options": [
+            "approval",
+            "consent",
+            "notice",
+            "proof"
+          ],
+          "answer": 3,
+          "explanation": "Proof of purchase is the standard expression for evidence that an item was bought. A receipt does not normally serve as consent or approval."
+        }
+      ]
+    },
+    {
+      "id": "s03-sentence4",
+      "section": "reading",
+      "part": 5,
+      "title": "Sentence completion",
+      "questions": [
+        {
+          "id": "R36",
+          "skill": "r-grammar",
+          "prompt": "Neither the supervisor nor the technicians _____ available to attend tomorrow.",
+          "options": [
+            "is",
+            "are",
+            "was",
+            "has"
+          ],
+          "answer": 1,
+          "explanation": "With neither...nor, the verb agrees here with the nearer subject, technicians, which is plural. Are is the appropriate form."
+        }
+      ]
+    },
+    {
+      "id": "s03-sentence5",
+      "section": "reading",
+      "part": 5,
+      "title": "Sentence completion",
+      "questions": [
+        {
+          "id": "R37",
+          "skill": "r-grammar",
+          "prompt": "_____ obtaining written permission, visitors may not enter the archive.",
+          "options": [
+            "Without",
+            "Unless",
+            "Although",
+            "While"
+          ],
+          "answer": 0,
+          "explanation": "Without takes the gerund phrase obtaining written permission and expresses the missing prerequisite. Unless would require a finite clause here."
+        }
+      ]
+    },
+    {
+      "id": "s03-sentence6",
+      "section": "reading",
+      "part": 5,
+      "title": "Sentence completion",
+      "questions": [
+        {
+          "id": "R38",
+          "skill": "r-vocabulary",
+          "prompt": "The team introduced additional checks to _____ the risk of duplicate payments.",
+          "options": [
+            "restore",
+            "commit",
+            "mitigate",
+            "fulfill"
+          ],
+          "answer": 2,
+          "explanation": "Mitigate the risk means reduce its severity or likelihood. Restore, commit, and fulfill do not form an appropriate phrase with risk here."
+        }
+      ]
+    },
+    {
+      "id": "s03-sentence7",
+      "section": "reading",
+      "part": 5,
+      "title": "Sentence completion",
+      "questions": [
+        {
+          "id": "R39",
+          "skill": "r-grammar",
+          "prompt": "The revised policy applies to all orders _____ on or after September 1.",
+          "options": [
+            "place",
+            "placing",
+            "are placed",
+            "placed"
+          ],
+          "answer": 3,
+          "explanation": "Placed is a past participle modifying orders, equivalent to that are placed. The passive meaning is required because customers place orders."
+        }
+      ]
+    },
+    {
+      "id": "s03-text",
+      "section": "reading",
+      "part": 6,
+      "title": "An appointment system",
+      "passage": {
+        "docs": [
+          {
+            "label": "Notice",
+            "text": "Starting August 12, appointments for equipment repairs will be booked through our online portal. Staff should first enter the item’s serial number, which allows the system to [1] its warranty status.\n\nIf the warranty has expired, an estimated repair charge will be displayed. This amount is [2]; the final charge will depend on the technician’s assessment. No paid repair will proceed without your approval. [3]\n\nAppointments already confirmed by telephone remain valid. [4], please do not enter a duplicate request in the portal."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "R40",
+          "skill": "r-vocabulary",
+          "prompt": "Select the best word for [1].",
+          "options": [
+            "postpone",
+            "verify",
+            "replace",
+            "lend"
+          ],
+          "answer": 1,
+          "explanation": "Verify fits the function of using a serial number to confirm warranty status. The portal cannot lend or postpone a status."
+        },
+        {
+          "id": "R41",
+          "skill": "r-vocabulary",
+          "prompt": "Select the best word for [2].",
+          "options": [
+            "permanent",
+            "identical",
+            "compulsory",
+            "provisional"
+          ],
+          "answer": 3,
+          "explanation": "Provisional means temporary and subject to change, matching the statement that the final amount depends on an assessment."
+        },
+        {
+          "id": "R42",
+          "skill": "r-purpose",
+          "prompt": "Select the best sentence for [3].",
+          "options": [
+            "You will receive a cost confirmation before any chargeable work begins.",
+            "All repairs are now free of charge.",
+            "The portal is reserved for new equipment purchases.",
+            "Warranty coverage can no longer be checked."
+          ],
+          "answer": 0,
+          "explanation": "This sentence explains how prior approval will be obtained. The alternatives contradict the repair and warranty information."
+        },
+        {
+          "id": "R43",
+          "skill": "r-grammar",
+          "prompt": "Select the best connector for [4].",
+          "options": [
+            "Nevertheless",
+            "Similarly",
+            "Therefore",
+            "Otherwise"
+          ],
+          "answer": 2,
+          "explanation": "The existing bookings remain valid; therefore, another request is unnecessary. The connector expresses the result of the preceding fact."
+        }
+      ]
+    },
+    {
+      "id": "s03-single",
+      "section": "reading",
+      "part": 7,
+      "title": "A training reimbursement policy",
+      "passage": {
+        "docs": [
+          {
+            "label": "Policy memo",
+            "text": "Staff development reimbursement — effective January 1\nEmployees may claim up to $500 per calendar year for approved external courses. Written approval must be obtained before registration. Language courses are eligible only when the employee’s manager confirms a connection to current duties. Travel and meals are excluded.\nClaims must be submitted within 30 days after course completion, with a receipt and attendance certificate. A nonrefundable registration deposit is eligible if the employee completes the course; deposits for courses not attended are not reimbursed.\nClaims received by the 20th are normally paid with that month’s salary. Claims received later are processed the following month. An approved claim may be paid after year-end, but it counts toward the allowance for the year in which the course ended."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "R44",
+          "skill": "r-detail",
+          "prompt": "What must an employee obtain before registering?",
+          "options": [
+            "A salary statement",
+            "An attendance certificate",
+            "Written approval",
+            "A travel allowance"
+          ],
+          "answer": 2,
+          "explanation": "Written approval is explicitly required before registration. The attendance certificate is obtained later and accompanies the claim."
+        },
+        {
+          "id": "R45",
+          "skill": "r-inference",
+          "prompt": "When can a language course qualify?",
+          "options": [
+            "Whenever the employee wants to travel",
+            "When the manager confirms its relevance to current duties",
+            "Only if it costs more than $500",
+            "Only if taught on company premises"
+          ],
+          "answer": 1,
+          "explanation": "The policy makes job relevance confirmed by the manager a specific eligibility condition. It does not require a particular venue."
+        },
+        {
+          "id": "R46",
+          "skill": "r-detail",
+          "prompt": "Which expense is excluded?",
+          "options": [
+            "Travel to an approved course",
+            "An eligible completed course’s registration fee",
+            "A deposit for an approved course that was completed",
+            "A language course approved as relevant to current duties"
+          ],
+          "answer": 0,
+          "explanation": "Travel and meals are excluded. A nonrefundable deposit can qualify when the course is completed."
+        },
+        {
+          "id": "R47",
+          "skill": "r-inference",
+          "prompt": "A course ends December 18 and a valid claim is received December 23. What normally happens?",
+          "options": [
+            "The claim is automatically rejected.",
+            "The course uses next year’s allowance.",
+            "Payment must be made in December.",
+            "Payment is processed the following month against the ending year’s allowance."
+          ],
+          "answer": 3,
+          "explanation": "A claim after the 20th is processed next month. The allowance year follows course completion, so later payment does not shift the allowance year."
+        }
+      ]
+    },
+    {
+      "id": "s03-double",
+      "section": "reading",
+      "part": 7,
+      "title": "Comparing an order with an updated delivery",
+      "passage": {
+        "docs": [
+          {
+            "label": "Supplier terms",
+            "text": "Marlin Display Systems — delivery terms\nStandard delivery is free for merchandise orders of $1,000 or more before tax. Orders below that amount incur a $60 delivery fee. Delivery includes unloading at the building entrance, not installation. Optional installation costs $120 per visit. Changes to the delivery address must reach us at least two business days before dispatch."
+          },
+          {
+            "label": "Order confirmation — Monday, March 2",
+            "text": "Order 817: ten display stands at $95 each, before tax. Requested delivery: Friday, March 6. Dispatch scheduled: Thursday, March 5. Installation: declined. Delivery address: 18 Cedar Road."
+          },
+          {
+            "label": "Email — Tuesday, March 3",
+            "text": "To: Marlin Display Systems\nPlease add one more stand to order 817 at the same unit price. We also need to change the delivery address to 40 Cedar Road. All other arrangements, including our decision to assemble the stands ourselves, should stay the same. Please confirm the revised total before tax."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "R48",
+          "skill": "r-crossref",
+          "prompt": "What is the revised total before tax under the stated terms?",
+          "options": [
+            "$1,105",
+            "$1,165",
+            "$950",
+            "$1,045"
+          ],
+          "answer": 3,
+          "explanation": "Eleven stands at $95 cost $1,045, exceeding the free-delivery threshold. Installation remains declined, so neither delivery nor installation is added."
+        },
+        {
+          "id": "R49",
+          "skill": "r-crossref",
+          "prompt": "Why should the amended order qualify for free delivery?",
+          "options": [
+            "The customer chose installation.",
+            "Its merchandise value now reaches the threshold.",
+            "All repeat customers receive it.",
+            "The address is on the same road."
+          ],
+          "answer": 1,
+          "explanation": "The original $950 order was below the $1,000 threshold. Adding a $95 stand raises merchandise value to $1,045."
+        },
+        {
+          "id": "R50",
+          "skill": "r-crossref",
+          "prompt": "Does the address change meet the notice requirement, assuming no holidays?",
+          "options": [
+            "Yes; Tuesday is two business days before Thursday dispatch.",
+            "No; changes must be made two days before ordering.",
+            "No; the deadline is five business days.",
+            "Yes; address changes are always accepted."
+          ],
+          "answer": 0,
+          "explanation": "Dispatch is Thursday. Tuesday is two business days earlier, so the request reaches the supplier by the specified deadline."
+        },
+        {
+          "id": "R51",
+          "skill": "r-inference",
+          "prompt": "What will the customer’s team most likely do?",
+          "options": [
+            "Collect the goods from the factory",
+            "Pay for an installation visit",
+            "Assemble the stands after delivery",
+            "Cancel the extra stand"
+          ],
+          "answer": 2,
+          "explanation": "The customer explicitly keeps the plan to assemble the stands themselves. Standard delivery provides unloading, not installation."
+        }
+      ]
+    }
+  ]
+}
