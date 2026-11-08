@@ -16,16 +16,18 @@ export function errorMessage() {
     'voice-unavailable': '所選音色暫時無法使用，請切回自動或重新載入音色後重試。',
     network: '語音服務連線失敗，請確認網路後重試。',
     timeout: '語音引擎未回應或播放逾時，請再次點擊播放。',
+    background: '頁面切到背景，播放已中斷；回來後請重新播放。',
     canceled: '播放已中止，可重新點擊播放。'
   };
   return messages[lastError] ?? ('語音播放失敗（' + (lastError || 'unknown') + '），請重新點擊播放或試用其他音色。');
 }
 let releaseSpeech = null;
+let releasePause = null;
 export function getRate() { const r=Number(prefs().rate); return [0.85,1,1.1].includes(r)?r:1; }
 export function setRate(rate) { if(![0.85,1,1.1].includes(rate)) return; const p=prefs(); p.rate=rate; try {localStorage.setItem(PREF_KEY,JSON.stringify(p));} catch {} }
 
 export function supported() {
-  return typeof window !== "undefined" && "speechSynthesis" in window && "SpeechSynthesisUtterance" in window;
+  return typeof window !== 'undefined' && typeof window.speechSynthesis?.speak === 'function' && typeof window.SpeechSynthesisUtterance === 'function';
 }
 
 /** Higher = more natural sounding. */
@@ -94,9 +96,11 @@ function pickVoice(voices, speaker) {
   return { voice: byRank.find((x) => x !== man && FEMALE.test(x.name)) ?? byRank[0], pitch: 1 };
 }
 
-export function stop() {
+export function stop(reason = 'canceled') {
   token++;
-  releaseSpeech?.(false);
+  lastError = reason;
+  releaseSpeech?.(false, reason);
+  releasePause?.();
   if (supported()) speechSynthesis.cancel();
 }
 
@@ -116,10 +120,10 @@ function speak(text, { voice, pitch }, rate, myToken) {
       if (myToken === token) lastError = reason;
       resolve(ok);
     };
-    const timeout = () => { done(false, 'timeout'); speechSynthesis.cancel(); };
+    const timeout = () => { if (settled || myToken !== token) return; done(false, 'timeout'); speechSynthesis.cancel(); };
     releaseSpeech = done;
     timer = setTimeout(timeout, 12000);
-    u.onstart = () => { clearTimeout(timer); timer = setTimeout(timeout, Math.max(30000, text.length * 180 / rate)); };
+    u.onstart = () => { if (settled || myToken !== token) return; clearTimeout(timer); timer = setTimeout(timeout, Math.max(30000, text.length * 180 / rate)); };
     u.onend = () => done(true);
     u.onerror = e => done(false, e.error || 'synthesis-failed');
     try {
@@ -129,7 +133,12 @@ function speak(text, { voice, pitch }, rate, myToken) {
   });
 }
 
-const pause = (ms) => new Promise((r) => setTimeout(r, ms));
+const pause = (ms) => new Promise(resolve => {
+  let timer;
+  const done = () => { clearTimeout(timer); if (releasePause === done) releasePause = null; resolve(); };
+  releasePause = done;
+  timer = setTimeout(done, ms);
+});
 
 /** Split into sentences so intonation resets naturally and long texts are not cut off by the engine. */
 function sentences(text) {

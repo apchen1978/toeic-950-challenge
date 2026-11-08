@@ -1,0 +1,61 @@
+async page => {
+  await page.context().addInitScript(() => {
+    if (location.search.includes('unsupported')) {
+      Object.defineProperty(window,'SpeechSynthesisUtterance',{value:undefined,configurable:true});
+      Object.defineProperty(navigator,'clipboard',{value:{writeText:async text=>{window.__copied=text;}},configurable:true}); return;
+    }
+    const nativeTimeout=window.setTimeout;
+    window.setTimeout=(fn,ms,...args)=>nativeTimeout(fn,ms>=12000?80:(ms>=200?5:ms),...args);
+    const s=new EventTarget(); window.__mock={mode:'hang',calls:[],cancels:0};
+    s.getVoices=()=>[]; s.cancel=()=>window.__mock.cancels++;
+    s.speak=u=>{window.__mock.calls.push(u);if(window.__mock.mode==='fail') nativeTimeout(()=>u.onerror({error:'network'}),5);if(window.__mock.mode==='success') nativeTimeout(()=>u.onend(),5);};
+    Object.defineProperty(window,'speechSynthesis',{value:s,configurable:true});
+  });
+  await page.setViewportSize({width:390,height:844});
+  await page.goto('http://127.0.0.1:4193/codex/');
+  await page.getByRole('button',{name:'開始診斷測驗'}).click();
+  await page.getByRole('button',{name:'▶ 播放語音'}).click();
+  await page.getByRole('button',{name:'重試播放'}).waitFor();
+  let text=await page.locator('.audio').innerText();
+  if(!text.includes('逾時')||!text.includes('剩餘 2 次')) throw Error('timeout lost quota');
+  await page.evaluate(()=>window.__mock.mode='fail');
+  await page.getByRole('button',{name:'重試播放'}).click();
+  await page.waitForFunction(()=>document.querySelector('.audio .status').textContent.includes('網路'));
+  if(!(await page.locator('.audio').innerText()).includes('剩餘 2 次')) throw Error('error lost quota');
+  await page.evaluate(()=>window.__mock.mode='hang');
+  await page.getByRole('button',{name:'重試播放'}).click();
+  await page.getByRole('button',{name:'停止播放'}).click();
+  await page.getByRole('button',{name:'重試播放'}).waitFor();
+  if(!(await page.locator('.audio').innerText()).includes('剩餘 2 次')) throw Error('cancel lost quota');
+  await page.getByRole('button',{name:'重試播放'}).click();
+  await page.getByRole('button',{name:'下一組 →'}).click();
+  await page.getByRole('button',{name:'← 上一組'}).click();
+  if(!(await page.locator('.audio').innerText()).includes('剩餘 2 次')) throw Error('navigation lost quota');
+  await page.getByRole('button',{name:'▶ 播放語音'}).click();
+  await page.evaluate(()=>{Object.defineProperty(document,'hidden',{value:true,configurable:true});document.dispatchEvent(new Event('visibilitychange'));});
+  await page.getByRole('button',{name:'重試播放'}).waitFor();
+  text=await page.locator('.audio').innerText();
+  if(!text.includes('背景')||!text.includes('剩餘 2 次')) throw Error('background recovery failed');
+  await page.reload();
+  await page.getByRole('button',{name:'繼續上次作答'}).click();
+  if(!(await page.locator('.audio').innerText()).includes('剩餘 2 次')) throw Error('reload lost quota');
+  await page.evaluate(()=>window.__mock.mode='success');
+  await page.getByRole('button',{name:'▶ 播放語音'}).click();
+  await page.waitForFunction(()=>document.querySelector('.audio .status').textContent==='播放完畢');
+  if(!(await page.locator('.audio').innerText()).includes('剩餘 1 次')) throw Error('completed attempt not counted once');
+  await page.getByRole('button',{name:'▶ 播放語音'}).click();
+  await page.waitForFunction(()=>document.querySelector('.audio .plays').textContent.includes('0 次'));
+  await page.getByRole('button',{name:'恢復本題播放次數'}).click();
+  if(!(await page.locator('.audio').innerText()).includes('剩餘 2 次')) throw Error('manual recovery failed');
+  await page.evaluate(()=>localStorage.removeItem('toeic950.codex.session.v1'));
+  await page.goto('http://127.0.0.1:4193/codex/?unsupported');
+  await page.getByRole('button',{name:'開始診斷測驗'}).click();
+  if(!(await page.locator('#unsupported-message').innerText()).includes('外部 Chrome')) throw Error('unsupported warning missing');
+  if(await page.locator('.topbar').count()) throw Error('unsupported listening session started');
+  await page.getByRole('button',{name:'複製連結'}).click();
+  if(!await page.evaluate(()=>window.__copied?.endsWith('/codex/'))) throw Error('copy failed');
+  await page.getByLabel('今天練哪一套？').selectOption('reading04');
+  await page.getByRole('button',{name:'開始診斷測驗'}).click();
+  if(!(await page.locator('.topbar').innerText()).includes('Reading')) throw Error('reading was blocked');
+  return 'timeout, failure, stop, switching, background, refresh, unsupported/copy and reading-only passed';
+}
