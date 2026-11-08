@@ -2,11 +2,25 @@
 // Voice quality depends on the device: Edge "Natural" voices and iOS/macOS enhanced voices sound best.
 // Transcripts are never shown by this module; the UI only reveals them after submission.
 
-const MALE = /(guy|davis|andrew|brian|christopher|eric|roger|steffan|ryan|david|mark|george|james|daniel|alex|fred|thomas|aaron|tom|male)/i;
+const MALE = /(guy|davis|andrew|brian|christopher|eric|roger|steffan|ryan|david|mark|george|james|daniel|alex|fred|thomas|aaron|tom|\bmale\b)/i;
 const FEMALE = /(aria|jenny|michelle|emma|ava|sonia|libby|zira|samantha|susan|hazel|karen|victoria|allison|joanna|jessica|nancy|female)/i;
 const PREF_KEY = "toeic950.voice.v1";
 
 let token = 0;
+let releaseSpeech = null;
+let lastError = '';
+export function errorMessage() {
+  const messages = {
+    unsupported: '此瀏覽器未提供語音合成，請換用支援的瀏覽器。',
+    'not-allowed': '瀏覽器拒絕啟動語音。請再次點擊播放；若仍失敗，請在一般瀏覽器開啟後重試。',
+    'language-unavailable': '裝置的語音引擎無法提供英文，請檢查系統英文語音後重試。',
+    'voice-unavailable': '所選音色暫時無法使用，請切回自動或重新載入音色後重試。',
+    network: '語音服務連線失敗，請確認網路後重試。',
+    timeout: '語音引擎未回應或播放逾時，請再次點擊播放。',
+    canceled: '播放已中止，可重新點擊播放。'
+  };
+  return messages[lastError] ?? ('語音播放失敗（' + (lastError || 'unknown') + '），請重新點擊播放或試用其他音色。');
+}
 
 export function supported() {
   return typeof window !== "undefined" && "speechSynthesis" in window && "SpeechSynthesisUtterance" in window;
@@ -23,15 +37,29 @@ function rank(v) {
   return s;
 }
 
-export function getVoices() {
-  return new Promise((resolve) => {
-    if (!supported()) return resolve([]);
-    const have = () => speechSynthesis.getVoices().filter((v) => /^en/i.test(v.lang));
-    const now = have();
-    if (now.length) return resolve(now);
-    const done = () => resolve(have());
-    speechSynthesis.addEventListener("voiceschanged", done, { once: true });
-    setTimeout(done, 1500);
+export function availableVoices() {
+  if (!supported()) return [];
+  try { return speechSynthesis.getVoices().filter(v => /^en(?:[-_]|$)/i.test(v.lang)).sort((a,b)=>rank(b)-rank(a)); }
+  catch { return []; }
+}
+
+// Discovery is UI-only. Never await it before speaking in a click handler.
+export function getVoices({ timeoutMs = 4000, pollMs = 100 } = {}) {
+  if (!supported()) return Promise.resolve([]);
+  return new Promise(resolve => {
+    let timer, poll, finished = false;
+    const finish = (voices) => {
+      if (finished) return;
+      finished = true;
+      clearTimeout(timer); clearInterval(poll);
+      speechSynthesis.removeEventListener?.('voiceschanged', check);
+      resolve(voices);
+    };
+    const check = () => { const voices = availableVoices(); if (voices.length) finish(voices); };
+    speechSynthesis.addEventListener?.('voiceschanged', check);
+    timer = setTimeout(() => finish(availableVoices()), timeoutMs);
+    poll = setInterval(check, pollMs);
+    check();
   });
 }
 
@@ -66,20 +94,36 @@ function pickVoice(voices, speaker) {
 
 export function stop() {
   token++;
+  releaseSpeech?.(false, 'canceled');
   if (supported()) speechSynthesis.cancel();
 }
 
 function speak(text, { voice, pitch }, rate, myToken) {
-  return new Promise((resolve) => {
-    if (myToken !== token) return resolve();
+  return new Promise(resolve => {
+    if (myToken !== token) return resolve(false);
     const u = new SpeechSynthesisUtterance(text);
-    u.lang = voice?.lang ?? "en-US";
-    if (voice) u.voice = voice;
+    u.lang = voice?.lang ?? 'en-US';
+    if (voice) u.voice = voice; // Empty enumeration: let the engine select by language.
     u.pitch = pitch;
     u.rate = rate;
-    u.onend = () => resolve();
-    u.onerror = () => resolve();
-    speechSynthesis.speak(u);
+    let timer, settled = false;
+    const done = (ok, reason = '') => {
+      if (settled) return;
+      settled = true; clearTimeout(timer);
+      if (releaseSpeech === done) releaseSpeech = null;
+      if (myToken === token) lastError = reason;
+      resolve(ok);
+    };
+    const timeout = () => { done(false, 'timeout'); speechSynthesis.cancel(); };
+    releaseSpeech = done;
+    timer = setTimeout(timeout, 12000);
+    u.onstart = () => { clearTimeout(timer); timer = setTimeout(timeout, Math.max(30000, text.length * 180 / rate)); };
+    u.onend = () => done(true);
+    u.onerror = e => done(false, e.error || 'synthesis-failed');
+    try {
+      if (speechSynthesis.paused) speechSynthesis.resume();
+      speechSynthesis.speak(u);
+    } catch { done(false, 'synthesis-failed'); }
   });
 }
 
@@ -92,15 +136,16 @@ function sentences(text) {
 
 /** lines: [{speaker:'M'|'W'|'N', text, gap?}]. Resolves true if it played to the end, false if stopped. */
 export async function playScript(lines, { rate = 0.95 } = {}) {
-  if (!supported()) return false;
+  if (!supported()) { lastError = 'unsupported'; return false; }
   stop();
   const myToken = token;
-  const voices = await getVoices();
+  lastError = '';
+  const voices = availableVoices();
   for (const line of lines) {
     const v = pickVoice(voices, line.speaker);
     for (const s of line.single ? [line.text] : sentences(line.text)) {
       if (myToken !== token) return false;
-      await speak(s, v, rate, myToken);
+      if (!await speak(s, v, rate, myToken)) return false;
       await pause(line.single ? 0 : 220);
     }
     await pause(line.gap ?? 500);

@@ -90,17 +90,31 @@ function renderHome() {
   fillVoices();
 }
 
+let voiceLoad = 0;
 async function fillVoices() {
+  const request = ++voiceLoad;
   const box = document.getElementById("voices");
   if (!box) return;
   const voices = await audio.getVoices();
-  if (!document.getElementById("voices")) return;
-  if (!voices.length) { box.innerHTML = `<span class="notice">找不到英文語音。請確認系統已安裝英文語音，或換瀏覽器再試；仍可先做閱讀練習。</span>`; return; }
+  if (request !== voiceLoad || document.getElementById("voices") !== box) return;
   const roles = [["M", "男聲"], ["W", "女聲"], ["N", "旁白（Part 2 選項）"]];
-  box.innerHTML = roles.map(([r, label]) => `<div class="row" style="margin:6px 0"><label style="min-width:9em">${label}</label>
+  box.innerHTML = (voices.length ? '' : '<p class="muted">裝置尚未列出英文音色，仍可點「試聽」嘗試系統預設英文語音。</p>') + roles.map(([r, label]) => `<div class="row" style="margin:6px 0"><label style="min-width:9em">${label}</label>
     <select data-voice="${r}" style="flex:1;min-width:0;font:inherit;padding:6px"><option value="">自動（推薦）</option>${voices.map((v) => `<option value="${esc(v.name)}" ${audio.getPref(r) === v.name ? "selected" : ""}>${esc(v.name)} (${esc(v.lang)})</option>`).join("")}</select>
-    <button class="btn small" data-action="sample" data-role="${r}">試聽</button></div>`).join("");
+    <button class="btn small" data-action="sample" data-role="${r}">試聽</button></div>`).join("") + '<div class="row"><button class="btn small" data-action="retry-voices">重新載入音色</button><span id="voice-status" role="status" aria-live="polite"></span></div>';
 }
+
+async function sampleVoice(role, button) {
+  const status = document.getElementById('voice-status');
+  if (status) status.textContent = '試聽中…';
+  button.disabled = true;
+  const ok = await audio.sample(role);
+  if (button.isConnected) button.disabled = false;
+  if (status?.isConnected) status.textContent = ok ? '試聽完成' : audio.errorMessage();
+}
+
+if (audio.supported()) speechSynthesis.addEventListener?.('voiceschanged', () => {
+  if (document.getElementById('voices')) fillVoices();
+});
 
 /* ---------- Session ---------- */
 function startSession(mode, groupIds, minutes) {
@@ -169,7 +183,7 @@ function audioBlock(g) {
   const used = session.plays[g.id] ?? 0;
   const left = MAX_PLAYS - used;
   return `<div class="audio" data-gid="${g.id}">
-    <button class="btn primary" data-action="play" data-group="${g.id}" ${left <= 0 || !audio.supported() ? "disabled" : ""}>▶ 播放音檔</button>
+    <button class="btn primary" data-action="play" data-group="${g.id}" ${left <= 0 || !audio.supported() ? "disabled" : ""}>▶ 播放語音</button>
     <span class="muted"><span class="plays">剩餘 ${left} 次</span> · <span class="status">聽完才開始作答也可以，文字稿交卷後才會顯示</span></span>
   </div>`;
 }
@@ -186,6 +200,7 @@ function questionBlock(q, qs, spoken) {
 
 async function playGroup(gid, btn) {
   if ((session.plays[gid] ?? 0) >= MAX_PLAYS) return;
+  const playingSession = session;
   session.plays[gid] = (session.plays[gid] ?? 0) + 1;
   saveSession();
   const g = groupById(gid);
@@ -196,9 +211,14 @@ async function playGroup(gid, btn) {
   status.textContent = "播放中…";
   const lines = g.spokenOptions ? audio.withSpokenOptions(g) : g.script;
   const finished = await audio.playScript(lines);
-  if (!box.isConnected) return;
-  if (!finished) { session.plays[gid]--; saveSession(); box.querySelector('.plays').textContent = `剩餘 ${MAX_PLAYS-session.plays[gid]} 次`; }
-  status.textContent = finished ? "播放完畢" : "播放未完成，本次不扣次數。請試聽其他音色後重試。";
+  if (!finished && session === playingSession) {
+    session.plays[gid] = Math.max(0, (session.plays[gid] ?? 1) - 1);
+    saveSession();
+  }
+  if (!box.isConnected || session !== playingSession) return;
+  box.querySelector('.plays').textContent = '剩餘 ' + (MAX_PLAYS - session.plays[gid]) + ' 次';
+  status.textContent = finished ? '播放完畢' : audio.errorMessage() + ' 本次不扣次數。';
+  btn.textContent = finished ? '▶ 播放語音' : '重試播放';
   btn.disabled = (session.plays[gid] ?? 0) >= MAX_PLAYS;
 }
 
@@ -323,7 +343,8 @@ app.addEventListener("click", (e) => {
     case "view": renderResult(store.get(KEY_HISTORY, []).find((h) => h.id === d.id)); break;
     case "toggle-all": renderResult(store.get(KEY_HISTORY, []).find((h) => h.id === d.id), d.all === "1"); break;
     case "home": renderHome(); break;
-    case "sample": audio.sample(d.role); break;
+    case "sample": sampleVoice(d.role, t); break;
+    case "retry-voices": fillVoices(); break;
     case "play": playGroup(d.group, t); break;
     case "pick": pick(d.q, Number(d.i)); break;
     case "flag": toggleFlag(d.q); break;
