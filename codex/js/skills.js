@@ -1,5 +1,6 @@
 // Skill tags used in data/questions.json. Labels and study tips are shown in the UI (Traditional Chinese).
 export const SKILLS = {
+  "l-photo": { label: "聽力・照片描述", tip: "先看人物動作和物品位置，再辨認語音中相近但不符合畫面的描述。" },
   "l-response": { label: "聽力・應答（間接回答）", tip: "練習聽出「答非所問卻合理」的回答：反問、推給他人、說明原因。看到 Yes/No 回答 Wh- 問題、或單字／音近重複，先打叉。" },
   "l-conversation": { label: "聽力・對話細節", tip: "先讀題目再聽，抓數字、日期、人名；注意「提出的時間」與「最後同意的時間」不同的陷阱。" },
   "l-inference": { label: "聽力・推論／意圖／下一步", tip: "聽對話最後 2–3 句找 next action；遇到引述句，回到上一句找原因。" },
