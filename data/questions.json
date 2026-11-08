@@ -1,0 +1,339 @@
+{
+  "meta": {
+    "version": 1,
+    "title": "TOEIC 950+ Challenge — Diagnostic 01",
+    "durationMin": 30,
+    "disclaimer": "All items are original practice material written for this app. Scores are unofficial estimates and are not equivalent to ETS TOEIC scores."
+  },
+  "groups": [
+    {
+      "id": "g-l01", "section": "listening", "part": 2, "spokenOptions": true,
+      "script": [{ "speaker": "W", "text": "Haven't the revised budget figures been circulated to the regional managers yet?" }],
+      "questions": [{
+        "id": "L01", "skill": "l-response", "prompt": "Mark your answer.",
+        "options": ["Only the ones in Asia-Pacific have them so far.", "No, the figures were revised by Finance.", "I prefer the circulation of the news magazine."],
+        "answer": 0,
+        "explanation": "A is a partial but direct answer: some regions have the figures, others do not. B repeats 'revised' without answering whether they were sent. C is a sound-alike distractor ('circulated' / 'circulation')."
+      }]
+    },
+    {
+      "id": "g-l02", "section": "listening", "part": 2, "spokenOptions": true,
+      "script": [{ "speaker": "M", "text": "Who's in charge of renewing the maintenance contract this year?" }],
+      "questions": [{
+        "id": "L02", "skill": "l-response", "prompt": "Mark your answer.",
+        "options": ["Yes, it was renewed last March.", "Didn't Ms. Okafor's team take that over?", "The contract is about twelve pages long."],
+        "answer": 1,
+        "explanation": "B answers a 'who' question indirectly by naming a team, in the form of a confirming question. A is a Yes/No answer to a Wh- question. C reuses 'contract' but says nothing about who is responsible."
+      }]
+    },
+    {
+      "id": "g-l03", "section": "listening", "part": 2, "spokenOptions": true,
+      "script": [{ "speaker": "W", "text": "Would you rather present the quarterly results yourself, or have Daniel do it?" }],
+      "questions": [{
+        "id": "L03", "skill": "l-response", "prompt": "Mark your answer.",
+        "options": ["Quarterly results are due on Friday.", "I'm leaving for the airport right after lunch, so you'd better ask Daniel.", "Yes, I'd rather present."],
+        "answer": 1,
+        "explanation": "B gives a reason the speaker cannot present and so implies the answer: Daniel. A repeats 'quarterly results'. C answers an either/or question with 'Yes'."
+      }]
+    },
+    {
+      "id": "g-l04", "section": "listening", "part": 2, "spokenOptions": true,
+      "script": [{ "speaker": "M", "text": "Why was the shipment of display cases held up at customs?" }],
+      "questions": [{
+        "id": "L04", "skill": "l-response", "prompt": "Mark your answer.",
+        "options": ["Yes, the cases are in the showroom.", "It's customary to hold them there.", "A few of the forms were missing signatures."],
+        "answer": 2,
+        "explanation": "C gives a plausible reason. A starts with 'Yes' to a Wh- question. B is a sound-alike distractor ('customs' / 'customary') and misuses 'held'."
+      }]
+    },
+    {
+      "id": "g-l05", "section": "listening", "part": 2, "spokenOptions": true,
+      "script": [{ "speaker": "W", "text": "I thought the training session was supposed to be mandatory." }],
+      "questions": [{
+        "id": "L05", "skill": "l-response", "prompt": "Mark your answer.",
+        "options": ["The trainer arrives by train.", "Yes, the supposed deadline is Monday.", "It was, until the executive team revised the policy."],
+        "answer": 2,
+        "explanation": "A statement with 'I thought...' invites a correction. C ('It was, until...') corrects the assumption. A and B recycle sounds or words ('training' / 'train', 'supposed') without responding."
+      }]
+    },
+    {
+      "id": "g-l06", "section": "listening", "part": 3, "title": "Conversation 1",
+      "script": [
+        { "speaker": "W", "text": "Gregor, did you see the email from Halvorsen Packaging? They're pushing back the delivery of our new cartons to the twentieth." },
+        { "speaker": "M", "text": "That's a week after the product launch. We can't ship pre-orders without packaging." },
+        { "speaker": "W", "text": "I know. Our other supplier, Brightline, could fill the order, but their minimum quantity is double what we normally buy." },
+        { "speaker": "M", "text": "Double is too much storage for our warehouse. How about asking Brightline to split the order into two deliveries, one now and one after the launch?" },
+        { "speaker": "W", "text": "Good idea. I'll call them this afternoon. And could you let the marketing team know the launch date might need to be adjusted if that falls through?" },
+        { "speaker": "M", "text": "Will do. I'll send them a note after lunch." }
+      ],
+      "questions": [
+        {
+          "id": "L06", "skill": "l-conversation", "prompt": "What problem are the speakers discussing?",
+          "options": ["A product launch has been cancelled.", "A supplier will deliver late.", "A warehouse has been flooded.", "A pre-order was priced incorrectly."],
+          "answer": 1,
+          "explanation": "Halvorsen Packaging is 'pushing back' the delivery of cartons, which means the delivery will be late. The launch is not cancelled; its date might be adjusted only if the backup plan fails."
+        },
+        {
+          "id": "L07", "skill": "l-conversation", "prompt": "What does the man propose?",
+          "options": ["Cancelling the pre-orders", "Doubling the order quantity", "Having the second supplier deliver in two shipments", "Moving the launch to the twentieth"],
+          "answer": 2,
+          "explanation": "He suggests asking Brightline to 'split the order into two deliveries'. Doubling is the supplier's minimum, which he rejects because of storage space."
+        }
+      ]
+    },
+    {
+      "id": "g-l07", "section": "listening", "part": 3, "title": "Conversation 2",
+      "script": [
+        { "speaker": "M", "text": "Priya, I looked over the vendor comparison. The Lisbon hotel is cheaper, but I noticed the quote doesn't include the conference room rental." },
+        { "speaker": "W", "text": "Right, that's charged per half day. Once you add it, the two venues come within about two hundred euros of each other." },
+        { "speaker": "M", "text": "Then it comes down to location. Most of our attendees will be flying into Madrid, and Lisbon adds a connecting flight for many of them." },
+        { "speaker": "W", "text": "Good point. Let's go with Madrid. I'll tell the hotel we want to hold the block of rooms until Friday, so please send me the final headcount by Thursday." },
+        { "speaker": "M", "text": "I'll have it to you by Wednesday." }
+      ],
+      "questions": [
+        {
+          "id": "L08", "skill": "l-inference", "prompt": "Why does the man say, \"it comes down to location\"?",
+          "options": ["The price difference is too large to ignore.", "The Lisbon hotel is unavailable.", "He is unfamiliar with Lisbon.", "Cost no longer separates the two options."],
+          "answer": 3,
+          "explanation": "Once the room rental is added, the venues are within about 200 euros, so price is no longer the deciding factor and location is."
+        },
+        {
+          "id": "L09", "skill": "l-conversation", "prompt": "When will the man provide the headcount?",
+          "options": ["On Wednesday", "On Thursday", "On Friday", "Next week"],
+          "answer": 0,
+          "explanation": "The woman asks for it 'by Thursday', but the man promises it 'by Wednesday'. Friday is the hotel's room-hold deadline."
+        }
+      ]
+    },
+    {
+      "id": "g-l08", "section": "listening", "part": 3, "title": "Conversation 3",
+      "script": [
+        { "speaker": "W", "text": "Mr. Delgado, the auditors will be on site Monday, and the finance system has been sluggish since the update." },
+        { "speaker": "M", "text": "IT told me the patch should be fixed by tonight, but I wouldn't count on it. Can your team export the quarter's transactions to a spreadsheet as a backup?" },
+        { "speaker": "W", "text": "We can, though reconciling them manually would take two people the entire weekend." },
+        { "speaker": "M", "text": "Then let's do it only if the system is still slow at six. Check with IT at that point and call me either way." }
+      ],
+      "questions": [
+        {
+          "id": "L10", "skill": "l-conversation", "prompt": "What is the woman concerned about?",
+          "options": ["A staff shortage", "A budget overrun", "Slow software before an audit", "A missing spreadsheet"],
+          "answer": 2,
+          "explanation": "She mentions the upcoming audit on Monday and that the finance system has been sluggish."
+        },
+        {
+          "id": "L11", "skill": "l-inference", "prompt": "What will the woman most likely do at six o'clock?",
+          "options": ["Export the data", "Install the patch", "Begin reconciling transactions", "Contact IT and call the man"],
+          "answer": 3,
+          "explanation": "The man says to check with IT at six and call him either way. Exporting happens only if the system is still slow, and reconciling is a later, manual step."
+        }
+      ]
+    },
+    {
+      "id": "g-l09", "section": "listening", "part": 4, "title": "Announcement",
+      "script": [
+        { "speaker": "M", "text": "Good morning, everyone. Before we start the shift, a quick update on the new safety procedures. Starting Monday, all visitors to the assembly floor must wear a badge in addition to protective eyewear. The badges will be issued at the front desk, not by individual supervisors as before. Also, because of the construction on Dock Road, delivery trucks will use the north gate between seven and nine a.m. If you normally park near the north gate, please use Lot C instead. Finally, the quarterly safety drill, originally planned for Tuesday, has been moved to Thursday afternoon so that it doesn't conflict with the inventory count. Questions can go to Ms. Tanaka in Facilities." }
+      ],
+      "questions": [
+        {
+          "id": "L12", "skill": "l-talk", "prompt": "What is changing about the visitor badges?",
+          "options": ["Their color", "Who issues them", "How long they are valid", "Where they are returned"],
+          "answer": 1,
+          "explanation": "Badges will be issued at the front desk 'not by individual supervisors as before', so the issuer changes."
+        },
+        {
+          "id": "L13", "skill": "l-talk", "prompt": "Why are some employees asked to use Lot C?",
+          "options": ["Delivery trucks will be using the north gate.", "It is closer to the assembly floor.", "A safety drill will be held nearby.", "Visitors will park near the north gate."],
+          "answer": 0,
+          "explanation": "Trucks will use the north gate between seven and nine a.m. because of construction, so people who normally park there should use Lot C."
+        },
+        {
+          "id": "L14", "skill": "l-talk", "prompt": "What does the speaker say about the safety drill?",
+          "options": ["It has been cancelled.", "It will still take place on Tuesday.", "It was rescheduled to avoid a conflict.", "It will be longer than last time."],
+          "answer": 2,
+          "explanation": "It moved from Tuesday to Thursday afternoon so it would not conflict with the inventory count."
+        }
+      ]
+    },
+    {
+      "id": "g-r01", "section": "reading", "part": 5,
+      "questions": [{
+        "id": "R01", "skill": "r-grammar",
+        "prompt": "The warranty covers repairs ------ the product is used in accordance with the instruction manual.",
+        "options": ["in case of", "as long as", "even though", "so that"],
+        "answer": 1,
+        "explanation": "A conjunction expressing a condition is needed before a full clause. 'As long as' = on the condition that. 'In case of' needs a noun phrase; 'even though' is concessive; 'so that' expresses purpose."
+      }]
+    },
+    {
+      "id": "g-r02", "section": "reading", "part": 5,
+      "questions": [{
+        "id": "R02", "skill": "r-grammar",
+        "prompt": "Ms. Reyes, ------ proposal was approved last week, will lead the pilot program.",
+        "options": ["who", "whom", "which", "whose"],
+        "answer": 3,
+        "explanation": "A possessive relative pronoun is needed to link 'Ms. Reyes' and 'proposal': 'whose proposal'."
+      }]
+    },
+    {
+      "id": "g-r03", "section": "reading", "part": 5,
+      "questions": [{
+        "id": "R03", "skill": "r-vocabulary",
+        "prompt": "The auditor's report highlighted several ------ in the company's inventory tracking procedures.",
+        "options": ["dispositions", "dissents", "discrepancies", "dilemmas"],
+        "answer": 2,
+        "explanation": "'Discrepancies' = inconsistencies between records and reality, the usual collocation with auditing and inventory."
+      }]
+    },
+    {
+      "id": "g-r04", "section": "reading", "part": 5,
+      "questions": [{
+        "id": "R04", "skill": "r-grammar",
+        "prompt": "Neither the project manager nor the engineers ------ been informed of the revised deadline.",
+        "options": ["has", "is", "have", "were"],
+        "answer": 2,
+        "explanation": "With 'neither ... nor', the verb agrees with the nearer subject, 'engineers' (plural). 'Have been informed' also needs the perfect auxiliary, not 'were' or 'is'."
+      }]
+    },
+    {
+      "id": "g-r05", "section": "reading", "part": 5,
+      "questions": [{
+        "id": "R05", "skill": "r-grammar",
+        "prompt": "Sales of the new product line were ------ higher than projected, prompting the company to double its production.",
+        "options": ["considerable", "considerably", "considerate", "considering"],
+        "answer": 1,
+        "explanation": "An adverb is needed to modify the comparative adjective 'higher'."
+      }]
+    },
+    {
+      "id": "g-r06", "section": "reading", "part": 5,
+      "questions": [{
+        "id": "R06", "skill": "r-vocabulary",
+        "prompt": "The two departments will ------ their budgets to avoid duplicate software purchases.",
+        "options": ["confiscate", "consult", "contradict", "consolidate"],
+        "answer": 3,
+        "explanation": "'Consolidate' = combine into one, which is how duplicate purchases are avoided. The other verbs do not fit the object 'budgets'."
+      }]
+    },
+    {
+      "id": "g-r07", "section": "reading", "part": 7, "title": "Email",
+      "passage": {
+        "docs": [{
+          "label": "Email",
+          "text": "From: Helena Brandt, Procurement Manager\nTo: All Department Heads\nSubject: Revised approval limits for purchase requests\nDate: March 3\n\nDear colleagues,\n\nEffective April 1, purchase requests exceeding $2,500 will require the signature of a second approver in addition to the department head. This change follows an internal review that found several orders had been placed without comparing at least two quotes. Requests under the threshold will continue to follow the current one-step process, and recurring subscriptions are exempt provided they were approved before April 1.\n\nTo avoid delays, please submit larger requests at least five business days before the needed delivery date. A summary table and the new form are attached. If your team has pending orders that will cross the threshold, contact me before March 20 so that we can arrange an exception where appropriate.\n\nRegards,\nHelena Brandt"
+        }]
+      },
+      "questions": [
+        {
+          "id": "R07", "skill": "r-purpose", "prompt": "What is the main purpose of the email?",
+          "options": ["To announce a change to an approval process", "To request price quotes from vendors", "To cancel recurring subscriptions", "To introduce a new procurement manager"],
+          "answer": 0,
+          "explanation": "The email announces that, from April 1, larger purchase requests need a second approver."
+        },
+        {
+          "id": "R08", "skill": "r-detail", "prompt": "Who is asked to contact Ms. Brandt before March 20?",
+          "options": ["Anyone buying items under $2,500", "Employees whose subscriptions have expired", "Vendors who want approval to supply goods", "Department heads with pending orders that will exceed the threshold"],
+          "answer": 3,
+          "explanation": "Teams with pending orders that will cross the $2,500 threshold are asked to contact her so an exception can be arranged."
+        }
+      ]
+    },
+    {
+      "id": "g-r09", "section": "reading", "part": 7, "title": "Notice",
+      "passage": {
+        "docs": [{
+          "label": "Notice",
+          "text": "NOTICE TO TENANTS — Riverside Commerce Center\n\nThe building's central elevator bank (Elevators 1–4) will be closed for modernization from Monday, June 9 through Friday, June 20. During that period, tenants on floors 6 and above may use the service elevator at the rear of the building between 7:00 a.m. and 7:00 p.m. only; outside those hours, access to upper floors will be via the east stairwell. Deliveries over 50 pounds must be scheduled with the property office at least 48 hours in advance.\n\nTenants who anticipate hosting clients should inform visitors that the lobby entrance will remain open but that waiting times for the service elevator may be longer than usual during the lunch hour. We apologize for any inconvenience and appreciate your patience."
+        }]
+      },
+      "questions": [
+        {
+          "id": "R09", "skill": "r-detail", "prompt": "How can a tenant on the eighth floor reach the office at 8:00 p.m. during the closure?",
+          "options": ["By using the central elevators", "By using the service elevator", "By taking the east stairwell", "By scheduling a delivery"],
+          "answer": 2,
+          "explanation": "The service elevator runs only until 7:00 p.m.; after that, upper floors are reached via the east stairwell."
+        },
+        {
+          "id": "R10", "skill": "r-inference", "prompt": "What is suggested about the service elevator?",
+          "options": ["It may be crowded around midday.", "It is reserved for deliveries.", "It serves only floors above the tenth.", "It operates around the clock."],
+          "answer": 0,
+          "explanation": "The notice warns that waiting times may be longer than usual during the lunch hour, implying heavier use at midday."
+        }
+      ]
+    },
+    {
+      "id": "g-r11", "section": "reading", "part": 7, "title": "Contract",
+      "passage": {
+        "docs": [{
+          "label": "Services Agreement (excerpt)",
+          "text": "7. Termination\n\n7.1 Either party may terminate this Agreement for convenience upon sixty (60) days' written notice to the other party.\n\n7.2 Either party may terminate this Agreement immediately upon written notice if the other party materially breaches any provision and fails to cure such breach within thirty (30) days after receiving written notice specifying the breach.\n\n7.3 Upon termination, Supplier shall refund any prepaid fees attributable to services not yet performed, and Client shall pay for all services performed through the effective date of termination.\n\n7.4 Sections 5 (Confidentiality) and 9 (Limitation of Liability) shall survive termination."
+        }]
+      },
+      "questions": [
+        {
+          "id": "R11", "skill": "r-contract", "prompt": "According to the clause, what must happen before a party can end the agreement because of a breach?",
+          "options": ["The other party must be given written notice and thirty days to fix the problem.", "The terminating party must give sixty days' written notice.", "The Supplier must refund all prepaid fees.", "Both parties must agree in writing to the termination."],
+          "answer": 0,
+          "explanation": "Under 7.2, termination for breach is available only if the breaching party fails to cure within 30 days after written notice. The 60-day notice in 7.1 applies to termination for convenience."
+        },
+        {
+          "id": "R12", "skill": "r-contract", "prompt": "What is indicated about confidentiality obligations?",
+          "options": ["They end when the agreement is terminated.", "They apply only to the Supplier.", "They continue after termination.", "They are replaced by the Limitation of Liability."],
+          "answer": 2,
+          "explanation": "Section 7.4 says Sections 5 and 9 'survive termination', so confidentiality continues after the agreement ends."
+        }
+      ]
+    },
+    {
+      "id": "g-r13", "section": "reading", "part": 7, "title": "Text-message chain",
+      "passage": {
+        "docs": [{
+          "label": "Text-message chain",
+          "text": "Marcus Lee [2:14 P.M.]\nDid the Osaka client confirm the Thursday call?\n\nDana Whitfield [2:16 P.M.]\nNot yet. Their assistant said Mr. Ito is traveling and may only be reachable after his flight lands.\n\nMarcus Lee [2:17 P.M.]\nThen we may be presenting without the final pricing sheet. Legal still hasn't signed off on the discount tiers.\n\nDana Whitfield [2:19 P.M.]\nI wouldn't hold off. Legal usually clears things the same day they see them.\n\nMarcus Lee [2:20 P.M.]\nFair enough. I'll send them the draft now and flag it as urgent.\n\nDana Whitfield [2:21 P.M.]\nDo that. And I'll ask the assistant to propose a backup slot Friday morning."
+        }]
+      },
+      "questions": [
+        {
+          "id": "R13", "skill": "r-intent", "prompt": "At 2:19 P.M., what does Ms. Whitfield most likely mean when she writes, \"I wouldn't hold off\"?",
+          "options": ["She does not want to host the call on Thursday.", "She thinks the discount tiers should be changed.", "She believes preparation should continue without waiting.", "She plans to wait for the client's flight to land."],
+          "answer": 2,
+          "explanation": "Mr. Lee worries about presenting without the pricing sheet. She replies that Legal usually clears items quickly, so there is no need to delay (hold off) preparing."
+        },
+        {
+          "id": "R14", "skill": "r-detail", "prompt": "What will Mr. Lee most likely do next?",
+          "options": ["Send a draft to Legal", "Contact the Osaka client", "Reschedule the call for Friday", "Revise the discount tiers"],
+          "answer": 0,
+          "explanation": "He says, 'I'll send them the draft now and flag it as urgent.' 'Them' refers to Legal. Ms. Whitfield, not Mr. Lee, will ask about a Friday slot."
+        }
+      ]
+    },
+    {
+      "id": "g-r15", "section": "reading", "part": 7, "title": "Two documents",
+      "passage": {
+        "docs": [
+          {
+            "label": "Web page",
+            "text": "Harbor Logistics Summit — Registration\n\nStandard registration: $450.\nEarly-bird rate: $360 for registrations completed before September 15.\nGroup discount: organizations registering four or more attendees from the same company receive 10 percent off each registration; this discount cannot be combined with the early-bird rate.\nCancellations: full refund until October 1; after that, a registration may be transferred to a colleague but not refunded.\nThe Workshop Pass (an additional $90) must be purchased at the time of registration."
+          },
+          {
+            "label": "Email",
+            "text": "To: events@harborsummit.example\nFrom: Sofia Marin, Northgate Freight\nDate: September 20\n\nHello,\n\nI'd like to register five colleagues and myself for the summit. I understand the early-bird deadline has passed, but I was wondering if you could still honor it, since our manager approved the budget on September 12 and the delay was due to our finance team. Also, two of my colleagues would like to attend the workshops. Please let me know the total cost.\n\nRegards,\nSofia Marin"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "R15", "skill": "r-crossref", "prompt": "What is the lowest per-person registration rate Ms. Marin's group qualifies for under the published terms?",
+          "options": ["$360", "$405", "$450", "$495"],
+          "answer": 1,
+          "explanation": "The early-bird rate expired on September 15. A group of six qualifies for 10 percent off the standard $450, which is $405."
+        },
+        {
+          "id": "R16", "skill": "r-crossref", "prompt": "What can be inferred about Ms. Marin's request?",
+          "options": ["She wants a refund for the registrations.", "She misunderstood the group discount.", "She plans to transfer a registration to a colleague.", "She is asking for a rate whose deadline has passed."],
+          "answer": 3,
+          "explanation": "She writes on September 20 and asks the organizers to honor the early-bird rate, whose deadline was September 15. She does not mention a refund or a transfer."
+        }
+      ]
+    }
+  ]
+}
