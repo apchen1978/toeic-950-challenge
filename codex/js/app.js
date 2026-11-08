@@ -20,6 +20,19 @@ const store = {
 let bank = null;
 let session = null;
 let timerId = null;
+let activePlay = null;
+
+function unsupportedNotice() {
+  return `<div class="notice" role="status">此瀏覽器未提供語音合成，無法進行聽力。請複製連結，再自行貼到外部 Chrome 開啟；也可選純閱讀練習。<div class="row"><input id="external-link" readonly aria-label="網站連結" value="${esc(location.origin + location.pathname)}"><button class="btn small" data-action="copy-link">複製連結</button><span id="copy-status" aria-live="polite"></span></div></div>`;
+}
+
+function needsAudio(ids) { return ids.some(id => groupById(id)?.section === 'listening'); }
+function allowSession(ids) {
+  if (audio.supported() || !needsAudio(ids)) return true;
+  const box = document.getElementById('unsupported-message');
+  if (box) box.innerHTML = unsupportedNotice();
+  return false;
+}
 
 const groupById = (id) => bank.groups.find((g) => g.id === id);
 const sessionQuestions = () => flatten(bank, session.groupIds);
@@ -60,7 +73,7 @@ function renderHome() {
       <div class="row">
         ${session ? `<button class="btn primary" data-action="resume">繼續上次作答</button><button class="btn" data-action="discard">放棄並重新開始</button>` : `<button class="btn primary" data-action="start-diagnostic">開始診斷測驗</button>`}
       </div>
-      ${audio.supported() ? "" : `<p class="notice">此瀏覽器不支援語音合成，聽力題無法播放。請改用 Chrome、Edge 或 Safari。</p>`}
+      <div id="unsupported-message">${audio.supported() ? '' : unsupportedNotice()}</div>
     </section>
 
     <section class="card">
@@ -118,6 +131,7 @@ if (audio.supported()) speechSynthesis.addEventListener?.('voiceschanged', () =>
 
 /* ---------- Session ---------- */
 function startSession(mode, groupIds, minutes) {
+  if (!allowSession(groupIds)) return;
   const now = Date.now();
   session = {
     bankVersion: bank.meta.version, mode, groupIds, answers: {}, flags: {}, plays: {},
@@ -184,7 +198,9 @@ function audioBlock(g) {
   const left = MAX_PLAYS - used;
   return `<div class="audio" data-gid="${g.id}">
     <button class="btn primary" data-action="play" data-group="${g.id}" ${left <= 0 || !audio.supported() ? "disabled" : ""}>▶ 播放語音</button>
-    <span class="muted"><span class="plays">剩餘 ${left} 次</span> · <span class="status">聽完才開始作答也可以，文字稿交卷後才會顯示</span></span>
+    ${left <= 0 ? `<button class="btn small" data-action="reset-plays" data-group="${g.id}">恢復本題播放次數</button>` : ''}
+    <button class="btn small" data-action="stop-play" disabled>停止播放</button>
+    <span class="muted"><span class="plays">剩餘 ${left} 次</span> · <span class="status" role="status" aria-live="polite">完整播放才計次；中斷或失敗不扣次數。</span></span>
   </div>`;
 }
 
@@ -199,28 +215,50 @@ function questionBlock(q, qs, spoken) {
 }
 
 async function playGroup(gid, btn) {
-  if ((session.plays[gid] ?? 0) >= MAX_PLAYS) return;
+  if (activePlay || (session.plays[gid] ?? 0) >= MAX_PLAYS) return;
   const playingSession = session;
-  session.plays[gid] = (session.plays[gid] ?? 0) + 1;
-  saveSession();
   const g = groupById(gid);
   const box = btn.closest(".audio");
+  const play = { box, playingSession };
+  activePlay = play;
   const status = box.querySelector(".status");
-  box.querySelector(".plays").textContent = `剩餘 ${MAX_PLAYS - session.plays[gid]} 次`;
   btn.disabled = true;
+  box.querySelector('[data-action="stop-play"]').disabled = false;
   status.textContent = "播放中…";
   const lines = g.spokenOptions ? audio.withSpokenOptions(g) : g.script;
-  const finished = await audio.playScript(lines);
-  if (!finished && session === playingSession) {
-    session.plays[gid] = Math.max(0, (session.plays[gid] ?? 1) - 1);
+  let finished = false;
+  try { finished = await audio.playScript(lines); } catch { finished = false; }
+  if (activePlay !== play) return;
+  activePlay = null;
+  if (finished && session === playingSession) {
+    session.plays[gid] = (session.plays[gid] ?? 0) + 1;
     saveSession();
   }
   if (!box.isConnected || session !== playingSession) return;
-  box.querySelector('.plays').textContent = '剩餘 ' + (MAX_PLAYS - session.plays[gid]) + ' 次';
+  box.querySelector('[data-action="stop-play"]').disabled = true;
+  box.querySelector('.plays').textContent = '剩餘 ' + (MAX_PLAYS - (session.plays[gid] ?? 0)) + ' 次';
   status.textContent = finished ? '播放完畢' : audio.errorMessage() + ' 本次不扣次數。';
   btn.textContent = finished ? '▶ 播放語音' : '重試播放';
   btn.disabled = (session.plays[gid] ?? 0) >= MAX_PLAYS;
+  if (btn.disabled && !box.querySelector('[data-action="reset-plays"]')) {
+    const recovery = document.createElement('button');
+    recovery.className = 'btn small';
+    recovery.dataset.action = 'reset-plays';
+    recovery.dataset.group = gid;
+    recovery.textContent = '恢復本題播放次數';
+    btn.after(recovery);
+  }
 }
+
+function cancelPlayback(reason = 'canceled') {
+  if (!activePlay) return;
+  audio.stop(reason);
+}
+
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) cancelPlayback('background');
+});
+window.addEventListener('pagehide', () => cancelPlayback('background'));
 
 function pick(qid, i) {
   session.answers[qid] = i;
@@ -332,7 +370,7 @@ app.addEventListener("click", (e) => {
   const d = t.dataset;
   switch (d.action) {
     case "start-diagnostic": { const set=bank.meta.sets.find(s=>s.id===document.getElementById('test-set').value); startSession("diagnostic", orderedGroupIds(set.groupIds), set.durationMin); break; }
-    case "resume": renderTest(); break;
+    case "resume": if (allowSession(session.groupIds)) renderTest(); break;
     case "discard": if (confirm("放棄目前作答進度？")) { store.del(KEY_SESSION); session = null; renderHome(); } break;
     case "practice": {
       const ids = groupsForSkill(bank, d.skill);
@@ -346,6 +384,16 @@ app.addEventListener("click", (e) => {
     case "sample": sampleVoice(d.role, t); break;
     case "retry-voices": fillVoices(); break;
     case "play": playGroup(d.group, t); break;
+    case "stop-play": cancelPlayback(); break;
+    case "reset-plays": if (!activePlay) { session.plays[d.group] = 0; saveSession(); renderTest(); } break;
+    case "copy-link": {
+      const input = document.getElementById('external-link');
+      const feedback = document.getElementById('copy-status');
+      const done = ok => { feedback.textContent = ok ? '已複製，請自行貼到外部 Chrome。' : '複製失敗，請長按上方連結手動複製。'; };
+      if (navigator.clipboard?.writeText) navigator.clipboard.writeText(input.value).then(() => done(true), () => done(false));
+      else { input.select(); try { done(document.execCommand('copy')); } catch { done(false); } }
+      break;
+    }
     case "pick": pick(d.q, Number(d.i)); break;
     case "flag": toggleFlag(d.q); break;
     case "prev": go(-1); break;
