@@ -90,6 +90,27 @@ function renderHome() {
       </article>
     </section>
 
+    <details class="card tips-card">
+      <summary><span>答題技巧 · Tips</span><small>聽力、閱讀與考前複習</small></summary>
+      <p class="muted">整理自近年考生心得；先用練習測試哪些方法適合自己。</p>
+      <h3>聽力 Listening</h3>
+      <ul>
+        <li><b>照片題：</b>先看人物動作、物品位置，再聽完整句子；留意主詞和動作是否都符合照片。</li>
+        <li><b>應答題：</b>抓住開頭是在問時間、地點、人物還是原因；間接回答也可能正確。不要只因選項出現相同單字就選或排除。</li>
+        <li><b>對話與短講：</b>有時間時先看題目及圖表，聽時留意時間變更、轉折和最後決定；錯過一題就先跟上下一題。</li>
+      </ul>
+      <h3>閱讀 Reading</h3>
+      <ul>
+        <li><b>掌握時間：</b>練習時記下 Part 5、6 完成時間，保留足夠時間處理 Part 7；每次依正確率調整，不必套用固定配速。</li>
+        <li><b>多篇閱讀：</b>先確認每份文件的日期、人物與目的，再交叉核對數字、限制條件和後續更新。</li>
+        <li><b>卡題時：</b>先選較有把握的答案並記住題號；若還有時間，在同一測驗區內回頭檢查。</li>
+      </ul>
+      <h3>練完怎麼複習</h3>
+      <p>聽力錯題先重聽，再對照逐字稿，分辨是沒聽清、字彙不熟還是誤解；閱讀錯題回原文找證據，再看解析。把重複錯誤留在錯題清單。</p>
+      <p class="notice"><b>正式考試規則：</b>聽力和閱讀各有規定作答時間；不能在其中一區作答或修改另一區的答案。</p>
+      <p class="tips-sources">參考：<a href="https://www.dcard.tw/f/english_tests/p/261823171" target="_blank" rel="noopener">Dcard 945 備考心得（2025）</a> · <a href="https://www.ptt.cc/bbs/TOEIC/M.1746338764.A.880.html" target="_blank" rel="noopener">PTT 990 考生心得（2025）</a> · <a href="https://www.toeic.com.tw/quick-links/faq/toeic-listening-reading/test-regulations/skip-section-prohibited" target="_blank" rel="noopener">台灣多益官方作答規定</a></p>
+    </details>
+
     <section class="card">
       <h2>完整／混合題組</h2>
       <p>題庫共 ${n} 題原創練習，分套作答；每題附答案與英文解析。聽力文字稿交卷後才顯示，每段最多播放 ${MAX_PLAYS} 次。</p>
