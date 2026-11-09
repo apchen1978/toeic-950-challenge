@@ -44,7 +44,7 @@ function questionsFor(entry) {
   return qs;
 }
 const sessionQuestions = () => questionsFor(session);
-const saveSession = () => store.set(KEY_SESSION, session);
+const saveSession = () => { if (session) { session.savedAt = Date.now(); store.set(KEY_SESSION, session); } };
 
 async function init() {
   try {
@@ -81,6 +81,7 @@ function renderHome() {
   app.innerHTML = `
     <h1>TOEIC 950+ Challenge</h1>
     <p class="muted">上次 955，這次挑戰更高。專注 Listening & Reading 的推論、細節與交叉比對。</p>
+    ${session ? resumeCard() : ''}
 
     <section class="practice-grid" aria-label="Listening 聽力與 Reading 閱讀練習">
       <article class="card practice-card listening-card">
@@ -133,7 +134,7 @@ function renderHome() {
       <label for="test-set">今天練哪一套？</label>
       <select id="test-set" class="btn">${bank.meta.sets.map(s=>`<option value="${s.id}">${esc(s.label)} · ${s.durationMin} 分鐘</option>`).join('')}</select>
       <div class="row">
-        ${session ? `<button class="btn primary" data-action="resume">繼續上次作答</button><button class="btn" data-action="discard">放棄並重新開始</button>` : `<button class="btn primary" data-action="start-diagnostic">開始完整／混合測驗</button>`}
+        ${session ? '<p class="muted">上次進度已保存在上方；選擇其他練習時，會先確認是否放棄舊進度。</p><button class="btn" data-action="start-diagnostic">開始所選新練習</button>' : `<button class="btn primary" data-action="start-diagnostic">開始完整／混合測驗</button>`}
       </div>
       <div id="unsupported-message">${audio.supported() ? '' : unsupportedNotice()}</div>
     </section>
@@ -172,6 +173,16 @@ function renderHome() {
 }
 
 let voiceLoad = 0;
+function resumeCard() {
+  const qs = sessionQuestions();
+  const answered = qs.filter((q) => session.answers[q.id] !== undefined).length;
+  const group = groupById(session.groupIds[session.cur]);
+  const title = bank.meta.sets.find((set) => set.id === session.formId)?.label ?? (session.mode === 'reading' ? '閱讀練習' : session.mode === 'listening' ? '聽力練習' : '上次練習');
+  return `<section class="card" aria-label="上次未完成的測驗"><h2>接續上次測驗</h2><p><b>${esc(title)}</b> · 已答 ${answered}/${qs.length} 題</p>
+    <p>${group?.section === 'listening' ? '聽力' : '閱讀'} · Part ${group?.part ?? ''} · 第 ${session.cur + 1} 組<br>剩餘 ${formatDuration(Math.ceil(remainingMs(session) / 1000))}${Number.isFinite(session.pausedRemainingMs) ? '（已暫停）' : ''}</p>
+    <p class="muted">最後儲存：${new Date(session.savedAt ?? session.startedAt).toLocaleString('zh-TW', { hour12: false })}。同一瀏覽器開啟此網址即可接續；清除網站資料會移除進度。</p>
+    <div class="row"><button class="btn primary" data-action="resume">繼續上次測驗</button><button class="btn" data-action="discard">放棄這次進度</button></div></section>`;
+}
 async function fillVoices() {
   const request = ++voiceLoad;
   const box = document.getElementById("voices");
@@ -251,7 +262,7 @@ function renderTest() {
   if (!allowed.some(({ i }) => i === session.cur)) session.cur = allowed[0].i;
   if (Number.isFinite(session.pausedRemainingMs)) {
     stopTimer();
-    app.innerHTML = `<section class="card"><h1>測驗已暫停</h1><p>剩餘時間 <b>${formatDuration(Math.ceil(remainingMs(session) / 1000))}</b>。作答與倒數已暫停。</p><button class="btn primary" data-action="resume-timer">繼續測驗</button></section>${progressCard(sessionQuestions(), session.answers)}`;
+    app.innerHTML = `<section class="card"><h1>測驗已暫停</h1><p>剩餘時間 <b>${formatDuration(Math.ceil(remainingMs(session) / 1000))}</b>。作答與倒數已暫停，進度已存在這個瀏覽器。</p><div class="row"><button class="btn primary" data-action="resume-timer">繼續測驗</button><button class="btn" data-action="home">暫停並回首頁</button></div></section>${progressCard(sessionQuestions(), session.answers)}`;
     return;
   }
   const qs = sessionQuestions();
@@ -373,10 +384,18 @@ function cancelPlayback(reason = 'canceled') {
   audio.stop(reason);
 }
 
+function pauseForExit() {
+  cancelPlayback('background');
+  if (session) { pauseTimer(session); stopTimer(); saveSession(); }
+}
 document.addEventListener('visibilitychange', () => {
-  if (document.hidden) cancelPlayback('background');
+  if (document.hidden) pauseForExit();
+  else if (session && Number.isFinite(session.pausedRemainingMs)) {
+    if (app.querySelector('[data-action="pause-timer"]')) renderTest();
+    else if (app.querySelector('[data-action="resume"]')) renderHome();
+  }
 });
-window.addEventListener('pagehide', () => cancelPlayback('background'));
+window.addEventListener('pagehide', pauseForExit);
 
 function pick(qid, i) {
   if (session.phase && sessionQuestions().find((q) => q.id === qid)?.section !== session.phase) return;
@@ -530,7 +549,7 @@ app.addEventListener("click", (e) => {
       if (set && !session) startSession("practice", orderedGroupIds(set.groupIds), set.durationMin);
       break;
     }
-    case "resume": if (allowSession(session.groupIds)) renderTest(); break;
+    case "resume": if (allowSession(session.groupIds)) { resumeTimer(session); saveSession(); renderTest(); } break;
     case "pause-timer": if (pauseTimer(session)) { saveSession(); renderTest(); } else if (remainingMs(session) <= 0) { if (session.phase) renderTest(); else submit(true); } break;
     case "resume-timer": if (resumeTimer(session)) { saveSession(); renderTest(); } break;
     case "discard": if (confirm("放棄目前作答進度？")) { store.del(KEY_SESSION); session = null; renderHome(); } break;

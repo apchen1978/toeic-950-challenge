@@ -26,6 +26,8 @@ The new route-map and three-document items follow the task types shown in the [E
 - **PARTIAL — PWA and persistence:** `codex/sw.js` caches the app and image assets; browser localStorage stores progress and history. Paul previously confirmed offline use on his phone, but the current branch and new assets need a fresh device check. Records do not sync across browsers/devices.
 
 Publishing workflow: keep the desktop local installation and `/codex/` online release on the same application assets, including scoring, timing and recordings. Before selective desktop copies, compare against the previous release and back up changed files. Preserve the local launcher/server configuration and browser learning records; verify data and asset hashes after copying. Installed PWA caches may need an online reopen to obtain the new release.
+
+Unfinished sessions are saved after each answer, flag, and navigation using the existing session key. Backgrounding/pagehide pauses and saves the current practice timer synchronously. A prominent home card shows the saved form, progress, current group and remaining time; Continue resumes it in one click. Manual pause can return to home without discarding. This is same-browser, same-origin storage, not account/device synchronization; clearing site data removes the saved session. Normal page exit/reload was browser-tested; abrupt OS termination is not guaranteed to emit a final lifecycle event.
 - **PARTIAL — Explanations:** current explanations are English. Chinese explanations, detailed distractor fields and difficulty tags are not yet present.
 
 ## Route to one correctly composed form
