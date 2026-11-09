@@ -60,7 +60,7 @@
       },
       {
         "id": "reading",
-        "label": "閱讀專練 · 全題庫 140 題",
+        "label": "閱讀專練 · 全題庫 149 題",
         "groupIds": [
           "g-r01",
           "g-r02",
@@ -132,9 +132,12 @@
           "g-campus-reading-d",
           "g-part6-e-notice",
           "g-single-e-airport",
-          "g-single-e-campus"
+          "g-single-e-campus",
+          "g-f-single-1",
+          "g-f-single-2",
+          "g-f-single-3"
         ],
-        "durationMin": 105
+        "durationMin": 112
       },
       {
         "id": "challenge03",
@@ -237,13 +240,16 @@
       },
       {
         "id": "photo-pilot",
-        "label": "照片題試做 · Part 1（3 題）",
+        "label": "照片題試做 · Part 1（6 題）",
         "groupIds": [
           "g-photo-01",
           "g-photo-02",
-          "g-photo-03"
+          "g-photo-03",
+          "g-photo-04",
+          "g-photo-05",
+          "g-photo-06"
         ],
-        "durationMin": 5
+        "durationMin": 7
       },
       {
         "id": "practice-crossref-26",
@@ -310,6 +316,21 @@
           "g-single-e-campus"
         ],
         "durationMin": 27
+      },
+      {
+        "id": "coverage-f-24",
+        "label": "情境 F · 對話、廣播與長篇閱讀（24 題）",
+        "groupIds": [
+          "g-f-dialogue-1",
+          "g-f-dialogue-2",
+          "g-f-dialogue-3",
+          "g-f-talk-1",
+          "g-f-talk-2",
+          "g-f-single-1",
+          "g-f-single-2",
+          "g-f-single-3"
+        ],
+        "durationMin": 30
       }
     ]
   },
@@ -5104,6 +5125,559 @@
           ],
           "answer": 0,
           "explanation": "The event provides tables and outlets, but presenters must bring their own computers."
+        }
+      ]
+    },
+    {
+      "id": "g-f-dialogue-1",
+      "section": "listening",
+      "part": 3,
+      "title": "展覽場地協調",
+      "script": [
+        {
+          "speaker": "W",
+          "text": "The posters for the design exhibition have arrived, but the delivery company left them at the main entrance instead of the gallery."
+        },
+        {
+          "speaker": "M",
+          "text": "I can collect them after I finish setting up the display cases. Will the gallery be open this evening?"
+        },
+        {
+          "speaker": "W",
+          "text": "Yes, until seven. The installation team needs the posters before tomorrow morning."
+        },
+        {
+          "speaker": "M",
+          "text": "Then I will take them upstairs before I leave today."
+        }
+      ],
+      "questions": [
+        {
+          "id": "F-CV1-1",
+          "skill": "l-conversation",
+          "prompt": "What problem does the woman mention?",
+          "options": [
+            "The exhibition has been canceled.",
+            "The display cases arrived damaged.",
+            "The posters were left at a different entrance.",
+            "The gallery is closed all week."
+          ],
+          "answer": 2,
+          "explanation": "The delivery company left the posters at the main entrance instead of the gallery."
+        },
+        {
+          "id": "F-CV1-2",
+          "skill": "l-conversation",
+          "prompt": "Until what time will the gallery be open?",
+          "options": [
+            "Until tomorrow morning.",
+            "Until noon today.",
+            "Until midnight.",
+            "Until seven this evening."
+          ],
+          "answer": 3,
+          "explanation": "The woman says the gallery will be open until seven."
+        },
+        {
+          "id": "F-CV1-3",
+          "skill": "l-inference",
+          "prompt": "What will the man probably do after setting up the cases?",
+          "options": [
+            "Take the posters upstairs to the gallery.",
+            "Ask the delivery company for a refund.",
+            "Close the main entrance.",
+            "Print new exhibition tickets."
+          ],
+          "answer": 0,
+          "explanation": "He offers to collect the posters and take them upstairs before leaving."
+        }
+      ]
+    },
+    {
+      "id": "g-f-dialogue-2",
+      "section": "listening",
+      "part": 3,
+      "title": "飯店會議安排",
+      "script": [
+        {
+          "speaker": "M",
+          "text": "We need a meeting room for twelve guests on Thursday afternoon. Is the Harbor Room available?"
+        },
+        {
+          "speaker": "W",
+          "text": "It is available, but it seats only ten. The Garden Room seats sixteen and costs the same."
+        },
+        {
+          "speaker": "M",
+          "text": "Let us reserve the Garden Room. Can the hotel provide a projector?"
+        },
+        {
+          "speaker": "W",
+          "text": "Yes. I will add it to the reservation and email you the confirmation today."
+        }
+      ],
+      "questions": [
+        {
+          "id": "F-CV2-1",
+          "skill": "l-conversation",
+          "prompt": "Why does the woman suggest the Garden Room?",
+          "options": [
+            "The Harbor Room has no chairs.",
+            "The Garden Room is cheaper.",
+            "The Harbor Room is too small for the group.",
+            "The Garden Room is available only in the morning."
+          ],
+          "answer": 2,
+          "explanation": "The Harbor Room seats ten, but the group has twelve guests; the Garden Room seats sixteen."
+        },
+        {
+          "id": "F-CV2-2",
+          "skill": "l-conversation",
+          "prompt": "What equipment does the man request?",
+          "options": [
+            "A printer.",
+            "A coffee machine.",
+            "A microphone stand.",
+            "A projector."
+          ],
+          "answer": 3,
+          "explanation": "The man asks whether the hotel can provide a projector."
+        },
+        {
+          "id": "F-CV2-3",
+          "skill": "l-inference",
+          "prompt": "What will the woman send today?",
+          "options": [
+            "A reservation confirmation.",
+            "A list of hotel guests.",
+            "A bill for sixteen rooms.",
+            "Directions to another hotel."
+          ],
+          "answer": 0,
+          "explanation": "She says she will email the confirmation today."
+        }
+      ]
+    },
+    {
+      "id": "g-f-dialogue-3",
+      "section": "listening",
+      "part": 3,
+      "title": "新產品樣品",
+      "script": [
+        {
+          "speaker": "W",
+          "text": "The samples for the retailer meeting are ready, but the packaging labels still show the old product name."
+        },
+        {
+          "speaker": "M",
+          "text": "The meeting is on Friday, correct? We could print replacement labels in the office."
+        },
+        {
+          "speaker": "W",
+          "text": "Yes, but please use the revised artwork from the design team. The file in last week’s folder has the wrong color."
+        },
+        {
+          "speaker": "M",
+          "text": "I will ask Design for the current file before I print anything."
+        }
+      ],
+      "questions": [
+        {
+          "id": "F-CV3-1",
+          "skill": "l-conversation",
+          "prompt": "What is wrong with the samples?",
+          "options": [
+            "They were sent to the wrong retailer.",
+            "They contain the wrong product.",
+            "Their labels show an outdated product name.",
+            "They will not be ready until next week."
+          ],
+          "answer": 2,
+          "explanation": "The woman says the labels still show the old name."
+        },
+        {
+          "id": "F-CV3-2",
+          "skill": "l-inference",
+          "prompt": "Why should the man avoid last week’s file?",
+          "options": [
+            "It does not contain a product name.",
+            "It was created by the retailer.",
+            "It cannot be opened in the office.",
+            "It has the wrong color."
+          ],
+          "answer": 3,
+          "explanation": "The woman says the file in last week’s folder has the wrong color."
+        },
+        {
+          "id": "F-CV3-3",
+          "skill": "l-inference",
+          "prompt": "What will the man do next?",
+          "options": [
+            "Ask the design team for the current artwork.",
+            "Deliver the samples to the retailer.",
+            "Cancel the Friday meeting.",
+            "Order packaging from another supplier."
+          ],
+          "answer": 0,
+          "explanation": "He says he will ask Design for the current file before printing."
+        }
+      ]
+    },
+    {
+      "id": "g-f-talk-1",
+      "section": "listening",
+      "part": 4,
+      "title": "博物館參觀廣播",
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Welcome to the City Transport Museum. The guided tour of the railway exhibition begins at eleven in the entrance hall. The tour is included in your admission ticket and lasts about forty minutes. The vehicle restoration workshop on the ground floor is closed today, but visitors may watch a short video about the project in Room Five. Please ask at the information desk if you need step-free access to the exhibition."
+        }
+      ],
+      "questions": [
+        {
+          "id": "F-TALK1-1",
+          "skill": "l-talk",
+          "prompt": "Where will the guided tour begin?",
+          "options": [
+            "In Room Five.",
+            "At the restoration workshop.",
+            "In the entrance hall.",
+            "Outside the railway station."
+          ],
+          "answer": 2,
+          "explanation": "The announcement says the railway exhibition tour starts in the entrance hall."
+        },
+        {
+          "id": "F-TALK1-2",
+          "skill": "l-talk",
+          "prompt": "What is included in the admission ticket?",
+          "options": [
+            "A train journey.",
+            "A private restoration lesson.",
+            "A meal at the museum café.",
+            "The guided tour."
+          ],
+          "answer": 3,
+          "explanation": "The speaker states that the guided tour is included in admission."
+        },
+        {
+          "id": "F-TALK1-3",
+          "skill": "l-inference",
+          "prompt": "What can visitors do instead of entering the workshop?",
+          "options": [
+            "Watch a video about the restoration project.",
+            "Join a repair team.",
+            "Borrow a vehicle.",
+            "Visit the workshop after midnight."
+          ],
+          "answer": 0,
+          "explanation": "The ground-floor workshop is closed, but visitors may watch a short project video in Room Five."
+        }
+      ]
+    },
+    {
+      "id": "g-f-talk-2",
+      "section": "listening",
+      "part": 4,
+      "title": "公司系統維護通知",
+      "script": [
+        {
+          "speaker": "W",
+          "text": "This is a reminder from the IT team. The expense system will be unavailable from six to eight this evening while we apply a security update. Reports submitted before six will remain in the system and do not need to be entered again. Employees who need to submit an urgent report during the outage should email the finance desk. The IT team will post a notice on the staff portal when the system is available again."
+        }
+      ],
+      "questions": [
+        {
+          "id": "F-TALK2-1",
+          "skill": "l-talk",
+          "prompt": "Why will the expense system be unavailable?",
+          "options": [
+            "The finance desk is moving offices.",
+            "All employee accounts are being deleted.",
+            "A security update will be applied.",
+            "A new travel policy is being printed."
+          ],
+          "answer": 2,
+          "explanation": "The IT team says the system will be unavailable while a security update is applied."
+        },
+        {
+          "id": "F-TALK2-2",
+          "skill": "l-inference",
+          "prompt": "What is indicated about reports submitted before six?",
+          "options": [
+            "They must be entered again after eight.",
+            "They will be sent to employees by mail.",
+            "They will be automatically rejected.",
+            "They will remain in the system."
+          ],
+          "answer": 3,
+          "explanation": "The reminder says these reports will remain and need not be entered again."
+        },
+        {
+          "id": "F-TALK2-3",
+          "skill": "l-talk",
+          "prompt": "What should someone do with an urgent report during the outage?",
+          "options": [
+            "Email the finance desk.",
+            "Wait until the next month.",
+            "Print it for the reception desk.",
+            "Submit it to the museum office."
+          ],
+          "answer": 0,
+          "explanation": "Employees with urgent reports are told to email the finance desk."
+        }
+      ]
+    },
+    {
+      "id": "g-f-single-1",
+      "section": "reading",
+      "part": 7,
+      "title": "單篇・公司差旅政策",
+      "passage": {
+        "docs": [
+          {
+            "label": "TRAVEL POLICY UPDATE",
+            "text": "STAFF TRAVEL POLICY UPDATE\n\nStarting January 1, employees booking rail travel for business trips must use the company travel portal. The portal displays available services and records the fare against the appropriate project. Employees should select a standard-class ticket unless a manager has approved a different class in advance.\n\nA traveler who needs to change a booking should make the change in the portal where possible. If the departure is less than two hours away, the portal may no longer permit changes; in that case, contact the travel desk by telephone. The desk can advise whether the ticket permits a change and whether the rail operator charges a fee.\n\nReceipts for approved additional charges must be uploaded with the expense report. An employee should not purchase a second ticket simply because the first one cannot be changed in the portal. The travel desk will first check whether the original fare can be adjusted or credited.\n\nThese instructions apply to rail bookings made after January 1. Tickets purchased before that date remain subject to the conditions shown on the original booking confirmation."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "F-SINGLE1-1",
+          "skill": "r-purpose",
+          "prompt": "What is the main purpose of the notice?",
+          "options": [
+            "To advertise discounted personal holidays.",
+            "To announce the closure of a railway station.",
+            "To explain updated procedures for business rail travel.",
+            "To require all staff to travel first class."
+          ],
+          "answer": 2,
+          "explanation": "The notice explains booking, change and expense procedures for business rail travel."
+        },
+        {
+          "id": "F-SINGLE1-2",
+          "skill": "r-detail",
+          "prompt": "What should a traveler do if departure is less than two hours away and the portal will not allow a change?",
+          "options": [
+            "Purchase a second ticket immediately.",
+            "Wait until the next month.",
+            "Upload a receipt before asking for help.",
+            "Telephone the travel desk."
+          ],
+          "answer": 3,
+          "explanation": "The notice directs travelers to call the travel desk in that situation."
+        },
+        {
+          "id": "F-SINGLE1-3",
+          "skill": "r-inference",
+          "prompt": "What is indicated about tickets bought before January 1?",
+          "options": [
+            "They remain subject to their original booking conditions.",
+            "They must all be canceled.",
+            "They automatically receive a free upgrade.",
+            "They can only be used for personal trips."
+          ],
+          "answer": 0,
+          "explanation": "The last paragraph says earlier tickets retain the conditions on their original confirmation."
+        }
+      ]
+    },
+    {
+      "id": "g-f-single-2",
+      "section": "reading",
+      "part": 7,
+      "title": "單篇・學校志工活動",
+      "passage": {
+        "docs": [
+          {
+            "label": "COLLEGE NEWSLETTER",
+            "text": "COLLEGE COMMUNITY DAY — VOLUNTEER INFORMATION\n\nThe college will hold its annual Community Day on Saturday, May 16, from 10 a.m. to 4 p.m. Local organizations will host demonstrations and information tables in the Student Center. Admission is free, and members of the public do not need to register to visit the tables.\n\nStudent volunteers are needed for two shifts. The morning shift runs from 9 a.m. to 12:30 p.m. and includes setting up tables before visitors arrive. The afternoon shift runs from noon to 4:30 p.m. and includes packing equipment after the event. Volunteers may choose either shift, but they should not sign up for both because the schedules overlap.\n\nA short orientation will be held online on May 12 at 6 p.m. Volunteers who cannot attend should email the Community Office by May 10 to request the recording. The recording covers safety instructions and explains where to collect a name badge on the event day.\n\nTo register as a volunteer, complete the form on the college portal by May 8. Applicants will receive their assigned shift by email on May 11. Questions about the public demonstrations should be directed to the participating organizations; the Community Office handles only volunteer arrangements."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "F-SINGLE2-1",
+          "skill": "r-detail",
+          "prompt": "What is included in the morning volunteer shift?",
+          "options": [
+            "Packing equipment after the event.",
+            "Recording the online orientation.",
+            "Setting up tables before visitors arrive.",
+            "Reviewing travel expense reports."
+          ],
+          "answer": 2,
+          "explanation": "The notice assigns table setup to the morning shift and packing to the afternoon shift."
+        },
+        {
+          "id": "F-SINGLE2-2",
+          "skill": "r-inference",
+          "prompt": "Why should volunteers choose only one shift?",
+          "options": [
+            "Each shift requires a registration fee.",
+            "The Student Center closes at noon.",
+            "The orientation is offered only in person.",
+            "The shift schedules overlap."
+          ],
+          "answer": 3,
+          "explanation": "The morning shift ends at 12:30 and the afternoon shift starts at noon."
+        },
+        {
+          "id": "F-SINGLE2-3",
+          "skill": "r-detail",
+          "prompt": "What should a volunteer do if unable to attend the orientation?",
+          "options": [
+            "Email the Community Office by May 10 to request the recording.",
+            "Visit the railway station on May 11.",
+            "Pay for a second orientation session.",
+            "Ask a participating organization to assign a shift."
+          ],
+          "answer": 0,
+          "explanation": "The announcement gives May 10 as the deadline for requesting the recording."
+        }
+      ]
+    },
+    {
+      "id": "g-f-single-3",
+      "section": "reading",
+      "part": 7,
+      "title": "單篇・供應商維修通知",
+      "passage": {
+        "docs": [
+          {
+            "label": "SERVICE LETTER",
+            "text": "Dear Customer,\n\nThank you for contacting Harbor Equipment about the service plan for your office printers. Your current plan includes one preventive maintenance visit every six months and telephone support on business days. It does not include replacement toner, which can be ordered separately through our customer portal.\n\nOur records show that your next maintenance visit is scheduled for Thursday, August 20, between 9 a.m. and noon. A technician will inspect and clean the printers listed in your service agreement. Please make sure the devices are accessible and that someone who can authorize access to the office is available when the technician arrives.\n\nIf this time is inconvenient, you may request a change through the portal by August 13. Requests received after that date should be made by telephone so our scheduling team can confirm availability. There is no rescheduling charge for a request made at least two business days before the visit. Later changes may incur a fee if the technician has already been assigned.\n\nAfter the visit, the technician will email a service report to the address on your account. Please review the report and contact us within five business days of receiving it if any listed equipment was not inspected.\n\nSincerely,\nHarbor Equipment Service Team"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "F-SINGLE3-1",
+          "skill": "r-detail",
+          "prompt": "What is included in the customer’s current service plan?",
+          "options": [
+            "Free replacement toner every month.",
+            "Telephone support every weekend.",
+            "A preventive maintenance visit every six months.",
+            "A new printer after each visit."
+          ],
+          "answer": 2,
+          "explanation": "The first paragraph specifies the maintenance frequency and excludes replacement toner."
+        },
+        {
+          "id": "F-SINGLE3-2",
+          "skill": "r-inference",
+          "prompt": "How should the customer request a schedule change after August 13?",
+          "options": [
+            "By mailing the technician a report.",
+            "By ordering toner through the portal.",
+            "By waiting until the technician arrives.",
+            "By telephoning the scheduling team."
+          ],
+          "answer": 3,
+          "explanation": "The letter directs later change requests to the scheduling team by telephone."
+        },
+        {
+          "id": "F-SINGLE3-3",
+          "skill": "r-detail",
+          "prompt": "When should the customer report an omitted inspection?",
+          "options": [
+            "Within five business days after receiving the report.",
+            "Before the maintenance visit is scheduled.",
+            "Within two calendar months.",
+            "Only when ordering replacement toner."
+          ],
+          "answer": 0,
+          "explanation": "The closing paragraph asks the customer to report uninspected equipment within five business days."
+        }
+      ]
+    },
+    {
+      "id": "g-photo-04",
+      "section": "listening",
+      "part": 1,
+      "title": "照片描述",
+      "image": "images/photo-restaurant.png",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Look at the photograph."
+        }
+      ],
+      "questions": [
+        {
+          "id": "PHOTO04",
+          "skill": "l-photo",
+          "prompt": "聽四個敘述，選出最符合照片的一句。",
+          "options": [
+            "A woman is standing near a doorway.",
+            "A man is pouring water into a glass.",
+            "Some dishes are being washed at a sink.",
+            "Chairs are being stacked on the table."
+          ],
+          "answer": 1,
+          "explanation": "The man is pouring water from a pitcher into a glass. The woman is seated, and no one is washing dishes or stacking chairs."
+        }
+      ]
+    },
+    {
+      "id": "g-photo-05",
+      "section": "listening",
+      "part": 1,
+      "title": "照片描述",
+      "image": "images/photo-warehouse.png",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Look at the photograph."
+        }
+      ],
+      "questions": [
+        {
+          "id": "PHOTO05",
+          "skill": "l-photo",
+          "prompt": "聽四個敘述，選出最符合照片的一句。",
+          "options": [
+            "A worker is stacking boxes on a cart.",
+            "A worker is carrying a box above her head.",
+            "A worker is scanning a box on a table.",
+            "A worker is seated at a computer."
+          ],
+          "answer": 2,
+          "explanation": "The worker holds a scanner over a box on the table. She is not carrying the box overhead, stacking it on a cart, or sitting at a computer."
+        }
+      ]
+    },
+    {
+      "id": "g-photo-06",
+      "section": "listening",
+      "part": 1,
+      "title": "照片描述",
+      "image": "images/photo-terrace.png",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Look at the photograph."
+        }
+      ],
+      "questions": [
+        {
+          "id": "PHOTO06",
+          "skill": "l-photo",
+          "prompt": "聽四個敘述，選出最符合照片的一句。",
+          "options": [
+            "People are sitting at outdoor tables.",
+            "A patio umbrella has been opened.",
+            "Tables are being carried indoors.",
+            "A man is sweeping a paved area."
+          ],
+          "answer": 3,
+          "explanation": "The man is sweeping the paved terrace. The tables are empty, the umbrella is closed, and no one is carrying tables."
         }
       ]
     }

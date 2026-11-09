@@ -68,7 +68,7 @@ test("Batch A pilot: stems do not duplicate existing question or listening promp
 
 test("reading-all set includes every current reading question", () => {
   const set = bank.meta.sets.find((item) => item.id === "reading");
-  assert.equal(flatten(bank, set.groupIds).filter((question) => question.section === "reading").length, 140);
+  assert.equal(flatten(bank, set.groupIds).filter((question) => question.section === "reading").length, 149);
 });
 
 test("focused E includes three conversations, text completion and two single passages", () => {
@@ -125,7 +125,7 @@ test("photo practice has local images, four spoken choices and offline cache ent
   const set = bank.meta.sets.find((item) => item.id === "photo-pilot");
   assert.ok(set);
   const worker = readFileSync(new URL("../codex/sw.js", import.meta.url), "utf8");
-  assert.equal(set.groupIds.length, 3);
+  assert.equal(set.groupIds.length, 6);
   for (const id of set.groupIds) {
     const group = groups.get(id);
     assert.equal(group.part, 1);
@@ -134,4 +134,27 @@ test("photo practice has local images, four spoken choices and offline cache ent
     assert.ok(existsSync(new URL(`../codex/${group.image}`, import.meta.url)));
     assert.ok(worker.includes(group.image));
   }
+});
+
+test("practice F supplies three conversations, two talks, and three single passages", () => {
+  const set = bank.meta.sets.find((item) => item.id === "coverage-f-24");
+  assert.ok(set);
+  const selected = set.groupIds.map((id) => groups.get(id));
+  assert.ok(selected.every(Boolean));
+  assert.equal(flatten(bank, set.groupIds).length, 24);
+  assert.equal(selected.filter((g) => g.part === 3 && g.questions.length === 3).length, 3);
+  assert.equal(selected.filter((g) => g.part === 4 && g.questions.length === 3).length, 2);
+  assert.equal(selected.filter((g) => g.part === 7 && g.passage.docs.length === 1 && g.questions.length === 3).length, 3);
+});
+
+test("question bank contains enough appropriately grouped items to assemble one official blueprint", () => {
+  const p=(part)=>bank.groups.filter((group)=>group.part===part);
+  assert.ok(p(1).length >= 6);
+  assert.ok(flatten(bank,p(2).map((g)=>g.id)).length >= 25);
+  assert.ok(p(3).filter((g)=>g.questions.length===3).length >= 13);
+  assert.ok(p(4).filter((g)=>g.questions.length===3).length >= 10);
+  assert.ok(flatten(bank,p(5).map((g)=>g.id)).length >= 30);
+  assert.ok(p(6).filter((g)=>g.questions.length===4).length >= 4);
+  assert.ok(p(7).filter((g)=>g.passage.docs.length===1).reduce((n,g)=>n+g.questions.length,0) >= 29);
+  assert.ok(p(7).filter((g)=>g.passage.docs.length>=2 && g.questions.length===5).length >= 5);
 });
