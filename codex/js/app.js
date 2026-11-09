@@ -238,7 +238,7 @@ function renderTest() {
     </div>
 
     <section class="card">
-      ${g.image ? `<img class="question-image" src="${esc(g.image)}" alt="照片載入失敗時請連網重新開啟；聽四個敘述並選擇符合照片的一句。">` : ""}
+      ${g.image ? `<img class="question-image" src="${esc(g.image)}" alt="${g.part === 1 ? "照片題圖片" : "聽力題組附圖"}；若圖片載入失敗，請連網重新開啟。">` : ""}
       ${g.script ? audioBlock(g) : ""}
       ${g.passage ? g.passage.docs.map((d) => `<div class="doclabel">${esc(d.label)}</div><div class="passage">${esc(d.text)}</div>`).join("") : ""}
       ${g.questions.filter((q) => !session.questionIds || session.questionIds.includes(q.id)).map((q) => questionBlock(q, qs, spoken)).join("")}
@@ -414,7 +414,7 @@ function reviewGroup(g, entry) {
   const qs = flatten(bank, entry.groupIds);
   return `<div class="q">
     <div class="doclabel">Part ${g.part} ${esc(g.title ?? "")}</div>
-    ${g.image ? `<img class="question-image" src="${esc(g.image)}" alt="本題照片；若載入失敗，請連網重新開啟。">` : ""}
+    ${g.image ? `<img class="question-image" src="${esc(g.image)}" alt="${g.part === 1 ? "本題照片" : "本題附圖"}；若載入失敗，請連網重新開啟。">` : ""}
     ${g.script ? `<div class="script"><b>Transcript</b>${g.script.map((l) => `<p><span class="tag">${l.speaker === "M" ? "Man" : l.speaker === "W" ? "Woman" : "Narrator"}</span>${esc(l.text)}</p>`).join("")}</div>` : ""}
     ${g.passage ? g.passage.docs.map((d) => `<div class="doclabel">${esc(d.label)}</div><div class="passage">${esc(d.text)}</div>`).join("") : ""}
     ${g.questions.filter((q) => !entry.questionIds || entry.questionIds.includes(q.id)).map((q) => {
