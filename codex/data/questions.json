@@ -60,7 +60,7 @@
       },
       {
         "id": "reading",
-        "label": "閱讀專練 · 全題庫 90 題",
+        "label": "閱讀專練 · 全題庫 128 題",
         "groupIds": [
           "g-r01",
           "g-r02",
@@ -113,9 +113,25 @@
           "g-extra-r-10",
           "g-new-read-a",
           "g-new-read-b",
-          "g-new-part6-a"
+          "g-new-part6-a",
+          "g-notice-parking-01",
+          "g-email-order-02",
+          "g-event-ad-03",
+          "g-chat-policy-04",
+          "g-vocab-c-1",
+          "g-vocab-c-2",
+          "g-vocab-c-3",
+          "g-vocab-c-4",
+          "g-vocab-c-5",
+          "g-vocab-c-6",
+          "g-vocab-c-7",
+          "g-vocab-c-8",
+          "g-vocab-c-9",
+          "g-vocab-c-10",
+          "g-airport-reading-d",
+          "g-campus-reading-d"
         ],
-        "durationMin": 68
+        "durationMin": 96
       },
       {
         "id": "challenge03",
@@ -218,10 +234,11 @@
       },
       {
         "id": "photo-pilot",
-        "label": "照片題試做 · Part 1（2 題）",
+        "label": "照片題試做 · Part 1（3 題）",
         "groupIds": [
           "g-photo-01",
-          "g-photo-02"
+          "g-photo-02",
+          "g-photo-03"
         ],
         "durationMin": 5
       },
@@ -238,6 +255,45 @@
           "g-new-part6-a"
         ],
         "durationMin": 32
+      },
+      {
+        "id": "reading-notices-20",
+        "label": "閱讀 C · 公告、書信與訊息（20 題）",
+        "groupIds": [
+          "g-notice-parking-01",
+          "g-email-order-02",
+          "g-event-ad-03",
+          "g-chat-policy-04"
+        ],
+        "durationMin": 20
+      },
+      {
+        "id": "vocabulary-c-10",
+        "label": "字彙 C · 職場單字（10 題）",
+        "groupIds": [
+          "g-vocab-c-1",
+          "g-vocab-c-2",
+          "g-vocab-c-3",
+          "g-vocab-c-4",
+          "g-vocab-c-5",
+          "g-vocab-c-6",
+          "g-vocab-c-7",
+          "g-vocab-c-8",
+          "g-vocab-c-9",
+          "g-vocab-c-10"
+        ],
+        "durationMin": 10
+      },
+      {
+        "id": "campus-airport-14",
+        "label": "情境 D · 機場與校園廣播、公告（14 題）",
+        "groupIds": [
+          "g-airport-talk-d",
+          "g-campus-talk-d",
+          "g-airport-reading-d",
+          "g-campus-reading-d"
+        ],
+        "durationMin": 18
       }
     ]
   },
@@ -3784,6 +3840,855 @@
           ],
           "answer": 3,
           "explanation": "The linking verb be requires an adjective: available. The other forms do not fit the sentence."
+        }
+      ]
+    },
+    {
+      "id": "g-notice-parking-01",
+      "section": "reading",
+      "part": 7,
+      "title": "三篇・停車公告與信件",
+      "passage": {
+        "docs": [
+          {
+            "label": "BUILDING NOTICE",
+            "text": "BUILDING NOTICE — Parking Garage Maintenance\n\nThe west entrance to the parking garage will be closed from Monday, April 13, through Wednesday, April 15, while the gate mechanism is replaced. During these three days, drivers should use the east entrance on Willow Street. The east entrance normally closes at 7 p.m., but it will remain open until 10 p.m. during the work. Parking permits will still be required.\n\nVisitors who have arranged deliveries should advise their drivers of the temporary route. The building office will post an update if the work finishes early or takes longer than expected."
+          },
+          {
+            "label": "EMAIL",
+            "text": "From: Nora Kim, Facilities\nTo: Department Coordinators\nDate: April 9\nSubject: Tuesday delivery\n\nOur office furniture delivery is scheduled for Tuesday, April 14, at 8 a.m. The truck is too tall to enter the parking garage. Instead, the driver should stop at the loading bay on Pine Street and call the building office before unloading. Please do not send the truck to the temporary east entrance.\n\nI have already notified the delivery company, but I would appreciate it if someone on the receiving team could meet the driver."
+          },
+          {
+            "label": "CHAT MESSAGE",
+            "text": "April 10, 2:15 p.m.\n\nLuis: I can meet the furniture driver on Tuesday morning. Please send me the driver’s name when the delivery company confirms it.\nNora: Thank you. I will forward it as soon as I receive the confirmation."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "NOTICE-1-1",
+          "skill": "r-purpose",
+          "prompt": "Why was the building notice issued?",
+          "options": [
+            "To announce a permanent increase in parking fees.",
+            "To request new parking permits from all visitors.",
+            "To explain a temporary change to garage access.",
+            "To cancel a furniture delivery."
+          ],
+          "answer": 2,
+          "explanation": "The notice describes the west entrance closure and the temporary route through the east entrance."
+        },
+        {
+          "id": "NOTICE-1-2",
+          "skill": "r-detail",
+          "prompt": "What is stated about the east entrance during maintenance?",
+          "options": [
+            "It will close at noon each day.",
+            "It will be reserved for delivery trucks.",
+            "It will no longer require permits.",
+            "It will remain open until 10 p.m."
+          ],
+          "answer": 3,
+          "explanation": "The notice extends its closing time from 7 p.m. to 10 p.m.; permits remain required."
+        },
+        {
+          "id": "NOTICE-1-3",
+          "skill": "r-crossref",
+          "prompt": "Where should the furniture truck stop on April 14?",
+          "options": [
+            "At the loading bay on Pine Street.",
+            "At the east garage entrance on Willow Street.",
+            "At the closed west garage entrance.",
+            "At the staff parking level."
+          ],
+          "answer": 0,
+          "explanation": "The email directs the truck to the Pine Street loading bay because it is too tall for the garage."
+        },
+        {
+          "id": "NOTICE-1-4",
+          "skill": "r-crossref",
+          "prompt": "Why should the driver avoid the temporary east entrance?",
+          "options": [
+            "The east entrance closes before 8 a.m.",
+            "The truck cannot fit inside the garage.",
+            "The delivery has been canceled.",
+            "The driver does not have a parking permit."
+          ],
+          "answer": 1,
+          "explanation": "The email says the truck is too tall to enter the garage."
+        },
+        {
+          "id": "NOTICE-1-5",
+          "skill": "r-inference",
+          "prompt": "What will Nora probably send Luis?",
+          "options": [
+            "A new parking permit for the truck.",
+            "An invoice for the gate repair.",
+            "The driver’s name after the company confirms it.",
+            "The furniture delivery schedule for Thursday."
+          ],
+          "answer": 2,
+          "explanation": "In the chat Nora agrees to forward the driver’s name once the company confirms it."
+        }
+      ]
+    },
+    {
+      "id": "g-email-order-02",
+      "section": "reading",
+      "part": 7,
+      "title": "三篇・訂單、客服與收據",
+      "passage": {
+        "docs": [
+          {
+            "label": "ORDER CONFIRMATION",
+            "text": "ORDER 7208 — May 4\n\nOffice supply package\n• 8 desk lamps, model L2, at $45 each: $360\n• 8 replacement bulbs at $5 each: $40\n• Standard delivery: $15\nTotal charged: $415\n\nThe package will normally leave our warehouse within three business days. Please contact Customer Service before dispatch if you need to change the delivery address."
+          },
+          {
+            "label": "CUSTOMER EMAIL",
+            "text": "From: Priya Shah\nTo: Customer Service\nDate: May 5\nSubject: Order 7208\n\nOur renovation schedule has changed, so the reception desk at the address on my order will not be staffed next week. The package has not yet been dispatched. Could you send it to our temporary office at 18 Cedar Lane instead? Please keep the same delivery service; we do not need expedited shipping.\n\nIf the address change affects the price, please let me know before you send the parcel."
+          },
+          {
+            "label": "CUSTOMER SERVICE REPLY",
+            "text": "May 6\n\nHello Priya,\n\nWe have updated the address to 18 Cedar Lane before dispatch. Standard delivery remains $15, and no additional payment is required. The replacement bulbs are temporarily unavailable, so we will ship the lamps now and send the bulbs separately next week. There will be no second delivery charge. You will receive a tracking number for each shipment.\n\nCustomer Service"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "EMAIL-2-1",
+          "skill": "r-detail",
+          "prompt": "What was the original total charged for order 7208?",
+          "options": [
+            "$360",
+            "$400",
+            "$415",
+            "$430"
+          ],
+          "answer": 2,
+          "explanation": "The confirmation lists $360 for lamps, $40 for bulbs, and $15 for delivery, totaling $415."
+        },
+        {
+          "id": "EMAIL-2-2",
+          "skill": "r-purpose",
+          "prompt": "Why did Priya write to Customer Service?",
+          "options": [
+            "To cancel the lamps and order another model.",
+            "To request expedited delivery.",
+            "To report that the package arrived damaged.",
+            "To change the delivery address before dispatch."
+          ],
+          "answer": 3,
+          "explanation": "The customer asks for delivery to a temporary office because the original reception desk will not be staffed."
+        },
+        {
+          "id": "EMAIL-2-3",
+          "skill": "r-crossref",
+          "prompt": "How will the order be delivered?",
+          "options": [
+            "The lamps and bulbs will be sent separately.",
+            "All items will be delivered together to the original address.",
+            "The customer must collect the items from the warehouse.",
+            "The lamps will be shipped only after the bulbs arrive."
+          ],
+          "answer": 0,
+          "explanation": "The reply says the lamps will ship now and the temporarily unavailable bulbs will follow next week."
+        },
+        {
+          "id": "EMAIL-2-4",
+          "skill": "r-crossref",
+          "prompt": "How much extra will the customer pay for the changed address and second shipment?",
+          "options": [
+            "$15.",
+            "Nothing.",
+            "$40.",
+            "$55."
+          ],
+          "answer": 1,
+          "explanation": "The reply says standard delivery remains $15, no additional payment is needed, and there is no second charge."
+        },
+        {
+          "id": "EMAIL-2-5",
+          "skill": "r-inference",
+          "prompt": "What will Priya receive for the two shipments?",
+          "options": [
+            "Two replacement invoices with new delivery charges.",
+            "A refund for all eight lamps.",
+            "A tracking number for each one.",
+            "A request to collect the bulbs in person."
+          ],
+          "answer": 2,
+          "explanation": "Customer Service says it will send a tracking number for each shipment."
+        }
+      ]
+    },
+    {
+      "id": "g-event-ad-03",
+      "section": "reading",
+      "part": 7,
+      "title": "三篇・活動公告與註冊",
+      "passage": {
+        "docs": [
+          {
+            "label": "PUBLIC ANNOUNCEMENT",
+            "text": "RIVERFRONT BUSINESS FORUM\n\nJoin local businesses on Saturday, June 6, for a morning of practical workshops. The event takes place at the Harbor Conference Center from 9 a.m. to 1 p.m. Admission is free, but registration is required by May 29. Participants may choose one workshop because all three run at the same time.\n\nThe Market Research workshop will be presented in Room 201; Digital Sales will be in Room 204; and Supplier Negotiation will be in Room 208. A networking session follows the workshops in the main hall."
+          },
+          {
+            "label": "REGISTRATION EMAIL",
+            "text": "From: Forum Registration\nTo: Ben Ortiz\nDate: May 25\nSubject: Registration received\n\nThank you for registering for the Riverfront Business Forum. We have recorded your first choice, Digital Sales, and your request for a wheelchair-accessible seat. This message confirms only that we have received your registration; a final seat confirmation will be sent by June 1. If your plans change, please notify us by replying to this message."
+          },
+          {
+            "label": "FINAL UPDATE",
+            "text": "June 1\n\nDear Ben,\n\nYour place in the Digital Sales workshop is confirmed. The session has been moved from Room 204 to Room 206 to accommodate the larger-than-expected audience. Your accessible seat has been arranged. The event still begins at 9 a.m.; please check in at the desk in the main hall.\n\nForum Registration"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "EVENT-3-1",
+          "skill": "r-purpose",
+          "prompt": "What is the main purpose of the announcement?",
+          "options": [
+            "To explain why a conference center has closed.",
+            "To advertise a paid online course.",
+            "To invite participants to register for a business forum.",
+            "To recruit workshop presenters."
+          ],
+          "answer": 2,
+          "explanation": "The announcement describes the forum and gives registration instructions."
+        },
+        {
+          "id": "EVENT-3-2",
+          "skill": "r-detail",
+          "prompt": "Why may participants select only one workshop?",
+          "options": [
+            "Registration is limited to one company.",
+            "Each workshop requires a separate fee.",
+            "The networking session has been canceled.",
+            "All three workshops run at the same time."
+          ],
+          "answer": 3,
+          "explanation": "The announcement says the three workshops run concurrently."
+        },
+        {
+          "id": "EVENT-3-3",
+          "skill": "r-crossref",
+          "prompt": "Where should Ben go for the Digital Sales workshop?",
+          "options": [
+            "Room 206.",
+            "Room 201.",
+            "Room 204.",
+            "Room 208."
+          ],
+          "answer": 0,
+          "explanation": "The June 1 update changes the room from 204 to 206."
+        },
+        {
+          "id": "EVENT-3-4",
+          "skill": "r-crossref",
+          "prompt": "What happened to Ben’s accessibility request?",
+          "options": [
+            "It was rejected because the room was full.",
+            "It was arranged and confirmed in the final update.",
+            "He was told to submit a new registration.",
+            "It applied only to the networking session."
+          ],
+          "answer": 1,
+          "explanation": "The final update confirms that his accessible seat has been arranged."
+        },
+        {
+          "id": "EVENT-3-5",
+          "skill": "r-inference",
+          "prompt": "What did the May 25 email establish?",
+          "options": [
+            "That Ben’s workshop had already moved to Room 206.",
+            "That the event would start later than 9 a.m.",
+            "That the registration had been received, while a seat still required confirmation.",
+            "That Ben had been assigned to Supplier Negotiation."
+          ],
+          "answer": 2,
+          "explanation": "The May 25 email explicitly distinguishes receipt of registration from final confirmation."
+        }
+      ]
+    },
+    {
+      "id": "g-chat-policy-04",
+      "section": "reading",
+      "part": 7,
+      "title": "雙篇・訊息對話與公告",
+      "passage": {
+        "docs": [
+          {
+            "label": "STAFF NOTICE",
+            "text": "STAFF NOTICE — Equipment Loans\n\nEmployees may borrow a laptop or a projector for up to five business days by submitting an equipment request through the staff portal. Requests made before 3 p.m. are normally reviewed the same day; later requests are reviewed the next business day. Approved equipment must be collected from the IT desk and return it there by the due date.\n\nEquipment cannot be reserved for an external contractor. For urgent exceptions, contact the IT manager; the portal does not automatically approve exceptions."
+          },
+          {
+            "label": "TEAM CHAT",
+            "text": "Monday, 2:10 p.m.\n\nAmir: Our client demonstration is on Wednesday. The conference room projector is unavailable, so I will request a portable one for three business days.\nLily: Thanks. Please submit the request before 3 p.m. I can collect it tomorrow if IT approves the request in time.\nAmir (2:18 p.m.): Done. The portal says the request is under review, not approved yet.\nLily: Understood. I will wait for the approval notice before going to the IT desk."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "CHAT-4-1",
+          "skill": "r-detail",
+          "prompt": "How long may employees normally borrow equipment?",
+          "options": [
+            "Exactly one calendar day.",
+            "Up to ten business days.",
+            "Up to five business days.",
+            "Until the next client demonstration."
+          ],
+          "answer": 2,
+          "explanation": "The notice specifies a maximum of five business days."
+        },
+        {
+          "id": "CHAT-4-2",
+          "skill": "r-purpose",
+          "prompt": "Why does Amir want a portable projector?",
+          "options": [
+            "An external contractor requested a new laptop.",
+            "The team plans to sell its existing equipment.",
+            "The IT desk has canceled all laptop loans.",
+            "The conference room projector is unavailable for a client demonstration."
+          ],
+          "answer": 3,
+          "explanation": "Amir says the room projector is unavailable and the client demonstration is Wednesday."
+        },
+        {
+          "id": "CHAT-4-3",
+          "skill": "r-crossref",
+          "prompt": "When is Amir’s request normally reviewed?",
+          "options": [
+            "The same day, because it was submitted before 3 p.m.",
+            "The next business day, because it was submitted after 3 p.m.",
+            "Only after the demonstration.",
+            "Automatically when Lily collects the projector."
+          ],
+          "answer": 0,
+          "explanation": "The chat is at 2:10 p.m., and the notice says requests before 3 p.m. are normally reviewed the same day."
+        },
+        {
+          "id": "CHAT-4-4",
+          "skill": "r-crossref",
+          "prompt": "Where would Lily collect the projector if approved?",
+          "options": [
+            "At the client’s office.",
+            "At the IT desk.",
+            "At the reception desk in the conference center.",
+            "At the equipment supplier’s warehouse."
+          ],
+          "answer": 1,
+          "explanation": "The notice says approved equipment is collected from the IT desk."
+        },
+        {
+          "id": "CHAT-4-5",
+          "skill": "r-inference",
+          "prompt": "What is the request’s status at the end of the chat?",
+          "options": [
+            "It has been approved and collected.",
+            "It has been rejected as an external-contractor request.",
+            "It is under review and not yet approved.",
+            "It has expired after five days."
+          ],
+          "answer": 2,
+          "explanation": "Amir explicitly says the request is under review, and Lily will wait for the approval notice."
+        }
+      ]
+    },
+    {
+      "id": "g-vocab-c-1",
+      "section": "reading",
+      "part": 5,
+      "title": "字彙練習",
+      "questions": [
+        {
+          "id": "VOC-C1-1",
+          "skill": "r-vocabulary",
+          "prompt": "The finance team asked the vendor to ------ the invoice because it listed the same delivery fee twice.",
+          "options": [
+            "correct",
+            "postpone",
+            "allocate",
+            "retain"
+          ],
+          "answer": 0,
+          "explanation": "Correct means fix the duplicated fee; postpone delays an action, allocate assigns a cost, and retain keeps something."
+        }
+      ]
+    },
+    {
+      "id": "g-vocab-c-2",
+      "section": "reading",
+      "part": 5,
+      "title": "字彙練習",
+      "questions": [
+        {
+          "id": "VOC-C2-1",
+          "skill": "r-vocabulary",
+          "prompt": "Applicants must submit their forms by Friday; any request received afterward will be reviewed in the next ------.",
+          "options": [
+            "signature",
+            "cycle",
+            "receipt",
+            "warranty"
+          ],
+          "answer": 1,
+          "explanation": "A review cycle is a recurring period of processing; the other nouns do not describe the next review period."
+        }
+      ]
+    },
+    {
+      "id": "g-vocab-c-3",
+      "section": "reading",
+      "part": 5,
+      "title": "字彙練習",
+      "questions": [
+        {
+          "id": "VOC-C3-1",
+          "skill": "r-vocabulary",
+          "prompt": "The new storage area is ------ only to employees whose access cards have been activated.",
+          "options": [
+            "profitable",
+            "temporary",
+            "accessible",
+            "affordable"
+          ],
+          "answer": 2,
+          "explanation": "Accessible describes who can enter; profitable, temporary, and affordable describe different qualities."
+        }
+      ]
+    },
+    {
+      "id": "g-vocab-c-4",
+      "section": "reading",
+      "part": 5,
+      "title": "字彙練習",
+      "questions": [
+        {
+          "id": "VOC-C4-1",
+          "skill": "r-vocabulary",
+          "prompt": "The manager requested an ------ list of expenses so that each department’s travel costs could be checked separately.",
+          "options": [
+            "optional",
+            "occasional",
+            "identical",
+            "itemized"
+          ],
+          "answer": 3,
+          "explanation": "An itemized list separates individual expenses; the other adjectives describe choice, frequency, or sameness."
+        }
+      ]
+    },
+    {
+      "id": "g-vocab-c-5",
+      "section": "reading",
+      "part": 5,
+      "title": "字彙練習",
+      "questions": [
+        {
+          "id": "VOC-C5-1",
+          "skill": "r-vocabulary",
+          "prompt": "To avoid delays, please ------ the order number in the subject line of every message about a delivery.",
+          "options": [
+            "include",
+            "withdraw",
+            "postpone",
+            "exclude"
+          ],
+          "answer": 0,
+          "explanation": "Include means put the order number in the subject line; the alternatives remove, delay, or leave it out."
+        }
+      ]
+    },
+    {
+      "id": "g-vocab-c-6",
+      "section": "reading",
+      "part": 5,
+      "title": "字彙練習",
+      "questions": [
+        {
+          "id": "VOC-C6-1",
+          "skill": "r-vocabulary",
+          "prompt": "The contract’s monthly fee remains unchanged; however, the customer will pay separately for any ------ training sessions.",
+          "options": [
+            "previous",
+            "additional",
+            "expired",
+            "ordinary"
+          ],
+          "answer": 1,
+          "explanation": "Additional sessions are extra sessions beyond the agreement; the other choices do not express that added quantity."
+        }
+      ]
+    },
+    {
+      "id": "g-vocab-c-7",
+      "section": "reading",
+      "part": 5,
+      "title": "字彙練習",
+      "questions": [
+        {
+          "id": "VOC-C7-1",
+          "skill": "r-vocabulary",
+          "prompt": "Because the original meeting room is unavailable, the coordinator has booked an ------ room on the second floor.",
+          "options": [
+            "identical",
+            "expired",
+            "alternative",
+            "annual"
+          ],
+          "answer": 2,
+          "explanation": "An alternative room is a substitute for the unavailable one; the other adjectives do not express substitution."
+        }
+      ]
+    },
+    {
+      "id": "g-vocab-c-8",
+      "section": "reading",
+      "part": 5,
+      "title": "字彙練習",
+      "questions": [
+        {
+          "id": "VOC-C8-1",
+          "skill": "r-vocabulary",
+          "prompt": "The purchase order must receive final ------ from the department head before the supplier is contacted.",
+          "options": [
+            "arrival",
+            "attendance",
+            "delivery",
+            "approval"
+          ],
+          "answer": 3,
+          "explanation": "Approval is authorization to proceed; the other nouns describe arrival, presence, or shipment."
+        }
+      ]
+    },
+    {
+      "id": "g-vocab-c-9",
+      "section": "reading",
+      "part": 5,
+      "title": "字彙練習",
+      "questions": [
+        {
+          "id": "VOC-C9-1",
+          "skill": "r-vocabulary",
+          "prompt": "The company will ------ employees for eligible taxi fares after they submit the required receipts.",
+          "options": [
+            "reimburse",
+            "recruit",
+            "relocate",
+            "replace"
+          ],
+          "answer": 0,
+          "explanation": "Reimburse means pay employees back for expenses; the other verbs do not describe repayment."
+        }
+      ]
+    },
+    {
+      "id": "g-vocab-c-10",
+      "section": "reading",
+      "part": 5,
+      "title": "字彙練習",
+      "questions": [
+        {
+          "id": "VOC-C10-1",
+          "skill": "r-vocabulary",
+          "prompt": "The training session has been ------ until next week because the instructor is ill.",
+          "options": [
+            "retained",
+            "postponed",
+            "installed",
+            "allocated"
+          ],
+          "answer": 1,
+          "explanation": "Postponed moves the session to a later date; the other verbs do not express a schedule delay."
+        }
+      ]
+    },
+    {
+      "id": "g-photo-03",
+      "section": "listening",
+      "part": 1,
+      "title": "照片描述",
+      "image": "images/photo-plants.png",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Look at the photograph."
+        }
+      ],
+      "questions": [
+        {
+          "id": "PHOTO03",
+          "skill": "l-photo",
+          "prompt": "聽四個敘述，選出最符合照片的一句。",
+          "options": [
+            "A woman is climbing a ladder.",
+            "A woman is kneeling beside a shelf of plants.",
+            "Plants are being loaded into a vehicle.",
+            "A customer is watering flowers outdoors."
+          ],
+          "answer": 1,
+          "explanation": "The worker is kneeling and arranging potted plants beside a shelf. The ladder is unused, and no vehicle or outdoor watering is shown."
+        }
+      ]
+    },
+    {
+      "id": "g-airport-talk-d",
+      "section": "listening",
+      "part": 4,
+      "title": "機場登機廣播",
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Attention passengers traveling to Osaka on Flight 417. Boarding will begin at 2:20 p.m. at Gate 16, rather than Gate 12 as printed on your boarding pass. The departure time remains 2:50. Passengers who need assistance should speak with an agent at the new gate before boarding begins. Please have your passport and boarding pass ready."
+        }
+      ],
+      "questions": [
+        {
+          "id": "AIR-TALK-1",
+          "skill": "l-talk",
+          "prompt": "What change is announced?",
+          "options": [
+            "The flight destination has changed.",
+            "The boarding gate has changed.",
+            "The departure has been postponed until evening.",
+            "Passengers must collect their checked bags."
+          ],
+          "answer": 1,
+          "explanation": "The speaker directs passengers to Gate 16 instead of Gate 12."
+        },
+        {
+          "id": "AIR-TALK-2",
+          "skill": "l-talk",
+          "prompt": "When will boarding begin?",
+          "options": [
+            "At 12:00 p.m.",
+            "At 2:50 p.m.",
+            "At 2:20 p.m.",
+            "At 4:17 p.m."
+          ],
+          "answer": 2,
+          "explanation": "The announcement gives 2:20 as the boarding time and 2:50 as departure time."
+        },
+        {
+          "id": "AIR-TALK-3",
+          "skill": "l-inference",
+          "prompt": "What should a passenger who needs help do?",
+          "options": [
+            "Wait at Gate 12 until departure.",
+            "Call the baggage office after the flight.",
+            "Leave the airport to obtain a new passport.",
+            "Speak with an agent at Gate 16 before boarding."
+          ],
+          "answer": 3,
+          "explanation": "The speaker asks passengers needing assistance to speak with an agent at the new gate."
+        }
+      ]
+    },
+    {
+      "id": "g-campus-talk-d",
+      "section": "listening",
+      "part": 4,
+      "title": "校園職涯活動廣播",
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Welcome to the Northbridge College Career Center. Our employer panel will begin at 10 a.m. in Hall B. The résumé workshop originally scheduled in Hall B has moved to Room 214 because of an equipment problem. Workshop participants should bring a printed copy of their résumé. If you registered online but have not picked up your name badge, please visit the desk in the main lobby before the session starts."
+        }
+      ],
+      "questions": [
+        {
+          "id": "CAMPUS-TALK-1",
+          "skill": "l-talk",
+          "prompt": "Where will the employer panel take place?",
+          "options": [
+            "In Room 214.",
+            "In Hall B.",
+            "At the library entrance.",
+            "In the main lobby."
+          ],
+          "answer": 1,
+          "explanation": "The speaker says the employer panel will begin in Hall B."
+        },
+        {
+          "id": "CAMPUS-TALK-2",
+          "skill": "l-inference",
+          "prompt": "Why was the résumé workshop moved?",
+          "options": [
+            "Too few people registered.",
+            "The instructor is traveling.",
+            "There was an equipment problem.",
+            "The college closed the career center."
+          ],
+          "answer": 2,
+          "explanation": "The announcement attributes the workshop move to an equipment problem."
+        },
+        {
+          "id": "CAMPUS-TALK-3",
+          "skill": "l-talk",
+          "prompt": "What should workshop participants bring?",
+          "options": [
+            "A completed equipment request.",
+            "A parking permit.",
+            "A letter from an employer.",
+            "A printed résumé."
+          ],
+          "answer": 3,
+          "explanation": "The announcement asks participants to bring a printed copy of their résumé."
+        }
+      ]
+    },
+    {
+      "id": "g-airport-reading-d",
+      "section": "reading",
+      "part": 7,
+      "title": "機場公告與旅客郵件",
+      "passage": {
+        "docs": [
+          {
+            "label": "AIRPORT NOTICE",
+            "text": "AIRPORT EXPRESS SERVICE NOTICE\n\nThe Airport Express bus stop outside Terminal 1 will be closed for pavement repairs from August 8 through August 10. During this period, all buses will depart from the temporary stop outside Terminal 2, next to Exit 4. The regular timetable and ticket prices will remain unchanged.\n\nPassengers traveling from Terminal 1 may use the free terminal shuttle. The shuttle runs every 15 minutes and takes approximately 8 minutes between the two terminals. The bus operator recommends allowing extra time for this transfer."
+          },
+          {
+            "label": "PASSENGER EMAIL",
+            "text": "From: Daniel Wu\nTo: Airport Express Customer Service\nDate: August 6\nSubject: Bus ticket for August 9\n\nI purchased a ticket for the 9:30 a.m. Airport Express departure on August 9. My flight arrives at Terminal 1, so I understand that I must take the terminal shuttle to the temporary stop. Do I need to exchange my existing ticket, and will there be an extra charge for the shuttle? I would also appreciate confirmation that the 9:30 departure is still scheduled."
+          },
+          {
+            "label": "CUSTOMER SERVICE REPLY",
+            "text": "August 7\n\nDear Mr. Wu,\n\nYour ticket remains valid for the 9:30 a.m. departure; no exchange is required. The terminal shuttle is free. Please board the Airport Express at the temporary Terminal 2 stop near Exit 4. The bus timetable is unchanged, but we recommend leaving enough time for the shuttle journey.\n\nAirport Express Customer Service"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "AIR-READ-1",
+          "skill": "r-purpose",
+          "prompt": "Why was the Airport Express notice issued?",
+          "options": [
+            "To announce an increase in bus ticket prices.",
+            "To explain a temporary change in the bus departure location.",
+            "To cancel all shuttle services.",
+            "To introduce a new airline route."
+          ],
+          "answer": 1,
+          "explanation": "The notice explains that the Terminal 1 bus stop is temporarily closed and buses will depart from Terminal 2."
+        },
+        {
+          "id": "AIR-READ-2",
+          "skill": "r-crossref",
+          "prompt": "Where should Daniel board his bus on August 9?",
+          "options": [
+            "Outside Terminal 1 at the regular stop.",
+            "Inside the arrivals hall at Terminal 1.",
+            "Outside Terminal 2 near Exit 4.",
+            "At a railway platform in the city center."
+          ],
+          "answer": 2,
+          "explanation": "Both the notice and reply direct passengers to the temporary stop outside Terminal 2 near Exit 4."
+        },
+        {
+          "id": "AIR-READ-3",
+          "skill": "r-crossref",
+          "prompt": "What must Daniel pay for the terminal shuttle?",
+          "options": [
+            "$8.",
+            "$15.",
+            "The full Airport Express ticket price again.",
+            "Nothing."
+          ],
+          "answer": 3,
+          "explanation": "The notice and reply both state that the terminal shuttle is free."
+        },
+        {
+          "id": "AIR-READ-4",
+          "skill": "r-inference",
+          "prompt": "What does the customer service reply confirm about Daniel’s ticket?",
+          "options": [
+            "It is valid without an exchange for the 9:30 departure.",
+            "It must be exchanged at Terminal 1.",
+            "It is valid only after August 10.",
+            "It includes a guaranteed seat on an earlier bus."
+          ],
+          "answer": 0,
+          "explanation": "The reply confirms the existing ticket for the unchanged 9:30 departure and says no exchange is required."
+        }
+      ]
+    },
+    {
+      "id": "g-campus-reading-d",
+      "section": "reading",
+      "part": 7,
+      "title": "學校活動公告與電子郵件",
+      "passage": {
+        "docs": [
+          {
+            "label": "COLLEGE NOTICE",
+            "text": "NORTHBRIDGE COLLEGE — CAREER WORKSHOPS\n\nThe Career Center will host two workshops on October 20. Interview Practice will run from 1:00 to 2:00 p.m. in Room 302. Writing a Professional Résumé will run from 2:30 to 3:30 p.m. in Room 305. Both workshops are free for current students, but registration is required by October 15.\n\nStudents who wish to have a résumé reviewed during the second workshop should upload a draft when registering. Those who only want to attend the presentation do not need to upload a document."
+          },
+          {
+            "label": "STUDENT EMAIL",
+            "text": "From: Elena Park\nTo: Career Center\nDate: October 12\nSubject: Workshop registration\n\nI registered for the résumé workshop and uploaded a draft. I also wanted to attend Interview Practice, but I have a class until 1:30 p.m. Is there a recording of that workshop? Please let me know whether arriving late would affect my résumé review at 2:30."
+          },
+          {
+            "label": "CAREER CENTER REPLY",
+            "text": "October 13\n\nDear Elena,\n\nWe will not record Interview Practice, but we will offer the same workshop again on October 27. You may register for that session through the same portal. Your résumé workshop and individual review on October 20 remain confirmed; please arrive at Room 305 before 2:30. We have received the draft you uploaded.\n\nCareer Center"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "CAMPUS-READ-1",
+          "skill": "r-detail",
+          "prompt": "What must a student submit to receive a résumé review at the October 20 workshop?",
+          "options": [
+            "A recording of an interview.",
+            "A résumé draft during registration.",
+            "A payment receipt.",
+            "A letter from an employer."
+          ],
+          "answer": 1,
+          "explanation": "The notice asks students seeking a résumé review to upload a draft when registering."
+        },
+        {
+          "id": "CAMPUS-READ-2",
+          "skill": "r-purpose",
+          "prompt": "Why did Elena contact the Career Center?",
+          "options": [
+            "To cancel both workshops.",
+            "To request a refund for registration.",
+            "To ask about a missed workshop and her scheduled résumé review.",
+            "To apply for a position at the center."
+          ],
+          "answer": 2,
+          "explanation": "Elena asks whether Interview Practice is recorded and whether her class affects her résumé review."
+        },
+        {
+          "id": "CAMPUS-READ-3",
+          "skill": "r-crossref",
+          "prompt": "What can Elena do if she wants to attend Interview Practice?",
+          "options": [
+            "Attend it in Room 305 at 2:30 on October 20.",
+            "Watch a recording on October 21.",
+            "Submit a new résumé draft by October 15.",
+            "Register for the October 27 session."
+          ],
+          "answer": 3,
+          "explanation": "The reply says the same workshop will be offered again on October 27 through the registration portal."
+        },
+        {
+          "id": "CAMPUS-READ-4",
+          "skill": "r-crossref",
+          "prompt": "What is confirmed for Elena on October 20?",
+          "options": [
+            "A résumé workshop and individual review in Room 305.",
+            "Interview Practice in Room 302 after 2:30.",
+            "An online recording of both workshops.",
+            "A paid interview with an employer."
+          ],
+          "answer": 0,
+          "explanation": "The reply confirms her résumé workshop and review and asks her to arrive at Room 305 before 2:30."
         }
       ]
     }
