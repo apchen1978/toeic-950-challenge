@@ -129,7 +129,7 @@ function renderHome() {
     </section>
     <section class="card">
       <h2>其他／短題組練習</h2>
-      <p>題庫共 ${n} 題原創練習，分套作答；每題附答案與英文解析。聽力文字稿交卷後才顯示，每段最多播放 ${MAX_PLAYS} 次。</p>
+      <p>題庫共 ${n} 題原創練習，分套作答；每題附答案與英文解析。聽力文字稿預設收合，可自行展開，每段最多播放 ${MAX_PLAYS} 次。</p>
       <label for="test-set">今天練哪一套？</label>
       <select id="test-set" class="btn">${bank.meta.sets.map(s=>`<option value="${s.id}">${esc(s.label)} · ${s.durationMin} 分鐘</option>`).join('')}</select>
       <div class="row">
@@ -271,6 +271,7 @@ function renderTest() {
       ${g.script ? audioBlock(g) : ""}
       ${g.passage ? g.passage.docs.map((d) => `<div class="doclabel">${esc(d.label)}</div><div class="passage">${esc(d.text)}</div>`).join("") : ""}
       ${g.questions.filter((q) => !session.questionIds || session.questionIds.includes(q.id)).map((q) => questionBlock(q, qs, spoken)).join("")}
+      ${g.script ? transcriptBlock(g, true) : ''}
     </section>
 
     <div class="row" style="justify-content:space-between">
@@ -300,6 +301,14 @@ function progressCard(questions, answers) {
     <p><b>總分粗估：</b>${total}<br><b>聽力粗估：</b>${range('listening')}<br><b>閱讀粗估：</b>${range('reading')}</p>
     ${Object.entries(labels).map(([key, label]) => { const v = progress.categories[key]; return `<div class="skillrow"><div>${label}</div><div>${v.n ? `${v.c}/${v.n}（${Math.round(v.c / v.n * 100)}%）` : '尚無已答題'}</div></div>`; }).join('')}
   </section>`;
+}
+
+function transcriptBlock(g, duringPractice = false) {
+  return `<details class="script"><summary>查看聽力文字稿 · Transcript</summary>
+    ${duringPractice ? '<p class="muted">練習提示：展開會看到聽力內容，計時仍會繼續。</p>' : ''}
+    ${g.script.map((line) => `<p><span class="tag">${line.speaker === 'M' ? 'Man' : line.speaker === 'W' ? 'Woman' : 'Narrator'}</span>${esc(line.text)}</p>`).join('')}
+    ${g.spokenOptions ? g.questions.map((q) => q.options.map((option, i) => `<p><b>${LETTERS[i]}.</b> ${esc(option)}</p>`).join('')).join('') : ''}
+  </details>`;
 }
 
 function audioBlock(g) {
@@ -470,7 +479,7 @@ function reviewGroup(g, entry) {
   return `<div class="q">
     <div class="doclabel">Part ${g.part} ${esc(g.title ?? "")}</div>
     ${g.image ? `<img class="question-image" src="${esc(g.image)}" alt="${g.part === 1 ? "本題照片" : "本題附圖"}；若載入失敗，請連網重新開啟。">` : ""}
-    ${g.script ? `<div class="script"><b>Transcript</b>${g.script.map((l) => `<p><span class="tag">${l.speaker === "M" ? "Man" : l.speaker === "W" ? "Woman" : "Narrator"}</span>${esc(l.text)}</p>`).join("")}</div>` : ""}
+    ${g.script ? transcriptBlock(g) : ""}
     ${g.passage ? g.passage.docs.map((d) => `<div class="doclabel">${esc(d.label)}</div><div class="passage">${esc(d.text)}</div>`).join("") : ""}
     ${g.questions.filter((q) => !entry.questionIds || entry.questionIds.includes(q.id)).map((q) => {
       const a = entry.answers[q.id];

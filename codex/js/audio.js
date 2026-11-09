@@ -1,6 +1,6 @@
 // Listening audio via the browser's built-in speech synthesis (free, no audio files).
 // Voice quality depends on the device: Edge "Natural" voices and iOS/macOS enhanced voices sound best.
-// Transcripts are never shown by this module; the UI only reveals them after submission.
+// Transcript visibility is controlled by the UI's collapsed transcript panels.
 
 const MALE = /\b(guy|davis|andrew|brian|christopher|eric|roger|steffan|ryan|david|mark|george|james|daniel|alex|fred|thomas|aaron|tom|male)\b/i;
 const FEMALE = /(aria|jenny|michelle|emma|ava|sonia|libby|zira|samantha|susan|hazel|karen|victoria|allison|joanna|jessica|nancy|female)/i;
@@ -201,9 +201,10 @@ export async function playScript(lines, { rate = getRate() } = {}) {
   lastError = '';
   for (const line of lines) {
     const v = pickVoice(availableVoices(), line.speaker);
+    const lineRate = rate * (line.rateScale ?? 1);
     for (const s of [line.text]) {
       if (myToken !== token) return false;
-      if (!await (line.audio ? playRecording(line.audio, myToken, rate) : speak(s, v, rate, myToken))) return false;
+      if (!await (line.audio ? playRecording(line.audio, myToken, lineRate) : speak(s, v, lineRate, myToken))) return false;
     }
     await pause(line.gap ?? 500);
   }
@@ -216,7 +217,7 @@ export function withSpokenOptions(group) {
   const spokenLetters = ["A", "B", "C", "D"];
   const out = [...group.script.map((l) => ({ ...l, gap: 900 }))];
   q.options.forEach((o, i) => {
-    out.push({ speaker: "N", text: i === 0 ? "A" : `${spokenLetters[i]}.`, single: true, gap: 250 });
+    out.push({ speaker: "N", text: i === 0 ? "A" : `${spokenLetters[i]}.`, ...(i === 0 ? { rateScale: 0.75 } : {}), single: true, gap: 250 });
     out.push({ speaker: "N", text: o, gap: 700 });
   });
   return out;
@@ -226,5 +227,5 @@ export async function sample(role) {
   const text = role === "N" ? "The meeting has been moved to Thursday." : role === "M"
     ? "Did you see the email from the supplier? The delivery has been pushed back to the twentieth."
     : "I know. I'll call them this afternoon, and let the marketing team know about the new date.";
-  return playScript([...(role === 'N' ? [{ speaker: 'N', text: 'A', gap: 250 }] : []), { speaker: role, text }]);
+  return playScript([...(role === 'N' ? [{ speaker: 'N', text: 'A', rateScale: 0.75, gap: 250 }] : []), { speaker: role, text }]);
 }
