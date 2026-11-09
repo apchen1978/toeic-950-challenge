@@ -52,3 +52,23 @@ test('recorded playback watchdog releases a silent engine', async (t) => {
   assert.equal(await playback, false);
   assert.equal(players[0].paused, true);
 });
+
+test('letter cue and synthesized options share one cancellable playback sequence', async () => {
+  const { players, audio } = await setup();
+  const spoken = [];
+  globalThis.speechSynthesis = { getVoices: () => [], cancel() {}, speak(u) { spoken.push(u.text); queueMicrotask(() => u.onend()); } };
+  globalThis.SpeechSynthesisUtterance = class { constructor(text) { this.text = text; } };
+  globalThis.window = { speechSynthesis, SpeechSynthesisUtterance };
+  const lines = [{ speaker: 'N', text: 'A.', audio: 'audio/letter-a.mp3', gap: 0 }, { speaker: 'N', text: 'The meeting is tomorrow.', gap: 0 }];
+  const first = audio.playScript(lines);
+  players[0].onended();
+  assert.equal(await first, true);
+  assert.deepEqual(spoken, ['The meeting is tomorrow.']);
+  const second = audio.playScript(lines);
+  audio.stop();
+  assert.equal(await second, false);
+  assert.equal(spoken.length, 1);
+  const options = audio.withSpokenOptions({ script: [], questions: [{ options: ['One', 'Two', 'Three'] }] });
+  assert.equal(options[0].audio, 'audio/letter-a.mp3');
+  assert.equal(options[2].audio, undefined);
+});

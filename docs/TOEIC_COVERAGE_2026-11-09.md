@@ -24,6 +24,8 @@ The new route-map and three-document items follow the task types shown in the [E
 
   Official scoring context: [Taiwan TOEIC scoring overview](https://toeic.com.tw/toeic/listening-reading/about/content/) says correct answers are converted separately to 5–495 Listening and Reading scales, with no penalty for wrong answers. The [ETS examinee handbook](https://www.ets.org/content/dam/ets-org/fr/pdfs/toeic/toeic-listening-reading-test-examinee-handbook.pdf) explains that form-specific raw-to-scaled conversion tables are created by statistical equating and are not publicly disclosed. This app's partial-answer interval is a Wilson interval on practice accuracy mapped to the 5–495 display range; it is not a validated TOEIC score predictor.
 - **PARTIAL — PWA and persistence:** `codex/sw.js` caches the app and image assets; browser localStorage stores progress and history. Paul previously confirmed offline use on his phone, but the current branch and new assets need a fresh device check. Records do not sync across browsers/devices.
+
+Publishing workflow: keep the desktop local installation and `/codex/` online release on the same application assets, including scoring, timing and recordings. Before selective desktop copies, compare against the previous release and back up changed files. Preserve the local launcher/server configuration and browser learning records; verify data and asset hashes after copying. Installed PWA caches may need an online reopen to obtain the new release.
 - **PARTIAL — Explanations:** current explanations are English. Chinese explanations, detailed distractor fields and difficulty tags are not yet present.
 
 ## Route to one correctly composed form
