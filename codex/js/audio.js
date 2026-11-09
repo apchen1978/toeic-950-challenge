@@ -17,7 +17,8 @@ export function errorMessage() {
     network: '語音服務連線失敗，請確認網路後重試。',
     timeout: '語音引擎未回應或播放逾時，請再次點擊播放。',
     background: '頁面切到背景，播放已中斷；回來後請重新播放。',
-    canceled: '播放已中止，可重新點擊播放。'
+    canceled: '播放已中止，可重新點擊播放。',
+    'audio-file': '固定配音載入或播放失敗，請連網後再點播放重試。'
   };
   return messages[lastError] ?? ('語音播放失敗（' + (lastError || 'unknown') + '），請重新點擊播放或試用其他音色。');
 }
@@ -85,7 +86,7 @@ function pickVoice(voices, speaker) {
   const savedMan = voices.find((v) => v.name === prefs().M);
   const man = savedMan ?? byRank.find((v) => MALE.test(v.name)) ?? byRank.find((v) => !FEMALE.test(v.name)) ?? byRank[0];
   if (speaker === "M") {
-    return { voice: man ?? null, pitch: voices.length < 2 ? 0.9 : 1 };
+    return { voice: man ?? null, pitch: man && MALE.test(man.name) ? 1 : 0.8 };
   }
   if (speaker === "W") {
     const woman = byRank.find((v) => v !== man && FEMALE.test(v.name)) ?? byRank.find((v) => v !== man) ?? man;
@@ -96,12 +97,56 @@ function pickVoice(voices, speaker) {
   return { voice: byRank.find((v) => v !== man && v !== woman) ?? woman ?? man ?? null, pitch: 1 };
 }
 
+export function roleVoiceInfo(role) {
+  const chosen = pickVoice(availableVoices(), role);
+  const manual = !!availableVoices().find((v) => v.name === getPref(role));
+  return {
+    name: chosen.voice?.name ?? '裝置預設英文音色',
+    pitch: chosen.pitch,
+    maleFallback: role === 'M' && !manual && (!chosen.voice || !MALE.test(chosen.voice.name)),
+    manual
+  };
+}
+
 export function stop(reason = 'canceled') {
   token++;
   lastError = reason;
   releaseSpeech?.(false, reason);
   releasePause?.();
   if (supported()) speechSynthesis.cancel();
+}
+
+export function fileSupported() { return typeof globalThis.Audio === 'function'; }
+
+/** Fixed role recordings: only onended counts a complete play; stop/failed/stalled playback does not. */
+export function playFile(url) {
+  stop();
+  if (!fileSupported()) { lastError = 'audio-file'; return Promise.resolve(false); }
+  const myToken = token;
+  lastError = '';
+  return new Promise((resolve) => {
+    const player = new Audio(url);
+    player.playbackRate = getRate();
+    let timer, settled = false;
+    const done = (ok, reason = '') => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      player.onended = player.onerror = player.onplaying = player.ontimeupdate = null;
+      player.pause();
+      if (releaseSpeech === done) releaseSpeech = null;
+      if (myToken === token) lastError = reason;
+      resolve(ok);
+    };
+    const watchdog = () => { clearTimeout(timer); timer = setTimeout(() => done(false, 'timeout'), 15000); };
+    releaseSpeech = done;
+    player.onended = () => done(true);
+    player.onerror = () => done(false, 'audio-file');
+    player.onplaying = player.ontimeupdate = watchdog;
+    watchdog();
+    try { Promise.resolve(player.play()).catch(() => done(false, 'audio-file')); }
+    catch { done(false, 'audio-file'); }
+  });
 }
 
 function speak(text, { voice, pitch }, rate, myToken) {
