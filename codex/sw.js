@@ -1,5 +1,5 @@
 // Service worker: 有網路時抓最新版（題庫更新會自動生效），離線時用快取。
-const CACHE = "toeic950-codex-v29";
+const CACHE = "toeic950-codex-v30";
 const SHELL = [
   "./", "index.html", "styles.css", "manifest.webmanifest",
   "js/app.js", "js/audio.js", "js/scoring.js", "js/skills.js", "js/timer.js",
