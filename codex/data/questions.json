@@ -60,7 +60,7 @@
       },
       {
         "id": "reading",
-        "label": "閱讀專練 · 全題庫 149 題",
+        "label": "閱讀專練 · 全題庫 159 題",
         "groupIds": [
           "g-r01",
           "g-r02",
@@ -135,9 +135,11 @@
           "g-single-e-campus",
           "g-f-single-1",
           "g-f-single-2",
-          "g-f-single-3"
+          "g-f-single-3",
+          "g-deep-reading-hotel-01",
+          "g-deep-reading-supplier-02"
         ],
-        "durationMin": 112
+        "durationMin": 120
       },
       {
         "id": "challenge03",
@@ -240,16 +242,18 @@
       },
       {
         "id": "photo-pilot",
-        "label": "照片題試做 · Part 1（6 題）",
+        "label": "照片題試做 · Part 1（8 題）",
         "groupIds": [
           "g-photo-01",
           "g-photo-02",
           "g-photo-03",
           "g-photo-04",
           "g-photo-05",
-          "g-photo-06"
+          "g-photo-06",
+          "g-photo-07",
+          "g-photo-08"
         ],
-        "durationMin": 7
+        "durationMin": 9
       },
       {
         "id": "practice-crossref-26",
@@ -331,6 +335,16 @@
           "g-f-single-3"
         ],
         "durationMin": 30
+      },
+      {
+        "id": "visual-deep-g",
+        "label": "新情境 G · 路線圖與深度閱讀（13 題）",
+        "groupIds": [
+          "g-map-campus-01",
+          "g-deep-reading-hotel-01",
+          "g-deep-reading-supplier-02"
+        ],
+        "durationMin": 18
       }
     ]
   },
@@ -5678,6 +5692,308 @@
           ],
           "answer": 3,
           "explanation": "The man is sweeping the paved terrace. The tables are empty, the umbrella is closed, and no one is carrying tables."
+        }
+      ]
+    },
+    {
+      "id": "g-photo-07",
+      "section": "listening",
+      "part": 1,
+      "title": "照片描述",
+      "image": "images/photo-bicycle.png",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Look at the photograph."
+        }
+      ],
+      "questions": [
+        {
+          "id": "PHOTO07",
+          "skill": "l-photo",
+          "prompt": "聽四個敘述，選出最符合照片的一句。",
+          "options": [
+            "A woman is repairing a bicycle wheel.",
+            "A pedestrian is unlocking a bicycle.",
+            "Several people are riding bicycles.",
+            "A woman is carrying a bicycle indoors."
+          ],
+          "answer": 0,
+          "explanation": "The woman is using a tool on the front wheel. The pedestrian is walking past, the other bicycles are parked, and no one is carrying a bicycle."
+        }
+      ]
+    },
+    {
+      "id": "g-photo-08",
+      "section": "listening",
+      "part": 1,
+      "title": "照片描述",
+      "image": "images/photo-airport-maintenance.png",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Look at the photograph."
+        }
+      ],
+      "questions": [
+        {
+          "id": "PHOTO08",
+          "skill": "l-photo",
+          "prompt": "聽四個敘述，選出最符合照片的一句。",
+          "options": [
+            "A man is moving a toolbox across the floor.",
+            "A woman is painting a door frame.",
+            "A man is fastening a sign above a doorway.",
+            "Two workers are climbing a ladder together."
+          ],
+          "answer": 2,
+          "explanation": "The man on the ladder is fastening the sign. The toolbox is closed on a table, the woman is steadying the ladder, and only one worker is on it."
+        }
+      ]
+    },
+    {
+      "id": "g-map-campus-01",
+      "section": "listening",
+      "part": 3,
+      "title": "Campus route — map",
+      "image": "images/campus-route.svg",
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Good morning. The east entrance to Central Plaza is closed while the paving is repaired. I have to deliver these conference folders to East Hall by ten. Can I still go straight across from West Hall?"
+        },
+        {
+          "speaker": "M",
+          "text": "Not today. The direct path through the plaza is blocked. Go down to the South Walkway, follow it east, and then turn north at East Hall. That entrance is open."
+        },
+        {
+          "speaker": "W",
+          "text": "That will take a few more minutes. The library is north of the plaza; would going past it be faster?"
+        },
+        {
+          "speaker": "M",
+          "text": "No, the library path ends at the work site. I would leave now. I can take the remaining folders to the registration desk after my shift."
+        }
+      ],
+      "questions": [
+        {
+          "id": "MAP01",
+          "skill": "l-conversation",
+          "prompt": "Why is the direct route unavailable?",
+          "options": [
+            "A delivery truck is parked there.",
+            "Repairs are being made to the paving.",
+            "A conference is using the plaza.",
+            "The library entrance is closed."
+          ],
+          "answer": 1,
+          "explanation": "The woman says the plaza entrance is closed while paving is repaired. No truck or conference blocks the path, and the library entrance is not identified as closed."
+        },
+        {
+          "id": "MAP02",
+          "skill": "l-conversation",
+          "prompt": "Look at the map. Which labeled route should the woman use?",
+          "options": [
+            "The path past the Library",
+            "The path through Central Plaza",
+            "The South Walkway",
+            "The north side of West Hall"
+          ],
+          "answer": 2,
+          "explanation": "The man tells her to go south, follow the South Walkway east, and turn north at East Hall. The other routes either reach the work site or do not lead to East Hall."
+        },
+        {
+          "id": "MAP03",
+          "skill": "l-conversation",
+          "prompt": "What does the man offer to do?",
+          "options": [
+            "Deliver the remaining folders later",
+            "Repair the entrance before ten",
+            "Drive the woman to East Hall",
+            "Move the registration desk"
+          ],
+          "answer": 0,
+          "explanation": "He offers to take the remaining folders to the registration desk after his shift. He does not offer a ride, a repair, or a desk move."
+        }
+      ]
+    },
+    {
+      "id": "g-deep-reading-hotel-01",
+      "section": "reading",
+      "part": 7,
+      "title": "Hotel renovation — notice, e-mail and reply",
+      "passage": {
+        "docs": [
+          {
+            "label": "Guest notice — June 3",
+            "text": "HARBOR VIEW HOTEL — GUEST NOTICE\nFrom June 12 through June 20, the east elevator will be unavailable while its control panel is replaced. The west elevator will operate normally, except from 6:00 to 8:00 a.m. on June 15, when it will undergo its scheduled inspection. During that two-hour period, staff will assist guests with luggage on the stairs. Breakfast service remains in the ground-floor dining room. Guests who need step-free access at all times may request a room in the west wing, where a separate service lift connects to the lobby. Requests should reach the front desk by June 10."
+          },
+          {
+            "label": "E-mail — June 8",
+            "text": "To: Front Desk\nFrom: Elena Ruiz\nSubject: Reservation for June 14–17\n\nI will arrive with my father on the evening of June 14. He uses a wheelchair and cannot use stairs. Our reservation is for a standard room in the east wing. We plan to leave early on June 15 for a medical appointment. Could you move us to a room that allows step-free access throughout our stay? We would also appreciate confirmation that breakfast will still be available before our departure."
+          },
+          {
+            "label": "Front-desk reply — June 9",
+            "text": "Dear Ms. Ruiz,\n\nWe have moved your reservation to an accessible room in the west wing at no additional charge. The service lift there will be available during the west elevator inspection. Breakfast begins at 6:30 a.m.; if you need to leave earlier, please request a packed breakfast at reception by 9:00 p.m. the previous evening. Our staff can bring it to your room, but the dining room cannot open ahead of schedule. We look forward to welcoming you.\n\nNadia Patel, Front Desk Supervisor"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "DEEP01",
+          "skill": "r-crossref",
+          "prompt": "Why was Ms. Ruiz’s room changed?",
+          "options": [
+            "To shorten the walk to the dining room",
+            "To ensure step-free access during an elevator inspection",
+            "To avoid noise from a restaurant renovation",
+            "To provide a room with a larger desk"
+          ],
+          "answer": 1,
+          "explanation": "Her father cannot use stairs, and the west elevator will be inspected on June 15. The west-wing service lift provides step-free access then; the other reasons are not stated."
+        },
+        {
+          "id": "DEEP02",
+          "skill": "r-detail",
+          "prompt": "What must Ms. Ruiz do if she leaves before 6:30 a.m. on June 15?",
+          "options": [
+            "Ask for a packed breakfast by 9:00 p.m. on June 14",
+            "Visit the dining room before closing on June 14",
+            "Call the kitchen at 6:00 a.m. on June 15",
+            "Pay a fee for room service"
+          ],
+          "answer": 0,
+          "explanation": "Breakfast starts at 6:30 a.m. For an earlier departure, the reply requires a packed-breakfast request by 9:00 p.m. the previous evening. No fee is mentioned."
+        },
+        {
+          "id": "DEEP03",
+          "skill": "r-inference",
+          "prompt": "What can be inferred about the west-wing service lift?",
+          "options": [
+            "It is also being replaced.",
+            "It stops operating at 8:00 a.m.",
+            "It will remain available during the scheduled inspection.",
+            "It leads directly to the dining room."
+          ],
+          "answer": 2,
+          "explanation": "The reply explicitly says the separate service lift will be available during the west elevator inspection. Its replacement, hours, and direct dining-room access are not stated."
+        },
+        {
+          "id": "DEEP04",
+          "skill": "r-crossref",
+          "prompt": "On which date will neither main guest elevator be usable between 6:00 and 8:00 a.m.?",
+          "options": [
+            "June 10",
+            "June 12",
+            "June 15",
+            "June 20"
+          ],
+          "answer": 2,
+          "explanation": "The east elevator is closed June 12–20 and the west elevator is inspected from 6:00 to 8:00 a.m. on June 15. The other dates do not match both conditions."
+        },
+        {
+          "id": "DEEP05",
+          "skill": "r-purpose",
+          "prompt": "What is the main purpose of Ms. Patel’s reply?",
+          "options": [
+            "To confirm an accommodation and explain an early-breakfast option",
+            "To cancel a reservation because of maintenance",
+            "To request payment for an upgraded room",
+            "To announce a change in the medical appointment"
+          ],
+          "answer": 0,
+          "explanation": "The reply confirms an accessible west-wing room and explains the packed-breakfast procedure. It neither cancels the booking nor charges an upgrade or changes the appointment."
+        }
+      ]
+    },
+    {
+      "id": "g-deep-reading-supplier-02",
+      "section": "reading",
+      "part": 7,
+      "title": "Supplier change — contract, messages and memo",
+      "passage": {
+        "docs": [
+          {
+            "label": "Supply agreement excerpt",
+            "text": "CEDAR OFFICE SUPPLIES — SERVICE TERMS\nClients may change the delivery address of an order until noon two business days before dispatch. For orders of at least 80 cartons, delivery is included in the quoted price; smaller orders incur a $45 delivery fee. Orders scheduled for Monday are dispatched on the preceding Friday. A client may request a later dispatch without charge if the request arrives before the address-change deadline. Once an order has been dispatched, a redirection fee of $75 applies and a next-day arrival cannot be guaranteed."
+          },
+          {
+            "label": "Message thread — Wednesday, August 7",
+            "text": "9:10 a.m. — Mara (Operations): The training center will not open until Tuesday. Our 90-carton order is due Monday at the old site. Can we send it to the new center instead?\n9:25 a.m. — Theo (Purchasing): Cedar’s system shows dispatch this Friday. I can ask them to move delivery to Tuesday and update the address. I will contact them before lunch.\n11:40 a.m. — Theo: Cedar confirmed both changes. The cartons will leave their warehouse on Monday and reach the new training center on Tuesday. The quoted price is unchanged."
+          },
+          {
+            "label": "Internal memo — Tuesday, August 13",
+            "text": "To: Training Team\nThe cartons arrived at the new center this morning. During unloading, staff found two cartons with water-damaged outer packaging. The materials inside appear dry, but please photograph the cartons before opening them and send the images to Operations by 3:00 p.m. today. Use the remaining cartons for tomorrow’s orientation. Do not discard the damaged packaging until Cedar confirms whether it needs to inspect it."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "DEEP06",
+          "skill": "r-crossref",
+          "prompt": "Why was no redirection fee charged?",
+          "options": [
+            "The order contained fewer than 80 cartons.",
+            "Theo changed the delivery plan before dispatch and the deadline.",
+            "The training center agreed to collect the cartons.",
+            "Cedar waived all August delivery fees."
+          ],
+          "answer": 1,
+          "explanation": "Theo contacted Cedar before lunch on Wednesday, ahead of Friday dispatch and the noon two-business-day deadline. A redirection fee applies only after dispatch; order size relates to delivery fees."
+        },
+        {
+          "id": "DEEP07",
+          "skill": "r-crossref",
+          "prompt": "What would normally have happened to the order if no change had been requested?",
+          "options": [
+            "It would have been dispatched Friday for Monday delivery.",
+            "It would have been dispatched Monday for Tuesday delivery.",
+            "It would have been collected by the training team on Wednesday.",
+            "It would have been canceled when the center was closed."
+          ],
+          "answer": 0,
+          "explanation": "The original delivery was Monday, and the agreement says Monday deliveries dispatch on the preceding Friday. Monday dispatch for Tuesday delivery was the revised plan."
+        },
+        {
+          "id": "DEEP08",
+          "skill": "r-detail",
+          "prompt": "What are employees asked to do with the two damaged cartons?",
+          "options": [
+            "Open them immediately and discard the packaging.",
+            "Return them to Cedar without inspection.",
+            "Photograph them before opening and keep the packaging.",
+            "Use them first for the orientation."
+          ],
+          "answer": 2,
+          "explanation": "The memo requests photographs before opening and says to retain damaged packaging until Cedar responds. The other actions contradict those instructions."
+        },
+        {
+          "id": "DEEP09",
+          "skill": "r-inference",
+          "prompt": "Why is the $45 delivery fee irrelevant to this order?",
+          "options": [
+            "The order is above the 80-carton threshold.",
+            "All Tuesday deliveries are free.",
+            "The cartons were collected at Cedar’s warehouse.",
+            "The packaging was damaged."
+          ],
+          "answer": 0,
+          "explanation": "The order contains 90 cartons. The agreement includes delivery in the quoted price for orders of at least 80 cartons. Day of week and damage do not determine this fee."
+        },
+        {
+          "id": "DEEP10",
+          "skill": "r-crossref",
+          "prompt": "Which statement best describes the final delivery?",
+          "options": [
+            "It reached the old site one day late.",
+            "It arrived at the new site on the revised date.",
+            "It was delayed until after orientation.",
+            "It was sent back because all materials were wet."
+          ],
+          "answer": 1,
+          "explanation": "The Wednesday thread confirms Tuesday delivery to the new center, and the Tuesday memo confirms arrival that morning. The contents appear dry and orientation is the next day."
         }
       ]
     }
