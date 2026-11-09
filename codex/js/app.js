@@ -63,6 +63,7 @@ function renderHome() {
   const weak = weakest(mergeSkillStats(history), 3, 2);
   const last = history[history.length - 1];
   const n = flatten(bank).length;
+  const photoCount = bank.groups.filter((g) => g.section === "listening" && g.part === 1).reduce((sum, g) => sum + g.questions.length, 0);
   const listeningQuestions = flatten(bank).filter((q) => q.section === "listening").length;
   const readingQuestions = flatten(bank).filter((q) => q.section === "reading").length;
   const queuedQuestions = flatten(bank).filter((q) => wrongQueue[q.id]);
@@ -79,7 +80,7 @@ function renderHome() {
         <p class="practice-count">${listeningQuestions} 題</p>
         <p class="muted">集中練習聽力題組，逐組播放與作答。</p>
         <button class="btn primary" data-action="start-section" data-section="listening">開始聽力練習</button>
-        <button class="btn photo-entry" data-action="start-photo" ${session ? "disabled" : ""}>照片題試做（2 題）</button>
+        <button class="btn photo-entry" data-action="start-photo" ${session ? "disabled" : ""}>照片題試做（${photoCount} 題）</button>
       </article>
       <article class="card practice-card reading-card">
         <div class="section-label">READING</div>
@@ -137,7 +138,7 @@ function renderHome() {
     </section>
 
     <section class="card" id="voicecard"><h2>聽力音色</h2><p class="muted">先試聽，再開始。音色依此裝置與瀏覽器提供，清單優先排列較自然的候選音色。</p><label for="speech-rate">語速</label> <select class="btn" id="speech-rate"><option value="0.85">0.85× · 精聽</option><option value="1">1× · 正常</option><option value="1.1">1.1× · 挑戰</option></select><div id="voices" class="muted">載入語音中…</div></section>
-    <section class="card"><h2>官方樣題與練習方式</h2><p>先做一套練習，再從錯題解析找失分原因；閱讀可獨立練習。本題庫是短套練習，並非完整 200 題模考；照片題目前有兩題試做。</p><p><a href="https://www.ets.org/pdfs/toeic/toeic-listening-reading-sample-test.pdf" target="_blank" rel="noopener">ETS 官方公開樣題 PDF（含解答與聽力稿）</a> · <a href="https://toeic.com.tw/toeic/listening-reading/about/content/" target="_blank" rel="noopener">台灣官方題型與時間</a></p><p class="muted">官方內容於來源頁開啟；本機題庫與官方樣題分開。正式閱讀為 100 題、75 分鐘。</p></section>
+    <section class="card"><h2>官方樣題與練習方式</h2><p>先做一套練習，再從錯題解析找失分原因；閱讀可獨立練習。本題庫是短套練習，並非完整 200 題模考；照片題目前有 ${photoCount} 題試做。</p><p><a href="https://www.ets.org/pdfs/toeic/toeic-listening-reading-sample-test.pdf" target="_blank" rel="noopener">ETS 官方公開樣題 PDF（含解答與聽力稿）</a> · <a href="https://toeic.com.tw/toeic/listening-reading/about/content/" target="_blank" rel="noopener">台灣官方題型與時間</a></p><p class="muted">官方內容於來源頁開啟；本機題庫與官方樣題分開。正式閱讀為 100 題、75 分鐘。</p></section>
     <section class="card"><h2>正式考試與素材庫</h2><p>正式 Listening 100 題／約 45 分鐘；Reading 100 題／75 分鐘。實際作答約 2 小時，連基本資料及問卷約 2.5 小時。</p><details><summary>查看正式題數分配</summary><p>Part 1 照片 6 題 · Part 2 應答 25 題 · Part 3 對話 39 題 · Part 4 獨白 30 題。</p><p>Part 5 句子填空 30 題 · Part 6 段落填空 16 題 · Part 7 單篇 29 題、多篇 25 題。</p></details><p>台灣官方範例（在來源頁練習與核對答案）：</p><ul><li><a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample03.html" target="_blank" rel="noopener">Part 3 聽力對話</a> · <a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample04.html" target="_blank" rel="noopener">Part 4 聽力獨白</a></li><li><a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample05.html" target="_blank" rel="noopener">Part 5 句子填空</a> · <a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample06.html" target="_blank" rel="noopener">Part 6 段落填空</a> · <a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample07_03.html" target="_blank" rel="noopener">Part 7 多篇閱讀</a></li></ul><p class="muted">新增挑戰 03：聽力 20 題＋閱讀 20 題；也可只選閱讀 03。官方題庫到貨後，再按你挑選的範例調整練習方向。素材核對：2026-11-08。</p></section>
 
     ${last ? `<section class="card"><h2>最近成績</h2>

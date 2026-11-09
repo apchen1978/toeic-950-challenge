@@ -68,7 +68,25 @@ test("Batch A pilot: stems do not duplicate existing question or listening promp
 
 test("reading-all set includes every current reading question", () => {
   const set = bank.meta.sets.find((item) => item.id === "reading");
-  assert.equal(flatten(bank, set.groupIds).filter((question) => question.section === "reading").length, 90);
+  assert.equal(flatten(bank, set.groupIds).filter((question) => question.section === "reading").length, 128);
+});
+
+test("reading C and vocabulary C contain distinct, complete practice sets", () => {
+  const reading = bank.meta.sets.find((set) => set.id === "reading-notices-20");
+  const vocabulary = bank.meta.sets.find((set) => set.id === "vocabulary-c-10");
+  assert.ok(reading && vocabulary);
+  assert.equal(flatten(bank, reading.groupIds).length, 20);
+  assert.equal(flatten(bank, vocabulary.groupIds).length, 10);
+  assert.equal(reading.groupIds.map((id) => groups.get(id)).filter((g) => g.passage.docs.length === 3).length, 3);
+  assert.deepEqual(new Set(flatten(bank, vocabulary.groupIds).map((q) => q.answer)), new Set([0, 1, 2, 3]));
+});
+
+test("airport and campus set includes six listening and eight reading questions", () => {
+  const set = bank.meta.sets.find((item) => item.id === "campus-airport-14");
+  assert.ok(set);
+  const qs = flatten(bank, set.groupIds);
+  assert.equal(qs.filter((q) => q.section === "listening").length, 6);
+  assert.equal(qs.filter((q) => q.section === "reading").length, 8);
 });
 
 test("advanced practice includes dialogue, talks, text completion and paired documents", () => {
@@ -96,7 +114,7 @@ test("photo practice has local images, four spoken choices and offline cache ent
   const set = bank.meta.sets.find((item) => item.id === "photo-pilot");
   assert.ok(set);
   const worker = readFileSync(new URL("../codex/sw.js", import.meta.url), "utf8");
-  assert.equal(set.groupIds.length, 2);
+  assert.equal(set.groupIds.length, 3);
   for (const id of set.groupIds) {
     const group = groups.get(id);
     assert.equal(group.part, 1);
