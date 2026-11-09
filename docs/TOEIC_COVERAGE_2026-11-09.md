@@ -1,16 +1,16 @@
 # TOEIC `/codex/` Coverage — 2026-11-09
 
-This is an audit of the current branch, not a claim that an official mock exam exists. The live baseline before this branch has 168 questions; this branch has 213, with the original groups preserved. Counts are based on `codex/data/questions.json` and are not an estimate of difficulty or official score.
+This is an audit of the current branch, not a claim that an official mock exam exists. The live baseline before this branch has 213 questions; this branch has 234, with the original groups preserved. Counts are based on `codex/data/questions.json` and are not an estimate of difficulty or official score.
 
 | Part | Status | Branch evidence | Official form |
 |---|---|---|---|
 | 1 Photos | PARTIAL | 3 questions, each with an image and four spoken options | 6 questions |
 | 2 Responses | PARTIAL | 31 questions with three spoken responses; practice audio uses browser speech | 25 questions |
-| 3 Conversations | PARTIAL | 27 questions in 10 groups; 7 groups contain exactly 3 questions | 13 groups of 3 |
+| 3 Conversations | PARTIAL | 36 questions in 13 groups; 10 groups contain exactly 3 questions | 13 groups of 3 |
 | 4 Talks | PARTIAL | 24 questions in 8 groups of 3 | 10 groups of 3 |
 | 5 Sentences | PARTIAL | 47 questions; broad grammar/vocabulary tags, not comprehensive subtype or difficulty labels | 30 questions |
-| 6 Text completion | PARTIAL | 12 questions in 3 groups of 4; full-sentence completion exists | 4 groups of 4 |
-| 7 Reading | PARTIAL | 69 questions: 12 single-passage and 57 multiple-passage; two- and three-document groups exist | 29 single, 25 multiple |
+| 6 Text completion | PARTIAL | 16 questions in 4 groups of 4; full-sentence completion exists | 4 groups of 4 |
+| 7 Reading | PARTIAL | 77 questions: 20 single-passage and 57 multiple-passage; two- and three-document groups exist | 29 single, 25 multiple |
 
 Counts reflect the question bank, not an assembled official-form test. Official blueprint: [TOEIC Taiwan test content](https://www.toeic.com.tw/toeic/listening-reading/about/content/).
 
@@ -25,7 +25,7 @@ Counts reflect the question bank, not an assembled official-form test. Official 
 
 ## Smallest route to one correctly composed form
 
-Without altering old question groups or their history, add at least: 3 photos; 6 new three-question Part 3 groups (18 questions); 2 new three-question Part 4 groups (6); one four-question Part 6 passage (4); and 17 single-passage Part 7 questions. That is **48 new questions**. Existing items can supply 25 Part 2, 30 Part 5, and five five-question multiple-passage groups. An exam mode still needs separate 45/75-minute section timing and single-play enforcement; a 200-question count alone is insufficient.
+Without altering old question groups or their history, add at least: 3 photos; 3 new three-question Part 3 groups (9 questions); 2 new three-question Part 4 groups (6); and 9 single-passage Part 7 questions. That is **27 new questions**. Existing items can supply 25 Part 2, 30 Part 5, four Part 6 groups of four, and five five-question multiple-passage groups. An exam mode still needs separate 45/75-minute section timing and single-play enforcement; a 200-question count alone is insufficient.
 
 Next, add a small set of map/graphic listening exercises, then build the missing group types above in reviewed batches. Preserve existing IDs, group composition, stored sessions and history. Add Traditional Chinese explanations incrementally rather than replacing existing English rationales.
 

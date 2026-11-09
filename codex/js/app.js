@@ -164,7 +164,8 @@ async function fillVoices() {
   const voices = await audio.getVoices();
   if (request !== voiceLoad || document.getElementById("voices") !== box) return;
   const roles = [["M", "男聲"], ["W", "女聲"], ["N", "旁白（Part 2 選項）"]];
-  box.innerHTML = (voices.length ? '' : '<p class="muted">裝置尚未列出英文音色，仍可點「試聽」嘗試系統預設英文語音。</p>') + roles.map(([r, label]) => `<div class="row" style="margin:6px 0"><label style="min-width:9em">${label}</label>
+  const voiceNote = voices.length < 2 ? '<p class="muted">目前可選英文音色少於兩種，會嘗試用音高區分角色；效果依裝置而異。仍可點「試聽」。</p>' : '<p class="muted">自動模式會盡量為男女角色選不同音色；也可手動試聽與指定。實際音色依裝置而異。</p>';
+  box.innerHTML = voiceNote + roles.map(([r, label]) => `<div class="row" style="margin:6px 0"><label style="min-width:9em">${label}</label>
     <select data-voice="${r}" style="flex:1;min-width:0;font:inherit;padding:6px"><option value="">自動（推薦）</option>${voices.map((v) => `<option value="${esc(v.name)}" ${audio.getPref(r) === v.name ? "selected" : ""}>${esc(v.name)} (${esc(v.lang)})</option>`).join("")}</select>
     <button class="btn small" data-action="sample" data-role="${r}">試聽</button></div>`).join("") + '<div class="row"><button class="btn small" data-action="retry-voices">重新載入音色</button><span id="voice-status" role="status" aria-live="polite"></span></div>';
 }

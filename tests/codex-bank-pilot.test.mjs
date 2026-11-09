@@ -68,7 +68,18 @@ test("Batch A pilot: stems do not duplicate existing question or listening promp
 
 test("reading-all set includes every current reading question", () => {
   const set = bank.meta.sets.find((item) => item.id === "reading");
-  assert.equal(flatten(bank, set.groupIds).filter((question) => question.section === "reading").length, 128);
+  assert.equal(flatten(bank, set.groupIds).filter((question) => question.section === "reading").length, 140);
+});
+
+test("focused E includes three conversations, text completion and two single passages", () => {
+  const set = bank.meta.sets.find((item) => item.id === "focused-e-21");
+  assert.ok(set);
+  const selected = set.groupIds.map((id) => groups.get(id));
+  assert.ok(selected.every(Boolean));
+  assert.equal(flatten(bank, set.groupIds).length, 21);
+  assert.equal(selected.filter((g) => g.part === 3 && g.questions.length === 3).length, 3);
+  assert.equal(selected.filter((g) => g.part === 6 && g.questions.length === 4).length, 1);
+  assert.equal(selected.filter((g) => g.part === 7 && g.passage.docs.length === 1 && g.questions.length === 4).length, 2);
 });
 
 test("reading C and vocabulary C contain distinct, complete practice sets", () => {
