@@ -18,15 +18,15 @@ function engine() {
   return synth;
 }
 const english={name:'Mobile English',lang:'en-GB'};
-test('choice A uses the same narrator as B and C with only a slower letter rate', async () => {
+test('choice A uses the same narrator and rate as B and C', async () => {
   const s=engine(), audio=await import(`../codex/js/audio.js?role=${serial++}`);
   const narrator={name:'Samantha',lang:'en-US'};
   s.setVoices([narrator]); audio.setPref('N', narrator.name);
   const lines=audio.withSpokenOptions({script:[],questions:[{options:['One','Two','Three']}]}).map((line)=>({...line,gap:0}));
   assert.equal(await audio.playScript(lines),true);
   assert.ok(s.spoken.every((utterance)=>utterance.voice===narrator));
-  assert.equal(s.spoken[0].text,'A');
-  assert.equal(s.spoken[0].rate,0.75);
+  assert.equal(s.spoken[0].text,'A.');
+  assert.equal(s.spoken[0].rate,1);
   assert.equal(s.spoken[2].rate,1);
   assert.equal(s.spoken[4].rate,1);
 });
