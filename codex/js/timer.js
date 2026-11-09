@@ -21,5 +21,21 @@ export function resumeTimer(session, now = Date.now()) {
 }
 
 export function elapsedSeconds(session, now = Date.now()) {
+  if (session.phase) return (session.completedSeconds ?? 0) + Math.max(0, Math.min(session.phaseMinutes * 60, Math.round((session.phaseMinutes * 60000 - remainingMs(session, now)) / 1000)));
   return Math.max(0, Math.min(session.minutes * 60, Math.round((session.minutes * 60000 - remainingMs(session, now)) / 1000)));
+}
+
+export function startTimedForm(session, formId, now = Date.now()) {
+  Object.assign(session, { formId, phase: 'listening', phaseMinutes: 45, completedSeconds: 0, endsAt: now + 45 * 60000 });
+}
+
+export function startReading(session, now = Date.now(), expired = false) {
+  if (session.phase !== 'listening') return false;
+  const deadline = session.endsAt;
+  session.completedSeconds = elapsedSeconds(session, now);
+  session.phase = 'reading';
+  session.phaseMinutes = 75;
+  session.endsAt = (expired ? deadline : now) + 75 * 60000;
+  delete session.pausedRemainingMs;
+  return true;
 }

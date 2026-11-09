@@ -1,7 +1,7 @@
 import * as audio from "./audio.js";
 import { flatten, score, estimateProgress, mergeSkillStats, weakest, groupsForSkill, updateWrongAnswerQueue, formatDuration } from "./scoring.js";
 import { SKILLS, skillLabel } from "./skills.js";
-import { remainingMs, pauseTimer, resumeTimer, elapsedSeconds } from "./timer.js";
+import { remainingMs, pauseTimer, resumeTimer, elapsedSeconds, startTimedForm, startReading } from "./timer.js";
 
 const EXAM_DATE = "2026-11-29";
 const MAX_PLAYS = 2;
@@ -38,7 +38,12 @@ function allowSession(ids) {
 }
 
 const groupById = (id) => bank.groups.find((g) => g.id === id);
-const sessionQuestions = () => flatten(bank, session.groupIds).filter((q) => !session.questionIds || session.questionIds.includes(q.id));
+function questionsFor(entry) {
+  const qs = flatten(bank, entry.groupIds).filter((q) => !entry.questionIds || entry.questionIds.includes(q.id));
+  if (entry.formId) qs.sort((a, b) => entry.groupIds.indexOf(a.groupId) - entry.groupIds.indexOf(b.groupId));
+  return qs;
+}
+const sessionQuestions = () => questionsFor(session);
 const saveSession = () => store.set(KEY_SESSION, session);
 
 async function init() {
@@ -117,7 +122,13 @@ function renderHome() {
     </details>
 
     <section class="card">
-      <h2>完整／混合題組</h2>
+      <h2>三套 200 題計時練習</h2>
+      <p>每套聽力 100 題／45 分鐘，接著閱讀 100 題／75 分鐘。三套題目不重複；可暫停看目前估分。進入閱讀後不能返回聽力。</p>
+      <div class="row">${['a', 'b', 'c'].map((id) => `<button class="btn primary" data-action="start-form" data-form="form-${id}">開始第 ${id.toUpperCase()} 套</button>`).join('')}</div>
+      <p class="muted">採官方分段時間；練習仍可暫停與重播，並非正式考試的連續播放流程。</p>
+    </section>
+    <section class="card">
+      <h2>其他／短題組練習</h2>
       <p>題庫共 ${n} 題原創練習，分套作答；每題附答案與英文解析。聽力文字稿交卷後才顯示，每段最多播放 ${MAX_PLAYS} 次。</p>
       <label for="test-set">今天練哪一套？</label>
       <select id="test-set" class="btn">${bank.meta.sets.map(s=>`<option value="${s.id}">${esc(s.label)} · ${s.durationMin} 分鐘</option>`).join('')}</select>
@@ -142,7 +153,7 @@ function renderHome() {
     </section>
 
     <section class="card" id="voicecard"><h2>聽力音色</h2><p class="muted">先試聽，再開始。音色依此裝置與瀏覽器提供，清單優先排列較自然的候選音色。</p><label for="speech-rate">語速</label> <select class="btn" id="speech-rate"><option value="0.85">0.85× · 精聽</option><option value="1">1× · 正常</option><option value="1.1">1.1× · 挑戰</option></select><div id="voices" class="muted">載入語音中…</div></section>
-    <section class="card"><h2>官方樣題與練習方式</h2><p>先做一套練習，再從錯題解析找失分原因；閱讀可獨立練習。本題庫是短套練習，並非完整 200 題模考；照片題目前有 ${photoCount} 題試做。</p><p><a href="https://www.ets.org/pdfs/toeic/toeic-listening-reading-sample-test.pdf" target="_blank" rel="noopener">ETS 官方公開樣題 PDF（含解答與聽力稿）</a> · <a href="https://toeic.com.tw/toeic/listening-reading/about/content/" target="_blank" rel="noopener">台灣官方題型與時間</a></p><p class="muted">官方內容於來源頁開啟；本機題庫與官方樣題分開。正式閱讀為 100 題、75 分鐘。</p></section>
+    <section class="card"><h2>官方樣題與練習方式</h2><p>先做一套練習，再從錯題解析找失分原因；閱讀可獨立練習。可選三套 200 題分段計時練習，或使用短題組；照片題目前有 ${photoCount} 題試做。</p><p><a href="https://www.ets.org/pdfs/toeic/toeic-listening-reading-sample-test.pdf" target="_blank" rel="noopener">ETS 官方公開樣題 PDF（含解答與聽力稿）</a> · <a href="https://toeic.com.tw/toeic/listening-reading/about/content/" target="_blank" rel="noopener">台灣官方題型與時間</a></p><p class="muted">官方內容於來源頁開啟；本機題庫與官方樣題分開。正式閱讀為 100 題、75 分鐘。</p></section>
     <section class="card"><h2>正式考試與素材庫</h2><p>正式 Listening 100 題／約 45 分鐘；Reading 100 題／75 分鐘。實際作答約 2 小時，連基本資料及問卷約 2.5 小時。</p><details><summary>查看正式題數分配</summary><p>Part 1 照片 6 題 · Part 2 應答 25 題 · Part 3 對話 39 題 · Part 4 獨白 30 題。</p><p>Part 5 句子填空 30 題 · Part 6 段落填空 16 題 · Part 7 單篇 29 題、多篇 25 題。</p></details><p>台灣官方範例（在來源頁練習與核對答案）：</p><ul><li><a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample03.html" target="_blank" rel="noopener">Part 3 聽力對話</a> · <a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample04.html" target="_blank" rel="noopener">Part 4 聽力獨白</a></li><li><a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample05.html" target="_blank" rel="noopener">Part 5 句子填空</a> · <a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample06.html" target="_blank" rel="noopener">Part 6 段落填空</a> · <a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample07_03.html" target="_blank" rel="noopener">Part 7 多篇閱讀</a></li></ul><p class="muted">新增挑戰 03：聽力 20 題＋閱讀 20 題；也可只選閱讀 03。官方題庫到貨後，再按你挑選的範例調整練習方向。素材核對：2026-11-08。</p></section>
 
     ${last ? `<section class="card"><h2>最近成績</h2>
@@ -188,7 +199,7 @@ if (audio.supported()) speechSynthesis.addEventListener?.('voiceschanged', () =>
 });
 
 /* ---------- Session ---------- */
-function startSession(mode, groupIds, minutes, questionIds = null) {
+function startSession(mode, groupIds, minutes, questionIds = null, formId = null) {
   if (session && !confirm("目前有未完成的測驗。開始新測驗會放棄原進度，確定繼續？")) return;
   if (!allowSession(groupIds)) return;
   const now = Date.now();
@@ -196,6 +207,7 @@ function startSession(mode, groupIds, minutes, questionIds = null) {
     bankVersion: bank.meta.version, mode, groupIds, questionIds, answers: {}, flags: {}, plays: {},
     cur: 0, startedAt: now, endsAt: now + minutes * 60000, minutes
   };
+  if (formId) startTimedForm(session, formId, now);
   saveSession();
   renderTest();
 }
@@ -213,16 +225,30 @@ function startTimer() {
       el.textContent = formatDuration(left);
       el.classList.toggle("low", left <= 300);
     }
-    if (left <= 0) submit(true);
+    if (left <= 0) {
+      stopTimer();
+      if (session.phase === 'listening') {
+        startReading(session, Date.now(), true);
+        session.cur = session.groupIds.findIndex((id) => groupById(id).section === 'reading');
+        saveSession();
+        renderTest();
+      } else submit(true);
+    }
   };
   tick();
-  if (session && !Number.isFinite(session.pausedRemainingMs)) timerId = setInterval(tick, 1000);
+  if (session && !Number.isFinite(session.pausedRemainingMs) && !timerId) timerId = setInterval(tick, 1000);
 }
 function stopTimer() { if (timerId) clearInterval(timerId); timerId = null; }
 
 /* ---------- Test view ---------- */
 function renderTest() {
   audio.stop();
+  if (session.phase && !Number.isFinite(session.pausedRemainingMs) && remainingMs(session) <= 0) {
+    if (session.phase === 'listening') { startReading(session, Date.now(), true); saveSession(); }
+    if (remainingMs(session) <= 0) { submit(true); return; }
+  }
+  const allowed = session.groupIds.map((id, i) => ({ id, i })).filter(({ id }) => !session.phase || groupById(id).section === session.phase);
+  if (!allowed.some(({ i }) => i === session.cur)) session.cur = allowed[0].i;
   if (Number.isFinite(session.pausedRemainingMs)) {
     stopTimer();
     app.innerHTML = `<section class="card"><h1>測驗已暫停</h1><p>剩餘時間 <b>${formatDuration(Math.ceil(remainingMs(session) / 1000))}</b>。作答與倒數已暫停。</p><button class="btn primary" data-action="resume-timer">繼續測驗</button></section>${progressCard(sessionQuestions(), session.answers)}`;
@@ -231,13 +257,13 @@ function renderTest() {
   const qs = sessionQuestions();
   const g = groupById(session.groupIds[session.cur]);
   const answeredCount = qs.filter((q) => session.answers[q.id] !== undefined).length;
-  const isLast = session.cur === session.groupIds.length - 1;
+  const isLast = session.cur === allowed.at(-1).i;
   const spoken = !!g.spokenOptions;
 
   app.innerHTML = `
     <div class="topbar">
       <div><span class="tag">${session.mode === "review" ? "錯題複習" : g.section === "listening" ? "Listening" : "Reading"}</span><span class="tag">Part ${g.part}</span><span class="muted">${esc(g.title ?? "")}</span></div>
-      <div class="row"><span class="muted" id="count">${answeredCount}/${qs.length} 已答</span><span class="timer" id="timer">--:--</span><button class="btn small" data-action="pause-timer">暫停</button><button class="btn small primary" data-action="submit">交卷</button></div>
+      <div class="row">${session.phase ? `<b>${session.phase === 'listening' ? '聽力 45 分鐘' : '閱讀 75 分鐘'}</b>` : ''}<span class="muted" id="count">${answeredCount}/${qs.length} 已答</span><span class="timer" id="timer">--:--</span><button class="btn small" data-action="pause-timer">暫停／看估分</button><button class="btn small primary" data-action="submit">提前交卷</button></div>
     </div>
 
     <section class="card">
@@ -248,12 +274,13 @@ function renderTest() {
     </section>
 
     <div class="row" style="justify-content:space-between">
-      <button class="btn" data-action="prev" ${session.cur === 0 ? "disabled" : ""}>← 上一組</button>
+      <button class="btn" data-action="prev" ${session.cur === allowed[0].i ? "disabled" : ""}>← 上一組</button>
       <span class="muted">${session.cur + 1} / ${session.groupIds.length}</span>
       <button class="btn ${isLast ? "" : "primary"}" data-action="next" ${isLast ? "disabled" : ""}>下一組 →</button>
+      ${isLast && session.phase === 'listening' ? '<button class="btn primary" data-action="begin-reading">結束聽力，開始閱讀 75 分鐘</button>' : ''}
     </div>
 
-    <section class="card"><h3>題號</h3><div class="palette">${qs.map((q, i) => `<button class="pal ${session.answers[q.id] !== undefined ? "answered" : ""} ${session.flags[q.id] ? "flag" : ""} ${q.groupId === g.id ? "current" : ""}" data-action="jump" data-group="${q.groupId}" aria-label="第 ${i + 1} 題">${i + 1}</button>`).join("")}</div></section>
+    <section class="card"><h3>題號${session.phase ? '（只能作答目前區段）' : ''}</h3><div class="palette">${qs.map((q, i) => `<button class="pal ${session.answers[q.id] !== undefined ? "answered" : ""} ${session.flags[q.id] ? "flag" : ""} ${q.groupId === g.id ? "current" : ""}" data-action="jump" data-group="${q.groupId}" ${session.phase && q.section !== session.phase ? 'disabled' : ''} aria-label="第 ${i + 1} 題">${i + 1}</button>`).join("")}</div></section>
   `;
   startTimer();
 }
@@ -343,6 +370,7 @@ document.addEventListener('visibilitychange', () => {
 window.addEventListener('pagehide', () => cancelPlayback('background'));
 
 function pick(qid, i) {
+  if (session.phase && sessionQuestions().find((q) => q.id === qid)?.section !== session.phase) return;
   session.answers[qid] = i;
   saveSession();
   const row = app.querySelector(`.q[data-qid="${qid}"]`);
@@ -360,7 +388,9 @@ function toggleFlag(qid) {
 }
 
 function go(delta) {
-  session.cur = Math.min(session.groupIds.length - 1, Math.max(0, session.cur + delta));
+  const target = Math.min(session.groupIds.length - 1, Math.max(0, session.cur + delta));
+  if (session.phase && groupById(session.groupIds[target]).section !== session.phase) return;
+  session.cur = target;
   saveSession();
   renderTest();
   window.scrollTo(0, 0);
@@ -377,7 +407,7 @@ function submit(auto = false) {
   wrongQueue = updateWrongAnswerQueue(wrongQueue, qs, session.answers);
   store.set(KEY_WRONG_QUEUE, wrongQueue);
   const entry = {
-    id: String(Date.now()), date: Date.now(), mode: session.mode,
+    id: String(Date.now()), date: Date.now(), mode: session.mode, formId: session.formId ?? null,
     secUsed: elapsedSeconds(session),
     groupIds: session.groupIds, questionIds: session.questionIds ?? null, answers: session.answers,
     correct: result.correct, total: result.total, bySkill: answeredResult.bySkill, bySection: answeredResult.bySection
@@ -394,7 +424,7 @@ function submit(auto = false) {
 function renderResult(entry, showAll = false) {
   stopTimer();
   audio.stop();
-  const qs = flatten(bank, entry.groupIds).filter((q) => !entry.questionIds || entry.questionIds.includes(q.id));
+  const qs = questionsFor(entry);
   const r = score(qs, entry.answers);
   const answeredQs = qs.filter((q) => entry.answers[q.id] !== undefined);
   const answeredStats = score(answeredQs, entry.answers);
@@ -436,7 +466,7 @@ function renderResult(entry, showAll = false) {
 }
 
 function reviewGroup(g, entry) {
-  const qs = flatten(bank, entry.groupIds);
+  const qs = questionsFor(entry);
   return `<div class="q">
     <div class="doclabel">Part ${g.part} ${esc(g.title ?? "")}</div>
     ${g.image ? `<img class="question-image" src="${esc(g.image)}" alt="${g.part === 1 ? "本題照片" : "本題附圖"}；若載入失敗，請連網重新開啟。">` : ""}
@@ -463,9 +493,22 @@ app.addEventListener("click", (e) => {
       const set = bank.meta.sets.find((s) => s.id === document.getElementById('test-set').value);
       const ids = orderedGroupIds(set.groupIds);
       if (set.id.startsWith('form-')) ids.sort((a, b) => groupById(a).part - groupById(b).part);
-      startSession("diagnostic", ids, set.durationMin);
+      startSession("diagnostic", ids, set.durationMin, null, set.id.startsWith('form-') ? set.id : null);
       break;
     }
+    case "start-form": {
+      const set = bank.meta.sets.find((s) => s.id === d.form);
+      const ids = orderedGroupIds(set.groupIds).sort((a, b) => groupById(a).part - groupById(b).part);
+      startSession('diagnostic', ids, 120, null, set.id);
+      break;
+    }
+    case "begin-reading":
+      if (session.phase === 'listening' && confirm('結束聽力並開始閱讀？開始後不能返回聽力。')) {
+        startReading(session);
+        session.cur = session.groupIds.findIndex((id) => groupById(id).section === 'reading');
+        saveSession(); renderTest();
+      }
+      break;
     case "start-section": {
       const groups = bank.groups.filter((g) => g.section === d.section);
       const groupIds = groups.map((g) => g.id);
@@ -479,7 +522,7 @@ app.addEventListener("click", (e) => {
       break;
     }
     case "resume": if (allowSession(session.groupIds)) renderTest(); break;
-    case "pause-timer": if (pauseTimer(session)) { saveSession(); renderTest(); } else if (remainingMs(session) <= 0) submit(true); break;
+    case "pause-timer": if (pauseTimer(session)) { saveSession(); renderTest(); } else if (remainingMs(session) <= 0) { if (session.phase) renderTest(); else submit(true); } break;
     case "resume-timer": if (resumeTimer(session)) { saveSession(); renderTest(); } break;
     case "discard": if (confirm("放棄目前作答進度？")) { store.del(KEY_SESSION); session = null; renderHome(); } break;
     case "practice": {
@@ -517,7 +560,7 @@ app.addEventListener("click", (e) => {
     case "flag": toggleFlag(d.q); break;
     case "prev": go(-1); break;
     case "next": go(1); break;
-    case "jump": session.cur = session.groupIds.indexOf(d.group); saveSession(); renderTest(); break;
+    case "jump": if (!session.phase || groupById(d.group)?.section === session.phase) { session.cur = session.groupIds.indexOf(d.group); saveSession(); renderTest(); } break;
     case "submit": submit(false); break;
   }
 });
