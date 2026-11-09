@@ -69,6 +69,7 @@ test('letter cue and synthesized options share one cancellable playback sequence
   assert.equal(await second, false);
   assert.equal(spoken.length, 1);
   const options = audio.withSpokenOptions({ script: [], questions: [{ options: ['One', 'Two', 'Three'] }] });
-  assert.equal(options[0].audio, 'audio/letter-a.mp3');
+  assert.equal(options[0].text, 'A');
+  assert.equal(options[0].audio, undefined);
   assert.equal(options[2].audio, undefined);
 });
