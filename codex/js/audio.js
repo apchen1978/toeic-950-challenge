@@ -165,17 +165,18 @@ export async function playScript(lines, { rate = getRate() } = {}) {
 /** Part 1/2 style: stimulus, then each option introduced by its letter. */
 export function withSpokenOptions(group) {
   const q = group.questions[0];
-  const letters = ["A", "B", "C", "D"];
+  // A standalone "A." can be pronounced like the article; spell its letter sound for TTS.
+  const spokenLetters = ["Ay", "B", "C", "D"];
   const out = [...group.script.map((l) => ({ ...l, gap: 900 }))];
   q.options.forEach((o, i) => {
-    out.push({ speaker: "N", text: `${letters[i]}.`, single: true, gap: 250 });
+    out.push({ speaker: "N", text: `${spokenLetters[i]}.`, single: true, gap: 250 });
     out.push({ speaker: "N", text: o, gap: 700 });
   });
   return out;
 }
 
 export async function sample(role) {
-  const text = role === "N" ? "A. The meeting has been moved to Thursday." : role === "M"
+  const text = role === "N" ? "Ay. The meeting has been moved to Thursday." : role === "M"
     ? "Did you see the email from the supplier? The delivery has been pushed back to the twentieth."
     : "I know. I'll call them this afternoon, and let the marketing team know about the new date.";
   return playScript([{ speaker: role, text }]);
