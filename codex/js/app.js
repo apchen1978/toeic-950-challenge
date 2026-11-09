@@ -1,5 +1,5 @@
 import * as audio from "./audio.js";
-import { flatten, score, estimateScaled, mergeSkillStats, weakest, groupsForSkill, updateWrongAnswerQueue, formatDuration } from "./scoring.js";
+import { flatten, score, estimateProgress, mergeSkillStats, weakest, groupsForSkill, updateWrongAnswerQueue, formatDuration } from "./scoring.js";
 import { SKILLS, skillLabel } from "./skills.js";
 import { remainingMs, pauseTimer, resumeTimer, elapsedSeconds } from "./timer.js";
 
@@ -222,7 +222,7 @@ function renderTest() {
   audio.stop();
   if (Number.isFinite(session.pausedRemainingMs)) {
     stopTimer();
-    app.innerHTML = `<section class="card"><h1>測驗已暫停</h1><p>剩餘時間 <b>${formatDuration(Math.ceil(remainingMs(session) / 1000))}</b>。作答與倒數已暫停。</p><button class="btn primary" data-action="resume-timer">繼續測驗</button></section>`;
+    app.innerHTML = `<section class="card"><h1>測驗已暫停</h1><p>剩餘時間 <b>${formatDuration(Math.ceil(remainingMs(session) / 1000))}</b>。作答與倒數已暫停。</p><button class="btn primary" data-action="resume-timer">繼續測驗</button></section>${progressCard(sessionQuestions(), session.answers)}`;
     return;
   }
   const qs = sessionQuestions();
@@ -253,6 +253,23 @@ function renderTest() {
     <section class="card"><h3>題號</h3><div class="palette">${qs.map((q, i) => `<button class="pal ${session.answers[q.id] !== undefined ? "answered" : ""} ${session.flags[q.id] ? "flag" : ""} ${q.groupId === g.id ? "current" : ""}" data-action="jump" data-group="${q.groupId}" aria-label="第 ${i + 1} 題">${i + 1}</button>`).join("")}</div></section>
   `;
   startTimer();
+}
+
+function progressCard(questions, answers) {
+  const progress = estimateProgress(questions, answers);
+  const labels = { listening: '聽力', structure: '句型／結構（Part 6）', grammar: '文法', reading: '閱讀理解（Part 7）', vocabulary: '詞彙' };
+  const range = (key) => {
+    const section = progress.sections[key];
+    const estimate = progress.ranges[key];
+    return estimate ? `${estimate.low}–${estimate.high}（中間值約 ${estimate.mid}；已答 ${section.n} 題）` : `已答 ${section.n} 題；至少 5 題後顯示粗估`;
+  };
+  const listening = progress.ranges.listening;
+  const reading = progress.ranges.reading;
+  const total = listening && reading ? `${listening.low + reading.low}–${listening.high + reading.high}（中間值約 ${listening.mid + reading.mid}）` : '聽力與閱讀各至少答 5 題後顯示';
+  return `<section class="card"><h2>目前作答表現</h2><p class="notice">僅依已答題推算，空白題不算錯。下列分數區間是練習參考，並非 ETS 分數；選題難度和樣本量會影響結果。ETS 每份試卷另行換算量尺分數，<a href="https://www.ets.org/content/dam/ets-org/fr/pdfs/toeic/toeic-listening-reading-test-examinee-handbook.pdf" target="_blank" rel="noopener">官方說明</a>。</p>
+    <p><b>總分粗估：</b>${total}<br><b>聽力粗估：</b>${range('listening')}<br><b>閱讀粗估：</b>${range('reading')}</p>
+    ${Object.entries(labels).map(([key, label]) => { const v = progress.categories[key]; return `<div class="skillrow"><div>${label}</div><div>${v.n ? `${v.c}/${v.n}（${Math.round(v.c / v.n * 100)}%）` : '尚無已答題'}</div></div>`; }).join('')}
+  </section>`;
 }
 
 function audioBlock(g) {
@@ -353,13 +370,14 @@ function submit(auto = false) {
   stopTimer();
   audio.stop();
   const result = score(qs, session.answers);
+  const answeredResult = score(qs.filter((q) => session.answers[q.id] !== undefined), session.answers);
   wrongQueue = updateWrongAnswerQueue(wrongQueue, qs, session.answers);
   store.set(KEY_WRONG_QUEUE, wrongQueue);
   const entry = {
     id: String(Date.now()), date: Date.now(), mode: session.mode,
     secUsed: elapsedSeconds(session),
     groupIds: session.groupIds, questionIds: session.questionIds ?? null, answers: session.answers,
-    correct: result.correct, total: result.total, bySkill: result.bySkill, bySection: result.bySection
+    correct: result.correct, total: result.total, bySkill: answeredResult.bySkill, bySection: answeredResult.bySection
   };
   const history = store.get(KEY_HISTORY, []);
   history.push(entry);
@@ -375,22 +393,26 @@ function renderResult(entry, showAll = false) {
   audio.stop();
   const qs = flatten(bank, entry.groupIds).filter((q) => !entry.questionIds || entry.questionIds.includes(q.id));
   const r = score(qs, entry.answers);
-  const L = estimateScaled(r.bySection.listening.c, r.bySection.listening.t);
-  const R = estimateScaled(r.bySection.reading.c, r.bySection.reading.t);
-  const weak = weakest(r.bySkill, 3, 1);
-  const skills = Object.entries(r.bySkill).sort((a, b) => a[1].c / a[1].t - b[1].c / b[1].t);
+  const answeredQs = qs.filter((q) => entry.answers[q.id] !== undefined);
+  const answeredStats = score(answeredQs, entry.answers);
+  const progress = estimateProgress(qs, entry.answers);
+  const L = progress.ranges.listening;
+  const R = progress.ranges.reading;
+  const weak = weakest(answeredStats.bySkill, 3, 1);
+  const skills = Object.entries(answeredStats.bySkill).sort((a, b) => a[1].c / a[1].t - b[1].c / b[1].t);
   const groups = bank.groups.filter((g) => entry.groupIds.includes(g.id)).filter((g) => showAll || g.questions.some((q) => entry.answers[q.id] !== q.answer));
 
   app.innerHTML = `
     <h1>測驗結果</h1>
     <section class="card"><div class="grid">
-      <div class="stat"><b>${Math.round((r.correct / r.total) * 100)}%</b>正確率</div>
-      <div class="stat"><b>${r.correct}/${r.total}</b>答對題數</div>
+      <div class="stat"><b>${r.answered ? `${Math.round((r.correct / r.answered) * 100)}%` : '—'}</b>已答正確率</div>
+      <div class="stat"><b>${r.correct}/${r.answered}</b>已答對／已作答</div>
       <div class="stat"><b>${formatDuration(entry.secUsed)}</b>耗時</div>
       <div class="stat"><b>${r.answered}/${r.total}</b>已作答</div>
     </div>
-    <p class="notice" style="margin-top:12px">非官方估計（僅供練習參考，不等同 ETS 成績，題量也遠少於正式考試）：
-      ${L ? `Listening ≈ ${L.low}–${L.high}` : ""}${L && R ? "　" : ""}${R ? `Reading ≈ ${R.low}–${R.high}` : ""}</p></section>
+    <p class="notice" style="margin-top:12px">已答題粗估（空白題不納入；各區至少答 5 題才顯示；非 ETS 成績）：<br>
+      ${L && R ? `總分 ≈ ${L.low + R.low}–${L.high + R.high}（中間值約 ${L.mid + R.mid}）<br>` : ''}
+      ${L ? `Listening ≈ ${L.low}–${L.high}（${L.answered} 題）` : "聽力樣本不足"}　${R ? `Reading ≈ ${R.low}–${R.high}（${R.answered} 題）` : "閱讀樣本不足"}</p></section>
 
     <section class="card"><h2>各題型表現</h2>
       ${skills.map(([k, v]) => `<div class="skillrow"><div>${esc(skillLabel(k))}</div><div>${v.c}/${v.t}</div><div class="bar ${v.c / v.t < 0.6 ? "weak" : ""}" style="grid-column:1 / -1"><i style="width:${(v.c / v.t) * 100}%"></i></div></div>`).join("")}
@@ -398,7 +420,7 @@ function renderResult(entry, showAll = false) {
 
     <section class="card"><h2>下一次練習建議</h2>
       ${weak.length ? weak.map((w) => `<div class="skillrow"><div><b>${esc(skillLabel(w.skill))}</b>（${w.c}/${w.t}）<div class="muted">${esc(SKILLS[w.skill]?.tip ?? "")}</div></div><div><button class="btn small" data-action="practice" data-skill="${esc(w.skill)}">練習</button></div></div>`).join("")
-        : `<p>全部答對。下一步：加入更高難度題組，並提高限時壓力。</p>`}
+        : `<p>${r.answered ? '已答題目前沒有錯題；可繼續練習其他題型。' : '尚未作答，沒有足夠資料建議下一次練習。'}</p>`}
     </section>
 
     <section class="card"><div class="row" style="justify-content:space-between"><h2>${showAll ? "全部題目解析" : "錯題解析"}</h2>
@@ -434,7 +456,13 @@ app.addEventListener("click", (e) => {
   if (!t) return;
   const d = t.dataset;
   switch (d.action) {
-    case "start-diagnostic": { const set=bank.meta.sets.find(s=>s.id===document.getElementById('test-set').value); startSession("diagnostic", orderedGroupIds(set.groupIds), set.durationMin); break; }
+    case "start-diagnostic": {
+      const set = bank.meta.sets.find((s) => s.id === document.getElementById('test-set').value);
+      const ids = orderedGroupIds(set.groupIds);
+      if (set.id.startsWith('form-')) ids.sort((a, b) => groupById(a).part - groupById(b).part);
+      startSession("diagnostic", ids, set.durationMin);
+      break;
+    }
     case "start-section": {
       const groups = bank.groups.filter((g) => g.section === d.section);
       const groupIds = groups.map((g) => g.id);

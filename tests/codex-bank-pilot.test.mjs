@@ -68,7 +68,7 @@ test("Batch A pilot: stems do not duplicate existing question or listening promp
 
 test("reading-all set includes every current reading question", () => {
   const set = bank.meta.sets.find((item) => item.id === "reading");
-  assert.equal(flatten(bank, set.groupIds).filter((question) => question.section === "reading").length, 159);
+  assert.equal(flatten(bank, set.groupIds).filter((question) => question.section === "reading").length, 302);
 });
 
 test("focused E includes three conversations, text completion and two single passages", () => {
@@ -125,7 +125,7 @@ test("photo practice has local images, four spoken choices and offline cache ent
   const set = bank.meta.sets.find((item) => item.id === "photo-pilot");
   assert.ok(set);
   const worker = readFileSync(new URL("../codex/sw.js", import.meta.url), "utf8");
-  assert.equal(set.groupIds.length, 8);
+  assert.equal(set.groupIds.length, 18);
   for (const id of set.groupIds) {
     const group = groups.get(id);
     assert.equal(group.part, 1);
@@ -133,6 +133,21 @@ test("photo practice has local images, four spoken choices and offline cache ent
     assert.equal(group.questions[0].options.length, 4);
     assert.ok(existsSync(new URL(`../codex/${group.image}`, import.meta.url)));
     assert.ok(worker.includes(group.image));
+  }
+});
+
+test("three distinct 200-question practice forms match TOEIC part and reading passage counts", () => {
+  const forms = ['form-a', 'form-b', 'form-c'].map((id) => bank.meta.sets.find((set) => set.id === id));
+  assert.ok(forms.every(Boolean));
+  const allIds = forms.flatMap((form) => form.groupIds);
+  assert.equal(new Set(allIds).size, allIds.length);
+  for (const form of forms) {
+    const chosen = form.groupIds.map((id) => groups.get(id));
+    assert.ok(chosen.every(Boolean));
+    const counts = Object.fromEntries([1, 2, 3, 4, 5, 6, 7].map((part) => [part, chosen.filter((g) => g.part === part).reduce((sum, g) => sum + g.questions.length, 0)]));
+    assert.deepEqual(counts, { 1: 6, 2: 25, 3: 39, 4: 30, 5: 30, 6: 16, 7: 54 });
+    assert.equal(chosen.filter((g) => g.part === 7 && g.passage.docs.length === 1).reduce((sum, g) => sum + g.questions.length, 0), 29);
+    assert.equal(chosen.filter((g) => g.part === 7 && g.passage.docs.length > 1).reduce((sum, g) => sum + g.questions.length, 0), 25);
   }
 });
 
