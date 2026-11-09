@@ -1,9 +1,10 @@
 // Service worker: 有網路時抓最新版（題庫更新會自動生效），離線時用快取。
-const CACHE = "toeic950-codex-v20";
+const CACHE = "toeic950-codex-v21";
 const SHELL = [
   "./", "index.html", "styles.css", "manifest.webmanifest",
   "js/app.js", "js/audio.js", "js/scoring.js", "js/skills.js", "js/timer.js",
   "data/questions.json",
+  "audio/manifest.json",
   "images/photo-meeting.png", "images/photo-delivery.png", "images/photo-plants.png",
   "images/photo-restaurant.png", "images/photo-warehouse.png", "images/photo-terrace.png",
   "images/photo-bicycle.png", "images/photo-airport-maintenance.png", "images/campus-route.svg",
@@ -13,7 +14,14 @@ const SHELL = [
 ];
 
 self.addEventListener("install", (e) => {
-  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting()));
+  e.waitUntil((async () => {
+    const response = await fetch(new URL('audio/manifest.json', self.location.href));
+    if (!response.ok) throw new Error('Audio manifest unavailable');
+    const manifest = await response.json();
+    const cache = await caches.open(CACHE);
+    await cache.addAll([...SHELL, ...Object.values(manifest.groups).map((group) => group.file)]);
+    await self.skipWaiting();
+  })());
 });
 
 self.addEventListener("activate", (e) => {
@@ -30,7 +38,7 @@ self.addEventListener("fetch", (e) => {
   e.respondWith(
     fetch(req)
       .then((res) => {
-        if (res.ok) { const copy = res.clone(); caches.open(CACHE).then((c) => c.put(req, copy)); }
+        if (res.ok && res.status !== 206) { const copy = res.clone(); caches.open(CACHE).then((c) => c.put(req, copy)).catch(() => {}); }
         return res;
       })
       .catch(() => caches.match(req, { ignoreSearch: true }).then((hit) => hit || caches.match("index.html")))

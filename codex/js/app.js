@@ -31,7 +31,7 @@ function unsupportedNotice() {
 
 function needsAudio(ids) { return ids.some(id => groupById(id)?.section === 'listening'); }
 function allowSession(ids) {
-  if (audio.supported() || !needsAudio(ids)) return true;
+  if (!needsAudio(ids) || ids.every((id) => { const g = groupById(id); return g.section !== 'listening' || (g.audio ? audio.fileSupported() : audio.supported()); })) return true;
   const box = document.getElementById('unsupported-message');
   if (box) box.innerHTML = unsupportedNotice();
   return false;
@@ -45,6 +45,9 @@ async function init() {
   try {
     const res = await fetch("data/questions.json");
     bank = await res.json();
+    for (const group of bank.groups) {
+      if ([3, 4].includes(group.part)) group.audio = `audio/${group.id}.mp3`;
+    }
   } catch {
     app.innerHTML = `<p class="notice">題庫載入失敗。請用 <code>node serve.mjs</code> 或 GitHub Pages 開啟，不要直接雙擊 index.html。</p>`;
     return;
@@ -165,10 +168,10 @@ async function fillVoices() {
   const voices = await audio.getVoices();
   if (request !== voiceLoad || document.getElementById("voices") !== box) return;
   const roles = [["M", "男聲"], ["W", "女聲"], ["N", "旁白（Part 2 選項）"]];
-  const voiceNote = voices.length < 2 ? '<p class="muted">目前可選英文音色少於兩種，會嘗試用音高區分角色；效果依裝置而異。仍可點「試聽」。</p>' : '<p class="muted">自動模式會盡量為男女角色選不同音色；也可手動試聽與指定。實際音色依裝置而異。</p>';
+  const voiceNote = '<p class="muted">對話與獨白使用固定配音：M 為 David 男聲，W 為 Zira 女聲。下方音色設定只影響照片／應答題與試聽；語速設定仍適用所有題目。</p>' + (voices.length < 2 ? '<p class="muted">此裝置可選英文音色少於兩種，語音合成題會嘗試用音高區分角色。</p>' : '');
   box.innerHTML = voiceNote + roles.map(([r, label]) => `<div class="row" style="margin:6px 0"><label style="min-width:9em">${label}</label>
     <select data-voice="${r}" style="flex:1;min-width:0;font:inherit;padding:6px"><option value="">自動（推薦）</option>${voices.map((v) => `<option value="${esc(v.name)}" ${audio.getPref(r) === v.name ? "selected" : ""}>${esc(v.name)} (${esc(v.lang)})</option>`).join("")}</select>
-    <button class="btn small" data-action="sample" data-role="${r}">試聽</button></div>`).join("") + '<div class="row"><button class="btn small" data-action="retry-voices">重新載入音色</button><span id="voice-status" role="status" aria-live="polite"></span></div>';
+    <button class="btn small" data-action="sample" data-role="${r}">試聽</button></div><p class="muted">目前：${esc(audio.roleVoiceInfo(r).name)}${audio.roleVoiceInfo(r).maleFallback ? '。未辨識到男聲，已調低音高；請試聽，或從清單指定更合適的音色。' : ''}</p>`).join("") + '<div class="row"><button class="btn small" data-action="retry-voices">重新載入音色</button><button class="btn small" data-action="reset-role-voices">恢復自動配音</button><span id="voice-status" role="status" aria-live="polite"></span></div>';
 }
 
 async function sampleVoice(role, button) {
@@ -276,7 +279,7 @@ function audioBlock(g) {
   const used = session.plays[g.id] ?? 0;
   const left = MAX_PLAYS - used;
   return `<div class="audio" data-gid="${g.id}">
-    <button class="btn primary" data-action="play" data-group="${g.id}" ${left <= 0 || !audio.supported() ? "disabled" : ""}>▶ 播放語音</button>
+    <button class="btn primary" data-action="play" data-group="${g.id}" ${left <= 0 || !(g.audio ? audio.fileSupported() : audio.supported()) ? "disabled" : ""}>▶ 播放語音</button>${g.audio ? '<span class="tag">固定男女配音</span>' : ''}
     ${left <= 0 ? `<button class="btn small" data-action="reset-plays" data-group="${g.id}">恢復本題播放次數</button>` : ''}
     <button class="btn small" data-action="stop-play" disabled>停止播放</button>
     <span class="muted"><span class="plays">剩餘 ${left} 次</span> · <span class="status" role="status" aria-live="polite">完整播放才計次；中斷或失敗不扣次數。</span></span>
@@ -306,7 +309,7 @@ async function playGroup(gid, btn) {
   status.textContent = "播放中…";
   const lines = g.spokenOptions ? audio.withSpokenOptions(g) : g.script;
   let finished = false;
-  try { finished = await audio.playScript(lines); } catch { finished = false; }
+  try { finished = g.audio ? await audio.playFile(g.audio) : await audio.playScript(lines); } catch { finished = false; }
   if (activePlay !== play) return;
   activePlay = null;
   if (finished && session === playingSession) {
@@ -498,6 +501,7 @@ app.addEventListener("click", (e) => {
     case "home": renderHome(); break;
     case "sample": sampleVoice(d.role, t); break;
     case "retry-voices": fillVoices(); break;
+    case "reset-role-voices": for (const role of ['M', 'W', 'N']) audio.setPref(role, ''); fillVoices(); break;
     case "play": playGroup(d.group, t); break;
     case "stop-play": cancelPlayback(); break;
     case "reset-plays": if (!activePlay) { session.plays[d.group] = 0; saveSession(); renderTest(); } break;
@@ -521,7 +525,7 @@ app.addEventListener("click", (e) => {
 app.addEventListener("change", (e) => {
   if (e.target.id === 'speech-rate') audio.setRate(Number(e.target.value));
   const s = e.target.closest("select[data-voice]");
-  if (s) audio.setPref(s.dataset.voice, s.value);
+  if (s) { audio.setPref(s.dataset.voice, s.value); fillVoices(); }
 });
 
 init();

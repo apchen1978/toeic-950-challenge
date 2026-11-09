@@ -18,6 +18,21 @@ function engine() {
   return synth;
 }
 const english={name:'Mobile English',lang:'en-GB'};
+test('codex: multiple female voices do not suppress the male-role pitch fallback',async()=>{
+  const s=engine(), audio=await import(`../codex/js/audio.js?role=${serial++}`);
+  s.setVoices([{name:'Samantha',lang:'en-US'},{name:'Karen',lang:'en-AU'}]);
+  assert.equal(await audio.playScript([{speaker:'M',text:'Hello',gap:0}]),true);
+  assert.equal(s.spoken[0].pitch,0.8);
+  assert.equal(audio.roleVoiceInfo('M').maleFallback,true);
+});
+test('codex: a recognized male voice wins over a higher-ranked female voice',async()=>{
+  const s=engine(), audio=await import(`../codex/js/audio.js?role=${serial++}`);
+  s.setVoices([{name:'Google Samantha',lang:'en-US'},{name:'Daniel',lang:'en-GB'}]);
+  assert.equal(await audio.playScript([{speaker:'M',text:'Hello',gap:0}]),true);
+  assert.equal(s.spoken[0].voice.name,'Daniel');
+  assert.equal(s.spoken[0].pitch,1);
+  assert.equal(audio.roleVoiceInfo('M').maleFallback,false);
+});
 test('codex: automatic roles use distinct unlabelled English voices when available',async()=>{
   const s=engine(), audio=await import(`../codex/js/audio.js?role=${serial++}`);
   const first={name:'English voice one',lang:'en-US'}, second={name:'English voice two',lang:'en-GB'};
