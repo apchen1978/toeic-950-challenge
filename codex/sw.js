@@ -1,11 +1,10 @@
 // Service worker: 有網路時抓最新版（題庫更新會自動生效），離線時用快取。
-const CACHE = "toeic950-codex-v23";
+const CACHE = "toeic950-codex-v24";
 const SHELL = [
   "./", "index.html", "styles.css", "manifest.webmanifest",
   "js/app.js", "js/audio.js", "js/scoring.js", "js/skills.js", "js/timer.js",
   "data/questions.json",
   "audio/manifest.json",
-  "audio/letter-a.mp3",
   "images/photo-meeting.png", "images/photo-delivery.png", "images/photo-plants.png",
   "images/photo-restaurant.png", "images/photo-warehouse.png", "images/photo-terrace.png",
   "images/photo-bicycle.png", "images/photo-airport-maintenance.png", "images/campus-route.svg",
