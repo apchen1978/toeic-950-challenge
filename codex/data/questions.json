@@ -60,7 +60,7 @@
       },
       {
         "id": "reading",
-        "label": "閱讀專練 · 全題庫 128 題",
+        "label": "閱讀專練 · 全題庫 140 題",
         "groupIds": [
           "g-r01",
           "g-r02",
@@ -129,9 +129,12 @@
           "g-vocab-c-9",
           "g-vocab-c-10",
           "g-airport-reading-d",
-          "g-campus-reading-d"
+          "g-campus-reading-d",
+          "g-part6-e-notice",
+          "g-single-e-airport",
+          "g-single-e-campus"
         ],
-        "durationMin": 96
+        "durationMin": 105
       },
       {
         "id": "challenge03",
@@ -294,6 +297,19 @@
           "g-campus-reading-d"
         ],
         "durationMin": 18
+      },
+      {
+        "id": "focused-e-21",
+        "label": "情境 E · 對話、通知與長篇閱讀（21 題）",
+        "groupIds": [
+          "g-voice-e-airport",
+          "g-voice-e-campus",
+          "g-voice-e-vendor",
+          "g-part6-e-notice",
+          "g-single-e-airport",
+          "g-single-e-campus"
+        ],
+        "durationMin": 27
       }
     ]
   },
@@ -4689,6 +4705,405 @@
           ],
           "answer": 0,
           "explanation": "The reply confirms her résumé workshop and review and asks her to arrive at Room 305 before 2:30."
+        }
+      ]
+    },
+    {
+      "id": "g-voice-e-airport",
+      "section": "listening",
+      "part": 3,
+      "title": "機場轉機協助",
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Our flight landed later than expected. Is the shuttle to Terminal Two still running?"
+        },
+        {
+          "speaker": "M",
+          "text": "Yes, it leaves from outside Door Four every ten minutes. The last shuttle is at midnight."
+        },
+        {
+          "speaker": "W",
+          "text": "Good. Our connecting flight boards at eleven thirty. Does the shuttle stop near the security checkpoint?"
+        },
+        {
+          "speaker": "M",
+          "text": "It stops beside the information desk. From there, follow the blue signs upstairs to security."
+        }
+      ],
+      "questions": [
+        {
+          "id": "VOICE-AIR-1",
+          "skill": "l-conversation",
+          "prompt": "What does the woman ask about?",
+          "options": [
+            "A refund for a canceled flight.",
+            "Transportation between terminals.",
+            "A change to a hotel reservation.",
+            "The location of a baggage office."
+          ],
+          "answer": 1,
+          "explanation": "She asks whether the shuttle to Terminal Two is still running."
+        },
+        {
+          "id": "VOICE-AIR-2",
+          "skill": "l-conversation",
+          "prompt": "How often does the shuttle depart?",
+          "options": [
+            "Every fifteen minutes.",
+            "Every thirty minutes.",
+            "Every ten minutes.",
+            "Once per hour."
+          ],
+          "answer": 2,
+          "explanation": "The man says the shuttle leaves every ten minutes."
+        },
+        {
+          "id": "VOICE-AIR-3",
+          "skill": "l-inference",
+          "prompt": "What should the travelers do after getting off the shuttle?",
+          "options": [
+            "Return to Door Four.",
+            "Collect tickets at the hotel.",
+            "Wait until midnight for the checkpoint.",
+            "Follow blue signs upstairs to security."
+          ],
+          "answer": 3,
+          "explanation": "The man says to follow blue signs upstairs from the information desk."
+        }
+      ]
+    },
+    {
+      "id": "g-voice-e-campus",
+      "section": "listening",
+      "part": 3,
+      "title": "校園講座安排",
+      "script": [
+        {
+          "speaker": "M",
+          "text": "The guest lecturer has asked whether we can show the presentation from her laptop."
+        },
+        {
+          "speaker": "W",
+          "text": "The lecture hall has a display connection, but her laptop model needs an adapter. I can borrow one from the library."
+        },
+        {
+          "speaker": "M",
+          "text": "Thanks. The talk starts at two, so could you test it at one thirty?"
+        },
+        {
+          "speaker": "W",
+          "text": "I will. I also need to send the revised room number to the students who registered yesterday."
+        }
+      ],
+      "questions": [
+        {
+          "id": "VOICE-CAMPUS-1",
+          "skill": "l-conversation",
+          "prompt": "What are the speakers preparing for?",
+          "options": [
+            "A library renovation.",
+            "A guest lecture.",
+            "A job interview.",
+            "A student examination."
+          ],
+          "answer": 1,
+          "explanation": "They discuss a guest lecturer and a talk in a lecture hall."
+        },
+        {
+          "id": "VOICE-CAMPUS-2",
+          "skill": "l-inference",
+          "prompt": "Why will the woman visit the library?",
+          "options": [
+            "To return a projector.",
+            "To print examination papers.",
+            "To borrow an adapter for the laptop.",
+            "To reserve a lecture hall."
+          ],
+          "answer": 2,
+          "explanation": "She offers to borrow the adapter needed for the laptop connection."
+        },
+        {
+          "id": "VOICE-CAMPUS-3",
+          "skill": "l-conversation",
+          "prompt": "What else does the woman need to do?",
+          "options": [
+            "Cancel the presentation.",
+            "Change the talk to one thirty.",
+            "Ask students to bring laptops.",
+            "Send a revised room number to registered students."
+          ],
+          "answer": 3,
+          "explanation": "She says she must send the revised room number to students who registered."
+        }
+      ]
+    },
+    {
+      "id": "g-voice-e-vendor",
+      "section": "listening",
+      "part": 3,
+      "title": "供應商數量確認",
+      "script": [
+        {
+          "speaker": "W",
+          "text": "The order confirmation lists sixty chairs, but our purchase request was for sixteen."
+        },
+        {
+          "speaker": "M",
+          "text": "I see the problem. I will ask the supplier to correct the quantity before it issues the invoice."
+        },
+        {
+          "speaker": "W",
+          "text": "Please also confirm that the delivery date will stay the same. The new office opens next month."
+        },
+        {
+          "speaker": "M",
+          "text": "I will include that question in my message and forward the reply to you."
+        }
+      ],
+      "questions": [
+        {
+          "id": "VOICE-VENDOR-1",
+          "skill": "l-conversation",
+          "prompt": "What discrepancy did the woman notice?",
+          "options": [
+            "The invoice has already been paid twice.",
+            "The confirmation lists too many chairs.",
+            "The supplier sent tables instead of chairs.",
+            "The office opening was canceled."
+          ],
+          "answer": 1,
+          "explanation": "The confirmation lists sixty chairs, whereas the request was for sixteen."
+        },
+        {
+          "id": "VOICE-VENDOR-2",
+          "skill": "l-inference",
+          "prompt": "Why will the man contact the supplier?",
+          "options": [
+            "To order additional tables.",
+            "To postpone the office opening.",
+            "To correct the quantity and check the delivery date.",
+            "To request a refund for a delivered order."
+          ],
+          "answer": 2,
+          "explanation": "He will request a quantity correction and include the woman’s question about the delivery date."
+        },
+        {
+          "id": "VOICE-VENDOR-3",
+          "skill": "l-conversation",
+          "prompt": "What does the man offer to forward?",
+          "options": [
+            "The original office lease.",
+            "A list of candidates.",
+            "A copy of the paid invoice.",
+            "The supplier’s reply."
+          ],
+          "answer": 3,
+          "explanation": "He says he will forward the supplier’s reply to the woman."
+        }
+      ]
+    },
+    {
+      "id": "g-part6-e-notice",
+      "section": "reading",
+      "part": 6,
+      "title": "段落填空・課程通知",
+      "passage": {
+        "docs": [
+          {
+            "label": "EMAIL",
+            "text": "Subject: Updated training calendar\n\nThe May training calendar is now [1] on the staff portal. The calendar includes both in-person and online sessions.\n\nEmployees should register at least three days before their chosen session. This allows the training team to [2] the appropriate room and materials.\n\n[3] Employees who registered before the update do not need to submit a second form; their existing bookings have been transferred.\n\nIf you cannot attend, please cancel your booking so that another colleague can [4] your place."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "P6-E-1",
+          "skill": "r-vocabulary",
+          "prompt": "Which word best completes blank [1]?",
+          "options": [
+            "availability",
+            "available",
+            "availably",
+            "avail"
+          ],
+          "answer": 1,
+          "explanation": "The adjective available follows the linking verb is; the other forms do not fit."
+        },
+        {
+          "id": "P6-E-2",
+          "skill": "r-vocabulary",
+          "prompt": "Which word best completes blank [2]?",
+          "options": [
+            "cancel",
+            "conceal",
+            "arrange",
+            "delay"
+          ],
+          "answer": 2,
+          "explanation": "Arrange means organize the room and materials in advance. The alternatives do not support preparation."
+        },
+        {
+          "id": "P6-E-3",
+          "skill": "r-inference",
+          "prompt": "Which sentence best completes blank [3]?",
+          "options": [
+            "All training has been canceled permanently.",
+            "The parking garage sells stationery.",
+            "The staff portal is no longer used for registration.",
+            "Please check the calendar for any changes to your session."
+          ],
+          "answer": 3,
+          "explanation": "Checking the updated calendar connects the revised schedule to the following note about transferred bookings."
+        },
+        {
+          "id": "P6-E-4",
+          "skill": "r-vocabulary",
+          "prompt": "Which word best completes blank [4]?",
+          "options": [
+            "take",
+            "borrow",
+            "lose",
+            "refuse"
+          ],
+          "answer": 0,
+          "explanation": "Take your place means use the space opened by a cancellation; the alternatives do not fit the purpose."
+        }
+      ]
+    },
+    {
+      "id": "g-single-e-airport",
+      "section": "reading",
+      "part": 7,
+      "title": "單篇長閱讀・航站接駁公告",
+      "passage": {
+        "docs": [
+          {
+            "label": "AIRPORT NOTICE",
+            "text": "AIRPORT TERMINAL SHUTTLE — TEMPORARY SERVICE CHANGE\n\nFrom December 2 through December 6, the usual shuttle stop outside Terminal A will be unavailable while the curb is resurfaced. During this period, passengers should board the free shuttle at the temporary stop beside the short-stay car park. Signs inside Terminal A will direct passengers to the temporary stop; the walk from the arrivals hall takes approximately six minutes.\n\nShuttle buses will continue to operate every twelve minutes between Terminal A and Terminal B. The journey itself takes nine minutes, and service remains available from 5 a.m. until midnight. The repair work will not affect the bus stop at Terminal B.\n\nPassengers with limited mobility may request a free electric cart from the information desk in the arrivals hall. Please contact the desk before leaving the terminal, since the cart cannot be requested at the temporary stop. Airline check-in deadlines remain unchanged, so travelers should allow additional time for the walk or assistance request.\n\nIf the work finishes early, the airport will post an update on its website and remove the temporary signs. For questions about flight schedules, passengers should contact their airline directly; the shuttle information desk cannot change flight reservations."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "SINGLE-AIR-1",
+          "skill": "r-purpose",
+          "prompt": "Why was the notice published?",
+          "options": [
+            "To announce a permanent end to shuttle service.",
+            "To explain a temporary shuttle stop change.",
+            "To change airline check-in deadlines.",
+            "To advertise a paid parking service."
+          ],
+          "answer": 1,
+          "explanation": "The notice describes the temporary stop during curb repairs and explains how to reach it."
+        },
+        {
+          "id": "SINGLE-AIR-2",
+          "skill": "r-detail",
+          "prompt": "Where is the temporary Terminal A shuttle stop?",
+          "options": [
+            "Inside the arrivals hall.",
+            "At the Terminal B bus stop.",
+            "Beside the short-stay car park.",
+            "Beside the airline reservation desk."
+          ],
+          "answer": 2,
+          "explanation": "The first paragraph locates the temporary stop beside the short-stay car park."
+        },
+        {
+          "id": "SINGLE-AIR-3",
+          "skill": "r-detail",
+          "prompt": "How often will shuttle buses operate during the work?",
+          "options": [
+            "Every six minutes.",
+            "Every nine minutes.",
+            "Once each hour.",
+            "Every twelve minutes."
+          ],
+          "answer": 3,
+          "explanation": "The notice states buses continue every twelve minutes; six minutes is the walk and nine is the ride."
+        },
+        {
+          "id": "SINGLE-AIR-4",
+          "skill": "r-inference",
+          "prompt": "Where should a passenger request an electric cart?",
+          "options": [
+            "At the information desk before leaving Terminal A.",
+            "At the temporary shuttle stop.",
+            "From an airline after boarding.",
+            "At the Terminal B parking office."
+          ],
+          "answer": 0,
+          "explanation": "The notice says to contact the arrivals-hall information desk before leaving the terminal."
+        }
+      ]
+    },
+    {
+      "id": "g-single-e-campus",
+      "section": "reading",
+      "part": 7,
+      "title": "單篇長閱讀・校園活動通知",
+      "passage": {
+        "docs": [
+          {
+            "label": "CAMPUS ANNOUNCEMENT",
+            "text": "NORTHBRIDGE COLLEGE — COMMUNITY RESEARCH SHOWCASE\n\nThe annual Community Research Showcase will take place on Saturday, March 14, from 10 a.m. to 3 p.m. in the Lakeside Hall. Students and local organizations will present short projects about transportation, public spaces, and community services. Admission is free, and visitors may attend without registering.\n\nThe first hour will feature short talks by three student teams. From 11 a.m. until 1 p.m., visitors can speak with project teams at display tables. A panel discussion on improving local bus connections begins at 1:30 p.m.; seating for the panel is limited to 80 people and will be assigned in order of arrival. The hall will remain open after the panel so visitors can return to the display tables.\n\nVisitors who need step-free access should use the east entrance, where a lift connects the street to the main hall. Because the west entrance is being repaired, it will not open on the day of the showcase. A campus shuttle will run from the central railway station every twenty minutes beginning at 9:20 a.m.\n\nStudents presenting a project should arrive by 9 a.m. to set up their displays. The event team will provide tables and power outlets, but presenters must bring their own computers. Questions about presenting should be sent to the Community Office by March 9."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "SINGLE-CAMPUS-1",
+          "skill": "r-purpose",
+          "prompt": "What is the purpose of the announcement?",
+          "options": [
+            "To recruit staff for a railway station.",
+            "To describe a public college showcase.",
+            "To announce a fee for public lectures.",
+            "To close a campus shuttle route."
+          ],
+          "answer": 1,
+          "explanation": "The notice gives the time, activities, access information, and presenter instructions for a showcase."
+        },
+        {
+          "id": "SINGLE-CAMPUS-2",
+          "skill": "r-detail",
+          "prompt": "How will seats for the panel discussion be assigned?",
+          "options": [
+            "By online registration date.",
+            "By project presentation score.",
+            "In order of arrival.",
+            "Only to local organization employees."
+          ],
+          "answer": 2,
+          "explanation": "The notice states that the 80 panel seats will be assigned in order of arrival."
+        },
+        {
+          "id": "SINGLE-CAMPUS-3",
+          "skill": "r-inference",
+          "prompt": "Which entrance should a visitor use for step-free access?",
+          "options": [
+            "The west entrance.",
+            "The railway station ticket hall.",
+            "A service door behind the displays.",
+            "The east entrance."
+          ],
+          "answer": 3,
+          "explanation": "The east entrance has a lift; the west entrance will be closed for repairs."
+        },
+        {
+          "id": "SINGLE-CAMPUS-4",
+          "skill": "r-detail",
+          "prompt": "What must student presenters bring?",
+          "options": [
+            "Their own computers.",
+            "Their own tables.",
+            "A paid admission ticket.",
+            "A signed shuttle reservation."
+          ],
+          "answer": 0,
+          "explanation": "The event provides tables and outlets, but presenters must bring their own computers."
         }
       ]
     }

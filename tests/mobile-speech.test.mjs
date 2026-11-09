@@ -18,6 +18,36 @@ function engine() {
   return synth;
 }
 const english={name:'Mobile English',lang:'en-GB'};
+test('codex: automatic roles use distinct unlabelled English voices when available',async()=>{
+  const s=engine(), audio=await import(`../codex/js/audio.js?role=${serial++}`);
+  const first={name:'English voice one',lang:'en-US'}, second={name:'English voice two',lang:'en-GB'};
+  s.setVoices([first,second]);
+  assert.equal(await audio.playScript([{speaker:'M',text:'First',gap:0},{speaker:'W',text:'Second',gap:0}]),true);
+  assert.notEqual(s.spoken[0].voice,s.spoken[1].voice);
+});
+test('codex: one available voice uses different fallback pitches for roles',async()=>{
+  const s=engine(), audio=await import(`../codex/js/audio.js?role=${serial++}`);
+  s.setVoices([english]);
+  assert.equal(await audio.playScript([{speaker:'M',text:'First',gap:0},{speaker:'W',text:'Second',gap:0}]),true);
+  assert.equal(s.spoken[0].voice,s.spoken[1].voice);
+  assert.notEqual(s.spoken[0].pitch,s.spoken[1].pitch);
+});
+test('codex: explicit role voice selections are respected',async()=>{
+  const s=engine(), audio=await import(`../codex/js/audio.js?role=${serial++}`);
+  const first={name:'English one',lang:'en-US'}, second={name:'English two',lang:'en-GB'};
+  s.setVoices([first,second]); audio.setPref('M',second.name); audio.setPref('W',first.name);
+  assert.equal(await audio.playScript([{speaker:'M',text:'First',gap:0},{speaker:'W',text:'Second',gap:0}]),true);
+  assert.equal(s.spoken[0].voice,second); assert.equal(s.spoken[1].voice,first);
+});
+test('codex: voices arriving after the first line can be used on the next line',async()=>{
+  const s=engine(), audio=await import(`../codex/js/audio.js?role=${serial++}`);
+  s.speak=u=>{s.spoken.push(u);if(s.spoken.length===1)s.setVoices([{name:'English voice one',lang:'en-US'},{name:'English voice two',lang:'en-GB'}]);queueMicrotask(()=>u.onend());};
+  const playing=audio.playScript([{speaker:'M',text:'First',gap:0},{speaker:'W',text:'Second',gap:0}]);
+  assert.equal(s.spoken.length,1);
+  assert.equal(await playing,true);
+  assert.equal(s.spoken[0].voice,undefined);
+  assert.equal(s.spoken[1].voice.name,'English voice two');
+});
 for(const dir of ['js','codex/js']){
   const load=()=>import(`../${dir}/audio.js?test=${serial++}`);
   test(`${dir}: first speak is synchronous even when enumeration is empty`,async()=>{

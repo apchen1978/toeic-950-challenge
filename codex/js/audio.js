@@ -77,23 +77,23 @@ export function setPref(role, voiceName) {
   try { localStorage.setItem(PREF_KEY, JSON.stringify(p)); } catch { /* ignore */ }
 }
 
-/** Returns { voice, pitch } for a speaker. Pitch is only altered when no distinct voice of that gender exists. */
+/** Prefer different installed voices; use pitch as a fallback when roles share a voice. */
 function pickVoice(voices, speaker) {
-  if (!voices.length) return { voice: null, pitch: 1 };
   const byRank = [...voices].sort((a, b) => rank(b) - rank(a));
   const saved = voices.find((v) => v.name === prefs()[speaker]);
   if (saved) return { voice: saved, pitch: 1 };
+  const savedMan = voices.find((v) => v.name === prefs().M);
+  const man = savedMan ?? byRank.find((v) => MALE.test(v.name)) ?? byRank.find((v) => !FEMALE.test(v.name)) ?? byRank[0];
   if (speaker === "M") {
-    const v = byRank.find((x) => MALE.test(x.name));
-    return { voice: v ?? byRank[0], pitch: 1 };
+    return { voice: man ?? null, pitch: voices.length < 2 ? 0.9 : 1 };
   }
   if (speaker === "W") {
-    const v = byRank.find((x) => FEMALE.test(x.name));
-    return { voice: v ?? byRank[0], pitch: 1 };
+    const woman = byRank.find((v) => v !== man && FEMALE.test(v.name)) ?? byRank.find((v) => v !== man) ?? man;
+    return { voice: woman ?? null, pitch: !woman || woman === man ? 1.1 : 1 };
   }
-  // Narrator: a different voice from the man if possible, else the best one.
-  const man = pickVoice(voices, "M").voice;
-  return { voice: byRank.find((x) => x !== man && FEMALE.test(x.name)) ?? byRank[0], pitch: 1 };
+  const savedWoman = voices.find((v) => v.name === prefs().W);
+  const woman = savedWoman ?? byRank.find((v) => v !== man && FEMALE.test(v.name)) ?? byRank.find((v) => v !== man);
+  return { voice: byRank.find((v) => v !== man && v !== woman) ?? woman ?? man ?? null, pitch: 1 };
 }
 
 export function stop(reason = 'canceled') {
@@ -151,9 +151,8 @@ export async function playScript(lines, { rate = getRate() } = {}) {
   stop();
   const myToken = token;
   lastError = '';
-  const voices = availableVoices();
   for (const line of lines) {
-    const v = pickVoice(voices, line.speaker);
+    const v = pickVoice(availableVoices(), line.speaker);
     for (const s of [line.text]) {
       if (myToken !== token) return false;
       if (!await speak(s, v, rate, myToken)) return false;
