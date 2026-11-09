@@ -1,16 +1,16 @@
 # TOEIC `/codex/` Coverage — 2026-11-09
 
-This is an audit of the current branch, not a claim that an official mock exam exists. The live baseline before this branch has 213 questions; this branch has 234, with the original groups preserved. Counts are based on `codex/data/questions.json` and are not an estimate of difficulty or official score.
+This is an audit of the current branch, not a claim that an official mock exam exists. The live baseline before this branch has 234 questions; this branch has 261, with the original groups preserved. Counts are based on `codex/data/questions.json` and are not an estimate of difficulty or official score.
 
 | Part | Status | Branch evidence | Official form |
 |---|---|---|---|
-| 1 Photos | PARTIAL | 3 questions, each with an image and four spoken options | 6 questions |
+| 1 Photos | PARTIAL | 6 questions, each with an image and four spoken options | 6 questions |
 | 2 Responses | PARTIAL | 31 questions with three spoken responses; practice audio uses browser speech | 25 questions |
-| 3 Conversations | PARTIAL | 36 questions in 13 groups; 10 groups contain exactly 3 questions | 13 groups of 3 |
-| 4 Talks | PARTIAL | 24 questions in 8 groups of 3 | 10 groups of 3 |
+| 3 Conversations | PARTIAL | 45 questions in 16 groups; 13 groups contain exactly 3 questions | 13 groups of 3 |
+| 4 Talks | PARTIAL | 30 questions in 10 groups of 3 | 10 groups of 3 |
 | 5 Sentences | PARTIAL | 47 questions; broad grammar/vocabulary tags, not comprehensive subtype or difficulty labels | 30 questions |
 | 6 Text completion | PARTIAL | 16 questions in 4 groups of 4; full-sentence completion exists | 4 groups of 4 |
-| 7 Reading | PARTIAL | 77 questions: 20 single-passage and 57 multiple-passage; two- and three-document groups exist | 29 single, 25 multiple |
+| 7 Reading | PARTIAL | 86 questions: 29 single-passage and 57 multiple-passage; two- and three-document groups exist | 29 single, 25 multiple |
 
 Counts reflect the question bank, not an assembled official-form test. Official blueprint: [TOEIC Taiwan test content](https://www.toeic.com.tw/toeic/listening-reading/about/content/).
 
@@ -18,14 +18,14 @@ Counts reflect the question bank, not an assembled official-form test. Official 
 
 - **PARTIAL — Listening:** `codex/js/audio.js` uses browser speech synthesis. `codex/js/app.js` provides playback, cancellation and failure handling; it does not use prerecorded official audio. Physical-phone reliability and accent coverage are device-dependent and remain unverified for new items.
 - **PARTIAL — Images and shared passages:** `codex/js/app.js` renders a group image and passage documents, and presents multiple questions per group. Photo practice exists. There are no map or graphic-based listening questions in this bank yet.
-- **PARTIAL — Practice modes:** predefined sets, section practice, weak-skill practice and a local wrong-answer queue exist. There is no complete official 200-question mock mode, fixed 45/75-minute section transition, or exam-only single-play rule. Practice currently permits two complete plays.
+- **PARTIAL — Practice modes:** predefined sets, section practice, weak-skill practice and a local wrong-answer queue exist. A manual pause freezes the remaining time and cancels unfinished audio; the paused state survives reload. There is no complete official 200-question mock mode, fixed 45/75-minute section transition, or exam-only single-play rule. Practice currently permits two complete plays.
 - **PARTIAL — Results:** session duration, section results, skill counts, history and a clearly labelled unofficial estimate exist (`codex/js/app.js`, `codex/js/scoring.js`). Per-question response time, difficulty/subtype analytics and spaced-review scheduling are absent. The current wrong-answer queue removes an item after a correct response.
 - **PARTIAL — PWA and persistence:** `codex/sw.js` caches the app and image assets; browser localStorage stores progress and history. Paul previously confirmed offline use on his phone, but the current branch and new assets need a fresh device check. Records do not sync across browsers/devices.
 - **PARTIAL — Explanations:** current explanations are English. Chinese explanations, detailed distractor fields and difficulty tags are not yet present.
 
-## Smallest route to one correctly composed form
+## Route to one correctly composed form
 
-Without altering old question groups or their history, add at least: 3 photos; 3 new three-question Part 3 groups (9 questions); 2 new three-question Part 4 groups (6); and 9 single-passage Part 7 questions. That is **27 new questions**. Existing items can supply 25 Part 2, 30 Part 5, four Part 6 groups of four, and five five-question multiple-passage groups. An exam mode still needs separate 45/75-minute section timing and single-play enforcement; a 200-question count alone is insufficient.
+The bank now contains enough correctly grouped items to assemble one 200-question form without altering old question groups or their history. The exact selection, question quality and media still need review. An exam mode also needs separate 45/75-minute section timing and single-play enforcement; a 200-question count alone is insufficient.
 
 Next, add a small set of map/graphic listening exercises, then build the missing group types above in reviewed batches. Preserve existing IDs, group composition, stored sessions and history. Add Traditional Chinese explanations incrementally rather than replacing existing English rationales.
 

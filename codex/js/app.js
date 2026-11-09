@@ -1,6 +1,7 @@
 import * as audio from "./audio.js";
 import { flatten, score, estimateScaled, mergeSkillStats, weakest, groupsForSkill, updateWrongAnswerQueue, formatDuration } from "./scoring.js";
 import { SKILLS, skillLabel } from "./skills.js";
+import { remainingMs, pauseTimer, resumeTimer, elapsedSeconds } from "./timer.js";
 
 const EXAM_DATE = "2026-11-29";
 const MAX_PLAYS = 2;
@@ -185,6 +186,7 @@ if (audio.supported()) speechSynthesis.addEventListener?.('voiceschanged', () =>
 
 /* ---------- Session ---------- */
 function startSession(mode, groupIds, minutes, questionIds = null) {
+  if (session && !confirm("目前有未完成的測驗。開始新測驗會放棄原進度，確定繼續？")) return;
   if (!allowSession(groupIds)) return;
   const now = Date.now();
   session = {
@@ -202,7 +204,7 @@ function orderedGroupIds(ids) {
 function startTimer() {
   stopTimer();
   const tick = () => {
-    const left = Math.max(0, Math.round((session.endsAt - Date.now()) / 1000));
+    const left = Math.ceil(remainingMs(session) / 1000);
     const el = document.getElementById("timer");
     if (el) {
       el.textContent = formatDuration(left);
@@ -211,13 +213,18 @@ function startTimer() {
     if (left <= 0) submit(true);
   };
   tick();
-  timerId = setInterval(tick, 1000);
+  if (session && !Number.isFinite(session.pausedRemainingMs)) timerId = setInterval(tick, 1000);
 }
 function stopTimer() { if (timerId) clearInterval(timerId); timerId = null; }
 
 /* ---------- Test view ---------- */
 function renderTest() {
   audio.stop();
+  if (Number.isFinite(session.pausedRemainingMs)) {
+    stopTimer();
+    app.innerHTML = `<section class="card"><h1>測驗已暫停</h1><p>剩餘時間 <b>${formatDuration(Math.ceil(remainingMs(session) / 1000))}</b>。作答與倒數已暫停。</p><button class="btn primary" data-action="resume-timer">繼續測驗</button></section>`;
+    return;
+  }
   const qs = sessionQuestions();
   const g = groupById(session.groupIds[session.cur]);
   const answeredCount = qs.filter((q) => session.answers[q.id] !== undefined).length;
@@ -227,7 +234,7 @@ function renderTest() {
   app.innerHTML = `
     <div class="topbar">
       <div><span class="tag">${session.mode === "review" ? "錯題複習" : g.section === "listening" ? "Listening" : "Reading"}</span><span class="tag">Part ${g.part}</span><span class="muted">${esc(g.title ?? "")}</span></div>
-      <div class="row"><span class="muted" id="count">${answeredCount}/${qs.length} 已答</span><span class="timer" id="timer">--:--</span><button class="btn small primary" data-action="submit">交卷</button></div>
+      <div class="row"><span class="muted" id="count">${answeredCount}/${qs.length} 已答</span><span class="timer" id="timer">--:--</span><button class="btn small" data-action="pause-timer">暫停</button><button class="btn small primary" data-action="submit">交卷</button></div>
     </div>
 
     <section class="card">
@@ -350,7 +357,7 @@ function submit(auto = false) {
   store.set(KEY_WRONG_QUEUE, wrongQueue);
   const entry = {
     id: String(Date.now()), date: Date.now(), mode: session.mode,
-    secUsed: Math.min(Math.round((Date.now() - session.startedAt) / 1000), session.minutes * 60),
+    secUsed: elapsedSeconds(session),
     groupIds: session.groupIds, questionIds: session.questionIds ?? null, answers: session.answers,
     correct: result.correct, total: result.total, bySkill: result.bySkill, bySection: result.bySection
   };
@@ -441,6 +448,8 @@ app.addEventListener("click", (e) => {
       break;
     }
     case "resume": if (allowSession(session.groupIds)) renderTest(); break;
+    case "pause-timer": if (pauseTimer(session)) { saveSession(); renderTest(); } else if (remainingMs(session) <= 0) submit(true); break;
+    case "resume-timer": if (resumeTimer(session)) { saveSession(); renderTest(); } break;
     case "discard": if (confirm("放棄目前作答進度？")) { store.del(KEY_SESSION); session = null; renderHome(); } break;
     case "practice": {
       const ids = groupsForSkill(bank, d.skill);
