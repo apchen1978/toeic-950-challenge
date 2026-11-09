@@ -44,6 +44,47 @@ export function estimateScaled(correct, total) {
   return { mid, low: Math.max(5, mid - 40), high: Math.min(495, mid + 40) };
 }
 
+/** In-progress diagnostic: unanswered items are excluded. No score is shown below five answers. */
+export function estimateProgress(questions, answers) {
+  const categories = {
+    listening: { c: 0, n: 0 },
+    structure: { c: 0, n: 0 },
+    grammar: { c: 0, n: 0 },
+    reading: { c: 0, n: 0 },
+    vocabulary: { c: 0, n: 0 }
+  };
+  const sections = { listening: { c: 0, n: 0 }, reading: { c: 0, n: 0 } };
+  for (const q of questions) {
+    const answer = answers[q.id];
+    if (answer === undefined || answer === null) continue;
+    const correct = Number(answer === q.answer);
+    sections[q.section].n++;
+    sections[q.section].c += correct;
+    const labels = q.section === 'listening' ? ['listening'] : [
+      ...(q.part === 6 ? ['structure'] : []),
+      ...(q.skill === 'r-grammar' ? ['grammar'] : []),
+      ...(q.skill === 'r-vocabulary' ? ['vocabulary'] : []),
+      ...(q.part === 7 ? ['reading'] : [])
+    ];
+    for (const label of labels) {
+      categories[label].n++;
+      categories[label].c += correct;
+    }
+  }
+  const ranges = {};
+  for (const [key, { c, n }] of Object.entries(sections)) {
+    if (n < 5) { ranges[key] = null; continue; }
+    const p = c / n;
+    const z = 1.645; // Approximate 90% Wilson interval for this practice sample.
+    const denominator = 1 + z * z / n;
+    const center = (p + z * z / (2 * n)) / denominator;
+    const margin = z * Math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / denominator;
+    const scaled = (value) => Math.round((5 + Math.min(1, Math.max(0, value)) * 490) / 5) * 5;
+    ranges[key] = { mid: scaled(p), low: scaled(center - margin), high: scaled(center + margin), answered: n };
+  }
+  return { categories, sections, ranges };
+}
+
 /** Merge per-skill stats across attempts: history entries carry `bySkill`. */
 export function mergeSkillStats(history) {
   const merged = {};
