@@ -121,12 +121,15 @@ export function fileSupported() { return typeof globalThis.Audio === 'function';
 /** Fixed role recordings: only onended counts a complete play; stop/failed/stalled playback does not. */
 export function playFile(url) {
   stop();
+  return playRecording(url, token, getRate());
+}
+
+function playRecording(url, myToken, rate) {
   if (!fileSupported()) { lastError = 'audio-file'; return Promise.resolve(false); }
-  const myToken = token;
   lastError = '';
   return new Promise((resolve) => {
     const player = new Audio(url);
-    player.playbackRate = getRate();
+    player.playbackRate = rate;
     let timer, settled = false;
     const done = (ok, reason = '') => {
       if (settled) return;
@@ -200,7 +203,7 @@ export async function playScript(lines, { rate = getRate() } = {}) {
     const v = pickVoice(availableVoices(), line.speaker);
     for (const s of [line.text]) {
       if (myToken !== token) return false;
-      if (!await speak(s, v, rate, myToken)) return false;
+      if (!await (line.audio ? playRecording(line.audio, myToken, rate) : speak(s, v, rate, myToken))) return false;
     }
     await pause(line.gap ?? 500);
   }
@@ -210,19 +213,18 @@ export async function playScript(lines, { rate = getRate() } = {}) {
 /** Part 1/2 style: stimulus, then each option introduced by its letter. */
 export function withSpokenOptions(group) {
   const q = group.questions[0];
-  // A standalone "A." can be pronounced like the article; spell its letter sound for TTS.
-  const spokenLetters = ["Ay", "B", "C", "D"];
+  const spokenLetters = ["A", "B", "C", "D"];
   const out = [...group.script.map((l) => ({ ...l, gap: 900 }))];
   q.options.forEach((o, i) => {
-    out.push({ speaker: "N", text: `${spokenLetters[i]}.`, single: true, gap: 250 });
+    out.push({ speaker: "N", text: `${spokenLetters[i]}.`, ...(i === 0 ? { audio: 'audio/letter-a.mp3' } : {}), single: true, gap: 250 });
     out.push({ speaker: "N", text: o, gap: 700 });
   });
   return out;
 }
 
 export async function sample(role) {
-  const text = role === "N" ? "Ay. The meeting has been moved to Thursday." : role === "M"
+  const text = role === "N" ? "The meeting has been moved to Thursday." : role === "M"
     ? "Did you see the email from the supplier? The delivery has been pushed back to the twentieth."
     : "I know. I'll call them this afternoon, and let the marketing team know about the new date.";
-  return playScript([{ speaker: role, text }]);
+  return playScript([...(role === 'N' ? [{ speaker: 'N', text: 'A.', audio: 'audio/letter-a.mp3', gap: 250 }] : []), { speaker: role, text }]);
 }
