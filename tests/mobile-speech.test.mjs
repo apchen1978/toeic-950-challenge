@@ -25,7 +25,7 @@ test('A and its answer use the same narrator and requested rate as B and C', asy
   const lines=audio.withSpokenOptions({script:[],questions:[{options:['One','Two','Three']}]}).map((line)=>({...line,gap:0}));
   assert.equal(await audio.playScript(lines,{rate:1.1}),true);
   assert.ok(s.spoken.every((utterance)=>utterance.voice===narrator));
-  assert.equal(s.spoken[0].text,'A. One');
+  assert.equal(s.spoken[0].text,'A! One');
   assert.equal(s.spoken[0].rate,1.1);
   assert.equal(s.spoken[1].text,'B.');
   assert.equal(s.spoken[1].rate,1.1);
