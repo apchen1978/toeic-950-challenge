@@ -217,6 +217,10 @@ export function withSpokenOptions(group) {
   const spokenLetters = ["A", "B", "C", "D"];
   const out = [...group.script.map((l) => ({ ...l, gap: 900 }))];
   q.options.forEach((o, i) => {
+    if (i === 0) {
+      out.push({ speaker: "N", text: `A. ${o}`, rateScale: 0.65, gap: 700 });
+      return;
+    }
     out.push({ speaker: "N", text: `${spokenLetters[i]}.`, single: true, gap: 250 });
     out.push({ speaker: "N", text: o, gap: 700 });
   });
@@ -227,5 +231,5 @@ export async function sample(role) {
   const text = role === "N" ? "The meeting has been moved to Thursday." : role === "M"
     ? "Did you see the email from the supplier? The delivery has been pushed back to the twentieth."
     : "I know. I'll call them this afternoon, and let the marketing team know about the new date.";
-  return playScript([...(role === 'N' ? [{ speaker: 'N', text: 'A.', gap: 250 }] : []), { speaker: role, text }]);
+  return playScript([role === 'N' ? { speaker: role, text: `A. ${text}`, rateScale: 0.65 } : { speaker: role, text }]);
 }
