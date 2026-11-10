@@ -79,10 +79,11 @@ test("a single section updates only that section of the estimate and not the ful
 
 test("the mock section choice is stored separately and defaults to a full exam", () => {
   const app = readFileSync(new URL("../codex/js/app.js", import.meta.url), "utf8");
+  const choice = readFileSync(new URL("../codex/js/mock-section.js", import.meta.url), "utf8");
   assert.match(app, /mock-section\.v1/);
-  assert.match(app, /完整模考（聽力→閱讀）/);
-  assert.match(app, /只考閱讀/);
-  assert.match(app, /只考聽力/);
+  assert.match(choice, /完整模考（聽力→閱讀）/);
+  assert.match(choice, /只考閱讀/);
+  assert.match(choice, /只考聽力/);
   assert.match(app, /可選只考閱讀或聽力/);
   assert.match(app, /單科成績：閱讀/);
   assert.equal(normalizeMockSection(JSON.parse(JSON.stringify({ formId: "quick-40" })).section), "full");
