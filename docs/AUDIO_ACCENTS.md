@@ -6,7 +6,7 @@ Playback uses the MP3 files in this repository. The page does not call a speech 
 
 ## Voices
 
-Clips were generated with `scripts/generate-accent-audio.py` and the `edge-tts` library using Microsoft Edge neural voices, then encoded as mono MP3 at 24,000 Hz and 48 kbps.
+Clips were generated with `scripts/generate-accent-audio.py` and the `edge-tts` library using Microsoft Edge neural voices, then encoded as mono MP3 at 24,000 Hz and 48 kbps. Parts 1, 2, and 4 use a `-8%` speaking rate. Part 3 keeps the original speaking rate because those conversations were already near 150 words per minute; every speaking turn is followed by a 650 ms gap. Part 3 and Part 4 question prompts are separate narrator clips in the same accent. No Australian Piper clips remain in the bank; those earlier files were already replaced by the Edge neural voices.
 
 | Accent | Locale | Female | Male |
 |---|---|---|---|

@@ -33,6 +33,15 @@ VOICES = {
     "AU": {"locale": "en-AU", "M": "en-AU-WilliamNeural", "W": "en-AU-NatashaNeural"},
 }
 LETTERS = ["A", "B", "C", "D"]
+# Part 4 talks had no internal gaps, so an -8% rate brings them from about 163 wpm to about 150.
+# Part 3 was already near 150, so it keeps the original speaking rate and only gains 650 ms turn gaps.
+RATE = "-8%"
+TURN_GAP = 0.65
+
+
+def speech_rate(part):
+    return "+0%" if part == 3 else RATE
+LETTER_GAP = 0.2
 
 
 def quotas(total):
@@ -82,10 +91,10 @@ def clips_for(group, accent, index):
     if part == 1:
         gender = "W" if index % 2 == 0 else "M"
         voice, locale = voice_for(accent, gender)
-        pieces = [{"text": line["text"], "role": "N", "voice": voice, "locale": locale, "gap": 0.45} for line in group["script"]]
+        pieces = [{"text": line["text"], "role": "N", "voice": voice, "locale": locale, "gap": TURN_GAP, "rate": speech_rate(part)} for line in group["script"]]
         for option_index, option in enumerate(group["questions"][0]["options"]):
-            pieces.append({"text": f"{LETTERS[option_index]}.", "role": "N", "voice": voice, "locale": locale, "gap": 0.2})
-            pieces.append({"text": option, "role": "N", "voice": voice, "locale": locale, "gap": 0.55})
+            pieces.append({"text": f"{LETTERS[option_index]}.", "role": "N", "voice": voice, "locale": locale, "gap": LETTER_GAP, "rate": speech_rate(part)})
+            pieces.append({"text": option, "role": "N", "voice": voice, "locale": locale, "gap": TURN_GAP, "rate": speech_rate(part)})
         return pieces
     if part == 2:
         speaker = group["script"][0]["speaker"]
@@ -93,13 +102,13 @@ def clips_for(group, accent, index):
         response_gender = "M" if question_gender == "W" else "W"
         question_voice, locale = voice_for(accent, question_gender)
         response_voice, _ = voice_for(accent, response_gender)
-        pieces = [{"text": line["text"], "role": line["speaker"], "voice": question_voice, "locale": locale, "gap": 0.35} for line in group["script"]]
+        pieces = [{"text": line["text"], "role": line["speaker"], "voice": question_voice, "locale": locale, "gap": TURN_GAP, "rate": speech_rate(part)} for line in group["script"]]
         for option_index, option in enumerate(group["questions"][0]["options"]):
-            pieces.append({"text": f"{LETTERS[option_index]}.", "role": response_gender, "voice": response_voice, "locale": locale, "gap": 0.2})
-            pieces.append({"text": option, "role": response_gender, "voice": response_voice, "locale": locale, "gap": 0.7})
+            pieces.append({"text": f"{LETTERS[option_index]}.", "role": response_gender, "voice": response_voice, "locale": locale, "gap": LETTER_GAP, "rate": speech_rate(part)})
+            pieces.append({"text": option, "role": response_gender, "voice": response_voice, "locale": locale, "gap": TURN_GAP, "rate": speech_rate(part)})
         return pieces
     pieces = []
-    for line_index, line in enumerate(group["script"]):
+    for line in group["script"]:
         speaker = line["speaker"]
         if speaker == "N":
             speaker = "W" if index % 2 == 0 else "M"
@@ -107,8 +116,22 @@ def clips_for(group, accent, index):
         else:
             role = speaker
         voice, locale = voice_for(accent, speaker if speaker in ("M", "W") else "W")
-        pieces.append({"text": line["text"], "role": role, "voice": voice, "locale": locale, "gap": 0.4})
+        pieces.append({"text": line["text"], "role": role, "voice": voice, "locale": locale, "gap": TURN_GAP, "rate": speech_rate(part)})
     return pieces
+
+
+def question_clip(group, question, accent):
+    voice, locale = voice_for(accent, "W")
+    return {
+        "id": question["id"],
+        "text": question["prompt"],
+        "role": "N",
+        "voice": voice,
+        "locale": locale,
+        "rate": speech_rate(group["part"]),
+        "graphic": bool(group.get("image")),
+        "file": f"audio/q-{question['id']}.mp3",
+    }
 
 
 def script_sha256(script):
@@ -117,11 +140,15 @@ def script_sha256(script):
 
 
 def plan_signature(pieces):
-    raw = json.dumps([{"t": piece["text"], "v": piece["voice"]} for piece in pieces], ensure_ascii=False, separators=(",", ":")).encode()
+    raw = json.dumps(
+        [{"t": piece["text"], "v": piece["voice"], "g": piece.get("gap"), "r": piece.get("rate", RATE)} for piece in pieces],
+        ensure_ascii=False,
+        separators=(",", ":"),
+    ).encode()
     return hashlib.sha256(raw).hexdigest()
 
 
-async def synthesize(text, voice, dest):
+async def synthesize(text, voice, dest, rate=RATE):
     dest.parent.mkdir(parents=True, exist_ok=True)
     last = "no attempt"
     partial = dest.with_suffix(f".{voice}.part.mp3")
@@ -129,7 +156,7 @@ async def synthesize(text, voice, dest):
         try:
             if partial.exists():
                 partial.unlink()
-            await asyncio.wait_for(edge_tts.Communicate(text, voice).save(str(partial)), 90)
+            await asyncio.wait_for(edge_tts.Communicate(text, voice, rate=rate).save(str(partial)), 90)
             if partial.stat().st_size > 300:
                 partial.replace(dest)
                 return
@@ -206,9 +233,32 @@ def line_lock(key):
     return LINE_LOCKS[key]
 
 
+async def build_question_clip(clip, semaphore):
+    dest = AUDIO_DIR / Path(clip["file"]).name
+    key = hashlib.sha256(f"{clip['rate']}\n{clip['voice']}\n{clip['text']}".encode()).hexdigest()
+    line_mp3 = CACHE_DIR / f"{key}.mp3"
+    async with line_lock(key):
+        if not line_mp3.exists() or line_mp3.stat().st_size < 300:
+            async with semaphore:
+                await synthesize(clip["text"], clip["voice"], line_mp3, clip["rate"])
+    pcm = await asyncio.to_thread(pcm_bytes, line_mp3)
+    duration = await asyncio.to_thread(write_mp3, [pcm], [], dest)
+    return {
+        "id": clip["id"],
+        "file": clip["file"],
+        "durationSec": duration,
+        "bytes": dest.stat().st_size,
+        "voice": clip["voice"],
+        "locale": clip["locale"],
+        "role": "N",
+        "graphic": clip["graphic"],
+    }
+
+
 async def build_group(group, accent, index, semaphore):
     pieces = clips_for(group, accent, index)
-    signature = plan_signature(pieces)
+    question_pieces = [{"text": question["prompt"], "voice": "question", "gap": 0} for question in group["questions"]] if group["part"] in (3, 4) else []
+    signature = plan_signature(pieces + question_pieces)
     dest = AUDIO_DIR / f"{group['id']}.mp3"
     stamp_path = DONE_DIR / f"{group['id']}.json"
     if stamp_path.exists() and dest.exists():
@@ -218,14 +268,19 @@ async def build_group(group, accent, index, semaphore):
             return stamp["entry"]
     pcm_parts = []
     for piece in pieces:
-        key = hashlib.sha256(f"{piece['voice']}\n{piece['text']}".encode()).hexdigest()
+        key = hashlib.sha256(f"{piece.get('rate', RATE)}\n{piece['voice']}\n{piece['text']}".encode()).hexdigest()
         line_mp3 = CACHE_DIR / f"{key}.mp3"
         async with line_lock(key):
             if not line_mp3.exists() or line_mp3.stat().st_size < 300:
                 async with semaphore:
-                    await synthesize(piece["text"], piece["voice"], line_mp3)
+                    await synthesize(piece["text"], piece["voice"], line_mp3, piece.get("rate", RATE))
         pcm_parts.append(await asyncio.to_thread(pcm_bytes, line_mp3))
     duration = await asyncio.to_thread(write_mp3, pcm_parts, [piece["gap"] for piece in pieces], dest)
+    question_clips = []
+    if group["part"] in (3, 4):
+        for question in group["questions"]:
+            clip = question_clip(group, question, accent)
+            question_clips.append(await build_question_clip(clip, semaphore))
     entry = {
         "file": f"audio/{group['id']}.mp3",
         "accent": accent,
@@ -236,6 +291,7 @@ async def build_group(group, accent, index, semaphore):
         "roles": [line["speaker"] for line in group["script"]],
         "durationSec": duration,
         "bytes": dest.stat().st_size,
+        "questionClips": question_clips,
     }
     stamp_path.write_text(json.dumps({"signature": signature, "bytes": entry["bytes"], "entry": entry}, ensure_ascii=False), encoding="utf-8")
     print(f"wrote {group['id']} {accent} {entry['bytes']} bytes {duration}s", flush=True)
@@ -269,6 +325,8 @@ async def main():
     if "--plan-only" in sys.argv:
         return
     parts_arg = next((arg.split("=", 1)[1] for arg in sys.argv[1:] if arg.startswith("--parts=")), None)
+    ids_arg = next((arg.split("=", 1)[1] for arg in sys.argv[1:] if arg.startswith("--ids=")), None)
+    only_ids = set(ids_arg.split(",")) if ids_arg else None
     selected_parts = {int(part) for part in parts_arg.split(",")} if parts_arg else {1, 2, 3, 4}
     if not selected_parts or not selected_parts.issubset({1, 2, 3, 4}):
         raise SystemExit("--parts must contain one or more of 1,2,3,4")
@@ -282,6 +340,8 @@ async def main():
         groups = [group for group in bank["groups"] if group["section"] == "listening" and group["part"] == part]
         plan, _, _ = assign(groups)
         for index, (group, accent) in enumerate(zip(groups, plan)):
+            if only_ids is not None and group["id"] not in only_ids:
+                continue
             if group.get("accent") not in (None, accent):
                 raise SystemExit(f"refusing to change saved accent for {group['id']}: {group['accent']} != {accent}")
             jobs.append(build_group(group, accent, index, semaphore))
@@ -295,11 +355,12 @@ async def main():
             pieces = clips_for(group, accent, index)
             entry["spokenChoices"] = [piece["text"] for piece in pieces[len(group["script"]):]]
     manifest = {
-        "version": max(3, existing.get("version", 0)),
+        "version": 4,
         "format": "MP3 mono, 24,000 Hz, 48 kbps",
-        "gapMs": 400,
+        "gapMs": int(TURN_GAP * 1000),
+        "rate": "Part 4 and Parts 1–2 at -8%; Part 3 speaking rate unchanged, with 650 ms turn gaps",
         "engine": "edge-tts",
-        "note": "Microsoft Edge neural voices. Canadian clips use en-CA voices, not a relabelled US voice.",
+        "note": "Microsoft Edge neural voices at a slower official pace. Canadian clips use en-CA voices, not a relabelled US voice. Part 3 and Part 4 question prompts are separate narrator clips.",
         "voices": VOICES,
         "groups": entries_by_id,
     }
@@ -310,8 +371,6 @@ async def main():
             ordered[group["id"]] = manifest["groups"][group["id"]]
     manifest["groups"] = ordered
     MANIFEST_PATH.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    if selected_parts == {1, 2, 3, 4}:
-        BANK_PATH.write_text(json.dumps(bank, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     for retired in ("quick-au-g-airport-talk-d.mp3", "quick-gb-s03-talk2.mp3"):
         path = AUDIO_DIR / retired
         if path.exists():
