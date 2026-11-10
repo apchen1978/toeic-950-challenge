@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "format": "MP3 mono, 24,000 Hz, 48 kbps",
   "gapMs": 400,
   "engine": "edge-tts",
@@ -32,6 +32,14 @@
       "accent": "US",
       "locale": "en-US",
       "scriptSha256": "f272c8d829a32e1122a0b67244127219019b59b82992bdf5dd02266f6fb348fb",
+      "spokenChoices": [
+        "A.",
+        "Only the ones in Asia-Pacific have them so far.",
+        "B.",
+        "No, the figures were revised by Finance.",
+        "C.",
+        "I prefer the circulation of the news magazine."
+      ],
       "voices": [
         {
           "role": "W",
@@ -47,14 +55,22 @@
       "roles": [
         "W"
       ],
-      "durationSec": 17.59,
-      "bytes": 106077
+      "durationSec": 23.81,
+      "bytes": 143372
     },
     "g-l02": {
       "file": "audio/g-l02.mp3",
       "accent": "UK",
       "locale": "en-GB",
       "scriptSha256": "c825b68112b155b9512b74ccbfb5744eea6169d27803b4b7aa5d2ca357c66544",
+      "spokenChoices": [
+        "A.",
+        "Yes, it was renewed last March.",
+        "B.",
+        "Didn't Ms. Okafor's team take that over?",
+        "C.",
+        "The contract is about twelve pages long."
+      ],
       "voices": [
         {
           "role": "M",
@@ -70,14 +86,22 @@
       "roles": [
         "M"
       ],
-      "durationSec": 14.54,
-      "bytes": 87789
+      "durationSec": 20.76,
+      "bytes": 125084
     },
     "g-l03": {
       "file": "audio/g-l03.mp3",
       "accent": "CA",
       "locale": "en-CA",
       "scriptSha256": "df9885a16d1a69a16494cab4be60f5d3acd1315c6c6c0aa960ffb0933cdda078",
+      "spokenChoices": [
+        "A.",
+        "Quarterly results are due on Friday.",
+        "B.",
+        "I'm leaving for the airport right after lunch, so you'd better ask Daniel.",
+        "C.",
+        "Yes, I'd rather present."
+      ],
       "voices": [
         {
           "role": "W",
@@ -93,14 +117,22 @@
       "roles": [
         "W"
       ],
-      "durationSec": 16.39,
-      "bytes": 98877
+      "durationSec": 22.61,
+      "bytes": 136172
     },
     "g-l04": {
       "file": "audio/g-l04.mp3",
       "accent": "AU",
       "locale": "en-AU",
       "scriptSha256": "8c3f8fbe33e4f6bf0e4b88a4676fd98da68430915b9bda103207758fd87ad490",
+      "spokenChoices": [
+        "A.",
+        "Yes, the cases are in the showroom.",
+        "B.",
+        "It's customary to hold them there.",
+        "C.",
+        "A few of the forms were missing signatures."
+      ],
       "voices": [
         {
           "role": "M",
@@ -116,14 +148,22 @@
       "roles": [
         "M"
       ],
-      "durationSec": 14.78,
-      "bytes": 89229
+      "durationSec": 21.0,
+      "bytes": 126524
     },
     "g-l05": {
       "file": "audio/g-l05.mp3",
       "accent": "US",
       "locale": "en-US",
       "scriptSha256": "b283503b036085b68334163e9f6e82a969e18371eba00627045d2f3a1fb3ca0c",
+      "spokenChoices": [
+        "A.",
+        "The trainer arrives by train.",
+        "B.",
+        "Yes, the supposed deadline is Monday.",
+        "C.",
+        "It was, until the executive team revised the policy."
+      ],
       "voices": [
         {
           "role": "W",
@@ -139,8 +179,8 @@
       "roles": [
         "W"
       ],
-      "durationSec": 15.67,
-      "bytes": 94557
+      "durationSec": 21.89,
+      "bytes": 131852
     },
     "g-l06": {
       "file": "audio/g-l06.mp3",
@@ -246,6 +286,14 @@
       "accent": "UK",
       "locale": "en-GB",
       "scriptSha256": "6055e34f7867132958c294add9e3c7ba40bf08f43bb82ac23c0f10a35a458e3a",
+      "spokenChoices": [
+        "A.",
+        "The reservation was canceled yesterday.",
+        "B.",
+        "Let’s wait until the registration deadline tomorrow.",
+        "C.",
+        "It is on the larger shelf."
+      ],
       "voices": [
         {
           "role": "W",
@@ -261,14 +309,22 @@
       "roles": [
         "W"
       ],
-      "durationSec": 15.81,
-      "bytes": 95421
+      "durationSec": 22.03,
+      "bytes": 132716
     },
     "g-new-l1": {
       "file": "audio/g-new-l1.mp3",
       "accent": "CA",
       "locale": "en-CA",
       "scriptSha256": "4c82287574ff1ff74e806ff1f788b2a0a74c0779dc19f8110024b14c74c706f8",
+      "spokenChoices": [
+        "A.",
+        "No, I scanned it twice.",
+        "B.",
+        "The receptionist starts at nine.",
+        "C.",
+        "It was delivered, but it is still being configured."
+      ],
       "voices": [
         {
           "role": "M",
@@ -284,14 +340,22 @@
       "roles": [
         "M"
       ],
-      "durationSec": 13.75,
-      "bytes": 83037
+      "durationSec": 19.97,
+      "bytes": 120332
     },
     "g-new-l2": {
       "file": "audio/g-new-l2.mp3",
       "accent": "AU",
       "locale": "en-AU",
       "scriptSha256": "4564e75877f54903ed1dcc7114d55b8b2341b1c9b51f18dc28d6c56696395e95",
+      "spokenChoices": [
+        "A.",
+        "Her deputy has signing authority.",
+        "B.",
+        "The trip was quite expensive.",
+        "C.",
+        "She approved the itinerary last month."
+      ],
       "voices": [
         {
           "role": "W",
@@ -307,14 +371,22 @@
       "roles": [
         "W"
       ],
-      "durationSec": 12.5,
-      "bytes": 75549
+      "durationSec": 17.66,
+      "bytes": 106508
     },
     "g-new-l3": {
       "file": "audio/g-new-l3.mp3",
       "accent": "US",
       "locale": "en-US",
       "scriptSha256": "1541541099adabcf545356badfd7df0249720e6e0a365ef841648176be607bfc",
+      "spokenChoices": [
+        "A.",
+        "The proposal arrived by courier.",
+        "B.",
+        "Of course not; give me ten minutes.",
+        "C.",
+        "I sent them last Tuesday."
+      ],
       "voices": [
         {
           "role": "M",
@@ -330,14 +402,22 @@
       "roles": [
         "M"
       ],
-      "durationSec": 14.13,
-      "bytes": 85341
+      "durationSec": 20.35,
+      "bytes": 122636
     },
     "g-new-l4": {
       "file": "audio/g-new-l4.mp3",
       "accent": "UK",
       "locale": "en-GB",
       "scriptSha256": "8be18969a5df4bdc39b4f4577f185d7b3b2d8b2b6973700a26a2570a19ff4be3",
+      "spokenChoices": [
+        "A.",
+        "The photographer works upstairs.",
+        "B.",
+        "I used to read that brochure.",
+        "C.",
+        "They show the old packaging."
+      ],
       "voices": [
         {
           "role": "W",
@@ -353,14 +433,22 @@
       "roles": [
         "W"
       ],
-      "durationSec": 12.86,
-      "bytes": 77709
+      "durationSec": 19.08,
+      "bytes": 115004
     },
     "g-new-l5": {
       "file": "audio/g-new-l5.mp3",
       "accent": "CA",
       "locale": "en-CA",
       "scriptSha256": "c9af3230cadf4f233c9eec057def90dfcb0673892c65f4332abab0b0a5c12fe2",
+      "spokenChoices": [
+        "A.",
+        "Friday works, provided they finish before our noon inspection.",
+        "B.",
+        "Yes, the team maintained it.",
+        "C.",
+        "The inspection report is in the folder."
+      ],
       "voices": [
         {
           "role": "M",
@@ -376,8 +464,8 @@
       "roles": [
         "M"
       ],
-      "durationSec": 15.89,
-      "bytes": 95853
+      "durationSec": 22.1,
+      "bytes": 133148
     },
     "g-new-conv1": {
       "file": "audio/g-new-conv1.mp3",
@@ -455,6 +543,14 @@
       "accent": "AU",
       "locale": "en-AU",
       "scriptSha256": "07d2004e086c97597426d89ae053c3aeac3212004ec3cda7312286f3c0cebd0e",
+      "spokenChoices": [
+        "A.",
+        "I’ve attached one to my reply.",
+        "B.",
+        "The copier is beside the door.",
+        "C.",
+        "Yes, the client was very polite."
+      ],
       "voices": [
         {
           "role": "W",
@@ -470,14 +566,22 @@
       "roles": [
         "W"
       ],
-      "durationSec": 12.91,
-      "bytes": 77997
+      "durationSec": 18.07,
+      "bytes": 108956
     },
     "s03-l2": {
       "file": "audio/s03-l2.mp3",
       "accent": "US",
       "locale": "en-US",
       "scriptSha256": "21747ee1ee568cd3e52bd3e4c1756566deb7e42c41ed1f16bd992248a67b180c",
+      "spokenChoices": [
+        "A.",
+        "In the design department.",
+        "B.",
+        "They were revised twice.",
+        "C.",
+        "Not before the architect returns tomorrow."
+      ],
       "voices": [
         {
           "role": "M",
@@ -493,14 +597,22 @@
       "roles": [
         "M"
       ],
-      "durationSec": 13.03,
-      "bytes": 78717
+      "durationSec": 19.25,
+      "bytes": 116012
     },
     "s03-l3": {
       "file": "audio/s03-l3.mp3",
       "accent": "UK",
       "locale": "en-GB",
       "scriptSha256": "d35c8edd232534882697ce5bec956b980b040dd61614284386cc55427fedd889",
+      "spokenChoices": [
+        "A.",
+        "The chairman will speak first.",
+        "B.",
+        "I can borrow a few from the room next door.",
+        "C.",
+        "Everyone has submitted a report."
+      ],
       "voices": [
         {
           "role": "W",
@@ -516,14 +628,22 @@
       "roles": [
         "W"
       ],
-      "durationSec": 13.2,
-      "bytes": 79725
+      "durationSec": 19.41,
+      "bytes": 117020
     },
     "s03-l4": {
       "file": "audio/s03-l4.mp3",
       "accent": "CA",
       "locale": "en-CA",
       "scriptSha256": "2e137a2be4948c4ce303a473c797cab4a14c2e3ce0298fb5c21c7b9241d2ca36",
+      "spokenChoices": [
+        "A.",
+        "The suit is being cleaned.",
+        "B.",
+        "It was delivered yesterday.",
+        "C.",
+        "Only if the driver can arrive after ten."
+      ],
       "voices": [
         {
           "role": "M",
@@ -539,14 +659,22 @@
       "roles": [
         "M"
       ],
-      "durationSec": 12.93,
-      "bytes": 78141
+      "durationSec": 19.15,
+      "bytes": 115436
     },
     "s03-l5": {
       "file": "audio/s03-l5.mp3",
       "accent": "AU",
       "locale": "en-AU",
       "scriptSha256": "8aa2c3457c8ad38767796e2a3181cbf28bc3ce16c23686a29ceb979f69c0c522",
+      "spokenChoices": [
+        "A.",
+        "The legal team asked for the original.",
+        "B.",
+        "The signature is at the bottom.",
+        "C.",
+        "We reached an agreement last week."
+      ],
       "voices": [
         {
           "role": "W",
@@ -562,8 +690,8 @@
       "roles": [
         "W"
       ],
-      "durationSec": 11.52,
-      "bytes": 69645
+      "durationSec": 16.68,
+      "bytes": 100604
     },
     "s03-conversation1": {
       "file": "audio/s03-conversation1.mp3",
@@ -686,6 +814,14 @@
       "accent": "US",
       "locale": "en-US",
       "scriptSha256": "e94263b1a1e42a3b141a56b43bcf4770d46efb64492c740f496cbe60f00a3e40",
+      "spokenChoices": [
+        "A.",
+        "Only if we approve its revised quotation today.",
+        "B.",
+        "The revised quotation includes expedited freight.",
+        "C.",
+        "It delivered the previous batch on Tuesday."
+      ],
       "voices": [
         {
           "role": "M",
@@ -701,14 +837,22 @@
       "roles": [
         "M"
       ],
-      "durationSec": 17.3,
-      "bytes": 104349
+      "durationSec": 23.52,
+      "bytes": 141644
     },
     "g-a-p2-02": {
       "file": "audio/g-a-p2-02.mp3",
       "accent": "UK",
       "locale": "en-GB",
       "scriptSha256": "07a78d1a87ced1e7153d3d0de57640868cada2c8419c80fe18c962bad4ad316e",
+      "spokenChoices": [
+        "A.",
+        "Javier in account services keeps the dispatch log.",
+        "B.",
+        "The dispatch log was archived with last quarter's files.",
+        "C.",
+        "Those rates take effect after the next renewal cycle."
+      ],
       "voices": [
         {
           "role": "W",
@@ -724,14 +868,22 @@
       "roles": [
         "W"
       ],
-      "durationSec": 17.49,
-      "bytes": 105501
+      "durationSec": 23.71,
+      "bytes": 142796
     },
     "g-a-p2-03": {
       "file": "audio/g-a-p2-03.mp3",
       "accent": "CA",
       "locale": "en-CA",
       "scriptSha256": "8a5e94ac6dc877a713e7591ba3e46da482eb8a8012882d4ca51cb9283a739f4c",
+      "spokenChoices": [
+        "A.",
+        "Not yet; the carrier has acknowledged pickup, but not the delivery window.",
+        "B.",
+        "The inspection was moved to Friday afternoon.",
+        "C.",
+        "The vendor's updated estimate arrived this morning."
+      ],
       "voices": [
         {
           "role": "M",
@@ -747,14 +899,22 @@
       "roles": [
         "M"
       ],
-      "durationSec": 18.69,
-      "bytes": 112701
+      "durationSec": 24.91,
+      "bytes": 149996
     },
     "g-a-p2-04": {
       "file": "audio/g-a-p2-04.mp3",
       "accent": "AU",
       "locale": "en-AU",
       "scriptSha256": "3bd2402c850e6865a357723b3e777b885d3bd74acf078463683c210165b05a84",
+      "spokenChoices": [
+        "A.",
+        "Legal is still revising the indemnity clause.",
+        "B.",
+        "The invitation went to committee members yesterday.",
+        "C.",
+        "The final contract is valid through December."
+      ],
       "voices": [
         {
           "role": "W",
@@ -770,14 +930,22 @@
       "roles": [
         "W"
       ],
-      "durationSec": 14.66,
-      "bytes": 88509
+      "durationSec": 19.82,
+      "bytes": 119468
     },
     "g-a-p2-05": {
       "file": "audio/g-a-p2-05.mp3",
       "accent": "US",
       "locale": "en-US",
       "scriptSha256": "329dabc3a98ed453b485864d5f69d606c21ec1b00331d4812e76cd76e358379f",
+      "spokenChoices": [
+        "A.",
+        "Let's wait; she expects to find another discrepancy in freight costs.",
+        "B.",
+        "We usually circulate the figures before the quarterly review.",
+        "C.",
+        "Mei was assigned to the analysis after the budget meeting."
+      ],
       "voices": [
         {
           "role": "M",
@@ -793,14 +961,22 @@
       "roles": [
         "M"
       ],
-      "durationSec": 20.21,
-      "bytes": 121773
+      "durationSec": 26.42,
+      "bytes": 159068
     },
     "g-extra-l-01": {
       "file": "audio/g-extra-l-01.mp3",
       "accent": "UK",
       "locale": "en-GB",
       "scriptSha256": "030529a6fc889769e7293b7a9b12747660787a9211ddf724f6c6bfb57fc739b1",
+      "spokenChoices": [
+        "A.",
+        "After Finance reconciles the overseas accounts.",
+        "B.",
+        "The board meets in the larger room.",
+        "C.",
+        "The figures were presented by the controller."
+      ],
       "voices": [
         {
           "role": "M",
@@ -816,14 +992,22 @@
       "roles": [
         "M"
       ],
-      "durationSec": 14.18,
-      "bytes": 85629
+      "durationSec": 20.4,
+      "bytes": 122924
     },
     "g-extra-l-02": {
       "file": "audio/g-extra-l-02.mp3",
       "accent": "CA",
       "locale": "en-CA",
       "scriptSha256": "5182fe7fb8777349117b6027fa9b1e75d2a88926dde5b9604dcb38a03f45eac5",
+      "spokenChoices": [
+        "A.",
+        "The shipment contains replacement parts.",
+        "B.",
+        "Only if the customs documents are cleared today.",
+        "C.",
+        "The warehouse closes at six."
+      ],
       "voices": [
         {
           "role": "W",
@@ -839,14 +1023,22 @@
       "roles": [
         "W"
       ],
-      "durationSec": 13.8,
-      "bytes": 83325
+      "durationSec": 20.01,
+      "bytes": 120620
     },
     "g-extra-l-03": {
       "file": "audio/g-extra-l-03.mp3",
       "accent": "AU",
       "locale": "en-AU",
       "scriptSha256": "56bf9ae879df4ee31b7447beba19163070d0039857184a7bb5e4489cde4ee3bd",
+      "spokenChoices": [
+        "A.",
+        "The briefing was moved to the conference hall.",
+        "B.",
+        "Lena returns after the holiday.",
+        "C.",
+        "Marcus from the regional office volunteered."
+      ],
       "voices": [
         {
           "role": "M",
@@ -862,14 +1054,22 @@
       "roles": [
         "M"
       ],
-      "durationSec": 14.81,
-      "bytes": 89373
+      "durationSec": 21.02,
+      "bytes": 126668
     },
     "g-extra-l-04": {
       "file": "audio/g-extra-l-04.mp3",
       "accent": "US",
       "locale": "en-US",
       "scriptSha256": "5074556de78be602b61736d5590b4429881df281453e8410ff1f9d596681a52d",
+      "spokenChoices": [
+        "A.",
+        "The original room could not accommodate the interpreters.",
+        "B.",
+        "The workshop begins at nine thirty.",
+        "C.",
+        "The new venue sent the invoice yesterday."
+      ],
       "voices": [
         {
           "role": "W",
@@ -885,14 +1085,22 @@
       "roles": [
         "W"
       ],
-      "durationSec": 15.26,
-      "bytes": 92109
+      "durationSec": 21.48,
+      "bytes": 129404
     },
     "g-extra-l-05": {
       "file": "audio/g-extra-l-05.mp3",
       "accent": "UK",
       "locale": "en-GB",
       "scriptSha256": "371bb3a506d7e7973fc2a77789c3b8da966547cc7e3467a72ee785e3c2fa628b",
+      "spokenChoices": [
+        "A.",
+        "The payment was recorded under another account.",
+        "B.",
+        "Not yet; its legal team is still reviewing the terms.",
+        "C.",
+        "The schedule has three columns."
+      ],
       "voices": [
         {
           "role": "M",
@@ -908,14 +1116,22 @@
       "roles": [
         "M"
       ],
-      "durationSec": 15.0,
-      "bytes": 90525
+      "durationSec": 21.21,
+      "bytes": 127820
     },
     "g-extra-l-06": {
       "file": "audio/g-extra-l-06.mp3",
       "accent": "CA",
       "locale": "en-CA",
       "scriptSha256": "fe065133a1aa0c3406e5b1a9f32c9eab627c48e7f0bd838e47a8f72ff735a463",
+      "spokenChoices": [
+        "A.",
+        "The sales meeting was productive.",
+        "B.",
+        "The draft is saved in the shared folder.",
+        "C.",
+        "Please wait until the regional totals are confirmed."
+      ],
       "voices": [
         {
           "role": "W",
@@ -931,14 +1147,22 @@
       "roles": [
         "W"
       ],
-      "durationSec": 14.61,
-      "bytes": 88221
+      "durationSec": 20.83,
+      "bytes": 125516
     },
     "g-extra-l-07": {
       "file": "audio/g-extra-l-07.mp3",
       "accent": "AU",
       "locale": "en-AU",
       "scriptSha256": "36f2ef86b16c18682a31043168113de0f8ca0e3dc48c970edafcaef1309b90fb",
+      "spokenChoices": [
+        "A.",
+        "The latest version is on the finance portal.",
+        "B.",
+        "The reimbursement was processed last week.",
+        "C.",
+        "The finance team meets every Tuesday."
+      ],
       "voices": [
         {
           "role": "M",
@@ -954,14 +1178,22 @@
       "roles": [
         "M"
       ],
-      "durationSec": 15.38,
-      "bytes": 92829
+      "durationSec": 21.6,
+      "bytes": 130124
     },
     "g-extra-l-08": {
       "file": "audio/g-extra-l-08.mp3",
       "accent": "US",
       "locale": "en-US",
       "scriptSha256": "79e28bcac00f515afc85a0ebe505d2436aff01f5d22ac22cd1520889fec43954",
+      "spokenChoices": [
+        "A.",
+        "The maintenance contract lasts two years.",
+        "B.",
+        "It was, but the technician called to postpone it.",
+        "C.",
+        "The technician usually takes the train."
+      ],
       "voices": [
         {
           "role": "W",
@@ -977,14 +1209,22 @@
       "roles": [
         "W"
       ],
-      "durationSec": 15.36,
-      "bytes": 92685
+      "durationSec": 21.57,
+      "bytes": 129980
     },
     "g-extra-l-09": {
       "file": "audio/g-extra-l-09.mp3",
       "accent": "UK",
       "locale": "en-GB",
       "scriptSha256": "0cb756a4e18795ea3671c2976fb6d47f7124e646801ba884f5c17152f5626e88",
+      "spokenChoices": [
+        "A.",
+        "The proposal was revised on Monday.",
+        "B.",
+        "The client’s office is near the station.",
+        "C.",
+        "She requested a breakdown of the installation costs."
+      ],
       "voices": [
         {
           "role": "M",
@@ -1000,14 +1240,22 @@
       "roles": [
         "M"
       ],
-      "durationSec": 14.59,
-      "bytes": 88077
+      "durationSec": 20.81,
+      "bytes": 125372
     },
     "g-extra-l-10": {
       "file": "audio/g-extra-l-10.mp3",
       "accent": "CA",
       "locale": "en-CA",
       "scriptSha256": "1c284217b1bf2f91e87d15d4a716b8e225090ef8129db506df9d9fdfe5cb3915",
+      "spokenChoices": [
+        "A.",
+        "I will look at the booking calendar.",
+        "B.",
+        "The meeting ended at two yesterday.",
+        "C.",
+        "The room has a large display."
+      ],
       "voices": [
         {
           "role": "W",
@@ -1023,8 +1271,8 @@
       "roles": [
         "W"
       ],
-      "durationSec": 13.58,
-      "bytes": 82029
+      "durationSec": 19.8,
+      "bytes": 119324
     },
     "g-photo-01": {
       "file": "audio/g-photo-01.mp3",
@@ -1042,7 +1290,17 @@
         "N"
       ],
       "durationSec": 24.12,
-      "bytes": 145245
+      "bytes": 145245,
+      "spokenChoices": [
+        "A.",
+        "A woman is writing on a board.",
+        "B.",
+        "A man is standing beside a window.",
+        "C.",
+        "Some chairs are stacked against a wall.",
+        "D.",
+        "A woman is working on a laptop."
+      ]
     },
     "g-photo-02": {
       "file": "audio/g-photo-02.mp3",
@@ -1060,7 +1318,17 @@
         "N"
       ],
       "durationSec": 25.63,
-      "bytes": 154317
+      "bytes": 154317,
+      "spokenChoices": [
+        "A.",
+        "A man is riding a bicycle.",
+        "B.",
+        "A worker is loading boxes into a truck.",
+        "C.",
+        "A man is pushing a cart loaded with boxes.",
+        "D.",
+        "Some boxes are being carried up a staircase."
+      ]
     },
     "g-new-cv-a": {
       "file": "audio/g-new-cv-a.mp3",
@@ -1165,7 +1433,17 @@
         "N"
       ],
       "durationSec": 25.15,
-      "bytes": 151437
+      "bytes": 151437,
+      "spokenChoices": [
+        "A.",
+        "A woman is climbing a ladder.",
+        "B.",
+        "A woman is kneeling beside a shelf of plants.",
+        "C.",
+        "Plants are being loaded into a vehicle.",
+        "D.",
+        "A customer is watering flowers outdoors."
+      ]
     },
     "g-airport-talk-d": {
       "file": "audio/g-airport-talk-d.mp3",
@@ -1411,7 +1689,17 @@
         "N"
       ],
       "durationSec": 21.31,
-      "bytes": 128397
+      "bytes": 128397,
+      "spokenChoices": [
+        "A.",
+        "A woman is standing near a doorway.",
+        "B.",
+        "A man is pouring water into a glass.",
+        "C.",
+        "Some dishes are being washed at a sink.",
+        "D.",
+        "Chairs are being stacked on the table."
+      ]
     },
     "g-photo-05": {
       "file": "audio/g-photo-05.mp3",
@@ -1429,7 +1717,17 @@
         "N"
       ],
       "durationSec": 25.12,
-      "bytes": 151293
+      "bytes": 151293,
+      "spokenChoices": [
+        "A.",
+        "A worker is stacking boxes on a cart.",
+        "B.",
+        "A worker is carrying a box above her head.",
+        "C.",
+        "A worker is scanning a box on a table.",
+        "D.",
+        "A worker is seated at a computer."
+      ]
     },
     "g-photo-06": {
       "file": "audio/g-photo-06.mp3",
@@ -1447,7 +1745,17 @@
         "N"
       ],
       "durationSec": 24.6,
-      "bytes": 148125
+      "bytes": 148125,
+      "spokenChoices": [
+        "A.",
+        "People are sitting at outdoor tables.",
+        "B.",
+        "A patio umbrella has been opened.",
+        "C.",
+        "Tables are being carried indoors.",
+        "D.",
+        "A man is sweeping a paved area."
+      ]
     },
     "g-photo-07": {
       "file": "audio/g-photo-07.mp3",
@@ -1465,7 +1773,17 @@
         "N"
       ],
       "durationSec": 25.63,
-      "bytes": 154317
+      "bytes": 154317,
+      "spokenChoices": [
+        "A.",
+        "A woman is repairing a bicycle wheel.",
+        "B.",
+        "A pedestrian is unlocking a bicycle.",
+        "C.",
+        "Several people are riding bicycles.",
+        "D.",
+        "A woman is carrying a bicycle indoors."
+      ]
     },
     "g-photo-08": {
       "file": "audio/g-photo-08.mp3",
@@ -1483,7 +1801,17 @@
         "N"
       ],
       "durationSec": 22.03,
-      "bytes": 132717
+      "bytes": 132717,
+      "spokenChoices": [
+        "A.",
+        "A man is moving a toolbox across the floor.",
+        "B.",
+        "A woman is painting a door frame.",
+        "C.",
+        "A man is fastening a sign above a doorway.",
+        "D.",
+        "Two workers are climbing a ladder together."
+      ]
     },
     "g-map-campus-01": {
       "file": "audio/g-map-campus-01.mp3",
@@ -1516,6 +1844,14 @@
       "accent": "AU",
       "locale": "en-AU",
       "scriptSha256": "55d43b9b9f826b08ca96b9eb84819368d179016b0753a595be2555173380b578",
+      "spokenChoices": [
+        "A.",
+        "The events coordinator said she would.",
+        "B.",
+        "The chairs have already arrived.",
+        "C.",
+        "About sixty people are expected."
+      ],
       "voices": [
         {
           "role": "W",
@@ -1531,14 +1867,22 @@
       "roles": [
         "W"
       ],
-      "durationSec": 13.1,
-      "bytes": 79149
+      "durationSec": 18.26,
+      "bytes": 110108
     },
     "xf-p2-02": {
       "file": "audio/xf-p2-02.mp3",
       "accent": "US",
       "locale": "en-US",
       "scriptSha256": "e02f0cff2838d051cb33ab4866020a781037c3c96d7176601f0a019c4a67f515",
+      "spokenChoices": [
+        "A.",
+        "Mr. Santos works on the third floor.",
+        "B.",
+        "I will be free to check it after lunch.",
+        "C.",
+        "The client requested a quotation."
+      ],
       "voices": [
         {
           "role": "M",
@@ -1554,14 +1898,22 @@
       "roles": [
         "M"
       ],
-      "durationSec": 15.45,
-      "bytes": 93261
+      "durationSec": 21.67,
+      "bytes": 130556
     },
     "xf-p2-03": {
       "file": "audio/xf-p2-03.mp3",
       "accent": "UK",
       "locale": "en-GB",
       "scriptSha256": "f870b19e2869d67203a76a5e0c9e975fe71ba49530e56114e929704136c24aea",
+      "spokenChoices": [
+        "A.",
+        "In the supply closet beside the printer.",
+        "B.",
+        "It scans both sides automatically.",
+        "C.",
+        "The technician has not confirmed a date yet."
+      ],
       "voices": [
         {
           "role": "W",
@@ -1577,14 +1929,22 @@
       "roles": [
         "W"
       ],
-      "durationSec": 14.06,
-      "bytes": 84909
+      "durationSec": 20.28,
+      "bytes": 122204
     },
     "xf-p2-04": {
       "file": "audio/xf-p2-04.mp3",
       "accent": "CA",
       "locale": "en-CA",
       "scriptSha256": "ab1d5d4d848f69af6a55df3ebbca0dd48de3b6ed514963a43b56f3ae8ec198cc",
+      "spokenChoices": [
+        "A.",
+        "The briefing lasted an hour.",
+        "B.",
+        "I can check whether it is available.",
+        "C.",
+        "The rooms were recently painted."
+      ],
       "voices": [
         {
           "role": "M",
@@ -1600,14 +1960,22 @@
       "roles": [
         "M"
       ],
-      "durationSec": 13.13,
-      "bytes": 79293
+      "durationSec": 19.34,
+      "bytes": 116588
     },
     "xf-p2-05": {
       "file": "audio/xf-p2-05.mp3",
       "accent": "AU",
       "locale": "en-AU",
       "scriptSha256": "55ed910380aa7d0fbea4e3b9bf8f2e7c4ab762a62ead7f029a97890384b70323",
+      "spokenChoices": [
+        "A.",
+        "It leaves every half hour.",
+        "B.",
+        "At the departure lane near Gate Four.",
+        "C.",
+        "A vehicle inspection took longer than expected."
+      ],
       "voices": [
         {
           "role": "W",
@@ -1623,14 +1991,22 @@
       "roles": [
         "W"
       ],
-      "durationSec": 12.74,
-      "bytes": 76989
+      "durationSec": 17.9,
+      "bytes": 107948
     },
     "xf-p2-06": {
       "file": "audio/xf-p2-06.mp3",
       "accent": "US",
       "locale": "en-US",
       "scriptSha256": "3d977d30b65e00791f23c42cea8e88a38c2e6cbb39f739de1e6becf68a09584f",
+      "spokenChoices": [
+        "A.",
+        "The meeting starts at nine.",
+        "B.",
+        "No, the last group is still checking in.",
+        "C.",
+        "It was updated yesterday afternoon."
+      ],
       "voices": [
         {
           "role": "M",
@@ -1646,14 +2022,22 @@
       "roles": [
         "M"
       ],
-      "durationSec": 14.28,
-      "bytes": 86205
+      "durationSec": 20.49,
+      "bytes": 123500
     },
     "xf-p2-07": {
       "file": "audio/xf-p2-07.mp3",
       "accent": "UK",
       "locale": "en-GB",
       "scriptSha256": "1aaa65c9812810b97444d0b1f38d3295016c3a13751562d8d904cf6bf2ccf94f",
+      "spokenChoices": [
+        "A.",
+        "Only if neither party gives notice.",
+        "B.",
+        "The renewal fee was paid in March.",
+        "C.",
+        "It covers three regional offices."
+      ],
       "voices": [
         {
           "role": "W",
@@ -1669,14 +2053,22 @@
       "roles": [
         "W"
       ],
-      "durationSec": 14.18,
-      "bytes": 85629
+      "durationSec": 20.4,
+      "bytes": 122924
     },
     "xf-p2-08": {
       "file": "audio/xf-p2-08.mp3",
       "accent": "CA",
       "locale": "en-CA",
       "scriptSha256": "c73a3e040099cedc33f6e174355957e4c9358bdef11b036a13274af96bff7fff",
+      "spokenChoices": [
+        "A.",
+        "Six panels arrived this morning.",
+        "B.",
+        "The storage supervisor left a space by the loading dock.",
+        "C.",
+        "They were returned because of scratches."
+      ],
       "voices": [
         {
           "role": "M",
@@ -1692,14 +2084,22 @@
       "roles": [
         "M"
       ],
-      "durationSec": 14.93,
-      "bytes": 90093
+      "durationSec": 21.14,
+      "bytes": 127388
     },
     "xf-p2-09": {
       "file": "audio/xf-p2-09.mp3",
       "accent": "AU",
       "locale": "en-AU",
       "scriptSha256": "90649790809d5b51b5f1bac5da1d210aa9174ed36b5ad0af96dbfd0cb469128f",
+      "spokenChoices": [
+        "A.",
+        "The conference is in Vancouver.",
+        "B.",
+        "I need the revised itinerary first.",
+        "C.",
+        "Friday is the deadline for registration."
+      ],
       "voices": [
         {
           "role": "W",
@@ -1715,14 +2115,22 @@
       "roles": [
         "W"
       ],
-      "durationSec": 12.77,
-      "bytes": 77133
+      "durationSec": 17.93,
+      "bytes": 108092
     },
     "xf-p2-10": {
       "file": "audio/xf-p2-10.mp3",
       "accent": "US",
       "locale": "en-US",
       "scriptSha256": "bd392a425844b53b62c5de725f150676ef61352a6af2d8029ae3cb63f50273a9",
+      "spokenChoices": [
+        "A.",
+        "The office moved there last month.",
+        "B.",
+        "The express skips that station, so take the local.",
+        "C.",
+        "Tickets are available at the counter."
+      ],
       "voices": [
         {
           "role": "M",
@@ -1738,14 +2146,22 @@
       "roles": [
         "M"
       ],
-      "durationSec": 14.83,
-      "bytes": 89517
+      "durationSec": 21.05,
+      "bytes": 126812
     },
     "xf-p2-11": {
       "file": "audio/xf-p2-11.mp3",
       "accent": "UK",
       "locale": "en-GB",
       "scriptSha256": "842c8c985f4bac4e6c3e0374c16713b335cd6b39053b17a5b91fef61cdf349bf",
+      "spokenChoices": [
+        "A.",
+        "The final results should be ready tomorrow.",
+        "B.",
+        "We tested the new machine last week.",
+        "C.",
+        "They came from three sites."
+      ],
       "voices": [
         {
           "role": "W",
@@ -1761,14 +2177,22 @@
       "roles": [
         "W"
       ],
-      "durationSec": 14.23,
-      "bytes": 85917
+      "durationSec": 20.45,
+      "bytes": 123212
     },
     "xf-p2-12": {
       "file": "audio/xf-p2-12.mp3",
       "accent": "CA",
       "locale": "en-CA",
       "scriptSha256": "d9e80da780346474134ffc5b5104493de83aea48f246f4dc0585f7c054188629",
+      "spokenChoices": [
+        "A.",
+        "It was copied on blue paper.",
+        "B.",
+        "The landlord has two offices.",
+        "C.",
+        "The signed pages are missing from this one."
+      ],
       "voices": [
         {
           "role": "M",
@@ -1784,14 +2208,22 @@
       "roles": [
         "M"
       ],
-      "durationSec": 13.68,
-      "bytes": 82605
+      "durationSec": 19.89,
+      "bytes": 119900
     },
     "xf-p2-13": {
       "file": "audio/xf-p2-13.mp3",
       "accent": "AU",
       "locale": "en-AU",
       "scriptSha256": "866f21030032a8e7f2a71a81de1d3541ca0a6adf123fa91dbb91ca903a5bec34",
+      "spokenChoices": [
+        "A.",
+        "Yes, if we give them the final guest count by noon.",
+        "B.",
+        "The menu was printed last week.",
+        "C.",
+        "The event starts at six thirty."
+      ],
       "voices": [
         {
           "role": "W",
@@ -1807,14 +2239,22 @@
       "roles": [
         "W"
       ],
-      "durationSec": 14.83,
-      "bytes": 89517
+      "durationSec": 19.99,
+      "bytes": 120476
     },
     "xf-p2-14": {
       "file": "audio/xf-p2-14.mp3",
       "accent": "US",
       "locale": "en-US",
       "scriptSha256": "2200e3017c81870626e5d4ffa3bf25a6a87464c0009c3a7807f4ea41520a60db",
+      "spokenChoices": [
+        "A.",
+        "The maintenance crew uses the north entrance.",
+        "B.",
+        "All site managers, according to the new procedure.",
+        "C.",
+        "It was revised after the inspection."
+      ],
       "voices": [
         {
           "role": "M",
@@ -1830,14 +2270,22 @@
       "roles": [
         "M"
       ],
-      "durationSec": 15.41,
-      "bytes": 92973
+      "durationSec": 21.62,
+      "bytes": 130268
     },
     "xf-p2-15": {
       "file": "audio/xf-p2-15.mp3",
       "accent": "UK",
       "locale": "en-GB",
       "scriptSha256": "ddb07f3d643c2778dc4353cff588f2559e834fb620d50c85fb0fa0f9ada098cd",
+      "spokenChoices": [
+        "A.",
+        "The workshop has a full waiting list.",
+        "B.",
+        "If you send me the final file now.",
+        "C.",
+        "The printer was purchased this year."
+      ],
       "voices": [
         {
           "role": "W",
@@ -1853,14 +2301,22 @@
       "roles": [
         "W"
       ],
-      "durationSec": 14.18,
-      "bytes": 85629
+      "durationSec": 20.4,
+      "bytes": 122924
     },
     "xf-p2-16": {
       "file": "audio/xf-p2-16.mp3",
       "accent": "CA",
       "locale": "en-CA",
       "scriptSha256": "d5cf1c97af1efcc3da6ec2d376f732189e4ae53f5d77419ef4d8cd4b21debc55",
+      "spokenChoices": [
+        "A.",
+        "Their system will update after the evening count.",
+        "B.",
+        "We received the invoice yesterday.",
+        "C.",
+        "The shipment contained twelve crates."
+      ],
       "voices": [
         {
           "role": "M",
@@ -1876,14 +2332,22 @@
       "roles": [
         "M"
       ],
-      "durationSec": 14.64,
-      "bytes": 88365
+      "durationSec": 20.85,
+      "bytes": 125660
     },
     "xf-p2-17": {
       "file": "audio/xf-p2-17.mp3",
       "accent": "AU",
       "locale": "en-AU",
       "scriptSha256": "95a9c24e0b0ba5caab1c1ebd7472c7fd0c8e15d2d3200a015df2a689d11b5ed3",
+      "spokenChoices": [
+        "A.",
+        "At the start of every quarter.",
+        "B.",
+        "By a certified electrician.",
+        "C.",
+        "The alarms are on each floor."
+      ],
       "voices": [
         {
           "role": "W",
@@ -1899,14 +2363,22 @@
       "roles": [
         "W"
       ],
-      "durationSec": 11.83,
-      "bytes": 71517
+      "durationSec": 16.99,
+      "bytes": 102476
     },
     "xf-p2-18": {
       "file": "audio/xf-p2-18.mp3",
       "accent": "US",
       "locale": "en-US",
       "scriptSha256": "7c88c324f957517f6080cabd957408e5d144965306eb292874f99c914817da30",
+      "spokenChoices": [
+        "A.",
+        "The notice was approved by Legal.",
+        "B.",
+        "Reception closes at five.",
+        "C.",
+        "Yes, some visitors enter through the side door."
+      ],
       "voices": [
         {
           "role": "M",
@@ -1922,14 +2394,22 @@
       "roles": [
         "M"
       ],
-      "durationSec": 15.07,
-      "bytes": 90957
+      "durationSec": 21.29,
+      "bytes": 128252
     },
     "xf-p2-19": {
       "file": "audio/xf-p2-19.mp3",
       "accent": "UK",
       "locale": "en-GB",
       "scriptSha256": "d80c148ecc6afb0f0ecb372c722659e7d72ae99c175f98ec0d401b606cd3a299",
+      "spokenChoices": [
+        "A.",
+        "The payment authorization expired.",
+        "B.",
+        "The order includes a printer.",
+        "C.",
+        "It was pending for two days."
+      ],
       "voices": [
         {
           "role": "W",
@@ -1945,14 +2425,22 @@
       "roles": [
         "W"
       ],
-      "durationSec": 13.32,
-      "bytes": 80445
+      "durationSec": 19.53,
+      "bytes": 117740
     },
     "xf-p2-20": {
       "file": "audio/xf-p2-20.mp3",
       "accent": "CA",
       "locale": "en-CA",
       "scriptSha256": "61288b63c96e8028f617895454929d2765fe7ce080a11c959251024f8df4bbe2",
+      "spokenChoices": [
+        "A.",
+        "I booked the meeting room yesterday.",
+        "B.",
+        "The supplier sent a new catalog.",
+        "C.",
+        "The later one leaves me too little time to prepare."
+      ],
       "voices": [
         {
           "role": "M",
@@ -1968,8 +2456,8 @@
       "roles": [
         "M"
       ],
-      "durationSec": 14.33,
-      "bytes": 86493
+      "durationSec": 20.54,
+      "bytes": 123788
     },
     "xfc-p3-inspection": {
       "file": "audio/xfc-p3-inspection.mp3",
@@ -2256,6 +2744,14 @@
       "accent": "AU",
       "locale": "en-AU",
       "scriptSha256": "859b88a7ae2239229ea01058c3c93763b6f0a12889c37368f6bfb1b7d512510f",
+      "spokenChoices": [
+        "A.",
+        "Only the ground-floor section has been approved.",
+        "B.",
+        "The architect sent it this morning.",
+        "C.",
+        "The meeting room is on the second floor."
+      ],
       "voices": [
         {
           "role": "W",
@@ -2271,14 +2767,22 @@
       "roles": [
         "W"
       ],
-      "durationSec": 12.72,
-      "bytes": 76845
+      "durationSec": 17.88,
+      "bytes": 107804
     },
     "g-xl-p2-02": {
       "file": "audio/g-xl-p2-02.mp3",
       "accent": "US",
       "locale": "en-US",
       "scriptSha256": "1d02bd2a8b8a034a374b49e7bc151fe4756783636b9d7b461ade65ba9ef16dc0",
+      "spokenChoices": [
+        "A.",
+        "The equipment is in the showroom.",
+        "B.",
+        "That would give the technicians time to finish the installation.",
+        "C.",
+        "It was demonstrated last Friday."
+      ],
       "voices": [
         {
           "role": "M",
@@ -2294,14 +2798,22 @@
       "roles": [
         "M"
       ],
-      "durationSec": 15.79,
-      "bytes": 95277
+      "durationSec": 22.01,
+      "bytes": 132572
     },
     "g-xl-p2-03": {
       "file": "audio/g-xl-p2-03.mp3",
       "accent": "UK",
       "locale": "en-GB",
       "scriptSha256": "5a7ad5c72e255727ae8b1c2b390d93304ac218efcff8bf18dfe0daa65b760646",
+      "spokenChoices": [
+        "A.",
+        "No, the courier service is very reliable.",
+        "B.",
+        "The parts are for the north entrance.",
+        "C.",
+        "He did, but the tracking page now says three o'clock."
+      ],
       "voices": [
         {
           "role": "W",
@@ -2317,14 +2829,22 @@
       "roles": [
         "W"
       ],
-      "durationSec": 16.01,
-      "bytes": 96573
+      "durationSec": 22.22,
+      "bytes": 133868
     },
     "g-xl-p2-04": {
       "file": "audio/g-xl-p2-04.mp3",
       "accent": "CA",
       "locale": "en-CA",
       "scriptSha256": "267fe348b6fa7d94d2d237ddd9857c4c583e45a30d73155c2ee1a243c5096781",
+      "spokenChoices": [
+        "A.",
+        "It is available in four languages.",
+        "B.",
+        "At the visitors' entrance near the elevators.",
+        "C.",
+        "I thought the communications team was assigning someone today."
+      ],
       "voices": [
         {
           "role": "M",
@@ -2340,14 +2860,22 @@
       "roles": [
         "M"
       ],
-      "durationSec": 15.81,
-      "bytes": 95421
+      "durationSec": 22.03,
+      "bytes": 132716
     },
     "g-xl-p2-05": {
       "file": "audio/g-xl-p2-05.mp3",
       "accent": "AU",
       "locale": "en-AU",
       "scriptSha256": "1427d4bc9b26b627708347c6f4769c1716edaf14ddae9a71a8cd7127951e8578",
+      "spokenChoices": [
+        "A.",
+        "The regional office is on the west side of town.",
+        "B.",
+        "Certainly, once Legal sends me the final copy.",
+        "C.",
+        "We agreed to extend the contract."
+      ],
       "voices": [
         {
           "role": "W",
@@ -2363,14 +2891,22 @@
       "roles": [
         "W"
       ],
-      "durationSec": 14.59,
-      "bytes": 88077
+      "durationSec": 19.75,
+      "bytes": 119036
     },
     "g-xl-p2-06": {
       "file": "audio/g-xl-p2-06.mp3",
       "accent": "US",
       "locale": "en-US",
       "scriptSha256": "5c3d534b8a8a92e5fbedd39071bd8f52148d072b334553244cdbb949b5a77b28",
+      "spokenChoices": [
+        "A.",
+        "Her flight confirmation is in the shared folder.",
+        "B.",
+        "Yes, she is giving two lectures.",
+        "C.",
+        "At the international terminal."
+      ],
       "voices": [
         {
           "role": "M",
@@ -2386,14 +2922,22 @@
       "roles": [
         "M"
       ],
-      "durationSec": 14.69,
-      "bytes": 88653
+      "durationSec": 20.9,
+      "bytes": 125948
     },
     "g-xl-p2-07": {
       "file": "audio/g-xl-p2-07.mp3",
       "accent": "UK",
       "locale": "en-GB",
       "scriptSha256": "4b8776b35b295d31feeda0e21ddbb13a4edfb7e14f14975c68a64ebdddd9b96a",
+      "spokenChoices": [
+        "A.",
+        "The samples were collected yesterday.",
+        "B.",
+        "The refrigerator is next to the sink.",
+        "C.",
+        "Only until the laboratory picks them up."
+      ],
       "voices": [
         {
           "role": "W",
@@ -2409,14 +2953,22 @@
       "roles": [
         "W"
       ],
-      "durationSec": 14.37,
-      "bytes": 86781
+      "durationSec": 20.59,
+      "bytes": 124076
     },
     "g-xl-p2-08": {
       "file": "audio/g-xl-p2-08.mp3",
       "accent": "CA",
       "locale": "en-CA",
       "scriptSha256": "3473503c0051c81aef7c57804757ad0a28309d2e1242aa878f85c8be27e6fb8a",
+      "spokenChoices": [
+        "A.",
+        "The last batch of records is still being checked.",
+        "B.",
+        "The migration guide is on the intranet.",
+        "C.",
+        "The software was purchased last year."
+      ],
       "voices": [
         {
           "role": "M",
@@ -2432,14 +2984,22 @@
       "roles": [
         "M"
       ],
-      "durationSec": 14.97,
-      "bytes": 90381
+      "durationSec": 21.19,
+      "bytes": 127676
     },
     "g-xl-p2-09": {
       "file": "audio/g-xl-p2-09.mp3",
       "accent": "AU",
       "locale": "en-AU",
       "scriptSha256": "95c0d4acf12821f305f4b9a1ae59d860247e695b29c619244fa481823dd459fb",
+      "spokenChoices": [
+        "A.",
+        "Thanks. I should be back before the afternoon deliveries.",
+        "B.",
+        "The contractor's desk is near reception.",
+        "C.",
+        "We met the contractor last month."
+      ],
       "voices": [
         {
           "role": "W",
@@ -2455,8 +3015,8 @@
       "roles": [
         "W"
       ],
-      "durationSec": 14.76,
-      "bytes": 89085
+      "durationSec": 19.92,
+      "bytes": 120044
     },
     "g-xl-p3-01": {
       "file": "audio/g-xl-p3-01.mp3",
@@ -3204,7 +3764,17 @@
         "N"
       ],
       "durationSec": 26.01,
-      "bytes": 156621
+      "bytes": 156621,
+      "spokenChoices": [
+        "A.",
+        "Several drawers are being painted.",
+        "B.",
+        "A woman is carrying boxes out of an office.",
+        "C.",
+        "A woman is placing a folder in a filing cabinet.",
+        "D.",
+        "Some folders are scattered across the floor."
+      ]
     },
     "g-photo-12": {
       "file": "audio/g-photo-12.mp3",
@@ -3222,7 +3792,17 @@
         "N"
       ],
       "durationSec": 24.57,
-      "bytes": 147981
+      "bytes": 147981,
+      "spokenChoices": [
+        "A.",
+        "A florist is watering plants outside.",
+        "B.",
+        "The flowers are being loaded onto a truck.",
+        "C.",
+        "A florist is tying a ribbon around a bouquet.",
+        "D.",
+        "The workbench is empty."
+      ]
     },
     "g-photo-13": {
       "file": "audio/g-photo-13.mp3",
@@ -3240,7 +3820,17 @@
         "N"
       ],
       "durationSec": 25.8,
-      "bytes": 155325
+      "bytes": 155325,
+      "spokenChoices": [
+        "A.",
+        "A guest is unpacking a suitcase.",
+        "B.",
+        "A lamp is being removed from a bedside table.",
+        "C.",
+        "A blanket has been hung across the window.",
+        "D.",
+        "A housekeeper is spreading a sheet over a bed."
+      ]
     },
     "g-photo-14": {
       "file": "audio/g-photo-14.mp3",
@@ -3258,7 +3848,17 @@
         "N"
       ],
       "durationSec": 21.69,
-      "bytes": 130701
+      "bytes": 130701,
+      "spokenChoices": [
+        "A.",
+        "A worker is cutting branches from a tree.",
+        "B.",
+        "A worker is applying paint to a park bench.",
+        "C.",
+        "A worker is washing a park bench.",
+        "D.",
+        "A bench is being carried along a path."
+      ]
     },
     "g-photo-15": {
       "file": "audio/g-photo-15.mp3",
@@ -3276,7 +3876,17 @@
         "N"
       ],
       "durationSec": 25.82,
-      "bytes": 155469
+      "bytes": 155469,
+      "spokenChoices": [
+        "A.",
+        "Books are being packed into shipping boxes.",
+        "B.",
+        "A worker is pushing an empty cart out of the library.",
+        "C.",
+        "Several people are reading at a table.",
+        "D.",
+        "A worker is shelving a book in a library."
+      ]
     },
     "g-photo-16": {
       "file": "audio/g-photo-16.mp3",
@@ -3294,7 +3904,17 @@
         "N"
       ],
       "durationSec": 25.29,
-      "bytes": 152301
+      "bytes": 152301,
+      "spokenChoices": [
+        "A.",
+        "A technician is measuring a metal component.",
+        "B.",
+        "A technician is soldering a circuit board.",
+        "C.",
+        "A worker is stacking empty trays.",
+        "D.",
+        "A machine is being moved across the room."
+      ]
     },
     "g-photo-17": {
       "file": "audio/g-photo-17.mp3",
@@ -3312,7 +3932,17 @@
         "N"
       ],
       "durationSec": 24.88,
-      "bytes": 149853
+      "bytes": 149853,
+      "spokenChoices": [
+        "A.",
+        "Passengers are boarding a ferry.",
+        "B.",
+        "A dock worker is coiling a rope on the pier.",
+        "C.",
+        "A worker is painting the ferry's railing.",
+        "D.",
+        "A boat is being lifted out of the water."
+      ]
     },
     "g-photo-18": {
       "file": "audio/g-photo-18.mp3",
@@ -3330,7 +3960,17 @@
         "N"
       ],
       "durationSec": 21.64,
-      "bytes": 130413
+      "bytes": 130413,
+      "spokenChoices": [
+        "A.",
+        "Two workers are setting up a folding table.",
+        "B.",
+        "Two customers are purchasing produce.",
+        "C.",
+        "Crates are being stacked on a table.",
+        "D.",
+        "The market tables are being loaded into a vehicle."
+      ]
     },
     "g-photo-09": {
       "file": "audio/g-photo-09.mp3",
@@ -3348,7 +3988,17 @@
         "N"
       ],
       "durationSec": 25.99,
-      "bytes": 156477
+      "bytes": 156477,
+      "spokenChoices": [
+        "A.",
+        "A woman is aligning printed sheets in a cutting machine.",
+        "B.",
+        "A woman is stacking books on a shelf.",
+        "C.",
+        "A woman is replacing a printer cartridge.",
+        "D.",
+        "A woman is packing boxes for delivery."
+      ]
     },
     "g-photo-10": {
       "file": "audio/g-photo-10.mp3",
@@ -3366,13 +4016,31 @@
         "N"
       ],
       "durationSec": 26.66,
-      "bytes": 160509
+      "bytes": 160509,
+      "spokenChoices": [
+        "A.",
+        "A passenger is carrying a bicycle onto a train.",
+        "B.",
+        "A worker is placing a ramp at a train entrance.",
+        "C.",
+        "A worker is closing a train door.",
+        "D.",
+        "A passenger is loading a suitcase into a vehicle."
+      ]
     },
     "g-xs-l01": {
       "file": "audio/g-xs-l01.mp3",
       "accent": "US",
       "locale": "en-US",
       "scriptSha256": "4b1b4d31ddadf57000087d063d9621c5c1a889e822ddbf85377d713e42ccc62e",
+      "spokenChoices": [
+        "A.",
+        "The floor was cleaned this morning.",
+        "B.",
+        "The architect has not sent it to me yet.",
+        "C.",
+        "We revised the menu yesterday."
+      ],
       "voices": [
         {
           "role": "W",
@@ -3388,14 +4056,22 @@
       "roles": [
         "W"
       ],
-      "durationSec": 14.4,
-      "bytes": 86925
+      "durationSec": 20.61,
+      "bytes": 124220
     },
     "g-xs-l02": {
       "file": "audio/g-xs-l02.mp3",
       "accent": "UK",
       "locale": "en-GB",
       "scriptSha256": "c8f22bc90633b3ac36bc32072bd4140f4454e55f81a6c9f7aa113abd799fe336",
+      "spokenChoices": [
+        "A.",
+        "I would check with the logistics director.",
+        "B.",
+        "It is scheduled for Friday.",
+        "C.",
+        "The delivery entrance is around back."
+      ],
       "voices": [
         {
           "role": "M",
@@ -3411,14 +4087,22 @@
       "roles": [
         "M"
       ],
-      "durationSec": 12.91,
-      "bytes": 77997
+      "durationSec": 19.13,
+      "bytes": 115292
     },
     "g-xs-l03": {
       "file": "audio/g-xs-l03.mp3",
       "accent": "CA",
       "locale": "en-CA",
       "scriptSha256": "23083f8734300855fc10bf7193102fedba6407c6b75e17bc66bec9fc85b645d8",
+      "spokenChoices": [
+        "A.",
+        "The parts are in the storeroom.",
+        "B.",
+        "Accounting said it would be processed tomorrow.",
+        "C.",
+        "It replaces the original invoice."
+      ],
       "voices": [
         {
           "role": "W",
@@ -3434,14 +4118,22 @@
       "roles": [
         "W"
       ],
-      "durationSec": 13.2,
-      "bytes": 79725
+      "durationSec": 19.41,
+      "bytes": 117020
     },
     "g-xs-l04": {
       "file": "audio/g-xs-l04.mp3",
       "accent": "AU",
       "locale": "en-AU",
       "scriptSha256": "7d065cadadc1fea01fa76d4e16445e84768f3f1be8df29451e9839cd63f92666",
+      "spokenChoices": [
+        "A.",
+        "Visitors should use the west entrance.",
+        "B.",
+        "The fire alarm system is being inspected.",
+        "C.",
+        "At about two thirty."
+      ],
       "voices": [
         {
           "role": "M",
@@ -3457,14 +4149,22 @@
       "roles": [
         "M"
       ],
-      "durationSec": 13.97,
-      "bytes": 84333
+      "durationSec": 20.18,
+      "bytes": 121628
     },
     "g-xs-l05": {
       "file": "audio/g-xs-l05.mp3",
       "accent": "US",
       "locale": "en-US",
       "scriptSha256": "4706507ce8eb618b923d9b4225b65cbe6b1dd19a062bedcbb464e01d7ae942f1",
+      "spokenChoices": [
+        "A.",
+        "The printer is on the second floor.",
+        "B.",
+        "There are thirty people attending.",
+        "C.",
+        "Finance promised the numbers by four."
+      ],
       "voices": [
         {
           "role": "W",
@@ -3480,14 +4180,22 @@
       "roles": [
         "W"
       ],
-      "durationSec": 14.83,
-      "bytes": 89517
+      "durationSec": 21.05,
+      "bytes": 126812
     },
     "g-xs-l06": {
       "file": "audio/g-xs-l06.mp3",
       "accent": "UK",
       "locale": "en-GB",
       "scriptSha256": "c61ead6820a70bb8427ba699d8763e117f815f8ef2eae13143734273ae8cd6ee",
+      "spokenChoices": [
+        "A.",
+        "The workshop was very informative.",
+        "B.",
+        "The client signed the agreement.",
+        "C.",
+        "No, the room seats forty, and sixty people have registered."
+      ],
       "voices": [
         {
           "role": "M",
@@ -3503,14 +4211,22 @@
       "roles": [
         "M"
       ],
-      "durationSec": 14.88,
-      "bytes": 89805
+      "durationSec": 21.09,
+      "bytes": 127100
     },
     "g-xs-l07": {
       "file": "audio/g-xs-l07.mp3",
       "accent": "CA",
       "locale": "en-CA",
       "scriptSha256": "99ea3f73728c94527a3ada9597e180dc25289cedfb16d326f0578ab70d2771ed",
+      "spokenChoices": [
+        "A.",
+        "Security has not given us a date yet.",
+        "B.",
+        "They are for the new employees.",
+        "C.",
+        "The cards open the side door."
+      ],
       "voices": [
         {
           "role": "W",
@@ -3526,14 +4242,22 @@
       "roles": [
         "W"
       ],
-      "durationSec": 13.22,
-      "bytes": 79869
+      "durationSec": 19.44,
+      "bytes": 117164
     },
     "g-xs-l08": {
       "file": "audio/g-xs-l08.mp3",
       "accent": "AU",
       "locale": "en-AU",
       "scriptSha256": "44ded8f6b92aed5e0a9476cc6cf1a35818619890710979b4e4ceb239119c2434",
+      "spokenChoices": [
+        "A.",
+        "Nina handles our language checks.",
+        "B.",
+        "It was translated last month.",
+        "C.",
+        "The brochure has sixteen pages."
+      ],
       "voices": [
         {
           "role": "M",
@@ -3549,14 +4273,22 @@
       "roles": [
         "M"
       ],
-      "durationSec": 14.18,
-      "bytes": 85629
+      "durationSec": 20.4,
+      "bytes": 122924
     },
     "g-xs-l09": {
       "file": "audio/g-xs-l09.mp3",
       "accent": "US",
       "locale": "en-US",
       "scriptSha256": "b312b00a91511aad844cebac92c659ff5adab47093e755d4e9211716510a3ca7",
+      "spokenChoices": [
+        "A.",
+        "The guest speaker confirmed her talk.",
+        "B.",
+        "We revised the seating chart.",
+        "C.",
+        "I have only received an automatic reply."
+      ],
       "voices": [
         {
           "role": "W",
@@ -3572,14 +4304,22 @@
       "roles": [
         "W"
       ],
-      "durationSec": 14.28,
-      "bytes": 86205
+      "durationSec": 20.49,
+      "bytes": 123500
     },
     "g-xs-l10": {
       "file": "audio/g-xs-l10.mp3",
       "accent": "UK",
       "locale": "en-GB",
       "scriptSha256": "0578f6286721df39c5fc28e9947c8b26c4f6cb7b2e6b43542e14423c6074c844",
+      "spokenChoices": [
+        "A.",
+        "They inspected the last batch.",
+        "B.",
+        "The locked cabinet beside their lab.",
+        "C.",
+        "There should be six samples."
+      ],
       "voices": [
         {
           "role": "M",
@@ -3595,14 +4335,22 @@
       "roles": [
         "M"
       ],
-      "durationSec": 12.26,
-      "bytes": 74109
+      "durationSec": 18.48,
+      "bytes": 111404
     },
     "g-xs-l11": {
       "file": "audio/g-xs-l11.mp3",
       "accent": "CA",
       "locale": "en-CA",
       "scriptSha256": "760a9911603c572a1fa14af752f28db8393257bdee50a22667dbc68767dc385f",
+      "spokenChoices": [
+        "A.",
+        "The test is scheduled for Tuesday.",
+        "B.",
+        "Yes, the notices went out this morning.",
+        "C.",
+        "The tenants use the east lift."
+      ],
       "voices": [
         {
           "role": "W",
@@ -3618,14 +4366,22 @@
       "roles": [
         "W"
       ],
-      "durationSec": 14.18,
-      "bytes": 85629
+      "durationSec": 20.4,
+      "bytes": 122924
     },
     "g-xs-l12": {
       "file": "audio/g-xs-l12.mp3",
       "accent": "AU",
       "locale": "en-AU",
       "scriptSha256": "bf6f7b861cffe0e0c7b8e2edb3e21e663d0199acb9bcf460e7bf9a436dd5d29f",
+      "spokenChoices": [
+        "A.",
+        "Everything through the end of last year.",
+        "B.",
+        "We bought two scanners.",
+        "C.",
+        "The archive closes at six."
+      ],
       "voices": [
         {
           "role": "M",
@@ -3641,14 +4397,22 @@
       "roles": [
         "M"
       ],
-      "durationSec": 12.67,
-      "bytes": 76557
+      "durationSec": 18.89,
+      "bytes": 113852
     },
     "g-xs-l13": {
       "file": "audio/g-xs-l13.mp3",
       "accent": "US",
       "locale": "en-US",
       "scriptSha256": "9b9519ebad8c60b8a13d30ad0335470e900c7a1957a978c6408cc765a237a2e6",
+      "spokenChoices": [
+        "A.",
+        "The crew installed the old display.",
+        "B.",
+        "The store opened five years ago.",
+        "C.",
+        "Only if the manager can let them in at seven."
+      ],
       "voices": [
         {
           "role": "W",
@@ -3664,14 +4428,22 @@
       "roles": [
         "W"
       ],
-      "durationSec": 14.61,
-      "bytes": 88221
+      "durationSec": 20.83,
+      "bytes": 125516
     },
     "g-xs-l14": {
       "file": "audio/g-xs-l14.mp3",
       "accent": "UK",
       "locale": "en-GB",
       "scriptSha256": "4fa85f08cedd4c9d91e5b47e07c7a93d7f38bb088c86c1ea4aa842e5eacf3005",
+      "spokenChoices": [
+        "A.",
+        "The first supplier is in Osaka.",
+        "B.",
+        "The shipment arrived on Monday.",
+        "C.",
+        "That would free up space in the warehouse."
+      ],
       "voices": [
         {
           "role": "M",
@@ -3687,14 +4459,22 @@
       "roles": [
         "M"
       ],
-      "durationSec": 13.32,
-      "bytes": 80445
+      "durationSec": 19.53,
+      "bytes": 117740
     },
     "g-xs-l15": {
       "file": "audio/g-xs-l15.mp3",
       "accent": "CA",
       "locale": "en-CA",
       "scriptSha256": "902d6e68090c1ccbc49869a0554e19d4252caa4cefc1748740ad120219330082",
+      "spokenChoices": [
+        "A.",
+        "The board meets every quarter.",
+        "B.",
+        "Please attach it by tomorrow.",
+        "C.",
+        "The version with the corrected sales totals."
+      ],
       "voices": [
         {
           "role": "W",
@@ -3710,8 +4490,8 @@
       "roles": [
         "W"
       ],
-      "durationSec": 13.05,
-      "bytes": 78861
+      "durationSec": 19.27,
+      "bytes": 116156
     }
   }
 }

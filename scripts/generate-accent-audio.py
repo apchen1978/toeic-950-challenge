@@ -12,6 +12,7 @@ import json
 import os
 import subprocess
 import sys
+import tempfile
 import wave
 from pathlib import Path
 
@@ -21,8 +22,9 @@ ROOT = Path(__file__).resolve().parent.parent
 BANK_PATH = ROOT / "codex/data/questions.json"
 AUDIO_DIR = ROOT / "codex/audio"
 MANIFEST_PATH = AUDIO_DIR / "manifest.json"
-CACHE_DIR = Path("/tmp/toeic-accent-lines")
-DONE_DIR = Path("/tmp/toeic-accent-ok")
+FFMPEG = os.environ.get("FFMPEG", "ffmpeg")
+CACHE_DIR = Path(tempfile.gettempdir()) / "toeic-accent-lines"
+DONE_DIR = Path(tempfile.gettempdir()) / "toeic-accent-ok"
 ACCENTS = ["US", "UK", "CA", "AU"]
 VOICES = {
     "US": {"locale": "en-US", "M": "en-US-GuyNeural", "W": "en-US-AriaNeural"},
@@ -92,7 +94,8 @@ def clips_for(group, accent, index):
         question_voice, locale = voice_for(accent, question_gender)
         response_voice, _ = voice_for(accent, response_gender)
         pieces = [{"text": line["text"], "role": line["speaker"], "voice": question_voice, "locale": locale, "gap": 0.35} for line in group["script"]]
-        for option in group["questions"][0]["options"]:
+        for option_index, option in enumerate(group["questions"][0]["options"]):
+            pieces.append({"text": f"{LETTERS[option_index]}.", "role": response_gender, "voice": response_voice, "locale": locale, "gap": 0.2})
             pieces.append({"text": option, "role": response_gender, "voice": response_voice, "locale": locale, "gap": 0.7})
         return pieces
     pieces = []
@@ -140,7 +143,7 @@ async def synthesize(text, voice, dest):
 def pcm_bytes(mp3_path):
     wav_path = mp3_path.with_name(f"{mp3_path.stem}-{os.getpid()}-{id(mp3_path)}.wav")
     subprocess.run(
-        ["ffmpeg", "-y", "-v", "error", "-i", str(mp3_path), "-ar", "24000", "-ac", "1", "-c:a", "pcm_s16le", str(wav_path)],
+        [FFMPEG, "-y", "-v", "error", "-i", str(mp3_path), "-ar", "24000", "-ac", "1", "-c:a", "pcm_s16le", str(wav_path)],
         check=True,
     )
     try:
@@ -166,7 +169,7 @@ def write_mp3(pieces_pcm, gaps, dest):
         target.setframerate(24000)
         target.writeframes(pcm)
     subprocess.run(
-        ["ffmpeg", "-y", "-v", "error", "-i", str(wav_path), "-c:a", "libmp3lame", "-b:a", "48k", "-ar", "24000", "-ac", "1", str(dest)],
+        [FFMPEG, "-y", "-v", "error", "-i", str(wav_path), "-c:a", "libmp3lame", "-b:a", "48k", "-ar", "24000", "-ac", "1", str(dest)],
         check=True,
     )
     wav_path.unlink(missing_ok=True)
@@ -209,7 +212,7 @@ async def build_group(group, accent, index, semaphore):
     dest = AUDIO_DIR / f"{group['id']}.mp3"
     stamp_path = DONE_DIR / f"{group['id']}.json"
     if stamp_path.exists() and dest.exists():
-        stamp = json.loads(stamp_path.read_text())
+        stamp = json.loads(stamp_path.read_text(encoding="utf-8"))
         if stamp.get("signature") == signature and dest.stat().st_size == stamp.get("bytes"):
             print(f"keep {group['id']} {accent}", flush=True)
             return stamp["entry"]
@@ -228,12 +231,13 @@ async def build_group(group, accent, index, semaphore):
         "accent": accent,
         "locale": VOICES[accent]["locale"],
         "scriptSha256": script_sha256(group["script"]),
+        "spokenChoices": [piece["text"] for piece in pieces[len(group["script"]):]] if group["part"] in (1, 2) else [],
         "voices": unique_voices(pieces),
         "roles": [line["speaker"] for line in group["script"]],
         "durationSec": duration,
         "bytes": dest.stat().st_size,
     }
-    stamp_path.write_text(json.dumps({"signature": signature, "bytes": entry["bytes"], "entry": entry}, ensure_ascii=False))
+    stamp_path.write_text(json.dumps({"signature": signature, "bytes": entry["bytes"], "entry": entry}, ensure_ascii=False), encoding="utf-8")
     print(f"wrote {group['id']} {accent} {entry['bytes']} bytes {duration}s", flush=True)
     return entry
 
@@ -260,29 +264,44 @@ def check_plan(bank):
 
 
 async def main():
-    bank = json.loads(BANK_PATH.read_text())
+    bank = json.loads(BANK_PATH.read_text(encoding="utf-8"))
     check_plan(bank)
     if "--plan-only" in sys.argv:
         return
+    parts_arg = next((arg.split("=", 1)[1] for arg in sys.argv[1:] if arg.startswith("--parts=")), None)
+    selected_parts = {int(part) for part in parts_arg.split(",")} if parts_arg else {1, 2, 3, 4}
+    if not selected_parts or not selected_parts.issubset({1, 2, 3, 4}):
+        raise SystemExit("--parts must contain one or more of 1,2,3,4")
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
     DONE_DIR.mkdir(parents=True, exist_ok=True)
     semaphore = asyncio.Semaphore(6)
     jobs = []
-    for part in (1, 2, 3, 4):
+    existing = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
+    entries_by_id = existing["groups"]
+    for part in sorted(selected_parts):
         groups = [group for group in bank["groups"] if group["section"] == "listening" and group["part"] == part]
         plan, _, _ = assign(groups)
         for index, (group, accent) in enumerate(zip(groups, plan)):
+            if group.get("accent") not in (None, accent):
+                raise SystemExit(f"refusing to change saved accent for {group['id']}: {group['accent']} != {accent}")
             jobs.append(build_group(group, accent, index, semaphore))
-            insert_accent(group, accent)
     entries = await asyncio.gather(*jobs)
+    entries_by_id.update({entry["file"].split("/")[-1][:-4]: entry for entry in entries})
+    for part in (1, 2):
+        groups = [group for group in bank["groups"] if group["section"] == "listening" and group["part"] == part]
+        plan, _, _ = assign(groups)
+        for index, (group, accent) in enumerate(zip(groups, plan)):
+            entry = entries_by_id[group["id"]]
+            pieces = clips_for(group, accent, index)
+            entry["spokenChoices"] = [piece["text"] for piece in pieces[len(group["script"]):]]
     manifest = {
-        "version": 2,
+        "version": max(3, existing.get("version", 0)),
         "format": "MP3 mono, 24,000 Hz, 48 kbps",
         "gapMs": 400,
         "engine": "edge-tts",
         "note": "Microsoft Edge neural voices. Canadian clips use en-CA voices, not a relabelled US voice.",
         "voices": VOICES,
-        "groups": {entry["file"].split("/")[-1][:-4]: entry for entry in entries},
+        "groups": entries_by_id,
     }
     # Preserve bank order in the manifest.
     ordered = {}
@@ -290,8 +309,9 @@ async def main():
         if group["id"] in manifest["groups"]:
             ordered[group["id"]] = manifest["groups"][group["id"]]
     manifest["groups"] = ordered
-    MANIFEST_PATH.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n")
-    BANK_PATH.write_text(json.dumps(bank, ensure_ascii=False, indent=2) + "\n")
+    MANIFEST_PATH.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    if selected_parts == {1, 2, 3, 4}:
+        BANK_PATH.write_text(json.dumps(bank, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     for retired in ("quick-au-g-airport-talk-d.mp3", "quick-gb-s03-talk2.mp3"):
         path = AUDIO_DIR / retired
         if path.exists():

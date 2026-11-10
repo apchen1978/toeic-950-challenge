@@ -48,6 +48,14 @@ test('recorded playback completes only on end; errors and cancellation permit re
   players[2].onended();
   assert.equal(await retry, true);
 });
+
+test('audio-file failures and timeouts permit speech fallback, but user interruptions do not', async () => {
+  const { audio } = await setup();
+  assert.equal(audio.shouldFallbackFromRecording('audio-file'), true);
+  assert.equal(audio.shouldFallbackFromRecording('timeout'), true);
+  assert.equal(audio.shouldFallbackFromRecording('canceled'), false);
+  assert.equal(audio.shouldFallbackFromRecording('background'), false);
+});
 test('recorded playback watchdog releases a silent engine', async (t) => {
   t.mock.timers.enable({ apis: ['setTimeout'] });
   const { players, audio } = await setup();

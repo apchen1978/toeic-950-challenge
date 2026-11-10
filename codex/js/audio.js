@@ -119,6 +119,10 @@ export function stop(reason = 'canceled') {
 
 export function fileSupported() { return typeof globalThis.Audio === 'function'; }
 
+export function shouldFallbackFromRecording(reason) {
+  return reason === 'audio-file' || reason === 'timeout';
+}
+
 /** Fixed role recordings: only onended counts a complete play; stop/failed/stalled playback does not. */
 export function playFile(url) {
   stop();
