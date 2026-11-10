@@ -3842,7 +3842,7 @@
       "section": "listening",
       "part": 1,
       "title": "照片描述",
-      "image": "images/photo-meeting.png",
+      "image": "images/photo-meeting.jpg",
       "spokenOptions": true,
       "script": [
         {
@@ -3871,7 +3871,7 @@
       "section": "listening",
       "part": 1,
       "title": "照片描述",
-      "image": "images/photo-delivery.png",
+      "image": "images/photo-delivery.jpg",
       "spokenOptions": true,
       "script": [
         {
@@ -4932,7 +4932,7 @@
       "section": "listening",
       "part": 1,
       "title": "照片描述",
-      "image": "images/photo-plants.png",
+      "image": "images/photo-plants.jpg",
       "spokenOptions": true,
       "script": [
         {
@@ -6084,7 +6084,7 @@
       "section": "listening",
       "part": 1,
       "title": "照片描述",
-      "image": "images/photo-restaurant.png",
+      "image": "images/photo-restaurant.jpg",
       "spokenOptions": true,
       "script": [
         {
@@ -6113,7 +6113,7 @@
       "section": "listening",
       "part": 1,
       "title": "照片描述",
-      "image": "images/photo-warehouse.png",
+      "image": "images/photo-warehouse.jpg",
       "spokenOptions": true,
       "script": [
         {
@@ -6142,7 +6142,7 @@
       "section": "listening",
       "part": 1,
       "title": "照片描述",
-      "image": "images/photo-terrace.png",
+      "image": "images/photo-terrace.jpg",
       "spokenOptions": true,
       "script": [
         {
@@ -6171,7 +6171,7 @@
       "section": "listening",
       "part": 1,
       "title": "照片描述",
-      "image": "images/photo-bicycle.png",
+      "image": "images/photo-bicycle.jpg",
       "spokenOptions": true,
       "script": [
         {
@@ -6200,7 +6200,7 @@
       "section": "listening",
       "part": 1,
       "title": "照片描述",
-      "image": "images/photo-airport-maintenance.png",
+      "image": "images/photo-airport-maintenance.jpg",
       "spokenOptions": true,
       "script": [
         {

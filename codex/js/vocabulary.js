@@ -72,8 +72,7 @@ export const VOCABULARY = [
     ['reservation', '預訂', 'Your reservation can be changed before Friday.'],
     ['shuttle', '接駁車', 'A shuttle runs between the hotel and the airport.'],
     ['venue', '活動場地', 'The conference venue is within walking distance of the station.'],
-    ['voucher', '憑證；兌換券', 'The airline issued a meal voucher after the delay.'],
-    ['vacancy', '空房；空缺', 'The hotel has no vacancies for Saturday night.']
+    ['voucher', '憑證；兌換券', 'The airline issued a meal voucher after the delay.']
   ]},
   { category: '會議、職場與人事', words: [
     ['agenda', '議程', 'The budget review is the first item on the agenda.'],

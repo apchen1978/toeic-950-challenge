@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readFileSync, statSync } from "node:fs";
 import { flatten } from "../codex/js/scoring.js";
 import { SKILLS } from "../codex/js/skills.js";
 
@@ -131,8 +131,12 @@ test("photo practice has local images, four spoken choices and offline cache ent
     assert.equal(group.part, 1);
     assert.equal(group.spokenOptions, true);
     assert.equal(group.questions[0].options.length, 4);
-    assert.ok(existsSync(new URL(`../codex/${group.image}`, import.meta.url)));
-    assert.ok(worker.includes(group.image));
+    const image = new URL(`../codex/${group.image}`, import.meta.url);
+    assert.ok(existsSync(image));
+    assert.ok(statSync(image).size <= 350 * 1024, group.image);
+    assert.match(group.image, /^images\/.+\.(?:jpe?g|webp)$/);
+    assert.equal(worker.includes(`"${group.image}"`), false);
+    assert.match(worker, /function cacheFirstMedia/);
   }
 });
 
@@ -158,7 +162,9 @@ test("visual and deep reading set includes a mapped conversation and two complet
   assert.ok(selected[0].image && existsSync(new URL(`../codex/${selected[0].image}`, import.meta.url)));
   assert.equal(selected[0].questions.length, 3);
   assert.ok(selected.slice(1).every((g) => g.part === 7 && g.passage.docs.length === 3 && g.questions.length === 5));
-  assert.ok(readFileSync(new URL("../codex/sw.js", import.meta.url), "utf8").includes(selected[0].image));
+  const worker = readFileSync(new URL("../codex/sw.js", import.meta.url), "utf8");
+  assert.equal(worker.includes(`"${selected[0].image}"`), false);
+  assert.match(worker, /svg\|mp3/);
 });
 
 test("practice F supplies three conversations, two talks, and three single passages", () => {
