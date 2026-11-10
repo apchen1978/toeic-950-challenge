@@ -13366,11 +13366,11 @@
           "skill": "l-response",
           "prompt": "Where should I put these boxes?",
           "options": [
-            "I just got here myself.",
             "The storage shelves are blue.",
+            "I just got here myself.",
             "There are six boxes in the catalog."
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "I just got here myself. is an appropriate indirect response to the question; the other responses do not address the request for information or action."
         }
       ]
@@ -13394,11 +13394,11 @@
           "skill": "l-response",
           "prompt": "Did you send the memo about Friday's meeting?",
           "options": [
-            "Hasn't the memo gone out?",
             "Friday comes after Thursday.",
-            "The printer needs more paper."
+            "The printer needs more paper.",
+            "Hasn't the memo gone out?"
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Hasn't the memo gone out? is an appropriate indirect response to the question; the other responses do not address the request for information or action."
         }
       ]
@@ -13450,11 +13450,11 @@
           "skill": "l-response",
           "prompt": "Who is leading the training session?",
           "options": [
-            "Check with the front desk.",
             "The session lasts two hours.",
+            "Check with the front desk.",
             "The training room has new chairs."
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "Check with the front desk. is an appropriate indirect response to the question; the other responses do not address the request for information or action."
         }
       ]
@@ -13478,11 +13478,11 @@
           "skill": "l-response",
           "prompt": "Why was the shipment delayed?",
           "options": [
-            "You'd have to ask the warehouse.",
             "The warehouse has two loading doors.",
-            "A storm is forecast for next week."
+            "A storm is forecast for next week.",
+            "You'd have to ask the warehouse."
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "You'd have to ask the warehouse. is an appropriate indirect response to the question; the other responses do not address the request for information or action."
         }
       ]
@@ -13534,11 +13534,11 @@
           "skill": "l-response",
           "prompt": "When does the cafeteria close today?",
           "options": [
-            "I just got here myself.",
             "The cafeteria serves fresh fruit.",
+            "I just got here myself.",
             "The dining tables are round."
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "I just got here myself. is an appropriate indirect response to the question; the other responses do not address the request for information or action."
         }
       ]
@@ -13562,11 +13562,11 @@
           "skill": "l-response",
           "prompt": "Should we book the large conference room?",
           "options": [
-            "Hasn't that already been reserved?",
             "The conference room has ten chairs.",
-            "The conference begins next week."
+            "The conference begins next week.",
+            "Hasn't that already been reserved?"
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Hasn't that already been reserved? is an appropriate indirect response to the question; the other responses do not address the request for information or action."
         }
       ]
@@ -13618,11 +13618,11 @@
           "skill": "l-response",
           "prompt": "How do I get to the loading dock?",
           "options": [
-            "I'm new here too.",
             "The loading dock is painted green.",
+            "I'm new here too.",
             "The delivery arrived yesterday."
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "I'm new here too. is an appropriate indirect response to the question; the other responses do not address the request for information or action."
         }
       ]
@@ -13646,11 +13646,11 @@
           "skill": "l-response",
           "prompt": "Will the manager be at the briefing?",
           "options": [
-            "Ask her assistant.",
             "The briefing room has a projector.",
-            "Her assistant sits on the third floor."
+            "Her assistant sits on the third floor.",
+            "Ask her assistant."
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "Ask her assistant. is an appropriate indirect response to the question; the other responses do not address the request for information or action."
         }
       ]
@@ -13702,11 +13702,11 @@
           "skill": "l-response",
           "prompt": "What time is the shuttle to the airport?",
           "options": [
-            "Check the board by the door.",
             "The airport has two terminals.",
+            "Check the board by the door.",
             "The shuttle seats twelve passengers."
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "Check the board by the door. is an appropriate indirect response to the question; the other responses do not address the request for information or action."
         }
       ]
@@ -13730,11 +13730,11 @@
           "skill": "l-response",
           "prompt": "Did the supplier lower the price?",
           "options": [
-            "I haven't seen their reply yet.",
             "The supplier sells office chairs.",
-            "The invoice has three pages."
+            "The invoice has three pages.",
+            "I haven't seen their reply yet."
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "The speaker has not seen the supplier's response yet, so cannot confirm whether the price was reduced. The other responses do not answer the question."
         }
       ]

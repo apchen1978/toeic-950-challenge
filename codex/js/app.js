@@ -9,6 +9,7 @@ import { remainingMs, pauseTimer, resumeTimer, elapsedSeconds, startTimedForm, s
 import { assembleQuickForm, avoidedGroupIds, createRng, rememberQuickDraw } from "./quick-form.js";
 import { allowsReplay, buildOfficialSequence, isOfficialForm, listenProgressLabel, meanListeningMinutes, playbackRateFor, progressForStep, sequenceSeconds } from "./official-listening.js";
 import { graphicHtml } from "./graphic.js";
+import { CHOICE_REVISION, migrateChoiceIndexes } from "./choice-legacy.js";
 import { TIP_SECTIONS, TIPS_STORAGE_KEY, tipForPart, tipsEnabled } from "./tips.js";
 
 const EXAM_DATE = "2026-11-29";
@@ -140,6 +141,33 @@ function questionsFor(entry) {
 const sessionQuestions = () => questionsFor(session);
 const saveSession = () => { if (session) { session.savedAt = Date.now(); store.set(KEY_SESSION, session); } };
 
+function questionsById() {
+  const map = {};
+  for (const group of bank.groups) for (const question of group.questions) map[question.id] = question;
+  return map;
+}
+
+function migrateStoredChoices() {
+  const lookup = questionsById();
+  if (session?.answers) {
+    const migrated = migrateChoiceIndexes(session.answers, session.choiceRevision, lookup);
+    session.answers = migrated.answers;
+    session.choiceRevision = migrated.revision;
+    if (migrated.changed) saveSession();
+  }
+  const history = store.get(KEY_HISTORY, []);
+  let historyChanged = false;
+  for (const entry of history) {
+    if (!entry?.answers) continue;
+    const migrated = migrateChoiceIndexes(entry.answers, entry.choiceRevision, lookup);
+    if (!migrated.changed) continue;
+    entry.answers = migrated.answers;
+    entry.choiceRevision = migrated.revision;
+    historyChanged = true;
+  }
+  if (historyChanged) store.set(KEY_HISTORY, history);
+}
+
 async function init() {
   try {
     const res = await fetch("data/questions.json");
@@ -154,6 +182,7 @@ async function init() {
   try { audioManifest = await loadAudioManifest(); } catch { audioManifest = null; }
   session = store.get(KEY_SESSION, null);
   if (session && session.bankVersion !== bank.meta.version) session = null;
+  migrateStoredChoices();
   wrongQueue = store.get(KEY_WRONG_QUEUE, {});
   document.getElementById("open-tips")?.addEventListener("click", () => renderTips());
   renderHome();
@@ -438,7 +467,7 @@ function startSession(mode, groupIds, minutes, questionIds = null, formId = null
   if (!allowSession(groupIds)) return false;
   const now = Date.now();
   session = {
-    bankVersion: bank.meta.version, mode, groupIds, questionIds, answers: {}, flags: {}, plays: {},
+    bankVersion: bank.meta.version, choiceRevision: CHOICE_REVISION, mode, groupIds, questionIds, answers: {}, flags: {}, plays: {},
     cur: 0, startedAt: now, endsAt: now + minutes * 60000, minutes
   };
   if (formId) startTimedForm(session, formId, now, timing);
@@ -1048,6 +1077,7 @@ function submit(auto = false) {
     section: normalizeMockSection(session.section),
     secUsed: elapsedSeconds(session),
     groupIds: session.groupIds, questionIds: session.questionIds ?? null, answers: session.answers,
+    choiceRevision: session.choiceRevision ?? CHOICE_REVISION,
     correct: result.correct, total: result.total, bySkill: answeredResult.bySkill, bySection: answeredResult.bySection
   };
   const history = store.get(KEY_HISTORY, []);

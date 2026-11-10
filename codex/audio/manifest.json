@@ -6962,7 +6962,7 @@
         "W"
       ],
       "durationSec": 18.8,
-      "bytes": 113420,
+      "bytes": 113421,
       "questionClips": []
     },
     "g-gx-p2-02": {
@@ -6972,9 +6972,9 @@
       "scriptSha256": "64260dc4f1f0905f4f8ec57527856816bdf551e9153b30e04ec6b034538f707d",
       "spokenChoices": [
         "A.",
-        "I just got here myself.",
-        "B.",
         "The storage shelves are blue.",
+        "B.",
+        "I just got here myself.",
         "C.",
         "There are six boxes in the catalog."
       ],
@@ -6994,7 +6994,7 @@
         "M"
       ],
       "durationSec": 19.66,
-      "bytes": 118604,
+      "bytes": 118605,
       "questionClips": []
     },
     "g-gx-p2-03": {
@@ -7004,11 +7004,11 @@
       "scriptSha256": "8e744673272b7c677f7ae8f4ac6d68b7d6173c21b9c8a4b3a636e372fcd3738f",
       "spokenChoices": [
         "A.",
-        "Hasn't the memo gone out?",
-        "B.",
         "Friday comes after Thursday.",
+        "B.",
+        "The printer needs more paper.",
         "C.",
-        "The printer needs more paper."
+        "Hasn't the memo gone out?"
       ],
       "voices": [
         {
@@ -7026,7 +7026,7 @@
         "W"
       ],
       "durationSec": 19.76,
-      "bytes": 119180,
+      "bytes": 119181,
       "questionClips": []
     },
     "g-gx-p2-04": {
@@ -7057,8 +7057,8 @@
       "roles": [
         "M"
       ],
-      "durationSec": 20.21,
-      "bytes": 121916,
+      "durationSec": 19.88,
+      "bytes": 119901,
       "questionClips": []
     },
     "g-gx-p2-05": {
@@ -7068,9 +7068,9 @@
       "scriptSha256": "0538382122fba61ee9a9e3b82bffe5fee59f6def605a6faddd5e2f723bf349d2",
       "spokenChoices": [
         "A.",
-        "Check with the front desk.",
-        "B.",
         "The session lasts two hours.",
+        "B.",
+        "Check with the front desk.",
         "C.",
         "The training room has new chairs."
       ],
@@ -7090,7 +7090,7 @@
         "W"
       ],
       "durationSec": 17.86,
-      "bytes": 107804,
+      "bytes": 107805,
       "questionClips": []
     },
     "g-gx-p2-06": {
@@ -7100,11 +7100,11 @@
       "scriptSha256": "d58440df6e203100f18d95742c5f4431b97e6103f54fabcca5365279cd2b646c",
       "spokenChoices": [
         "A.",
-        "You'd have to ask the warehouse.",
-        "B.",
         "The warehouse has two loading doors.",
+        "B.",
+        "A storm is forecast for next week.",
         "C.",
-        "A storm is forecast for next week."
+        "You'd have to ask the warehouse."
       ],
       "voices": [
         {
@@ -7122,7 +7122,7 @@
         "M"
       ],
       "durationSec": 20.43,
-      "bytes": 123212,
+      "bytes": 123213,
       "questionClips": []
     },
     "g-gx-p2-07": {
@@ -7154,7 +7154,7 @@
         "W"
       ],
       "durationSec": 19.01,
-      "bytes": 114716,
+      "bytes": 114717,
       "questionClips": []
     },
     "g-gx-p2-08": {
@@ -7164,9 +7164,9 @@
       "scriptSha256": "5b38cbc38ad9581d1ce84c40a72bea580d417252ab16b35c8d006defaba89a1c",
       "spokenChoices": [
         "A.",
-        "I just got here myself.",
-        "B.",
         "The cafeteria serves fresh fruit.",
+        "B.",
+        "I just got here myself.",
         "C.",
         "The dining tables are round."
       ],
@@ -7185,8 +7185,8 @@
       "roles": [
         "M"
       ],
-      "durationSec": 20.19,
-      "bytes": 121772,
+      "durationSec": 19.85,
+      "bytes": 119757,
       "questionClips": []
     },
     "g-gx-p2-09": {
@@ -7196,11 +7196,11 @@
       "scriptSha256": "1b3dd2202234e799074343e4454150cb328e3c1cd623aa6e760f97d4f8f327c0",
       "spokenChoices": [
         "A.",
-        "Hasn't that already been reserved?",
-        "B.",
         "The conference room has ten chairs.",
+        "B.",
+        "The conference begins next week.",
         "C.",
-        "The conference begins next week."
+        "Hasn't that already been reserved?"
       ],
       "voices": [
         {
@@ -7218,7 +7218,7 @@
         "W"
       ],
       "durationSec": 18.8,
-      "bytes": 113420,
+      "bytes": 113421,
       "questionClips": []
     },
     "g-gx-p2-10": {
@@ -7250,7 +7250,7 @@
         "M"
       ],
       "durationSec": 19.85,
-      "bytes": 119756,
+      "bytes": 119757,
       "questionClips": []
     },
     "g-gx-p2-11": {
@@ -7260,9 +7260,9 @@
       "scriptSha256": "7913abfce2dd3b1e96cdc3546102c0f486e72f01152bd221c043c06918707ac5",
       "spokenChoices": [
         "A.",
-        "I'm new here too.",
-        "B.",
         "The loading dock is painted green.",
+        "B.",
+        "I'm new here too.",
         "C.",
         "The delivery arrived yesterday."
       ],
@@ -7282,7 +7282,7 @@
         "W"
       ],
       "durationSec": 18.99,
-      "bytes": 114572,
+      "bytes": 114573,
       "questionClips": []
     },
     "g-gx-p2-12": {
@@ -7292,11 +7292,11 @@
       "scriptSha256": "1f48635efb229c459ac951542aa991b37ee98efd71419ab7895032d7185eb63d",
       "spokenChoices": [
         "A.",
-        "Ask her assistant.",
-        "B.",
         "The briefing room has a projector.",
+        "B.",
+        "Her assistant sits on the third floor.",
         "C.",
-        "Her assistant sits on the third floor."
+        "Ask her assistant."
       ],
       "voices": [
         {
@@ -7313,8 +7313,8 @@
       "roles": [
         "M"
       ],
-      "durationSec": 19.49,
-      "bytes": 117596,
+      "durationSec": 19.16,
+      "bytes": 115581,
       "questionClips": []
     },
     "g-gx-p2-13": {
@@ -7346,7 +7346,7 @@
         "W"
       ],
       "durationSec": 18.89,
-      "bytes": 113996,
+      "bytes": 113997,
       "questionClips": []
     },
     "g-gx-p2-14": {
@@ -7356,9 +7356,9 @@
       "scriptSha256": "3b1ab3bb13cc3e99277d91cc2079cb3cb3e0a03d14f700254b2ff9a7e7fe23a3",
       "spokenChoices": [
         "A.",
-        "Check the board by the door.",
-        "B.",
         "The airport has two terminals.",
+        "B.",
+        "Check the board by the door.",
         "C.",
         "The shuttle seats twelve passengers."
       ],
@@ -7378,7 +7378,7 @@
         "M"
       ],
       "durationSec": 20.19,
-      "bytes": 121772,
+      "bytes": 121773,
       "questionClips": []
     },
     "g-gx-p2-15": {
@@ -7388,11 +7388,11 @@
       "scriptSha256": "3c5b6b1d98bc42b556e3e8645634fa5f02f91fe76efcaf923ab7d5b6db2272f4",
       "spokenChoices": [
         "A.",
-        "I haven't seen their reply yet.",
-        "B.",
         "The supplier sells office chairs.",
+        "B.",
+        "The invoice has three pages.",
         "C.",
-        "The invoice has three pages."
+        "I haven't seen their reply yet."
       ],
       "voices": [
         {
@@ -7410,7 +7410,7 @@
         "W"
       ],
       "durationSec": 19.73,
-      "bytes": 119036,
+      "bytes": 119037,
       "questionClips": []
     },
     "g-gx-p3-01": {

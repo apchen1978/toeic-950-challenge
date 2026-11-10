@@ -165,6 +165,11 @@ function sampleGroups(pool, count, random, avoid, accentOf, accentCounts) {
   return picked;
 }
 
+export function drawQuestionGroups(groups, target, random, avoid = new Set(), requireMulti = false) {
+  const skipped = avoid instanceof Set ? avoid : new Set(avoid);
+  return pickByQuestionTotal(groups, target, random, skipped, requireMulti);
+}
+
 function pickByQuestionTotal(groups, target, random, avoid, requireMulti) {
   const fresh = groups.filter((group) => !avoid.has(group.id));
   const attempts = [
@@ -179,11 +184,29 @@ function pickByQuestionTotal(groups, target, random, avoid, requireMulti) {
   throw new Error(`could not assemble ${target} questions from part ${groups[0]?.part}`);
 }
 
+// Audit-verified sets: every marked cross-reference needs two documents (OK or Fixed).
+// Protected groups the audit found answerable from one document stay in the pool but are not preferred.
+export const VERIFIED_CROSSREF_GROUP_IDS = new Set([
+  "g-new-multi",
+  "s03-double",
+  "g-reading04-delivery",
+  "g-rd-pay-01",
+  "g-rd-job-01",
+  "g-rt-train-01",
+  "g-rd-ship-01"
+]);
+
+export function isVerifiedCrossRef(group) {
+  return VERIFIED_CROSSREF_GROUP_IDS.has(group?.id);
+}
+
 function solve(groups, target, random, requireMulti) {
   if (!groups.length && target > 0) return null;
   if (!requireMulti) return fillExact(groups, target, random);
-  const multis = shuffle(groups.filter(isMulti).filter((group) => group.questions.length <= target), random);
-  for (const multi of multis) {
+  const multis = groups.filter(isMulti).filter((group) => group.questions.length <= target);
+  const preferred = shuffle(multis.filter(isVerifiedCrossRef), random);
+  const rest = shuffle(multis.filter((group) => !isVerifiedCrossRef(group)), random);
+  for (const multi of preferred.concat(rest)) {
     const fill = fillExact(groups.filter((group) => group.id !== multi.id), target - multi.questions.length, random);
     if (fill) return [multi, ...fill];
   }
