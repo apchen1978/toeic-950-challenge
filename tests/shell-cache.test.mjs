@@ -6,12 +6,12 @@ const worker = readFileSync(new URL("../codex/sw.js", import.meta.url), "utf8");
 const shell = [...worker.match(/const SHELL = \[([\s\S]*?)\];/)[1].matchAll(/"([^"]+)"/g)].map((match) => match[1]);
 
 test("install precache is the app shell and data, not photos or speech files", () => {
-  assert.match(worker, /const CACHE = "toeic950-codex-v52"/);
+  assert.match(worker, /const CACHE = "toeic950-codex-v53"/);
   assert.match(worker, /cache\.addAll\(SHELL\)/);
   assert.doesNotMatch(worker, /manifest\.groups/);
   for (const file of [
     "index.html", "styles.css", "manifest.webmanifest",
-    "js/app.js", "js/vocabulary.js", "js/srs.js", "js/listening-lessons.js", "js/audio.js", "js/scoring.js", "js/skills.js", "js/timer.js", "js/quick-form.js", "js/official-listening.js",
+    "js/app.js", "js/vocabulary.js", "js/srs.js", "js/listening-lessons.js", "js/audio.js", "js/scoring.js", "js/skills.js", "js/timer.js", "js/quick-form.js", "js/official-listening.js", "js/mock-section.js",
     "data/questions.json", "audio/manifest.json"
   ]) assert.ok(shell.includes(file), file);
   assert.equal(shell.some((item) => item.startsWith("images/")), false);

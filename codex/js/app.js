@@ -3,6 +3,7 @@ import { VOCABULARY } from "./vocabulary.js";
 import { LESSONS } from "./listening-lessons.js";
 import { rateCard, selectCards } from "./srs.js";
 import { flatten, score, estimateProgress, mergeSkillStats, weakest, groupsForSkill, updateWrongAnswerQueue, queueWrongReview, wrongAnswerDue, answeredWrong, answerLocked, formatDuration, normalizeMockSection, opensReadingAfterListening } from "./scoring.js";
+import { sectionChoiceHtml, selectMockSection } from "./mock-section.js";
 import { SKILLS, skillLabel } from "./skills.js";
 import { remainingMs, pauseTimer, resumeTimer, elapsedSeconds, startTimedForm, startReading } from "./timer.js";
 import { assembleQuickForm, avoidedGroupIds, createRng, rememberQuickDraw } from "./quick-form.js";
@@ -63,10 +64,8 @@ function accentTag(group) {
 function mockSectionChoice() {
   return normalizeMockSection(store.get(KEY_MOCK_SECTION, "full"));
 }
-function sectionChoiceControl() {
-  const current = mockSectionChoice();
-  const options = [["full", "完整模考（聽力→閱讀）"], ["reading", "只考閱讀"], ["listening", "只考聽力"]];
-  return `<div class="segment" role="radiogroup" aria-label="模考範圍">${options.map(([value, label]) => `<label class="segment-item"><input type="radio" name="mock-section" value="${value}" ${current === value ? "checked" : ""}>${label}</label>`).join("")}</div>`;
+function sectionChoiceControl(groupName) {
+  return sectionChoiceHtml(mockSectionChoice(), groupName);
 }
 function sectionBadge(section) {
   if (section === "reading") return `<span class="tag">單科成績：閱讀</span>`;
@@ -211,7 +210,7 @@ function renderHome() {
 
     <section class="card quick-card"><p class="section-kicker">PRACTICE TEST</p><h2>快速模考</h2>
       <p>40 題與 60 題都用正式模式。聽力依音檔連續播放，每題只播一次，沒有聽力倒數；完整模考播完才進入閱讀。可選只考閱讀或聽力。<br>${quickExamTimeCopy()}</p>
-      ${sectionChoiceControl()}
+      ${sectionChoiceControl("mock-section-quick")}
       <p class="muted">聽力音檔輪流使用美式、英式、加拿大與澳洲口音。作答後才看得到該題口音。</p>
       <button class="btn primary" data-action="start-form" data-form="quick-40">開始 40 題快速模考</button>
       <button class="btn primary" data-action="start-form" data-form="quick-60">開始 60 題快速模考</button>
@@ -298,7 +297,7 @@ function renderHome() {
     <section class="card">
       <h2>三套 200 題計時練習</h2>
       <p>每套可選完整模考、只考閱讀或只考聽力。聽力依音檔連續播放一次，沒有聽力倒數。${formExamTimeCopy()}三套題目不重複。聽力可暫停，暫停時音檔停在這一題。完整模考進入閱讀後不能返回聽力。</p>
-      ${sectionChoiceControl()}
+      ${sectionChoiceControl("mock-section-forms")}
       <div class="row">${['a', 'b', 'c'].map((id) => `<button class="btn primary" data-action="start-form" data-form="form-${id}">開始第 ${id.toUpperCase()} 套</button>`).join('')}</div>
       <p class="muted">正式模式：每題只播一次，依正式考試停頓。</p>
     </section>
@@ -1277,7 +1276,7 @@ app.addEventListener("click", (e) => {
 });
 
 app.addEventListener("change", (e) => {
-  if (e.target.name === "mock-section") { store.set(KEY_MOCK_SECTION, normalizeMockSection(e.target.value)); renderHome(); return; }
+  if (typeof e.target.name === "string" && e.target.name.startsWith("mock-section")) { store.set(KEY_MOCK_SECTION, selectMockSection(e.target.value)); renderHome(); return; }
   if (e.target.id === "accent-filter") { store.set(KEY_ACCENT, e.target.value); renderHome(); return; }
   if (e.target.dataset.action === "listen-rate") { audio.setListenRate(Number(e.target.value)); return; }
   if (e.target.id === 'speech-rate') audio.setRate(Number(e.target.value));
