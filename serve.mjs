@@ -6,7 +6,12 @@ import { fileURLToPath } from "node:url";
 
 const root = resolve(fileURLToPath(new URL(".", import.meta.url)));
 const port = Number(process.argv[2] ?? 4180);
-const types = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".css": "text/css; charset=utf-8", ".json": "application/json; charset=utf-8", ".mp3": "audio/mpeg" };
+const types = {
+  ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".css": "text/css; charset=utf-8",
+  ".json": "application/json; charset=utf-8", ".webmanifest": "application/manifest+json; charset=utf-8",
+  ".mp3": "audio/mpeg", ".svg": "image/svg+xml",
+  ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".webp": "image/webp"
+};
 
 http.createServer(async (req, res) => {
   try {
@@ -21,4 +26,4 @@ http.createServer(async (req, res) => {
     res.writeHead(404, { "Content-Type": "text/plain" });
     res.end("Not found");
   }
-}).listen(port, "127.0.0.1", () => console.log(`TOEIC 950+ Challenge: http://127.0.0.1:${port}/`));
+}).listen(port, "127.0.0.1", () => console.log(`TOEIC 950+ Challenge: http://127.0.0.1:${port}/codex/  (root redirects here)`));

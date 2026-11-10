@@ -74,7 +74,8 @@ test('quick mock accent files correspond to current scripts and are cached', asy
     const script = bank.groups.find(g => g.id === id).script;
     assert.equal(createHash('sha256').update(JSON.stringify(script)).digest('hex'), digest);
     assert.ok(readFileSync(new URL(`../codex/audio/${file}`, import.meta.url)).length > 1000);
-    assert.ok(sw.includes(file));
+    assert.equal(sw.includes(file), false);
+    assert.match(sw, /function cacheFirstMedia/);
     for (const form of ['quick-40', 'quick-60']) assert.ok(bank.meta.sets.find(s => s.id === form).groupIds.includes(id));
   }
 });
