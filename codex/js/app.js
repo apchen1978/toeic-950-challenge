@@ -5,6 +5,7 @@ import { rateCard, selectCards } from "./srs.js";
 import { flatten, score, estimateProgress, mergeSkillStats, weakest, groupsForSkill, updateWrongAnswerQueue, wrongAnswerDue, formatDuration } from "./scoring.js";
 import { SKILLS, skillLabel } from "./skills.js";
 import { remainingMs, pauseTimer, resumeTimer, elapsedSeconds, startTimedForm, startReading } from "./timer.js";
+import { assembleQuickForm, avoidedGroupIds, rememberQuickDraw } from "./quick-form.js";
 
 const EXAM_DATE = "2026-11-29";
 const MAX_PLAYS = 2;
@@ -37,6 +38,7 @@ const KEY_ACCENT = `${STORAGE_PREFIX}.accent-filter.v1`;
 const KEY_VOCAB_LEVEL = `${STORAGE_PREFIX}.vocab-level.v1`;
 const KEY_FLASHCARDS = `${STORAGE_PREFIX}.flashcards.v1`;
 const KEY_FLASH_OPTIONS = `${STORAGE_PREFIX}.flash-options.v1`;
+const KEY_QUICK_RECENT = `${STORAGE_PREFIX}.quick-recent.v1`;
 const flashItems = VOCABULARY.flatMap(group => group.words.map(item => ({ ...vocabParts(item), category: group.category })));
 let flashQueue = [];
 let flashRevealed = false;
@@ -170,7 +172,7 @@ function renderHome() {
       <p class="muted">聽力音檔輪流使用美式、英式、加拿大與澳洲口音。作答後才看得到該題口音。</p>
       <button class="btn primary" data-action="start-form" data-form="quick-40">開始 40 題快速模考</button>
       <button class="btn primary" data-action="start-form" data-form="quick-60">開始 60 題快速模考</button>
-      <p class="muted">依正式題型與時間近似縮小；對話和文章題組保留完整，因此各 Part 題數不是精確比例。題目取自第 A 套，兩種快速模考有重複題目。完成後可查看解析與非官方粗估。</p>
+      <p class="muted">依正式題型與時間近似縮小；對話和文章題組保留完整，因此各 Part 題數不是精確比例。每次從全部題庫隨機組題，依正式題型比例縮小；聽力四種口音平均，最近考過的題目會盡量避開。完成後可查看解析與非官方粗估。</p>
       <p class="muted">音檔是練習用的合成語音，存在這個網站裡，播放時不連到外部語音服務。不是 ETS 官方錄音。</p>
     </section>
 
@@ -377,8 +379,8 @@ if (audio.supported()) speechSynthesis.addEventListener?.('voiceschanged', () =>
 
 /* ---------- Session ---------- */
 function startSession(mode, groupIds, minutes, questionIds = null, formId = null, timing = {}) {
-  if (session && !confirm("目前有未完成的測驗。開始新測驗會放棄原進度，確定繼續？")) return;
-  if (!allowSession(groupIds)) return;
+  if (session && !confirm("目前有未完成的測驗。開始新測驗會放棄原進度，確定繼續？")) return false;
+  if (!allowSession(groupIds)) return false;
   const now = Date.now();
   session = {
     bankVersion: bank.meta.version, mode, groupIds, questionIds, answers: {}, flags: {}, plays: {},
@@ -387,6 +389,27 @@ function startSession(mode, groupIds, minutes, questionIds = null, formId = null
   if (formId) startTimedForm(session, formId, now, timing);
   saveSession();
   renderTest();
+  return true;
+}
+
+async function startQuickForm(formId) {
+  const set = bank.meta.sets.find((item) => item.id === formId);
+  if (!set) return;
+  const recent = store.get(KEY_QUICK_RECENT, []);
+  let accents = {};
+  try {
+    const res = await fetch("audio/manifest.json");
+    if (res.ok) {
+      const manifest = await res.json();
+      accents = Object.fromEntries(Object.entries(manifest.groups ?? {}).map(([id, entry]) => [id, entry.accent]));
+    }
+  } catch {
+    accents = {};
+  }
+  const draw = assembleQuickForm(bank, formId, { avoid: avoidedGroupIds(recent), accents });
+  if (startSession("diagnostic", draw.groupIds, set.durationMin, null, set.id, set.timing)) {
+    store.set(KEY_QUICK_RECENT, rememberQuickDraw(recent, draw.groupIds, formId));
+  }
 }
 
 function orderedGroupIds(ids) {
@@ -710,6 +733,7 @@ app.addEventListener("click", (e) => {
       break;
     }
     case "start-form": {
+      if (d.form === "quick-40" || d.form === "quick-60") { startQuickForm(d.form); break; }
       const set = bank.meta.sets.find((s) => s.id === d.form);
       const ids = orderedGroupIds(set.groupIds).sort((a, b) => groupById(a).part - groupById(b).part);
       startSession('diagnostic', ids, set.durationMin, null, set.id, set.timing);

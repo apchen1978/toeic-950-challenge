@@ -9,7 +9,7 @@ const manifest = JSON.parse(readFileSync(new URL("../codex/audio/manifest.json",
 test("desktop allowlist accepts every asset the app requests and rejects escapes", () => {
   const shell = [
     "/index.html", "/styles.css", "/sw.js", "/manifest.webmanifest",
-    "/js/app.js", "/js/vocabulary.js", "/js/audio.js", "/js/scoring.js", "/js/skills.js", "/js/timer.js",
+    "/js/app.js", "/js/vocabulary.js", "/js/audio.js", "/js/scoring.js", "/js/skills.js", "/js/timer.js", "/js/quick-form.js",
     "/data/questions.json", "/audio/manifest.json",
     "/icons/icon-192.png", "/icons/icon-512.png", "/icons/icon-maskable-512.png", "/icons/apple-touch-icon.png",
     "/audio/quick-au-g-airport-talk-d.mp3", "/audio/quick-gb-s03-talk2.mp3", "/images/future-photo.webp"
