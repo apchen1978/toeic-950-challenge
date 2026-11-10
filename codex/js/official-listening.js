@@ -22,7 +22,8 @@ export function playbackRateFor(session, storedRate) {
   return session?.official ? 1 : normalizeListenRate(storedRate);
 }
 
-export function isGraphicQuestion(group, clip) {
+export function isGraphicQuestion(group, clip, question) {
+  if (question && Object.prototype.hasOwnProperty.call(question, "graphic")) return question.graphic === true;
   return Boolean(clip?.graphic || (group?.part >= 3 && group?.image));
 }
 
@@ -46,7 +47,7 @@ export function buildOfficialSequence(groups, manifest) {
     const clips = entry.questionClips ?? [];
     for (const question of group.questions) {
       const clip = clips.find((item) => item.id === question.id);
-      const graphic = isGraphicQuestion(group, clip);
+      const graphic = isGraphicQuestion(group, clip, question);
       steps.push({
         type: "question",
         groupId: group.id,

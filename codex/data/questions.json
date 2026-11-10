@@ -1497,7 +1497,8 @@
             "$495"
           ],
           "answer": 1,
-          "explanation": "The early-bird rate expired on September 15. A group of six qualifies for 10 percent off the standard $450, which is $405."
+          "explanation": "The early-bird rate expired on September 15. A group of six qualifies for 10 percent off the standard $450, which is $405. Cross-reference: Web page and Email.",
+          "crossRef": true
         },
         {
           "id": "R16",
@@ -1510,7 +1511,8 @@
             "She is asking for a rate whose deadline has passed."
           ],
           "answer": 3,
-          "explanation": "She writes on September 20 and asks the organizers to honor the early-bird rate, whose deadline was September 15. She does not mention a refund or a transfer."
+          "explanation": "She writes on September 20 and asks the organizers to honor the early-bird rate, whose deadline was September 15. She does not mention a refund or a transfer. Cross-reference: Web page and Email.",
+          "crossRef": true
         }
       ]
     },
@@ -2133,7 +2135,8 @@
             "$1,040"
           ],
           "answer": 2,
-          "explanation": "Four registrations cost 4 × $240 × 0.85 = $816. Four undiscounted workbooks add $80, for a total of $896. Ben is not included."
+          "explanation": "Four registrations cost 4 × $240 × 0.85 = $816. Four undiscounted workbooks add $80, for a total of $896. Ben is not included. Cross-reference: Workshop listing, Email — October 7 and Organizer update — October 12.",
+          "crossRef": true
         },
         {
           "id": "R30",
@@ -2146,7 +2149,8 @@
             "More workbooks were ordered than expected."
           ],
           "answer": 0,
-          "explanation": "The listing requires a venue change above 24 registrations. The update confirms 28, so that condition has been met."
+          "explanation": "The listing requires a venue change above 24 registrations. The update confirms 28, so that condition has been met. Cross-reference: Workshop listing, Email — October 7 and Organizer update — October 12.",
+          "crossRef": true
         },
         {
           "id": "R31",
@@ -2954,7 +2958,8 @@
             "$1,045"
           ],
           "answer": 3,
-          "explanation": "Eleven stands at $95 cost $1,045, exceeding the free-delivery threshold. Installation remains declined, so neither delivery nor installation is added."
+          "explanation": "Eleven stands at $95 cost $1,045, exceeding the free-delivery threshold. Installation remains declined, so neither delivery nor installation is added. Cross-reference: Supplier terms, Order confirmation — Monday, March 2 and Email — Tuesday, March 3.",
+          "crossRef": true
         },
         {
           "id": "R49",
@@ -2967,7 +2972,8 @@
             "The address is on the same road."
           ],
           "answer": 1,
-          "explanation": "The original $950 order was below the $1,000 threshold. Adding a $95 stand raises merchandise value to $1,045."
+          "explanation": "The original $950 order was below the $1,000 threshold. Adding a $95 stand raises merchandise value to $1,045. Cross-reference: Supplier terms, Order confirmation — Monday, March 2 and Email — Tuesday, March 3.",
+          "crossRef": true
         },
         {
           "id": "R50",
@@ -2980,7 +2986,8 @@
             "Yes; address changes are always accepted."
           ],
           "answer": 0,
-          "explanation": "Dispatch is Thursday. Tuesday is two business days earlier, so the request reaches the supplier by the specified deadline."
+          "explanation": "Dispatch is Thursday. Tuesday is two business days earlier, so the request reaches the supplier by the specified deadline. Cross-reference: Supplier terms, Order confirmation — Monday, March 2 and Email — Tuesday, March 3.",
+          "crossRef": true
         },
         {
           "id": "R51",
@@ -3030,7 +3037,8 @@
             "$950"
           ],
           "answer": 2,
-          "explanation": "Ten chairs at $90 each cost $900 before tax. The original eight chairs cost $720."
+          "explanation": "Ten chairs at $90 each cost $900 before tax. The original eight chairs cost $720. Cross-reference: Supplier terms, Order confirmation — Monday, April 6 and Email — Tuesday, April 7 at 10 a.m..",
+          "crossRef": true
         },
         {
           "id": "R53",
@@ -3043,7 +3051,8 @@
             "$1,050"
           ],
           "answer": 0,
-          "explanation": "The merchandise total is $900, exceeding the $800 free-delivery threshold. Installation remains declined, and the change is timely."
+          "explanation": "The merchandise total is $900, exceeding the $800 free-delivery threshold. Installation remains declined, and the change is timely. Cross-reference: Supplier terms, Order confirmation — Monday, April 6 and Email — Tuesday, April 7 at 10 a.m..",
+          "crossRef": true
         },
         {
           "id": "R54",
@@ -3056,7 +3065,8 @@
             "Yes, it arrives before 5 p.m. two business days before dispatch."
           ],
           "answer": 3,
-          "explanation": "Thursday dispatch makes Tuesday the second preceding business day. The request arrives at 10 a.m., before the 5 p.m. deadline."
+          "explanation": "Thursday dispatch makes Tuesday the second preceding business day. The request arrives at 10 a.m., before the 5 p.m. deadline. Cross-reference: Supplier terms, Order confirmation — Monday, April 6 and Email — Tuesday, April 7 at 10 a.m..",
+          "crossRef": true
         },
         {
           "id": "R55",
@@ -3119,7 +3129,8 @@
             "$385"
           ],
           "answer": 2,
-          "explanation": "The $360 approved course fee is below the $400 allowance. The optional $25 lunch is excluded."
+          "explanation": "The $360 approved course fee is below the $400 allowance. The optional $25 lunch is excluded. Cross-reference: Staff learning policy, Manager email — November 3 and Finance notice — December 15.",
+          "crossRef": true
         },
         {
           "id": "R58",
@@ -3132,7 +3143,8 @@
             "On December 22"
           ],
           "answer": 0,
-          "explanation": "The manager approved the course on November 3 and asked Lin to register before November 10, so the approval was given before the requested registration."
+          "explanation": "The manager approved the course on November 3 and asked Lin to register before November 10, so the approval was given before the requested registration. Cross-reference: Staff learning policy, Manager email — November 3 and Finance notice — December 15.",
+          "crossRef": true
         },
         {
           "id": "R59",
@@ -3145,7 +3157,8 @@
             "In January"
           ],
           "answer": 3,
-          "explanation": "The claim was received December 22, after the December 20 cutoff, so it is normally processed in January."
+          "explanation": "The claim was received December 22, after the December 20 cutoff, so it is normally processed in January. Cross-reference: Staff learning policy, Manager email — November 3 and Finance notice — December 15.",
+          "crossRef": true
         },
         {
           "id": "R60",
@@ -3158,7 +3171,8 @@
             "The year the manager first joined"
           ],
           "answer": 1,
-          "explanation": "The policy assigns the claim to the calendar year in which the course ended, regardless of when reimbursement is paid."
+          "explanation": "The policy assigns the claim to the calendar year in which the course ended, regardless of when reimbursement is paid. Cross-reference: Staff learning policy, Manager email — November 3 and Finance notice — December 15.",
+          "crossRef": true
         },
         {
           "id": "R61",
@@ -4231,7 +4245,8 @@
             "Neither session."
           ],
           "answer": 2,
-          "explanation": "The update says Tuesday is full and eight Thursday seats remain."
+          "explanation": "The update says Tuesday is full and eight Thursday seats remain. Cross-reference: EMAIL and REGISTRATION UPDATE.",
+          "crossRef": true
         },
         {
           "id": "RD-A-4",
@@ -4244,7 +4259,8 @@
             "Indicate the need on the registration form."
           ],
           "answer": 3,
-          "explanation": "The email asks employees to indicate the need on the form; the office later confirms arrangements."
+          "explanation": "The email asks employees to indicate the need on the form; the office later confirms arrangements. Cross-reference: EMAIL and REGISTRATION UPDATE.",
+          "crossRef": true
         },
         {
           "id": "RD-A-5",
@@ -4316,7 +4332,8 @@
             "$500."
           ],
           "answer": 2,
-          "explanation": "The second message explicitly says no additional payment is required."
+          "explanation": "The second message explicitly says no additional payment is required. Cross-reference: ORDER CONFIRMATION and SUPPLIER MESSAGE.",
+          "crossRef": true
         },
         {
           "id": "RD-B-4",
@@ -4329,7 +4346,8 @@
             "Confirm the address by September 6."
           ],
           "answer": 3,
-          "explanation": "The supplier asks for address confirmation by September 6."
+          "explanation": "The supplier asks for address confirmation by September 6. Cross-reference: ORDER CONFIRMATION and SUPPLIER MESSAGE.",
+          "crossRef": true
         },
         {
           "id": "RD-B-5",
@@ -4473,7 +4491,8 @@
             "At the staff parking level."
           ],
           "answer": 0,
-          "explanation": "The email directs the truck to the Pine Street loading bay because it is too tall for the garage."
+          "explanation": "The email directs the truck to the Pine Street loading bay because it is too tall for the garage. Cross-reference: BUILDING NOTICE, EMAIL and CHAT MESSAGE.",
+          "crossRef": true
         },
         {
           "id": "NOTICE-1-4",
@@ -4486,7 +4505,8 @@
             "The driver does not have a parking permit."
           ],
           "answer": 1,
-          "explanation": "The email says the truck is too tall to enter the garage."
+          "explanation": "The email says the truck is too tall to enter the garage. Cross-reference: BUILDING NOTICE, EMAIL and CHAT MESSAGE.",
+          "crossRef": true
         },
         {
           "id": "NOTICE-1-5",
@@ -4562,7 +4582,8 @@
             "The lamps will be shipped only after the bulbs arrive."
           ],
           "answer": 0,
-          "explanation": "The reply says the lamps will ship now and the temporarily unavailable bulbs will follow next week."
+          "explanation": "The reply says the lamps will ship now and the temporarily unavailable bulbs will follow next week. Cross-reference: ORDER CONFIRMATION, CUSTOMER EMAIL and CUSTOMER SERVICE REPLY.",
+          "crossRef": true
         },
         {
           "id": "EMAIL-2-4",
@@ -4575,7 +4596,8 @@
             "$55."
           ],
           "answer": 1,
-          "explanation": "The reply says standard delivery remains $15, no additional payment is needed, and there is no second charge."
+          "explanation": "The reply says standard delivery remains $15, no additional payment is needed, and there is no second charge. Cross-reference: ORDER CONFIRMATION, CUSTOMER EMAIL and CUSTOMER SERVICE REPLY.",
+          "crossRef": true
         },
         {
           "id": "EMAIL-2-5",
@@ -4651,7 +4673,8 @@
             "Room 208."
           ],
           "answer": 0,
-          "explanation": "The June 1 update changes the room from 204 to 206."
+          "explanation": "The June 1 update changes the room from 204 to 206. Cross-reference: PUBLIC ANNOUNCEMENT, REGISTRATION EMAIL and FINAL UPDATE.",
+          "crossRef": true
         },
         {
           "id": "EVENT-3-4",
@@ -4664,7 +4687,8 @@
             "It applied only to the networking session."
           ],
           "answer": 1,
-          "explanation": "The final update confirms that his accessible seat has been arranged."
+          "explanation": "The final update confirms that his accessible seat has been arranged. Cross-reference: PUBLIC ANNOUNCEMENT, REGISTRATION EMAIL and FINAL UPDATE.",
+          "crossRef": true
         },
         {
           "id": "EVENT-3-5",
@@ -4736,7 +4760,8 @@
             "Automatically when Lily collects the projector."
           ],
           "answer": 0,
-          "explanation": "The chat is at 2:10 p.m., and the notice says requests before 3 p.m. are normally reviewed the same day."
+          "explanation": "The chat is at 2:10 p.m., and the notice says requests before 3 p.m. are normally reviewed the same day. Cross-reference: STAFF NOTICE and TEAM CHAT.",
+          "crossRef": true
         },
         {
           "id": "CHAT-4-4",
@@ -4749,7 +4774,8 @@
             "At the equipment supplier’s warehouse."
           ],
           "answer": 1,
-          "explanation": "The notice says approved equipment is collected from the IT desk."
+          "explanation": "The notice says approved equipment is collected from the IT desk. Cross-reference: STAFF NOTICE and TEAM CHAT.",
+          "crossRef": true
         },
         {
           "id": "CHAT-4-5",
@@ -5160,7 +5186,8 @@
             "At a railway platform in the city center."
           ],
           "answer": 2,
-          "explanation": "Both the notice and reply direct passengers to the temporary stop outside Terminal 2 near Exit 4."
+          "explanation": "Both the notice and reply direct passengers to the temporary stop outside Terminal 2 near Exit 4. Cross-reference: AIRPORT NOTICE, PASSENGER EMAIL and CUSTOMER SERVICE REPLY.",
+          "crossRef": true
         },
         {
           "id": "AIR-READ-3",
@@ -5173,7 +5200,8 @@
             "Nothing."
           ],
           "answer": 3,
-          "explanation": "The notice and reply both state that the terminal shuttle is free."
+          "explanation": "The notice and reply both state that the terminal shuttle is free. Cross-reference: AIRPORT NOTICE, PASSENGER EMAIL and CUSTOMER SERVICE REPLY.",
+          "crossRef": true
         },
         {
           "id": "AIR-READ-4",
@@ -5249,7 +5277,8 @@
             "Register for the October 27 session."
           ],
           "answer": 3,
-          "explanation": "The reply says the same workshop will be offered again on October 27 through the registration portal."
+          "explanation": "The reply says the same workshop will be offered again on October 27 through the registration portal. Cross-reference: COLLEGE NOTICE, STUDENT EMAIL and CAREER CENTER REPLY.",
+          "crossRef": true
         },
         {
           "id": "CAMPUS-READ-4",
@@ -5262,7 +5291,8 @@
             "A paid interview with an employer."
           ],
           "answer": 0,
-          "explanation": "The reply confirms her résumé workshop and review and asks her to arrive at Room 305 before 2:30."
+          "explanation": "The reply confirms her résumé workshop and review and asks her to arrive at Room 305 before 2:30. Cross-reference: COLLEGE NOTICE, STUDENT EMAIL and CAREER CENTER REPLY.",
+          "crossRef": true
         }
       ]
     },
@@ -6389,7 +6419,8 @@
             "To provide a room with a larger desk"
           ],
           "answer": 1,
-          "explanation": "Her father cannot use stairs, and the west elevator will be inspected on June 15. The west-wing service lift provides step-free access then; the other reasons are not stated."
+          "explanation": "Her father cannot use stairs, and the west elevator will be inspected on June 15. The west-wing service lift provides step-free access then; the other reasons are not stated. Cross-reference: Guest notice — June 3, E-mail — June 8 and Front-desk reply — June 9.",
+          "crossRef": true
         },
         {
           "id": "DEEP02",
@@ -6428,7 +6459,8 @@
             "June 20"
           ],
           "answer": 2,
-          "explanation": "The east elevator is closed June 12–20 and the west elevator is inspected from 6:00 to 8:00 a.m. on June 15. The other dates do not match both conditions."
+          "explanation": "The east elevator is closed June 12–20 and the west elevator is inspected from 6:00 to 8:00 a.m. on June 15. The other dates do not match both conditions. Cross-reference: Guest notice — June 3, E-mail — June 8 and Front-desk reply — June 9.",
+          "crossRef": true
         },
         {
           "id": "DEEP05",
@@ -6478,7 +6510,8 @@
             "Cedar waived all August delivery fees."
           ],
           "answer": 1,
-          "explanation": "Theo contacted Cedar before lunch on Wednesday, ahead of Friday dispatch and the noon two-business-day deadline. A redirection fee applies only after dispatch; order size relates to delivery fees."
+          "explanation": "Theo contacted Cedar before lunch on Wednesday, ahead of Friday dispatch and the noon two-business-day deadline. A redirection fee applies only after dispatch; order size relates to delivery fees. Cross-reference: Supply agreement excerpt, Message thread — Wednesday, August 7 and Internal memo — Tuesday, August 13.",
+          "crossRef": true
         },
         {
           "id": "DEEP07",
@@ -6491,7 +6524,8 @@
             "It would have been canceled when the center was closed."
           ],
           "answer": 0,
-          "explanation": "The original delivery was Monday, and the agreement says Monday deliveries dispatch on the preceding Friday. Monday dispatch for Tuesday delivery was the revised plan."
+          "explanation": "The original delivery was Monday, and the agreement says Monday deliveries dispatch on the preceding Friday. Monday dispatch for Tuesday delivery was the revised plan. Cross-reference: Supply agreement excerpt, Message thread — Wednesday, August 7 and Internal memo — Tuesday, August 13.",
+          "crossRef": true
         },
         {
           "id": "DEEP08",
@@ -6530,7 +6564,8 @@
             "It was sent back because all materials were wet."
           ],
           "answer": 1,
-          "explanation": "The Wednesday thread confirms Tuesday delivery to the new center, and the Tuesday memo confirms arrival that morning. The contents appear dry and orientation is the next day."
+          "explanation": "The Wednesday thread confirms Tuesday delivery to the new center, and the Tuesday memo confirms arrival that morning. The contents appear dry and orientation is the next day. Cross-reference: Supply agreement excerpt, Message thread — Wednesday, August 7 and Internal memo — Tuesday, August 13.",
+          "crossRef": true
         }
       ]
     },
@@ -11714,7 +11749,8 @@
             "It does not operate on Fridays."
           ],
           "answer": 0,
-          "explanation": "The bus leaves Terminal B at 6:00 p.m. and the flight lands at 6:15 p.m. The route serves Harbor Hotel; the badge rule is not the decisive issue, and it runs Friday."
+          "explanation": "The bus leaves Terminal B at 6:00 p.m. and the flight lands at 6:15 p.m. The route serves Harbor Hotel; the badge rule is not the decisive issue, and it runs Friday. Cross-reference: Conference transportation notice, E-mail — September 11 and Support reply — September 12.",
+          "crossRef": true
         },
         {
           "id": "XR18",
@@ -11753,7 +11789,8 @@
             "Her flight must have been rescheduled after September 9."
           ],
           "answer": 3,
-          "explanation": "The reply allows travelers whose flights were rescheduled after September 9 to submit receipts by September 20, with reimbursement capped at $35. The other conditions misstate those rules."
+          "explanation": "The reply allows travelers whose flights were rescheduled after September 9 to submit receipts by September 20, with reimbursement capped at $35. The other conditions misstate those rules. Cross-reference: Conference transportation notice, E-mail — September 11 and Support reply — September 12.",
+          "crossRef": true
         },
         {
           "id": "XR21",
@@ -11803,7 +11840,8 @@
             "The Friday pickup had been canceled."
           ],
           "answer": 1,
-          "explanation": "The agreement requires Saturday booking by noon Thursday, and the clinic wrote at 10:30 a.m. Thursday. The other circumstances are not given as booking conditions."
+          "explanation": "The agreement requires Saturday booking by noon Thursday, and the clinic wrote at 10:30 a.m. Thursday. The other circumstances are not given as booking conditions. Cross-reference: Service agreement excerpt, Clinic message — Thursday, October 17, 10:30 a.m. and Scheduling reply — Thursday, October 17, 11:15 a.m..",
+          "crossRef": true
         },
         {
           "id": "XR23",
@@ -11842,7 +11880,8 @@
             "$180"
           ],
           "answer": 2,
-          "explanation": "The agreement sets a $90 Saturday surcharge and the reply confirms it. A second fee for a declined red-indicator shipment is not charged, but that does not remove the Saturday surcharge."
+          "explanation": "The agreement sets a $90 Saturday surcharge and the reply confirms it. A second fee for a declined red-indicator shipment is not charged, but that does not remove the Saturday surcharge. Cross-reference: Service agreement excerpt, Clinic message — Thursday, October 17, 10:30 a.m. and Scheduling reply — Thursday, October 17, 11:15 a.m..",
+          "crossRef": true
         },
         {
           "id": "XR26",
@@ -13277,6 +13316,1711 @@
           ],
           "answer": 3,
           "explanation": "The planner may show old Blue Route times until December 1, so the poster is the recommended reference for travel from December 2. Fares, weekend availability, and staffing are not given as reasons."
+        }
+      ]
+    },
+    {
+      "id": "g-gx-p2-01",
+      "section": "listening",
+      "part": 2,
+      "accent": "AU",
+      "title": "Indirect response",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Has the client approved the new logo?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "GXP201",
+          "skill": "l-response",
+          "prompt": "Has the client approved the new logo?",
+          "options": [
+            "Ask Sarah, she's handling it.",
+            "Yes, the client approved it yesterday.",
+            "The logo is in the blue folder."
+          ],
+          "answer": 0,
+          "explanation": "The reply sends the speaker to the person who is handling the approval instead of answering yes or no. The other choices repeat logo or approved."
+        }
+      ]
+    },
+    {
+      "id": "g-gx-p2-02",
+      "section": "listening",
+      "part": 2,
+      "accent": "US",
+      "title": "Indirect response",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "M",
+          "text": "Where should I put these boxes?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "GXP202",
+          "skill": "l-response",
+          "prompt": "Where should I put these boxes?",
+          "options": [
+            "I just got here myself.",
+            "Put them in the storage room.",
+            "Yes, those are the boxes."
+          ],
+          "answer": 0,
+          "explanation": "The speaker cannot give the location because he has just arrived. That deflects the where-question. The other choices answer directly or echo boxes."
+        }
+      ]
+    },
+    {
+      "id": "g-gx-p2-03",
+      "section": "listening",
+      "part": 2,
+      "accent": "UK",
+      "title": "Indirect response",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Did you send the memo about Friday's meeting?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "GXP203",
+          "skill": "l-response",
+          "prompt": "Did you send the memo about Friday's meeting?",
+          "options": [
+            "Hasn't the memo gone out?",
+            "I sent the memo this morning.",
+            "The meeting is on Friday."
+          ],
+          "answer": 0,
+          "explanation": "A question back can be a real response: the speaker thinks the memo was already sent. The other lines repeat memo or Friday."
+        }
+      ]
+    },
+    {
+      "id": "g-gx-p2-04",
+      "section": "listening",
+      "part": 2,
+      "accent": "CA",
+      "title": "Indirect response",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "M",
+          "text": "Can you stay late to finish the invoices?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "GXP204",
+          "skill": "l-response",
+          "prompt": "Can you stay late to finish the invoices?",
+          "options": [
+            "Isn't Dana covering that?",
+            "Yes, I can stay late.",
+            "The invoices are on your desk."
+          ],
+          "answer": 0,
+          "explanation": "Pointing to Dana is an indirect no. The other choices answer the request directly or reuse invoices."
+        }
+      ]
+    },
+    {
+      "id": "g-gx-p2-05",
+      "section": "listening",
+      "part": 2,
+      "accent": "AU",
+      "title": "Indirect response",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Who is leading the training session?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "GXP205",
+          "skill": "l-response",
+          "prompt": "Who is leading the training session?",
+          "options": [
+            "Check with the front desk.",
+            "Ms. Cole is leading it.",
+            "The training starts at nine."
+          ],
+          "answer": 0,
+          "explanation": "The reply does not name a leader. It tells the speaker where to ask. The other choices answer who or when directly."
+        }
+      ]
+    },
+    {
+      "id": "g-gx-p2-06",
+      "section": "listening",
+      "part": 2,
+      "accent": "US",
+      "title": "Indirect response",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "M",
+          "text": "Why was the shipment delayed?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "GXP206",
+          "skill": "l-response",
+          "prompt": "Why was the shipment delayed?",
+          "options": [
+            "You'd have to ask the warehouse.",
+            "Because of the storm.",
+            "The shipment arrived yesterday."
+          ],
+          "answer": 0,
+          "explanation": "The speaker refuses the reason and redirects to the warehouse. The other choices give a direct reason or reuse shipment."
+        }
+      ]
+    },
+    {
+      "id": "g-gx-p2-07",
+      "section": "listening",
+      "part": 2,
+      "accent": "UK",
+      "title": "Indirect response",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Are the brochures ready for the fair?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "GXP207",
+          "skill": "l-response",
+          "prompt": "Are the brochures ready for the fair?",
+          "options": [
+            "Didn't the printer call you?",
+            "Yes, they're ready.",
+            "The fair is downtown."
+          ],
+          "answer": 0,
+          "explanation": "The reply answers with another question, implying the printer has the update. The other choices say yes or echo fair."
+        }
+      ]
+    },
+    {
+      "id": "g-gx-p2-08",
+      "section": "listening",
+      "part": 2,
+      "accent": "CA",
+      "title": "Indirect response",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "M",
+          "text": "When does the cafeteria close today?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "GXP208",
+          "skill": "l-response",
+          "prompt": "When does the cafeteria close today?",
+          "options": [
+            "I just got here myself.",
+            "It closes at three.",
+            "Yes, the cafeteria is open."
+          ],
+          "answer": 0,
+          "explanation": "He cannot know the closing time because he just arrived. That answers a when-question indirectly. The other choices give a time or echo cafeteria."
+        }
+      ]
+    },
+    {
+      "id": "g-gx-p2-09",
+      "section": "listening",
+      "part": 2,
+      "accent": "AU",
+      "title": "Indirect response",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Should we book the large conference room?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "GXP209",
+          "skill": "l-response",
+          "prompt": "Should we book the large conference room?",
+          "options": [
+            "Hasn't that already been reserved?",
+            "Yes, book the large room.",
+            "The conference is next week."
+          ],
+          "answer": 0,
+          "explanation": "The reply questions the need to book, which is an indirect suggestion not to. The other choices agree or reuse conference."
+        }
+      ]
+    },
+    {
+      "id": "g-gx-p2-10",
+      "section": "listening",
+      "part": 2,
+      "accent": "US",
+      "title": "Indirect response",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "M",
+          "text": "Do you have a copy of the contract?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "GXP210",
+          "skill": "l-response",
+          "prompt": "Do you have a copy of the contract?",
+          "options": [
+            "Try asking the legal team.",
+            "Yes, here's a copy.",
+            "The contract was signed."
+          ],
+          "answer": 0,
+          "explanation": "He does not produce the copy. He sends the speaker to legal. The other choices answer yes or reuse contract."
+        }
+      ]
+    },
+    {
+      "id": "g-gx-p2-11",
+      "section": "listening",
+      "part": 2,
+      "accent": "UK",
+      "title": "Indirect response",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "W",
+          "text": "How do I get to the loading dock?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "GXP211",
+          "skill": "l-response",
+          "prompt": "How do I get to the loading dock?",
+          "options": [
+            "I'm new here too.",
+            "Go down the hall and turn left.",
+            "The dock opens at eight."
+          ],
+          "answer": 0,
+          "explanation": "She cannot give directions because she is also new. The other choices give a route or echo dock."
+        }
+      ]
+    },
+    {
+      "id": "g-gx-p2-12",
+      "section": "listening",
+      "part": 2,
+      "accent": "CA",
+      "title": "Indirect response",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "M",
+          "text": "Will the manager be at the briefing?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "GXP212",
+          "skill": "l-response",
+          "prompt": "Will the manager be at the briefing?",
+          "options": [
+            "Ask her assistant.",
+            "Yes, she will be there.",
+            "The briefing was moved."
+          ],
+          "answer": 0,
+          "explanation": "The reply deflects to the assistant instead of yes or no. The other choices answer directly or reuse briefing."
+        }
+      ]
+    },
+    {
+      "id": "g-gx-p2-13",
+      "section": "listening",
+      "part": 2,
+      "accent": "AU",
+      "title": "Indirect response",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Could you review this draft before noon?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "GXP213",
+          "skill": "l-response",
+          "prompt": "Could you review this draft before noon?",
+          "options": [
+            "Isn't Owen the editor on this?",
+            "I can review it this morning.",
+            "The draft is twelve pages."
+          ],
+          "answer": 0,
+          "explanation": "Naming Owen suggests the speaker is not the right reviewer. The other choices accept the task or reuse draft."
+        }
+      ]
+    },
+    {
+      "id": "g-gx-p2-14",
+      "section": "listening",
+      "part": 2,
+      "accent": "US",
+      "title": "Indirect response",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "M",
+          "text": "What time is the shuttle to the airport?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "GXP214",
+          "skill": "l-response",
+          "prompt": "What time is the shuttle to the airport?",
+          "options": [
+            "Check the board by the door.",
+            "It leaves at four thirty.",
+            "The airport is twenty minutes away."
+          ],
+          "answer": 0,
+          "explanation": "He does not state a time. He points to the board. The other choices answer when or echo airport."
+        }
+      ]
+    },
+    {
+      "id": "g-gx-p2-15",
+      "section": "listening",
+      "part": 2,
+      "accent": "UK",
+      "title": "Indirect response",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Did the supplier lower the price?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "GXP215",
+          "skill": "l-response",
+          "prompt": "Did the supplier lower the price?",
+          "options": [
+            "Hasn't the memo gone out?",
+            "Yes, they lowered it.",
+            "The price is on the invoice."
+          ],
+          "answer": 0,
+          "explanation": "She expects the memo to have answered this already, which is an indirect reply. The other choices say yes or reuse price."
+        }
+      ]
+    },
+    {
+      "id": "g-gx-p3-01",
+      "section": "listening",
+      "part": 3,
+      "accent": "CA",
+      "title": "Conference schedule",
+      "graphic": true,
+      "graphicView": {
+        "kind": "table",
+        "caption": "Conference schedule",
+        "headers": [
+          "Time",
+          "Room",
+          "Session"
+        ],
+        "rows": [
+          [
+            "9:00",
+            "Birch",
+            "Budget review"
+          ],
+          [
+            "10:30",
+            "Cedar",
+            "Safety drill"
+          ],
+          [
+            "1:15",
+            "Maple",
+            "Hiring panel"
+          ],
+          [
+            "3:00",
+            "Oak",
+            "Client call"
+          ]
+        ]
+      },
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Did you see the afternoon session on the schedule?"
+        },
+        {
+          "speaker": "M",
+          "text": "The hiring panel? I thought that one was at ten thirty."
+        },
+        {
+          "speaker": "W",
+          "text": "No. Ten thirty is the safety drill. The hiring panel is the one fifteen session."
+        },
+        {
+          "speaker": "M",
+          "text": "Then I'll go to whichever room is listed beside one fifteen."
+        }
+      ],
+      "questions": [
+        {
+          "id": "GXP301A",
+          "skill": "l-inference",
+          "prompt": "What did the man first think was scheduled at ten thirty?",
+          "options": [
+            "The budget review",
+            "The safety drill",
+            "The hiring panel",
+            "The client call"
+          ],
+          "answer": 2,
+          "explanation": "He says he thought the hiring panel was at ten thirty. The woman corrects him.",
+          "graphic": false
+        },
+        {
+          "id": "GXP301B",
+          "skill": "l-conversation",
+          "prompt": "Look at the graphic. Where is the hiring panel?",
+          "options": [
+            "Birch",
+            "Cedar",
+            "Maple",
+            "Oak"
+          ],
+          "answer": 2,
+          "explanation": "The speakers say the hiring panel is the one fifteen session. On the schedule, 1:15 is in the Maple row. They never say Maple.",
+          "graphic": true
+        },
+        {
+          "id": "GXP301C",
+          "skill": "l-conversation",
+          "prompt": "What will the man do?",
+          "options": [
+            "Lead the safety drill",
+            "Skip the afternoon",
+            "Go to the one fifteen session",
+            "Call the client"
+          ],
+          "answer": 2,
+          "explanation": "He says he will go to the room listed beside one fifteen.",
+          "graphic": false
+        }
+      ]
+    },
+    {
+      "id": "g-gx-p3-02",
+      "section": "listening",
+      "part": 3,
+      "accent": "AU",
+      "title": "Print price list",
+      "graphic": true,
+      "graphicView": {
+        "kind": "table",
+        "caption": "Print shop price list",
+        "headers": [
+          "Item",
+          "Price"
+        ],
+        "rows": [
+          [
+            "Banner",
+            "$40"
+          ],
+          [
+            "Color posters",
+            "$60"
+          ],
+          [
+            "Flyers",
+            "$25"
+          ],
+          [
+            "Name badges",
+            "$15"
+          ]
+        ]
+      },
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Is the large print job forty dollars?"
+        },
+        {
+          "speaker": "M",
+          "text": "Forty is the banner. The sixty-dollar line is the one we need for the lobby."
+        },
+        {
+          "speaker": "W",
+          "text": "Then order the sixty-dollar item and leave the banner off."
+        },
+        {
+          "speaker": "M",
+          "text": "I'll mark that on the form before noon."
+        }
+      ],
+      "questions": [
+        {
+          "id": "GXP302A",
+          "skill": "l-conversation",
+          "prompt": "What does the woman decide to order?",
+          "options": [
+            "The forty-dollar item",
+            "The sixty-dollar item",
+            "Both printed items",
+            "Nothing until noon"
+          ],
+          "answer": 1,
+          "explanation": "She tells him to order the sixty-dollar item and leave the banner off.",
+          "graphic": false
+        },
+        {
+          "id": "GXP302B",
+          "skill": "l-conversation",
+          "prompt": "Look at the graphic. Which item costs sixty dollars?",
+          "options": [
+            "Banner",
+            "Color posters",
+            "Flyers",
+            "Name badges"
+          ],
+          "answer": 1,
+          "explanation": "The man says the sixty-dollar line is the one for the lobby. The price list shows $60 next to color posters. He never names that item.",
+          "graphic": true
+        },
+        {
+          "id": "GXP302C",
+          "skill": "l-inference",
+          "prompt": "What will the man do before noon?",
+          "options": [
+            "Design a banner",
+            "Mark the order on the form",
+            "Visit the lobby",
+            "Lower the price"
+          ],
+          "answer": 1,
+          "explanation": "He says he will mark the order on the form before noon.",
+          "graphic": false
+        }
+      ]
+    },
+    {
+      "id": "g-gx-p3-03",
+      "section": "listening",
+      "part": 3,
+      "accent": "CA",
+      "title": "Office floor plan",
+      "graphic": true,
+      "graphicView": {
+        "kind": "svg",
+        "caption": "First-floor plan",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 200\" role=\"img\" aria-hidden=\"true\"><rect x=\"10\" y=\"16\" width=\"140\" height=\"78\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"20\" y=\"44\" fill=\"currentColor\" font-size=\"15\">Cafe</text><rect x=\"170\" y=\"16\" width=\"140\" height=\"78\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"180\" y=\"44\" fill=\"currentColor\" font-size=\"15\">Reception</text><rect x=\"10\" y=\"108\" width=\"140\" height=\"76\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"20\" y=\"136\" fill=\"currentColor\" font-size=\"15\">Elevators</text><rect x=\"170\" y=\"108\" width=\"140\" height=\"76\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"180\" y=\"136\" fill=\"currentColor\" font-size=\"15\">Auditorium</text></svg>"
+      },
+      "script": [
+        {
+          "speaker": "M",
+          "text": "Where should I meet the visitors?"
+        },
+        {
+          "speaker": "W",
+          "text": "At the desk across from the elevators."
+        },
+        {
+          "speaker": "M",
+          "text": "Not inside the cafe?"
+        },
+        {
+          "speaker": "W",
+          "text": "No. Stay at that desk so you can see the elevators."
+        }
+      ],
+      "questions": [
+        {
+          "id": "GXP303A",
+          "skill": "l-conversation",
+          "prompt": "What does the man ask?",
+          "options": [
+            "Where to meet the visitors",
+            "How to open the cafe",
+            "When the auditorium closes",
+            "Who moved the elevators"
+          ],
+          "answer": 0,
+          "explanation": "His first question is where he should meet the visitors.",
+          "graphic": false
+        },
+        {
+          "id": "GXP303B",
+          "skill": "l-conversation",
+          "prompt": "Look at the graphic. Where will they meet the visitors?",
+          "options": [
+            "Cafe",
+            "Reception",
+            "Elevators",
+            "Auditorium"
+          ],
+          "answer": 1,
+          "explanation": "She says to wait at the desk across from the elevators. The plan labels that desk Reception. She never says Reception.",
+          "graphic": true
+        },
+        {
+          "id": "GXP303C",
+          "skill": "l-inference",
+          "prompt": "Why does the woman reject the cafe?",
+          "options": [
+            "It is closed",
+            "The visitors dislike coffee",
+            "The man should be able to see the elevators",
+            "The auditorium is louder"
+          ],
+          "answer": 2,
+          "explanation": "She says to stay at the desk so he can see the elevators.",
+          "graphic": false
+        }
+      ]
+    },
+    {
+      "id": "g-gx-p3-04",
+      "section": "listening",
+      "part": 3,
+      "accent": "AU",
+      "title": "Quarterly sales chart",
+      "graphic": true,
+      "graphicView": {
+        "kind": "svg",
+        "caption": "Units sold",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 180\" role=\"img\" aria-hidden=\"true\"><rect x=\"36\" y=\"100\" width=\"40\" height=\"40\" fill=\"currentColor\" opacity=\"0.75\"/><text x=\"56.0\" y=\"94\" fill=\"currentColor\" font-size=\"13\" text-anchor=\"middle\">40</text><text x=\"56.0\" y=\"162\" fill=\"currentColor\" font-size=\"13\" text-anchor=\"middle\">Spring</text><rect x=\"104\" y=\"85\" width=\"40\" height=\"55\" fill=\"currentColor\" opacity=\"0.75\"/><text x=\"124.0\" y=\"79\" fill=\"currentColor\" font-size=\"13\" text-anchor=\"middle\">55</text><text x=\"124.0\" y=\"162\" fill=\"currentColor\" font-size=\"13\" text-anchor=\"middle\">Summer</text><rect x=\"172\" y=\"70\" width=\"40\" height=\"70\" fill=\"currentColor\" opacity=\"0.75\"/><text x=\"192.0\" y=\"64\" fill=\"currentColor\" font-size=\"13\" text-anchor=\"middle\">70</text><text x=\"192.0\" y=\"162\" fill=\"currentColor\" font-size=\"13\" text-anchor=\"middle\">Autumn</text><rect x=\"240\" y=\"110\" width=\"40\" height=\"30\" fill=\"currentColor\" opacity=\"0.75\"/><text x=\"260.0\" y=\"104\" fill=\"currentColor\" font-size=\"13\" text-anchor=\"middle\">30</text><text x=\"260.0\" y=\"162\" fill=\"currentColor\" font-size=\"13\" text-anchor=\"middle\">Winter</text></svg>"
+      },
+      "script": [
+        {
+          "speaker": "W",
+          "text": "The tall bar is seventy. That is the quarter we should repeat."
+        },
+        {
+          "speaker": "M",
+          "text": "Not the short one at thirty?"
+        },
+        {
+          "speaker": "W",
+          "text": "No. Copy the seventy, and mention it in the client note."
+        },
+        {
+          "speaker": "M",
+          "text": "I'll highlight that figure, then."
+        }
+      ],
+      "questions": [
+        {
+          "id": "GXP304A",
+          "skill": "l-conversation",
+          "prompt": "What does the woman want the team to repeat?",
+          "options": [
+            "The short bar",
+            "The bar at seventy",
+            "Every quarter",
+            "The client meeting"
+          ],
+          "answer": 1,
+          "explanation": "She says the tall bar of seventy is the quarter they should repeat.",
+          "graphic": false
+        },
+        {
+          "id": "GXP304B",
+          "skill": "l-conversation",
+          "prompt": "Look at the graphic. Which quarter should the team repeat?",
+          "options": [
+            "Spring",
+            "Summer",
+            "Autumn",
+            "Winter"
+          ],
+          "answer": 2,
+          "explanation": "She tells him to copy the bar at seventy. The chart shows 70 on Autumn. She never names the season.",
+          "graphic": true
+        },
+        {
+          "id": "GXP304C",
+          "skill": "l-inference",
+          "prompt": "What will the man do?",
+          "options": [
+            "Delete the short bar",
+            "Highlight the figure the woman named",
+            "Cancel the client note",
+            "Average all four bars"
+          ],
+          "answer": 1,
+          "explanation": "He agrees to highlight the figure she told him to copy.",
+          "graphic": false
+        }
+      ]
+    },
+    {
+      "id": "g-gx-p3-05",
+      "section": "listening",
+      "part": 3,
+      "accent": "US",
+      "title": "Supply order form",
+      "graphic": true,
+      "graphicView": {
+        "kind": "table",
+        "caption": "Office supply order",
+        "headers": [
+          "Item",
+          "Qty",
+          "Note"
+        ],
+        "rows": [
+          [
+            "Notebooks",
+            "20",
+            "Rush"
+          ],
+          [
+            "Pens",
+            "50",
+            "Standard"
+          ],
+          [
+            "Folders",
+            "10",
+            "Hold"
+          ],
+          [
+            "Binders",
+            "15",
+            "Standard"
+          ]
+        ]
+      },
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Please change the rush line to thirty units."
+        },
+        {
+          "speaker": "M",
+          "text": "The rush line, not the one marked hold?"
+        },
+        {
+          "speaker": "W",
+          "text": "Correct. Only the rush note changes to thirty."
+        },
+        {
+          "speaker": "M",
+          "text": "I'll update that row and send the form."
+        }
+      ],
+      "questions": [
+        {
+          "id": "GXP305A",
+          "skill": "l-conversation",
+          "prompt": "What change does the woman request?",
+          "options": [
+            "Cancel the hold line",
+            "Make the rush quantity thirty",
+            "Add a new item",
+            "Send two forms"
+          ],
+          "answer": 1,
+          "explanation": "She says to change the rush line to thirty units.",
+          "graphic": false
+        },
+        {
+          "id": "GXP305B",
+          "skill": "l-conversation",
+          "prompt": "Look at the graphic. Which item is marked rush?",
+          "options": [
+            "Notebooks",
+            "Pens",
+            "Folders",
+            "Binders"
+          ],
+          "answer": 0,
+          "explanation": "They discuss the row whose note says rush. The form shows that note on notebooks. Nobody says notebooks.",
+          "graphic": true
+        },
+        {
+          "id": "GXP305C",
+          "skill": "l-inference",
+          "prompt": "What will the man do next?",
+          "options": [
+            "Hold every item",
+            "Update the row and send the form",
+            "Order fifty of each item",
+            "Ask about binders"
+          ],
+          "answer": 1,
+          "explanation": "He says he will update that row and send the form.",
+          "graphic": false
+        }
+      ]
+    },
+    {
+      "id": "g-gx-p3-06",
+      "section": "listening",
+      "part": 3,
+      "accent": "UK",
+      "title": "Departure board",
+      "graphic": true,
+      "graphicView": {
+        "kind": "table",
+        "caption": "Morning departures",
+        "headers": [
+          "Platform",
+          "Time",
+          "Destination"
+        ],
+        "rows": [
+          [
+            "2",
+            "8:10",
+            "Riverside"
+          ],
+          [
+            "5",
+            "8:40",
+            "Harbor"
+          ],
+          [
+            "1",
+            "9:05",
+            "Westfield"
+          ],
+          [
+            "4",
+            "9:30",
+            "Northgate"
+          ]
+        ]
+      },
+      "script": [
+        {
+          "speaker": "M",
+          "text": "Our train is the eight forty, not the riverside service."
+        },
+        {
+          "speaker": "W",
+          "text": "So we skip the eight ten."
+        },
+        {
+          "speaker": "M",
+          "text": "Yes. Watch for the eight forty departure."
+        },
+        {
+          "speaker": "W",
+          "text": "I'll keep an eye on the board."
+        }
+      ],
+      "questions": [
+        {
+          "id": "GXP306A",
+          "skill": "l-conversation",
+          "prompt": "Which departure will the speakers take?",
+          "options": [
+            "The eight ten",
+            "The eight forty",
+            "The nine oh five",
+            "The nine thirty"
+          ],
+          "answer": 1,
+          "explanation": "The man says their train is the eight forty.",
+          "graphic": false
+        },
+        {
+          "id": "GXP306B",
+          "skill": "l-conversation",
+          "prompt": "Look at the graphic. Which platform does their train leave from?",
+          "options": [
+            "Platform 2",
+            "Platform 5",
+            "Platform 1",
+            "Platform 4"
+          ],
+          "answer": 1,
+          "explanation": "The eight forty departure is the one they will take. The board lists 8:40 on platform 5. They never say the platform number.",
+          "graphic": true
+        },
+        {
+          "id": "GXP306C",
+          "skill": "l-inference",
+          "prompt": "What will the woman do?",
+          "options": [
+            "Buy a riverside ticket",
+            "Watch the departure board",
+            "Change to the eight ten",
+            "Leave the station"
+          ],
+          "answer": 1,
+          "explanation": "She says she will keep an eye on the board.",
+          "graphic": false
+        }
+      ]
+    },
+    {
+      "id": "g-gx-p4-01",
+      "section": "listening",
+      "part": 4,
+      "accent": "CA",
+      "title": "Workshop day",
+      "graphic": true,
+      "graphicView": {
+        "kind": "table",
+        "caption": "Workshop day",
+        "headers": [
+          "Time",
+          "Room",
+          "Event"
+        ],
+        "rows": [
+          [
+            "11:00",
+            "Elm",
+            "Welcome"
+          ],
+          [
+            "2:00",
+            "Pine",
+            "Lab tour"
+          ],
+          [
+            "2:30",
+            "Oak",
+            "Panel"
+          ],
+          [
+            "4:00",
+            "Birch",
+            "Closing"
+          ]
+        ]
+      },
+      "script": [
+        {
+          "speaker": "W",
+          "text": "If you signed up for the lab tour, do not go at eleven. Eleven is only the welcome. The lab tour is the two o'clock listing. The two thirty session is a different event, and the four o'clock closing is for everyone."
+        }
+      ],
+      "questions": [
+        {
+          "id": "GXP401A",
+          "skill": "l-talk",
+          "prompt": "What is at eleven o'clock?",
+          "options": [
+            "The lab tour",
+            "The welcome",
+            "The panel",
+            "The closing"
+          ],
+          "answer": 1,
+          "explanation": "The speaker says eleven is only the welcome.",
+          "graphic": false
+        },
+        {
+          "id": "GXP401B",
+          "skill": "l-talk",
+          "prompt": "Look at the graphic. In which room is the two o'clock event?",
+          "options": [
+            "Elm",
+            "Pine",
+            "Oak",
+            "Birch"
+          ],
+          "answer": 1,
+          "explanation": "The lab tour is described as the two o'clock listing. The schedule places 2:00 in Pine. The speaker never says Pine.",
+          "graphic": true
+        },
+        {
+          "id": "GXP401C",
+          "skill": "l-inference",
+          "prompt": "Who is the four o'clock closing for?",
+          "options": [
+            "Only lab-tour guests",
+            "Only the panel",
+            "Everyone",
+            "Staff who missed eleven"
+          ],
+          "answer": 2,
+          "explanation": "The speaker says the four o'clock closing is for everyone.",
+          "graphic": false
+        }
+      ]
+    },
+    {
+      "id": "g-gx-p4-02",
+      "section": "listening",
+      "part": 4,
+      "accent": "AU",
+      "title": "Ticket prices",
+      "graphic": true,
+      "graphicView": {
+        "kind": "table",
+        "caption": "Admission",
+        "headers": [
+          "Ticket",
+          "Price"
+        ],
+        "rows": [
+          [
+            "Member",
+            "$20"
+          ],
+          [
+            "Guest",
+            "$40"
+          ],
+          [
+            "Student",
+            "$15"
+          ],
+          [
+            "Group",
+            "$30"
+          ]
+        ]
+      },
+      "script": [
+        {
+          "speaker": "M",
+          "text": "Members pay twenty dollars. Please do not charge them the forty-dollar rate. That higher figure is for people who are not members and are not using the student line or the group line."
+        }
+      ],
+      "questions": [
+        {
+          "id": "GXP402A",
+          "skill": "l-talk",
+          "prompt": "How much do members pay?",
+          "options": [
+            "Fifteen dollars",
+            "Twenty dollars",
+            "Thirty dollars",
+            "Forty dollars"
+          ],
+          "answer": 1,
+          "explanation": "The speaker says members pay twenty dollars.",
+          "graphic": false
+        },
+        {
+          "id": "GXP402B",
+          "skill": "l-talk",
+          "prompt": "Look at the graphic. Who pays forty dollars?",
+          "options": [
+            "Members",
+            "Guests",
+            "Students",
+            "Groups"
+          ],
+          "answer": 1,
+          "explanation": "Forty dollars is the higher rate for people who are not members and not on the student or group line. The list shows $40 for guests. The speaker never says guests.",
+          "graphic": true
+        },
+        {
+          "id": "GXP402C",
+          "skill": "l-inference",
+          "prompt": "What mistake does the speaker warn against?",
+          "options": [
+            "Charging members the higher rate",
+            "Closing the student line",
+            "Selling group tickets online",
+            "Printing new badges"
+          ],
+          "answer": 0,
+          "explanation": "He says not to charge members the forty-dollar rate.",
+          "graphic": false
+        }
+      ]
+    },
+    {
+      "id": "g-gx-p4-03",
+      "section": "listening",
+      "part": 4,
+      "accent": "US",
+      "title": "Lobby plan",
+      "graphic": true,
+      "graphicView": {
+        "kind": "svg",
+        "caption": "Lobby",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 200\" role=\"img\" aria-hidden=\"true\"><rect x=\"10\" y=\"16\" width=\"140\" height=\"78\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"20\" y=\"44\" fill=\"currentColor\" font-size=\"15\">Cafe</text><rect x=\"170\" y=\"16\" width=\"140\" height=\"78\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"180\" y=\"44\" fill=\"currentColor\" font-size=\"15\">Badge desk</text><rect x=\"10\" y=\"108\" width=\"140\" height=\"76\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"20\" y=\"136\" fill=\"currentColor\" font-size=\"15\">Auditorium</text><rect x=\"170\" y=\"108\" width=\"140\" height=\"76\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"180\" y=\"136\" fill=\"currentColor\" font-size=\"15\">Stairs</text></svg>"
+      },
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Pick up your materials at the counter across from the cafe, then go into the auditorium. Do not wait on the stairs. Seating in the auditorium is open until the talk begins."
+        }
+      ],
+      "questions": [
+        {
+          "id": "GXP403A",
+          "skill": "l-talk",
+          "prompt": "Where should listeners go after collecting their materials?",
+          "options": [
+            "To the cafe",
+            "Into the auditorium",
+            "Onto the stairs",
+            "Back to the lobby desk"
+          ],
+          "answer": 1,
+          "explanation": "She says to pick up materials and then go into the auditorium.",
+          "graphic": false
+        },
+        {
+          "id": "GXP403B",
+          "skill": "l-talk",
+          "prompt": "Look at the graphic. Where should listeners pick up their materials?",
+          "options": [
+            "Cafe",
+            "Badge desk",
+            "Auditorium",
+            "Stairs"
+          ],
+          "answer": 1,
+          "explanation": "Materials are at the counter across from the cafe. The plan labels that counter Badge desk. She never says badge or desk.",
+          "graphic": true
+        },
+        {
+          "id": "GXP403C",
+          "skill": "l-inference",
+          "prompt": "What does the speaker say about auditorium seats?",
+          "options": [
+            "They are assigned",
+            "They stay open until the talk begins",
+            "They are on the stairs",
+            "They require a cafe receipt"
+          ],
+          "answer": 1,
+          "explanation": "She says seating is open until the talk begins.",
+          "graphic": false
+        }
+      ]
+    },
+    {
+      "id": "g-gx-p4-04",
+      "section": "listening",
+      "part": 4,
+      "accent": "UK",
+      "title": "Monthly results",
+      "graphic": true,
+      "graphicView": {
+        "kind": "svg",
+        "caption": "Monthly results",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 180\" role=\"img\" aria-hidden=\"true\"><rect x=\"36\" y=\"90\" width=\"40\" height=\"50\" fill=\"currentColor\" opacity=\"0.75\"/><text x=\"56.0\" y=\"84\" fill=\"currentColor\" font-size=\"13\" text-anchor=\"middle\">50</text><text x=\"56.0\" y=\"162\" fill=\"currentColor\" font-size=\"13\" text-anchor=\"middle\">Jan</text><rect x=\"104\" y=\"50\" width=\"40\" height=\"90\" fill=\"currentColor\" opacity=\"0.75\"/><text x=\"124.0\" y=\"44\" fill=\"currentColor\" font-size=\"13\" text-anchor=\"middle\">90</text><text x=\"124.0\" y=\"162\" fill=\"currentColor\" font-size=\"13\" text-anchor=\"middle\">Feb</text><rect x=\"172\" y=\"80\" width=\"40\" height=\"60\" fill=\"currentColor\" opacity=\"0.75\"/><text x=\"192.0\" y=\"74\" fill=\"currentColor\" font-size=\"13\" text-anchor=\"middle\">60</text><text x=\"192.0\" y=\"162\" fill=\"currentColor\" font-size=\"13\" text-anchor=\"middle\">Mar</text><rect x=\"240\" y=\"100\" width=\"40\" height=\"40\" fill=\"currentColor\" opacity=\"0.75\"/><text x=\"260.0\" y=\"94\" fill=\"currentColor\" font-size=\"13\" text-anchor=\"middle\">40</text><text x=\"260.0\" y=\"162\" fill=\"currentColor\" font-size=\"13\" text-anchor=\"middle\">Apr</text></svg>"
+      },
+      "script": [
+        {
+          "speaker": "M",
+          "text": "Ignore the first month. The figure we promised the client is ninety. That is the month we should highlight in the report. The later months are lower, so do not average them in."
+        }
+      ],
+      "questions": [
+        {
+          "id": "GXP404A",
+          "skill": "l-talk",
+          "prompt": "Which figure did the team promise the client?",
+          "options": [
+            "Forty",
+            "Fifty",
+            "Sixty",
+            "Ninety"
+          ],
+          "answer": 3,
+          "explanation": "The speaker says the promised figure is ninety.",
+          "graphic": false
+        },
+        {
+          "id": "GXP404B",
+          "skill": "l-talk",
+          "prompt": "Look at the graphic. Which month shows ninety?",
+          "options": [
+            "January",
+            "February",
+            "March",
+            "April"
+          ],
+          "answer": 1,
+          "explanation": "Ninety is the figure to highlight. The chart shows 90 on February. The speaker never names the month.",
+          "graphic": true
+        },
+        {
+          "id": "GXP404C",
+          "skill": "l-inference",
+          "prompt": "What should the report avoid?",
+          "options": [
+            "Mentioning ninety",
+            "Averaging in the later months",
+            "Ignoring January",
+            "Sending the report"
+          ],
+          "answer": 1,
+          "explanation": "He says the later months are lower and should not be averaged in.",
+          "graphic": false
+        }
+      ]
+    },
+    {
+      "id": "g-gx-p4-05",
+      "section": "listening",
+      "part": 4,
+      "accent": "CA",
+      "title": "Warehouse order",
+      "graphic": true,
+      "graphicView": {
+        "kind": "table",
+        "caption": "Warehouse order",
+        "headers": [
+          "Product",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Lamps",
+            "In stock"
+          ],
+          [
+            "Desks",
+            "Back-ordered"
+          ],
+          [
+            "Chairs",
+            "Rush"
+          ],
+          [
+            "Cabinets",
+            "In stock"
+          ]
+        ]
+      },
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Please ship the line marked back-ordered before you touch the rush line. The rush line can wait until Friday. Anything already in stock should stay in the warehouse today."
+        }
+      ],
+      "questions": [
+        {
+          "id": "GXP405A",
+          "skill": "l-talk",
+          "prompt": "What can wait until Friday?",
+          "options": [
+            "The back-ordered line",
+            "The rush line",
+            "Every in-stock item",
+            "The whole warehouse"
+          ],
+          "answer": 1,
+          "explanation": "The speaker says the rush line can wait until Friday.",
+          "graphic": false
+        },
+        {
+          "id": "GXP405B",
+          "skill": "l-talk",
+          "prompt": "Look at the graphic. Which product is back-ordered?",
+          "options": [
+            "Lamps",
+            "Desks",
+            "Chairs",
+            "Cabinets"
+          ],
+          "answer": 1,
+          "explanation": "She says to ship the line marked back-ordered first. The form shows that status on desks. She never says desks.",
+          "graphic": true
+        },
+        {
+          "id": "GXP405C",
+          "skill": "l-inference",
+          "prompt": "What should happen to in-stock goods today?",
+          "options": [
+            "Ship them first",
+            "Leave them in the warehouse",
+            "Mark them rush",
+            "Return them"
+          ],
+          "answer": 1,
+          "explanation": "She says anything already in stock should stay in the warehouse today.",
+          "graphic": false
+        }
+      ]
+    },
+    {
+      "id": "g-rd-pay-01",
+      "section": "reading",
+      "part": 7,
+      "title": "Invoice and follow-up",
+      "passage": {
+        "docs": [
+          {
+            "label": "Invoice",
+            "text": "Northwind Print\nInvoice 441\nDue date: April 12\n\n200 brochures at $2.50 each, plus a $40 setup fee.\nLate fee: 5 percent of the unpaid balance if payment arrives after the due date.\nPayment method: bank transfer only."
+          },
+          {
+            "label": "Email",
+            "text": "To: billing@northwindprint.example\nFrom: Lena Ortiz, Harbor Books\nDate: April 18\n\nWe received invoice 441. Our accounts office will transfer the brochure charge and the setup fee tomorrow. Please waive the late fee. The invoice reached us only on April 16 because it was sent to our old address."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "RD01A",
+          "skill": "r-purpose",
+          "prompt": "Why did Lena Ortiz write the email?",
+          "options": [
+            "To order more brochures",
+            "To ask the printer to cancel invoice 441",
+            "To request that a late fee be waived",
+            "To change the payment method"
+          ],
+          "answer": 2,
+          "explanation": "She asks the printer to waive the late fee and says the brochure charge and setup fee will be transferred."
+        },
+        {
+          "id": "RD01B",
+          "skill": "r-crossref",
+          "prompt": "If Harbor Books pays the full invoice and the late fee is not waived, what late fee applies?",
+          "options": [
+            "$20",
+            "$27",
+            "$40",
+            "$54"
+          ],
+          "answer": 1,
+          "explanation": "The invoice prices 200 brochures at $2.50 ($500) plus a $40 setup fee, so the balance is $540. Five percent of $540 is $27. The email is dated April 18, after the April 12 due date, so the late fee would apply unless it is waived. Cross-reference: Invoice and Email.",
+          "crossRef": true
+        },
+        {
+          "id": "RD01C",
+          "skill": "r-crossref",
+          "prompt": "Why might a late fee apply to Harbor Books?",
+          "options": [
+            "The email was sent before the due date",
+            "Payment is planned after the invoice due date",
+            "The setup fee was already refunded",
+            "The brochures were never printed"
+          ],
+          "answer": 1,
+          "explanation": "The invoice says a late fee applies after April 12. Lena's email is dated April 18 and says the transfer will happen tomorrow. Cross-reference: Invoice and Email.",
+          "crossRef": true
+        },
+        {
+          "id": "RD01D",
+          "skill": "r-detail",
+          "prompt": "How does the invoice say the bill should be paid?",
+          "options": [
+            "By credit card",
+            "By bank transfer",
+            "In cash at the old address",
+            "By check after April 16"
+          ],
+          "answer": 1,
+          "explanation": "The invoice states the payment method is bank transfer only."
+        },
+        {
+          "id": "RD01E",
+          "skill": "r-detail",
+          "prompt": "When does Lena say the invoice arrived?",
+          "options": [
+            "April 12",
+            "April 16",
+            "April 18",
+            "The day after the transfer"
+          ],
+          "answer": 1,
+          "explanation": "She writes that the invoice reached them on April 16."
+        }
+      ]
+    },
+    {
+      "id": "g-rd-job-01",
+      "section": "reading",
+      "part": 7,
+      "title": "Weekend opening",
+      "passage": {
+        "docs": [
+          {
+            "label": "Notice",
+            "text": "Greenline Market is hiring a weekend clerk. Shifts are Saturday and Sunday, 8:00 a.m. to 4:00 p.m. Applicants must be available for both days. Duties include stocking shelves and working the checkout. Other weekday openings close on the same date as this role. Apply by May 3."
+          },
+          {
+            "label": "Chat",
+            "text": "Mina: Can you cover only Sundays? I have a class on Saturday mornings.\nBen: The posting says both days are required. If Saturday mornings are impossible, this opening will not work. The May 3 deadline still applies if you want one of the weekday roles."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "RD02A",
+          "skill": "r-purpose",
+          "prompt": "What is the notice mainly announcing?",
+          "options": [
+            "A change in weekday hours",
+            "A weekend job",
+            "A training class on Sunday",
+            "A new checkout system"
+          ],
+          "answer": 1,
+          "explanation": "The notice says Greenline Market is hiring a weekend clerk."
+        },
+        {
+          "id": "RD02B",
+          "skill": "r-crossref",
+          "prompt": "Why is the advertised job not suitable for Mina?",
+          "options": [
+            "The Sunday shift ends at noon",
+            "She cannot work a day the notice requires",
+            "The weekday roles have no deadline",
+            "Ben has already filled the Sunday shift"
+          ],
+          "answer": 1,
+          "explanation": "Mina says she has a class on Saturday mornings. The notice requires applicants to be available for both Saturday and Sunday. Cross-reference: Notice and Chat.",
+          "crossRef": true
+        },
+        {
+          "id": "RD02C",
+          "skill": "r-detail",
+          "prompt": "What are the advertised shift hours?",
+          "options": [
+            "8:00 a.m. to 4:00 p.m.",
+            "9:00 a.m. to 5:00 p.m.",
+            "Saturday mornings only",
+            "Sunday evenings"
+          ],
+          "answer": 0,
+          "explanation": "The notice lists Saturday and Sunday from 8:00 a.m. to 4:00 p.m."
+        },
+        {
+          "id": "RD02D",
+          "skill": "r-crossref",
+          "prompt": "What does Ben say about weekday roles?",
+          "options": [
+            "They are already closed",
+            "They use the same application deadline as the weekend role",
+            "They do not require an application",
+            "They replace the Sunday shift"
+          ],
+          "answer": 1,
+          "explanation": "The notice says other weekday openings close on the same date, May 3. Ben tells Mina that deadline still applies if she wants a weekday role. Cross-reference: Notice and Chat.",
+          "crossRef": true
+        },
+        {
+          "id": "RD02E",
+          "skill": "r-detail",
+          "prompt": "Which duties does the notice mention?",
+          "options": [
+            "Cooking and delivery",
+            "Stocking shelves and checkout",
+            "Hiring managers",
+            "Teaching a Saturday class"
+          ],
+          "answer": 1,
+          "explanation": "The notice lists stocking shelves and working the checkout."
+        }
+      ]
+    },
+    {
+      "id": "g-rt-train-01",
+      "section": "reading",
+      "part": 7,
+      "title": "Safety training",
+      "passage": {
+        "docs": [
+          {
+            "label": "Notice",
+            "text": "All new analysts must complete safety training before using the lab. Training is offered only on the dates in the attached schedule. Bring the confirmation email to the session. Analysts who miss their assigned session must wait for the next open date."
+          },
+          {
+            "label": "Email",
+            "text": "To: Jonah Hale\nFrom: Human Resources\nDate: May 28\n\nYour safety training is confirmed for the afternoon session on June 4. Please do not attend the morning session; that group is full. Bring this email to the door."
+          },
+          {
+            "label": "Schedule",
+            "text": "June 4, morning — Room C — Full\nJune 4, afternoon — Room A — Open\nJune 11, morning — Room B — Open"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "RT01A",
+          "skill": "r-detail",
+          "prompt": "What must new analysts do before using the lab?",
+          "options": [
+            "Email Jonah Hale",
+            "Complete safety training",
+            "Reserve Room C",
+            "Wait until June 11"
+          ],
+          "answer": 1,
+          "explanation": "The notice says new analysts must complete safety training before using the lab."
+        },
+        {
+          "id": "RT01B",
+          "skill": "r-crossref",
+          "prompt": "What should Jonah bring to his session?",
+          "options": [
+            "The attached schedule only",
+            "The confirmation email",
+            "A note from the lab",
+            "Proof that the morning group is full"
+          ],
+          "answer": 1,
+          "explanation": "The notice says to bring the confirmation email. The email to Jonah is that confirmation and repeats the instruction. Cross-reference: Notice and Email. Cross-reference: Notice, Email and Schedule.",
+          "crossRef": true
+        },
+        {
+          "id": "RT01C",
+          "skill": "r-crossref",
+          "prompt": "Where is Jonah's confirmed session?",
+          "options": [
+            "Room C",
+            "Room A",
+            "Room B",
+            "The lab doorway"
+          ],
+          "answer": 1,
+          "explanation": "The email assigns him the afternoon session on June 4. The schedule lists the June 4 afternoon session in Room A. Cross-reference: Email and Schedule. Cross-reference: Notice, Email and Schedule.",
+          "crossRef": true
+        },
+        {
+          "id": "RT01D",
+          "skill": "r-crossref",
+          "prompt": "Why should Jonah avoid the morning session on June 4?",
+          "options": [
+            "It is in Room A",
+            "That group is full",
+            "It is not on the schedule",
+            "Human resources canceled June 4"
+          ],
+          "answer": 1,
+          "explanation": "The email says the morning group is full. The schedule also marks the June 4 morning session Full. Cross-reference: Email and Schedule. Cross-reference: Notice, Email and Schedule.",
+          "crossRef": true
+        },
+        {
+          "id": "RT01E",
+          "skill": "r-detail",
+          "prompt": "Which later morning session is still open?",
+          "options": [
+            "June 4 in Room C",
+            "June 4 in Room A",
+            "June 11 in Room B",
+            "June 11 in Room A"
+          ],
+          "answer": 2,
+          "explanation": "The schedule lists June 11, morning, Room B as Open."
+        }
+      ]
+    },
+    {
+      "id": "g-rd-ship-01",
+      "section": "reading",
+      "part": 7,
+      "title": "Shipment notice",
+      "passage": {
+        "docs": [
+          {
+            "label": "Notice",
+            "text": "Harbor Freight will close the west loading dock on May 8 for repairs. Deliveries that day must use the east dock. Drivers who arrive after 3:00 p.m. will be asked to return on May 9. The east dock accepts prepaid shipments only."
+          },
+          {
+            "label": "Email",
+            "text": "To: dispatch@harborfreight.example\nFrom: Priya Shah, Northline Goods\nDate: May 7\n\nOur truck is scheduled to arrive at 4:30 p.m. on May 8 with a prepaid order. Please confirm that we should use the east dock and return the next morning if the gate is closed."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "RD03A",
+          "skill": "r-purpose",
+          "prompt": "What is the purpose of the notice?",
+          "options": [
+            "To announce a new shipping fee",
+            "To explain a one-day change at the loading dock",
+            "To cancel all May deliveries",
+            "To hire more drivers"
+          ],
+          "answer": 1,
+          "explanation": "The notice says the west loading dock will close on May 8 and tells drivers to use the east dock."
+        },
+        {
+          "id": "RD03B",
+          "skill": "r-crossref",
+          "crossRef": true,
+          "prompt": "Which dock should Priya's truck use?",
+          "options": [
+            "The west dock",
+            "The east dock",
+            "Either dock before noon",
+            "The dock that opens on May 9"
+          ],
+          "answer": 1,
+          "explanation": "Priya's email says the truck arrives on May 8. The notice says deliveries that day must use the east dock. Cross-reference: Notice and Email."
+        },
+        {
+          "id": "RD03C",
+          "skill": "r-crossref",
+          "crossRef": true,
+          "prompt": "What problem does Priya's arrival time create?",
+          "options": [
+            "The order is not prepaid",
+            "The truck is due after the cutoff named in the notice",
+            "The east dock is closed all day",
+            "The notice does not mention May 8"
+          ],
+          "answer": 1,
+          "explanation": "The email gives an arrival of 4:30 p.m. on May 8. The notice says drivers who arrive after 3:00 p.m. must return on May 9. Cross-reference: Notice and Email."
+        },
+        {
+          "id": "RD03D",
+          "skill": "r-detail",
+          "prompt": "What kind of shipments does the east dock accept?",
+          "options": [
+            "Unpaid shipments",
+            "Prepaid shipments only",
+            "Shipments from Northline only",
+            "Shipments after 3:00 p.m. only"
+          ],
+          "answer": 1,
+          "explanation": "The notice says the east dock accepts prepaid shipments only."
+        },
+        {
+          "id": "RD03E",
+          "skill": "r-detail",
+          "prompt": "What does Priya ask the dispatcher to confirm?",
+          "options": [
+            "A new price",
+            "Use of the east dock and a return the next morning if needed",
+            "That the west dock stays open",
+            "A pickup on May 7"
+          ],
+          "answer": 1,
+          "explanation": "She asks them to confirm the east dock and that the truck should return the next morning if the gate is closed."
         }
       ]
     }

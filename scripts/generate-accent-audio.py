@@ -120,6 +120,12 @@ def clips_for(group, accent, index):
     return pieces
 
 
+def clip_is_graphic(group, question):
+    if "graphic" in question:
+        return bool(question.get("graphic"))
+    return bool(group.get("image"))
+
+
 def question_clip(group, question, accent):
     voice, locale = voice_for(accent, "W")
     return {
@@ -129,7 +135,7 @@ def question_clip(group, question, accent):
         "voice": voice,
         "locale": locale,
         "rate": speech_rate(group["part"]),
-        "graphic": bool(group.get("image")),
+        "graphic": clip_is_graphic(group, question),
         "file": f"audio/q-{question['id']}.mp3",
     }
 
@@ -298,11 +304,22 @@ async def build_group(group, accent, index, semaphore):
     return entry
 
 
+def saved_plan(groups):
+    if groups and all(group.get("accent") in ACCENTS for group in groups):
+        plan = [group["accent"] for group in groups]
+        used = {accent: 0 for accent in ACCENTS}
+        for group, accent in zip(groups, plan):
+            used[accent] += len(group["questions"])
+        return plan, used, "saved"
+    return None
+
+
 def check_plan(bank):
     overall = {accent: 0 for accent in ACCENTS}
     for part in (1, 2, 3, 4):
         groups = [group for group in bank["groups"] if group["section"] == "listening" and group["part"] == part]
-        plan, used, quota = assign(groups)
+        saved = saved_plan(groups)
+        plan, used, quota = saved if saved else assign(groups)
         print(f"part {part} quota {quota} used {used} longest run {longest_run(plan)}")
         for accent, count in used.items():
             share = count / sum(used.values())
@@ -339,7 +356,9 @@ async def main():
     for part in sorted(selected_parts):
         groups = [group for group in bank["groups"] if group["section"] == "listening" and group["part"] == part]
         plan, _, _ = assign(groups)
-        for index, (group, accent) in enumerate(zip(groups, plan)):
+        saved = saved_plan(groups)
+        for index, group in enumerate(groups):
+            accent = saved[0][index] if saved else plan[index]
             if only_ids is not None and group["id"] not in only_ids:
                 continue
             if group.get("accent") not in (None, accent):
@@ -350,7 +369,9 @@ async def main():
     for part in (1, 2):
         groups = [group for group in bank["groups"] if group["section"] == "listening" and group["part"] == part]
         plan, _, _ = assign(groups)
-        for index, (group, accent) in enumerate(zip(groups, plan)):
+        saved = saved_plan(groups)
+        for index, group in enumerate(groups):
+            accent = saved[0][index] if saved else plan[index]
             entry = entries_by_id[group["id"]]
             pieces = clips_for(group, accent, index)
             entry["spokenChoices"] = [piece["text"] for piece in pieces[len(group["script"]):]]

@@ -12,8 +12,8 @@ export const QUICK_BLUEPRINTS = {
     parts: [
       { part: 1, groups: 2 },
       { part: 2, groups: 6 },
-      { part: 3, groups: 3, questionsEach: 3 },
-      { part: 4, groups: 1, questionsEach: 3 },
+      { part: 3, groups: 3, questionsEach: 3, preferGraphic: 1 },
+      { part: 4, groups: 1, questionsEach: 3, preferGraphic: 1 },
       { part: 5, groups: 8 },
       { part: 6, groups: 1, questionsEach: 4 },
       { part: 7, questions: 8, requireMulti: true }
@@ -27,8 +27,8 @@ export const QUICK_BLUEPRINTS = {
     parts: [
       { part: 1, groups: 2 },
       { part: 2, groups: 10 },
-      { part: 3, groups: 4, questionsEach: 3 },
-      { part: 4, groups: 2, questionsEach: 3 },
+      { part: 3, groups: 4, questionsEach: 3, preferGraphic: 1 },
+      { part: 4, groups: 2, questionsEach: 3, preferGraphic: 1 },
       { part: 5, groups: 14 },
       { part: 6, groups: 1, questionsEach: 4 },
       { part: 7, questions: 12, requireMulti: true }
@@ -93,9 +93,11 @@ export function assembleQuickForm(bank, formId, options = {}) {
   const chosen = [];
   for (const spec of partsForSection(blueprint.parts, section)) {
     const pool = bank.groups.filter((group) => group.part === spec.part && (!spec.questionsEach || group.questions.length === spec.questionsEach));
+    const accentOf = (group) => accents[group.id] || group.accent || "";
+    const counts = spec.part <= 4 ? accentCounts : null;
     const picked = spec.questions
       ? pickByQuestionTotal(pool, spec.questions, random, avoid, spec.requireMulti === true)
-      : sampleGroups(pool, spec.groups, random, avoid, (group) => accents[group.id] || group.accent || "", spec.part <= 4 ? accentCounts : null);
+      : pickWithGraphicPreference(pool, spec, random, avoid, accentOf, counts);
     chosen.push(...mixByLevel(picked));
   }
   const groupIds = chosen.map((group) => group.id);
@@ -121,6 +123,20 @@ function levelOf(group) {
   if (direct != null && direct !== "") return String(direct);
   const item = group.questions?.find((question) => question.difficulty != null || question.level != null);
   return item ? String(item.difficulty ?? item.level) : "";
+}
+
+export function isGraphicGroup(group) {
+  return group?.graphic === true || Boolean(group?.graphicView) || (group?.part >= 3 && Boolean(group?.image));
+}
+
+function pickWithGraphicPreference(pool, spec, random, avoid, accentOf, accentCounts) {
+  if (!spec.preferGraphic) return sampleGroups(pool, spec.groups, random, avoid, accentOf, accentCounts);
+  const graphicPool = pool.filter(isGraphicGroup);
+  const want = Math.min(spec.preferGraphic, spec.groups, graphicPool.length);
+  const graphicPicked = want ? sampleGroups(graphicPool, want, random, avoid, accentOf, accentCounts) : [];
+  const used = new Set(graphicPicked.map((group) => group.id));
+  const rest = sampleGroups(pool.filter((group) => !used.has(group.id)), spec.groups - graphicPicked.length, random, avoid, accentOf, accentCounts);
+  return graphicPicked.concat(rest);
 }
 
 function sampleGroups(pool, count, random, avoid, accentOf, accentCounts) {

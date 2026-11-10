@@ -8,6 +8,8 @@ import { SKILLS, skillLabel } from "./skills.js";
 import { remainingMs, pauseTimer, resumeTimer, elapsedSeconds, startTimedForm, startReading } from "./timer.js";
 import { assembleQuickForm, avoidedGroupIds, createRng, rememberQuickDraw } from "./quick-form.js";
 import { allowsReplay, buildOfficialSequence, isOfficialForm, listenProgressLabel, meanListeningMinutes, playbackRateFor, progressForStep, sequenceSeconds } from "./official-listening.js";
+import { graphicHtml } from "./graphic.js";
+import { TIP_SECTIONS, TIPS_STORAGE_KEY, tipForPart, tipsEnabled } from "./tips.js";
 
 const EXAM_DATE = "2026-11-29";
 const MAX_PLAYS = 2;
@@ -37,6 +39,7 @@ function wrongReasonSummary() {
   return ranked[0].count ? `<p>已標記錯題中最常見：<b>${ranked.filter((item) => item.count === ranked[0].count).map((item) => item.reason[1]).join('、')}</b>。${ranked[0].reason[2]}</p><p class="muted">每題保留最近一次錯因標記。</p>` : '';
 }
 const KEY_ACCENT = `${STORAGE_PREFIX}.accent-filter.v1`;
+const KEY_TIPS = `${STORAGE_PREFIX}.${TIPS_STORAGE_KEY}`;
 const KEY_VOCAB_LEVEL = `${STORAGE_PREFIX}.vocab-level.v1`;
 const KEY_FLASHCARDS = `${STORAGE_PREFIX}.flashcards.v1`;
 const KEY_FLASH_OPTIONS = `${STORAGE_PREFIX}.flash-options.v1`;
@@ -152,6 +155,7 @@ async function init() {
   session = store.get(KEY_SESSION, null);
   if (session && session.bankVersion !== bank.meta.version) session = null;
   wrongQueue = store.get(KEY_WRONG_QUEUE, {});
+  document.getElementById("open-tips")?.addEventListener("click", () => renderTips());
   renderHome();
 }
 
@@ -272,6 +276,7 @@ function renderHome() {
         <button class="btn primary" data-action="start-section" data-section="reading">開始閱讀練習</button>
       </article>
     </section>
+    <p class="quiet-link"><button type="button" class="linkish" data-action="tips">考前技巧</button></p>
 
     <details class="card tips-card">
       <summary><span>答題技巧 · Tips</span><small>聽力、閱讀與考前複習</small></summary>
@@ -552,6 +557,35 @@ function startTimer() {
 function stopTimer() { if (timerId) clearInterval(timerId); timerId = null; }
 
 /* ---------- Test view ---------- */
+function showTips() {
+  return tipsEnabled(store.get(KEY_TIPS, true));
+}
+
+function isPartIntro(group) {
+  if (!session) return false;
+  return session.groupIds.find((id) => {
+    const other = groupById(id);
+    return other && other.part === group.part && other.section === group.section;
+  }) === group.id;
+}
+
+function partTipBlock(group) {
+  if (!isPartIntro(group)) return "";
+  const tip = tipForPart(group.part);
+  if (!tip) return "";
+  if (!showTips()) return `<p class="part-tip"><button type="button" class="linkish" data-action="show-tips">顯示考前技巧</button></p>`;
+  return `<p class="part-tip"><b>考前技巧</b> ${esc(tip.short)} <button type="button" class="linkish" data-action="hide-tips">隱藏技巧</button></p>`;
+}
+
+function renderTips() {
+  app.innerHTML = `<section class="card tips-page"><p class="section-kicker">BEFORE THE TEST</p><h1>考前技巧</h1><p class="muted">以下只整理可以對上公開說明的做法。它不會改測驗時間，也不能保證分數。</p>
+    ${TIP_SECTIONS.map((section) => `<article><h2>${esc(section.title)}</h2><p>${esc(section.short)}</p>
+      ${section.tips.map((tip) => `<h3>${esc(tip.title)}</h3><p>${esc(tip.body)}</p><p class="muted">為什麼：${esc(tip.why)}</p>`).join("")}
+      <p class="tips-sources">參考：${section.sources.map((source) => `<a href="${esc(source.href)}" target="_blank" rel="noopener">${esc(source.name)}</a>`).join(" · ")}</p>
+    </article>`).join("")}
+    <button type="button" class="btn" data-action="home">回首頁</button></section>`;
+}
+
 function renderTest() {
   if (!officialRunning) audio.stop();
   const officialListening = session.official && session.phase === "listening";
@@ -591,8 +625,10 @@ function renderTest() {
       <div class="row">${clock}<span class="muted" id="count">${answeredCount}/${qs.length} 已答</span><button class="btn small" data-action="pause-timer">暫停／看估分</button><button class="btn small primary" data-action="submit">提前交卷</button></div>
     </div>
 
+    ${partTipBlock(g)}
     <section class="card">
       ${g.image ? `<img class="question-image" src="${esc(g.image)}" alt="${g.part === 1 ? "照片題圖片" : "聽力題組附圖"}；若圖片載入失敗，請連網重新開啟。">` : ""}
+      ${graphicHtml(g.graphicView)}
       ${g.script ? audioBlock(g) : ""}
       ${g.passage ? g.passage.docs.map((d) => `<div class="doclabel">${esc(d.label)}</div><div class="passage">${esc(d.text)}</div>`).join("") : ""}
       ${g.questions.filter((q) => !session.questionIds || session.questionIds.includes(q.id)).map((q) => questionBlock(q, qs, spoken)).join("")}
@@ -1199,6 +1235,9 @@ app.addEventListener("click", (e) => {
     case "view": renderResult(store.get(KEY_HISTORY, []).find((h) => h.id === d.id)); break;
     case "toggle-all": renderResult(store.get(KEY_HISTORY, []).find((h) => h.id === d.id), d.all === "1"); break;
     case "home": renderHome(); break;
+    case "tips": renderTips(); break;
+    case "hide-tips": store.set(KEY_TIPS, false); if (session) renderTest(); else renderHome(); break;
+    case "show-tips": store.set(KEY_TIPS, true); if (session) renderTest(); else renderHome(); break;
     case "lessons": renderLessons(); break;
     case "lesson-retry": {
       const card = t.closest('.lesson-card');
