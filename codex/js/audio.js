@@ -8,6 +8,7 @@ const PREF_KEY = (globalThis.location?.pathname ?? '').includes('/codex/') ? 'to
 
 let token = 0;
 let lastError = '';
+export function lastErrorCode() { return lastError; }
 export function errorMessage() {
   const messages = {
     unsupported: '此瀏覽器未提供語音合成，請換用支援的瀏覽器。',

@@ -11,8 +11,23 @@ const STORAGE_PREFIX = location.pathname.includes('/codex/') ? 'toeic950.codex' 
 const KEY_SESSION = `${STORAGE_PREFIX}.session.v1`;
 const KEY_HISTORY = `${STORAGE_PREFIX}.history.v1`;
 const KEY_WRONG_QUEUE = `${STORAGE_PREFIX}.wrong-answers.v1`;
+const KEY_ACCENT = `${STORAGE_PREFIX}.accent-filter.v1`;
+const ACCENT_OPTIONS = [["all", "全部口音"], ["US", "美式 US"], ["UK", "英式 UK"], ["CA", "加拿大 CA"], ["AU", "澳洲 AU"]];
+const ACCENT_LOCALE = { US: "en-US", UK: "en-GB", CA: "en-CA", AU: "en-AU" };
 
 const app = document.getElementById("app");
+function accentFilter() {
+  const value = store.get(KEY_ACCENT, "all");
+  return ACCENT_OPTIONS.some(([id]) => id === value) ? value : "all";
+}
+function matchesAccent(group) {
+  const selected = accentFilter();
+  return selected === "all" || group?.accent === selected;
+}
+function accentTag(group) {
+  const label = ACCENT_OPTIONS.find(([id]) => id === group?.accent)?.[1];
+  return label ? `<span class="tag accent-tag">${esc(label)}</span>` : "";
+}
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const store = {
   get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } },
@@ -52,7 +67,7 @@ async function init() {
     const res = await fetch("data/questions.json");
     bank = await res.json();
     for (const group of bank.groups) {
-      if ([3, 4].includes(group.part)) group.audio = `audio/${group.id}.mp3`;
+      if (group.section === "listening" && group.part >= 1 && group.part <= 4) group.audio = `audio/${group.id}.mp3`;
     }
   } catch {
     app.innerHTML = `<p class="notice">題庫載入失敗。請用 <code>node serve.mjs</code> 或 GitHub Pages 開啟，不要直接雙擊 index.html。</p>`;
@@ -74,8 +89,8 @@ function renderHome() {
   const weak = weakest(mergeSkillStats(history), 3, 2);
   const last = history[history.length - 1];
   const n = flatten(bank).length;
-  const photoCount = bank.groups.filter((g) => g.section === "listening" && g.part === 1).reduce((sum, g) => sum + g.questions.length, 0);
-  const listeningQuestions = flatten(bank).filter((q) => q.section === "listening").length;
+  const photoCount = bank.groups.filter((g) => g.section === "listening" && g.part === 1 && matchesAccent(g)).reduce((sum, g) => sum + g.questions.length, 0);
+  const listeningQuestions = flatten(bank, bank.groups.filter((g) => g.section === "listening" && matchesAccent(g)).map((g) => g.id)).length;
   const readingQuestions = flatten(bank).filter((q) => q.section === "reading").length;
   const queuedQuestions = flatten(bank).filter((q) => wrongQueue[q.id]);
   const queueCount = queuedQuestions.length;
@@ -90,11 +105,11 @@ function renderHome() {
 
     <section class="card quick-card"><p class="section-kicker">PRACTICE TEST</p><h2>快速模考</h2>
       <p>40 題：約 24 分鐘（聽力 9 分鐘、閱讀 15 分鐘）。<br>60 題：約 36 分鐘（聽力 13 分 30 秒、閱讀 22 分 30 秒）。</p>
-      <p class="muted">聽力以美式為主，並加入英式與澳洲口音；語音合成音色依裝置而異。</p>
+      <p class="muted">聽力音檔輪流使用美式、英式、加拿大與澳洲口音。作答後才看得到該題口音。</p>
       <button class="btn primary" data-action="start-form" data-form="quick-40">開始 40 題快速模考</button>
       <button class="btn primary" data-action="start-form" data-form="quick-60">開始 60 題快速模考</button>
       <p class="muted">依正式題型與時間近似縮小；對話和文章題組保留完整，因此各 Part 題數不是精確比例。題目取自第 A 套，兩種快速模考有重複題目。完成後可查看解析與非官方粗估。</p>
-      <details><summary>口音音檔來源</summary><p>英式：使用 Cori Samuel 聲音模型，資料由 NVIDIA 提供，經修改產生此音檔；<a href="https://www.openslr.org/109/">資料來源</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>。澳洲：使用 DataCraftsmanAustralia 的 en_AU-librivox-medium 模型（Kirsty Leishman），經修改產生音檔；<a href="https://huggingface.co/DataCraftsmanAustralia/piper-en_AU-librivox-medium">模型與作者資料</a> · CC BY 4.0。</p></details>
+      <p class="muted">音檔是練習用的合成語音，存在這個網站裡，播放時不連到外部語音服務。不是 ETS 官方錄音。</p>
     </section>
 
     <details class="card vocabulary-card"><summary><span class="vocabulary-eyebrow">GOLD CERTIFICATE VOCABULARY</span><span class="vocabulary-title">金色證書目標字彙 · ${VOCABULARY.reduce((n, group) => n + group.words.length, 0)} 個詞條</span><small>高階職場字彙、商務搭配詞與例句 · 點開閱讀</small></summary>
@@ -108,9 +123,11 @@ function renderHome() {
         <div class="section-label">LISTENING</div>
         <h2>聽力練習</h2>
         <p class="practice-count">${listeningQuestions} 題</p>
-        <p class="muted">集中練習聽力題組，逐組播放與作答。</p>
-        <button class="btn primary" data-action="start-section" data-section="listening">開始聽力練習</button>
-        <button class="btn photo-entry" data-action="start-photo" ${session ? "disabled" : ""}>照片題試做（${photoCount} 題）</button>
+        <p class="muted">集中練習聽力題組，逐組播放與作答。完整模考仍混合四種口音。</p>
+        <label for="accent-filter">口音練習</label>
+        <select id="accent-filter" class="btn" aria-label="聽力口音">${ACCENT_OPTIONS.map(([id, label]) => `<option value="${id}" ${accentFilter() === id ? "selected" : ""}>${label}</option>`).join("")}</select>
+        <button class="btn primary" data-action="start-section" data-section="listening" ${listeningQuestions ? "" : "disabled"}>開始聽力練習</button>
+        <button class="btn photo-entry" data-action="start-photo" ${session || !photoCount ? "disabled" : ""}>照片題試做（${photoCount} 題）</button>
       </article>
       <article class="card practice-card reading-card">
         <div class="section-label">READING</div>
@@ -210,7 +227,7 @@ async function fillVoices() {
   const voices = await audio.getVoices();
   if (request !== voiceLoad || document.getElementById("voices") !== box) return;
   const roles = [["M", "男聲"], ["W", "女聲"], ["N", "旁白（Part 2 選項）"]];
-  const voiceNote = '<p class="muted">對話與獨白使用固定配音：M 為 David 男聲，W 為 Zira 女聲。下方音色設定只影響照片／應答題與試聽；語速設定仍適用所有題目。</p>' + (voices.length < 2 ? '<p class="muted">此裝置可選英文音色少於兩種，語音合成題會嘗試用音高區分角色。</p>' : '');
+  const voiceNote = '<p class="muted">聽力題已使用四種口音的固定音檔。下方音色只在音檔載入失敗時，以及這裡的試聽使用。語速仍適用所有題目。</p>' + (voices.length < 2 ? '<p class="muted">此裝置可選英文音色少於兩種，語音合成備援會嘗試用音高區分角色。</p>' : '');
   box.innerHTML = voiceNote + roles.map(([r, label]) => `<div class="row" style="margin:6px 0"><label style="min-width:9em">${label}</label>
     <select data-voice="${r}" style="flex:1;min-width:0;font:inherit;padding:6px"><option value="">自動（推薦）</option>${voices.map((v) => `<option value="${esc(v.name)}" ${audio.getPref(r) === v.name ? "selected" : ""}>${esc(v.name)} (${esc(v.lang)})</option>`).join("")}</select>
     <button class="btn small" data-action="sample" data-role="${r}">試聽</button></div><p class="muted">目前：${esc(audio.roleVoiceInfo(r).name)}${audio.roleVoiceInfo(r).maleFallback ? '。未辨識到男聲，已調低音高；請試聽，或從清單指定更合適的音色。' : ''}</p>`).join("") + '<div class="row"><button class="btn small" data-action="retry-voices">重新載入音色</button><button class="btn small" data-action="reset-role-voices">恢復自動配音</button><span id="voice-status" role="status" aria-live="polite"></span></div>';
@@ -334,7 +351,7 @@ function progressCard(questions, answers) {
       const chosen = answers[q.id];
       const group = groupById(q.groupId);
       const number = questions.findIndex((item) => item.id === q.id) + 1;
-      return `<article class="pause-review-item"><p class="pause-review-meta">第 ${number} 題 · Part ${q.part}${group?.title ? ` · ${esc(group.title)}` : ''}</p><p class="pause-review-prompt">${esc(q.prompt)}</p>
+      return `<article class="pause-review-item"><p class="pause-review-meta">第 ${number} 題 · Part ${q.part}${group?.title ? ` · ${esc(group.title)}` : ''} ${accentTag(group)}</p><p class="pause-review-prompt">${esc(q.prompt)}</p>
         <p class="pause-review-answer"><span class="pause-review-wrong">你的答案：${LETTERS[chosen] ?? ''}. ${esc(q.options[chosen] ?? '')}</span><span class="pause-review-correct">正確答案：${LETTERS[q.answer] ?? ''}. ${esc(q.options[q.answer] ?? '')}</span></p>
         <details class="pause-review-explanation"><summary>查看答錯原因</summary><div class="explain">${q.explanation ? esc(q.explanation) : '此題尚未提供解析，可先依正確答案自行檢查。'}</div></details></article>`;
     }).join('')}
@@ -353,18 +370,12 @@ function transcriptBlock(g, duringPractice = false) {
   </details>`;
 }
 
-const QUICK_ACCENTS = {
-  'g-airport-talk-d': { file: 'audio/quick-au-g-airport-talk-d.mp3', label: '澳洲口音' },
-  's03-talk2': { file: 'audio/quick-gb-s03-talk2.mp3', label: '英式口音' }
-};
-function quickAccent(g) { return ['quick-40', 'quick-60'].includes(session?.formId) ? QUICK_ACCENTS[g.id] : null; }
 function audioBlock(g) {
   const used = session.plays[g.id] ?? 0;
   const left = MAX_PLAYS - used;
-  const accent = quickAccent(g);
-  const recording = accent?.file ?? g.audio;
+  const recording = g.audio;
   return `<div class="audio" data-gid="${g.id}">
-    <button class="btn primary" data-action="play" data-group="${g.id}" ${left <= 0 || !(recording ? audio.fileSupported() : audio.supported()) ? "disabled" : ""}>▶ 播放語音</button>${accent ? `<span class="tag">${accent.label}</span>` : g.audio ? '<span class="tag">固定男女配音</span>' : ''}
+    <button class="btn primary" data-action="play" data-group="${g.id}" ${left <= 0 || !(recording ? audio.fileSupported() : audio.supported()) ? "disabled" : ""}>▶ 播放語音</button>
     ${left <= 0 ? `<button class="btn small" data-action="reset-plays" data-group="${g.id}">恢復本題播放次數</button>` : ''}
     <button class="btn small" data-action="stop-play" disabled>停止播放</button>
     <span class="muted"><span class="plays">剩餘 ${left} 次</span> · <span class="status" role="status" aria-live="polite">完整播放才計次；中斷或失敗不扣次數。</span></span>
@@ -394,8 +405,14 @@ async function playGroup(gid, btn) {
   status.textContent = "播放中…";
   const lines = g.spokenOptions ? audio.withSpokenOptions(g) : g.script;
   let finished = false;
-  const recording = quickAccent(g)?.file ?? g.audio;
-  try { finished = recording ? await audio.playFile(recording) : await audio.playScript(lines, { locale: ['quick-40', 'quick-60'].includes(session.formId) ? 'en-US' : null }); } catch { finished = false; }
+  const recording = g.audio;
+  const locale = ACCENT_LOCALE[g.accent] ?? null;
+  try {
+    if (recording && audio.fileSupported()) {
+      finished = await audio.playFile(recording);
+      if (!finished && audio.lastErrorCode() === "audio-file") finished = await audio.playScript(lines, { locale });
+    } else finished = await audio.playScript(lines, { locale });
+  } catch { finished = false; }
   if (activePlay !== play) return;
   activePlay = null;
   if (finished && session === playingSession) {
@@ -535,7 +552,7 @@ function renderResult(entry, showAll = false) {
 function reviewGroup(g, entry) {
   const qs = questionsFor(entry);
   return `<div class="q">
-    <div class="doclabel">Part ${g.part} ${esc(g.title ?? "")}</div>
+    <div class="doclabel">Part ${g.part} ${esc(g.title ?? "")} ${accentTag(g)}</div>
     ${g.image ? `<img class="question-image" src="${esc(g.image)}" alt="${g.part === 1 ? "本題照片" : "本題附圖"}；若載入失敗，請連網重新開啟。">` : ""}
     ${g.script ? transcriptBlock(g) : ""}
     ${g.passage ? g.passage.docs.map((d) => `<div class="doclabel">${esc(d.label)}</div><div class="passage">${esc(d.text)}</div>`).join("") : ""}
@@ -577,15 +594,17 @@ app.addEventListener("click", (e) => {
       }
       break;
     case "start-section": {
-      const groups = bank.groups.filter((g) => g.section === d.section);
+      const groups = bank.groups.filter((g) => g.section === d.section && (d.section !== "listening" || matchesAccent(g)));
       const groupIds = groups.map((g) => g.id);
       const questionCount = groups.reduce((sum, g) => sum + g.questions.length, 0);
+      if (!questionCount) break;
       startSession(d.section, groupIds, Math.max(5, Math.ceil(questionCount * 1.2)));
       break;
     }
     case "start-photo": {
       const set = bank.meta.sets.find((item) => item.id === "photo-pilot");
-      if (set && !session) startSession("practice", orderedGroupIds(set.groupIds), set.durationMin);
+      const ids = set ? orderedGroupIds(set.groupIds).filter((id) => matchesAccent(groupById(id))) : [];
+      if (set && ids.length && !session) startSession("practice", ids, set.durationMin);
       break;
     }
     case "resume": if (allowSession(session.groupIds)) { resumeTimer(session); saveSession(); renderTest(); } break;
@@ -633,6 +652,7 @@ app.addEventListener("click", (e) => {
 });
 
 app.addEventListener("change", (e) => {
+  if (e.target.id === "accent-filter") { store.set(KEY_ACCENT, e.target.value); renderHome(); return; }
   if (e.target.id === 'speech-rate') audio.setRate(Number(e.target.value));
   const s = e.target.closest("select[data-voice]");
   if (s) { audio.setPref(s.dataset.voice, s.value); fillVoices(); }

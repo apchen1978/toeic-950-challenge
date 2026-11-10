@@ -1,5 +1,9 @@
 # British English recording attribution
 
+This Piper clip was retired when the four-accent bank replaced it. Current voices are listed in `AUDIO_ACCENTS.md`.
+
+
+
 `codex/audio/quick-gb-s03-talk2.mp3` is an original practice script synthesised locally with the **en_GB-cori-medium** voice, using Piper TTS 1.8.0. No text or audio was sent to a paid speech service. The voice model identifies its language as British English and its source as the Hi-Fi Multi-Speaker English TTS Dataset, licensed **CC BY 4.0**, attributed to **NVIDIA Corporation**, with recordings by LibriVox reader **Cori Samuel**.
 
 - [Cori voice model card and training details](https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_GB/cori/medium/MODEL_CARD)
