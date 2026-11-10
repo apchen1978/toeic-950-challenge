@@ -51,6 +51,9 @@ h3 { font-size: 1rem; margin: 0 0 .4em; }
 .bar.weak > i { background: var(--bad); }
 .skillrow { display: grid; grid-template-columns: 1fr 70px; gap: 4px 12px; margin: 8px 0; }
 .tag { display: inline-block; font-size: .78rem; padding: 1px 8px; border-radius: 999px; background: var(--sel); color: var(--ink); margin-right: 4px; }
+.segment { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 12px; }
+.segment-item { display: flex; align-items: center; gap: 8px; min-height: 44px; border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; background: var(--card); cursor: pointer; }
+.segment-item:has(input:checked) { border-color: var(--brand); background: var(--sel); color: var(--ink); }
 .explain { background: var(--bg); border-left: 4px solid var(--brand); padding: 8px 12px; margin-top: 8px; border-radius: 4px; }
 .pause-review { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); }
 .pause-review h2 { display: flex; align-items: baseline; gap: 8px; }

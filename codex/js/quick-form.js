@@ -76,15 +76,22 @@ export function mixByLevel(groups) {
   return mixed;
 }
 
+export function partsForSection(parts, section) {
+  if (section === "listening") return parts.filter((spec) => spec.part <= 4);
+  if (section === "reading") return parts.filter((spec) => spec.part >= 5);
+  return parts;
+}
+
 export function assembleQuickForm(bank, formId, options = {}) {
   const blueprint = QUICK_BLUEPRINTS[formId];
   if (!blueprint) throw new Error(`unknown quick form ${formId}`);
   const random = options.random ?? Math.random;
+  const section = options.section === "listening" || options.section === "reading" ? options.section : "full";
   const avoid = options.avoid instanceof Set ? options.avoid : new Set(options.avoid ?? []);
   const accents = options.accents ?? {};
   const accentCounts = { US: 0, UK: 0, CA: 0, AU: 0 };
   const chosen = [];
-  for (const spec of blueprint.parts) {
+  for (const spec of partsForSection(blueprint.parts, section)) {
     const pool = bank.groups.filter((group) => group.part === spec.part && (!spec.questionsEach || group.questions.length === spec.questionsEach));
     const picked = spec.questions
       ? pickByQuestionTotal(pool, spec.questions, random, avoid, spec.requireMulti === true)
@@ -95,10 +102,18 @@ export function assembleQuickForm(bank, formId, options = {}) {
   if (new Set(groupIds).size !== groupIds.length) throw new Error(`duplicate group in ${formId}`);
   const listening = chosen.filter((group) => group.section === "listening").reduce((sum, group) => sum + group.questions.length, 0);
   const reading = chosen.filter((group) => group.section === "reading").reduce((sum, group) => sum + group.questions.length, 0);
-  if (listening !== blueprint.listening || reading !== blueprint.reading) {
-    throw new Error(`${formId} assembled ${listening}+${reading}, expected ${blueprint.listening}+${blueprint.reading}`);
+  const expectListening = section === "reading" ? 0 : blueprint.listening;
+  const expectReading = section === "listening" ? 0 : blueprint.reading;
+  if (listening !== expectListening || reading !== expectReading) {
+    throw new Error(`${formId} assembled ${listening}+${reading}, expected ${expectListening}+${expectReading}`);
   }
-  return { formId, groupIds, timing: blueprint.timing, minutes: blueprint.minutes, accentCounts: { ...accentCounts } };
+  const timing = section === "reading"
+    ? { reading: blueprint.timing.reading }
+    : section === "listening"
+      ? { listening: blueprint.timing.listening }
+      : blueprint.timing;
+  const minutes = section === "reading" ? blueprint.timing.reading : section === "listening" ? blueprint.listening : blueprint.minutes;
+  return { formId, section, groupIds, timing, minutes, accentCounts: { ...accentCounts } };
 }
 
 function levelOf(group) {

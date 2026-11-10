@@ -100,23 +100,49 @@ export function answerLocked(session, questionId) {
   return answer !== undefined && answer !== null;
 }
 
+export const MOCK_SECTIONS = ["full", "reading", "listening"];
+
+/** Missing or unknown section means a full listening-then-reading mock. */
+export function normalizeMockSection(value) {
+  return MOCK_SECTIONS.includes(value) ? value : "full";
+}
+
+export function opensReadingAfterListening(session) {
+  return normalizeMockSection(session?.section) !== "listening";
+}
+
 /** Peeked official attempts stay in history but leave the five-skill estimate and best-score trend. */
 export function countsForStats(entry) {
   return !entry?.peeked;
 }
 
+export function countsForFullMock(entry) {
+  return countsForStats(entry) && normalizeMockSection(entry?.section) === "full";
+}
+
 export function bestAccuracy(history) {
   let best = null;
   for (const entry of history ?? []) {
-    if (!countsForStats(entry) || !entry.total) continue;
+    if (!countsForFullMock(entry) || !entry.total) continue;
     const accuracy = entry.correct / entry.total;
     if (!best || accuracy > best.accuracy) best = { id: entry.id, accuracy, correct: entry.correct, total: entry.total };
   }
   return best;
 }
 
+export function bestSectionAccuracy(history, section) {
+  const wanted = normalizeMockSection(section);
+  let best = null;
+  for (const entry of history ?? []) {
+    if (!countsForStats(entry) || !entry.total || normalizeMockSection(entry.section) !== wanted) continue;
+    const accuracy = entry.correct / entry.total;
+    if (!best || accuracy > best.accuracy) best = { id: entry.id, section: wanted, accuracy, correct: entry.correct, total: entry.total };
+  }
+  return best;
+}
+
 export function accuracyTrend(history) {
-  return (history ?? []).filter((entry) => countsForStats(entry) && entry.total).map((entry) => entry.correct / entry.total);
+  return (history ?? []).filter((entry) => countsForFullMock(entry) && entry.total).map((entry) => entry.correct / entry.total);
 }
 
 /** Merge per-skill stats across attempts: history entries carry `bySkill`. */
