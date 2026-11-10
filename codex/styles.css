@@ -113,6 +113,10 @@ a { color: var(--brand); text-underline-offset: .17em; }
 .btn.primary { font-weight: 700; }
 .btn:focus-visible, .opt:focus-visible, .pal:focus-visible, summary:focus-visible, select:focus-visible, a:focus-visible { outline: 3px solid #b98731; outline-offset: 3px; }
 .vocabulary-card { border-top: 3px solid #b08b45; }
+.lesson-entry { border-top: 3px solid var(--brand); }
+.lesson-card audio { display: block; width: 100%; max-width: 520px; margin: 12px 0; }
+.lesson-card details { border-top: 1px solid var(--line); padding: 12px 0; }
+.lesson-card summary { cursor: pointer; color: var(--brand); font-weight: 700; }
 .flash-card { max-width: 720px; margin: 24px auto; }
 .flash-card h1 { font-size: clamp(2rem, 7vw, 3rem); overflow-wrap: anywhere; }
 .flash-gold { border: 2px solid #b08b45; }
