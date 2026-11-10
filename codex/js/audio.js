@@ -194,13 +194,15 @@ function sentences(text) {
 }
 
 /** lines: [{speaker:'M'|'W'|'N', text, gap?}]. Resolves true if it played to the end, false if stopped. */
-export async function playScript(lines, { rate = getRate() } = {}) {
+export async function playScript(lines, { rate = getRate(), locale = null } = {}) {
   if (!supported()) { lastError = 'unsupported'; return false; }
   stop();
   const myToken = token;
   lastError = '';
   for (const line of lines) {
-    const v = pickVoice(availableVoices(), line.speaker);
+    const voices = availableVoices();
+    const selected = locale ? voices.filter((voice) => voice.lang.toLowerCase().replace('_', '-') === locale.toLowerCase()) : voices;
+    const v = pickVoice(selected, line.speaker);
     const lineRate = rate * (line.rateScale ?? 1);
     for (const s of [line.text]) {
       if (myToken !== token) return false;
