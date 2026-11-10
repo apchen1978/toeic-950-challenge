@@ -116,6 +116,8 @@ function minutesLabel(minutes) { return Number.isInteger(minutes) ? `${minutes} 
 function renderHome() {
   stopTimer();
   audio.stop();
+  const vocab = vocabCounts();
+  const vocabTotal = vocab[800] + vocab[900];
   const history = store.get(KEY_HISTORY, []);
   const days = Math.ceil((new Date(`${EXAM_DATE}T00:00:00`) - new Date()) / 86400000);
   const weak = weakest(mergeSkillStats(history), 3, 2);
@@ -144,16 +146,36 @@ function renderHome() {
       <p class="muted">音檔是練習用的合成語音，存在這個網站裡，播放時不連到外部語音服務。不是 ETS 官方錄音。</p>
     </section>
 
-    <details class="card vocabulary-card"><summary><span class="vocabulary-eyebrow">WORKPLACE VOCABULARY</span><span class="vocabulary-title">職場字彙 · ${vocabCounts()[800] + vocabCounts()[900]} 個詞條</span><small>800 核心 ${vocabCounts()[800]} 個，適合約 600–850 · 900 進階 ${vocabCounts()[900]} 個，金色證書目標</small></summary>
-      <p class="muted">全部會把 800 與 900 穿插列出。想先打底可改看 800 核心；900 是金色證書進階。例句是本站自寫的，不是官方字表。</p>
-      <div class="vocab-filters" role="group" aria-label="字彙程度">
-        <button type="button" class="btn small" data-action="vocab-filter" data-vocab-filter="800">800 核心</button>
-        <button type="button" class="btn small" data-action="vocab-filter" data-vocab-filter="900">900 進階</button>
-        <button type="button" class="btn small" data-action="vocab-filter" data-vocab-filter="all">全部</button>
+    <section class="card vocabulary-card" aria-labelledby="vocabulary-title">
+      <div class="vocab-hero">
+        <div class="vocab-hero-copy">
+          <p class="vocabulary-eyebrow">WORKPLACE VOCABULARY</p>
+          <h2 id="vocabulary-title">職場字彙 <span>${vocabTotal}</span></h2>
+          <p class="vocab-hero-subtitle">800 打底 <span aria-hidden="true">·</span> 900 衝金色證書</p>
+        </div>
+        <div class="vocab-seal" aria-hidden="true"><b>900</b><span>GOLD<br>CERTIFICATE</span></div>
       </div>
-      ${VOCABULARY.map((group) => `<details class="vocabulary-group" data-vocab-group><summary>${esc(group.category)} · <span data-vocab-count>${group.words.length} 個詞條</span></summary>${group.words.map((item) => { const { word, meaning, example, level, pos } = vocabParts(item); return `<p class="${level === 900 ? "vocab-gold" : "vocab-core"}" data-vocab-level="${level}"><b>${esc(word)}</b>${pos ? ` <span class="muted">${esc(pos)}</span>` : ""} <span class="tag">${level === 900 ? "900 金色證書" : "800 核心"}</span> · ${esc(meaning)}<br><span class="muted">${esc(example)}</span></p>`; }).join("")}</details>`).join("")}
-      <p><a href="https://www.toeic.com.tw/toeic/listening-reading/about/content/" target="_blank" rel="noopener noreferrer">參考：台灣多益官方測驗內容</a> · <a href="https://dictionary.cambridge.org/dictionary/english/" target="_blank" rel="noopener noreferrer">Cambridge Dictionary</a></p>
-    </details>
+      <div class="vocab-stats" aria-label="字彙庫統計">
+        <div class="vocab-stat"><b>${vocabTotal}</b><span>總詞條</span></div>
+        <div class="vocab-stat"><b>${vocab[800]}</b><span>800 核心</span></div>
+        <div class="vocab-stat vocab-stat-gold"><b>${vocab[900]}</b><span>900 進階</span></div>
+      </div>
+      <div class="vocab-actions">
+        <button type="button" class="btn primary" data-action="vocab-open">開始背單字</button>
+        <button type="button" class="btn vocab-gold-action" data-action="vocab-gold">只看 900 金色證書</button>
+      </div>
+      <details class="vocabulary-list">
+        <summary>瀏覽單字與主題</summary>
+        <p class="muted">全部會把 800 與 900 穿插列出。例句由本站撰寫，並非官方題目或官方字表。</p>
+        <div class="vocab-filters" role="group" aria-label="字彙程度">
+          <button type="button" class="btn small" data-action="vocab-filter" data-vocab-filter="800">800 核心</button>
+          <button type="button" class="btn small" data-action="vocab-filter" data-vocab-filter="900">900 進階</button>
+          <button type="button" class="btn small" data-action="vocab-filter" data-vocab-filter="all">全部</button>
+        </div>
+        ${VOCABULARY.map((group) => `<details class="vocabulary-group" data-vocab-group><summary>${esc(group.category)} · <span data-vocab-count>${group.words.length} 個詞條</span></summary>${group.words.map((item) => { const { word, meaning, example, level, pos } = vocabParts(item); return `<p class="${level === 900 ? "vocab-gold" : "vocab-core"}" data-vocab-level="${level}"><b>${esc(word)}</b>${pos ? ` <span class="muted">${esc(pos)}</span>` : ""} <span class="tag">${level === 900 ? "900 金色證書" : "800 核心"}</span> · ${esc(meaning)}<br><span class="muted">${esc(example)}</span></p>`; }).join("")}</details>`).join("")}
+        <p><a href="https://www.toeic.com.tw/toeic/listening-reading/about/content/" target="_blank" rel="noopener noreferrer">參考：台灣多益官方測驗內容</a> · <a href="https://dictionary.cambridge.org/dictionary/english/" target="_blank" rel="noopener noreferrer">Cambridge Dictionary</a></p>
+      </details>
+    </section>
 
     <section class="practice-grid" aria-label="Listening 聽力與 Reading 閱讀練習">
       <article class="card practice-card listening-card">
@@ -687,6 +709,18 @@ app.addEventListener("click", (e) => {
     case "jump": if (!session.phase || groupById(d.group)?.section === session.phase) { session.cur = session.groupIds.indexOf(d.group); saveSession(); renderTest(); } break;
     case "submit": submit(false); break;
     case "vocab-filter": store.set(KEY_VOCAB_LEVEL, d.vocabFilter); paintVocab(); break;
+    case "vocab-open": {
+      const list = app.querySelector(".vocabulary-list");
+      if (list) { list.open = true; list.scrollIntoView({ block: "start" }); }
+      break;
+    }
+    case "vocab-gold": {
+      store.set(KEY_VOCAB_LEVEL, "900");
+      paintVocab();
+      const list = app.querySelector(".vocabulary-list");
+      if (list) { list.open = true; list.scrollIntoView({ block: "start" }); }
+      break;
+    }
   }
 });
 
