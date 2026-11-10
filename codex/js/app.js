@@ -12,6 +12,7 @@ const KEY_SESSION = `${STORAGE_PREFIX}.session.v1`;
 const KEY_HISTORY = `${STORAGE_PREFIX}.history.v1`;
 const KEY_WRONG_QUEUE = `${STORAGE_PREFIX}.wrong-answers.v1`;
 const KEY_ACCENT = `${STORAGE_PREFIX}.accent-filter.v1`;
+const KEY_VOCAB_LEVEL = `${STORAGE_PREFIX}.vocab-level.v1`;
 const ACCENT_OPTIONS = [["all", "全部口音"], ["US", "美式 US"], ["UK", "英式 UK"], ["CA", "加拿大 CA"], ["AU", "澳洲 AU"]];
 const ACCENT_LOCALE = { US: "en-US", UK: "en-GB", CA: "en-CA", AU: "en-AU" };
 
@@ -27,6 +28,37 @@ function matchesAccent(group) {
 function accentTag(group) {
   const label = ACCENT_OPTIONS.find(([id]) => id === group?.accent)?.[1];
   return label ? `<span class="tag accent-tag">${esc(label)}</span>` : "";
+}
+function vocabLevel() {
+  const value = store.get(KEY_VOCAB_LEVEL, "800");
+  return value === "all" || value === "900" || value === "800" ? value : "800";
+}
+function vocabParts(item) {
+  const [word, meaning, example, level, pos = ""] = item;
+  return { word, meaning, example, level, pos };
+}
+function vocabCounts() {
+  const counts = { 800: 0, 900: 0 };
+  for (const group of VOCABULARY) for (const item of group.words) counts[item[3]] += 1;
+  return counts;
+}
+function paintVocab() {
+  const level = vocabLevel();
+  for (const entry of app.querySelectorAll("[data-vocab-level]")) {
+    entry.hidden = level !== "all" && entry.dataset.vocabLevel !== String(level);
+  }
+  for (const group of app.querySelectorAll("[data-vocab-group]")) {
+    const items = [...group.querySelectorAll("[data-vocab-level]")];
+    const shown = items.filter((entry) => !entry.hidden).length;
+    group.hidden = shown === 0;
+    const count = group.querySelector("[data-vocab-count]");
+    if (count) count.textContent = `${shown} 個詞條`;
+  }
+  for (const button of app.querySelectorAll("[data-vocab-filter]")) {
+    const on = button.dataset.vocabFilter === level;
+    button.classList.toggle("primary", on);
+    button.setAttribute("aria-pressed", on ? "true" : "false");
+  }
 }
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const store = {
@@ -112,9 +144,14 @@ function renderHome() {
       <p class="muted">音檔是練習用的合成語音，存在這個網站裡，播放時不連到外部語音服務。不是 ETS 官方錄音。</p>
     </section>
 
-    <details class="card vocabulary-card"><summary><span class="vocabulary-eyebrow">GOLD CERTIFICATE VOCABULARY</span><span class="vocabulary-title">金色證書目標字彙 · ${VOCABULARY.reduce((n, group) => n + group.words.length, 0)} 個詞條</span><small>高階職場字彙、商務搭配詞與例句 · 點開閱讀</small></summary>
-      <p class="muted">分主題輕鬆閱讀，包含中文與原創例句。連網載入更新後可離線查看。依多益官方情境選詞，非官方字頻排行或保證出題。</p>
-      ${VOCABULARY.map(group => `<details class="vocabulary-group"><summary>${esc(group.category)} · ${group.words.length} 個詞條</summary>${group.words.map(([word, meaning, example]) => `<p><b>${esc(word)}</b> · ${esc(meaning)}<br><span class="muted">${esc(example)}</span></p>`).join('')}</details>`).join('')}
+    <details class="card vocabulary-card"><summary><span class="vocabulary-eyebrow">WORKPLACE VOCABULARY</span><span class="vocabulary-title">職場字彙 · ${vocabCounts()[800] + vocabCounts()[900]} 個詞條</span><small>800 核心 ${vocabCounts()[800]} 個，適合約 600–850 · 900 進階 ${vocabCounts()[900]} 個，金色證書目標</small></summary>
+      <p class="muted">預設先顯示 800 核心，比較好入門。900 是進階字彙，標成金色證書。例句是本站自寫的，不是官方字表。</p>
+      <div class="vocab-filters" role="group" aria-label="字彙程度">
+        <button type="button" class="btn small" data-action="vocab-filter" data-vocab-filter="800">800 核心</button>
+        <button type="button" class="btn small" data-action="vocab-filter" data-vocab-filter="900">900 進階</button>
+        <button type="button" class="btn small" data-action="vocab-filter" data-vocab-filter="all">全部</button>
+      </div>
+      ${VOCABULARY.map((group) => `<details class="vocabulary-group" data-vocab-group><summary>${esc(group.category)} · <span data-vocab-count>${group.words.length} 個詞條</span></summary>${group.words.map((item) => { const { word, meaning, example, level, pos } = vocabParts(item); return `<p data-vocab-level="${level}"><b>${esc(word)}</b>${pos ? ` <span class="muted">${esc(pos)}</span>` : ""} <span class="tag">${level === 900 ? "900 金色證書" : "800 核心"}</span> · ${esc(meaning)}<br><span class="muted">${esc(example)}</span></p>`; }).join("")}</details>`).join("")}
       <p><a href="https://www.toeic.com.tw/toeic/listening-reading/about/content/" target="_blank" rel="noopener noreferrer">參考：台灣多益官方測驗內容</a> · <a href="https://dictionary.cambridge.org/dictionary/english/" target="_blank" rel="noopener noreferrer">Cambridge Dictionary</a></p>
     </details>
 
@@ -206,6 +243,7 @@ function renderHome() {
       </tbody></table></section>` : ""}
   `;
   document.getElementById('speech-rate').value = String(audio.getRate());
+  paintVocab();
   fillVoices();
 }
 
@@ -648,6 +686,7 @@ app.addEventListener("click", (e) => {
     case "next": go(1); break;
     case "jump": if (!session.phase || groupById(d.group)?.section === session.phase) { session.cur = session.groupIds.indexOf(d.group); saveSession(); renderTest(); } break;
     case "submit": submit(false); break;
+    case "vocab-filter": store.set(KEY_VOCAB_LEVEL, d.vocabFilter); paintVocab(); break;
   }
 });
 

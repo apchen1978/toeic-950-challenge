@@ -1,1389 +1,949 @@
+// Workplace vocabulary. Each entry is [word, Traditional Chinese meaning, example, level] or [word, meaning, example, level, part of speech].
+// 800 = core language for roughly the 730-860 band. 900 = advanced / gold-certificate language. See docs/VOCABULARY_LEVELS.md.
 export const VOCABULARY = [
-  { category: '契約與規範', words: [
-    ['contingency', '應變事項；備案', 'The team prepared a contingency plan for delivery delays.'],
-    ['waive', '免除', 'The hotel agreed to waive the cancellation fee.'],
-    ['stipulate', '明訂', 'The contract stipulates payment within thirty days.'],
-    ['comply with', '遵守', 'All suppliers must comply with the safety requirements.'],
-    ['binding', '有約束力的', 'Both parties signed a legally binding agreement.']
-  ]},
-  { category: '財務與採購', words: [
-    ['reconcile', '核對使一致', 'Please reconcile the invoices with our payment records.'],
-    ['discrepancy', '差異；不一致', 'Report any billing discrepancy to the accounting department.'],
-    ['allocate', '分配', 'The director allocated additional funds to the project.'],
-    ['outstanding', '尚未付清的', 'The outstanding balance is due by Friday.'],
-    ['reimburse', '報銷；償還', 'The company will reimburse employees for travel expenses.']
-  ]},
-  { category: '營運與排程', words: [
-    ['tentative', '暫定的', 'We have prepared a tentative schedule for the conference.'],
-    ['postpone', '延期', 'The manager decided to postpone the meeting until Friday.'],
-    ['expedite', '加快處理', 'We will expedite the shipment at no extra charge.'],
-    ['accommodate', '配合；滿足需求', 'Can the venue accommodate a later starting time?'],
-    ['coordinate', '協調', 'Please coordinate with the supplier before placing the order.']
-  ]},
-  { category: '溝通與客戶服務', words: [
-    ['inquiry', '詢問；查詢', 'Our staff will respond to your inquiry within two days.'],
-    ['clarify', '釐清', 'The consultant called to clarify the project requirements.'],
-    ['notify', '通知', 'We will notify participants of any schedule changes.'],
-    ['eligible', '符合資格的', 'Customers may be eligible for a full refund.'],
-    ['resolve', '解決', 'A representative contacted the customer to resolve the complaint.']
-  ]},
-  { category: '合約、法規與談判', words: [
-    ['amend', '修訂；修改', 'Both parties agreed to amend the original contract.'],
-    ['clause', '條款', 'The agreement includes a clause about late delivery.'],
-    ['authorize', '授權；批准', 'Only the director can authorize the final payment.'],
-    ['enforce', '執行；實施', 'The company will enforce the revised safety policy.'],
-    ['liable', '負有法律責任的', 'The supplier may be liable for the damage.'],
-    ['negotiate', '協商；談判', 'They negotiated a lower rate for the annual contract.'],
-    ['renew', '續約；更新', 'Please renew your membership before it expires.'],
-    ['terminate', '終止', 'Either party may terminate the agreement with written notice.'],
-    ['in accordance with', '依照；符合', 'All refunds are processed in accordance with company policy.'],
-    ['subject to', '須經；取決於', 'The proposal is subject to approval by the board.']
-  ]},
-  { category: '財務、帳單與付款', words: [
-    ['accrue', '累積；產生', 'Interest will accrue on any unpaid balance.'],
-    ['allocate funds', '分配資金', 'The department allocated funds for staff training.'],
-    ['audit', '稽核；審計', 'An external team will audit the financial records.'],
-    ['billing statement', '帳單明細', 'Your billing statement shows the amount due this month.'],
-    ['deduct', '扣除', 'The discount will be deducted from the total.'],
-    ['expenditure', '支出', 'Travel expenditure must be approved in advance.'],
-    ['invoice', '發票；請款單', 'Please include the purchase order number on the invoice.'],
-    ['overdue', '逾期未付的', 'An overdue payment may delay your next order.'],
-    ['receipt', '收據', 'Keep your receipt when submitting an expense claim.'],
-    ['revenue', '營收', 'Online sales generated additional revenue last quarter.']
-  ]},
-  { category: '運輸、供應與庫存', words: [
-    ['backorder', '缺貨待補的訂單', 'The chairs are on backorder until next month.'],
-    ['consignment', '託運貨物', 'The consignment arrived at the warehouse this morning.'],
-    ['dispatch', '發送；派遣', 'We will dispatch the replacement tomorrow.'],
-    ['inventory', '庫存；存貨清單', 'The team checks inventory at the end of each month.'],
-    ['lead time', '前置時間；交貨所需時間', 'Allow a lead time of three weeks for custom orders.'],
-    ['logistics', '物流；後勤', 'Our logistics team arranged an alternative delivery route.'],
-    ['procurement', '採購', 'The procurement department is reviewing supplier proposals.'],
-    ['replenish', '補充；重新備貨', 'The store will replenish its stock before the weekend.'],
-    ['shortage', '短缺', 'A shortage of parts has delayed production.'],
-    ['supplier', '供應商', 'The supplier confirmed that the materials had been shipped.']
-  ]},
-  { category: '旅行、飯店與活動', words: [
-    ['boarding pass', '登機證', 'Please present your boarding pass at the gate.'],
-    ['complimentary', '免費提供的', 'Guests receive complimentary breakfast during their stay.'],
-    ['itinerary', '行程表', 'The revised itinerary includes a stop in Singapore.'],
-    ['layover', '轉機停留時間', 'Our flight has a two-hour layover in Seoul.'],
-    ['occupancy', '入住率；使用率', 'Hotel occupancy is expected to increase during the festival.'],
-    ['reservation', '預訂', 'Your reservation can be changed before Friday.'],
-    ['shuttle', '接駁車', 'A shuttle runs between the hotel and the airport.'],
-    ['venue', '活動場地', 'The conference venue is within walking distance of the station.'],
-    ['voucher', '憑證；兌換券', 'The airline issued a meal voucher after the delay.']
-  ]},
-  { category: '會議、職場與人事', words: [
-    ['agenda', '議程', 'The budget review is the first item on the agenda.'],
-    ['applicant', '申請人；求職者', 'Each applicant will receive an email by Friday.'],
-    ['delegate', '委派；授權', 'The manager delegated the task to a team member.'],
-    ['implement', '實施；執行', 'The firm will implement the new process in January.'],
-    ['mandatory', '強制的；必須的', 'Attendance at the safety briefing is mandatory.'],
-    ['minutes', '會議紀錄', 'Please circulate the meeting minutes to all attendees.'],
-    ['orientation', '職前培訓；新進人員說明會', 'New employees will attend orientation on Monday.'],
-    ['proficiency', '熟練程度', 'The position requires proficiency in written English.'],
-    ['reschedule', '重新安排時間', 'We need to reschedule the interview for next week.'],
-    ['vacancy', '職缺', 'The company posted a vacancy for a sales manager.']
-  ]},
-  { category: '信件、公告與閱讀推論', words: [
-    ['adhere to', '遵守；依循', 'All visitors must adhere to the posted rules.'],
-    ['as outlined in', '如……所述', 'Please submit the form as outlined in the email.'],
-    ['contingent on', '取決於；以……為條件', 'The offer is contingent on final approval.'],
-    ['defer', '延後；推遲', 'The committee decided to defer the vote until June.'],
-    ['designated', '指定的', 'Leave completed forms in the designated folder.'],
-    ['in lieu of', '代替', 'Employees may take time off in lieu of overtime pay.'],
-    ['pending', '等待……期間；尚待決定的', 'The application is pending review by the committee.'],
-    ['prior to', '在……之前', 'Please register prior to the start of the workshop.'],
-    ['regarding', '關於', 'We are writing regarding your recent inquiry.'],
-    ['subsequent', '隨後的；後續的', 'Any subsequent changes will be announced by email.']
-  ]},
-  { category: "會議與協作", words: [
-    [
-        "adjourn",
-        "休會；結束會議",
-        "The chair adjourned the meeting at noon."
-    ],
-    [
-        "attendee",
-        "出席者",
-        "Each attendee received a copy of the agenda."
-    ],
-    [
-        "briefing",
-        "簡報會；說明會",
-        "The briefing begins in the main conference room."
-    ],
-    [
-        "circulate",
-        "傳閱；傳送給多人",
-        "Please circulate the revised agenda before the meeting."
-    ],
-    [
-        "convene",
-        "召集；召開",
-        "The committee will convene again next Tuesday."
-    ],
-    [
-        "consensus",
-        "共識",
-        "The team reached a consensus on the proposal."
-    ],
-    [
-        "facilitate",
-        "促進；主持",
-        "A consultant will facilitate the discussion."
-    ],
-    [
-        "follow up on",
-        "追蹤；跟進",
-        "I will follow up on your request tomorrow."
-    ],
-    [
-        "proceed with",
-        "繼續進行",
-        "We can proceed with the project after approval."
-    ],
-    [
-        "raise an issue",
-        "提出問題",
-        "She raised an issue during the briefing."
-    ],
-    [
-        "reach an agreement",
-        "達成協議",
-        "The parties reached an agreement on delivery dates."
-    ],
-    [
-        "take minutes",
-        "做會議紀錄",
-        "Jordan volunteered to take minutes at the meeting."
-    ],
-    [
-        "postpone until further notice",
-        "延期至另行通知",
-        "The conference has been postponed until further notice."
-    ],
-    [
-        "on behalf of",
-        "代表",
-        "I am writing on behalf of the committee."
-    ],
-    [
-        "in advance",
-        "事先",
-        "Please send your questions in advance."
-    ],
-    [
-        "point of contact",
-        "聯絡窗口",
-        "Mia is the point of contact for this event."
-    ],
-    [
-        "action item",
-        "待辦事項",
-        "Each action item has an assigned owner."
-    ],
-    [
-        "carry out",
-        "執行",
-        "The team will carry out the agreed plan."
-    ],
-    [
-        "bring forward",
-        "提前",
-        "The director brought forward the meeting by an hour."
-    ],
-    [
-        "draw up",
-        "擬定",
-        "The team will draw up a revised schedule."
+  {
+    category: "辦公室日常",
+    words: [
+    ["colleague", "同事", "My colleague will cover the phones while I am in a meeting.", 800, "n."],
+    ["supervisor", "主管", "Please ask your supervisor before you change the shift.", 800, "n."],
+    ["cubicle", "辦公隔間", "The printer is just outside my cubicle.", 800, "n."],
+    ["headquarters", "總公司", "The training will be held at headquarters on Monday.", 800, "n."],
+    ["branch office", "分公司", "She moved to the Taichung branch office in March.", 800, "n."],
+    ["reception", "接待處", "Please sign in at reception when you arrive.", 800, "n."],
+    ["lobby", "大廳", "Visitors should wait in the lobby.", 800, "n."],
+    ["extension", "分機", "You can reach me at extension 214.", 800, "n."],
+    ["voicemail", "語音信箱", "I left a voicemail about tomorrow's delivery.", 800, "n."],
+    ["headset", "耳麥", "Customer service staff wear a headset during calls.", 800, "n."],
+    ["password", "密碼", "Please change your password before Friday.", 800, "n."],
+    ["log in", "登入", "You need your employee number to log in.", 800, "phr."],
+    ["log out", "登出", "Remember to log out of the shared computer.", 800, "phr."],
+    ["attachment", "附件", "I cannot open the attachment you sent.", 800, "n."],
+    ["folder", "資料夾", "Save the signed form in the shared folder.", 800, "n."],
+    ["memo", "備忘錄", "The memo explains the new parking rules.", 800, "n."],
+    ["stationery", "文具", "Please order more stationery for the front desk.", 800, "n."],
+    ["stapler", "釘書機", "The stapler on the counter is empty.", 800, "n."],
+    ["copier", "影印機", "The copier on the third floor is out of paper.", 800, "n."],
+    ["scanner", "掃描器", "Use the scanner to send a copy of the receipt.", 800, "n."],
+    ["name badge", "名牌", "All staff must wear a name badge in the lobby.", 800, "n."],
+    ["overtime", "加班", "The team worked overtime to finish the order.", 800, "n."],
+    ["shift", "班次", "Her shift starts at eight in the morning.", 800, "n."],
+    ["break room", "休息室", "Lunch is served in the break room today.", 800, "n."],
+    ["work from home", "在家工作", "Staff may work from home on Fridays.", 800, "phr."],
+    ["notice", "公告", "A notice about the fire drill is on the wall.", 800, "n."],
+    ["supply closet", "用品櫃", "Extra paper is kept in the supply closet.", 800, "n."],
+    ["visitor pass", "訪客證", "Please return your visitor pass at reception.", 800, "n."],
+    ["parking permit", "停車許可", "You need a parking permit for the garage.", 800, "n."],
+    ["remote work", "遠距工作", "Remote work is allowed two days a week.", 800, "n."]
     ]
-] },
-  { category: "求職與人事", words: [
-    [
-        "appointment",
-        "任命；約定",
-        "Her appointment as director takes effect in June."
-    ],
-    [
-        "candidate",
-        "候選人；應徵者",
-        "Each candidate will be interviewed separately."
-    ],
-    [
-        "compensation",
-        "薪酬；補償",
-        "The position offers competitive compensation."
-    ],
-    [
-        "credential",
-        "資格證明",
-        "Applicants should submit their professional credentials."
-    ],
-    [
-        "entitlement",
-        "應享權利",
-        "Employees can check their leave entitlement online."
-    ],
-    [
-        "evaluate",
-        "評估",
-        "The panel will evaluate each application."
-    ],
-    [
-        "expertise",
-        "專業知識",
-        "The role requires expertise in project management."
-    ],
-    [
-        "incentive",
-        "獎勵措施",
-        "The company offers incentives for meeting sales goals."
-    ],
-    [
-        "internal transfer",
-        "內部調職",
-        "Employees may apply for an internal transfer."
-    ],
-    [
-        "job opening",
-        "職缺",
-        "The job opening was posted on the company website."
-    ],
-    [
-        "leave of absence",
-        "請假；休假期間",
-        "He requested a leave of absence for family reasons."
-    ],
-    [
-        "mentor",
-        "導師；指導",
-        "Each new employee is assigned a mentor."
-    ],
-    [
-        "performance appraisal",
-        "績效考核",
-        "Your performance appraisal is scheduled for July."
-    ],
-    [
-        "probationary period",
-        "試用期",
-        "Benefits begin after the probationary period."
-    ],
-    [
-        "promotion",
-        "升遷",
-        "Her promotion was announced at the staff meeting."
-    ],
-    [
-        "qualification",
-        "資格；條件",
-        "The advertisement lists the required qualifications."
-    ],
-    [
-        "recruit",
-        "招募",
-        "The company plans to recruit additional engineers."
-    ],
-    [
-        "reference",
-        "推薦人；推薦資料",
-        "Please provide two professional references."
-    ],
-    [
-        "resignation",
-        "辭職",
-        "He submitted his resignation in writing."
-    ],
-    [
-        "retain",
-        "留任；保留",
-        "The firm introduced benefits to retain experienced staff."
+  },
+  {
+    category: "會議與時間",
+    words: [
+    ["schedule", "行程表", "The updated schedule is posted outside the meeting room.", 800, "n."],
+    ["calendar", "行事曆", "Please check my calendar before you set a time.", 800, "n."],
+    ["available", "有空的；可取得的", "Is the room available at three?", 800, "adj."],
+    ["availability", "可出席時間；供應情況", "Please send your availability for next week.", 800, "n."],
+    ["confirm", "確認", "Please confirm that you can attend.", 800, "v."],
+    ["cancel", "取消", "We had to cancel the visit because the flight was late.", 800, "v."],
+    ["participant", "參加者", "Each participant will receive a name badge.", 800, "n."],
+    ["handout", "講義", "The handout lists the three topics for today.", 800, "n."],
+    ["projector", "投影機", "The projector in Room B is not working.", 800, "n."],
+    ["time zone", "時區", "The call is at 9 a.m. Taipei time, so check your time zone.", 800, "n."],
+    ["conference call", "電話會議", "The conference call starts in ten minutes.", 800, "n."],
+    ["dial in", "撥入會議", "You can dial in from any office.", 800, "phr."],
+    ["mute", "靜音", "Please mute your phone during the talk.", 800, "v."],
+    ["absent", "缺席的", "Two members were absent from the morning meeting.", 800, "adj."],
+    ["vote", "表決", "The vote on the new rule is tomorrow.", 800, "n."],
+    ["majority", "過半數", "The majority of the team agreed to the plan.", 800, "n."],
+    ["on time", "準時", "The speaker arrived on time.", 800, "phr."],
+    ["run late", "晚到；延誤", "The train may run late this evening.", 800, "phr."],
+    ["wrap up", "結束收尾", "Let us wrap up the meeting by four.", 800, "phr."],
+    ["time slot", "時段", "The only open time slot is Thursday afternoon.", 800, "n."],
+    ["book a room", "預訂會議室", "Please book a room for the client visit.", 800, "phr."],
+    ["opening remarks", "開場致詞", "The director gave the opening remarks.", 800, "n."],
+    ["breakout room", "分組討論室", "Each group will use a breakout room after lunch.", 800, "n."],
+    ["Q&A session", "問答時間", "A short Q&A session follows the talk.", 800, "n."],
+    ["punctual", "準時的", "Please be punctual for the interview.", 800, "adj."],
+    ["chair a meeting", "主持會議", "Who will chair a meeting on Friday?", 800, "phr."],
+    ["take a break", "休息一下", "We will take a break at 10:30.", 800, "phr."],
+    ["weekly meeting", "週會", "The weekly meeting is every Monday at nine.", 800, "n."],
+    ["one-on-one", "一對一面談", "I have a one-on-one with my supervisor today.", 800, "n."],
+    ["ahead of schedule", "進度超前", "The repair work is ahead of schedule.", 800, "phr."],
+    ["behind schedule", "進度落後", "The renovation is two weeks behind schedule.", 800, "phr."]
     ]
-] },
-  { category: "採購與供應商", words: [
-    [
-        "bid",
-        "投標；報價",
-        "Three firms submitted bids for the project."
-    ],
-    [
-        "bulk order",
-        "大量訂單",
-        "A discount is available for bulk orders."
-    ],
-    [
-        "competitive pricing",
-        "具競爭力的價格",
-        "The supplier offered competitive pricing."
-    ],
-    [
-        "fulfill",
-        "履行；完成訂單",
-        "The warehouse can fulfill the order this week."
-    ],
-    [
-        "in stock",
-        "有庫存",
-        "The requested items are currently in stock."
-    ],
-    [
-        "out of stock",
-        "缺貨",
-        "The printer is temporarily out of stock."
-    ],
-    [
-        "place an order",
-        "下訂單",
-        "Please place an order before Thursday."
-    ],
-    [
-        "purchase order",
-        "採購單",
-        "Please attach the signed purchase order."
-    ],
-    [
-        "quotation",
-        "報價單",
-        "The supplier sent a quotation yesterday."
-    ],
-    [
-        "quote",
-        "報價",
-        "The vendor quoted a lower price for larger quantities."
-    ],
-    [
-        "retailer",
-        "零售商",
-        "The product is available through local retailers."
-    ],
-    [
-        "wholesaler",
-        "批發商",
-        "The wholesaler delivers to several stores."
-    ],
-    [
-        "source",
-        "採購；尋找來源",
-        "We source these components from two suppliers."
-    ],
-    [
-        "substitute",
-        "替代品；替代",
-        "The supplier offered a substitute for the unavailable part."
-    ],
-    [
-        "tender",
-        "招標；投標",
-        "The city invited contractors to tender for the work."
-    ],
-    [
-        "vendor",
-        "供應商",
-        "The vendor agreed to extend the warranty."
-    ],
-    [
-        "warranty",
-        "保固",
-        "The warranty covers defects for one year."
-    ],
-    [
-        "unit price",
-        "單價",
-        "The unit price excludes shipping costs."
-    ],
-    [
-        "quality assurance",
-        "品質保證",
-        "The quality assurance team inspected the shipment."
-    ],
-    [
-        "on schedule",
-        "按預定進度",
-        "The supplier expects to deliver on schedule."
+  },
+  {
+    category: "雇用與出勤",
+    words: [
+    ["hire", "雇用", "The store will hire two cashiers in June.", 800, "v."],
+    ["interviewer", "面試官", "The interviewer will call you tomorrow.", 800, "n."],
+    ["interviewee", "應試者", "Each interviewee should bring a photo ID.", 800, "n."],
+    ["resume", "履歷", "Please email your resume by Friday.", 800, "n."],
+    ["cover letter", "求職信", "Attach a short cover letter to your resume.", 800, "n."],
+    ["job description", "職務說明", "The job description lists the daily tasks.", 800, "n."],
+    ["full-time", "全職的", "This is a full-time position in accounting.", 800, "adj."],
+    ["part-time", "兼職的", "She works part-time at the front desk.", 800, "adj."],
+    ["temporary", "臨時的", "We need a temporary receptionist in August.", 800, "adj."],
+    ["permanent", "長期的；正式的", "The temporary role may become permanent.", 800, "adj."],
+    ["salary", "薪水", "The salary is paid on the last Friday of the month.", 800, "n."],
+    ["wage", "工資", "The hourly wage is written in the offer.", 800, "n."],
+    ["bonus", "獎金", "Staff receive a bonus if the store meets its goal.", 800, "n."],
+    ["benefits", "福利", "The benefits include health insurance.", 800, "n."],
+    ["paycheck", "薪資", "The paycheck is deposited on the 25th.", 800, "n."],
+    ["payroll", "薪資作業", "Payroll closes on the 20th of each month.", 800, "n."],
+    ["timesheet", "工時表", "Please submit your timesheet every Friday.", 800, "n."],
+    ["clock in", "打卡上班", "Staff clock in at the side entrance.", 800, "phr."],
+    ["clock out", "打卡下班", "Do not forget to clock out before you leave.", 800, "phr."],
+    ["sick leave", "病假", "He is on sick leave until Thursday.", 800, "n."],
+    ["annual leave", "年假", "She requested annual leave in July.", 800, "n."],
+    ["public holiday", "國定假日", "The office is closed for the public holiday.", 800, "n."],
+    ["notice period", "離職預告期", "The notice period is thirty days.", 800, "n."],
+    ["offer letter", "錄取通知書", "The offer letter was sent this morning.", 800, "n."],
+    ["dress code", "服裝規定", "The dress code is business casual.", 800, "n."],
+    ["employee ID", "員工識別證", "Show your employee ID at the gate.", 800, "n."],
+    ["coworker", "同事", "Ask a coworker if you cannot find the form.", 800, "n."],
+    ["manager", "經理", "The manager approved the extra shift.", 800, "n."],
+    ["human resources", "人力資源", "Human resources will explain the benefits.", 800, "n."],
+    ["new hire", "新進人員", "The new hire starts on Monday.", 800, "n."]
     ]
-] },
-  { category: "財務與會計", words: [
-    [
-        "accounts payable",
-        "應付帳款",
-        "Please forward the invoice to accounts payable."
-    ],
-    [
-        "accounts receivable",
-        "應收帳款",
-        "The report includes outstanding accounts receivable."
-    ],
-    [
-        "balance sheet",
-        "資產負債表",
-        "The balance sheet is included in the report."
-    ],
-    [
-        "budget allocation",
-        "預算分配",
-        "The budget allocation will be reviewed next month."
-    ],
-    [
-        "cash flow",
-        "現金流",
-        "The company is monitoring cash flow closely."
-    ],
-    [
-        "credit note",
-        "折讓單；貸項通知單",
-        "The vendor issued a credit note for the return."
-    ],
-    [
-        "due date",
-        "到期日",
-        "The due date appears at the top of the invoice."
-    ],
-    [
-        "expense claim",
-        "費用報銷申請",
-        "Submit your expense claim with the receipts."
-    ],
-    [
-        "fiscal year",
-        "會計年度",
-        "The fiscal year ends in December."
-    ],
-    [
-        "installment",
-        "分期付款的一期",
-        "The final installment is due next month."
-    ],
-    [
-        "interest rate",
-        "利率",
-        "The loan has a fixed interest rate."
-    ],
-    [
-        "net profit",
-        "淨利",
-        "Net profit rose despite higher transport costs."
-    ],
-    [
-        "operating costs",
-        "營運成本",
-        "The move helped reduce operating costs."
-    ],
-    [
-        "overhead",
-        "經常性營運開銷",
-        "The firm is looking for ways to reduce overhead."
-    ],
-    [
-        "payment terms",
-        "付款條件",
-        "The payment terms are stated in the contract."
-    ],
-    [
-        "processing fee",
-        "手續費",
-        "A processing fee applies to international transfers."
-    ],
-    [
-        "refund",
-        "退款",
-        "The customer received a full refund."
-    ],
-    [
-        "surplus",
-        "盈餘；過剩",
-        "The department reported a small budget surplus."
-    ],
-    [
-        "tax deduction",
-        "稅額扣除項目",
-        "The accountant explained the available tax deductions."
-    ],
-    [
-        "write off",
-        "註銷；列為損失",
-        "The company wrote off the damaged inventory."
+  },
+  {
+    category: "訂單與包裝",
+    words: [
+    ["quantity", "數量", "Please check the quantity on the order form.", 800, "n."],
+    ["catalog", "型錄", "The spring catalog arrives next week.", 800, "n."],
+    ["product code", "產品編號", "Enter the product code in the first column.", 800, "n."],
+    ["spare part", "備用零件", "We ordered a spare part for the copier.", 800, "n."],
+    ["packing list", "裝箱單", "The packing list is inside the first box.", 800, "n."],
+    ["carton", "紙箱", "Each carton holds twelve bottles.", 800, "n."],
+    ["pallet", "棧板", "The pallet is ready near the side door.", 800, "n."],
+    ["courier", "快遞", "The courier picks up packages at five.", 800, "n."],
+    ["postage", "郵資", "Postage is included in the price.", 800, "n."],
+    ["shipping fee", "運費", "The shipping fee is listed under the total.", 800, "n."],
+    ["handling fee", "處理費", "A handling fee applies to small orders.", 800, "n."],
+    ["order number", "訂單編號", "Please tell us the order number.", 800, "n."],
+    ["deliver", "送達", "We can deliver the chairs on Tuesday.", 800, "v."],
+    ["delivery date", "交貨日", "The delivery date is March 12.", 800, "n."],
+    ["partial shipment", "部分出貨", "A partial shipment will leave today.", 800, "n."],
+    ["express delivery", "快遞配送", "Express delivery arrives the next business day.", 800, "n."],
+    ["standard shipping", "一般配送", "Standard shipping takes five days.", 800, "n."],
+    ["return address", "寄件人地址", "Write the return address on the box.", 800, "n."],
+    ["signature required", "需簽名", "This parcel is signature required.", 800, "phr."],
+    ["fragile", "易碎的", "Mark the box fragile before you send it.", 800, "adj."],
+    ["restock", "補貨", "The store will restock the shelves tonight.", 800, "v."],
+    ["reorder", "再訂購", "We should reorder paper before Friday.", 800, "v."],
+    ["minimum order", "最低訂購量", "The minimum order is ten units.", 800, "n."],
+    ["free shipping", "免運費", "Free shipping applies to orders over two thousand.", 800, "n."],
+    ["barcode", "條碼", "Scan the barcode before you pack the item.", 800, "n."],
+    ["aisle", "走道", "The item is in aisle four.", 800, "n."],
+    ["stockroom", "庫房", "Extra boxes are in the stockroom.", 800, "n."],
+    ["parcel", "包裹", "The parcel was left at reception.", 800, "n."],
+    ["package", "包裹", "The package weighs two kilograms.", 800, "n."],
+    ["assemble", "組裝", "Customers can assemble the shelf with the included tool.", 800, "v."]
     ]
-] },
-  { category: "運輸與配送", words: [
-    [
-        "arrival",
-        "抵達；到達",
-        "The expected arrival is Friday afternoon."
-    ],
-    [
-        "carrier",
-        "運輸業者",
-        "The carrier will provide a tracking number."
-    ],
-    [
-        "customs clearance",
-        "清關",
-        "The shipment is awaiting customs clearance."
-    ],
-    [
-        "delivery window",
-        "預計配送時段",
-        "Your delivery window is between two and four."
-    ],
-    [
-        "destination",
-        "目的地",
-        "The package reached its destination on Monday."
-    ],
-    [
-        "freight",
-        "貨運；運費",
-        "Freight charges are listed separately."
-    ],
-    [
-        "in transit",
-        "運送途中",
-        "Your order is still in transit."
-    ],
-    [
-        "loading dock",
-        "裝卸貨平台",
-        "Drivers should report to the loading dock."
-    ],
-    [
-        "outbound",
-        "對外運出的；去程的",
-        "The outbound shipment leaves at noon."
-    ],
-    [
-        "pick up",
-        "取貨；接人",
-        "You may pick up the parcel at the counter."
-    ],
-    [
-        "proof of delivery",
-        "送達證明",
-        "Please keep the proof of delivery for your records."
-    ],
-    [
-        "reroute",
-        "變更路線",
-        "The driver was rerouted because of roadwork."
-    ],
-    [
-        "shipment",
-        "貨物；出貨",
-        "The shipment contains replacement parts."
-    ],
-    [
-        "shipping label",
-        "寄件標籤",
-        "Attach the shipping label to the outside of the box."
-    ],
-    [
-        "tracking number",
-        "追蹤號碼",
-        "Use the tracking number to check your parcel."
-    ],
-    [
-        "turnaround time",
-        "處理所需時間",
-        "The usual turnaround time is three business days."
-    ],
-    [
-        "warehouse",
-        "倉庫",
-        "The goods are stored at our warehouse."
-    ],
-    [
-        "waybill",
-        "運單",
-        "The driver checked the waybill before leaving."
-    ],
-    [
-        "delivery confirmation",
-        "送達確認",
-        "You will receive a delivery confirmation by email."
-    ],
-    [
-        "estimated arrival",
-        "預計抵達時間",
-        "The estimated arrival has changed to 3 p.m."
+  },
+  {
+    category: "出差與交通",
+    words: [
+    ["passport", "護照", "Bring your passport to the airline counter.", 800, "n."],
+    ["visa", "簽證", "Her visa is valid until December.", 800, "n."],
+    ["luggage", "行李", "Please do not leave your luggage unattended.", 800, "n."],
+    ["carry-on", "隨身行李", "A carry-on must fit under the seat or in the bin.", 800, "n."],
+    ["window seat", "靠窗座位", "I requested a window seat for the morning flight.", 800, "n."],
+    ["nonstop flight", "直飛航班", "The nonstop flight leaves at 7:40.", 800, "n."],
+    ["direct flight", "直達航班", "Is there a direct flight to Kaohsiung tonight?", 800, "n."],
+    ["flight delay", "航班延誤", "The flight delay was about two hours.", 800, "n."],
+    ["boarding time", "登機時間", "Boarding time is printed on the ticket.", 800, "n."],
+    ["single room", "單人房", "I booked a single room for two nights.", 800, "n."],
+    ["double room", "雙人房", "The double room has two beds.", 800, "n."],
+    ["late checkout", "延後退房", "Late checkout is possible until 2 p.m.", 800, "n."],
+    ["wake-up call", "叫醒電話", "I asked for a wake-up call at six.", 800, "n."],
+    ["room service", "客房服務", "Room service stops at ten in the evening.", 800, "n."],
+    ["taxi", "計程車", "A taxi is waiting at the hotel entrance.", 800, "n."],
+    ["rental car", "租賃車", "The rental car is reserved under the company name.", 800, "n."],
+    ["driver's license", "駕照", "You need a driver's license to pick up the car.", 800, "n."],
+    ["per diem", "每日出差津貼", "The per diem covers meals during the trip.", 800, "n."],
+    ["business trip", "出差", "She is away on a business trip until Friday.", 800, "n."],
+    ["travel expense", "旅費", "Please submit the travel expense within seven days.", 800, "n."],
+    ["subway", "地鐵", "The subway stop is two blocks from the office.", 800, "n."],
+    ["platform", "月台", "The train leaves from platform three.", 800, "n."],
+    ["timetable", "時刻表", "The new timetable starts on June 1.", 800, "n."],
+    ["reserved seat", "對號座", "This ticket includes a reserved seat.", 800, "n."],
+    ["city center", "市中心", "The hotel is a short walk from the city center.", 800, "n."],
+    ["taxi stand", "計程車招呼站", "The taxi stand is outside the main door.", 800, "n."],
+    ["luggage cart", "行李推車", "Luggage carts are free in the arrivals hall.", 800, "n."],
+    ["overhead bin", "艙內置物櫃", "Please put your bag in the overhead bin.", 800, "n."],
+    ["round-trip ticket", "來回票", "A round-trip ticket is cheaper than two singles.", 800, "n."],
+    ["hotel voucher", "住宿券", "The hotel voucher covers one night.", 800, "n."]
     ]
-] },
-  { category: "行銷與銷售", words: [
-    [
-        "advertising campaign",
-        "廣告活動",
-        "The advertising campaign starts next month."
-    ],
-    [
-        "audience",
-        "受眾；觀眾",
-        "The presentation is aimed at a general audience."
-    ],
-    [
-        "brand awareness",
-        "品牌知名度",
-        "The event helped increase brand awareness."
-    ],
-    [
-        "brochure",
-        "宣傳冊",
-        "The brochure describes the available services."
-    ],
-    [
-        "complimentary offer",
-        "免費提供的優惠",
-        "The package includes a complimentary offer for guests."
-    ],
-    [
-        "conversion rate",
-        "轉換率",
-        "The team is monitoring the website conversion rate."
-    ],
-    [
-        "customer retention",
-        "客戶留存",
-        "The program aims to improve customer retention."
-    ],
-    [
-        "discount code",
-        "折扣代碼",
-        "Enter the discount code at checkout."
-    ],
-    [
-        "exclusive",
-        "專屬的；獨家的",
-        "Members receive access to exclusive offers."
-    ],
-    [
-        "extend an offer",
-        "提出優惠；提供提議",
-        "The company extended an offer to its loyal customers."
-    ],
-    [
-        "feature",
-        "特色；以……為特色",
-        "The brochure features the latest product range."
-    ],
-    [
-        "launch",
-        "推出；上市",
-        "The company will launch the product in May."
-    ],
-    [
-        "loyalty program",
-        "會員忠誠計畫",
-        "Customers can earn points through the loyalty program."
-    ],
-    [
-        "market research",
-        "市場研究",
-        "Market research revealed strong interest in the service."
-    ],
-    [
-        "promotion period",
-        "促銷期間",
-        "The discount is valid during the promotion period."
-    ],
-    [
-        "redeem",
-        "兌換",
-        "You can redeem the voucher online."
-    ],
-    [
-        "sales forecast",
-        "銷售預測",
-        "The sales forecast was updated this morning."
-    ],
-    [
-        "target market",
-        "目標市場",
-        "Small businesses are the product's target market."
-    ],
-    [
-        "trial period",
-        "試用期間",
-        "Customers can cancel during the trial period."
-    ],
-    [
-        "valid through",
-        "有效期限至",
-        "The coupon is valid through the end of May."
+  },
+  {
+    category: "付款與費用",
+    words: [
+    ["bill", "帳單", "The bill for last month is in your inbox.", 800, "n."],
+    ["charge", "費用", "There is no charge for a second copy.", 800, "n."],
+    ["subtotal", "小計", "The subtotal does not include tax.", 800, "n."],
+    ["sales tax", "營業稅", "Sales tax is added at the register.", 800, "n."],
+    ["credit card", "信用卡", "You may pay by credit card at the counter.", 800, "n."],
+    ["debit card", "簽帳金融卡", "She paid for the supplies with a debit card.", 800, "n."],
+    ["cash", "現金", "Cash is accepted at the cafeteria.", 800, "n."],
+    ["bank transfer", "銀行轉帳", "Please pay the balance by bank transfer.", 800, "n."],
+    ["amount due", "應付金額", "The amount due is 3,400.", 800, "n."],
+    ["balance", "餘額", "Your balance will update tomorrow morning.", 800, "n."],
+    ["paid in full", "已付清", "The March bill was paid in full.", 800, "phr."],
+    ["late fee", "滯納金", "A late fee applies after the tenth.", 800, "n."],
+    ["service charge", "服務費", "A service charge is added for large groups.", 800, "n."],
+    ["price list", "價目表", "Ask the desk for the latest price list.", 800, "n."],
+    ["currency", "貨幣", "Prices on this page are in local currency.", 800, "n."],
+    ["exchange rate", "匯率", "The exchange rate is updated every morning.", 800, "n."],
+    ["deposit", "訂金；押金", "A deposit is required to hold the room.", 800, "n."],
+    ["down payment", "頭期款", "The down payment is twenty percent.", 800, "n."],
+    ["monthly fee", "月費", "The monthly fee is billed on the first.", 800, "n."],
+    ["annual fee", "年費", "This card has no annual fee for the first year.", 800, "n."],
+    ["billing address", "帳單地址", "The billing address must match the card.", 800, "n."],
+    ["account number", "帳號", "Write the account number on the transfer form.", 800, "n."],
+    ["payment confirmation", "付款確認", "We emailed a payment confirmation this afternoon.", 800, "n."],
+    ["coupon", "折價券", "Enter the coupon before you finish paying.", 800, "n."],
+    ["discount", "折扣", "Members receive a ten percent discount.", 800, "n."],
+    ["partial payment", "部分付款", "We received a partial payment yesterday.", 800, "n."],
+    ["receipt number", "收據號碼", "Keep the receipt number for your records.", 800, "n."],
+    ["price", "價格", "The price includes delivery inside the city.", 800, "n."],
+    ["fee", "費用", "There is a small fee for a replacement card.", 800, "n."],
+    ["total", "總計", "The total is printed at the bottom of the page.", 800, "n."]
     ]
-] },
-  { category: "旅遊與交通", words: [
-    [
-        "aisle seat",
-        "靠走道座位",
-        "She requested an aisle seat for the flight."
-    ],
-    [
-        "baggage allowance",
-        "行李額度",
-        "Check the baggage allowance before packing."
-    ],
-    [
-        "connecting flight",
-        "轉機航班",
-        "The delay caused him to miss his connecting flight."
-    ],
-    [
-        "departure lounge",
-        "候機室",
-        "Passengers should wait in the departure lounge."
-    ],
-    [
-        "departure time",
-        "出發時間",
-        "The departure time has not changed."
-    ],
-    [
-        "gate number",
-        "登機門號碼",
-        "Please confirm your gate number on the display."
-    ],
-    [
-        "fare",
-        "票價",
-        "The fare includes one checked bag."
-    ],
-    [
-        "gate change",
-        "登機門變更",
-        "The airline announced a gate change."
-    ],
-    [
-        "ground transportation",
-        "地面交通",
-        "Ground transportation is available outside the terminal."
-    ],
-    [
-        "one-way ticket",
-        "單程票",
-        "He purchased a one-way ticket to Taipei."
-    ],
-    [
-        "round trip",
-        "來回行程",
-        "The quoted fare includes a round trip."
-    ],
-    [
-        "security screening",
-        "安全檢查",
-        "Allow extra time for security screening."
-    ],
-    [
-        "service disruption",
-        "服務中斷",
-        "A service disruption has delayed several trains."
-    ],
-    [
-        "terminal",
-        "航廈；終點站",
-        "The shuttle stops at both airport terminals."
-    ],
-    [
-        "transfer",
-        "轉乘；轉機",
-        "Passengers must transfer to another train at Central Station."
-    ],
-    [
-        "travel advisory",
-        "旅遊提醒",
-        "The airline issued a travel advisory due to weather."
-    ],
-    [
-        "check in",
-        "辦理報到",
-        "Guests may check in after three o'clock."
-    ],
-    [
-        "check out",
-        "辦理退房",
-        "Please check out by noon."
-    ],
-    [
-        "fully booked",
-        "客滿；訂滿",
-        "The earlier flight is fully booked."
-    ],
-    [
-        "subject to availability",
-        "視供應或空位而定",
-        "Upgrades are subject to availability."
+  },
+  {
+    category: "銷售與客戶",
+    words: [
+    ["client", "客戶", "The client will visit the office on Tuesday.", 800, "n."],
+    ["customer", "顧客", "The customer asked about the delivery date.", 800, "n."],
+    ["product", "產品", "This product comes in three sizes.", 800, "n."],
+    ["sample", "樣品", "We sent a sample to the buyer last week.", 800, "n."],
+    ["demonstration", "展示", "The demonstration lasts about twenty minutes.", 800, "n."],
+    ["proposal", "提案", "The proposal includes a lower price for bulk buyers.", 800, "n."],
+    ["estimate", "估價", "The estimate is valid for thirty days.", 800, "n."],
+    ["signature", "簽名", "We need your signature on page two.", 800, "n."],
+    ["competitor", "競爭對手", "A competitor opened a store nearby.", 800, "n."],
+    ["best seller", "暢銷品", "This model is our best seller this season.", 800, "n."],
+    ["in demand", "需求很高", "The small size is in demand right now.", 800, "phr."],
+    ["sales representative", "業務代表", "A sales representative will call you tomorrow.", 800, "n."],
+    ["showroom", "展示間", "The showroom is open on Saturdays.", 800, "n."],
+    ["price range", "價格範圍", "What price range are you looking for?", 800, "n."],
+    ["sales target", "銷售目標", "The team met its sales target in May.", 800, "n."],
+    ["territory", "業務區域", "Her territory covers Taichung and Changhua.", 800, "n."],
+    ["account manager", "客戶經理", "Your account manager will explain the contract.", 800, "n."],
+    ["potential customer", "潛在客戶", "We met a potential customer at the trade fair.", 800, "n."],
+    ["repeat order", "再次下單", "The clinic placed a repeat order on Monday.", 800, "n."],
+    ["close a sale", "成交", "She closed a sale after the demonstration.", 800, "phr."],
+    ["quota", "業績目標；配額", "He reached his quota two days early.", 800, "n."],
+    ["contract", "合約", "Both sides signed the contract this morning.", 800, "n."],
+    ["agreement", "協議", "The agreement starts on July 1.", 800, "n."],
+    ["sign", "簽署", "Please sign the form and send it back.", 800, "v."],
+    ["after-sales service", "售後服務", "After-sales service is included for one year.", 800, "n."],
+    ["user manual", "使用說明書", "The user manual is in the top of the box.", 800, "n."],
+    ["model number", "型號", "Please tell us the model number on the label.", 800, "n."],
+    ["walk through", "逐步說明", "Can you walk through the form with the client?", 800, "phr."],
+    ["existing customer", "現有客戶", "Existing customers receive a renewal notice.", 800, "n."],
+    ["first-time buyer", "首次購買的顧客", "A first-time buyer gets free delivery this month.", 800, "n."]
     ]
-] },
-  { category: "飯店與活動", words: [
-    [
-        "accommodations",
-        "住宿",
-        "The company arranged accommodations near the venue."
-    ],
-    [
-        "amenity",
-        "設施；便利服務",
-        "The hotel lists its amenities on the website."
-    ],
-    [
-        "banquet",
-        "宴會",
-        "The banquet will be held in the main hall."
-    ],
-    [
-        "catering",
-        "餐飲服務",
-        "The catering team can provide vegetarian meals."
-    ],
-    [
-        "confirm a booking",
-        "確認預訂",
-        "Please confirm your booking by email."
-    ],
-    [
-        "conference room",
-        "會議室",
-        "The conference room is reserved until noon."
-    ],
-    [
-        "front desk",
-        "飯店櫃台",
-        "Please leave your key at the front desk."
-    ],
-    [
-        "guest speaker",
-        "受邀講者",
-        "The guest speaker will join us after lunch."
-    ],
-    [
-        "housekeeping",
-        "客房清潔服務",
-        "Contact housekeeping if you need extra towels."
-    ],
-    [
-        "keynote address",
-        "主題演講",
-        "The keynote address begins at nine."
-    ],
-    [
-        "lodging",
-        "住宿",
-        "The registration fee does not include lodging."
-    ],
-    [
-        "registration desk",
-        "報到櫃台",
-        "Name tags are available at the registration desk."
-    ],
-    [
-        "room rate",
-        "房價",
-        "The room rate includes breakfast."
-    ],
-    [
-        "seminar",
-        "研討會",
-        "The seminar is open to all employees."
-    ],
-    [
-        "sign up for",
-        "報名參加",
-        "Please sign up for the workshop online."
-    ],
-    [
-        "special request",
-        "特殊需求",
-        "Please note any special requests when booking."
-    ],
-    [
-        "vacant",
-        "空著的；未被使用的",
-        "The meeting room is vacant this afternoon."
-    ],
-    [
-        "waiting list",
-        "候補名單",
-        "You can add your name to the waiting list."
-    ],
-    [
-        "walk-in",
-        "未預約的訪客",
-        "Walk-ins are welcome if seats are available."
-    ],
-    [
-        "workshop",
-        "工作坊",
-        "The workshop focuses on effective communication."
+  },
+  {
+    category: "設施與安全",
+    words: [
+    ["elevator", "電梯", "The elevator is out of service today.", 800, "n."],
+    ["restroom", "洗手間", "The restroom is at the end of the hall.", 800, "n."],
+    ["parking lot", "停車場", "The parking lot closes at ten.", 800, "n."],
+    ["parking space", "停車格", "Visitor parking spaces are near the entrance.", 800, "n."],
+    ["maintenance", "維修保養", "Maintenance will check the air conditioner today.", 800, "n."],
+    ["repair", "修理", "The repair should be finished by Thursday.", 800, "n."],
+    ["electrician", "電工", "An electrician is coming this afternoon.", 800, "n."],
+    ["plumber", "水電工", "Call a plumber if the sink is still leaking.", 800, "n."],
+    ["air conditioning", "空調", "The air conditioning is too cold in Room 3.", 800, "n."],
+    ["heating", "暖氣", "The heating is turned on from December.", 800, "n."],
+    ["power outage", "停電", "A power outage stopped the computers for an hour.", 800, "n."],
+    ["fire alarm", "火警警報器", "If you hear the fire alarm, use the stairs.", 800, "n."],
+    ["fire exit", "防火安全門", "The fire exit must stay unlocked.", 800, "n."],
+    ["first aid", "急救", "The first aid kit is next to the copier.", 800, "n."],
+    ["lost and found", "失物招領", "Lost and found is at the security desk.", 800, "n."],
+    ["security guard", "警衛", "The security guard checks badges after seven.", 800, "n."],
+    ["access card", "門禁卡", "Your access card opens the side door.", 800, "n."],
+    ["out of order", "故障", "The copier is out of order.", 800, "phr."],
+    ["under repair", "維修中", "The side elevator is under repair.", 800, "phr."],
+    ["cleaning staff", "清潔人員", "Cleaning staff arrive at six in the morning.", 800, "n."],
+    ["cafeteria", "員工餐廳", "The cafeteria serves lunch until 1:30.", 800, "n."],
+    ["vending machine", "自動販賣機", "The vending machine takes cards and coins.", 800, "n."],
+    ["light bulb", "燈泡", "Please replace the light bulb in the hallway.", 800, "n."],
+    ["key card", "鑰匙卡", "Insert the key card to open the office.", 800, "n."],
+    ["emergency exit", "緊急出口", "Do not place boxes in front of the emergency exit.", 800, "n."],
+    ["waste bin", "垃圾桶", "Please use the waste bin next to the printer.", 800, "n."],
+    ["recycling", "資源回收", "Recycling bins are in the copy room.", 800, "n."],
+    ["broken", "壞掉的", "The door lock is broken, so use the other door.", 800, "adj."],
+    ["leak", "漏水", "Report a leak to maintenance right away.", 800, "n."],
+    ["fire drill", "消防演習", "The fire drill is on Wednesday at ten.", 800, "n."]
     ]
-] },
-  { category: "客服與問題處理", words: [
-    [
-        "apologize for",
-        "為……道歉",
-        "We apologize for the inconvenience caused."
-    ],
-    [
-        "assistance",
-        "協助",
-        "Please contact us if you require assistance."
-    ],
-    [
-        "complaint",
-        "客訴；抱怨",
-        "The manager responded to the complaint promptly."
-    ],
-    [
-        "courtesy",
-        "禮貌；善意",
-        "As a courtesy, we will waive the fee."
-    ],
-    [
-        "defective",
-        "有瑕疵的",
-        "The customer returned a defective product."
-    ],
-    [
-        "escalate",
-        "向上呈報；升級處理",
-        "The representative escalated the issue to a supervisor."
-    ],
-    [
-        "exchange",
-        "換貨；交換",
-        "You may exchange the item within thirty days."
-    ],
-    [
-        "inconvenience",
-        "不便",
-        "We regret any inconvenience this delay may cause."
-    ],
-    [
-        "inquire about",
-        "詢問有關",
-        "She called to inquire about her order."
-    ],
-    [
-        "issue a refund",
-        "辦理退款",
-        "We will issue a refund after receiving the item."
-    ],
-    [
-        "make arrangements",
-        "做安排",
-        "We will make arrangements for a replacement."
-    ],
-    [
-        "notify in writing",
-        "以書面通知",
-        "Please notify us in writing of any changes."
-    ],
-    [
-        "on request",
-        "應要求",
-        "Additional copies are available on request."
-    ],
-    [
-        "promptly",
-        "迅速地",
-        "Please report any damage promptly."
-    ],
-    [
-        "replacement",
-        "替換品",
-        "A replacement will be shipped tomorrow."
-    ],
-    [
-        "resolve an issue",
-        "解決問題",
-        "The team worked quickly to resolve the issue."
-    ],
-    [
-        "return policy",
-        "退貨政策",
-        "Please review the return policy before ordering."
-    ],
-    [
-        "satisfaction",
-        "滿意度",
-        "Customer satisfaction improved this quarter."
-    ],
-    [
-        "service representative",
-        "客服人員",
-        "A service representative will respond shortly."
-    ],
-    [
-        "submit a request",
-        "提交申請",
-        "You can submit a request through the website."
+  },
+  {
+    category: "電話與客服",
+    words: [
+    ["help desk", "服務台", "Call the help desk if you cannot log in.", 800, "n."],
+    ["hotline", "專線", "The support hotline is open until eight.", 800, "n."],
+    ["on hold", "通話保留中", "I was on hold for about ten minutes.", 800, "phr."],
+    ["call back", "回電話", "I will call back after the meeting.", 800, "phr."],
+    ["leave a message", "留言", "Please leave a message if I am away from my desk.", 800, "phr."],
+    ["transfer a call", "轉接電話", "Can you transfer a call to accounting?", 800, "phr."],
+    ["opening hours", "營業時間", "Opening hours are nine to six on weekdays.", 800, "n."],
+    ["closed", "休息；關閉", "The branch is closed on Sundays.", 800, "adj."],
+    ["unavailable", "無法接聽；沒有空", "The manager is unavailable until noon.", 800, "adj."],
+    ["wait time", "等待時間", "The current wait time is about five minutes.", 800, "n."],
+    ["feedback", "意見回饋", "We welcome feedback on the new form.", 800, "n."],
+    ["suggestion", "建議", "Please send any suggestion to the office.", 800, "n."],
+    ["as soon as possible", "盡快", "We will reply as soon as possible.", 800, "phr."],
+    ["right away", "立刻", "I will send the file right away.", 800, "phr."],
+    ["look into", "查清楚", "We will look into the missing package.", 800, "phr."],
+    ["get back to", "再回覆", "I will get back to you tomorrow morning.", 800, "phr."],
+    ["double-check", "再核對一次", "Please double-check the total before you pay.", 800, "v."],
+    ["hold", "請對方稍候", "Please hold while I find your order.", 800, "v."],
+    ["ticket number", "服務單號", "Your ticket number is 45821.", 800, "n."],
+    ["case number", "案件編號", "Tell us the case number when you call again.", 800, "n."],
+    ["speak with", "與某人通話", "May I speak with Ms. Chen?", 800, "phr."],
+    ["return a call", "回覆來電", "Please return a call from the supplier.", 800, "phr."],
+    ["wrong number", "打錯的電話", "Sorry, this is the wrong number.", 800, "n."],
+    ["let me know", "請告訴我", "Please let me know if the time changes.", 800, "phr."],
+    ["apology", "道歉", "We sent a short apology for the late reply.", 800, "n."],
+    ["polite", "有禮貌的", "Staff should stay polite even when the caller is upset.", 800, "adj."],
+    ["patient", "有耐心的", "Thank you for being patient while we checked the file.", 800, "adj."],
+    ["busy signal", "忙線", "I heard a busy signal, so I tried again later.", 800, "n."],
+    ["directory", "電話分機表", "The staff directory is next to the phone.", 800, "n."],
+    ["callback number", "回撥號碼", "Please leave a callback number.", 800, "n."]
     ]
-] },
-  { category: "公告與正式書信", words: [
-    [
-        "advise",
-        "告知；建議",
-        "Please advise us of any changes to your address."
-    ],
-    [
-        "applicable",
-        "適用的",
-        "Additional charges may be applicable."
-    ],
-    [
-        "as scheduled",
-        "按照預定時間",
-        "The meeting will proceed as scheduled."
-    ],
-    [
-        "attached",
-        "隨附的",
-        "Please review the attached document."
-    ],
-    [
-        "within",
-        "在……之內",
-        "Please respond within three business days."
-    ],
-    [
-        "effective immediately",
-        "立即生效",
-        "The revised policy is effective immediately."
-    ],
-    [
-        "enclosed",
-        "隨函附上的",
-        "The signed agreement is enclosed for your records."
-    ],
-    [
-        "for your reference",
-        "供你參考",
-        "I have attached the schedule for your reference."
-    ],
-    [
-        "forthcoming",
-        "即將到來的",
-        "Details will be shared at the forthcoming meeting."
-    ],
-    [
-        "in response to",
-        "回應；針對",
-        "I am writing in response to your inquiry."
-    ],
-    [
-        "in the event of",
-        "如果發生",
-        "In the event of a delay, we will contact you."
-    ],
-    [
-        "no later than",
-        "最遲不晚於",
-        "The form must arrive no later than Monday."
-    ],
-    [
-        "please be advised",
-        "敬請注意",
-        "Please be advised that the office will close early."
-    ],
-    [
-        "pursuant to",
-        "依照；根據",
-        "The payment was made pursuant to the agreement."
-    ],
-    [
-        "regrettably",
-        "令人遺憾地",
-        "Regrettably, the event has been cancelled."
-    ],
-    [
-        "reminder",
-        "提醒",
-        "This is a reminder to submit your registration."
-    ],
-    [
-        "requirement",
-        "要求；必要條件",
-        "The notice explains the application requirements."
-    ],
-    [
-        "with immediate effect",
-        "立即生效",
-        "The change applies with immediate effect."
-    ],
-    [
-        "with regard to",
-        "關於",
-        "I have a question with regard to your proposal."
-    ],
-    [
-        "written notice",
-        "書面通知",
-        "A written notice is required to cancel the contract."
+  },
+  {
+    category: "生產與現場",
+    words: [
+    ["factory", "工廠", "The factory is closed for cleaning this weekend.", 800, "n."],
+    ["assembly line", "裝配線", "The assembly line stops for lunch at noon.", 800, "n."],
+    ["safety helmet", "安全帽", "Wear a safety helmet inside the factory.", 800, "n."],
+    ["safety shoes", "安全鞋", "Safety shoes are required in this area.", 800, "n."],
+    ["glove", "手套", "Gloves are stored next to the first aid kit.", 800, "n."],
+    ["machine", "機器", "Do not use the machine without training.", 800, "n."],
+    ["operate", "操作", "Only trained staff may operate this machine.", 800, "v."],
+    ["shut down", "停機", "We will shut down the line at six.", 800, "phr."],
+    ["raw material", "原料", "The raw material arrives on Thursday.", 800, "n."],
+    ["finished goods", "成品", "Finished goods are stored in Building C.", 800, "n."],
+    ["quality check", "品質檢查", "Every batch gets a quality check.", 800, "n."],
+    ["work order", "工單", "The work order number is on the clipboard.", 800, "n."],
+    ["tool", "工具", "Please return each tool to the rack.", 800, "n."],
+    ["safety rules", "安全規定", "Read the safety rules before your first shift.", 800, "n."],
+    ["accident", "意外", "Report an accident to the supervisor immediately.", 800, "n."],
+    ["worker", "作業人員", "Each worker has a locker near the entrance.", 800, "n."],
+    ["production line", "生產線", "The production line will restart at one.", 800, "n."],
+    ["pack", "裝箱", "Please pack the smaller items on top.", 800, "v."],
+    ["shift leader", "領班", "The shift leader assigns the morning tasks.", 800, "n."],
+    ["protective gear", "防護裝備", "Protective gear is provided at the entrance.", 800, "n."],
+    ["defect", "瑕疵", "This lid has a small defect, so set it aside.", 800, "n."],
+    ["batch", "批次", "This batch passed the quality check.", 800, "n."],
+    ["instruction sheet", "操作說明", "The instruction sheet is posted by the machine.", 800, "n."],
+    ["conveyor", "輸送帶", "Do not place tools on the conveyor.", 800, "n."],
+    ["on site", "在現場", "A technician will be on site this afternoon.", 800, "phr."],
+    ["start up", "啟動", "They will start up the line after the check.", 800, "phr."],
+    ["safety glasses", "護目鏡", "Safety glasses are required near the cutter.", 800, "n."],
+    ["workstation", "工作站", "Keep your workstation clear of empty boxes.", 800, "n."],
+    ["output", "產量", "Daily output increased after the new schedule.", 800, "n."],
+    ["downtime log", "停機紀錄", "Write the reason in the downtime log.", 800, "n."]
     ]
-] },
-  { category: "專案與營運", words: [
-    [
-        "allocate resources",
-        "分配資源",
-        "The manager will allocate resources to the project."
-    ],
-    [
-        "assess",
-        "評估",
-        "The team will assess the impact of the delay."
-    ],
-    [
-        "benchmark",
-        "基準；比較標準",
-        "The report uses last year's results as a benchmark."
-    ],
-    [
-        "capacity",
-        "產能；容量",
-        "The factory is operating at full capacity."
-    ],
-    [
-        "deadline",
-        "截止期限",
-        "The deadline for submissions is Friday."
-    ],
-    [
-        "deliverable",
-        "交付成果",
-        "The final report is the main project deliverable."
-    ],
-    [
-        "feasible",
-        "可行的",
-        "The engineer confirmed that the proposal is feasible."
-    ],
-    [
-        "milestone",
-        "里程碑；重要階段",
-        "The team reached its first milestone on time."
-    ],
-    [
-        "monitor",
-        "監測；追蹤",
-        "We will monitor progress throughout the project."
-    ],
-    [
-        "objective",
-        "目標",
-        "The main objective is to improve response times."
-    ],
-    [
-        "ongoing",
-        "持續進行中的",
-        "The renovation is an ongoing project."
-    ],
-    [
-        "outcome",
-        "結果",
-        "The outcome will be announced next week."
-    ],
-    [
-        "oversee",
-        "監督；負責管理",
-        "She will oversee the expansion project."
-    ],
-    [
-        "priority",
-        "優先事項",
-        "Customer safety remains our top priority."
-    ],
-    [
-        "roll out",
-        "推出；逐步實施",
-        "The company will roll out the new system in phases."
-    ],
-    [
-        "scope",
-        "範圍",
-        "The scope of the project has not changed."
-    ],
-    [
-        "stakeholder",
-        "利害關係人",
-        "Stakeholders will receive a monthly update."
-    ],
-    [
-        "streamline",
-        "精簡；提升效率",
-        "The changes will streamline the approval process."
-    ],
-    [
-        "timeline",
-        "時程",
-        "The revised timeline includes a final review."
-    ],
-    [
-        "undertake",
-        "承擔；著手進行",
-        "The company will undertake a safety review."
+  },
+  {
+    category: "契約與規範",
+    words: [
+    ["contingency", "應變事項；備案", "The team prepared a contingency plan for delivery delays.", 900],
+    ["waive", "免除", "The hotel agreed to waive the cancellation fee.", 900],
+    ["stipulate", "明訂", "The contract stipulates payment within thirty days.", 900],
+    ["comply with", "遵守", "All suppliers must comply with the safety requirements.", 800],
+    ["binding", "有約束力的", "Both parties signed a legally binding agreement.", 900]
     ]
-] },
-  { category: '高分常見搭配', words: [
-    ['in light of', '鑑於；考量到', 'In light of the delay, the deadline has been extended.'],
-    ['with respect to', '關於', 'We have received your question with respect to the invoice.'],
-    ['take effect', '生效', 'The new policy will take effect next month.'],
-    ['make up for', '彌補', 'The team worked late to make up for lost time.'],
-    ['account for', '占；解釋', 'Online orders account for half of total sales.'],
-    ['in the meantime', '在此期間', 'In the meantime, please use the temporary entrance.'],
-    ['as a result of', '由於；因為', 'The flight was delayed as a result of heavy rain.'],
-    ['with the exception of', '除了……之外', 'All offices are open with the exception of the branch in Taichung.'],
-    ['be responsible for', '負責', 'The coordinator is responsible for arranging the event.'],
-    ['be entitled to', '有權享有', 'Members are entitled to one complimentary upgrade.']
-  ]},
-  { category: '高階財務與公司治理', words: [
-    ['acquisition', '收購；併購', 'The acquisition will expand the company’s distribution network.'],
-    ['asset', '資產', 'The office building is one of the firm’s largest assets.'],
-    ['breakeven', '損益兩平的；損益兩平點', 'The new branch is expected to reach breakeven within two years.'],
-    ['capital expenditure', '資本支出', 'The board approved capital expenditure for new production equipment.'],
-    ['collateral', '擔保品', 'The lender requested additional collateral for the loan.'],
-    ['depreciation', '折舊', 'Depreciation is included in the annual financial report.'],
-    ['dividend', '股利；紅利', 'Shareholders will receive a dividend in September.'],
-    ['equity', '股權；權益', 'The founders retained a majority of the company’s equity.'],
-    ['gross margin', '毛利率', 'The retailer improved its gross margin by reducing shipping costs.'],
-    ['impairment', '資產減損', 'The audit identified an impairment of several long-term assets.'],
-    ['liquidity', '流動性；短期償債能力', 'The company maintains sufficient liquidity to meet payroll.'],
-    ['merger', '合併', 'The proposed merger is subject to regulatory approval.'],
-    ['net worth', '淨值', 'The report lists the net worth of each subsidiary.'],
-    ['portfolio', '投資組合；產品組合', 'The firm added two renewable-energy projects to its portfolio.'],
-    ['principal', '本金', 'Borrowers may repay the principal early without a fee.'],
-    ['shareholder', '股東', 'Shareholders will vote on the proposal at the annual meeting.'],
-    ['solvency', '償債能力', 'The review assessed the insurer’s long-term solvency.'],
-    ['subsidiary', '子公司', 'The Singapore subsidiary will oversee regional sales.'],
-    ['valuation', '估值', 'An independent firm will conduct the valuation.'],
-    ['yield', '收益；報酬率', 'The revised investment plan may yield a higher return.']
-  ]},
-  { category: '風險、法規與治理', words: [
-    ['arbitration', '仲裁', 'The contract requires arbitration before either party files a lawsuit.'],
-    ['breach of contract', '違約', 'The vendor could face penalties for a breach of contract.'],
-    ['confidentiality', '保密；機密性', 'All consultants must agree to the confidentiality terms.'],
-    ['conflict of interest', '利益衝突', 'Employees must disclose any potential conflict of interest.'],
-    ['data breach', '資料外洩', 'The company notified customers after discovering a data breach.'],
-    ['due diligence', '盡職調查', 'The acquisition team completed due diligence before signing.'],
-    ['embargo', '禁運；封鎖', 'The shipment was delayed because of a temporary trade embargo.'],
-    ['indemnify', '賠償；補償', 'The supplier agreed to indemnify the client for direct losses.'],
-    ['jurisdiction', '司法管轄權', 'The agreement specifies which court has jurisdiction over disputes.'],
-    ['litigation', '訴訟', 'Both companies hope to resolve the dispute without litigation.'],
-    ['noncompliance', '不遵守；違規', 'Repeated noncompliance may result in suspension of the permit.'],
-    ['proprietary', '專有的；專利的', 'The presentation contains proprietary information.'],
-    ['regulatory', '監管的；法規方面的', 'The launch was postponed to meet regulatory requirements.'],
-    ['remedy', '補救措施；補償方式', 'The revised policy provides a remedy for billing errors.'],
-    ['risk mitigation', '風險降低；風險緩解', 'The project plan includes measures for risk mitigation.'],
-    ['sanction', '制裁；處罰', 'The agency may impose a sanction for repeated violations.'],
-    ['statute', '法規；成文法', 'The new statute takes effect at the start of the year.'],
-    ['trade secret', '營業秘密', 'The formula is protected as a trade secret.'],
-    ['whistleblower', '吹哨者；檢舉者', 'The company opened a confidential channel for whistleblowers.'],
-    ['written consent', '書面同意', 'Written consent is required before the data can be shared.']
-  ]},
-  { category: '供應鏈、製造與品質', words: [
-    ['backhaul', '回程運輸', 'The carrier reduced costs by securing cargo for the backhaul.'],
-    ['bottleneck', '瓶頸；阻礙流程的環節', 'A shortage of trained staff has become a bottleneck in production.'],
-    ['capacity utilization', '產能利用率', 'Capacity utilization rose after the second shift was introduced.'],
-    ['consolidate', '合併；整併', 'The warehouse will consolidate orders before dispatch.'],
-    ['contamination', '污染；摻雜', 'The batch was recalled because of possible contamination.'],
-    ['defect rate', '瑕疵率', 'Additional inspections helped lower the defect rate.'],
-    ['downtime', '停機時間；停工時間', 'The maintenance team scheduled repairs to minimize downtime.'],
-    ['fulfillment', '訂單履行；出貨處理', 'The retailer moved order fulfillment to a larger facility.'],
-    ['freight forwarder', '貨運承攬業者', 'A freight forwarder arranged customs paperwork for the shipment.'],
-    ['inspection', '檢查；檢驗', 'Each shipment must pass a safety inspection.'],
-    ['just-in-time', '即時生產／供貨的', 'The plant uses a just-in-time system to limit storage costs.'],
-    ['perishable', '易腐壞的', 'Perishable goods must be stored at the correct temperature.'],
-    ['production run', '一批次的生產作業', 'The first production run will be limited to five hundred units.'],
-    ['recall', '召回；回收產品', 'The manufacturer issued a recall for the affected model.'],
-    ['shelf life', '保存期限', 'The label shows the shelf life of the packaged food.'],
-    ['specification', '規格；規範', 'The replacement part meets the original specifications.'],
-    ['throughput', '處理量；產出率', 'The updated software increased order-processing throughput.'],
-    ['traceability', '可追溯性', 'The tracking system improves traceability from factory to store.'],
-    ['vendor assessment', '供應商評估', 'The buyer updated the vendor assessment after the quarterly review.'],
-    ['production yield', '生產良率', 'A process adjustment improved the production yield.']
-  ]},
-  { category: '市場、策略與商務分析', words: [
-    ['acumen', '敏銳的商業判斷力', 'Her financial acumen helped the team assess the proposal.'],
-    ['brand equity', '品牌價值', 'Consistent service has strengthened the hotel’s brand equity.'],
-    ['cannibalize', '侵蝕既有產品的銷售', 'The company redesigned the product so it would not cannibalize existing sales.'],
-    ['competitive advantage', '競爭優勢', 'Reliable delivery gives the supplier a competitive advantage.'],
-    ['diversify', '使多元化；分散風險', 'The retailer plans to diversify its product range.'],
-    ['expansion', '擴張；拓展', 'The expansion will create new positions in the region.'],
-    ['feasibility', '可行性', 'The committee will evaluate the feasibility of a second location.'],
-    ['growth trajectory', '成長趨勢；成長軌跡', 'The latest figures suggest a steady growth trajectory.'],
-    ['market entry', '進入市場', 'The firm hired a local adviser to plan its market entry.'],
-    ['market penetration', '市場滲透；市場開發程度', 'A lower introductory price may improve market penetration.'],
-    ['market share', '市占率', 'The campaign helped the brand gain market share.'],
-    ['mature', '成熟的；發展完善的', 'The company is entering a mature market with established competitors.'],
-    ['outperform', '表現勝過；優於', 'Online sales continued to outperform the previous quarter.'],
-    ['profitability', '獲利能力', 'Management is reviewing the profitability of each service line.'],
-    ['prospective', '潛在的；預期的', 'A representative will contact prospective clients next week.'],
-    ['saturation', '飽和；市場飽和', 'The firm is exploring new regions as the local market approaches saturation.'],
-    ['strategic alliance', '策略聯盟', 'The airlines formed a strategic alliance to expand their routes.'],
-    ['underserved', '服務不足的；未充分滿足需求的', 'The new branch will serve an underserved neighborhood.'],
-    ['upmarket', '高價位的；面向高端市場的', 'The hotel is repositioning itself as an upmarket destination.'],
-    ['value proposition', '價值主張；產品提供的核心價值', 'The proposal explains the value proposition for small businesses.']
-  ]},
-  { category: '高階職場閱讀字彙', words: [
-    ['ambiguous', '模稜兩可的；不明確的', 'The notice was revised because its instructions were ambiguous.'],
-    ['anticipate', '預期；預先準備', 'The airport anticipates heavier traffic during the holiday period.'],
-    ['ascertain', '查明；確認', 'Please ascertain whether the revised quotation includes installation.'],
-    ['coherent', '連貫清楚的', 'The consultant prepared a coherent summary of the findings.'],
-    ['compelling', '有說服力的；引人注目的', 'The report presents a compelling case for updating the equipment.'],
-    ['comprehensive', '全面的；完整的', 'New staff receive comprehensive training on the reservation system.'],
-    ['consecutive', '連續的', 'The branch has met its sales target for three consecutive months.'],
-    ['cumbersome', '繁瑣而不便的', 'The revised form replaces a cumbersome approval process.'],
-    ['deliberate', '審慎的；刻意的', 'The committee took a deliberate approach to selecting a new vendor.'],
-    ['discretion', '自行判斷的權限；酌情權', 'Managers may approve small purchases at their discretion.'],
-    ['disruptive', '造成中斷的；干擾性的', 'Construction work may be disruptive to nearby businesses.'],
-    ['exhaustive', '詳盡的；全面的', 'The auditor conducted an exhaustive review of the accounts.'],
-    ['fluctuate', '波動；起伏', 'Shipping costs fluctuate with fuel prices.'],
-    ['incremental', '逐步增加的；增量的', 'The department approved incremental funding for the pilot.'],
-    ['interim', '暫時的；過渡期間的', 'An interim manager will lead the department until June.'],
-    ['mitigate', '減輕；降低影響', 'The backup supplier will help mitigate the risk of delays.'],
-    ['preliminary', '初步的；預備的', 'Preliminary results will be shared with the board on Monday.'],
-    ['respective', '各自的；分別的', 'Please return the keys to your respective office managers.'],
-    ['stringent', '嚴格的；嚴密的', 'All applicants must meet stringent safety requirements.'],
-    ['unprecedented', '前所未有的', 'The unexpected closure caused unprecedented demand for local deliveries.']
-  ]},
-  { category: '高分職場搭配詞', words: [
-    ['a substantial increase in', '大幅增加', 'The report noted a substantial increase in online reservations.'],
-    ['at no additional cost', '無須額外費用', 'The supplier will include delivery at no additional cost.'],
-    ['be eligible for', '符合……資格', 'Part-time employees may be eligible for travel reimbursement.'],
-    ['be on track to', '進度順利，預計能……', 'The renovation is on track to finish before the opening.'],
-    ['compensate for', '補償；彌補', 'The airline offered a meal voucher to compensate for the delay.'],
-    ['draw a distinction between', '區分……與……', 'The guide draws a distinction between standard and express shipping.'],
-    ['from the outset', '從一開始', 'The project manager clarified the approval process from the outset.'],
-    ['have a bearing on', '對……有影響', 'The delivery date may have a bearing on the installation schedule.'],
-    ['in conjunction with', '與……共同；配合', 'The workshop is offered in conjunction with the local business association.'],
-    ['keep track of', '追蹤；掌握……的進度', 'Use the online portal to keep track of your application.'],
-    ['make an exception for', '為……破例', 'The hotel made an exception for guests affected by the cancellation.'],
-    ['meet a requirement', '符合要求', 'All bids must meet the insurance requirement.'],
-    ['move forward with', '繼續推進', 'The director approved the plan, allowing the team to move forward with the launch.'],
-    ['on short notice', '臨時通知；短時間內', 'The venue arranged an additional room on short notice.'],
-    ['rule out', '排除；不考慮', 'The technician ruled out a software fault after testing the system.'],
-    ['set aside', '預留；撥出', 'The department set aside funds for staff development.'],
-    ['take into account', '將……納入考量', 'Please take seasonal demand into account when preparing the forecast.'],
-    ['take precedence over', '優先於；比……重要', 'Safety concerns take precedence over the delivery schedule.'],
-    ['under consideration', '正在審議；考慮中', 'The proposed route is still under consideration.'],
-    ['with a view to', '為了；著眼於', 'The company revised its hours with a view to serving more customers.']
-  ]},
-  { category: '正式通知與書信片語', words: [
-    ['as a precaution', '作為預防措施', 'The building will close early as a precaution during the storm.'],
-    ['at your earliest convenience', '請於您方便時儘早……', 'Please return the signed agreement at your earliest convenience.'],
-    ['be in compliance with', '符合；遵守', 'The renovated office is in compliance with accessibility standards.'],
-    ['by mutual agreement', '經雙方同意', 'The contract may be extended by mutual agreement.'],
-    ['for the foreseeable future', '在可預見的未來', 'The temporary entrance will remain in use for the foreseeable future.'],
-    ['in the absence of', '在缺少……的情況下', 'In the absence of the director, the deputy will chair the meeting.'],
-    ['in keeping with', '符合；與……一致', 'The new signage is in keeping with the company’s visual identity.'],
-    ['in the long run', '長期而言', 'Energy-efficient lighting will reduce operating costs in the long run.'],
-    ['on a regular basis', '定期地', 'The safety equipment is inspected on a regular basis.'],
-    ['on the condition that', '條件是；前提是', 'The discount is available on the condition that payment is made in advance.'],
-    ['regardless of', '不論；不管', 'The training is available to all employees regardless of department.'],
-    ['to the best of our knowledge', '據我們所知', 'To the best of our knowledge, all orders have been dispatched.'],
-    ['under no circumstances', '無論如何都不；絕不', 'Under no circumstances should confidential files be left unattended.'],
-    ['with reference to', '關於；參照', 'I am writing with reference to your recent service request.'],
-    ['unless otherwise stated', '除非另有說明', 'All prices are quoted in New Taiwan dollars unless otherwise stated.'],
-    ['on a provisional basis', '暫時地；以暫定方式', 'The meeting room has been reserved on a provisional basis.'],
-    ['for internal use only', '僅供內部使用', 'This draft schedule is for internal use only.'],
-    ['in a timely manner', '及時地', 'Please submit any corrections in a timely manner.'],
-    ['on a case-by-case basis', '依個別情況；逐案處理', 'Refund requests are reviewed on a case-by-case basis.'],
-    ['subject to change', '可能變更；以變更為準', 'The published timetable is subject to change.']
-  ]}
+  },
+  {
+    category: "財務與採購",
+    words: [
+    ["reconcile", "核對使一致", "Please reconcile the invoices with our payment records.", 900],
+    ["discrepancy", "差異；不一致", "Report any billing discrepancy to the accounting department.", 900],
+    ["allocate", "分配", "The director allocated additional funds to the project.", 800],
+    ["outstanding", "尚未付清的", "The outstanding balance is due by Friday.", 800],
+    ["reimburse", "報銷；償還", "The company will reimburse employees for travel expenses.", 800]
+    ]
+  },
+  {
+    category: "營運與排程",
+    words: [
+    ["tentative", "暫定的", "We have prepared a tentative schedule for the conference.", 800],
+    ["postpone", "延期", "The manager decided to postpone the meeting until Friday.", 800],
+    ["expedite", "加快處理", "We will expedite the shipment at no extra charge.", 900],
+    ["accommodate", "配合；滿足需求", "Can the venue accommodate a later starting time?", 800],
+    ["coordinate", "協調", "Please coordinate with the supplier before placing the order.", 800]
+    ]
+  },
+  {
+    category: "溝通與客戶服務",
+    words: [
+    ["inquiry", "詢問；查詢", "Our staff will respond to your inquiry within two days.", 800],
+    ["clarify", "釐清", "The consultant called to clarify the project requirements.", 800],
+    ["notify", "通知", "We will notify participants of any schedule changes.", 800],
+    ["eligible", "符合資格的", "Customers may be eligible for a full refund.", 800],
+    ["resolve", "解決", "A representative contacted the customer to resolve the complaint.", 800]
+    ]
+  },
+  {
+    category: "合約、法規與談判",
+    words: [
+    ["amend", "修訂；修改", "Both parties agreed to amend the original contract.", 900],
+    ["clause", "條款", "The agreement includes a clause about late delivery.", 800],
+    ["authorize", "授權；批准", "Only the director can authorize the final payment.", 800],
+    ["enforce", "執行；實施", "The company will enforce the revised safety policy.", 900],
+    ["liable", "負有法律責任的", "The supplier may be liable for the damage.", 900],
+    ["negotiate", "協商；談判", "They negotiated a lower rate for the annual contract.", 800],
+    ["renew", "續約；更新", "Please renew your membership before it expires.", 800],
+    ["terminate", "終止", "Either party may terminate the agreement with written notice.", 800],
+    ["in accordance with", "依照；符合", "All refunds are processed in accordance with company policy.", 900],
+    ["subject to", "須經；取決於", "The proposal is subject to approval by the board.", 800]
+    ]
+  },
+  {
+    category: "財務、帳單與付款",
+    words: [
+    ["accrue", "累積；產生", "Interest will accrue on any unpaid balance.", 900],
+    ["allocate funds", "分配資金", "The department allocated funds for staff training.", 900],
+    ["audit", "稽核；審計", "An external team will audit the financial records.", 800],
+    ["billing statement", "帳單明細", "Your billing statement shows the amount due this month.", 800],
+    ["deduct", "扣除", "The discount will be deducted from the total.", 800],
+    ["expenditure", "支出", "Travel expenditure must be approved in advance.", 800],
+    ["invoice", "發票；請款單", "Please include the purchase order number on the invoice.", 800],
+    ["overdue", "逾期未付的", "An overdue payment may delay your next order.", 800],
+    ["receipt", "收據", "Keep your receipt when submitting an expense claim.", 800],
+    ["revenue", "營收", "Online sales generated additional revenue last quarter.", 800]
+    ]
+  },
+  {
+    category: "運輸、供應與庫存",
+    words: [
+    ["backorder", "缺貨待補的訂單", "The chairs are on backorder until next month.", 800],
+    ["consignment", "託運貨物", "The consignment arrived at the warehouse this morning.", 900],
+    ["dispatch", "發送；派遣", "We will dispatch the replacement tomorrow.", 800],
+    ["inventory", "庫存；存貨清單", "The team checks inventory at the end of each month.", 800],
+    ["lead time", "前置時間；交貨所需時間", "Allow a lead time of three weeks for custom orders.", 800],
+    ["logistics", "物流；後勤", "Our logistics team arranged an alternative delivery route.", 800],
+    ["procurement", "採購", "The procurement department is reviewing supplier proposals.", 900],
+    ["replenish", "補充；重新備貨", "The store will replenish its stock before the weekend.", 900],
+    ["shortage", "短缺", "A shortage of parts has delayed production.", 800],
+    ["supplier", "供應商", "The supplier confirmed that the materials had been shipped.", 800]
+    ]
+  },
+  {
+    category: "旅行、飯店與活動",
+    words: [
+    ["boarding pass", "登機證", "Please present your boarding pass at the gate.", 800],
+    ["complimentary", "免費提供的", "Guests receive complimentary breakfast during their stay.", 800],
+    ["itinerary", "行程表", "The revised itinerary includes a stop in Singapore.", 800],
+    ["layover", "轉機停留時間", "Our flight has a two-hour layover in Seoul.", 800],
+    ["occupancy", "入住率；使用率", "Hotel occupancy is expected to increase during the festival.", 900],
+    ["reservation", "預訂", "Your reservation can be changed before Friday.", 800],
+    ["shuttle", "接駁車", "A shuttle runs between the hotel and the airport.", 800],
+    ["venue", "活動場地", "The conference venue is within walking distance of the station.", 800],
+    ["voucher", "憑證；兌換券", "The airline issued a meal voucher after the delay.", 800]
+    ]
+  },
+  {
+    category: "會議、職場與人事",
+    words: [
+    ["agenda", "議程", "The budget review is the first item on the agenda.", 800],
+    ["applicant", "申請人；求職者", "Each applicant will receive an email by Friday.", 800],
+    ["delegate", "委派；授權", "The manager delegated the task to a team member.", 900],
+    ["implement", "實施；執行", "The firm will implement the new process in January.", 800],
+    ["mandatory", "強制的；必須的", "Attendance at the safety briefing is mandatory.", 800],
+    ["minutes", "會議紀錄", "Please circulate the meeting minutes to all attendees.", 800],
+    ["orientation", "職前培訓；新進人員說明會", "New employees will attend orientation on Monday.", 800],
+    ["proficiency", "熟練程度", "The position requires proficiency in written English.", 900],
+    ["reschedule", "重新安排時間", "We need to reschedule the interview for next week.", 800],
+    ["vacancy", "職缺", "The company posted a vacancy for a sales manager.", 800]
+    ]
+  },
+  {
+    category: "信件、公告與閱讀推論",
+    words: [
+    ["adhere to", "遵守；依循", "All visitors must adhere to the posted rules.", 900],
+    ["as outlined in", "如……所述", "Please submit the form as outlined in the email.", 800],
+    ["contingent on", "取決於；以……為條件", "The offer is contingent on final approval.", 900],
+    ["defer", "延後；推遲", "The committee decided to defer the vote until June.", 900],
+    ["designated", "指定的", "Leave completed forms in the designated folder.", 800],
+    ["in lieu of", "代替", "Employees may take time off in lieu of overtime pay.", 900],
+    ["pending", "等待……期間；尚待決定的", "The application is pending review by the committee.", 800],
+    ["prior to", "在……之前", "Please register prior to the start of the workshop.", 800],
+    ["regarding", "關於", "We are writing regarding your recent inquiry.", 800],
+    ["subsequent", "隨後的；後續的", "Any subsequent changes will be announced by email.", 900]
+    ]
+  },
+  {
+    category: "會議與協作",
+    words: [
+    ["adjourn", "休會；結束會議", "The chair adjourned the meeting at noon.", 900],
+    ["attendee", "出席者", "Each attendee received a copy of the agenda.", 800],
+    ["briefing", "簡報會；說明會", "The briefing begins in the main conference room.", 800],
+    ["circulate", "傳閱；傳送給多人", "Please circulate the revised agenda before the meeting.", 800],
+    ["convene", "召集；召開", "The committee will convene again next Tuesday.", 900],
+    ["consensus", "共識", "The team reached a consensus on the proposal.", 800],
+    ["facilitate", "促進；主持", "A consultant will facilitate the discussion.", 900],
+    ["follow up on", "追蹤；跟進", "I will follow up on your request tomorrow.", 800],
+    ["proceed with", "繼續進行", "We can proceed with the project after approval.", 800],
+    ["raise an issue", "提出問題", "She raised an issue during the briefing.", 800],
+    ["reach an agreement", "達成協議", "The parties reached an agreement on delivery dates.", 800],
+    ["take minutes", "做會議紀錄", "Jordan volunteered to take minutes at the meeting.", 800],
+    ["postpone until further notice", "延期至另行通知", "The conference has been postponed until further notice.", 800],
+    ["on behalf of", "代表", "I am writing on behalf of the committee.", 800],
+    ["in advance", "事先", "Please send your questions in advance.", 800],
+    ["point of contact", "聯絡窗口", "Mia is the point of contact for this event.", 800],
+    ["action item", "待辦事項", "Each action item has an assigned owner.", 800],
+    ["carry out", "執行", "The team will carry out the agreed plan.", 800],
+    ["bring forward", "提前", "The director brought forward the meeting by an hour.", 900],
+    ["draw up", "擬定", "The team will draw up a revised schedule.", 800]
+    ]
+  },
+  {
+    category: "求職與人事",
+    words: [
+    ["appointment", "任命；約定", "Her appointment as director takes effect in June.", 800],
+    ["candidate", "候選人；應徵者", "Each candidate will be interviewed separately.", 800],
+    ["compensation", "薪酬；補償", "The position offers competitive compensation.", 800],
+    ["credential", "資格證明", "Applicants should submit their professional credentials.", 900],
+    ["entitlement", "應享權利", "Employees can check their leave entitlement online.", 900],
+    ["evaluate", "評估", "The panel will evaluate each application.", 800],
+    ["expertise", "專業知識", "The role requires expertise in project management.", 800],
+    ["incentive", "獎勵措施", "The company offers incentives for meeting sales goals.", 800],
+    ["internal transfer", "內部調職", "Employees may apply for an internal transfer.", 800],
+    ["job opening", "職缺", "The job opening was posted on the company website.", 800],
+    ["leave of absence", "請假；休假期間", "He requested a leave of absence for family reasons.", 800],
+    ["mentor", "導師；指導", "Each new employee is assigned a mentor.", 800],
+    ["performance appraisal", "績效考核", "Your performance appraisal is scheduled for July.", 900],
+    ["probationary period", "試用期", "Benefits begin after the probationary period.", 900],
+    ["promotion", "升遷", "Her promotion was announced at the staff meeting.", 800],
+    ["qualification", "資格；條件", "The advertisement lists the required qualifications.", 800],
+    ["recruit", "招募", "The company plans to recruit additional engineers.", 800],
+    ["reference", "推薦人；推薦資料", "Please provide two professional references.", 800],
+    ["resignation", "辭職", "He submitted his resignation in writing.", 800],
+    ["retain", "留任；保留", "The firm introduced benefits to retain experienced staff.", 900]
+    ]
+  },
+  {
+    category: "採購與供應商",
+    words: [
+    ["bid", "投標；報價", "Three firms submitted bids for the project.", 800],
+    ["bulk order", "大量訂單", "A discount is available for bulk orders.", 800],
+    ["competitive pricing", "具競爭力的價格", "The supplier offered competitive pricing.", 800],
+    ["fulfill", "履行；完成訂單", "The warehouse can fulfill the order this week.", 800],
+    ["in stock", "有庫存", "The requested items are currently in stock.", 800],
+    ["out of stock", "缺貨", "The printer is temporarily out of stock.", 800],
+    ["place an order", "下訂單", "Please place an order before Thursday.", 800],
+    ["purchase order", "採購單", "Please attach the signed purchase order.", 800],
+    ["quotation", "報價單", "The supplier sent a quotation yesterday.", 800],
+    ["quote", "報價", "The vendor quoted a lower price for larger quantities.", 800],
+    ["retailer", "零售商", "The product is available through local retailers.", 800],
+    ["wholesaler", "批發商", "The wholesaler delivers to several stores.", 800],
+    ["source", "採購；尋找來源", "We source these components from two suppliers.", 900],
+    ["substitute", "替代品；替代", "The supplier offered a substitute for the unavailable part.", 800],
+    ["tender", "招標；投標", "The city invited contractors to tender for the work.", 900],
+    ["vendor", "供應商", "The vendor agreed to extend the warranty.", 800],
+    ["warranty", "保固", "The warranty covers defects for one year.", 800],
+    ["unit price", "單價", "The unit price excludes shipping costs.", 800],
+    ["quality assurance", "品質保證", "The quality assurance team inspected the shipment.", 800],
+    ["on schedule", "按預定進度", "The supplier expects to deliver on schedule.", 800]
+    ]
+  },
+  {
+    category: "財務與會計",
+    words: [
+    ["accounts payable", "應付帳款", "Please forward the invoice to accounts payable.", 900],
+    ["accounts receivable", "應收帳款", "The report includes outstanding accounts receivable.", 900],
+    ["balance sheet", "資產負債表", "The balance sheet is included in the report.", 900],
+    ["budget allocation", "預算分配", "The budget allocation will be reviewed next month.", 900],
+    ["cash flow", "現金流", "The company is monitoring cash flow closely.", 800],
+    ["credit note", "折讓單；貸項通知單", "The vendor issued a credit note for the return.", 800],
+    ["due date", "到期日", "The due date appears at the top of the invoice.", 800],
+    ["expense claim", "費用報銷申請", "Submit your expense claim with the receipts.", 800],
+    ["fiscal year", "會計年度", "The fiscal year ends in December.", 800],
+    ["installment", "分期付款的一期", "The final installment is due next month.", 800],
+    ["interest rate", "利率", "The loan has a fixed interest rate.", 800],
+    ["net profit", "淨利", "Net profit rose despite higher transport costs.", 800],
+    ["operating costs", "營運成本", "The move helped reduce operating costs.", 800],
+    ["overhead", "經常性營運開銷", "The firm is looking for ways to reduce overhead.", 900],
+    ["payment terms", "付款條件", "The payment terms are stated in the contract.", 800],
+    ["processing fee", "手續費", "A processing fee applies to international transfers.", 800],
+    ["refund", "退款", "The customer received a full refund.", 800],
+    ["surplus", "盈餘；過剩", "The department reported a small budget surplus.", 900],
+    ["tax deduction", "稅額扣除項目", "The accountant explained the available tax deductions.", 800],
+    ["write off", "註銷；列為損失", "The company wrote off the damaged inventory.", 900]
+    ]
+  },
+  {
+    category: "運輸與配送",
+    words: [
+    ["arrival", "抵達；到達", "The expected arrival is Friday afternoon.", 800],
+    ["carrier", "運輸業者", "The carrier will provide a tracking number.", 800],
+    ["customs clearance", "清關", "The shipment is awaiting customs clearance.", 800],
+    ["delivery window", "預計配送時段", "Your delivery window is between two and four.", 800],
+    ["destination", "目的地", "The package reached its destination on Monday.", 800],
+    ["freight", "貨運；運費", "Freight charges are listed separately.", 800],
+    ["in transit", "運送途中", "Your order is still in transit.", 800],
+    ["loading dock", "裝卸貨平台", "Drivers should report to the loading dock.", 800],
+    ["outbound", "對外運出的；去程的", "The outbound shipment leaves at noon.", 800],
+    ["pick up", "取貨；接人", "You may pick up the parcel at the counter.", 800],
+    ["proof of delivery", "送達證明", "Please keep the proof of delivery for your records.", 800],
+    ["reroute", "變更路線", "The driver was rerouted because of roadwork.", 800],
+    ["shipment", "貨物；出貨", "The shipment contains replacement parts.", 800],
+    ["shipping label", "寄件標籤", "Attach the shipping label to the outside of the box.", 800],
+    ["tracking number", "追蹤號碼", "Use the tracking number to check your parcel.", 800],
+    ["turnaround time", "處理所需時間", "The usual turnaround time is three business days.", 900],
+    ["warehouse", "倉庫", "The goods are stored at our warehouse.", 800],
+    ["waybill", "運單", "The driver checked the waybill before leaving.", 900],
+    ["delivery confirmation", "送達確認", "You will receive a delivery confirmation by email.", 800],
+    ["estimated arrival", "預計抵達時間", "The estimated arrival has changed to 3 p.m.", 800]
+    ]
+  },
+  {
+    category: "行銷與銷售",
+    words: [
+    ["advertising campaign", "廣告活動", "The advertising campaign starts next month.", 800],
+    ["audience", "受眾；觀眾", "The presentation is aimed at a general audience.", 800],
+    ["brand awareness", "品牌知名度", "The event helped increase brand awareness.", 800],
+    ["brochure", "宣傳冊", "The brochure describes the available services.", 800],
+    ["complimentary offer", "免費提供的優惠", "The package includes a complimentary offer for guests.", 800],
+    ["conversion rate", "轉換率", "The team is monitoring the website conversion rate.", 900],
+    ["customer retention", "客戶留存", "The program aims to improve customer retention.", 900],
+    ["discount code", "折扣代碼", "Enter the discount code at checkout.", 800],
+    ["exclusive", "專屬的；獨家的", "Members receive access to exclusive offers.", 800],
+    ["extend an offer", "提出優惠；提供提議", "The company extended an offer to its loyal customers.", 800],
+    ["feature", "特色；以……為特色", "The brochure features the latest product range.", 800],
+    ["launch", "推出；上市", "The company will launch the product in May.", 800],
+    ["loyalty program", "會員忠誠計畫", "Customers can earn points through the loyalty program.", 800],
+    ["market research", "市場研究", "Market research revealed strong interest in the service.", 800],
+    ["promotion period", "促銷期間", "The discount is valid during the promotion period.", 800],
+    ["redeem", "兌換", "You can redeem the voucher online.", 800],
+    ["sales forecast", "銷售預測", "The sales forecast was updated this morning.", 900],
+    ["target market", "目標市場", "Small businesses are the product's target market.", 800],
+    ["trial period", "試用期間", "Customers can cancel during the trial period.", 800],
+    ["valid through", "有效期限至", "The coupon is valid through the end of May.", 800]
+    ]
+  },
+  {
+    category: "旅遊與交通",
+    words: [
+    ["aisle seat", "靠走道座位", "She requested an aisle seat for the flight.", 800],
+    ["baggage allowance", "行李額度", "Check the baggage allowance before packing.", 800],
+    ["connecting flight", "轉機航班", "The delay caused him to miss his connecting flight.", 800],
+    ["departure lounge", "候機室", "Passengers should wait in the departure lounge.", 800],
+    ["departure time", "出發時間", "The departure time has not changed.", 800],
+    ["gate number", "登機門號碼", "Please confirm your gate number on the display.", 800],
+    ["fare", "票價", "The fare includes one checked bag.", 800],
+    ["gate change", "登機門變更", "The airline announced a gate change.", 800],
+    ["ground transportation", "地面交通", "Ground transportation is available outside the terminal.", 800],
+    ["one-way ticket", "單程票", "He purchased a one-way ticket to Taipei.", 800],
+    ["round trip", "來回行程", "The quoted fare includes a round trip.", 800],
+    ["security screening", "安全檢查", "Allow extra time for security screening.", 800],
+    ["service disruption", "服務中斷", "A service disruption has delayed several trains.", 800],
+    ["terminal", "航廈；終點站", "The shuttle stops at both airport terminals.", 800],
+    ["transfer", "轉乘；轉機", "Passengers must transfer to another train at Central Station.", 800],
+    ["travel advisory", "旅遊提醒", "The airline issued a travel advisory due to weather.", 800],
+    ["check in", "辦理報到", "Guests may check in after three o'clock.", 800],
+    ["check out", "辦理退房", "Please check out by noon.", 800],
+    ["fully booked", "客滿；訂滿", "The earlier flight is fully booked.", 800],
+    ["subject to availability", "視供應或空位而定", "Upgrades are subject to availability.", 800]
+    ]
+  },
+  {
+    category: "飯店與活動",
+    words: [
+    ["accommodations", "住宿", "The company arranged accommodations near the venue.", 800],
+    ["amenity", "設施；便利服務", "The hotel lists its amenities on the website.", 800],
+    ["banquet", "宴會", "The banquet will be held in the main hall.", 800],
+    ["catering", "餐飲服務", "The catering team can provide vegetarian meals.", 800],
+    ["confirm a booking", "確認預訂", "Please confirm your booking by email.", 800],
+    ["conference room", "會議室", "The conference room is reserved until noon.", 800],
+    ["front desk", "飯店櫃台", "Please leave your key at the front desk.", 800],
+    ["guest speaker", "受邀講者", "The guest speaker will join us after lunch.", 800],
+    ["housekeeping", "客房清潔服務", "Contact housekeeping if you need extra towels.", 800],
+    ["keynote address", "主題演講", "The keynote address begins at nine.", 900],
+    ["lodging", "住宿", "The registration fee does not include lodging.", 800],
+    ["registration desk", "報到櫃台", "Name tags are available at the registration desk.", 800],
+    ["room rate", "房價", "The room rate includes breakfast.", 800],
+    ["seminar", "研討會", "The seminar is open to all employees.", 800],
+    ["sign up for", "報名參加", "Please sign up for the workshop online.", 800],
+    ["special request", "特殊需求", "Please note any special requests when booking.", 800],
+    ["vacant", "空著的；未被使用的", "The meeting room is vacant this afternoon.", 800],
+    ["waiting list", "候補名單", "You can add your name to the waiting list.", 800],
+    ["walk-in", "未預約的訪客", "Walk-ins are welcome if seats are available.", 800],
+    ["workshop", "工作坊", "The workshop focuses on effective communication.", 800]
+    ]
+  },
+  {
+    category: "客服與問題處理",
+    words: [
+    ["apologize for", "為……道歉", "We apologize for the inconvenience caused.", 800],
+    ["assistance", "協助", "Please contact us if you require assistance.", 800],
+    ["complaint", "客訴；抱怨", "The manager responded to the complaint promptly.", 800],
+    ["courtesy", "禮貌；善意", "As a courtesy, we will waive the fee.", 800],
+    ["defective", "有瑕疵的", "The customer returned a defective product.", 800],
+    ["escalate", "向上呈報；升級處理", "The representative escalated the issue to a supervisor.", 900],
+    ["exchange", "換貨；交換", "You may exchange the item within thirty days.", 800],
+    ["inconvenience", "不便", "We regret any inconvenience this delay may cause.", 800],
+    ["inquire about", "詢問有關", "She called to inquire about her order.", 800],
+    ["issue a refund", "辦理退款", "We will issue a refund after receiving the item.", 800],
+    ["make arrangements", "做安排", "We will make arrangements for a replacement.", 800],
+    ["notify in writing", "以書面通知", "Please notify us in writing of any changes.", 800],
+    ["on request", "應要求", "Additional copies are available on request.", 800],
+    ["promptly", "迅速地", "Please report any damage promptly.", 800],
+    ["replacement", "替換品", "A replacement will be shipped tomorrow.", 800],
+    ["resolve an issue", "解決問題", "The team worked quickly to resolve the issue.", 800],
+    ["return policy", "退貨政策", "Please review the return policy before ordering.", 800],
+    ["satisfaction", "滿意度", "Customer satisfaction improved this quarter.", 800],
+    ["service representative", "客服人員", "A service representative will respond shortly.", 800],
+    ["submit a request", "提交申請", "You can submit a request through the website.", 800]
+    ]
+  },
+  {
+    category: "公告與正式書信",
+    words: [
+    ["advise", "告知；建議", "Please advise us of any changes to your address.", 800],
+    ["applicable", "適用的", "Additional charges may be applicable.", 800],
+    ["as scheduled", "按照預定時間", "The meeting will proceed as scheduled.", 800],
+    ["attached", "隨附的", "Please review the attached document.", 800],
+    ["within", "在……之內", "Please respond within three business days.", 800],
+    ["effective immediately", "立即生效", "The revised policy is effective immediately.", 800],
+    ["enclosed", "隨函附上的", "The signed agreement is enclosed for your records.", 800],
+    ["for your reference", "供你參考", "I have attached the schedule for your reference.", 800],
+    ["forthcoming", "即將到來的", "Details will be shared at the forthcoming meeting.", 900],
+    ["in response to", "回應；針對", "I am writing in response to your inquiry.", 800],
+    ["in the event of", "如果發生", "In the event of a delay, we will contact you.", 800],
+    ["no later than", "最遲不晚於", "The form must arrive no later than Monday.", 800],
+    ["please be advised", "敬請注意", "Please be advised that the office will close early.", 900],
+    ["pursuant to", "依照；根據", "The payment was made pursuant to the agreement.", 900],
+    ["regrettably", "令人遺憾地", "Regrettably, the event has been cancelled.", 900],
+    ["reminder", "提醒", "This is a reminder to submit your registration.", 800],
+    ["requirement", "要求；必要條件", "The notice explains the application requirements.", 800],
+    ["with immediate effect", "立即生效", "The change applies with immediate effect.", 900],
+    ["with regard to", "關於", "I have a question with regard to your proposal.", 800],
+    ["written notice", "書面通知", "A written notice is required to cancel the contract.", 800]
+    ]
+  },
+  {
+    category: "專案與營運",
+    words: [
+    ["allocate resources", "分配資源", "The manager will allocate resources to the project.", 900],
+    ["assess", "評估", "The team will assess the impact of the delay.", 800],
+    ["benchmark", "基準；比較標準", "The report uses last year's results as a benchmark.", 900],
+    ["capacity", "產能；容量", "The factory is operating at full capacity.", 800],
+    ["deadline", "截止期限", "The deadline for submissions is Friday.", 800],
+    ["deliverable", "交付成果", "The final report is the main project deliverable.", 900],
+    ["feasible", "可行的", "The engineer confirmed that the proposal is feasible.", 800],
+    ["milestone", "里程碑；重要階段", "The team reached its first milestone on time.", 800],
+    ["monitor", "監測；追蹤", "We will monitor progress throughout the project.", 800],
+    ["objective", "目標", "The main objective is to improve response times.", 800],
+    ["ongoing", "持續進行中的", "The renovation is an ongoing project.", 800],
+    ["outcome", "結果", "The outcome will be announced next week.", 800],
+    ["oversee", "監督；負責管理", "She will oversee the expansion project.", 800],
+    ["priority", "優先事項", "Customer safety remains our top priority.", 800],
+    ["roll out", "推出；逐步實施", "The company will roll out the new system in phases.", 800],
+    ["scope", "範圍", "The scope of the project has not changed.", 900],
+    ["stakeholder", "利害關係人", "Stakeholders will receive a monthly update.", 900],
+    ["streamline", "精簡；提升效率", "The changes will streamline the approval process.", 900],
+    ["timeline", "時程", "The revised timeline includes a final review.", 800],
+    ["undertake", "承擔；著手進行", "The company will undertake a safety review.", 900]
+    ]
+  },
+  {
+    category: "高分常見搭配",
+    words: [
+    ["in light of", "鑑於；考量到", "In light of the delay, the deadline has been extended.", 900],
+    ["with respect to", "關於", "We have received your question with respect to the invoice.", 900],
+    ["take effect", "生效", "The new policy will take effect next month.", 800],
+    ["make up for", "彌補", "The team worked late to make up for lost time.", 800],
+    ["account for", "占；解釋", "Online orders account for half of total sales.", 900],
+    ["in the meantime", "在此期間", "In the meantime, please use the temporary entrance.", 800],
+    ["as a result of", "由於；因為", "The flight was delayed as a result of heavy rain.", 800],
+    ["with the exception of", "除了……之外", "All offices are open with the exception of the branch in Taichung.", 900],
+    ["be responsible for", "負責", "The coordinator is responsible for arranging the event.", 800],
+    ["be entitled to", "有權享有", "Members are entitled to one complimentary upgrade.", 900]
+    ]
+  },
+  {
+    category: "高階財務與公司治理",
+    words: [
+    ["acquisition", "收購；併購", "The acquisition will expand the company’s distribution network.", 900],
+    ["asset", "資產", "The office building is one of the firm’s largest assets.", 900],
+    ["breakeven", "損益兩平的；損益兩平點", "The new branch is expected to reach breakeven within two years.", 900],
+    ["capital expenditure", "資本支出", "The board approved capital expenditure for new production equipment.", 900],
+    ["collateral", "擔保品", "The lender requested additional collateral for the loan.", 900],
+    ["depreciation", "折舊", "Depreciation is included in the annual financial report.", 900],
+    ["dividend", "股利；紅利", "Shareholders will receive a dividend in September.", 900],
+    ["equity", "股權；權益", "The founders retained a majority of the company’s equity.", 900],
+    ["gross margin", "毛利率", "The retailer improved its gross margin by reducing shipping costs.", 900],
+    ["impairment", "資產減損", "The audit identified an impairment of several long-term assets.", 900],
+    ["liquidity", "流動性；短期償債能力", "The company maintains sufficient liquidity to meet payroll.", 900],
+    ["merger", "合併", "The proposed merger is subject to regulatory approval.", 900],
+    ["net worth", "淨值", "The report lists the net worth of each subsidiary.", 900],
+    ["portfolio", "投資組合；產品組合", "The firm added two renewable-energy projects to its portfolio.", 900],
+    ["principal", "本金", "Borrowers may repay the principal early without a fee.", 900],
+    ["shareholder", "股東", "Shareholders will vote on the proposal at the annual meeting.", 900],
+    ["solvency", "償債能力", "The review assessed the insurer’s long-term solvency.", 900],
+    ["subsidiary", "子公司", "The Singapore subsidiary will oversee regional sales.", 900],
+    ["valuation", "估值", "An independent firm will conduct the valuation.", 900],
+    ["yield", "收益；報酬率", "The revised investment plan may yield a higher return.", 900]
+    ]
+  },
+  {
+    category: "風險、法規與治理",
+    words: [
+    ["arbitration", "仲裁", "The contract requires arbitration before either party files a lawsuit.", 900],
+    ["breach of contract", "違約", "The vendor could face penalties for a breach of contract.", 900],
+    ["confidentiality", "保密；機密性", "All consultants must agree to the confidentiality terms.", 900],
+    ["conflict of interest", "利益衝突", "Employees must disclose any potential conflict of interest.", 900],
+    ["data breach", "資料外洩", "The company notified customers after discovering a data breach.", 900],
+    ["due diligence", "盡職調查", "The acquisition team completed due diligence before signing.", 900],
+    ["embargo", "禁運；封鎖", "The shipment was delayed because of a temporary trade embargo.", 900],
+    ["indemnify", "賠償；補償", "The supplier agreed to indemnify the client for direct losses.", 900],
+    ["jurisdiction", "司法管轄權", "The agreement specifies which court has jurisdiction over disputes.", 900],
+    ["litigation", "訴訟", "Both companies hope to resolve the dispute without litigation.", 900],
+    ["noncompliance", "不遵守；違規", "Repeated noncompliance may result in suspension of the permit.", 900],
+    ["proprietary", "專有的；專利的", "The presentation contains proprietary information.", 900],
+    ["regulatory", "監管的；法規方面的", "The launch was postponed to meet regulatory requirements.", 900],
+    ["remedy", "補救措施；補償方式", "The revised policy provides a remedy for billing errors.", 900],
+    ["risk mitigation", "風險降低；風險緩解", "The project plan includes measures for risk mitigation.", 900],
+    ["sanction", "制裁；處罰", "The agency may impose a sanction for repeated violations.", 900],
+    ["statute", "法規；成文法", "The new statute takes effect at the start of the year.", 900],
+    ["trade secret", "營業秘密", "The formula is protected as a trade secret.", 900],
+    ["whistleblower", "吹哨者；檢舉者", "The company opened a confidential channel for whistleblowers.", 900],
+    ["written consent", "書面同意", "Written consent is required before the data can be shared.", 900]
+    ]
+  },
+  {
+    category: "供應鏈、製造與品質",
+    words: [
+    ["backhaul", "回程運輸", "The carrier reduced costs by securing cargo for the backhaul.", 900],
+    ["bottleneck", "瓶頸；阻礙流程的環節", "A shortage of trained staff has become a bottleneck in production.", 900],
+    ["capacity utilization", "產能利用率", "Capacity utilization rose after the second shift was introduced.", 900],
+    ["consolidate", "合併；整併", "The warehouse will consolidate orders before dispatch.", 900],
+    ["contamination", "污染；摻雜", "The batch was recalled because of possible contamination.", 900],
+    ["defect rate", "瑕疵率", "Additional inspections helped lower the defect rate.", 900],
+    ["downtime", "停機時間；停工時間", "The maintenance team scheduled repairs to minimize downtime.", 800],
+    ["fulfillment", "訂單履行；出貨處理", "The retailer moved order fulfillment to a larger facility.", 900],
+    ["freight forwarder", "貨運承攬業者", "A freight forwarder arranged customs paperwork for the shipment.", 900],
+    ["inspection", "檢查；檢驗", "Each shipment must pass a safety inspection.", 800],
+    ["just-in-time", "即時生產／供貨的", "The plant uses a just-in-time system to limit storage costs.", 900],
+    ["perishable", "易腐壞的", "Perishable goods must be stored at the correct temperature.", 800],
+    ["production run", "一批次的生產作業", "The first production run will be limited to five hundred units.", 800],
+    ["recall", "召回；回收產品", "The manufacturer issued a recall for the affected model.", 800],
+    ["shelf life", "保存期限", "The label shows the shelf life of the packaged food.", 800],
+    ["specification", "規格；規範", "The replacement part meets the original specifications.", 800],
+    ["throughput", "處理量；產出率", "The updated software increased order-processing throughput.", 900],
+    ["traceability", "可追溯性", "The tracking system improves traceability from factory to store.", 900],
+    ["vendor assessment", "供應商評估", "The buyer updated the vendor assessment after the quarterly review.", 900],
+    ["production yield", "生產良率", "A process adjustment improved the production yield.", 900]
+    ]
+  },
+  {
+    category: "市場、策略與商務分析",
+    words: [
+    ["acumen", "敏銳的商業判斷力", "Her financial acumen helped the team assess the proposal.", 900],
+    ["brand equity", "品牌價值", "Consistent service has strengthened the hotel’s brand equity.", 900],
+    ["cannibalize", "侵蝕既有產品的銷售", "The company redesigned the product so it would not cannibalize existing sales.", 900],
+    ["competitive advantage", "競爭優勢", "Reliable delivery gives the supplier a competitive advantage.", 900],
+    ["diversify", "使多元化；分散風險", "The retailer plans to diversify its product range.", 900],
+    ["expansion", "擴張；拓展", "The expansion will create new positions in the region.", 800],
+    ["feasibility", "可行性", "The committee will evaluate the feasibility of a second location.", 900],
+    ["growth trajectory", "成長趨勢；成長軌跡", "The latest figures suggest a steady growth trajectory.", 900],
+    ["market entry", "進入市場", "The firm hired a local adviser to plan its market entry.", 900],
+    ["market penetration", "市場滲透；市場開發程度", "A lower introductory price may improve market penetration.", 900],
+    ["market share", "市占率", "The campaign helped the brand gain market share.", 800],
+    ["mature", "成熟的；發展完善的", "The company is entering a mature market with established competitors.", 900],
+    ["outperform", "表現勝過；優於", "Online sales continued to outperform the previous quarter.", 900],
+    ["profitability", "獲利能力", "Management is reviewing the profitability of each service line.", 900],
+    ["prospective", "潛在的；預期的", "A representative will contact prospective clients next week.", 900],
+    ["saturation", "飽和；市場飽和", "The firm is exploring new regions as the local market approaches saturation.", 900],
+    ["strategic alliance", "策略聯盟", "The airlines formed a strategic alliance to expand their routes.", 900],
+    ["underserved", "服務不足的；未充分滿足需求的", "The new branch will serve an underserved neighborhood.", 900],
+    ["upmarket", "高價位的；面向高端市場的", "The hotel is repositioning itself as an upmarket destination.", 900],
+    ["value proposition", "價值主張；產品提供的核心價值", "The proposal explains the value proposition for small businesses.", 900]
+    ]
+  },
+  {
+    category: "高階職場閱讀字彙",
+    words: [
+    ["ambiguous", "模稜兩可的；不明確的", "The notice was revised because its instructions were ambiguous.", 900],
+    ["anticipate", "預期；預先準備", "The airport anticipates heavier traffic during the holiday period.", 900],
+    ["ascertain", "查明；確認", "Please ascertain whether the revised quotation includes installation.", 900],
+    ["coherent", "連貫清楚的", "The consultant prepared a coherent summary of the findings.", 900],
+    ["compelling", "有說服力的；引人注目的", "The report presents a compelling case for updating the equipment.", 900],
+    ["comprehensive", "全面的；完整的", "New staff receive comprehensive training on the reservation system.", 900],
+    ["consecutive", "連續的", "The branch has met its sales target for three consecutive months.", 900],
+    ["cumbersome", "繁瑣而不便的", "The revised form replaces a cumbersome approval process.", 900],
+    ["deliberate", "審慎的；刻意的", "The committee took a deliberate approach to selecting a new vendor.", 900],
+    ["discretion", "自行判斷的權限；酌情權", "Managers may approve small purchases at their discretion.", 900],
+    ["disruptive", "造成中斷的；干擾性的", "Construction work may be disruptive to nearby businesses.", 900],
+    ["exhaustive", "詳盡的；全面的", "The auditor conducted an exhaustive review of the accounts.", 900],
+    ["fluctuate", "波動；起伏", "Shipping costs fluctuate with fuel prices.", 900],
+    ["incremental", "逐步增加的；增量的", "The department approved incremental funding for the pilot.", 900],
+    ["interim", "暫時的；過渡期間的", "An interim manager will lead the department until June.", 900],
+    ["mitigate", "減輕；降低影響", "The backup supplier will help mitigate the risk of delays.", 900],
+    ["preliminary", "初步的；預備的", "Preliminary results will be shared with the board on Monday.", 900],
+    ["respective", "各自的；分別的", "Please return the keys to your respective office managers.", 900],
+    ["stringent", "嚴格的；嚴密的", "All applicants must meet stringent safety requirements.", 900],
+    ["unprecedented", "前所未有的", "The unexpected closure caused unprecedented demand for local deliveries.", 900]
+    ]
+  },
+  {
+    category: "高分職場搭配詞",
+    words: [
+    ["a substantial increase in", "大幅增加", "The report noted a substantial increase in online reservations.", 900],
+    ["at no additional cost", "無須額外費用", "The supplier will include delivery at no additional cost.", 800],
+    ["be eligible for", "符合……資格", "Part-time employees may be eligible for travel reimbursement.", 800],
+    ["be on track to", "進度順利，預計能……", "The renovation is on track to finish before the opening.", 800],
+    ["compensate for", "補償；彌補", "The airline offered a meal voucher to compensate for the delay.", 900],
+    ["draw a distinction between", "區分……與……", "The guide draws a distinction between standard and express shipping.", 900],
+    ["from the outset", "從一開始", "The project manager clarified the approval process from the outset.", 900],
+    ["have a bearing on", "對……有影響", "The delivery date may have a bearing on the installation schedule.", 900],
+    ["in conjunction with", "與……共同；配合", "The workshop is offered in conjunction with the local business association.", 900],
+    ["keep track of", "追蹤；掌握……的進度", "Use the online portal to keep track of your application.", 800],
+    ["make an exception for", "為……破例", "The hotel made an exception for guests affected by the cancellation.", 900],
+    ["meet a requirement", "符合要求", "All bids must meet the insurance requirement.", 800],
+    ["move forward with", "繼續推進", "The director approved the plan, allowing the team to move forward with the launch.", 800],
+    ["on short notice", "臨時通知；短時間內", "The venue arranged an additional room on short notice.", 800],
+    ["rule out", "排除；不考慮", "The technician ruled out a software fault after testing the system.", 900],
+    ["set aside", "預留；撥出", "The department set aside funds for staff development.", 800],
+    ["take into account", "將……納入考量", "Please take seasonal demand into account when preparing the forecast.", 800],
+    ["take precedence over", "優先於；比……重要", "Safety concerns take precedence over the delivery schedule.", 900],
+    ["under consideration", "正在審議；考慮中", "The proposed route is still under consideration.", 900],
+    ["with a view to", "為了；著眼於", "The company revised its hours with a view to serving more customers.", 900]
+    ]
+  },
+  {
+    category: "正式通知與書信片語",
+    words: [
+    ["as a precaution", "作為預防措施", "The building will close early as a precaution during the storm.", 800],
+    ["at your earliest convenience", "請於您方便時儘早……", "Please return the signed agreement at your earliest convenience.", 900],
+    ["be in compliance with", "符合；遵守", "The renovated office is in compliance with accessibility standards.", 900],
+    ["by mutual agreement", "經雙方同意", "The contract may be extended by mutual agreement.", 900],
+    ["for the foreseeable future", "在可預見的未來", "The temporary entrance will remain in use for the foreseeable future.", 900],
+    ["in the absence of", "在缺少……的情況下", "In the absence of the director, the deputy will chair the meeting.", 900],
+    ["in keeping with", "符合；與……一致", "The new signage is in keeping with the company’s visual identity.", 900],
+    ["in the long run", "長期而言", "Energy-efficient lighting will reduce operating costs in the long run.", 800],
+    ["on a regular basis", "定期地", "The safety equipment is inspected on a regular basis.", 800],
+    ["on the condition that", "條件是；前提是", "The discount is available on the condition that payment is made in advance.", 800],
+    ["regardless of", "不論；不管", "The training is available to all employees regardless of department.", 800],
+    ["to the best of our knowledge", "據我們所知", "To the best of our knowledge, all orders have been dispatched.", 900],
+    ["under no circumstances", "無論如何都不；絕不", "Under no circumstances should confidential files be left unattended.", 900],
+    ["with reference to", "關於；參照", "I am writing with reference to your recent service request.", 900],
+    ["unless otherwise stated", "除非另有說明", "All prices are quoted in New Taiwan dollars unless otherwise stated.", 900],
+    ["on a provisional basis", "暫時地；以暫定方式", "The meeting room has been reserved on a provisional basis.", 900],
+    ["for internal use only", "僅供內部使用", "This draft schedule is for internal use only.", 800],
+    ["in a timely manner", "及時地", "Please submit any corrections in a timely manner.", 800],
+    ["on a case-by-case basis", "依個別情況；逐案處理", "Refund requests are reviewed on a case-by-case basis.", 900],
+    ["subject to change", "可能變更；以變更為準", "The published timetable is subject to change.", 800]
+    ]
+  }
 ];
