@@ -83,6 +83,12 @@ function renderHome() {
     <p class="muted">上次 955，這次挑戰更高。專注 Listening & Reading 的推論、細節與交叉比對。</p>
     ${session ? resumeCard() : ''}
 
+    <section class="card"><h2>快速模考 · 40 題</h2>
+      <p>聽力 20 題／9 分鐘，閱讀 20 題／15 分鐘，約 24 分鐘。涵蓋七個 Part，完成後可查看解析與非官方粗估。</p>
+      <button class="btn primary" data-action="start-form" data-form="quick-40">開始 40 題快速模考</button>
+      <p class="muted">依正式題型與時間近似縮小；對話和文章題組保留完整，因此各 Part 題數不是精確比例。題目取自第 A 套。</p>
+    </section>
+
     <section class="practice-grid" aria-label="Listening 聽力與 Reading 閱讀練習">
       <article class="card practice-card listening-card">
         <div class="section-label">LISTENING</div>
@@ -210,7 +216,7 @@ if (audio.supported()) speechSynthesis.addEventListener?.('voiceschanged', () =>
 });
 
 /* ---------- Session ---------- */
-function startSession(mode, groupIds, minutes, questionIds = null, formId = null) {
+function startSession(mode, groupIds, minutes, questionIds = null, formId = null, timing = {}) {
   if (session && !confirm("目前有未完成的測驗。開始新測驗會放棄原進度，確定繼續？")) return;
   if (!allowSession(groupIds)) return;
   const now = Date.now();
@@ -218,7 +224,7 @@ function startSession(mode, groupIds, minutes, questionIds = null, formId = null
     bankVersion: bank.meta.version, mode, groupIds, questionIds, answers: {}, flags: {}, plays: {},
     cur: 0, startedAt: now, endsAt: now + minutes * 60000, minutes
   };
-  if (formId) startTimedForm(session, formId, now);
+  if (formId) startTimedForm(session, formId, now, timing);
   saveSession();
   renderTest();
 }
@@ -274,7 +280,7 @@ function renderTest() {
   app.innerHTML = `
     <div class="topbar">
       <div><span class="tag">${session.mode === "review" ? "錯題複習" : g.section === "listening" ? "Listening" : "Reading"}</span><span class="tag">Part ${g.part}</span><span class="muted">${esc(g.title ?? "")}</span></div>
-      <div class="row">${session.phase ? `<b>${session.phase === 'listening' ? '聽力 45 分鐘' : '閱讀 75 分鐘'}</b>` : ''}<span class="muted" id="count">${answeredCount}/${qs.length} 已答</span><span class="timer" id="timer">--:--</span><button class="btn small" data-action="pause-timer">暫停／看估分</button><button class="btn small primary" data-action="submit">提前交卷</button></div>
+      <div class="row">${session.phase ? `<b>${session.phase === 'listening' ? '聽力' : '閱讀'} ${session.phaseMinutes} 分鐘</b>` : ''}<span class="muted" id="count">${answeredCount}/${qs.length} 已答</span><span class="timer" id="timer">--:--</span><button class="btn small" data-action="pause-timer">暫停／看估分</button><button class="btn small primary" data-action="submit">提前交卷</button></div>
     </div>
 
     <section class="card">
@@ -289,7 +295,7 @@ function renderTest() {
       <button class="btn" data-action="prev" ${session.cur === allowed[0].i ? "disabled" : ""}>← 上一組</button>
       <span class="muted">${session.cur + 1} / ${session.groupIds.length}</span>
       <button class="btn ${isLast ? "" : "primary"}" data-action="next" ${isLast ? "disabled" : ""}>下一組 →</button>
-      ${isLast && session.phase === 'listening' ? '<button class="btn primary" data-action="begin-reading">結束聽力，開始閱讀 75 分鐘</button>' : ''}
+      ${isLast && session.phase === 'listening' ? `<button class="btn primary" data-action="begin-reading">結束聽力，開始閱讀 ${session.readingMinutes ?? 75} 分鐘</button>` : ''}
     </div>
 
     <section class="card"><h3>題號${session.phase ? '（只能作答目前區段）' : ''}</h3><div class="palette">${qs.map((q, i) => `<button class="pal ${session.answers[q.id] !== undefined ? "answered" : ""} ${session.flags[q.id] ? "flag" : ""} ${q.groupId === g.id ? "current" : ""}" data-action="jump" data-group="${q.groupId}" ${session.phase && q.section !== session.phase ? 'disabled' : ''} aria-label="第 ${i + 1} 題">${i + 1}</button>`).join("")}</div></section>
@@ -520,14 +526,14 @@ app.addEventListener("click", (e) => {
     case "start-diagnostic": {
       const set = bank.meta.sets.find((s) => s.id === document.getElementById('test-set').value);
       const ids = orderedGroupIds(set.groupIds);
-      if (set.id.startsWith('form-')) ids.sort((a, b) => groupById(a).part - groupById(b).part);
-      startSession("diagnostic", ids, set.durationMin, null, set.id.startsWith('form-') ? set.id : null);
+      if (set.id.startsWith('form-') || set.timing) ids.sort((a, b) => groupById(a).part - groupById(b).part);
+      startSession("diagnostic", ids, set.durationMin, null, set.id.startsWith('form-') || set.timing ? set.id : null, set.timing);
       break;
     }
     case "start-form": {
       const set = bank.meta.sets.find((s) => s.id === d.form);
       const ids = orderedGroupIds(set.groupIds).sort((a, b) => groupById(a).part - groupById(b).part);
-      startSession('diagnostic', ids, 120, null, set.id);
+      startSession('diagnostic', ids, set.durationMin, null, set.id, set.timing);
       break;
     }
     case "begin-reading":

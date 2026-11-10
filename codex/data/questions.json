@@ -33,6 +33,38 @@
         "durationMin": 30
       },
       {
+        "id": "quick-40",
+        "label": "快速模考 · 聽力20＋閱讀20（24分鐘）",
+        "groupIds": [
+          "g-photo-01",
+          "g-l01",
+          "g-l04",
+          "g-new-l1",
+          "g-new-l4",
+          "s03-l2",
+          "s03-l5",
+          "g-a-p2-03",
+          "g-new-conv1",
+          "s03-conversation2",
+          "g-l09",
+          "s03-talk2",
+          "g-r01",
+          "g-r04",
+          "g-new-r0",
+          "g-new-r3",
+          "g-new-r6",
+          "s03-sentence1",
+          "g-new-text",
+          "g-x-single-freight",
+          "g-deep-reading-hotel-01"
+        ],
+        "durationMin": 24,
+        "timing": {
+          "listening": 9,
+          "reading": 15
+        }
+      },
+      {
         "id": "form-a",
         "label": "200 題練習卷 A · 聽力＋閱讀",
         "groupIds": [

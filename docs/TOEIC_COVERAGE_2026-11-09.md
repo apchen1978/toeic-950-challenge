@@ -28,6 +28,8 @@ The new route-map and three-document items follow the task types shown in the [E
 Publishing workflow: keep the desktop local installation and `/codex/` online release on the same application assets, including scoring, timing and recordings. Before selective desktop copies, compare against the previous release and back up changed files. Preserve the local launcher/server configuration and browser learning records; verify data and asset hashes after copying. Installed PWA caches may need an online reopen to obtain the new release.
 
 Unfinished sessions are saved after each answer, flag, and navigation using the existing session key. Backgrounding/pagehide pauses and saves the current practice timer synchronously. A prominent home card shows the saved form, progress, current group and remaining time; Continue resumes it in one click. Manual pause can return to home without discarding. This is same-browser, same-origin storage, not account/device synchronization; clearing site data removes the saved session. Normal page exit/reload was browser-tested; abrupt OS termination is not guaranteed to emit a final lifecycle event.
+
+The 40-question quick mock samples 20 Listening and 20 Reading questions from form A, with 9-minute and 15-minute section timers. All seven Parts and complete conversation/talk/passage groups are represented; exact proportions are approximated. It overlaps form A and is not a separate collection of new questions. Its unofficial score estimates have greater sampling uncertainty than longer forms.
 - **PARTIAL — Explanations:** current explanations are English. Chinese explanations, detailed distractor fields and difficulty tags are not yet present.
 
 ## Route to one correctly composed form

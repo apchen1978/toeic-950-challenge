@@ -25,8 +25,10 @@ export function elapsedSeconds(session, now = Date.now()) {
   return Math.max(0, Math.min(session.minutes * 60, Math.round((session.minutes * 60000 - remainingMs(session, now)) / 1000)));
 }
 
-export function startTimedForm(session, formId, now = Date.now()) {
-  Object.assign(session, { formId, phase: 'listening', phaseMinutes: 45, completedSeconds: 0, endsAt: now + 45 * 60000 });
+export function startTimedForm(session, formId, now = Date.now(), timing = {}) {
+  const listening = timing.listening ?? 45;
+  const reading = timing.reading ?? 75;
+  Object.assign(session, { formId, phase: 'listening', phaseMinutes: listening, readingMinutes: reading, completedSeconds: 0, endsAt: now + listening * 60000 });
 }
 
 export function startReading(session, now = Date.now(), expired = false) {
@@ -34,8 +36,8 @@ export function startReading(session, now = Date.now(), expired = false) {
   const deadline = session.endsAt;
   session.completedSeconds = elapsedSeconds(session, now);
   session.phase = 'reading';
-  session.phaseMinutes = 75;
-  session.endsAt = (expired ? deadline : now) + 75 * 60000;
+  session.phaseMinutes = session.readingMinutes ?? 75;
+  session.endsAt = (expired ? deadline : now) + session.phaseMinutes * 60000;
   delete session.pausedRemainingMs;
   return true;
 }
