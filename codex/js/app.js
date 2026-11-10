@@ -319,6 +319,7 @@ function renderTest() {
 
 function progressCard(questions, answers) {
   const progress = estimateProgress(questions, answers);
+  const wrong = questions.filter((q) => answers[q.id] !== undefined && answers[q.id] !== null && answers[q.id] !== q.answer);
   const labels = { listening: '聽力', structure: '句型／結構（Part 6）', grammar: '文法', reading: '閱讀理解（Part 7）', vocabulary: '詞彙' };
   const range = (key) => {
     const section = progress.sections[key];
@@ -328,10 +329,20 @@ function progressCard(questions, answers) {
   const listening = progress.ranges.listening;
   const reading = progress.ranges.reading;
   const total = listening && reading ? `${listening.low + reading.low}–${listening.high + reading.high}（中間值約 ${listening.mid + reading.mid}）` : '聽力與閱讀各至少答 5 題後顯示';
+  const wrongReview = wrong.length ? `<section class="pause-review" aria-labelledby="pause-review-title"><h2 id="pause-review-title">本次錯題 <span class="muted">${wrong.length} 題</span></h2><p class="muted">先看你的答案與正解；需要時再展開解析。</p>
+    ${wrong.map((q) => {
+      const chosen = answers[q.id];
+      const group = groupById(q.groupId);
+      const number = questions.findIndex((item) => item.id === q.id) + 1;
+      return `<article class="pause-review-item"><p class="pause-review-meta">第 ${number} 題 · Part ${q.part}${group?.title ? ` · ${esc(group.title)}` : ''}</p><p class="pause-review-prompt">${esc(q.prompt)}</p>
+        <p class="pause-review-answer"><span class="pause-review-wrong">你的答案：${LETTERS[chosen] ?? ''}. ${esc(q.options[chosen] ?? '')}</span><span class="pause-review-correct">正確答案：${LETTERS[q.answer] ?? ''}. ${esc(q.options[q.answer] ?? '')}</span></p>
+        <details class="pause-review-explanation"><summary>查看答錯原因</summary><div class="explain">${q.explanation ? esc(q.explanation) : '此題尚未提供解析，可先依正確答案自行檢查。'}</div></details></article>`;
+    }).join('')}
+  </section>` : `<section class="pause-review"><h2>本次錯題</h2><p class="muted">目前沒有已答錯的題目。未作答題目不列為錯題。</p></section>`;
   return `<section class="card"><h2>目前作答表現</h2><p class="notice">僅依已答題推算，空白題不算錯。下列分數區間是練習參考，並非 ETS 分數；選題難度和樣本量會影響結果。ETS 每份試卷另行換算量尺分數，<a href="https://www.ets.org/content/dam/ets-org/fr/pdfs/toeic/toeic-listening-reading-test-examinee-handbook.pdf" target="_blank" rel="noopener">官方說明</a>。</p>
     <p><b>總分粗估：</b>${total}<br><b>聽力粗估：</b>${range('listening')}<br><b>閱讀粗估：</b>${range('reading')}</p>
     ${Object.entries(labels).map(([key, label]) => { const v = progress.categories[key]; return `<div class="skillrow"><div>${label}</div><div>${v.n ? `${v.c}/${v.n}（${Math.round(v.c / v.n * 100)}%）` : '尚無已答題'}</div></div>`; }).join('')}
-  </section>`;
+  </section>${wrongReview}`;
 }
 
 function transcriptBlock(g, duringPractice = false) {
