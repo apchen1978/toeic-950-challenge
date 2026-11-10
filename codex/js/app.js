@@ -30,8 +30,8 @@ function accentTag(group) {
   return label ? `<span class="tag accent-tag">${esc(label)}</span>` : "";
 }
 function vocabLevel() {
-  const value = store.get(KEY_VOCAB_LEVEL, "800");
-  return value === "all" || value === "900" || value === "800" ? value : "800";
+  const value = store.get(KEY_VOCAB_LEVEL, "all");
+  return value === "all" || value === "900" || value === "800" ? value : "all";
 }
 function vocabParts(item) {
   const [word, meaning, example, level, pos = ""] = item;
@@ -145,7 +145,7 @@ function renderHome() {
     </section>
 
     <details class="card vocabulary-card"><summary><span class="vocabulary-eyebrow">WORKPLACE VOCABULARY</span><span class="vocabulary-title">職場字彙 · ${vocabCounts()[800] + vocabCounts()[900]} 個詞條</span><small>800 核心 ${vocabCounts()[800]} 個，適合約 600–850 · 900 進階 ${vocabCounts()[900]} 個，金色證書目標</small></summary>
-      <p class="muted">預設先顯示 800 核心，比較好入門。900 是進階字彙，標成金色證書。例句是本站自寫的，不是官方字表。</p>
+      <p class="muted">全部會把 800 與 900 穿插列出。想先打底可改看 800 核心；900 是金色證書進階。例句是本站自寫的，不是官方字表。</p>
       <div class="vocab-filters" role="group" aria-label="字彙程度">
         <button type="button" class="btn small" data-action="vocab-filter" data-vocab-filter="800">800 核心</button>
         <button type="button" class="btn small" data-action="vocab-filter" data-vocab-filter="900">900 進階</button>
