@@ -85,10 +85,45 @@ export function estimateProgress(questions, answers) {
   return { categories, sections, ranges };
 }
 
+/** Answered questions that are not correct. Unanswered items are not mistakes yet. */
+export function answeredWrong(questions, answers) {
+  return (questions ?? []).filter((question) => {
+    const answer = answers?.[question.id];
+    return answer !== undefined && answer !== null && answer !== question.answer;
+  });
+}
+
+/** After a peek, choices already submitted stay fixed. */
+export function answerLocked(session, questionId) {
+  if (!session?.peeked) return false;
+  const answer = session.answers?.[questionId];
+  return answer !== undefined && answer !== null;
+}
+
+/** Peeked official attempts stay in history but leave the five-skill estimate and best-score trend. */
+export function countsForStats(entry) {
+  return !entry?.peeked;
+}
+
+export function bestAccuracy(history) {
+  let best = null;
+  for (const entry of history ?? []) {
+    if (!countsForStats(entry) || !entry.total) continue;
+    const accuracy = entry.correct / entry.total;
+    if (!best || accuracy > best.accuracy) best = { id: entry.id, accuracy, correct: entry.correct, total: entry.total };
+  }
+  return best;
+}
+
+export function accuracyTrend(history) {
+  return (history ?? []).filter((entry) => countsForStats(entry) && entry.total).map((entry) => entry.correct / entry.total);
+}
+
 /** Merge per-skill stats across attempts: history entries carry `bySkill`. */
 export function mergeSkillStats(history) {
   const merged = {};
   for (const h of history) {
+    if (!countsForStats(h)) continue;
     for (const [k, v] of Object.entries(h.bySkill ?? {})) {
       merged[k] ??= { c: 0, t: 0 };
       merged[k].c += v.c;
@@ -119,9 +154,26 @@ export function wrongAnswerDue(entry, now = Date.now()) {
   return !!entry && (!Number.isFinite(entry.dueAt) || entry.dueAt <= now);
 }
 
-export function updateWrongAnswerQueue(queue, questions, answers, now = Date.now()) {
+/** Add one wrong question to the existing review queue. A stage-0 entry is not duplicated. */
+export function queueWrongReview(queue, question, now = Date.now()) {
+  const next = { ...(queue ?? {}) };
+  const previous = next[question.id];
+  if (previous && previous.stage !== 1) return { queue: next, added: false };
+  next[question.id] = {
+    ...previous,
+    wrongCount: (previous?.wrongCount ?? 0) + 1,
+    lastWrongAt: now,
+    stage: 0,
+    dueAt: now
+  };
+  return { queue: next, added: true };
+}
+
+export function updateWrongAnswerQueue(queue, questions, answers, now = Date.now(), alreadyQueued = []) {
+  const skip = new Set(alreadyQueued ?? []);
   const next = { ...(queue ?? {}) };
   for (const q of questions) {
+    if (skip.has(q.id)) continue;
     const answer = answers[q.id];
     if (answer === undefined || answer === null) continue;
     if (answer === q.answer) {
