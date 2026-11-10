@@ -81,11 +81,14 @@ function renderHome() {
   const queueCount = queuedQuestions.length;
 
   app.innerHTML = `
-    <h1>TOEIC 950+ Challenge</h1>
-    <p class="muted">上次 955，這次挑戰更高。專注 Listening & Reading 的推論、細節與交叉比對。</p>
+    <header class="home-header">
+      <p class="home-eyebrow">LISTENING &amp; READING <span aria-hidden="true">/</span> PRACTICE</p>
+      <h1>TOEIC 950+<br><span>Challenge</span></h1>
+      <p class="home-intro">上次 955，這次挑戰更高。<br>專注聽力與閱讀的推論、細節與交叉比對。</p>
+    </header>
     ${session ? resumeCard() : ''}
 
-    <section class="card"><h2>快速模考</h2>
+    <section class="card quick-card"><p class="section-kicker">PRACTICE TEST</p><h2>快速模考</h2>
       <p>40 題：約 24 分鐘（聽力 9 分鐘、閱讀 15 分鐘）。<br>60 題：約 36 分鐘（聽力 13 分 30 秒、閱讀 22 分 30 秒）。</p>
       <p class="muted">聽力以美式為主，並加入英式與澳洲口音；語音合成音色依裝置而異。</p>
       <button class="btn primary" data-action="start-form" data-form="quick-40">開始 40 題快速模考</button>
@@ -94,9 +97,9 @@ function renderHome() {
       <details><summary>口音音檔來源</summary><p>英式：使用 Cori Samuel 聲音模型，資料由 NVIDIA 提供，經修改產生此音檔；<a href="https://www.openslr.org/109/">資料來源</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>。澳洲：使用 DataCraftsmanAustralia 的 en_AU-librivox-medium 模型（Kirsty Leishman），經修改產生音檔；<a href="https://huggingface.co/DataCraftsmanAustralia/piper-en_AU-librivox-medium">模型與作者資料</a> · CC BY 4.0。</p></details>
     </section>
 
-    <details class="card"><summary>金色證書目標字彙 · ${VOCABULARY.reduce((n, group) => n + group.words.length, 0)} 個詞條</summary>
+    <details class="card vocabulary-card"><summary>金色證書目標字彙 · ${VOCABULARY.reduce((n, group) => n + group.words.length, 0)} 個詞條</summary>
       <p class="muted">分主題輕鬆閱讀，包含中文與原創例句。連網載入更新後可離線查看。依多益官方情境選詞，非官方字頻排行或保證出題。</p>
-      ${VOCABULARY.map(group => `<details><summary>${esc(group.category)} · ${group.words.length} 個詞條</summary>${group.words.map(([word, meaning, example]) => `<p><b>${esc(word)}</b> · ${esc(meaning)}<br><span class="muted">${esc(example)}</span></p>`).join('')}</details>`).join('')}
+      ${VOCABULARY.map(group => `<details class="vocabulary-group"><summary>${esc(group.category)} · ${group.words.length} 個詞條</summary>${group.words.map(([word, meaning, example]) => `<p><b>${esc(word)}</b> · ${esc(meaning)}<br><span class="muted">${esc(example)}</span></p>`).join('')}</details>`).join('')}
       <p><a href="https://www.toeic.com.tw/toeic/listening-reading/about/content/" target="_blank" rel="noopener noreferrer">參考：台灣多益官方測驗內容</a> · <a href="https://dictionary.cambridge.org/dictionary/english/" target="_blank" rel="noopener noreferrer">Cambridge Dictionary</a></p>
     </details>
 
