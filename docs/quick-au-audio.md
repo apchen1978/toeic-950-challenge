@@ -1,5 +1,9 @@
 # Australian quick-test audio
 
+This Piper clip was retired when the four-accent bank replaced it. The current recordings and voice list are in `AUDIO_ACCENTS.md`.
+
+
+
 `codex/audio/quick-au-g-airport-talk-d.mp3` was synthesized from the unchanged `g-airport-talk-d`
 script in `codex/data/questions.json`. Its canonical script SHA-256 is
 `ec1021f2e695bbd6f4ce2bdc2ff28de120b941ee68c75087f0ea2bf9dd43cdc2`.

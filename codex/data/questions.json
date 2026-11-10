@@ -824,6 +824,7 @@
       "id": "g-l01",
       "section": "listening",
       "part": 2,
+      "accent": "US",
       "spokenOptions": true,
       "script": [
         {
@@ -850,6 +851,7 @@
       "id": "g-l02",
       "section": "listening",
       "part": 2,
+      "accent": "UK",
       "spokenOptions": true,
       "script": [
         {
@@ -876,6 +878,7 @@
       "id": "g-l03",
       "section": "listening",
       "part": 2,
+      "accent": "CA",
       "spokenOptions": true,
       "script": [
         {
@@ -902,6 +905,7 @@
       "id": "g-l04",
       "section": "listening",
       "part": 2,
+      "accent": "AU",
       "spokenOptions": true,
       "script": [
         {
@@ -928,6 +932,7 @@
       "id": "g-l05",
       "section": "listening",
       "part": 2,
+      "accent": "US",
       "spokenOptions": true,
       "script": [
         {
@@ -954,6 +959,7 @@
       "id": "g-l06",
       "section": "listening",
       "part": 3,
+      "accent": "US",
       "title": "Conversation 1",
       "script": [
         {
@@ -1014,6 +1020,7 @@
       "id": "g-l07",
       "section": "listening",
       "part": 3,
+      "accent": "UK",
       "title": "Conversation 2",
       "script": [
         {
@@ -1070,6 +1077,7 @@
       "id": "g-l08",
       "section": "listening",
       "part": 3,
+      "accent": "CA",
       "title": "Conversation 3",
       "script": [
         {
@@ -1122,6 +1130,7 @@
       "id": "g-l09",
       "section": "listening",
       "part": 4,
+      "accent": "US",
       "title": "Announcement",
       "script": [
         {
@@ -1509,6 +1518,7 @@
       "id": "g-new-l0",
       "section": "listening",
       "part": 2,
+      "accent": "UK",
       "title": "Indirect responses",
       "script": [
         {
@@ -1536,6 +1546,7 @@
       "id": "g-new-l1",
       "section": "listening",
       "part": 2,
+      "accent": "CA",
       "title": "Indirect responses",
       "script": [
         {
@@ -1563,6 +1574,7 @@
       "id": "g-new-l2",
       "section": "listening",
       "part": 2,
+      "accent": "AU",
       "title": "Indirect responses",
       "script": [
         {
@@ -1590,6 +1602,7 @@
       "id": "g-new-l3",
       "section": "listening",
       "part": 2,
+      "accent": "US",
       "title": "Indirect responses",
       "script": [
         {
@@ -1617,6 +1630,7 @@
       "id": "g-new-l4",
       "section": "listening",
       "part": 2,
+      "accent": "UK",
       "title": "Indirect responses",
       "script": [
         {
@@ -1644,6 +1658,7 @@
       "id": "g-new-l5",
       "section": "listening",
       "part": 2,
+      "accent": "CA",
       "title": "Indirect responses",
       "script": [
         {
@@ -1671,6 +1686,7 @@
       "id": "g-new-conv1",
       "section": "listening",
       "part": 3,
+      "accent": "AU",
       "title": "A delivery workaround",
       "script": [
         {
@@ -1736,6 +1752,7 @@
       "id": "g-new-conv2",
       "section": "listening",
       "part": 3,
+      "accent": "US",
       "title": "An updated estimate",
       "script": [
         {
@@ -1805,6 +1822,7 @@
       "id": "g-new-talk",
       "section": "listening",
       "part": 4,
+      "accent": "UK",
       "title": "Museum membership update",
       "script": [
         {
@@ -2149,6 +2167,7 @@
       "id": "s03-l1",
       "section": "listening",
       "part": 2,
+      "accent": "AU",
       "title": "Indirect responses",
       "script": [
         {
@@ -2176,6 +2195,7 @@
       "id": "s03-l2",
       "section": "listening",
       "part": 2,
+      "accent": "US",
       "title": "Indirect responses",
       "script": [
         {
@@ -2203,6 +2223,7 @@
       "id": "s03-l3",
       "section": "listening",
       "part": 2,
+      "accent": "UK",
       "title": "Indirect responses",
       "script": [
         {
@@ -2230,6 +2251,7 @@
       "id": "s03-l4",
       "section": "listening",
       "part": 2,
+      "accent": "CA",
       "title": "Indirect responses",
       "script": [
         {
@@ -2257,6 +2279,7 @@
       "id": "s03-l5",
       "section": "listening",
       "part": 2,
+      "accent": "AU",
       "title": "Indirect responses",
       "script": [
         {
@@ -2284,6 +2307,7 @@
       "id": "s03-conversation1",
       "section": "listening",
       "part": 3,
+      "accent": "UK",
       "title": "A room booking",
       "script": [
         {
@@ -2349,6 +2373,7 @@
       "id": "s03-conversation2",
       "section": "listening",
       "part": 3,
+      "accent": "CA",
       "title": "A catalog correction",
       "script": [
         {
@@ -2418,6 +2443,7 @@
       "id": "s03-conversation3",
       "section": "listening",
       "part": 3,
+      "accent": "AU",
       "title": "A job application",
       "script": [
         {
@@ -2487,6 +2513,7 @@
       "id": "s03-talk1",
       "section": "listening",
       "part": 4,
+      "accent": "CA",
       "title": "A shuttle announcement",
       "script": [
         {
@@ -2540,6 +2567,7 @@
       "id": "s03-talk2",
       "section": "listening",
       "part": 4,
+      "accent": "AU",
       "title": "A product return message",
       "script": [
         {
@@ -3151,6 +3179,7 @@
       "id": "g-a-p2-01",
       "section": "listening",
       "part": 2,
+      "accent": "US",
       "spokenOptions": true,
       "script": [
         {
@@ -3177,6 +3206,7 @@
       "id": "g-a-p2-02",
       "section": "listening",
       "part": 2,
+      "accent": "UK",
       "spokenOptions": true,
       "script": [
         {
@@ -3203,6 +3233,7 @@
       "id": "g-a-p2-03",
       "section": "listening",
       "part": 2,
+      "accent": "CA",
       "spokenOptions": true,
       "script": [
         {
@@ -3229,6 +3260,7 @@
       "id": "g-a-p2-04",
       "section": "listening",
       "part": 2,
+      "accent": "AU",
       "spokenOptions": true,
       "script": [
         {
@@ -3255,6 +3287,7 @@
       "id": "g-a-p2-05",
       "section": "listening",
       "part": 2,
+      "accent": "US",
       "spokenOptions": true,
       "script": [
         {
@@ -3381,6 +3414,7 @@
       "id": "g-extra-l-01",
       "section": "listening",
       "part": 2,
+      "accent": "UK",
       "spokenOptions": true,
       "script": [
         {
@@ -3407,6 +3441,7 @@
       "id": "g-extra-l-02",
       "section": "listening",
       "part": 2,
+      "accent": "CA",
       "spokenOptions": true,
       "script": [
         {
@@ -3433,6 +3468,7 @@
       "id": "g-extra-l-03",
       "section": "listening",
       "part": 2,
+      "accent": "AU",
       "spokenOptions": true,
       "script": [
         {
@@ -3459,6 +3495,7 @@
       "id": "g-extra-l-04",
       "section": "listening",
       "part": 2,
+      "accent": "US",
       "spokenOptions": true,
       "script": [
         {
@@ -3485,6 +3522,7 @@
       "id": "g-extra-l-05",
       "section": "listening",
       "part": 2,
+      "accent": "UK",
       "spokenOptions": true,
       "script": [
         {
@@ -3511,6 +3549,7 @@
       "id": "g-extra-l-06",
       "section": "listening",
       "part": 2,
+      "accent": "CA",
       "spokenOptions": true,
       "script": [
         {
@@ -3537,6 +3576,7 @@
       "id": "g-extra-l-07",
       "section": "listening",
       "part": 2,
+      "accent": "AU",
       "spokenOptions": true,
       "script": [
         {
@@ -3563,6 +3603,7 @@
       "id": "g-extra-l-08",
       "section": "listening",
       "part": 2,
+      "accent": "US",
       "spokenOptions": true,
       "script": [
         {
@@ -3589,6 +3630,7 @@
       "id": "g-extra-l-09",
       "section": "listening",
       "part": 2,
+      "accent": "UK",
       "spokenOptions": true,
       "script": [
         {
@@ -3615,6 +3657,7 @@
       "id": "g-extra-l-10",
       "section": "listening",
       "part": 2,
+      "accent": "CA",
       "spokenOptions": true,
       "script": [
         {
@@ -3841,6 +3884,7 @@
       "id": "g-photo-01",
       "section": "listening",
       "part": 1,
+      "accent": "US",
       "title": "照片描述",
       "image": "images/photo-meeting.jpg",
       "spokenOptions": true,
@@ -3870,6 +3914,7 @@
       "id": "g-photo-02",
       "section": "listening",
       "part": 1,
+      "accent": "UK",
       "title": "照片描述",
       "image": "images/photo-delivery.jpg",
       "spokenOptions": true,
@@ -3899,6 +3944,7 @@
       "id": "g-new-cv-a",
       "section": "listening",
       "part": 3,
+      "accent": "US",
       "title": "供應商交期",
       "script": [
         {
@@ -3960,6 +4006,7 @@
       "id": "g-new-cv-b",
       "section": "listening",
       "part": 3,
+      "accent": "UK",
       "title": "會議安排",
       "script": [
         {
@@ -4025,6 +4072,7 @@
       "id": "g-new-talk-a",
       "section": "listening",
       "part": 4,
+      "accent": "US",
       "title": "場館公告",
       "script": [
         {
@@ -4078,6 +4126,7 @@
       "id": "g-new-talk-b",
       "section": "listening",
       "part": 4,
+      "accent": "UK",
       "title": "物流電話留言",
       "script": [
         {
@@ -4931,6 +4980,7 @@
       "id": "g-photo-03",
       "section": "listening",
       "part": 1,
+      "accent": "CA",
       "title": "照片描述",
       "image": "images/photo-plants.jpg",
       "spokenOptions": true,
@@ -4960,6 +5010,7 @@
       "id": "g-airport-talk-d",
       "section": "listening",
       "part": 4,
+      "accent": "CA",
       "title": "機場登機廣播",
       "script": [
         {
@@ -5013,6 +5064,7 @@
       "id": "g-campus-talk-d",
       "section": "listening",
       "part": 4,
+      "accent": "AU",
       "title": "校園職涯活動廣播",
       "script": [
         {
@@ -5218,6 +5270,7 @@
       "id": "g-voice-e-airport",
       "section": "listening",
       "part": 3,
+      "accent": "CA",
       "title": "機場轉機協助",
       "script": [
         {
@@ -5283,6 +5336,7 @@
       "id": "g-voice-e-campus",
       "section": "listening",
       "part": 3,
+      "accent": "AU",
       "title": "校園講座安排",
       "script": [
         {
@@ -5348,6 +5402,7 @@
       "id": "g-voice-e-vendor",
       "section": "listening",
       "part": 3,
+      "accent": "US",
       "title": "供應商數量確認",
       "script": [
         {
@@ -5617,6 +5672,7 @@
       "id": "g-f-dialogue-1",
       "section": "listening",
       "part": 3,
+      "accent": "UK",
       "title": "展覽場地協調",
       "script": [
         {
@@ -5682,6 +5738,7 @@
       "id": "g-f-dialogue-2",
       "section": "listening",
       "part": 3,
+      "accent": "CA",
       "title": "飯店會議安排",
       "script": [
         {
@@ -5747,6 +5804,7 @@
       "id": "g-f-dialogue-3",
       "section": "listening",
       "part": 3,
+      "accent": "AU",
       "title": "新產品樣品",
       "script": [
         {
@@ -5812,6 +5870,7 @@
       "id": "g-f-talk-1",
       "section": "listening",
       "part": 4,
+      "accent": "US",
       "title": "博物館參觀廣播",
       "script": [
         {
@@ -5865,6 +5924,7 @@
       "id": "g-f-talk-2",
       "section": "listening",
       "part": 4,
+      "accent": "UK",
       "title": "公司系統維護通知",
       "script": [
         {
@@ -6083,6 +6143,7 @@
       "id": "g-photo-04",
       "section": "listening",
       "part": 1,
+      "accent": "AU",
       "title": "照片描述",
       "image": "images/photo-restaurant.jpg",
       "spokenOptions": true,
@@ -6112,6 +6173,7 @@
       "id": "g-photo-05",
       "section": "listening",
       "part": 1,
+      "accent": "US",
       "title": "照片描述",
       "image": "images/photo-warehouse.jpg",
       "spokenOptions": true,
@@ -6141,6 +6203,7 @@
       "id": "g-photo-06",
       "section": "listening",
       "part": 1,
+      "accent": "UK",
       "title": "照片描述",
       "image": "images/photo-terrace.jpg",
       "spokenOptions": true,
@@ -6170,6 +6233,7 @@
       "id": "g-photo-07",
       "section": "listening",
       "part": 1,
+      "accent": "CA",
       "title": "照片描述",
       "image": "images/photo-bicycle.jpg",
       "spokenOptions": true,
@@ -6199,6 +6263,7 @@
       "id": "g-photo-08",
       "section": "listening",
       "part": 1,
+      "accent": "AU",
       "title": "照片描述",
       "image": "images/photo-airport-maintenance.jpg",
       "spokenOptions": true,
@@ -6228,6 +6293,7 @@
       "id": "g-map-campus-01",
       "section": "listening",
       "part": 3,
+      "accent": "US",
       "title": "Campus route — map",
       "image": "images/campus-route.svg",
       "script": [
@@ -6472,6 +6538,7 @@
       "id": "xf-p2-01",
       "section": "listening",
       "part": 2,
+      "accent": "AU",
       "spokenOptions": true,
       "script": [
         {
@@ -6498,6 +6565,7 @@
       "id": "xf-p2-02",
       "section": "listening",
       "part": 2,
+      "accent": "US",
       "spokenOptions": true,
       "script": [
         {
@@ -6524,6 +6592,7 @@
       "id": "xf-p2-03",
       "section": "listening",
       "part": 2,
+      "accent": "UK",
       "spokenOptions": true,
       "script": [
         {
@@ -6550,6 +6619,7 @@
       "id": "xf-p2-04",
       "section": "listening",
       "part": 2,
+      "accent": "CA",
       "spokenOptions": true,
       "script": [
         {
@@ -6576,6 +6646,7 @@
       "id": "xf-p2-05",
       "section": "listening",
       "part": 2,
+      "accent": "AU",
       "spokenOptions": true,
       "script": [
         {
@@ -6602,6 +6673,7 @@
       "id": "xf-p2-06",
       "section": "listening",
       "part": 2,
+      "accent": "US",
       "spokenOptions": true,
       "script": [
         {
@@ -6628,6 +6700,7 @@
       "id": "xf-p2-07",
       "section": "listening",
       "part": 2,
+      "accent": "UK",
       "spokenOptions": true,
       "script": [
         {
@@ -6654,6 +6727,7 @@
       "id": "xf-p2-08",
       "section": "listening",
       "part": 2,
+      "accent": "CA",
       "spokenOptions": true,
       "script": [
         {
@@ -6680,6 +6754,7 @@
       "id": "xf-p2-09",
       "section": "listening",
       "part": 2,
+      "accent": "AU",
       "spokenOptions": true,
       "script": [
         {
@@ -6706,6 +6781,7 @@
       "id": "xf-p2-10",
       "section": "listening",
       "part": 2,
+      "accent": "US",
       "spokenOptions": true,
       "script": [
         {
@@ -6732,6 +6808,7 @@
       "id": "xf-p2-11",
       "section": "listening",
       "part": 2,
+      "accent": "UK",
       "spokenOptions": true,
       "script": [
         {
@@ -6758,6 +6835,7 @@
       "id": "xf-p2-12",
       "section": "listening",
       "part": 2,
+      "accent": "CA",
       "spokenOptions": true,
       "script": [
         {
@@ -6784,6 +6862,7 @@
       "id": "xf-p2-13",
       "section": "listening",
       "part": 2,
+      "accent": "AU",
       "spokenOptions": true,
       "script": [
         {
@@ -6810,6 +6889,7 @@
       "id": "xf-p2-14",
       "section": "listening",
       "part": 2,
+      "accent": "US",
       "spokenOptions": true,
       "script": [
         {
@@ -6836,6 +6916,7 @@
       "id": "xf-p2-15",
       "section": "listening",
       "part": 2,
+      "accent": "UK",
       "spokenOptions": true,
       "script": [
         {
@@ -6862,6 +6943,7 @@
       "id": "xf-p2-16",
       "section": "listening",
       "part": 2,
+      "accent": "CA",
       "spokenOptions": true,
       "script": [
         {
@@ -6888,6 +6970,7 @@
       "id": "xf-p2-17",
       "section": "listening",
       "part": 2,
+      "accent": "AU",
       "spokenOptions": true,
       "script": [
         {
@@ -6914,6 +6997,7 @@
       "id": "xf-p2-18",
       "section": "listening",
       "part": 2,
+      "accent": "US",
       "spokenOptions": true,
       "script": [
         {
@@ -6940,6 +7024,7 @@
       "id": "xf-p2-19",
       "section": "listening",
       "part": 2,
+      "accent": "UK",
       "spokenOptions": true,
       "script": [
         {
@@ -6966,6 +7051,7 @@
       "id": "xf-p2-20",
       "section": "listening",
       "part": 2,
+      "accent": "CA",
       "spokenOptions": true,
       "script": [
         {
@@ -7462,6 +7548,7 @@
       "id": "xfc-p3-inspection",
       "section": "listening",
       "part": 3,
+      "accent": "UK",
       "title": "Factory inspection schedule",
       "script": [
         {
@@ -7527,6 +7614,7 @@
       "id": "xfc-p3-hotel",
       "section": "listening",
       "part": 3,
+      "accent": "CA",
       "title": "Conference room change",
       "script": [
         {
@@ -7634,6 +7722,7 @@
       "id": "g-xl2-p3-01",
       "section": "listening",
       "part": 3,
+      "accent": "AU",
       "title": "Clinic appointment system",
       "script": [
         {
@@ -7699,6 +7788,7 @@
       "id": "g-xl2-p3-02",
       "section": "listening",
       "part": 3,
+      "accent": "US",
       "title": "Festival volunteer assignments",
       "script": [
         {
@@ -7764,6 +7854,7 @@
       "id": "g-xl2-p3-03",
       "section": "listening",
       "part": 3,
+      "accent": "UK",
       "title": "Export invoice correction",
       "script": [
         {
@@ -7829,6 +7920,7 @@
       "id": "g-xl2-p3-04",
       "section": "listening",
       "part": 3,
+      "accent": "CA",
       "title": "Product webinar replay",
       "script": [
         {
@@ -7894,6 +7986,7 @@
       "id": "g-xl2-p3-05",
       "section": "listening",
       "part": 3,
+      "accent": "AU",
       "title": "Restaurant equipment inspection",
       "script": [
         {
@@ -7959,6 +8052,7 @@
       "id": "g-xl2-p3-06",
       "section": "listening",
       "part": 3,
+      "accent": "US",
       "title": "Bus route timetable",
       "script": [
         {
@@ -8024,6 +8118,7 @@
       "id": "g-xl2-p4-01",
       "section": "listening",
       "part": 4,
+      "accent": "CA",
       "title": "Building access advisory",
       "script": [
         {
@@ -8077,6 +8172,7 @@
       "id": "g-xl2-p4-02",
       "section": "listening",
       "part": 4,
+      "accent": "AU",
       "title": "Research grant information session",
       "script": [
         {
@@ -8130,6 +8226,7 @@
       "id": "g-xl2-p4-03",
       "section": "listening",
       "part": 4,
+      "accent": "US",
       "title": "Hotel guest message",
       "script": [
         {
@@ -8183,6 +8280,7 @@
       "id": "g-xl2-p4-04",
       "section": "listening",
       "part": 4,
+      "accent": "UK",
       "title": "Outdoor market update",
       "script": [
         {
@@ -8236,6 +8334,7 @@
       "id": "g-xl-p2-01",
       "section": "listening",
       "part": 2,
+      "accent": "AU",
       "spokenOptions": true,
       "script": [
         {
@@ -8262,6 +8361,7 @@
       "id": "g-xl-p2-02",
       "section": "listening",
       "part": 2,
+      "accent": "US",
       "spokenOptions": true,
       "script": [
         {
@@ -8288,6 +8388,7 @@
       "id": "g-xl-p2-03",
       "section": "listening",
       "part": 2,
+      "accent": "UK",
       "spokenOptions": true,
       "script": [
         {
@@ -8314,6 +8415,7 @@
       "id": "g-xl-p2-04",
       "section": "listening",
       "part": 2,
+      "accent": "CA",
       "spokenOptions": true,
       "script": [
         {
@@ -8340,6 +8442,7 @@
       "id": "g-xl-p2-05",
       "section": "listening",
       "part": 2,
+      "accent": "AU",
       "spokenOptions": true,
       "script": [
         {
@@ -8366,6 +8469,7 @@
       "id": "g-xl-p2-06",
       "section": "listening",
       "part": 2,
+      "accent": "US",
       "spokenOptions": true,
       "script": [
         {
@@ -8392,6 +8496,7 @@
       "id": "g-xl-p2-07",
       "section": "listening",
       "part": 2,
+      "accent": "UK",
       "spokenOptions": true,
       "script": [
         {
@@ -8418,6 +8523,7 @@
       "id": "g-xl-p2-08",
       "section": "listening",
       "part": 2,
+      "accent": "CA",
       "spokenOptions": true,
       "script": [
         {
@@ -8444,6 +8550,7 @@
       "id": "g-xl-p2-09",
       "section": "listening",
       "part": 2,
+      "accent": "AU",
       "spokenOptions": true,
       "script": [
         {
@@ -8470,6 +8577,7 @@
       "id": "g-xl-p3-01",
       "section": "listening",
       "part": 3,
+      "accent": "UK",
       "title": "Conference room reservation",
       "script": [
         {
@@ -8535,6 +8643,7 @@
       "id": "g-xl-p3-02",
       "section": "listening",
       "part": 3,
+      "accent": "CA",
       "title": "Shipment inspection",
       "script": [
         {
@@ -8600,6 +8709,7 @@
       "id": "g-xl-p3-03",
       "section": "listening",
       "part": 3,
+      "accent": "AU",
       "title": "Museum exhibit brochure",
       "script": [
         {
@@ -8665,6 +8775,7 @@
       "id": "g-xl-p3-04",
       "section": "listening",
       "part": 3,
+      "accent": "US",
       "title": "Training venue change",
       "script": [
         {
@@ -8730,6 +8841,7 @@
       "id": "g-xl-p3-05",
       "section": "listening",
       "part": 3,
+      "accent": "UK",
       "title": "Vendor proposal review",
       "script": [
         {
@@ -8795,6 +8907,7 @@
       "id": "g-xl-p4-01",
       "section": "listening",
       "part": 4,
+      "accent": "CA",
       "title": "Library service announcement",
       "script": [
         {
@@ -8848,6 +8961,7 @@
       "id": "g-xl-p4-02",
       "section": "listening",
       "part": 4,
+      "accent": "AU",
       "title": "Airport transfer notice",
       "script": [
         {
@@ -8901,6 +9015,7 @@
       "id": "g-xl3-01",
       "section": "listening",
       "part": 3,
+      "accent": "CA",
       "title": "Customs paperwork",
       "script": [
         {
@@ -8966,6 +9081,7 @@
       "id": "g-xl3-02",
       "section": "listening",
       "part": 3,
+      "accent": "AU",
       "title": "Alumni event registration",
       "script": [
         {
@@ -9031,6 +9147,7 @@
       "id": "g-xl3-03",
       "section": "listening",
       "part": 3,
+      "accent": "US",
       "title": "Insurance repair estimate",
       "script": [
         {
@@ -9096,6 +9213,7 @@
       "id": "g-xl3-04",
       "section": "listening",
       "part": 3,
+      "accent": "UK",
       "title": "Book jacket proof",
       "script": [
         {
@@ -9161,6 +9279,7 @@
       "id": "g-xl3-05",
       "section": "listening",
       "part": 3,
+      "accent": "CA",
       "title": "Station platform inspection",
       "script": [
         {
@@ -9226,6 +9345,7 @@
       "id": "g-xl3-06",
       "section": "listening",
       "part": 3,
+      "accent": "AU",
       "title": "Catering allergy labels",
       "script": [
         {
@@ -9291,6 +9411,7 @@
       "id": "g-xl3-07",
       "section": "listening",
       "part": 3,
+      "accent": "US",
       "title": "Online return policy",
       "script": [
         {
@@ -9356,6 +9477,7 @@
       "id": "g-xl3-08",
       "section": "listening",
       "part": 3,
+      "accent": "UK",
       "title": "Office lease renewal",
       "script": [
         {
@@ -9421,6 +9543,7 @@
       "id": "g-xl3-09",
       "section": "listening",
       "part": 3,
+      "accent": "CA",
       "title": "Software licenses",
       "script": [
         {
@@ -9486,6 +9609,7 @@
       "id": "g-xl3-10",
       "section": "listening",
       "part": 3,
+      "accent": "AU",
       "title": "Community health survey",
       "script": [
         {
@@ -9551,6 +9675,7 @@
       "id": "g-xl3-11",
       "section": "listening",
       "part": 3,
+      "accent": "US",
       "title": "Library furniture order",
       "script": [
         {
@@ -9616,6 +9741,7 @@
       "id": "g-xl3-12",
       "section": "listening",
       "part": 3,
+      "accent": "UK",
       "title": "Factory shift handover",
       "script": [
         {
@@ -9681,6 +9807,7 @@
       "id": "g-x4f-01",
       "section": "listening",
       "part": 4,
+      "accent": "US",
       "title": "Station announcement",
       "script": [
         {
@@ -9734,6 +9861,7 @@
       "id": "g-x4f-02",
       "section": "listening",
       "part": 4,
+      "accent": "UK",
       "title": "Museum telephone message",
       "script": [
         {
@@ -9787,6 +9915,7 @@
       "id": "g-x4f-03",
       "section": "listening",
       "part": 4,
+      "accent": "CA",
       "title": "Warehouse shift briefing",
       "script": [
         {
@@ -9840,6 +9969,7 @@
       "id": "g-x4f-04",
       "section": "listening",
       "part": 4,
+      "accent": "AU",
       "title": "Hotel guest message",
       "script": [
         {
@@ -9893,6 +10023,7 @@
       "id": "g-x4f-05",
       "section": "listening",
       "part": 4,
+      "accent": "US",
       "title": "Office system announcement",
       "script": [
         {
@@ -9946,6 +10077,7 @@
       "id": "g-x4f-06",
       "section": "listening",
       "part": 4,
+      "accent": "UK",
       "title": "Conference opening remarks",
       "script": [
         {
@@ -9999,6 +10131,7 @@
       "id": "g-x4f-07",
       "section": "listening",
       "part": 4,
+      "accent": "CA",
       "title": "Retail staff briefing",
       "script": [
         {
@@ -10052,6 +10185,7 @@
       "id": "g-x4f-08",
       "section": "listening",
       "part": 4,
+      "accent": "AU",
       "title": "Clinic appointment recording",
       "script": [
         {
@@ -10105,6 +10239,7 @@
       "id": "g-x4f-09",
       "section": "listening",
       "part": 4,
+      "accent": "US",
       "title": "Company travel update",
       "script": [
         {
@@ -10158,6 +10293,7 @@
       "id": "g-x4f-10",
       "section": "listening",
       "part": 4,
+      "accent": "UK",
       "title": "Vendor voicemail",
       "script": [
         {
@@ -10211,6 +10347,7 @@
       "id": "g-x4f-11",
       "section": "listening",
       "part": 4,
+      "accent": "CA",
       "title": "University library announcement",
       "script": [
         {
@@ -10264,6 +10401,7 @@
       "id": "g-x4f-12",
       "section": "listening",
       "part": 4,
+      "accent": "AU",
       "title": "Factory production briefing",
       "script": [
         {
@@ -10317,6 +10455,7 @@
       "id": "g-x4f-13",
       "section": "listening",
       "part": 4,
+      "accent": "US",
       "title": "Community event announcement",
       "script": [
         {
@@ -10370,6 +10509,7 @@
       "id": "g-x4f-14",
       "section": "listening",
       "part": 4,
+      "accent": "UK",
       "title": "Restaurant staff recording",
       "script": [
         {
@@ -10423,6 +10563,7 @@
       "id": "g-photo-11",
       "section": "listening",
       "part": 1,
+      "accent": "US",
       "title": "照片描述",
       "image": "images/photo-11.jpg",
       "spokenOptions": true,
@@ -10452,6 +10593,7 @@
       "id": "g-photo-12",
       "section": "listening",
       "part": 1,
+      "accent": "UK",
       "title": "照片描述",
       "image": "images/photo-12.jpg",
       "spokenOptions": true,
@@ -10481,6 +10623,7 @@
       "id": "g-photo-13",
       "section": "listening",
       "part": 1,
+      "accent": "CA",
       "title": "照片描述",
       "image": "images/photo-13.jpg",
       "spokenOptions": true,
@@ -10510,6 +10653,7 @@
       "id": "g-photo-14",
       "section": "listening",
       "part": 1,
+      "accent": "AU",
       "title": "照片描述",
       "image": "images/photo-14.jpg",
       "spokenOptions": true,
@@ -10539,6 +10683,7 @@
       "id": "g-photo-15",
       "section": "listening",
       "part": 1,
+      "accent": "US",
       "title": "照片描述",
       "image": "images/photo-15.jpg",
       "spokenOptions": true,
@@ -10568,6 +10713,7 @@
       "id": "g-photo-16",
       "section": "listening",
       "part": 1,
+      "accent": "UK",
       "title": "照片描述",
       "image": "images/photo-16.jpg",
       "spokenOptions": true,
@@ -10597,6 +10743,7 @@
       "id": "g-photo-17",
       "section": "listening",
       "part": 1,
+      "accent": "CA",
       "title": "照片描述",
       "image": "images/photo-17.jpg",
       "spokenOptions": true,
@@ -10626,6 +10773,7 @@
       "id": "g-photo-18",
       "section": "listening",
       "part": 1,
+      "accent": "AU",
       "title": "照片描述",
       "image": "images/photo-18.jpg",
       "spokenOptions": true,
@@ -10655,6 +10803,7 @@
       "id": "g-photo-09",
       "section": "listening",
       "part": 1,
+      "accent": "US",
       "title": "照片描述",
       "image": "images/photo-09.jpg",
       "spokenOptions": true,
@@ -10684,6 +10833,7 @@
       "id": "g-photo-10",
       "section": "listening",
       "part": 1,
+      "accent": "UK",
       "title": "照片描述",
       "image": "images/photo-10.jpg",
       "spokenOptions": true,
@@ -11781,6 +11931,7 @@
       "id": "g-xs-l01",
       "section": "listening",
       "part": 2,
+      "accent": "US",
       "spokenOptions": true,
       "script": [
         {
@@ -11807,6 +11958,7 @@
       "id": "g-xs-l02",
       "section": "listening",
       "part": 2,
+      "accent": "UK",
       "spokenOptions": true,
       "script": [
         {
@@ -11833,6 +11985,7 @@
       "id": "g-xs-l03",
       "section": "listening",
       "part": 2,
+      "accent": "CA",
       "spokenOptions": true,
       "script": [
         {
@@ -11859,6 +12012,7 @@
       "id": "g-xs-l04",
       "section": "listening",
       "part": 2,
+      "accent": "AU",
       "spokenOptions": true,
       "script": [
         {
@@ -11885,6 +12039,7 @@
       "id": "g-xs-l05",
       "section": "listening",
       "part": 2,
+      "accent": "US",
       "spokenOptions": true,
       "script": [
         {
@@ -11911,6 +12066,7 @@
       "id": "g-xs-l06",
       "section": "listening",
       "part": 2,
+      "accent": "UK",
       "spokenOptions": true,
       "script": [
         {
@@ -11937,6 +12093,7 @@
       "id": "g-xs-l07",
       "section": "listening",
       "part": 2,
+      "accent": "CA",
       "spokenOptions": true,
       "script": [
         {
@@ -11963,6 +12120,7 @@
       "id": "g-xs-l08",
       "section": "listening",
       "part": 2,
+      "accent": "AU",
       "spokenOptions": true,
       "script": [
         {
@@ -11989,6 +12147,7 @@
       "id": "g-xs-l09",
       "section": "listening",
       "part": 2,
+      "accent": "US",
       "spokenOptions": true,
       "script": [
         {
@@ -12015,6 +12174,7 @@
       "id": "g-xs-l10",
       "section": "listening",
       "part": 2,
+      "accent": "UK",
       "spokenOptions": true,
       "script": [
         {
@@ -12041,6 +12201,7 @@
       "id": "g-xs-l11",
       "section": "listening",
       "part": 2,
+      "accent": "CA",
       "spokenOptions": true,
       "script": [
         {
@@ -12067,6 +12228,7 @@
       "id": "g-xs-l12",
       "section": "listening",
       "part": 2,
+      "accent": "AU",
       "spokenOptions": true,
       "script": [
         {
@@ -12093,6 +12255,7 @@
       "id": "g-xs-l13",
       "section": "listening",
       "part": 2,
+      "accent": "US",
       "spokenOptions": true,
       "script": [
         {
@@ -12119,6 +12282,7 @@
       "id": "g-xs-l14",
       "section": "listening",
       "part": 2,
+      "accent": "UK",
       "spokenOptions": true,
       "script": [
         {
@@ -12145,6 +12309,7 @@
       "id": "g-xs-l15",
       "section": "listening",
       "part": 2,
+      "accent": "CA",
       "spokenOptions": true,
       "script": [
         {

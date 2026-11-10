@@ -3,20 +3,24 @@ import assert from 'node:assert/strict';
 import { readFileSync, statSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 let serial = 0;
-test('every conversation and talk has a current fixed-role recording', () => {
+test('every listening group has a local recording in its assigned accent', () => {
   const bank = JSON.parse(readFileSync(new URL('../codex/data/questions.json', import.meta.url)));
   const manifest = JSON.parse(readFileSync(new URL('../codex/audio/manifest.json', import.meta.url)));
-  assert.match(manifest.voices.M, /David/);
-  assert.match(manifest.voices.W, /Zira/);
-  const groups = bank.groups.filter((g) => [3, 4].includes(g.part));
+  const locales = { US: 'en-US', UK: 'en-GB', CA: 'en-CA', AU: 'en-AU' };
+  const groups = bank.groups.filter((g) => g.section === 'listening');
   assert.equal(Object.keys(manifest.groups).length, groups.length);
+  assert.equal(manifest.format.includes('48 kbps'), true);
   for (const group of groups) {
     const entry = manifest.groups[group.id];
     assert.ok(entry, group.id);
+    assert.equal(entry.accent, group.accent);
+    assert.equal(entry.locale, locales[group.accent], group.id);
+    assert.ok(entry.voices.every((voice) => voice.locale === locales[group.accent] && voice.voice.startsWith(locales[group.accent])), group.id);
     assert.equal(entry.scriptSha256.toLowerCase(), createHash('sha256').update(JSON.stringify(group.script)).digest('hex'), group.id);
     assert.deepEqual(entry.roles, group.script.map((line) => line.speaker));
     assert.equal(statSync(new URL(`../codex/${entry.file}`, import.meta.url)).size, entry.bytes);
     assert.ok(entry.durationSec > 1);
+    if (group.part === 3 || group.part === 2) assert.ok(new Set(entry.voices.map((voice) => voice.voice)).size >= 2, group.id);
   }
 });
 async function setup() {

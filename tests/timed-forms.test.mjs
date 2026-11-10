@@ -63,18 +63,21 @@ test('60-question mock keeps all parts and uses 13:30 and 22:30 timers', () => {
   assert.equal(elapsedSeconds(session, 2160000), 2160);
 });
 
-test('quick mock accent files correspond to current scripts and are cached', async () => {
+test('quick mock keeps the original talk scripts and plays the bank recording on demand', async () => {
   const { createHash } = await import('node:crypto');
+  const { statSync } = await import('node:fs');
   const bank = JSON.parse(readFileSync(new URL('../codex/data/questions.json', import.meta.url)));
+  const manifest = JSON.parse(readFileSync(new URL('../codex/audio/manifest.json', import.meta.url)));
   const sw = readFileSync(new URL('../codex/sw.js', import.meta.url), 'utf8');
-  for (const [id, file, digest] of [
-    ['g-airport-talk-d', 'quick-au-g-airport-talk-d.mp3', 'ec1021f2e695bbd6f4ce2bdc2ff28de120b941ee68c75087f0ea2bf9dd43cdc2'],
-    ['s03-talk2', 'quick-gb-s03-talk2.mp3', '07262b98043edaf10eeb1c9ca790a4b306974faec3da43ea7814f17f6e383f49']
+  for (const [id, digest] of [
+    ['g-airport-talk-d', 'ec1021f2e695bbd6f4ce2bdc2ff28de120b941ee68c75087f0ea2bf9dd43cdc2'],
+    ['s03-talk2', '07262b98043edaf10eeb1c9ca790a4b306974faec3da43ea7814f17f6e383f49']
   ]) {
-    const script = bank.groups.find(g => g.id === id).script;
-    assert.equal(createHash('sha256').update(JSON.stringify(script)).digest('hex'), digest);
-    assert.ok(readFileSync(new URL(`../codex/audio/${file}`, import.meta.url)).length > 1000);
-    assert.equal(sw.includes(file), false);
+    const group = bank.groups.find(g => g.id === id);
+    assert.equal(createHash('sha256').update(JSON.stringify(group.script)).digest('hex'), digest);
+    assert.equal(manifest.groups[id].scriptSha256, digest);
+    assert.ok(statSync(new URL(`../codex/${manifest.groups[id].file}`, import.meta.url)).size > 1000);
+    assert.equal(sw.includes(manifest.groups[id].file), false);
     assert.match(sw, /function cacheFirstMedia/);
     for (const form of ['quick-40', 'quick-60']) assert.ok(bank.meta.sets.find(s => s.id === form).groupIds.includes(id));
   }

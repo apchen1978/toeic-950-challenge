@@ -1,16 +1,164 @@
 {
-  "version": 1,
-  "format": "MP3 mono, 22,050 Hz, 48 kbps",
+  "version": 2,
+  "format": "MP3 mono, 24,000 Hz, 48 kbps",
   "gapMs": 400,
+  "engine": "edge-tts",
+  "note": "Microsoft Edge neural voices. Canadian clips use en-CA voices, not a relabelled US voice.",
   "voices": {
-    "M": "Microsoft David Desktop",
-    "W": "Microsoft Zira Desktop",
-    "N": "Microsoft David Desktop"
+    "US": {
+      "locale": "en-US",
+      "M": "en-US-GuyNeural",
+      "W": "en-US-AriaNeural"
+    },
+    "UK": {
+      "locale": "en-GB",
+      "M": "en-GB-RyanNeural",
+      "W": "en-GB-SoniaNeural"
+    },
+    "CA": {
+      "locale": "en-CA",
+      "M": "en-CA-LiamNeural",
+      "W": "en-CA-ClaraNeural"
+    },
+    "AU": {
+      "locale": "en-AU",
+      "M": "en-AU-WilliamNeural",
+      "W": "en-AU-NatashaNeural"
+    }
   },
   "groups": {
+    "g-l01": {
+      "file": "audio/g-l01.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "f272c8d829a32e1122a0b67244127219019b59b82992bdf5dd02266f6fb348fb",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 17.59,
+      "bytes": 106077
+    },
+    "g-l02": {
+      "file": "audio/g-l02.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "c825b68112b155b9512b74ccbfb5744eea6169d27803b4b7aa5d2ca357c66544",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 14.54,
+      "bytes": 87789
+    },
+    "g-l03": {
+      "file": "audio/g-l03.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "df9885a16d1a69a16494cab4be60f5d3acd1315c6c6c0aa960ffb0933cdda078",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 16.39,
+      "bytes": 98877
+    },
+    "g-l04": {
+      "file": "audio/g-l04.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "8c3f8fbe33e4f6bf0e4b88a4676fd98da68430915b9bda103207758fd87ad490",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 14.78,
+      "bytes": 89229
+    },
+    "g-l05": {
+      "file": "audio/g-l05.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "b283503b036085b68334163e9f6e82a969e18371eba00627045d2f3a1fb3ca0c",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 15.67,
+      "bytes": 94557
+    },
     "g-l06": {
       "file": "audio/g-l06.mp3",
+      "accent": "US",
+      "locale": "en-US",
       "scriptSha256": "d1a2cd8a056d3785b78667787ef7b1b2a7fa0e9211227e12f3a516592c5aee34",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        }
+      ],
       "roles": [
         "W",
         "M",
@@ -19,12 +167,26 @@
         "W",
         "M"
       ],
-      "durationSec": 48.48,
-      "bytes": 291213
+      "durationSec": 48.08,
+      "bytes": 289101
     },
     "g-l07": {
       "file": "audio/g-l07.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
       "scriptSha256": "fc7686b26f422cd49768dadaf9d665824c5329d1afd0b4a0bd06ffc764fa9189",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        }
+      ],
       "roles": [
         "M",
         "W",
@@ -32,45 +194,234 @@
         "W",
         "M"
       ],
-      "durationSec": 41.99,
-      "bytes": 252343
+      "durationSec": 39.47,
+      "bytes": 237405
     },
     "g-l08": {
       "file": "audio/g-l08.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
       "scriptSha256": "0e476c8600c02b5b0e2ddaa20bf753a99390b75ccc93cf2cf435d50fc582eb5c",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        }
+      ],
       "roles": [
         "W",
         "M",
         "W",
         "M"
       ],
-      "durationSec": 31.9,
-      "bytes": 191843
+      "durationSec": 29.57,
+      "bytes": 177933
     },
     "g-l09": {
       "file": "audio/g-l09.mp3",
+      "accent": "US",
+      "locale": "en-US",
       "scriptSha256": "b535e4242a84d3924e25408fbcb949efcca131d8bdc2071727f3d9e036197c37",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        }
+      ],
       "roles": [
         "M"
       ],
-      "durationSec": 47.46,
-      "bytes": 285100
+      "durationSec": 42.6,
+      "bytes": 256125
+    },
+    "g-new-l0": {
+      "file": "audio/g-new-l0.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "6055e34f7867132958c294add9e3c7ba40bf08f43bb82ac23c0f10a35a458e3a",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 15.81,
+      "bytes": 95421
+    },
+    "g-new-l1": {
+      "file": "audio/g-new-l1.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "4c82287574ff1ff74e806ff1f788b2a0a74c0779dc19f8110024b14c74c706f8",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 13.75,
+      "bytes": 83037
+    },
+    "g-new-l2": {
+      "file": "audio/g-new-l2.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "4564e75877f54903ed1dcc7114d55b8b2341b1c9b51f18dc28d6c56696395e95",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 12.5,
+      "bytes": 75549
+    },
+    "g-new-l3": {
+      "file": "audio/g-new-l3.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "1541541099adabcf545356badfd7df0249720e6e0a365ef841648176be607bfc",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 14.13,
+      "bytes": 85341
+    },
+    "g-new-l4": {
+      "file": "audio/g-new-l4.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "8be18969a5df4bdc39b4f4577f185d7b3b2d8b2b6973700a26a2570a19ff4be3",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 12.86,
+      "bytes": 77709
+    },
+    "g-new-l5": {
+      "file": "audio/g-new-l5.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "c9af3230cadf4f233c9eec057def90dfcb0673892c65f4332abab0b0a5c12fe2",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 15.89,
+      "bytes": 95853
     },
     "g-new-conv1": {
       "file": "audio/g-new-conv1.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
       "scriptSha256": "aa8f121a6e17c350d3b3090698002833a4c27629d009494f264e25b5d0dc327d",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
       "roles": [
         "W",
         "M",
         "W",
         "M"
       ],
-      "durationSec": 26.69,
-      "bytes": 160496
+      "durationSec": 27.38,
+      "bytes": 164829
     },
     "g-new-conv2": {
       "file": "audio/g-new-conv2.mp3",
+      "accent": "US",
+      "locale": "en-US",
       "scriptSha256": "81e4dfdacce670d20a9c882a94cbbaaf1a162d061eff4b098ce2e89abf02ed63",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
       "roles": [
         "M",
         "W",
@@ -78,33 +429,185 @@
         "W",
         "M"
       ],
-      "durationSec": 28.47,
-      "bytes": 171154
+      "durationSec": 29.08,
+      "bytes": 175053
     },
     "g-new-talk": {
       "file": "audio/g-new-talk.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
       "scriptSha256": "476702021c853b3b910427b40565bf610a9edeaadd8f3022fb92a32c309242bf",
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
       "roles": [
         "N"
       ],
-      "durationSec": 31.15,
-      "bytes": 187298
+      "durationSec": 29.06,
+      "bytes": 174909
+    },
+    "s03-l1": {
+      "file": "audio/s03-l1.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "07d2004e086c97597426d89ae053c3aeac3212004ec3cda7312286f3c0cebd0e",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 12.91,
+      "bytes": 77997
+    },
+    "s03-l2": {
+      "file": "audio/s03-l2.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "21747ee1ee568cd3e52bd3e4c1756566deb7e42c41ed1f16bd992248a67b180c",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 13.03,
+      "bytes": 78717
+    },
+    "s03-l3": {
+      "file": "audio/s03-l3.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "d35c8edd232534882697ce5bec956b980b040dd61614284386cc55427fedd889",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 13.2,
+      "bytes": 79725
+    },
+    "s03-l4": {
+      "file": "audio/s03-l4.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "2e137a2be4948c4ce303a473c797cab4a14c2e3ce0298fb5c21c7b9241d2ca36",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 12.93,
+      "bytes": 78141
+    },
+    "s03-l5": {
+      "file": "audio/s03-l5.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "8aa2c3457c8ad38767796e2a3181cbf28bc3ce16c23686a29ceb979f69c0c522",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 11.52,
+      "bytes": 69645
     },
     "s03-conversation1": {
       "file": "audio/s03-conversation1.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
       "scriptSha256": "7a2fec7983b215e0645ca07209033e065ab22a5bf98ec98ae3fd811524faf410",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
       "roles": [
         "W",
         "M",
         "W",
         "M"
       ],
-      "durationSec": 27.45,
-      "bytes": 165041
+      "durationSec": 27.17,
+      "bytes": 163533
     },
     "s03-conversation2": {
       "file": "audio/s03-conversation2.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
       "scriptSha256": "03ff2e72c900e3560609112f14f4bc785e0e91919010efc6b4c09411b063b0f7",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        }
+      ],
       "roles": [
         "M",
         "W",
@@ -112,12 +615,26 @@
         "W",
         "M"
       ],
-      "durationSec": 28.49,
-      "bytes": 171311
+      "durationSec": 27.62,
+      "bytes": 166269
     },
     "s03-conversation3": {
       "file": "audio/s03-conversation3.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
       "scriptSha256": "da87acdb415e5f50f4456c361f9affe7e9fcf5e7a9f178a95aa24f791ed44141",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
       "roles": [
         "W",
         "M",
@@ -125,667 +642,3076 @@
         "M",
         "W"
       ],
-      "durationSec": 36.0,
-      "bytes": 216450
+      "durationSec": 34.41,
+      "bytes": 207021
     },
     "s03-talk1": {
       "file": "audio/s03-talk1.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
       "scriptSha256": "b3b9ca6e92aad85d083c20dbc5abcc8028a42a292103964edcb0da4c288ff99a",
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        }
+      ],
       "roles": [
         "N"
       ],
-      "durationSec": 25.46,
-      "bytes": 153130
+      "durationSec": 25.97,
+      "bytes": 156333
     },
     "s03-talk2": {
       "file": "audio/s03-talk2.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
       "scriptSha256": "07262b98043edaf10eeb1c9ca790a4b306974faec3da43ea7814f17f6e383f49",
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
       "roles": [
         "N"
       ],
-      "durationSec": 28.15,
-      "bytes": 169273
+      "durationSec": 24.38,
+      "bytes": 146829
+    },
+    "g-a-p2-01": {
+      "file": "audio/g-a-p2-01.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "e94263b1a1e42a3b141a56b43bcf4770d46efb64492c740f496cbe60f00a3e40",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 17.3,
+      "bytes": 104349
+    },
+    "g-a-p2-02": {
+      "file": "audio/g-a-p2-02.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "07a78d1a87ced1e7153d3d0de57640868cada2c8419c80fe18c962bad4ad316e",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 17.49,
+      "bytes": 105501
+    },
+    "g-a-p2-03": {
+      "file": "audio/g-a-p2-03.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "8a5e94ac6dc877a713e7591ba3e46da482eb8a8012882d4ca51cb9283a739f4c",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 18.69,
+      "bytes": 112701
+    },
+    "g-a-p2-04": {
+      "file": "audio/g-a-p2-04.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "3bd2402c850e6865a357723b3e777b885d3bd74acf078463683c210165b05a84",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 14.66,
+      "bytes": 88509
+    },
+    "g-a-p2-05": {
+      "file": "audio/g-a-p2-05.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "329dabc3a98ed453b485864d5f69d606c21ec1b00331d4812e76cd76e358379f",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 20.21,
+      "bytes": 121773
+    },
+    "g-extra-l-01": {
+      "file": "audio/g-extra-l-01.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "030529a6fc889769e7293b7a9b12747660787a9211ddf724f6c6bfb57fc739b1",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 14.18,
+      "bytes": 85629
+    },
+    "g-extra-l-02": {
+      "file": "audio/g-extra-l-02.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "5182fe7fb8777349117b6027fa9b1e75d2a88926dde5b9604dcb38a03f45eac5",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 13.8,
+      "bytes": 83325
+    },
+    "g-extra-l-03": {
+      "file": "audio/g-extra-l-03.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "56bf9ae879df4ee31b7447beba19163070d0039857184a7bb5e4489cde4ee3bd",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 14.81,
+      "bytes": 89373
+    },
+    "g-extra-l-04": {
+      "file": "audio/g-extra-l-04.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "5074556de78be602b61736d5590b4429881df281453e8410ff1f9d596681a52d",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 15.26,
+      "bytes": 92109
+    },
+    "g-extra-l-05": {
+      "file": "audio/g-extra-l-05.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "371bb3a506d7e7973fc2a77789c3b8da966547cc7e3467a72ee785e3c2fa628b",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 15.0,
+      "bytes": 90525
+    },
+    "g-extra-l-06": {
+      "file": "audio/g-extra-l-06.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "fe065133a1aa0c3406e5b1a9f32c9eab627c48e7f0bd838e47a8f72ff735a463",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 14.61,
+      "bytes": 88221
+    },
+    "g-extra-l-07": {
+      "file": "audio/g-extra-l-07.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "36f2ef86b16c18682a31043168113de0f8ca0e3dc48c970edafcaef1309b90fb",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 15.38,
+      "bytes": 92829
+    },
+    "g-extra-l-08": {
+      "file": "audio/g-extra-l-08.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "79e28bcac00f515afc85a0ebe505d2436aff01f5d22ac22cd1520889fec43954",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 15.36,
+      "bytes": 92685
+    },
+    "g-extra-l-09": {
+      "file": "audio/g-extra-l-09.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "0cb756a4e18795ea3671c2976fb6d47f7124e646801ba884f5c17152f5626e88",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 14.59,
+      "bytes": 88077
+    },
+    "g-extra-l-10": {
+      "file": "audio/g-extra-l-10.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "1c284217b1bf2f91e87d15d4a716b8e225090ef8129db506df9d9fdfe5cb3915",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 13.58,
+      "bytes": 82029
+    },
+    "g-photo-01": {
+      "file": "audio/g-photo-01.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "26377aa598feeb52a19e41a4d6727ec5878ae09c5c219c06b8a27f0e0dc57c2b",
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 24.12,
+      "bytes": 145245
+    },
+    "g-photo-02": {
+      "file": "audio/g-photo-02.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "26377aa598feeb52a19e41a4d6727ec5878ae09c5c219c06b8a27f0e0dc57c2b",
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 25.63,
+      "bytes": 154317
     },
     "g-new-cv-a": {
       "file": "audio/g-new-cv-a.mp3",
+      "accent": "US",
+      "locale": "en-US",
       "scriptSha256": "c406115369e9e5ee71424cbb41347095e90bc2a9147d5461c3431e60328a6c92",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        }
+      ],
       "roles": [
         "W",
         "M",
         "W"
       ],
-      "durationSec": 23.03,
-      "bytes": 138553
+      "durationSec": 23.74,
+      "bytes": 143085
     },
     "g-new-cv-b": {
       "file": "audio/g-new-cv-b.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
       "scriptSha256": "3cd0332f007913d553666c056d124bfefd4004f5f7decac931b868e7ae6e43f9",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        }
+      ],
       "roles": [
         "M",
         "W",
         "M",
         "W"
       ],
-      "durationSec": 28.81,
-      "bytes": 173192
+      "durationSec": 26.78,
+      "bytes": 161229
     },
     "g-new-talk-a": {
       "file": "audio/g-new-talk-a.mp3",
+      "accent": "US",
+      "locale": "en-US",
       "scriptSha256": "adade4a808aad8956b0fe396d1371dab4a841e44b9fe54e8ac4c84b5b86c215a",
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 24.79,
+      "bytes": 149277
+    },
+    "g-new-talk-b": {
+      "file": "audio/g-new-talk-b.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "3f34e989e0e82a4a2f4786c874244c016c6928f37087b56837c9ce1aef01c935",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 25.49,
+      "bytes": 153453
+    },
+    "g-photo-03": {
+      "file": "audio/g-photo-03.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "26377aa598feeb52a19e41a4d6727ec5878ae09c5c219c06b8a27f0e0dc57c2b",
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 25.15,
+      "bytes": 151437
+    },
+    "g-airport-talk-d": {
+      "file": "audio/g-airport-talk-d.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "ec1021f2e695bbd6f4ce2bdc2ff28de120b941ee68c75087f0ea2bf9dd43cdc2",
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 24.17,
+      "bytes": 145533
+    },
+    "g-campus-talk-d": {
+      "file": "audio/g-campus-talk-d.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "7ed155660bb7a473c55de10553e5f67b5d9d467c4e143c0591e55a5d47027d9e",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 28.27,
+      "bytes": 170157
+    },
+    "g-voice-e-airport": {
+      "file": "audio/g-voice-e-airport.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "45b2d3cc47f06e42bc0111368776097727638aae0680384c96a99751a9912f0c",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "W",
+        "M",
+        "W",
+        "M"
+      ],
+      "durationSec": 28.44,
+      "bytes": 171165
+    },
+    "g-voice-e-campus": {
+      "file": "audio/g-voice-e-campus.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "ac2c9643b28a172d20a9c0b0a42d4fe665e47764bf4a98adf93f105db79c4618",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "M",
+        "W",
+        "M",
+        "W"
+      ],
+      "durationSec": 25.75,
+      "bytes": 155037
+    },
+    "g-voice-e-vendor": {
+      "file": "audio/g-voice-e-vendor.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "9455999ce807112cfddfb4999c289234117ddaa5a17bec9691f84d54994bb434",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "W",
+        "M",
+        "W",
+        "M"
+      ],
+      "durationSec": 25.15,
+      "bytes": 151437
+    },
+    "g-f-dialogue-1": {
+      "file": "audio/g-f-dialogue-1.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "ef38363373429bffdc209598467bf8350357d1cc1bbbff21470633df61f8d6e3",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "W",
+        "M",
+        "W",
+        "M"
+      ],
+      "durationSec": 24.67,
+      "bytes": 148557
+    },
+    "g-f-dialogue-2": {
+      "file": "audio/g-f-dialogue-2.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "07739c0f528394235af66c10c416f0150812a70c76f998119925ea9e4aa9dfdb",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "M",
+        "W",
+        "M",
+        "W"
+      ],
+      "durationSec": 25.9,
+      "bytes": 155901
+    },
+    "g-f-dialogue-3": {
+      "file": "audio/g-f-dialogue-3.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "70bfb0cf38aaca39c6c69cddb1d89eb79d3ef01fb56a62c488effd4fd5932292",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "W",
+        "M",
+        "W",
+        "M"
+      ],
+      "durationSec": 25.7,
+      "bytes": 154749
+    },
+    "g-f-talk-1": {
+      "file": "audio/g-f-talk-1.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "478977922dd0f9562b57975c4634d94e481f8f675454554810cbc2a61a04d0da",
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 26.62,
+      "bytes": 160221
+    },
+    "g-f-talk-2": {
+      "file": "audio/g-f-talk-2.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "31b1d2a45847ad3df0975d847ebbc8006c7416441e297aa0fba0470a1431a9d0",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 25.61,
+      "bytes": 154173
+    },
+    "g-photo-04": {
+      "file": "audio/g-photo-04.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "26377aa598feeb52a19e41a4d6727ec5878ae09c5c219c06b8a27f0e0dc57c2b",
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 21.31,
+      "bytes": 128397
+    },
+    "g-photo-05": {
+      "file": "audio/g-photo-05.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "26377aa598feeb52a19e41a4d6727ec5878ae09c5c219c06b8a27f0e0dc57c2b",
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 25.12,
+      "bytes": 151293
+    },
+    "g-photo-06": {
+      "file": "audio/g-photo-06.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "26377aa598feeb52a19e41a4d6727ec5878ae09c5c219c06b8a27f0e0dc57c2b",
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 24.6,
+      "bytes": 148125
+    },
+    "g-photo-07": {
+      "file": "audio/g-photo-07.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "26377aa598feeb52a19e41a4d6727ec5878ae09c5c219c06b8a27f0e0dc57c2b",
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 25.63,
+      "bytes": 154317
+    },
+    "g-photo-08": {
+      "file": "audio/g-photo-08.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "26377aa598feeb52a19e41a4d6727ec5878ae09c5c219c06b8a27f0e0dc57c2b",
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 22.03,
+      "bytes": 132717
+    },
+    "g-map-campus-01": {
+      "file": "audio/g-map-campus-01.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "657092bbd934294ce81c4fa97e9fdea886f6324111c281c580279bce677e04a5",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "W",
+        "M",
+        "W",
+        "M"
+      ],
+      "durationSec": 44.04,
+      "bytes": 264765
+    },
+    "xf-p2-01": {
+      "file": "audio/xf-p2-01.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "55d43b9b9f826b08ca96b9eb84819368d179016b0753a595be2555173380b578",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 13.1,
+      "bytes": 79149
+    },
+    "xf-p2-02": {
+      "file": "audio/xf-p2-02.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "e02f0cff2838d051cb33ab4866020a781037c3c96d7176601f0a019c4a67f515",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 15.45,
+      "bytes": 93261
+    },
+    "xf-p2-03": {
+      "file": "audio/xf-p2-03.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "f870b19e2869d67203a76a5e0c9e975fe71ba49530e56114e929704136c24aea",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 14.06,
+      "bytes": 84909
+    },
+    "xf-p2-04": {
+      "file": "audio/xf-p2-04.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "ab1d5d4d848f69af6a55df3ebbca0dd48de3b6ed514963a43b56f3ae8ec198cc",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 13.13,
+      "bytes": 79293
+    },
+    "xf-p2-05": {
+      "file": "audio/xf-p2-05.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "55ed910380aa7d0fbea4e3b9bf8f2e7c4ab762a62ead7f029a97890384b70323",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 12.74,
+      "bytes": 76989
+    },
+    "xf-p2-06": {
+      "file": "audio/xf-p2-06.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "3d977d30b65e00791f23c42cea8e88a38c2e6cbb39f739de1e6becf68a09584f",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 14.28,
+      "bytes": 86205
+    },
+    "xf-p2-07": {
+      "file": "audio/xf-p2-07.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "1aaa65c9812810b97444d0b1f38d3295016c3a13751562d8d904cf6bf2ccf94f",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 14.18,
+      "bytes": 85629
+    },
+    "xf-p2-08": {
+      "file": "audio/xf-p2-08.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "c73a3e040099cedc33f6e174355957e4c9358bdef11b036a13274af96bff7fff",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 14.93,
+      "bytes": 90093
+    },
+    "xf-p2-09": {
+      "file": "audio/xf-p2-09.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "90649790809d5b51b5f1bac5da1d210aa9174ed36b5ad0af96dbfd0cb469128f",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 12.77,
+      "bytes": 77133
+    },
+    "xf-p2-10": {
+      "file": "audio/xf-p2-10.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "bd392a425844b53b62c5de725f150676ef61352a6af2d8029ae3cb63f50273a9",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 14.83,
+      "bytes": 89517
+    },
+    "xf-p2-11": {
+      "file": "audio/xf-p2-11.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "842c8c985f4bac4e6c3e0374c16713b335cd6b39053b17a5b91fef61cdf349bf",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 14.23,
+      "bytes": 85917
+    },
+    "xf-p2-12": {
+      "file": "audio/xf-p2-12.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "d9e80da780346474134ffc5b5104493de83aea48f246f4dc0585f7c054188629",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 13.68,
+      "bytes": 82605
+    },
+    "xf-p2-13": {
+      "file": "audio/xf-p2-13.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "866f21030032a8e7f2a71a81de1d3541ca0a6adf123fa91dbb91ca903a5bec34",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 14.83,
+      "bytes": 89517
+    },
+    "xf-p2-14": {
+      "file": "audio/xf-p2-14.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "2200e3017c81870626e5d4ffa3bf25a6a87464c0009c3a7807f4ea41520a60db",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 15.41,
+      "bytes": 92973
+    },
+    "xf-p2-15": {
+      "file": "audio/xf-p2-15.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "ddb07f3d643c2778dc4353cff588f2559e834fb620d50c85fb0fa0f9ada098cd",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 14.18,
+      "bytes": 85629
+    },
+    "xf-p2-16": {
+      "file": "audio/xf-p2-16.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "d5cf1c97af1efcc3da6ec2d376f732189e4ae53f5d77419ef4d8cd4b21debc55",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 14.64,
+      "bytes": 88365
+    },
+    "xf-p2-17": {
+      "file": "audio/xf-p2-17.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "95a9c24e0b0ba5caab1c1ebd7472c7fd0c8e15d2d3200a015df2a689d11b5ed3",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 11.83,
+      "bytes": 71517
+    },
+    "xf-p2-18": {
+      "file": "audio/xf-p2-18.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "7c88c324f957517f6080cabd957408e5d144965306eb292874f99c914817da30",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 15.07,
+      "bytes": 90957
+    },
+    "xf-p2-19": {
+      "file": "audio/xf-p2-19.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "d80c148ecc6afb0f0ecb372c722659e7d72ae99c175f98ec0d401b606cd3a299",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 13.32,
+      "bytes": 80445
+    },
+    "xf-p2-20": {
+      "file": "audio/xf-p2-20.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "61288b63c96e8028f617895454929d2765fe7ce080a11c959251024f8df4bbe2",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 14.33,
+      "bytes": 86493
+    },
+    "xfc-p3-inspection": {
+      "file": "audio/xfc-p3-inspection.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "974711362cb6ed111fe86c682818bc6c971b501c6ffd6f5c7d89e6f1b2248a68",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "W",
+        "M",
+        "W",
+        "M"
+      ],
+      "durationSec": 38.04,
+      "bytes": 228765
+    },
+    "xfc-p3-hotel": {
+      "file": "audio/xfc-p3-hotel.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "cd4371a3ec22378f377fe38df13ae7dc3c9eda2ef324a8f5225a3fe6264abea6",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "M",
+        "W",
+        "M",
+        "W"
+      ],
+      "durationSec": 34.8,
+      "bytes": 209325
+    },
+    "g-xl2-p3-01": {
+      "file": "audio/g-xl2-p3-01.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "2e1d12a50f28782e870f42035d6015454d157aae8feae6d10d3d0dfddad5f693",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "W",
+        "M",
+        "W",
+        "M"
+      ],
+      "durationSec": 33.38,
+      "bytes": 200829
+    },
+    "g-xl2-p3-02": {
+      "file": "audio/g-xl2-p3-02.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "eac7bf563d6b31d60e775c1ad03ae8b89eef19e3b72e6b73b29fe2dedbd95a66",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "M",
+        "W",
+        "M",
+        "W"
+      ],
+      "durationSec": 30.26,
+      "bytes": 182109
+    },
+    "g-xl2-p3-03": {
+      "file": "audio/g-xl2-p3-03.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "3cac51756872de012e208a5cac8550631fcd87b7495c348f39d0ddbf0fa209b8",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "W",
+        "M",
+        "W",
+        "M"
+      ],
+      "durationSec": 36.1,
+      "bytes": 217101
+    },
+    "g-xl2-p3-04": {
+      "file": "audio/g-xl2-p3-04.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "1d1a818ef5ab93a3a4e41a412e61c4d3c175e40480daad4b669621c753203ff4",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "M",
+        "W",
+        "M",
+        "W"
+      ],
+      "durationSec": 35.83,
+      "bytes": 215517
+    },
+    "g-xl2-p3-05": {
+      "file": "audio/g-xl2-p3-05.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "928bccbdb60441978bb6bc648476ea9ddc8e951aac838529d107d3eed7741dc0",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "W",
+        "M",
+        "W",
+        "M"
+      ],
+      "durationSec": 31.32,
+      "bytes": 188445
+    },
+    "g-xl2-p3-06": {
+      "file": "audio/g-xl2-p3-06.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "bf92306eea5a0d1519c3dd89a7f33ccdc2ee11d696aad98272e42f202b2f9ac1",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "M",
+        "W",
+        "M",
+        "W"
+      ],
+      "durationSec": 33.55,
+      "bytes": 201837
+    },
+    "g-xl2-p4-01": {
+      "file": "audio/g-xl2-p4-01.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "c821101b5c25dfc287464621918ef08177acbb144fcfe7f713bac1e1fc35e2a1",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 38.04,
+      "bytes": 228765
+    },
+    "g-xl2-p4-02": {
+      "file": "audio/g-xl2-p4-02.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "bf560734766942dde174085d54006498af2c47f7b59bce0813664a83f97a7e8e",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 33.79,
+      "bytes": 203277
+    },
+    "g-xl2-p4-03": {
+      "file": "audio/g-xl2-p4-03.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "ef872d7cd63cc7574cca76140fe1b125b0b80e2e140225fa802e5aaf5f63f241",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 38.66,
+      "bytes": 232509
+    },
+    "g-xl2-p4-04": {
+      "file": "audio/g-xl2-p4-04.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "f4e4948999dc960e89ff351158838606d064cb50c29aa1e59ce0f679bb938778",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 38.88,
+      "bytes": 233805
+    },
+    "g-xl-p2-01": {
+      "file": "audio/g-xl-p2-01.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "859b88a7ae2239229ea01058c3c93763b6f0a12889c37368f6bfb1b7d512510f",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 12.72,
+      "bytes": 76845
+    },
+    "g-xl-p2-02": {
+      "file": "audio/g-xl-p2-02.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "1d02bd2a8b8a034a374b49e7bc151fe4756783636b9d7b461ade65ba9ef16dc0",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 15.79,
+      "bytes": 95277
+    },
+    "g-xl-p2-03": {
+      "file": "audio/g-xl-p2-03.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "5a7ad5c72e255727ae8b1c2b390d93304ac218efcff8bf18dfe0daa65b760646",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 16.01,
+      "bytes": 96573
+    },
+    "g-xl-p2-04": {
+      "file": "audio/g-xl-p2-04.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "267fe348b6fa7d94d2d237ddd9857c4c583e45a30d73155c2ee1a243c5096781",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 15.81,
+      "bytes": 95421
+    },
+    "g-xl-p2-05": {
+      "file": "audio/g-xl-p2-05.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "1427d4bc9b26b627708347c6f4769c1716edaf14ddae9a71a8cd7127951e8578",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 14.59,
+      "bytes": 88077
+    },
+    "g-xl-p2-06": {
+      "file": "audio/g-xl-p2-06.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "5c3d534b8a8a92e5fbedd39071bd8f52148d072b334553244cdbb949b5a77b28",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 14.69,
+      "bytes": 88653
+    },
+    "g-xl-p2-07": {
+      "file": "audio/g-xl-p2-07.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "4b8776b35b295d31feeda0e21ddbb13a4edfb7e14f14975c68a64ebdddd9b96a",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 14.37,
+      "bytes": 86781
+    },
+    "g-xl-p2-08": {
+      "file": "audio/g-xl-p2-08.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "3473503c0051c81aef7c57804757ad0a28309d2e1242aa878f85c8be27e6fb8a",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 14.97,
+      "bytes": 90381
+    },
+    "g-xl-p2-09": {
+      "file": "audio/g-xl-p2-09.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "95c0d4acf12821f305f4b9a1ae59d860247e695b29c619244fa481823dd459fb",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 14.76,
+      "bytes": 89085
+    },
+    "g-xl-p3-01": {
+      "file": "audio/g-xl-p3-01.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "d1bef603d4b10dcadc57e8fe171a2756a1a468ed1fab6277ebfc96795472ce7f",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "W",
+        "M",
+        "W",
+        "M"
+      ],
+      "durationSec": 34.46,
+      "bytes": 207309
+    },
+    "g-xl-p3-02": {
+      "file": "audio/g-xl-p3-02.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "1b842634a26d9941688575eca0f3e079e6094c1aaccee930962a6fc76693cdf0",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "M",
+        "W",
+        "M",
+        "W"
+      ],
+      "durationSec": 37.27,
+      "bytes": 224157
+    },
+    "g-xl-p3-03": {
+      "file": "audio/g-xl-p3-03.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "fba834b4e9bf54337b03e0e6858ee432c21ab278641ac1b773dacdebcca70992",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "W",
+        "M",
+        "W",
+        "M"
+      ],
+      "durationSec": 31.49,
+      "bytes": 189453
+    },
+    "g-xl-p3-04": {
+      "file": "audio/g-xl-p3-04.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "afa027973702f0a884a2e767cebc2f114145b20d01a28823a18e2c9330196afe",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "M",
+        "W",
+        "M",
+        "W"
+      ],
+      "durationSec": 33.24,
+      "bytes": 199965
+    },
+    "g-xl-p3-05": {
+      "file": "audio/g-xl-p3-05.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "0f14bc348eaff115a573472813eb27ac557c9b536ff0eca0e6b19633608ebfbf",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "W",
+        "M",
+        "W",
+        "M"
+      ],
+      "durationSec": 34.75,
+      "bytes": 209037
+    },
+    "g-xl-p4-01": {
+      "file": "audio/g-xl-p4-01.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "e43dc775050b4bdcf233c72c327538a4a3034a9f08f020b6e835b78da8cd8a93",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 39.55,
+      "bytes": 237837
+    },
+    "g-xl-p4-02": {
+      "file": "audio/g-xl-p4-02.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "b69bec2ddb61c7e1509779a90f482de04b51ba289e80a8ad1ae99771d4e5a940",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 35.64,
+      "bytes": 214365
+    },
+    "g-xl3-01": {
+      "file": "audio/g-xl3-01.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "70b53a947176621ac410486b73f19d32fa6010dc6e467e2f741735304cfb393f",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "W",
+        "M",
+        "W",
+        "M"
+      ],
+      "durationSec": 25.18,
+      "bytes": 151581
+    },
+    "g-xl3-02": {
+      "file": "audio/g-xl3-02.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "1cf3834daccd0cd354ec927894cfa36dfc2b051a691a4fa7208b4eaf6c001667",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "M",
+        "W",
+        "M",
+        "W"
+      ],
+      "durationSec": 29.4,
+      "bytes": 176925
+    },
+    "g-xl3-03": {
+      "file": "audio/g-xl3-03.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "6f8ccad1bf1be514c2e6195430e1c2d763ad846cf7a19d3dbf8029c4ed1f4388",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "W",
+        "M",
+        "W",
+        "M"
+      ],
+      "durationSec": 31.18,
+      "bytes": 187581
+    },
+    "g-xl3-04": {
+      "file": "audio/g-xl3-04.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "95dca89a0dcb8cdb03927656d95be31ddfc6d53e6389c67462cec69411c712ea",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "M",
+        "W",
+        "M",
+        "W"
+      ],
+      "durationSec": 30.29,
+      "bytes": 182253
+    },
+    "g-xl3-05": {
+      "file": "audio/g-xl3-05.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "b86a28042e10571b4c539c0950e34be13202fb62efda463a70a26586175e5987",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "W",
+        "M",
+        "W",
+        "M"
+      ],
+      "durationSec": 29.38,
+      "bytes": 176781
+    },
+    "g-xl3-06": {
+      "file": "audio/g-xl3-06.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "582a70a662608c201fa31208b97e16d490576c0f68b5fc74b185228c4b335dac",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "M",
+        "W",
+        "M",
+        "W"
+      ],
+      "durationSec": 28.82,
+      "bytes": 173469
+    },
+    "g-xl3-07": {
+      "file": "audio/g-xl3-07.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "bb96a036d97a6474d3ae07860f79d75ea6c56751a0ebc5ac45c6afca39d37a13",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "W",
+        "M",
+        "W",
+        "M"
+      ],
+      "durationSec": 31.1,
+      "bytes": 187149
+    },
+    "g-xl3-08": {
+      "file": "audio/g-xl3-08.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "cd9bd41be312ea9c1d4ba59ef37b6f6a09fd01fd8cddbfa7c607241ac0a3b5ff",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "M",
+        "W",
+        "M",
+        "W"
+      ],
+      "durationSec": 30.7,
+      "bytes": 184701
+    },
+    "g-xl3-09": {
+      "file": "audio/g-xl3-09.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "689b546596d1f9ebfdfed1f91548894519a6185fb20e30bc6be39076dce6f0ad",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "W",
+        "M",
+        "W",
+        "M"
+      ],
+      "durationSec": 32.11,
+      "bytes": 193197
+    },
+    "g-xl3-10": {
+      "file": "audio/g-xl3-10.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "a4ea0006b02fd5348dd65bd9ff8ff9b26db9a7b4724c479670001292e1c8f49c",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "M",
+        "W",
+        "M",
+        "W"
+      ],
+      "durationSec": 29.11,
+      "bytes": 175197
+    },
+    "g-xl3-11": {
+      "file": "audio/g-xl3-11.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "fb67b7353cad7f8e6503a0fdc13e38439dd72651b2e32a366e0c2dbbc8ec4419",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "W",
+        "M",
+        "W",
+        "M"
+      ],
+      "durationSec": 33.26,
+      "bytes": 200109
+    },
+    "g-xl3-12": {
+      "file": "audio/g-xl3-12.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "eda8b2db74ace212909cfa86834bcd227d7e717010c8f066a191ad2f91ac39b0",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "M",
+        "W",
+        "M",
+        "W"
+      ],
+      "durationSec": 28.37,
+      "bytes": 170733
+    },
+    "g-x4f-01": {
+      "file": "audio/g-x4f-01.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "bb28fda48f760dcb4564a04c2694561ff5176aa20a91d3b0c52e6d26d90a4c55",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 28.85,
+      "bytes": 173613
+    },
+    "g-x4f-02": {
+      "file": "audio/g-x4f-02.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "e08d878d8cf6a1ea9a11333667ac21361d371c19b08634d9d6bc0b4883592e4a",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 29.09,
+      "bytes": 175053
+    },
+    "g-x4f-03": {
+      "file": "audio/g-x4f-03.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "6b2df3b5426a4ebcc81bdf90dec0f42e33bac59f3a5f1d7d3aaa22bfc7d1d564",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 33.53,
+      "bytes": 201693
+    },
+    "g-x4f-04": {
+      "file": "audio/g-x4f-04.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "0d441e4e26479da72c4bbdaa45a98f6c58bb6c5fe3593474ca01b052b07ae42e",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 26.78,
+      "bytes": 161229
+    },
+    "g-x4f-05": {
+      "file": "audio/g-x4f-05.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "b786dfce7b618f88998f51794b6f15e2be0eba75fb2c6a9b7c6bb850e19058af",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 31.75,
+      "bytes": 191037
+    },
+    "g-x4f-06": {
+      "file": "audio/g-x4f-06.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "21a9fd222aade009e7594316d0318cad39d4e835c454b638e22eb7e8b069d565",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 30.41,
+      "bytes": 182973
+    },
+    "g-x4f-07": {
+      "file": "audio/g-x4f-07.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "aae9e0bd68934dcdb9c393b6080bdc0373061999728234a811e6e48a67226bbe",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 32.11,
+      "bytes": 193197
+    },
+    "g-x4f-08": {
+      "file": "audio/g-x4f-08.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "ac1315fa384961f794a807c6c6036995caf55b3557022788fb7c82971c534993",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 31.92,
+      "bytes": 192045
+    },
+    "g-x4f-09": {
+      "file": "audio/g-x4f-09.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "2dc7b1df3b3ad2b872c58cad7b616cbfb9d0c2cab184bf7d9f78a4c1782cfc4d",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 30.72,
+      "bytes": 184845
+    },
+    "g-x4f-10": {
+      "file": "audio/g-x4f-10.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "495f177d7880c5aca1d5dda199b3bba03065eff16c2cf2244c13dddc6b9ce341",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 31.3,
+      "bytes": 188301
+    },
+    "g-x4f-11": {
+      "file": "audio/g-x4f-11.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "6f1c75eb24e1f82ea02d7c892f4031b701004a591806c413a3125edce4fc4588",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 33.5,
+      "bytes": 201549
+    },
+    "g-x4f-12": {
+      "file": "audio/g-x4f-12.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "3f670134178001bd9cedc5e98d2c6564a8675b06ca524c23232be3e2bdf7568e",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 26.5,
+      "bytes": 159501
+    },
+    "g-x4f-13": {
+      "file": "audio/g-x4f-13.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "9ff5d21468e1abfa15527b183cb6b84e30ce2160bf38fafccc951cdf0f75fe0b",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 30.6,
+      "bytes": 184125
+    },
+    "g-x4f-14": {
+      "file": "audio/g-x4f-14.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "bf489d360b59c97770037d8cc19f7bd1abc1f28cd5f397f6121f14588be69e1b",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 34.63,
+      "bytes": 208317
+    },
+    "g-photo-11": {
+      "file": "audio/g-photo-11.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "26377aa598feeb52a19e41a4d6727ec5878ae09c5c219c06b8a27f0e0dc57c2b",
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 26.01,
+      "bytes": 156621
+    },
+    "g-photo-12": {
+      "file": "audio/g-photo-12.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "26377aa598feeb52a19e41a4d6727ec5878ae09c5c219c06b8a27f0e0dc57c2b",
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
       "roles": [
         "N"
       ],
       "durationSec": 24.57,
-      "bytes": 147801
+      "bytes": 147981
     },
-    "g-new-talk-b": {
-      "file": "audio/g-new-talk-b.mp3",
-      "scriptSha256": "3f34e989e0e82a4a2f4786c874244c016c6928f37087b56837c9ce1aef01c935",
-      "roles": [
-        "W"
+    "g-photo-13": {
+      "file": "audio/g-photo-13.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "26377aa598feeb52a19e41a4d6727ec5878ae09c5c219c06b8a27f0e0dc57c2b",
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        }
       ],
-      "durationSec": 27.43,
-      "bytes": 165041
-    },
-    "g-airport-talk-d": {
-      "file": "audio/g-airport-talk-d.mp3",
-      "scriptSha256": "ec1021f2e695bbd6f4ce2bdc2ff28de120b941ee68c75087f0ea2bf9dd43cdc2",
-      "roles": [
-        "N"
-      ],
-      "durationSec": 24.66,
-      "bytes": 148428
-    },
-    "g-campus-talk-d": {
-      "file": "audio/g-campus-talk-d.mp3",
-      "scriptSha256": "7ed155660bb7a473c55de10553e5f67b5d9d467c4e143c0591e55a5d47027d9e",
-      "roles": [
-        "W"
-      ],
-      "durationSec": 26.2,
-      "bytes": 157675
-    },
-    "g-voice-e-airport": {
-      "file": "audio/g-voice-e-airport.mp3",
-      "scriptSha256": "45b2d3cc47f06e42bc0111368776097727638aae0680384c96a99751a9912f0c",
-      "roles": [
-        "W",
-        "M",
-        "W",
-        "M"
-      ],
-      "durationSec": 28.99,
-      "bytes": 174289
-    },
-    "g-voice-e-campus": {
-      "file": "audio/g-voice-e-campus.mp3",
-      "scriptSha256": "ac2c9643b28a172d20a9c0b0a42d4fe665e47764bf4a98adf93f105db79c4618",
-      "roles": [
-        "M",
-        "W",
-        "M",
-        "W"
-      ],
-      "durationSec": 26.3,
-      "bytes": 158145
-    },
-    "g-voice-e-vendor": {
-      "file": "audio/g-voice-e-vendor.mp3",
-      "scriptSha256": "9455999ce807112cfddfb4999c289234117ddaa5a17bec9691f84d54994bb434",
-      "roles": [
-        "W",
-        "M",
-        "W",
-        "M"
-      ],
-      "durationSec": 24.75,
-      "bytes": 148898
-    },
-    "g-f-dialogue-1": {
-      "file": "audio/g-f-dialogue-1.mp3",
-      "scriptSha256": "ef38363373429bffdc209598467bf8350357d1cc1bbbff21470633df61f8d6e3",
-      "roles": [
-        "W",
-        "M",
-        "W",
-        "M"
-      ],
-      "durationSec": 25.69,
-      "bytes": 154540
-    },
-    "g-f-dialogue-2": {
-      "file": "audio/g-f-dialogue-2.mp3",
-      "scriptSha256": "07739c0f528394235af66c10c416f0150812a70c76f998119925ea9e4aa9dfdb",
-      "roles": [
-        "M",
-        "W",
-        "M",
-        "W"
-      ],
-      "durationSec": 25.28,
-      "bytes": 152032
-    },
-    "g-f-dialogue-3": {
-      "file": "audio/g-f-dialogue-3.mp3",
-      "scriptSha256": "70bfb0cf38aaca39c6c69cddb1d89eb79d3ef01fb56a62c488effd4fd5932292",
-      "roles": [
-        "W",
-        "M",
-        "W",
-        "M"
-      ],
-      "durationSec": 26.09,
-      "bytes": 156891
-    },
-    "g-f-talk-1": {
-      "file": "audio/g-f-talk-1.mp3",
-      "scriptSha256": "478977922dd0f9562b57975c4634d94e481f8f675454554810cbc2a61a04d0da",
       "roles": [
         "N"
       ],
-      "durationSec": 26.53,
-      "bytes": 159556
+      "durationSec": 25.8,
+      "bytes": 155325
     },
-    "g-f-talk-2": {
-      "file": "audio/g-f-talk-2.mp3",
-      "scriptSha256": "31b1d2a45847ad3df0975d847ebbc8006c7416441e297aa0fba0470a1431a9d0",
+    "g-photo-14": {
+      "file": "audio/g-photo-14.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "26377aa598feeb52a19e41a4d6727ec5878ae09c5c219c06b8a27f0e0dc57c2b",
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 21.69,
+      "bytes": 130701
+    },
+    "g-photo-15": {
+      "file": "audio/g-photo-15.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "26377aa598feeb52a19e41a4d6727ec5878ae09c5c219c06b8a27f0e0dc57c2b",
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 25.82,
+      "bytes": 155469
+    },
+    "g-photo-16": {
+      "file": "audio/g-photo-16.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "26377aa598feeb52a19e41a4d6727ec5878ae09c5c219c06b8a27f0e0dc57c2b",
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 25.29,
+      "bytes": 152301
+    },
+    "g-photo-17": {
+      "file": "audio/g-photo-17.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "26377aa598feeb52a19e41a4d6727ec5878ae09c5c219c06b8a27f0e0dc57c2b",
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 24.88,
+      "bytes": 149853
+    },
+    "g-photo-18": {
+      "file": "audio/g-photo-18.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "26377aa598feeb52a19e41a4d6727ec5878ae09c5c219c06b8a27f0e0dc57c2b",
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 21.64,
+      "bytes": 130413
+    },
+    "g-photo-09": {
+      "file": "audio/g-photo-09.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "26377aa598feeb52a19e41a4d6727ec5878ae09c5c219c06b8a27f0e0dc57c2b",
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 25.99,
+      "bytes": 156477
+    },
+    "g-photo-10": {
+      "file": "audio/g-photo-10.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "26377aa598feeb52a19e41a4d6727ec5878ae09c5c219c06b8a27f0e0dc57c2b",
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 26.66,
+      "bytes": 160509
+    },
+    "g-xs-l01": {
+      "file": "audio/g-xs-l01.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "4b1b4d31ddadf57000087d063d9621c5c1a889e822ddbf85377d713e42ccc62e",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        }
+      ],
       "roles": [
         "W"
       ],
-      "durationSec": 25.35,
-      "bytes": 152503
+      "durationSec": 14.4,
+      "bytes": 86925
     },
-    "g-map-campus-01": {
-      "file": "audio/g-map-campus-01.mp3",
-      "scriptSha256": "657092bbd934294ce81c4fa97e9fdea886f6324111c281c580279bce677e04a5",
+    "g-xs-l02": {
+      "file": "audio/g-xs-l02.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "c8f22bc90633b3ac36bc32072bd4140f4454e55f81a6c9f7aa113abd799fe336",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        }
+      ],
       "roles": [
-        "W",
-        "M",
-        "W",
         "M"
       ],
-      "durationSec": 44.97,
-      "bytes": 270210
+      "durationSec": 12.91,
+      "bytes": 77997
     },
-    "xfc-p3-inspection": {
-      "file": "audio/xfc-p3-inspection.mp3",
-      "scriptSha256": "974711362cb6ed111fe86c682818bc6c971b501c6ffd6f5c7d89e6f1b2248a68",
-      "roles": [
-        "W",
-        "M",
-        "W",
-        "M"
+    "g-xs-l03": {
+      "file": "audio/g-xs-l03.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "23083f8734300855fc10bf7193102fedba6407c6b75e17bc66bec9fc85b645d8",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        }
       ],
-      "durationSec": 39.48,
-      "bytes": 237296
-    },
-    "xfc-p3-hotel": {
-      "file": "audio/xfc-p3-hotel.mp3",
-      "scriptSha256": "cd4371a3ec22378f377fe38df13ae7dc3c9eda2ef324a8f5225a3fe6264abea6",
-      "roles": [
-        "M",
-        "W",
-        "M",
-        "W"
-      ],
-      "durationSec": 36.79,
-      "bytes": 221152
-    },
-    "g-xl2-p3-01": {
-      "file": "audio/g-xl2-p3-01.mp3",
-      "scriptSha256": "2e1d12a50f28782e870f42035d6015454d157aae8feae6d10d3d0dfddad5f693",
-      "roles": [
-        "W",
-        "M",
-        "W",
-        "M"
-      ],
-      "durationSec": 34.97,
-      "bytes": 210181
-    },
-    "g-xl2-p3-02": {
-      "file": "audio/g-xl2-p3-02.mp3",
-      "scriptSha256": "eac7bf563d6b31d60e775c1ad03ae8b89eef19e3b72e6b73b29fe2dedbd95a66",
-      "roles": [
-        "M",
-        "W",
-        "M",
-        "W"
-      ],
-      "durationSec": 30.96,
-      "bytes": 186201
-    },
-    "g-xl2-p3-03": {
-      "file": "audio/g-xl2-p3-03.mp3",
-      "scriptSha256": "3cac51756872de012e208a5cac8550631fcd87b7495c348f39d0ddbf0fa209b8",
-      "roles": [
-        "W",
-        "M",
-        "W",
-        "M"
-      ],
-      "durationSec": 38.26,
-      "bytes": 229930
-    },
-    "g-xl2-p3-04": {
-      "file": "audio/g-xl2-p3-04.mp3",
-      "scriptSha256": "1d1a818ef5ab93a3a4e41a412e61c4d3c175e40480daad4b669621c753203ff4",
-      "roles": [
-        "M",
-        "W",
-        "M",
-        "W"
-      ],
-      "durationSec": 37.42,
-      "bytes": 224914
-    },
-    "g-xl2-p3-05": {
-      "file": "audio/g-xl2-p3-05.mp3",
-      "scriptSha256": "928bccbdb60441978bb6bc648476ea9ddc8e951aac838529d107d3eed7741dc0",
-      "roles": [
-        "W",
-        "M",
-        "W",
-        "M"
-      ],
-      "durationSec": 32.31,
-      "bytes": 194194
-    },
-    "g-xl2-p3-06": {
-      "file": "audio/g-xl2-p3-06.mp3",
-      "scriptSha256": "bf92306eea5a0d1519c3dd89a7f33ccdc2ee11d696aad98272e42f202b2f9ac1",
-      "roles": [
-        "M",
-        "W",
-        "M",
-        "W"
-      ],
-      "durationSec": 34.06,
-      "bytes": 204695
-    },
-    "g-xl2-p4-01": {
-      "file": "audio/g-xl2-p4-01.mp3",
-      "scriptSha256": "c821101b5c25dfc287464621918ef08177acbb144fcfe7f713bac1e1fc35e2a1",
       "roles": [
         "W"
       ],
-      "durationSec": 36.84,
-      "bytes": 221466
+      "durationSec": 13.2,
+      "bytes": 79725
     },
-    "g-xl2-p4-02": {
-      "file": "audio/g-xl2-p4-02.mp3",
-      "scriptSha256": "bf560734766942dde174085d54006498af2c47f7b59bce0813664a83f97a7e8e",
+    "g-xs-l04": {
+      "file": "audio/g-xs-l04.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "7d065cadadc1fea01fa76d4e16445e84768f3f1be8df29451e9839cd63f92666",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        }
+      ],
       "roles": [
         "M"
       ],
-      "durationSec": 38.72,
-      "bytes": 232751
+      "durationSec": 13.97,
+      "bytes": 84333
     },
-    "g-xl2-p4-03": {
-      "file": "audio/g-xl2-p4-03.mp3",
-      "scriptSha256": "ef872d7cd63cc7574cca76140fe1b125b0b80e2e140225fa802e5aaf5f63f241",
+    "g-xs-l05": {
+      "file": "audio/g-xs-l05.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "4706507ce8eb618b923d9b4225b65cbe6b1dd19a062bedcbb464e01d7ae942f1",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        }
+      ],
       "roles": [
         "W"
       ],
-      "durationSec": 39.03,
-      "bytes": 234632
+      "durationSec": 14.83,
+      "bytes": 89517
     },
-    "g-xl2-p4-04": {
-      "file": "audio/g-xl2-p4-04.mp3",
-      "scriptSha256": "f4e4948999dc960e89ff351158838606d064cb50c29aa1e59ce0f679bb938778",
+    "g-xs-l06": {
+      "file": "audio/g-xs-l06.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "c61ead6820a70bb8427ba699d8763e117f815f8ef2eae13143734273ae8cd6ee",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        }
+      ],
       "roles": [
         "M"
       ],
-      "durationSec": 42.01,
-      "bytes": 252499
+      "durationSec": 14.88,
+      "bytes": 89805
     },
-    "g-xl-p3-01": {
-      "file": "audio/g-xl-p3-01.mp3",
-      "scriptSha256": "d1bef603d4b10dcadc57e8fe171a2756a1a468ed1fab6277ebfc96795472ce7f",
-      "roles": [
-        "W",
-        "M",
-        "W",
-        "M"
+    "g-xs-l07": {
+      "file": "audio/g-xs-l07.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "99ea3f73728c94527a3ada9597e180dc25289cedfb16d326f0578ab70d2771ed",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        }
       ],
-      "durationSec": 35.17,
-      "bytes": 211435
-    },
-    "g-xl-p3-02": {
-      "file": "audio/g-xl-p3-02.mp3",
-      "scriptSha256": "1b842634a26d9941688575eca0f3e079e6094c1aaccee930962a6fc76693cdf0",
-      "roles": [
-        "M",
-        "W",
-        "M",
-        "W"
-      ],
-      "durationSec": 38.11,
-      "bytes": 228989
-    },
-    "g-xl-p3-03": {
-      "file": "audio/g-xl-p3-03.mp3",
-      "scriptSha256": "fba834b4e9bf54337b03e0e6858ee432c21ab278641ac1b773dacdebcca70992",
-      "roles": [
-        "W",
-        "M",
-        "W",
-        "M"
-      ],
-      "durationSec": 32.53,
-      "bytes": 195605
-    },
-    "g-xl-p3-04": {
-      "file": "audio/g-xl-p3-04.mp3",
-      "scriptSha256": "afa027973702f0a884a2e767cebc2f114145b20d01a28823a18e2c9330196afe",
-      "roles": [
-        "M",
-        "W",
-        "M",
-        "W"
-      ],
-      "durationSec": 33.96,
-      "bytes": 204068
-    },
-    "g-xl-p3-05": {
-      "file": "audio/g-xl-p3-05.mp3",
-      "scriptSha256": "0f14bc348eaff115a573472813eb27ac557c9b536ff0eca0e6b19633608ebfbf",
-      "roles": [
-        "W",
-        "M",
-        "W",
-        "M"
-      ],
-      "durationSec": 35.08,
-      "bytes": 210808
-    },
-    "g-xl-p4-01": {
-      "file": "audio/g-xl-p4-01.mp3",
-      "scriptSha256": "e43dc775050b4bdcf233c72c327538a4a3034a9f08f020b6e835b78da8cd8a93",
       "roles": [
         "W"
       ],
-      "durationSec": 40.0,
-      "bytes": 240431
+      "durationSec": 13.22,
+      "bytes": 79869
     },
-    "g-xl-p4-02": {
-      "file": "audio/g-xl-p4-02.mp3",
-      "scriptSha256": "b69bec2ddb61c7e1509779a90f482de04b51ba289e80a8ad1ae99771d4e5a940",
+    "g-xs-l08": {
+      "file": "audio/g-xs-l08.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "44ded8f6b92aed5e0a9476cc6cf1a35818619890710979b4e4ceb239119c2434",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        }
+      ],
       "roles": [
         "M"
       ],
-      "durationSec": 41.99,
-      "bytes": 252343
+      "durationSec": 14.18,
+      "bytes": 85629
     },
-    "g-xl3-01": {
-      "file": "audio/g-xl3-01.mp3",
-      "scriptSha256": "70b53a947176621ac410486b73f19d32fa6010dc6e467e2f741735304cfb393f",
-      "roles": [
-        "W",
-        "M",
-        "W",
-        "M"
+    "g-xs-l09": {
+      "file": "audio/g-xs-l09.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "b312b00a91511aad844cebac92c659ff5adab47093e755d4e9211716510a3ca7",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        }
       ],
-      "durationSec": 26.26,
-      "bytes": 157988
-    },
-    "g-xl3-02": {
-      "file": "audio/g-xl3-02.mp3",
-      "scriptSha256": "1cf3834daccd0cd354ec927894cfa36dfc2b051a691a4fa7208b4eaf6c001667",
-      "roles": [
-        "M",
-        "W",
-        "M",
-        "W"
-      ],
-      "durationSec": 30.69,
-      "bytes": 184476
-    },
-    "g-xl3-03": {
-      "file": "audio/g-xl3-03.mp3",
-      "scriptSha256": "6f8ccad1bf1be514c2e6195430e1c2d763ad846cf7a19d3dbf8029c4ed1f4388",
-      "roles": [
-        "W",
-        "M",
-        "W",
-        "M"
-      ],
-      "durationSec": 29.93,
-      "bytes": 179931
-    },
-    "g-xl3-04": {
-      "file": "audio/g-xl3-04.mp3",
-      "scriptSha256": "95dca89a0dcb8cdb03927656d95be31ddfc6d53e6389c67462cec69411c712ea",
-      "roles": [
-        "M",
-        "W",
-        "M",
-        "W"
-      ],
-      "durationSec": 31.71,
-      "bytes": 190589
-    },
-    "g-xl3-05": {
-      "file": "audio/g-xl3-05.mp3",
-      "scriptSha256": "b86a28042e10571b4c539c0950e34be13202fb62efda463a70a26586175e5987",
-      "roles": [
-        "W",
-        "M",
-        "W",
-        "M"
-      ],
-      "durationSec": 30.36,
-      "bytes": 182596
-    },
-    "g-xl3-06": {
-      "file": "audio/g-xl3-06.mp3",
-      "scriptSha256": "582a70a662608c201fa31208b97e16d490576c0f68b5fc74b185228c4b335dac",
-      "roles": [
-        "M",
-        "W",
-        "M",
-        "W"
-      ],
-      "durationSec": 29.84,
-      "bytes": 179461
-    },
-    "g-xl3-07": {
-      "file": "audio/g-xl3-07.mp3",
-      "scriptSha256": "bb96a036d97a6474d3ae07860f79d75ea6c56751a0ebc5ac45c6afca39d37a13",
-      "roles": [
-        "W",
-        "M",
-        "W",
-        "M"
-      ],
-      "durationSec": 30.83,
-      "bytes": 185417
-    },
-    "g-xl3-08": {
-      "file": "audio/g-xl3-08.mp3",
-      "scriptSha256": "cd9bd41be312ea9c1d4ba59ef37b6f6a09fd01fd8cddbfa7c607241ac0a3b5ff",
-      "roles": [
-        "M",
-        "W",
-        "M",
-        "W"
-      ],
-      "durationSec": 31.32,
-      "bytes": 188395
-    },
-    "g-xl3-09": {
-      "file": "audio/g-xl3-09.mp3",
-      "scriptSha256": "689b546596d1f9ebfdfed1f91548894519a6185fb20e30bc6be39076dce6f0ad",
-      "roles": [
-        "W",
-        "M",
-        "W",
-        "M"
-      ],
-      "durationSec": 33.6,
-      "bytes": 202031
-    },
-    "g-xl3-10": {
-      "file": "audio/g-xl3-10.mp3",
-      "scriptSha256": "a4ea0006b02fd5348dd65bd9ff8ff9b26db9a7b4724c479670001292e1c8f49c",
-      "roles": [
-        "M",
-        "W",
-        "M",
-        "W"
-      ],
-      "durationSec": 30.0,
-      "bytes": 180401
-    },
-    "g-xl3-11": {
-      "file": "audio/g-xl3-11.mp3",
-      "scriptSha256": "fb67b7353cad7f8e6503a0fdc13e38439dd72651b2e32a366e0c2dbbc8ec4419",
-      "roles": [
-        "W",
-        "M",
-        "W",
-        "M"
-      ],
-      "durationSec": 33.27,
-      "bytes": 199993
-    },
-    "g-xl3-12": {
-      "file": "audio/g-xl3-12.mp3",
-      "scriptSha256": "eda8b2db74ace212909cfa86834bcd227d7e717010c8f066a191ad2f91ac39b0",
-      "roles": [
-        "M",
-        "W",
-        "M",
-        "W"
-      ],
-      "durationSec": 29.59,
-      "bytes": 177894
-    },
-    "g-x4f-01": {
-      "file": "audio/g-x4f-01.mp3",
-      "scriptSha256": "bb28fda48f760dcb4564a04c2694561ff5176aa20a91d3b0c52e6d26d90a4c55",
       "roles": [
         "W"
       ],
-      "durationSec": 28.79,
-      "bytes": 173192
+      "durationSec": 14.28,
+      "bytes": 86205
     },
-    "g-x4f-02": {
-      "file": "audio/g-x4f-02.mp3",
-      "scriptSha256": "e08d878d8cf6a1ea9a11333667ac21361d371c19b08634d9d6bc0b4883592e4a",
+    "g-xs-l10": {
+      "file": "audio/g-xs-l10.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "0578f6286721df39c5fc28e9947c8b26c4f6cb7b2e6b43542e14423c6074c844",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        }
+      ],
       "roles": [
         "M"
       ],
-      "durationSec": 31.32,
-      "bytes": 188238
+      "durationSec": 12.26,
+      "bytes": 74109
     },
-    "g-x4f-03": {
-      "file": "audio/g-x4f-03.mp3",
-      "scriptSha256": "6b2df3b5426a4ebcc81bdf90dec0f42e33bac59f3a5f1d7d3aaa22bfc7d1d564",
+    "g-xs-l11": {
+      "file": "audio/g-xs-l11.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "760a9911603c572a1fa14af752f28db8393257bdee50a22667dbc68767dc385f",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        }
+      ],
       "roles": [
         "W"
       ],
-      "durationSec": 34.16,
-      "bytes": 205322
+      "durationSec": 14.18,
+      "bytes": 85629
     },
-    "g-x4f-04": {
-      "file": "audio/g-x4f-04.mp3",
-      "scriptSha256": "0d441e4e26479da72c4bbdaa45a98f6c58bb6c5fe3593474ca01b052b07ae42e",
+    "g-xs-l12": {
+      "file": "audio/g-xs-l12.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "bf6f7b861cffe0e0c7b8e2edb3e21e663d0199acb9bcf460e7bf9a436dd5d29f",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        }
+      ],
       "roles": [
         "M"
       ],
-      "durationSec": 31.93,
-      "bytes": 192000
+      "durationSec": 12.67,
+      "bytes": 76557
     },
-    "g-x4f-05": {
-      "file": "audio/g-x4f-05.mp3",
-      "scriptSha256": "b786dfce7b618f88998f51794b6f15e2be0eba75fb2c6a9b7c6bb850e19058af",
+    "g-xs-l13": {
+      "file": "audio/g-xs-l13.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "9b9519ebad8c60b8a13d30ad0335470e900c7a1957a978c6408cc765a237a2e6",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        }
+      ],
       "roles": [
         "W"
       ],
-      "durationSec": 31.38,
-      "bytes": 188708
+      "durationSec": 14.61,
+      "bytes": 88221
     },
-    "g-x4f-06": {
-      "file": "audio/g-x4f-06.mp3",
-      "scriptSha256": "21a9fd222aade009e7594316d0318cad39d4e835c454b638e22eb7e8b069d565",
+    "g-xs-l14": {
+      "file": "audio/g-xs-l14.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "4fa85f08cedd4c9d91e5b47e07c7a93d7f38bb088c86c1ea4aa842e5eacf3005",
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        }
+      ],
       "roles": [
         "M"
       ],
-      "durationSec": 31.69,
-      "bytes": 190589
+      "durationSec": 13.32,
+      "bytes": 80445
     },
-    "g-x4f-07": {
-      "file": "audio/g-x4f-07.mp3",
-      "scriptSha256": "aae9e0bd68934dcdb9c393b6080bdc0373061999728234a811e6e48a67226bbe",
+    "g-xs-l15": {
+      "file": "audio/g-xs-l15.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "902d6e68090c1ccbc49869a0554e19d4252caa4cefc1748740ad120219330082",
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        }
+      ],
       "roles": [
         "W"
       ],
-      "durationSec": 32.85,
-      "bytes": 197485
-    },
-    "g-x4f-08": {
-      "file": "audio/g-x4f-08.mp3",
-      "scriptSha256": "ac1315fa384961f794a807c6c6036995caf55b3557022788fb7c82971c534993",
-      "roles": [
-        "M"
-      ],
-      "durationSec": 37.99,
-      "bytes": 228362
-    },
-    "g-x4f-09": {
-      "file": "audio/g-x4f-09.mp3",
-      "scriptSha256": "2dc7b1df3b3ad2b872c58cad7b616cbfb9d0c2cab184bf7d9f78a4c1782cfc4d",
-      "roles": [
-        "W"
-      ],
-      "durationSec": 30.3,
-      "bytes": 182282
-    },
-    "g-x4f-10": {
-      "file": "audio/g-x4f-10.mp3",
-      "scriptSha256": "495f177d7880c5aca1d5dda199b3bba03065eff16c2cf2244c13dddc6b9ce341",
-      "roles": [
-        "M"
-      ],
-      "durationSec": 33.02,
-      "bytes": 198583
-    },
-    "g-x4f-11": {
-      "file": "audio/g-x4f-11.mp3",
-      "scriptSha256": "6f1c75eb24e1f82ea02d7c892f4031b701004a591806c413a3125edce4fc4588",
-      "roles": [
-        "W"
-      ],
-      "durationSec": 33.61,
-      "bytes": 202031
-    },
-    "g-x4f-12": {
-      "file": "audio/g-x4f-12.mp3",
-      "scriptSha256": "3f670134178001bd9cedc5e98d2c6564a8675b06ca524c23232be3e2bdf7568e",
-      "roles": [
-        "M"
-      ],
-      "durationSec": 31.65,
-      "bytes": 190276
-    },
-    "g-x4f-13": {
-      "file": "audio/g-x4f-13.mp3",
-      "scriptSha256": "9ff5d21468e1abfa15527b183cb6b84e30ce2160bf38fafccc951cdf0f75fe0b",
-      "roles": [
-        "W"
-      ],
-      "durationSec": 30.26,
-      "bytes": 181969
-    },
-    "g-x4f-14": {
-      "file": "audio/g-x4f-14.mp3",
-      "scriptSha256": "bf489d360b59c97770037d8cc19f7bd1abc1f28cd5f397f6121f14588be69e1b",
-      "roles": [
-        "M"
-      ],
-      "durationSec": 36.86,
-      "bytes": 221623
+      "durationSec": 13.05,
+      "bytes": 78861
     }
   }
 }
