@@ -17,7 +17,7 @@ export const TIP_SECTIONS = [
       {
         title: "人與物要對上 People vs. object",
         body: "照片題會念四句，只有一句同時講對畫面裡的人、物和動作。先找主詞：句中是人在做事，還是物品本身。",
-        why: "主詞對了、動作卻安在另一個人或另一件物品上，整句就不對。這是照片題最常見的錯法。"
+        why: "主詞對了、動作卻安在另一個人或另一件物品上，整句就不對。"
       },
       {
         title: "being + 過去分詞的被動陷阱",
@@ -49,7 +49,7 @@ export const TIP_SECTIONS = [
       {
         title: "間接回答 Indirect replies",
         body: "正確選項可以是反問、把事情推給別人，或說自己也不知道。例如 Ask Sarah, she's handling it.、Hasn't the memo gone out?、I just got here myself.",
-        why: "改版後的應答題包含不完整句和沒有把答案直接說完的回應。聽的是意思，不是有沒有出現同樣的單字。"
+        why: "練習時留意回應是否切合問題，即使它沒有直接說出答案，也不一定會重複問題中的單字。"
       }
     ],
     sources: [
@@ -61,7 +61,7 @@ export const TIP_SECTIONS = [
     id: "p3",
     part: 3,
     title: "Part 3 簡短對話 Conversations",
-    short: "方向說明和答完題之後，先看下一組問題。答案多半依對話順序出現。",
+    short: "可利用方向說明和答完題後的時間，先看下一組問題。",
     tips: [
       {
         title: "先看問題 Preview",
@@ -69,9 +69,9 @@ export const TIP_SECTIONS = [
         why: "對話只念一次，而且不會印在題本上。先知道要聽什麼，比較不會整段聽完卻忘了問的是哪一句。"
       },
       {
-        title: "答案順序多半跟著錄音走",
-        body: "三題通常依對話先後出現。聽到第一題的答案就可以先記，不必等整段結束再回頭找。",
-        why: "題目順序和內容順序大致相同，是這個題型可以一邊聽、一邊定位的原因。"
+        title: "依序留意對話重點",
+        body: "一邊聽一邊留意問題需要的人物、時間和行動，再根據整段對話核對選項。",
+        why: "先看問題能幫助你留意相關細節；不要假設答案一定依固定順序出現。"
       }
     ],
     sources: [
@@ -87,8 +87,8 @@ export const TIP_SECTIONS = [
     tips: [
       {
         title: "圖表對應 Graphic mapping",
-        body: "看到 Look at the graphic. 時，錄音會提到一個時間、價格或狀態。正確選項通常是表上同一列的另一欄，而不是剛剛被念出來的那個詞。",
-        why: "ETS 的新題型就是在考「聽到的」和「看到的」怎麼對在一起。官方樣題就有 Look at the graphic. What size screen will the man order?"
+        body: "看到 Look at the graphic. 時，留意錄音中的時間、價格、位置或其他線索，再對照圖表確認選項。",
+        why: "這類題需要結合聽到的內容和圖表資訊；不同題目的線索形式可能不同。"
       },
       {
         title: "三指記答案（可選，不是加分方法）",
@@ -116,7 +116,7 @@ export const TIP_SECTIONS = [
       },
       {
         title: "卡住就先跳 Skip when stuck",
-        body: "一句超過你預期的時間還沒有把握，先標記題號，做完後面的題再回來。閱讀這一部分可以在時間內回頭。",
+        body: "一句超過你預期的時間還沒有把握，可先記住位置，做完後面的題再回來。正式考試不可在題本或答案卡上額外做記號；閱讀部分可在閱讀時間內回頭。",
         why: "ETS 考生手冊寫：不要在任何一題停留太久；不知道就先往下，有時間再回來。"
       }
     ],
@@ -178,14 +178,14 @@ export const TIP_SECTIONS = [
     tips: [
       {
         title: "建議區間，不是唯一節奏",
-        body: "閱讀共 100 題、75 分鐘。一個常見的起點是 Part 5 約 8–12 分鐘（中間值約 10）、Part 6 約 6–10 分鐘（中間值約 8）、Part 7 約 50–58 分鐘（中間值約 55）。加總仍是 75 分鐘。",
+        body: "閱讀共 100 題、75 分鐘。一個練習起點是 Part 5 約 10 分鐘、Part 6 約 8 分鐘、Part 7 約 55 分鐘，餘下約 2 分鐘檢查。可依正確率調整，總時間以 75 分鐘為限。",
         why: "這只是練習時的參考。ETS 的要求是自己控時、不要在一題停太久，並在閱讀時間內把會的題答完。讀得比較慢的人可以把 Part 5、Part 6 再壓短一點，把時間留給 Part 7。"
       }
     ],
     sources: [
       { name: "ETS Handbook：閱讀 75 分鐘，不要在一題停留太久", href: "https://toeic.com.tw/Upload/att/2020-11/202603171012062392298991.pdf" },
       { name: "忠欣：閱讀 100 題、75 分鐘", href: "https://www.toeic.com.tw/toeic/listening-reading/before-test/notice/" },
-      { name: "時代國際：常見的 10 / 10 / 55 分配討論", href: "https://www.language-center.com.tw/toeic/toeic-faq.html" }
+      { name: "菁英國際：10 / 10 / 55 配速建議，本頁範例另留時間檢查", href: "https://www.language-center.com.tw/toeic/toeic-faq.html" }
     ]
   }
 ];

@@ -13339,11 +13339,11 @@
           "prompt": "Has the client approved the new logo?",
           "options": [
             "Ask Sarah, she's handling it.",
-            "Yes, the client approved it yesterday.",
-            "The logo is in the blue folder."
+            "The logo is printed in blue.",
+            "The client arrived by train."
           ],
           "answer": 0,
-          "explanation": "The reply sends the speaker to the person who is handling the approval instead of answering yes or no. The other choices repeat logo or approved."
+          "explanation": "Ask Sarah, she's handling it. is an appropriate indirect response to the question; the other responses do not address the request for information or action."
         }
       ]
     },
@@ -13367,11 +13367,11 @@
           "prompt": "Where should I put these boxes?",
           "options": [
             "I just got here myself.",
-            "Put them in the storage room.",
-            "Yes, those are the boxes."
+            "The storage shelves are blue.",
+            "There are six boxes in the catalog."
           ],
           "answer": 0,
-          "explanation": "The speaker cannot give the location because he has just arrived. That deflects the where-question. The other choices answer directly or echo boxes."
+          "explanation": "I just got here myself. is an appropriate indirect response to the question; the other responses do not address the request for information or action."
         }
       ]
     },
@@ -13395,11 +13395,11 @@
           "prompt": "Did you send the memo about Friday's meeting?",
           "options": [
             "Hasn't the memo gone out?",
-            "I sent the memo this morning.",
-            "The meeting is on Friday."
+            "Friday comes after Thursday.",
+            "The printer needs more paper."
           ],
           "answer": 0,
-          "explanation": "A question back can be a real response: the speaker thinks the memo was already sent. The other lines repeat memo or Friday."
+          "explanation": "Hasn't the memo gone out? is an appropriate indirect response to the question; the other responses do not address the request for information or action."
         }
       ]
     },
@@ -13423,11 +13423,11 @@
           "prompt": "Can you stay late to finish the invoices?",
           "options": [
             "Isn't Dana covering that?",
-            "Yes, I can stay late.",
-            "The invoices are on your desk."
+            "The invoices are numbered in blue.",
+            "Dana works on the second floor."
           ],
           "answer": 0,
-          "explanation": "Pointing to Dana is an indirect no. The other choices answer the request directly or reuse invoices."
+          "explanation": "Isn't Dana covering that? is an appropriate indirect response to the question; the other responses do not address the request for information or action."
         }
       ]
     },
@@ -13451,11 +13451,11 @@
           "prompt": "Who is leading the training session?",
           "options": [
             "Check with the front desk.",
-            "Ms. Cole is leading it.",
-            "The training starts at nine."
+            "The session lasts two hours.",
+            "The training room has new chairs."
           ],
           "answer": 0,
-          "explanation": "The reply does not name a leader. It tells the speaker where to ask. The other choices answer who or when directly."
+          "explanation": "Check with the front desk. is an appropriate indirect response to the question; the other responses do not address the request for information or action."
         }
       ]
     },
@@ -13479,11 +13479,11 @@
           "prompt": "Why was the shipment delayed?",
           "options": [
             "You'd have to ask the warehouse.",
-            "Because of the storm.",
-            "The shipment arrived yesterday."
+            "The warehouse has two loading doors.",
+            "A storm is forecast for next week."
           ],
           "answer": 0,
-          "explanation": "The speaker refuses the reason and redirects to the warehouse. The other choices give a direct reason or reuse shipment."
+          "explanation": "You'd have to ask the warehouse. is an appropriate indirect response to the question; the other responses do not address the request for information or action."
         }
       ]
     },
@@ -13507,11 +13507,11 @@
           "prompt": "Are the brochures ready for the fair?",
           "options": [
             "Didn't the printer call you?",
-            "Yes, they're ready.",
-            "The fair is downtown."
+            "The printer is next to the window.",
+            "The fair opens at noon tomorrow."
           ],
           "answer": 0,
-          "explanation": "The reply answers with another question, implying the printer has the update. The other choices say yes or echo fair."
+          "explanation": "Didn't the printer call you? is an appropriate indirect response to the question; the other responses do not address the request for information or action."
         }
       ]
     },
@@ -13535,11 +13535,11 @@
           "prompt": "When does the cafeteria close today?",
           "options": [
             "I just got here myself.",
-            "It closes at three.",
-            "Yes, the cafeteria is open."
+            "The cafeteria serves fresh fruit.",
+            "The dining tables are round."
           ],
           "answer": 0,
-          "explanation": "He cannot know the closing time because he just arrived. That answers a when-question indirectly. The other choices give a time or echo cafeteria."
+          "explanation": "I just got here myself. is an appropriate indirect response to the question; the other responses do not address the request for information or action."
         }
       ]
     },
@@ -13563,11 +13563,11 @@
           "prompt": "Should we book the large conference room?",
           "options": [
             "Hasn't that already been reserved?",
-            "Yes, book the large room.",
-            "The conference is next week."
+            "The conference room has ten chairs.",
+            "The conference begins next week."
           ],
           "answer": 0,
-          "explanation": "The reply questions the need to book, which is an indirect suggestion not to. The other choices agree or reuse conference."
+          "explanation": "Hasn't that already been reserved? is an appropriate indirect response to the question; the other responses do not address the request for information or action."
         }
       ]
     },
@@ -13591,11 +13591,11 @@
           "prompt": "Do you have a copy of the contract?",
           "options": [
             "Try asking the legal team.",
-            "Yes, here's a copy.",
-            "The contract was signed."
+            "The legal team meets on Tuesday.",
+            "The copier needs more paper."
           ],
           "answer": 0,
-          "explanation": "He does not produce the copy. He sends the speaker to legal. The other choices answer yes or reuse contract."
+          "explanation": "Try asking the legal team. is an appropriate indirect response to the question; the other responses do not address the request for information or action."
         }
       ]
     },
@@ -13619,11 +13619,11 @@
           "prompt": "How do I get to the loading dock?",
           "options": [
             "I'm new here too.",
-            "Go down the hall and turn left.",
-            "The dock opens at eight."
+            "The loading dock is painted green.",
+            "The delivery arrived yesterday."
           ],
           "answer": 0,
-          "explanation": "She cannot give directions because she is also new. The other choices give a route or echo dock."
+          "explanation": "I'm new here too. is an appropriate indirect response to the question; the other responses do not address the request for information or action."
         }
       ]
     },
@@ -13647,11 +13647,11 @@
           "prompt": "Will the manager be at the briefing?",
           "options": [
             "Ask her assistant.",
-            "Yes, she will be there.",
-            "The briefing was moved."
+            "The briefing room has a projector.",
+            "Her assistant sits on the third floor."
           ],
           "answer": 0,
-          "explanation": "The reply deflects to the assistant instead of yes or no. The other choices answer directly or reuse briefing."
+          "explanation": "Ask her assistant. is an appropriate indirect response to the question; the other responses do not address the request for information or action."
         }
       ]
     },
@@ -13675,11 +13675,11 @@
           "prompt": "Could you review this draft before noon?",
           "options": [
             "Isn't Owen the editor on this?",
-            "I can review it this morning.",
-            "The draft is twelve pages."
+            "The draft has twelve pages.",
+            "Owen joined the company last year."
           ],
           "answer": 0,
-          "explanation": "Naming Owen suggests the speaker is not the right reviewer. The other choices accept the task or reuse draft."
+          "explanation": "Isn't Owen the editor on this? is an appropriate indirect response to the question; the other responses do not address the request for information or action."
         }
       ]
     },
@@ -13703,11 +13703,11 @@
           "prompt": "What time is the shuttle to the airport?",
           "options": [
             "Check the board by the door.",
-            "It leaves at four thirty.",
-            "The airport is twenty minutes away."
+            "The airport has two terminals.",
+            "The shuttle seats twelve passengers."
           ],
           "answer": 0,
-          "explanation": "He does not state a time. He points to the board. The other choices answer when or echo airport."
+          "explanation": "Check the board by the door. is an appropriate indirect response to the question; the other responses do not address the request for information or action."
         }
       ]
     },
@@ -13730,12 +13730,12 @@
           "skill": "l-response",
           "prompt": "Did the supplier lower the price?",
           "options": [
-            "Hasn't the memo gone out?",
-            "Yes, they lowered it.",
-            "The price is on the invoice."
+            "I haven't seen their reply yet.",
+            "The supplier sells office chairs.",
+            "The invoice has three pages."
           ],
           "answer": 0,
-          "explanation": "She expects the memo to have answered this already, which is an indirect reply. The other choices say yes or reuse price."
+          "explanation": "The speaker has not seen the supplier's response yet, so cannot confirm whether the price was reduced. The other responses do not answer the question."
         }
       ]
     },
@@ -13813,7 +13813,7 @@
         {
           "id": "GXP301B",
           "skill": "l-conversation",
-          "prompt": "Look at the graphic. Where is the hiring panel?",
+          "prompt": "Look at the graphic. Which room should the man go to for the afternoon event he plans to attend?",
           "options": [
             "Birch",
             "Cedar",
@@ -13909,7 +13909,7 @@
         {
           "id": "GXP302B",
           "skill": "l-conversation",
-          "prompt": "Look at the graphic. Which item costs sixty dollars?",
+          "prompt": "Look at the graphic. Which item will the woman order for the lobby?",
           "options": [
             "Banner",
             "Color posters",
@@ -13946,7 +13946,7 @@
       "graphicView": {
         "kind": "svg",
         "caption": "First-floor plan",
-        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 200\" role=\"img\" aria-hidden=\"true\"><rect x=\"10\" y=\"16\" width=\"140\" height=\"78\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"20\" y=\"44\" fill=\"currentColor\" font-size=\"15\">Cafe</text><rect x=\"170\" y=\"16\" width=\"140\" height=\"78\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"180\" y=\"44\" fill=\"currentColor\" font-size=\"15\">Reception</text><rect x=\"10\" y=\"108\" width=\"140\" height=\"76\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"20\" y=\"136\" fill=\"currentColor\" font-size=\"15\">Elevators</text><rect x=\"170\" y=\"108\" width=\"140\" height=\"76\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"180\" y=\"136\" fill=\"currentColor\" font-size=\"15\">Auditorium</text></svg>"
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 200\" role=\"img\" aria-hidden=\"true\"><rect x=\"10\" y=\"16\" width=\"140\" height=\"78\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"20\" y=\"44\" fill=\"currentColor\" font-size=\"15\">Cafe</text><rect x=\"170\" y=\"16\" width=\"140\" height=\"78\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"180\" y=\"44\" fill=\"currentColor\" font-size=\"15\">Auditorium</text><rect x=\"10\" y=\"108\" width=\"140\" height=\"76\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"20\" y=\"136\" fill=\"currentColor\" font-size=\"15\">Elevators</text><rect x=\"170\" y=\"108\" width=\"140\" height=\"76\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"180\" y=\"136\" fill=\"currentColor\" font-size=\"15\">Reception desk</text></svg>"
       },
       "script": [
         {
@@ -13992,7 +13992,7 @@
             "Auditorium"
           ],
           "answer": 1,
-          "explanation": "She says to wait at the desk across from the elevators. The plan labels that desk Reception. She never says Reception.",
+          "explanation": "The woman says to wait at the desk across from the elevators. The plan places the reception desk across the same lower row from the elevators.",
           "graphic": true
         },
         {
@@ -14026,7 +14026,7 @@
       "script": [
         {
           "speaker": "W",
-          "text": "The tall bar is seventy. That is the quarter we should repeat."
+          "text": "The tall bar is seventy. That is the quarter we should highlight in the client note."
         },
         {
           "speaker": "M",
@@ -14034,7 +14034,7 @@
         },
         {
           "speaker": "W",
-          "text": "No. Copy the seventy, and mention it in the client note."
+          "text": "No. Highlight the seventy, and mention it in the client note."
         },
         {
           "speaker": "M",
@@ -14045,7 +14045,7 @@
         {
           "id": "GXP304A",
           "skill": "l-conversation",
-          "prompt": "What does the woman want the team to repeat?",
+          "prompt": "Which figure does the woman want the team to highlight?",
           "options": [
             "The short bar",
             "The bar at seventy",
@@ -14053,13 +14053,13 @@
             "The client meeting"
           ],
           "answer": 1,
-          "explanation": "She says the tall bar of seventy is the quarter they should repeat.",
+          "explanation": "She says to highlight the tall bar at seventy in the client note.",
           "graphic": false
         },
         {
           "id": "GXP304B",
           "skill": "l-conversation",
-          "prompt": "Look at the graphic. Which quarter should the team repeat?",
+          "prompt": "Look at the graphic. Which quarter will be highlighted in the client note?",
           "options": [
             "Spring",
             "Summer",
@@ -14067,7 +14067,7 @@
             "Winter"
           ],
           "answer": 2,
-          "explanation": "She tells him to copy the bar at seventy. The chart shows 70 on Autumn. She never names the season.",
+          "explanation": "She asks him to highlight the figure seventy. The chart shows 70 for Autumn; the speakers do not name the season.",
           "graphic": true
         },
         {
@@ -14135,7 +14135,7 @@
         },
         {
           "speaker": "W",
-          "text": "Correct. Only the rush note changes to thirty."
+          "text": "Correct. Change the quantity on the rush line to thirty."
         },
         {
           "speaker": "M",
@@ -14160,7 +14160,7 @@
         {
           "id": "GXP305B",
           "skill": "l-conversation",
-          "prompt": "Look at the graphic. Which item is marked rush?",
+          "prompt": "Look at the graphic. Which item will have its quantity changed to thirty?",
           "options": [
             "Notebooks",
             "Pens",
@@ -14350,7 +14350,7 @@
         {
           "id": "GXP401B",
           "skill": "l-talk",
-          "prompt": "Look at the graphic. In which room is the two o'clock event?",
+          "prompt": "Look at the graphic. Which room should people who signed up for the event discussed by the speaker go to?",
           "options": [
             "Elm",
             "Pine",
@@ -14434,7 +14434,7 @@
         {
           "id": "GXP402B",
           "skill": "l-talk",
-          "prompt": "Look at the graphic. Who pays forty dollars?",
+          "prompt": "Look at the graphic. Which ticket category pays the higher rate the speaker says members should not be charged?",
           "options": [
             "Members",
             "Guests",
@@ -14560,7 +14560,7 @@
         {
           "id": "GXP404B",
           "skill": "l-talk",
-          "prompt": "Look at the graphic. Which month shows ninety?",
+          "prompt": "Look at the graphic. Which month should be highlighted in the report?",
           "options": [
             "January",
             "February",
@@ -14623,7 +14623,7 @@
       "script": [
         {
           "speaker": "W",
-          "text": "Please ship the line marked back-ordered before you touch the rush line. The rush line can wait until Friday. Anything already in stock should stay in the warehouse today."
+          "text": "Please contact the supplier about the line marked back-ordered before you handle the rush line. The rush line can wait until Friday. Anything already in stock should stay in the warehouse today."
         }
       ],
       "questions": [
@@ -14644,7 +14644,7 @@
         {
           "id": "GXP405B",
           "skill": "l-talk",
-          "prompt": "Look at the graphic. Which product is back-ordered?",
+          "prompt": "Look at the graphic. Which product should the listener contact the supplier about first?",
           "options": [
             "Lamps",
             "Desks",
@@ -14652,7 +14652,7 @@
             "Cabinets"
           ],
           "answer": 1,
-          "explanation": "She says to ship the line marked back-ordered first. The form shows that status on desks. She never says desks.",
+          "explanation": "The speaker says to contact the supplier about the back-ordered line first. The chart marks desks as back-ordered; the speaker does not say desks.",
           "graphic": true
         },
         {
@@ -14705,15 +14705,15 @@
         {
           "id": "RD01B",
           "skill": "r-crossref",
-          "prompt": "If Harbor Books pays the full invoice and the late fee is not waived, what late fee applies?",
+          "prompt": "If Harbor Books pays when Lena plans and the late fee is not waived, how much must it pay before tax?",
           "options": [
-            "$20",
-            "$27",
-            "$40",
-            "$54"
+            "$540",
+            "$567",
+            "$580",
+            "$594"
           ],
           "answer": 1,
-          "explanation": "The invoice prices 200 brochures at $2.50 ($500) plus a $40 setup fee, so the balance is $540. Five percent of $540 is $27. The email is dated April 18, after the April 12 due date, so the late fee would apply unless it is waived. Cross-reference: Invoice and Email.",
+          "explanation": "The invoice lists $500 for brochures and a $40 setup fee, with a 5 percent late fee after April 12. Lena’s April 18 email says payment will be made the next day, so the $540 balance plus $27 late fee is $567. Cross-reference: Invoice and Email.",
           "crossRef": true
         },
         {
@@ -14767,11 +14767,11 @@
         "docs": [
           {
             "label": "Notice",
-            "text": "Greenline Market is hiring a weekend clerk. Shifts are Saturday and Sunday, 8:00 a.m. to 4:00 p.m. Applicants must be available for both days. Duties include stocking shelves and working the checkout. Other weekday openings close on the same date as this role. Apply by May 3."
+            "text": "Greenline Market is hiring a weekend clerk. Shifts are Saturday and Sunday, 8:00 a.m. to 4:00 p.m. Applicants must be available for both days. Duties include stocking shelves and working the checkout. Apply by May 3."
           },
           {
             "label": "Chat",
-            "text": "Mina: Can you cover only Sundays? I have a class on Saturday mornings.\nBen: The posting says both days are required. If Saturday mornings are impossible, this opening will not work. The May 3 deadline still applies if you want one of the weekday roles."
+            "text": "Mina: Can you cover only Sundays? I have a class on Saturday mornings.\nBen: The posting says both days are required. If Saturday mornings are impossible, this opening will not work. The same deadline applies if you want one of the weekday roles."
           }
         ]
       },
@@ -14819,15 +14819,15 @@
         {
           "id": "RD02D",
           "skill": "r-crossref",
-          "prompt": "What does Ben say about weekday roles?",
+          "prompt": "By what date should Mina apply if she chooses a weekday role?",
           "options": [
-            "They are already closed",
-            "They use the same application deadline as the weekend role",
-            "They do not require an application",
-            "They replace the Sunday shift"
+            "April 3",
+            "May 3",
+            "May 8",
+            "June 3"
           ],
           "answer": 1,
-          "explanation": "The notice says other weekday openings close on the same date, May 3. Ben tells Mina that deadline still applies if she wants a weekday role. Cross-reference: Notice and Chat.",
+          "explanation": "The notice sets May 3 as the deadline for the weekend role. Ben says in the chat that the same deadline applies to the weekday roles. Cross-reference: Notice and Chat.",
           "crossRef": true
         },
         {
@@ -14883,15 +14883,15 @@
         {
           "id": "RT01B",
           "skill": "r-crossref",
-          "prompt": "What should Jonah bring to his session?",
+          "prompt": "At which time and room should Jonah present his confirmation email?",
           "options": [
-            "The attached schedule only",
-            "The confirmation email",
-            "A note from the lab",
-            "Proof that the morning group is full"
+            "June 4 morning, Room C",
+            "June 4 afternoon, Room A",
+            "June 11 morning, Room B",
+            "June 4 afternoon, Room B"
           ],
           "answer": 1,
-          "explanation": "The notice says to bring the confirmation email. The email to Jonah is that confirmation and repeats the instruction. Cross-reference: Notice and Email. Cross-reference: Notice, Email and Schedule.",
+          "explanation": "The email confirms Jonah for June 4 afternoon and asks him to bring the confirmation email. The schedule places that session in Room A. Cross-reference: Email and Schedule.",
           "crossRef": true
         },
         {
@@ -14905,35 +14905,35 @@
             "The lab doorway"
           ],
           "answer": 1,
-          "explanation": "The email assigns him the afternoon session on June 4. The schedule lists the June 4 afternoon session in Room A. Cross-reference: Email and Schedule. Cross-reference: Notice, Email and Schedule.",
+          "explanation": "The email assigns Jonah to the June 4 afternoon session; the schedule places that session in Room A. Cross-reference: Email and Schedule.",
           "crossRef": true
         },
         {
           "id": "RT01D",
           "skill": "r-crossref",
-          "prompt": "Why should Jonah avoid the morning session on June 4?",
+          "prompt": "If Jonah misses his assigned session, what is the next open session shown?",
           "options": [
-            "It is in Room A",
-            "That group is full",
-            "It is not on the schedule",
-            "Human resources canceled June 4"
+            "June 4 morning in Room C",
+            "June 11 morning in Room B",
+            "June 4 afternoon in Room A",
+            "June 11 afternoon in Room A"
           ],
           "answer": 1,
-          "explanation": "The email says the morning group is full. The schedule also marks the June 4 morning session Full. Cross-reference: Email and Schedule. Cross-reference: Notice, Email and Schedule.",
+          "explanation": "The email assigns Jonah to June 4 afternoon. The notice says anyone who misses their session must wait for the next open date; the schedule shows June 11 morning in Room B. Cross-reference: Notice, Email and Schedule.",
           "crossRef": true
         },
         {
           "id": "RT01E",
           "skill": "r-detail",
-          "prompt": "Which later morning session is still open?",
+          "prompt": "What is the status of the June 4 morning session?",
           "options": [
-            "June 4 in Room C",
-            "June 4 in Room A",
-            "June 11 in Room B",
-            "June 11 in Room A"
+            "It is open in Room A",
+            "It is scheduled for June 11",
+            "It is full",
+            "It has no assigned room"
           ],
           "answer": 2,
-          "explanation": "The schedule lists June 11, morning, Room B as Open."
+          "explanation": "The schedule marks June 4 morning in Room C as Full."
         }
       ]
     },
