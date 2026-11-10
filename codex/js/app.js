@@ -151,7 +151,7 @@ function renderHome() {
         <button type="button" class="btn small" data-action="vocab-filter" data-vocab-filter="900">900 進階</button>
         <button type="button" class="btn small" data-action="vocab-filter" data-vocab-filter="all">全部</button>
       </div>
-      ${VOCABULARY.map((group) => `<details class="vocabulary-group" data-vocab-group><summary>${esc(group.category)} · <span data-vocab-count>${group.words.length} 個詞條</span></summary>${group.words.map((item) => { const { word, meaning, example, level, pos } = vocabParts(item); return `<p data-vocab-level="${level}"><b>${esc(word)}</b>${pos ? ` <span class="muted">${esc(pos)}</span>` : ""} <span class="tag">${level === 900 ? "900 金色證書" : "800 核心"}</span> · ${esc(meaning)}<br><span class="muted">${esc(example)}</span></p>`; }).join("")}</details>`).join("")}
+      ${VOCABULARY.map((group) => `<details class="vocabulary-group" data-vocab-group><summary>${esc(group.category)} · <span data-vocab-count>${group.words.length} 個詞條</span></summary>${group.words.map((item) => { const { word, meaning, example, level, pos } = vocabParts(item); return `<p class="${level === 900 ? "vocab-gold" : "vocab-core"}" data-vocab-level="${level}"><b>${esc(word)}</b>${pos ? ` <span class="muted">${esc(pos)}</span>` : ""} <span class="tag">${level === 900 ? "900 金色證書" : "800 核心"}</span> · ${esc(meaning)}<br><span class="muted">${esc(example)}</span></p>`; }).join("")}</details>`).join("")}
       <p><a href="https://www.toeic.com.tw/toeic/listening-reading/about/content/" target="_blank" rel="noopener noreferrer">參考：台灣多益官方測驗內容</a> · <a href="https://dictionary.cambridge.org/dictionary/english/" target="_blank" rel="noopener noreferrer">Cambridge Dictionary</a></p>
     </details>
 

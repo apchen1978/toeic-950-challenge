@@ -25,7 +25,7 @@ test("every vocabulary entry has a headword, Chinese meaning, example, and level
     assert.match(meaning, /[\u4e00-\u9fff]/, word);
     assert.ok(example.length > 20 && /[A-Za-z]/.test(example) && /[.?!]/.test(example), word);
     assert.ok(level === 800 || level === 900, word);
-    if (pos) assert.match(pos, /^(n|v|adj|adv|phr|prep)\.$/, `${word} ${pos}`);
+    if (pos) assert.match(pos, /^(n|v|adj|adv|phr|prep|conj)\.$/, `${word} ${pos}`);
   }
 });
 
@@ -45,7 +45,10 @@ test("the new 800-level entries include a part of speech and the original senten
   assert.equal(original.length, 449);
   assert.ok(withPos.filter(({ item }) => item[3] === 800).length >= 250);
   assert.ok(withPos.every(({ item }) => item[4]));
-  assert.ok(entries.length > 800 && entries.length <= 860, `total ${entries.length}`);
+  assert.equal(entries.length, 1000);
+  const levels = { 800: 0, 900: 0 };
+  for (const { item } of entries) levels[item[3]] += 1;
+  assert.deepEqual(levels, { 800: 646, 900: 354 });
   const byWord = new Map(entries.map(({ item }) => [item[0], item]));
   assert.equal(byWord.get("contingency")[2], "The team prepared a contingency plan for delivery delays.");
   assert.equal(byWord.get("contingency")[3], 900);
