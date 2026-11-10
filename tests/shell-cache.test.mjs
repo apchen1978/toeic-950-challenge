@@ -6,7 +6,7 @@ const worker = readFileSync(new URL("../codex/sw.js", import.meta.url), "utf8");
 const shell = [...worker.match(/const SHELL = \[([\s\S]*?)\];/)[1].matchAll(/"([^"]+)"/g)].map((match) => match[1]);
 
 test("install precache is the app shell and data, not photos or speech files", () => {
-  assert.match(worker, /const CACHE = "toeic950-codex-v46"/);
+  assert.match(worker, /const CACHE = "toeic950-codex-v47"/);
   assert.match(worker, /cache\.addAll\(SHELL\)/);
   assert.doesNotMatch(worker, /manifest\.groups/);
   for (const file of [
