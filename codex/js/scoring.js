@@ -113,17 +113,25 @@ export function groupsForSkill(bank, skill) {
   return bank.groups.filter((g) => g.questions.some((q) => q.skill === skill)).map((g) => g.id);
 }
 
-/** Keep a local review queue: wrong answers are retained; a correct answer clears that question. */
+/** Two correct submissions, separated by at least 24 hours, graduate a mistake.
+ * Legacy entries are stage zero and immediately due. Early attempts do not advance. */
+export function wrongAnswerDue(entry, now = Date.now()) {
+  return !!entry && (!Number.isFinite(entry.dueAt) || entry.dueAt <= now);
+}
+
 export function updateWrongAnswerQueue(queue, questions, answers, now = Date.now()) {
   const next = { ...(queue ?? {}) };
   for (const q of questions) {
     const answer = answers[q.id];
     if (answer === undefined || answer === null) continue;
     if (answer === q.answer) {
-      delete next[q.id];
+      const previous = next[q.id];
+      if (!wrongAnswerDue(previous, now)) continue;
+      if (previous.stage === 1) delete next[q.id];
+      else next[q.id] = { ...previous, stage: 1, lastCorrectAt: now, dueAt: now + 86400000 };
     } else {
       const previous = next[q.id];
-      next[q.id] = { wrongCount: (previous?.wrongCount ?? 0) + 1, lastWrongAt: now };
+      next[q.id] = { ...previous, wrongCount: (previous?.wrongCount ?? 0) + 1, lastWrongAt: now, stage: 0, dueAt: now };
     }
   }
   return next;

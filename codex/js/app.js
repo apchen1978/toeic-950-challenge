@@ -1,6 +1,6 @@
 import * as audio from "./audio.js";
 import { VOCABULARY } from "./vocabulary.js";
-import { flatten, score, estimateProgress, mergeSkillStats, weakest, groupsForSkill, updateWrongAnswerQueue, formatDuration } from "./scoring.js";
+import { flatten, score, estimateProgress, mergeSkillStats, weakest, groupsForSkill, updateWrongAnswerQueue, wrongAnswerDue, formatDuration } from "./scoring.js";
 import { SKILLS, skillLabel } from "./skills.js";
 import { remainingMs, pauseTimer, resumeTimer, elapsedSeconds, startTimedForm, startReading } from "./timer.js";
 
@@ -11,6 +11,26 @@ const STORAGE_PREFIX = location.pathname.includes('/codex/') ? 'toeic950.codex' 
 const KEY_SESSION = `${STORAGE_PREFIX}.session.v1`;
 const KEY_HISTORY = `${STORAGE_PREFIX}.history.v1`;
 const KEY_WRONG_QUEUE = `${STORAGE_PREFIX}.wrong-answers.v1`;
+const KEY_WRONG_REASONS = `${STORAGE_PREFIX}.wrong-reasons.v1`;
+const WRONG_REASONS = [
+  ["listening", "沒聽清楚", "先看逐字稿，再遮住文字重聽一次。"],
+  ["vocabulary", "單字不熟", "把生字連同例句一起複習。"],
+  ["grammar", "文法／句型", "找出句子的主詞、動詞與修飾關係。"],
+  ["misread", "看錯題目", "先圈出題目要問的對象與條件。"],
+  ["time", "時間不夠", "先練短題組，記錄每組耗時。"],
+  ["careless", "其實會，粗心", "交答案前再核對否定詞、時間與選項。"]
+];
+
+function wrongReasonPicker(qid) {
+  const selected = store.get(KEY_WRONG_REASONS, {})[qid];
+  return `<div class="wrong-reasons" role="group" aria-label="錯因標記"><p class="muted">看完解析後，記下這次錯因：</p>${WRONG_REASONS.map(([id, label]) => `<button type="button" class="btn small" data-action="wrong-reason" data-q="${esc(qid)}" data-reason="${id}" aria-pressed="${selected === id}">${label}</button>`).join('')}<span class="muted" data-reason-status role="status"></span></div>`;
+}
+
+function wrongReasonSummary() {
+  const reasons = Object.values(store.get(KEY_WRONG_REASONS, {}));
+  const ranked = WRONG_REASONS.map((reason) => ({ reason, count: reasons.filter((id) => id === reason[0]).length })).sort((a, b) => b.count - a.count);
+  return ranked[0].count ? `<p>已標記錯題中最常見：<b>${ranked.filter((item) => item.count === ranked[0].count).map((item) => item.reason[1]).join('、')}</b>。${ranked[0].reason[2]}</p><p class="muted">每題保留最近一次錯因標記。</p>` : '';
+}
 const KEY_ACCENT = `${STORAGE_PREFIX}.accent-filter.v1`;
 const KEY_VOCAB_LEVEL = `${STORAGE_PREFIX}.vocab-level.v1`;
 const ACCENT_OPTIONS = [["all", "全部口音"], ["US", "美式 US"], ["UK", "英式 UK"], ["CA", "加拿大 CA"], ["AU", "澳洲 AU"]];
@@ -128,6 +148,7 @@ function renderHome() {
   const readingQuestions = flatten(bank).filter((q) => q.section === "reading").length;
   const queuedQuestions = flatten(bank).filter((q) => wrongQueue[q.id]);
   const queueCount = queuedQuestions.length;
+  const dueQuestions = queuedQuestions.filter((q) => wrongAnswerDue(wrongQueue[q.id]));
 
   app.innerHTML = `
     <header class="home-header">
@@ -245,8 +266,11 @@ function renderHome() {
 
     <section class="card">
       <h2>錯題複習</h2>
-      <p>${queueCount ? `有 ${queueCount} 題待複習。答對後會自動從錯題清單移除；再答錯就繼續保留。` : "目前沒有待複習錯題。測驗中答錯的題目會自動加入。"}</p>
-      <button class="btn primary" data-action="review-wrong" ${queueCount ? "" : "disabled"}>${queueCount ? `開始複習 ${queueCount} 題` : "錯題清單是空的"}</button>
+      <p>今天到期 <b>${dueQuestions.length}</b> 題／全部 <b>${queueCount}</b> 題</p>
+      <p class="muted">第一次答對後隔至少 1 天再複習，第二次答對才畢業。提前重做不增加次數；答錯重新開始。聽力複習可看逐字稿、口音及重播。</p>
+      <button class="btn primary" data-action="review-wrong" ${dueQuestions.length ? "" : "disabled"}>${dueQuestions.length ? `複習今天 ${dueQuestions.length} 題` : "目前沒有到期錯題"}</button>
+      <div class="row">${[1,2,3,4,5,6,7].map((part) => { const count = dueQuestions.filter((q) => q.part === part).length; return count ? `<button class="btn small" data-action="review-wrong" data-part="${part}">Part ${part} · ${count} 題</button>` : ''; }).join('')}</div>
+      ${wrongReasonSummary()}
     </section>
 
     <section class="card" id="voicecard"><h2>聽力音色</h2><p class="muted">先試聽，再開始。音色依此裝置與瀏覽器提供，清單優先排列較自然的候選音色。</p><label for="speech-rate">語速</label> <select class="btn" id="speech-rate"><option value="0.85">0.85× · 精聽</option><option value="1">1× · 正常</option><option value="1.1">1.1× · 挑戰</option></select><div id="voices" class="muted">載入語音中…</div></section>
@@ -379,7 +403,7 @@ function renderTest() {
       ${g.script ? audioBlock(g) : ""}
       ${g.passage ? g.passage.docs.map((d) => `<div class="doclabel">${esc(d.label)}</div><div class="passage">${esc(d.text)}</div>`).join("") : ""}
       ${g.questions.filter((q) => !session.questionIds || session.questionIds.includes(q.id)).map((q) => questionBlock(q, qs, spoken)).join("")}
-      ${g.script ? transcriptBlock(g, true) : ''}
+      ${g.script ? `${session.mode === 'review' ? accentTag(g) : ''}${transcriptBlock(g, session.mode !== 'review')}` : ''}
     </section>
 
     <div class="row" style="justify-content:space-between">
@@ -413,7 +437,7 @@ function progressCard(questions, answers) {
       const number = questions.findIndex((item) => item.id === q.id) + 1;
       return `<article class="pause-review-item"><p class="pause-review-meta">第 ${number} 題 · Part ${q.part}${group?.title ? ` · ${esc(group.title)}` : ''} ${accentTag(group)}</p><p class="pause-review-prompt">${esc(q.prompt)}</p>
         <p class="pause-review-answer"><span class="pause-review-wrong">你的答案：${LETTERS[chosen] ?? ''}. ${esc(q.options[chosen] ?? '')}</span><span class="pause-review-correct">正確答案：${LETTERS[q.answer] ?? ''}. ${esc(q.options[q.answer] ?? '')}</span></p>
-        <details class="pause-review-explanation"><summary>查看答錯原因</summary><div class="explain">${q.explanation ? esc(q.explanation) : '此題尚未提供解析，可先依正確答案自行檢查。'}</div></details></article>`;
+        <details class="pause-review-explanation"><summary>查看答錯原因</summary><div class="explain">${q.explanation ? esc(q.explanation) : '此題尚未提供解析，可先依正確答案自行檢查。'}</div>${wrongReasonPicker(q.id)}</details></article>`;
     }).join('')}
   </section>` : `<section class="pause-review"><h2>本次錯題</h2><p class="muted">目前沒有已答錯的題目。未作答題目不列為錯題。</p></section>`;
   return `<section class="card"><h2>目前作答表現</h2><p class="notice">僅依已答題推算，空白題不算錯。下列分數區間是練習參考，並非 ETS 分數；選題難度和樣本量會影響結果。ETS 每份試卷另行換算量尺分數，<a href="https://www.ets.org/content/dam/ets-org/fr/pdfs/toeic/toeic-listening-reading-test-examinee-handbook.pdf" target="_blank" rel="noopener">官方說明</a>。</p>
@@ -423,7 +447,7 @@ function progressCard(questions, answers) {
 }
 
 function transcriptBlock(g, duringPractice = false) {
-  return `<details class="script"><summary>查看聽力文字稿 · Transcript</summary>
+  return `<details class="script" ${session?.mode === 'review' && duringPractice === false ? 'open' : ''}><summary>查看聽力文字稿 · Transcript</summary>
     ${duringPractice ? '<p class="muted">練習提示：展開會看到聽力內容，計時仍會繼續。</p>' : ''}
     ${g.script.map((line) => `<p><span class="tag">${line.speaker === 'M' ? 'Man' : line.speaker === 'W' ? 'Woman' : 'Narrator'}</span>${esc(line.text)}</p>`).join('')}
     ${g.spokenOptions ? g.questions.map((q) => q.options.map((option, i) => `<p><b>${LETTERS[i]}.</b> ${esc(option)}</p>`).join('')).join('') : ''}
@@ -622,7 +646,7 @@ function reviewGroup(g, entry) {
       return `<div class="q"><b>${num}. ${esc(q.prompt)}</b>
         <div class="opts">${q.options.map((o, i) => `<div class="opt ${i === q.answer ? "correct" : i === a ? "wrong" : ""}"><span class="letter">${LETTERS[i]}</span><span>${esc(o)}${i === q.answer ? " ✓" : ""}${i === a && i !== q.answer ? " （你的答案）" : ""}</span></div>`).join("")}</div>
         ${a === undefined ? `<p class="muted">未作答</p>` : ""}
-        <div class="explain">${esc(q.explanation)}</div></div>`;
+        <div class="explain">${esc(q.explanation)}</div>${a !== undefined && a !== q.answer ? wrongReasonPicker(q.id) : ''}</div>`;
     }).join("")}
   </div>`;
 }
@@ -678,8 +702,8 @@ app.addEventListener("click", (e) => {
       break;
     }
     case "review-wrong": {
-      const qs = flatten(bank).filter((q) => wrongQueue[q.id]);
-      if (!qs.length) { wrongQueue = {}; store.set(KEY_WRONG_QUEUE, wrongQueue); renderHome(); break; }
+      const qs = flatten(bank).filter((q) => wrongAnswerDue(wrongQueue[q.id]) && (!d.part || q.part === Number(d.part)));
+      if (!qs.length) { renderHome(); break; }
       const questionIds = qs.map((q) => q.id);
       const ids = orderedGroupIds([...new Set(qs.map((q) => q.groupId))]);
       startSession("review", ids, Math.max(5, Math.ceil(qs.length * 1.2)), questionIds);
@@ -708,6 +732,16 @@ app.addEventListener("click", (e) => {
     case "next": go(1); break;
     case "jump": if (!session.phase || groupById(d.group)?.section === session.phase) { session.cur = session.groupIds.indexOf(d.group); saveSession(); renderTest(); } break;
     case "submit": submit(false); break;
+    case "wrong-reason": {
+      if (!WRONG_REASONS.some(([id]) => id === d.reason)) break;
+      const reasons = store.get(KEY_WRONG_REASONS, {});
+      reasons[d.q] = d.reason;
+      store.set(KEY_WRONG_REASONS, reasons);
+      const group = t.closest('.wrong-reasons');
+      for (const button of group.querySelectorAll('button')) button.setAttribute('aria-pressed', String(button === t));
+      group.querySelector('[data-reason-status]').textContent = '已儲存';
+      break;
+    }
     case "vocab-filter": store.set(KEY_VOCAB_LEVEL, d.vocabFilter); paintVocab(); break;
     case "vocab-open": {
       const list = app.querySelector(".vocabulary-list");
