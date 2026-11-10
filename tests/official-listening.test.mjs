@@ -3,13 +3,17 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { flatten } from "../codex/js/scoring.js";
 import { getListenRate, setListenRate } from "../codex/js/audio.js";
+import { createRng } from "../codex/js/quick-form.js";
 import {
   OFFICIAL_PAUSES,
   allowsReplay,
   buildOfficialSequence,
   isOfficialForm,
+  listenProgressLabel,
+  meanListeningMinutes,
   normalizeListenRate,
   playbackRateFor,
+  progressForStep,
   remainingSeconds,
   sequenceSeconds
 } from "../codex/js/official-listening.js";
@@ -91,6 +95,9 @@ test("official listening plays once at 1.0x and practice keeps the stored rate",
   assert.equal(isOfficialForm("photo-pilot"), false);
   const app = readFileSync(new URL("../codex/js/app.js", import.meta.url), "utf8");
   assert.match(app, /正式模式：每題只播一次，依正式考試停頓/);
+  assert.match(app, /id="listen-progress"/);
+  assert.match(app, /依音檔/);
+  assert.match(app, /if \(session\?\.official && session\.phase === "listening"\) return;/);
   assert.match(app, /allowsReplay\(session\)/);
   assert.match(app, /preservesPitch|player\.preservesPitch/);
   const player = readFileSync(new URL("../codex/js/audio.js", import.meta.url), "utf8");
@@ -111,6 +118,23 @@ test("listen-rate key defaults to 1.0 and ignores the older speech-rate key", ()
   assert.equal(getListenRate(), 0.9);
   saved.set("toeic950.voice.v1", JSON.stringify({ rate: 0.85 }));
   assert.equal(getListenRate(), 0.9);
+});
+
+test("official listening progress counts questions and does not use a countdown", () => {
+  const groups = [
+    group(1, "p1", ["photo"]),
+    group(3, "talk", ["q1", "q2"]),
+    group(4, "map", ["m1"], { image: "images/campus-route.svg" })
+  ];
+  assert.deepEqual(progressForStep(groups, { type: "audio", groupId: "talk" }), { current: 2, total: 4 });
+  assert.deepEqual(progressForStep(groups, { type: "question", groupId: "talk", questionId: "q2" }), { current: 3, total: 4 });
+  assert.deepEqual(progressForStep(groups, { type: "pause", groupId: "map", questionId: "m1" }), { current: 4, total: 4 });
+  assert.equal(listenProgressLabel({ current: 12, total: 20 }), "聽力 第 12 / 20 題");
+  const manifestFile = JSON.parse(readFileSync(new URL("../codex/audio/manifest.json", import.meta.url), "utf8"));
+  const quick40 = meanListeningMinutes(bank, manifestFile, "quick-40", [1, 2, 3, 4, 5].map(createRng));
+  const formA = meanListeningMinutes(bank, manifestFile, "form-a", [createRng(1)]);
+  assert.ok(quick40 > 7 && quick40 < 10, quick40);
+  assert.ok(formA > 35 && formA < 45, formA);
 });
 
 test("legacy quick sessions and history still open from their saved group ids", () => {

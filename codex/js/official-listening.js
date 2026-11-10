@@ -1,4 +1,5 @@
 // Official mock listening: one pass, with the pauses a real TOEIC recording leaves for answers.
+import { assembleQuickForm } from "./quick-form.js";
 
 export const OFFICIAL_FORMS = ["quick-40", "quick-60", "form-a", "form-b", "form-c"];
 export const OFFICIAL_PAUSES = { item: 5, question: 8, graphic: 12 };
@@ -74,4 +75,43 @@ export function sequenceSeconds(steps) {
 export function remainingSeconds(steps, index, elapsedInStep = 0) {
   const upcoming = steps.slice(index).reduce((sum, step) => sum + step.durationSec, 0);
   return Math.max(0, upcoming - elapsedInStep);
+}
+
+export function listeningQuestions(groups) {
+  const items = [];
+  for (const group of groups) {
+    if (group.section !== "listening") continue;
+    for (const question of group.questions) items.push({ groupId: group.id, questionId: question.id, part: group.part });
+  }
+  return items;
+}
+
+/** 1-based question position for the step now playing. A talk counts as its first question until that question is read. */
+export function progressForStep(groups, step) {
+  const items = listeningQuestions(groups);
+  const total = items.length;
+  let index = -1;
+  if (step?.questionId) index = items.findIndex((item) => item.questionId === step.questionId);
+  if (index < 0 && step?.groupId) index = items.findIndex((item) => item.groupId === step.groupId);
+  if (index < 0) index = 0;
+  return { current: total ? index + 1 : 0, total };
+}
+
+export function listenProgressLabel(progress) {
+  return `聽力 第 ${progress?.current || 0} / ${progress?.total || 0} 題`;
+}
+
+/** Mean listening length in minutes. Fixed forms use their real sequence; quick forms average the supplied RNGs. */
+export function meanListeningMinutes(bank, manifest, formId, randomFns = [Math.random]) {
+  const accents = Object.fromEntries(Object.entries(manifest?.groups ?? {}).map(([id, entry]) => [id, entry.accent]));
+  const samples = randomFns.length ? randomFns : [Math.random];
+  let total = 0;
+  for (const random of samples) {
+    const ids = String(formId).startsWith("quick-")
+      ? assembleQuickForm(bank, formId, { random, accents }).groupIds
+      : bank.meta.sets.find((set) => set.id === formId).groupIds;
+    const groups = ids.map((id) => bank.groups.find((group) => group.id === id)).filter(Boolean);
+    total += sequenceSeconds(buildOfficialSequence(groups, manifest));
+  }
+  return total / samples.length / 60;
 }

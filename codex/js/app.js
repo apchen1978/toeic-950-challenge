@@ -5,8 +5,8 @@ import { rateCard, selectCards } from "./srs.js";
 import { flatten, score, estimateProgress, mergeSkillStats, weakest, groupsForSkill, updateWrongAnswerQueue, wrongAnswerDue, formatDuration } from "./scoring.js";
 import { SKILLS, skillLabel } from "./skills.js";
 import { remainingMs, pauseTimer, resumeTimer, elapsedSeconds, startTimedForm, startReading } from "./timer.js";
-import { assembleQuickForm, avoidedGroupIds, rememberQuickDraw } from "./quick-form.js";
-import { allowsReplay, buildOfficialSequence, isOfficialForm, playbackRateFor, remainingSeconds, sequenceSeconds } from "./official-listening.js";
+import { assembleQuickForm, avoidedGroupIds, createRng, rememberQuickDraw } from "./quick-form.js";
+import { allowsReplay, buildOfficialSequence, isOfficialForm, listenProgressLabel, meanListeningMinutes, playbackRateFor, progressForStep, sequenceSeconds } from "./official-listening.js";
 
 const EXAM_DATE = "2026-11-29";
 const MAX_PLAYS = 2;
@@ -135,6 +135,7 @@ async function init() {
     app.innerHTML = `<p class="notice">題庫載入失敗。請用 <code>node serve.mjs</code> 或 GitHub Pages 開啟，不要直接雙擊 index.html。</p>`;
     return;
   }
+  try { audioManifest = await loadAudioManifest(); } catch { audioManifest = null; }
   session = store.get(KEY_SESSION, null);
   if (session && session.bankVersion !== bank.meta.version) session = null;
   wrongQueue = store.get(KEY_WRONG_QUEUE, {});
@@ -143,6 +144,25 @@ async function init() {
 
 /* ---------- Home ---------- */
 function minutesLabel(minutes) { return Number.isInteger(minutes) ? `${minutes} 分鐘` : `${Math.floor(minutes)} 分 ${Math.round((minutes % 1) * 60)} 秒`; }
+function approxListeningMinutes(formId, samples = 1) {
+  if (!audioManifest?.groups) return null;
+  const randomFns = Array.from({ length: samples }, (_, index) => createRng(index + 1));
+  return Math.max(1, Math.round(meanListeningMinutes(bank, audioManifest, formId, randomFns)));
+}
+function quickExamTimeCopy() {
+  const quick40 = approxListeningMinutes("quick-40", 5);
+  const quick60 = approxListeningMinutes("quick-60", 5);
+  if (!quick40 || !quick60) return "閱讀時間仍是 40 題 15 分鐘、60 題 22 分 30 秒。";
+  return `40 題：聽力約 ${quick40} 分鐘（依音檔）＋閱讀 15 分鐘。<br>60 題：聽力約 ${quick60} 分鐘（依音檔）＋閱讀 22 分 30 秒。`;
+}
+function formExamTimeCopy() {
+  const lengths = ["form-a", "form-b", "form-c"].map((id) => approxListeningMinutes(id));
+  if (lengths.some((length) => !length)) return "接著閱讀 100 題／75 分鐘。";
+  const low = Math.min(...lengths);
+  const high = Math.max(...lengths);
+  const listening = low === high ? `約 ${low} 分鐘` : `約 ${low}–${high} 分鐘`;
+  return `聽力${listening}（依音檔）＋閱讀 75 分鐘。`;
+}
 function renderHome() {
   stopTimer();
   audio.stop();
@@ -170,7 +190,7 @@ function renderHome() {
     ${session ? resumeCard() : ''}
 
     <section class="card quick-card"><p class="section-kicker">PRACTICE TEST</p><h2>快速模考</h2>
-      <p>40 題與 60 題都用正式模式。聽力依音檔連續播放，每題只播一次；播完才進入閱讀。<br>閱讀時間仍是 40 題 15 分鐘、60 題 22 分 30 秒。</p>
+      <p>40 題與 60 題都用正式模式。聽力依音檔連續播放，每題只播一次，沒有聽力倒數；播完才進入閱讀。<br>${quickExamTimeCopy()}</p>
       <p class="muted">聽力音檔輪流使用美式、英式、加拿大與澳洲口音。作答後才看得到該題口音。</p>
       <button class="btn primary" data-action="start-form" data-form="quick-40">開始 40 題快速模考</button>
       <button class="btn primary" data-action="start-form" data-form="quick-60">開始 60 題快速模考</button>
@@ -256,7 +276,7 @@ function renderHome() {
 
     <section class="card">
       <h2>三套 200 題計時練習</h2>
-      <p>每套聽力依音檔連續播放一次，接著閱讀 100 題／75 分鐘。三套題目不重複。聽力可暫停，暫停時音檔與倒數一起停。進入閱讀後不能返回聽力。</p>
+      <p>每套聽力依音檔連續播放一次，沒有聽力倒數。${formExamTimeCopy()}三套題目不重複。聽力可暫停，暫停時音檔停在這一題。進入閱讀後不能返回聽力。</p>
       <div class="row">${['a', 'b', 'c'].map((id) => `<button class="btn primary" data-action="start-form" data-form="form-${id}">開始第 ${id.toUpperCase()} 套</button>`).join('')}</div>
       <p class="muted">正式模式：每題只播一次，依正式考試停頓。</p>
     </section>
@@ -351,8 +371,12 @@ function resumeCard() {
   const answered = qs.filter((q) => session.answers[q.id] !== undefined).length;
   const group = groupById(session.groupIds[session.cur]);
   const title = bank.meta.sets.find((set) => set.id === session.formId)?.label ?? (session.mode === 'reading' ? '閱讀練習' : session.mode === 'listening' ? '聽力練習' : '上次練習');
+  const officialListening = session.official && session.phase === "listening";
+  const place = officialListening
+    ? `${listenProgressLabel(session.officialProgress)} · 正式模式：每題只播一次，依正式考試停頓`
+    : `${group?.section === 'listening' ? '聽力' : '閱讀'} · Part ${group?.part ?? ''} · 第 ${session.cur + 1} 組<br>剩餘 ${formatDuration(Math.ceil(remainingMs(session) / 1000))}${Number.isFinite(session.pausedRemainingMs) ? '（已暫停）' : ''}`;
   return `<section class="card" aria-label="上次未完成的測驗"><h2>接續上次測驗</h2><p><b>${esc(title)}</b> · 已答 ${answered}/${qs.length} 題</p>
-    <p>${group?.section === 'listening' ? '聽力' : '閱讀'} · Part ${group?.part ?? ''} · 第 ${session.cur + 1} 組<br>剩餘 ${formatDuration(Math.ceil(remainingMs(session) / 1000))}${Number.isFinite(session.pausedRemainingMs) ? '（已暫停）' : ''}</p>
+    <p>${place}</p>
     <p class="muted">最後儲存：${new Date(session.savedAt ?? session.startedAt).toLocaleString('zh-TW', { hour12: false })}。同一瀏覽器開啟此網址即可接續；清除網站資料會移除進度。</p>
     <div class="row"><button class="btn primary" data-action="resume">繼續上次測驗</button><button class="btn" data-action="discard">放棄這次進度</button></div></section>`;
 }
@@ -408,7 +432,22 @@ async function loadAudioManifest() {
 }
 
 function officialExtra(listeningMinutes) {
-  return { official: true, officialCursor: { index: 0, offset: 0 }, phaseMinutes: listeningMinutes };
+  return {
+    official: true,
+    officialCursor: { index: 0, offset: 0 },
+    officialProgress: null,
+    officialStartedAt: Date.now(),
+    officialPausedMs: 0,
+    phaseMinutes: listeningMinutes
+  };
+}
+function markOfficialHold() {
+  if (session?.official && session.phase === "listening" && !session.officialHoldStartedAt) session.officialHoldStartedAt = Date.now();
+}
+function clearOfficialHold() {
+  if (!session?.officialHoldStartedAt) return;
+  session.officialPausedMs = (session.officialPausedMs ?? 0) + (Date.now() - session.officialHoldStartedAt);
+  delete session.officialHoldStartedAt;
 }
 
 async function startQuickForm(formId) {
@@ -448,6 +487,7 @@ function orderedGroupIds(ids) {
 
 function startTimer() {
   stopTimer();
+  if (session?.official && session.phase === "listening") return;
   const tick = () => {
     const left = Math.ceil(remainingMs(session) / 1000);
     const el = document.getElementById("timer");
@@ -474,7 +514,11 @@ function stopTimer() { if (timerId) clearInterval(timerId); timerId = null; }
 /* ---------- Test view ---------- */
 function renderTest() {
   if (!officialRunning) audio.stop();
-  if (session.phase && !Number.isFinite(session.pausedRemainingMs) && remainingMs(session) <= 0) {
+  const officialListening = session.official && session.phase === "listening";
+  if (officialListening && !session.officialProgress) {
+    session.officialProgress = progressForStep(session.groupIds.map(groupById).filter(Boolean), { groupId: session.groupIds[session.cur] });
+  }
+  if (!officialListening && session.phase && !Number.isFinite(session.pausedRemainingMs) && remainingMs(session) <= 0) {
     if (session.phase === 'listening') { startReading(session, Date.now(), true); saveSession(); }
     if (remainingMs(session) <= 0) { submit(true); return; }
   }
@@ -482,7 +526,10 @@ function renderTest() {
   if (!allowed.some(({ i }) => i === session.cur)) session.cur = allowed[0].i;
   if (Number.isFinite(session.pausedRemainingMs)) {
     stopTimer();
-    app.innerHTML = `<section class="card"><h1>測驗已暫停</h1><p>剩餘時間 <b>${formatDuration(Math.ceil(remainingMs(session) / 1000))}</b>。作答與倒數已暫停，進度已存在這個瀏覽器。</p><div class="row"><button class="btn primary" data-action="resume-timer">繼續測驗</button><button class="btn" data-action="home">暫停並回首頁</button></div></section>${progressCard(sessionQuestions(), session.answers)}`;
+    const pausedNote = officialListening
+      ? `${listenProgressLabel(session.officialProgress)}。音檔停在這一題，繼續後從剛才的位置接著播。正式模式：每題只播一次，依正式考試停頓`
+      : `剩餘時間 <b>${formatDuration(Math.ceil(remainingMs(session) / 1000))}</b>。作答與倒數已暫停，進度已存在這個瀏覽器。`;
+    app.innerHTML = `<section class="card"><h1>${officialListening ? "聽力已暫停" : "測驗已暫停"}</h1><p>${pausedNote}</p><div class="row"><button class="btn primary" data-action="resume-timer">繼續測驗</button><button class="btn" data-action="home">暫停並回首頁</button></div></section>${progressCard(sessionQuestions(), session.answers)}`;
     return;
   }
   const qs = sessionQuestions();
@@ -490,11 +537,14 @@ function renderTest() {
   const answeredCount = qs.filter((q) => session.answers[q.id] !== undefined).length;
   const isLast = session.cur === allowed.at(-1).i;
   const spoken = !!g.spokenOptions;
+  const clock = officialListening
+    ? `<b id="listen-progress">${listenProgressLabel(session.officialProgress)}</b>`
+    : `${session.phase ? `<b>${session.phase === 'listening' ? '聽力' : '閱讀'} ${minutesLabel(session.phaseMinutes)}</b>` : ''}<span class="timer" id="timer">--:--</span>`;
 
   app.innerHTML = `
     <div class="topbar">
       <div><span class="tag">${session.mode === "review" ? "錯題複習" : g.section === "listening" ? "Listening" : "Reading"}</span><span class="tag">Part ${g.part}</span><span class="muted">${esc(g.title ?? "")}</span>${session.official ? `<span class="tag">正式模式：每題只播一次，依正式考試停頓</span>` : ""}</div>
-      <div class="row">${session.phase ? `<b>${session.phase === 'listening' ? '聽力' : '閱讀'} ${minutesLabel(session.phaseMinutes)}</b>` : ''}<span class="muted" id="count">${answeredCount}/${qs.length} 已答</span><span class="timer" id="timer">--:--</span><button class="btn small" data-action="pause-timer">暫停／看估分</button><button class="btn small primary" data-action="submit">提前交卷</button></div>
+      <div class="row">${clock}<span class="muted" id="count">${answeredCount}/${qs.length} 已答</span><button class="btn small" data-action="pause-timer">暫停／看估分</button><button class="btn small primary" data-action="submit">提前交卷</button></div>
     </div>
 
     <section class="card">
@@ -613,12 +663,10 @@ function pauseOfficialPlayback() {
   finish?.(false);
 }
 
-function syncOfficialClock(steps, index, elapsedInStep) {
-  if (!session || Number.isFinite(session.pausedRemainingMs)) return;
-  const ms = remainingSeconds(steps, index, elapsedInStep) * 1000;
-  session.endsAt = Date.now() + ms;
-  const el = document.getElementById("timer");
-  if (el) el.textContent = formatDuration(Math.ceil(ms / 1000));
+function showOfficialProgress(groups, step) {
+  session.officialProgress = progressForStep(groups, step);
+  const el = document.getElementById("listen-progress");
+  if (el) el.textContent = listenProgressLabel(session.officialProgress);
 }
 
 function waitOfficialSilence(totalSec, alreadySec, token) {
@@ -694,6 +742,12 @@ function finishOfficialListening() {
   officialRunning = false;
   officialPlayer = null;
   if (!session || session.phase !== "listening") return;
+  clearOfficialHold();
+  const listened = Math.max(1, Math.round((Date.now() - (session.officialStartedAt ?? session.startedAt) - (session.officialPausedMs ?? 0)) / 1000));
+  session.completedSeconds = 0;
+  session.phaseMinutes = listened / 60;
+  session.endsAt = Date.now();
+  delete session.pausedRemainingMs;
   startReading(session);
   session.cur = session.groupIds.findIndex((id) => groupById(id).section === "reading");
   delete session.officialCursor;
@@ -707,7 +761,8 @@ async function runOfficialSequence() {
   try { manifest = await loadAudioManifest(); }
   catch { officialRunning = false; return; }
   if (token !== officialToken || !session?.official || session.phase !== "listening") { officialRunning = false; return; }
-  const steps = buildOfficialSequence(session.groupIds.map(groupById).filter(Boolean), manifest);
+  const groups = session.groupIds.map(groupById).filter(Boolean);
+  const steps = buildOfficialSequence(groups, manifest);
   let index = session.officialCursor?.index ?? 0;
   while (token === officialToken && session?.official && session.phase === "listening") {
     if (Number.isFinite(session.pausedRemainingMs)) { officialRunning = false; return; }
@@ -716,6 +771,7 @@ async function runOfficialSequence() {
     const cursor = session.officialCursor ?? { index, offset: 0 };
     cursor.index = index;
     session.officialCursor = cursor;
+    showOfficialProgress(groups, step);
     const groupIndex = session.groupIds.indexOf(step.groupId);
     if (groupIndex !== -1 && groupIndex !== session.cur) {
       session.cur = groupIndex;
@@ -725,12 +781,11 @@ async function runOfficialSequence() {
     if (token !== officialToken) return;
     const offset = cursor.offset || 0;
     cursor.offset = 0;
-    syncOfficialClock(steps, index, offset);
     const status = document.querySelector("[data-official-status]");
     if (status) status.textContent = step.type === "pause" ? "作答時間" : "播放中";
     const finished = step.type === "pause"
       ? await waitOfficialSilence(step.durationSec, offset, token)
-      : await playOfficialClip(step.file, offset, token, (elapsed) => syncOfficialClock(steps, index, elapsed));
+      : await playOfficialClip(step.file, offset, token, () => {});
     if (token !== officialToken) { officialRunning = false; return; }
     if (!finished && status) status.textContent = "這一段音檔無法播放，已跳到下一段。";
     index += 1;
@@ -789,8 +844,17 @@ function cancelPlayback(reason = 'canceled') {
 }
 
 function pauseForExit() {
-  if (session?.official && session.phase === "listening") pauseOfficialPlayback();
-  else cancelPlayback('background');
+  if (session?.official && session.phase === "listening") {
+    if (!Number.isFinite(session.pausedRemainingMs)) {
+      pauseOfficialPlayback();
+      markOfficialHold();
+      session.pausedRemainingMs = 1;
+    }
+    stopTimer();
+    saveSession();
+    return;
+  }
+  cancelPlayback('background');
   if (session) { pauseTimer(session); stopTimer(); saveSession(); }
 }
 document.addEventListener('visibilitychange', () => {
@@ -959,13 +1023,36 @@ app.addEventListener("click", (e) => {
       if (set && ids.length && !session) startSession("practice", ids, set.durationMin);
       break;
     }
-    case "resume": if (allowSession(session.groupIds)) { resumeTimer(session); saveSession(); renderTest(); } break;
+    case "resume":
+      if (allowSession(session.groupIds)) {
+        if (session.official && session.phase === "listening") clearOfficialHold();
+        resumeTimer(session);
+        saveSession();
+        renderTest();
+      }
+      break;
     case "pause-timer":
-      if (session?.official && session.phase === "listening") pauseOfficialPlayback();
+      if (session?.official && session.phase === "listening") {
+        pauseOfficialPlayback();
+        markOfficialHold();
+        if (!Number.isFinite(session.pausedRemainingMs)) session.pausedRemainingMs = 1;
+        saveSession();
+        renderTest();
+        break;
+      }
       if (pauseTimer(session)) { saveSession(); renderTest(); } else if (remainingMs(session) <= 0) { if (session.phase) renderTest(); else submit(true); }
       break;
     case "official-resume-audio": officialAudioRetry?.(); break;
-    case "resume-timer": if (resumeTimer(session)) { saveSession(); renderTest(); } break;
+    case "resume-timer":
+      if (session?.official && session.phase === "listening") {
+        clearOfficialHold();
+        delete session.pausedRemainingMs;
+        saveSession();
+        renderTest();
+        break;
+      }
+      if (resumeTimer(session)) { saveSession(); renderTest(); }
+      break;
     case "discard": if (confirm("放棄目前作答進度？")) { pauseOfficialPlayback(); store.del(KEY_SESSION); session = null; renderHome(); } break;
     case "practice": {
       const ids = groupsForSkill(bank, d.skill);
