@@ -94,10 +94,10 @@ function renderHome() {
       <details><summary>口音音檔來源</summary><p>英式：使用 Cori Samuel 聲音模型，資料由 NVIDIA 提供，經修改產生此音檔；<a href="https://www.openslr.org/109/">資料來源</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>。澳洲：使用 DataCraftsmanAustralia 的 en_AU-librivox-medium 模型（Kirsty Leishman），經修改產生音檔；<a href="https://huggingface.co/DataCraftsmanAustralia/piper-en_AU-librivox-medium">模型與作者資料</a> · CC BY 4.0。</p></details>
     </section>
 
-    <details class="card"><summary>高分目標職場字彙 · 中文與例句</summary>
-      <p class="muted">依多益官方職場情境精選；並非官方字頻排行或保證出題。例句為原創。</p>
-      ${VOCABULARY.map(group => `<h3>${esc(group.category)}</h3>${group.words.map(([word, meaning, example]) => `<p><b>${esc(word)}</b> · ${esc(meaning)}<br><span class="muted">${esc(example)}</span></p>`).join('')}`).join('')}
-      <p><a href="https://www.toeic.com.tw/toeic/listening-reading/about/content/" target="_blank" rel="noopener noreferrer">參考：台灣多益官方測驗內容</a></p>
+    <details class="card"><summary>金色證書目標字彙 · ${VOCABULARY.reduce((n, group) => n + group.words.length, 0)} 個詞條</summary>
+      <p class="muted">分主題輕鬆閱讀，包含中文與原創例句。連網載入更新後可離線查看。依多益官方情境選詞，非官方字頻排行或保證出題。</p>
+      ${VOCABULARY.map(group => `<details><summary>${esc(group.category)} · ${group.words.length} 個詞條</summary>${group.words.map(([word, meaning, example]) => `<p><b>${esc(word)}</b> · ${esc(meaning)}<br><span class="muted">${esc(example)}</span></p>`).join('')}</details>`).join('')}
+      <p><a href="https://www.toeic.com.tw/toeic/listening-reading/about/content/" target="_blank" rel="noopener noreferrer">參考：台灣多益官方測驗內容</a> · <a href="https://dictionary.cambridge.org/dictionary/english/" target="_blank" rel="noopener noreferrer">Cambridge Dictionary</a></p>
     </details>
 
     <section class="practice-grid" aria-label="Listening 聽力與 Reading 閱讀練習">
