@@ -83,6 +83,17 @@ h3 { font-size: 1rem; margin: 0 0 .4em; }
 table { width: 100%; border-collapse: collapse; font-size: .92rem; }
 th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); }
 .disclaimer { text-align: center; color: var(--muted); font-size: .8rem; padding: 12px 16px 24px; }
+.footer-links { margin: 8px 0 0; }
+.linkish { background: none; border: 0; color: var(--brand); font: inherit; text-decoration: underline; min-height: 44px; padding: 8px; cursor: pointer; }
+.quiet-link { margin: 4px 0 12px; }
+.part-tip { margin: 8px 0; padding: 8px 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); }
+.exam-graphic { margin: 0 0 12px; overflow-x: auto; }
+.exam-graphic figcaption { font-weight: 700; margin-bottom: 6px; }
+.exam-graphic table { width: 100%; border-collapse: collapse; }
+.exam-graphic svg { width: 100%; height: auto; max-width: 420px; display: block; }
+.tips-page article { padding-top: 8px; border-top: 1px solid var(--line); }
+.tips-page h2 { font-size: 1.15rem; margin-bottom: 4px; }
+.tips-page h3 { font-size: 1rem; margin: 12px 0 4px; }
 .notice { border: 1px solid var(--warn); border-radius: 8px; padding: 8px 12px; color: var(--warn); }
 .practice-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 12px 0; }
 .practice-card { margin: 0; border-top: 3px solid var(--brand); }
