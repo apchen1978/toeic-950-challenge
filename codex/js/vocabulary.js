@@ -1296,7 +1296,7 @@ export const VOCABULARY = [
     ['specification', '規格；規範', 'The replacement part meets the original specifications.'],
     ['throughput', '處理量；產出率', 'The updated software increased order-processing throughput.'],
     ['traceability', '可追溯性', 'The tracking system improves traceability from factory to store.'],
-    ['vendor', '供應商；廠商', 'The vendor will provide installation support at no extra charge.'],
+    ['vendor assessment', '供應商評估', 'The buyer updated the vendor assessment after the quarterly review.'],
     ['production yield', '生產良率', 'A process adjustment improved the production yield.']
   ]},
   { category: '市場、策略與商務分析', words: [
