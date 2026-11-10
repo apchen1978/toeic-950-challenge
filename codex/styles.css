@@ -110,6 +110,11 @@ a { color: var(--brand); text-underline-offset: .17em; }
 .btn.primary { font-weight: 700; }
 .btn:focus-visible, .opt:focus-visible, .pal:focus-visible, summary:focus-visible, select:focus-visible, a:focus-visible { outline: 3px solid #b98731; outline-offset: 3px; }
 .vocabulary-card > summary, .tips-card > summary { cursor: pointer; font-size: 1.12rem; font-weight: 700; }
+.vocabulary-card { border-top: 3px solid #b08b45; }
+.vocabulary-card > summary { display: grid; gap: 5px; }
+.vocabulary-card > summary .vocabulary-eyebrow { color: #745d29; font-size: .68rem; letter-spacing: .14em; }
+.vocabulary-card > summary .vocabulary-title { font-size: 1.2rem; }
+.vocabulary-card > summary small { color: var(--muted); font-size: .88rem; font-weight: 400; }
 .vocabulary-group { border-top: 1px solid var(--line); padding: 12px 0; }
 .vocabulary-group summary { cursor: pointer; font-weight: 650; }
 .vocabulary-group p { padding-left: 18px; line-height: 1.55; }
@@ -127,6 +132,7 @@ a { color: var(--brand); text-underline-offset: .17em; }
   :root { --bg:#151d20; --card:#1e292d; --ink:#e7eeeb; --muted:#b0c1bd; --line:#3a4c4b; --brand:#a8d5cb; --brand-ink:#122725; --sel:#29413f; --ok:#80d8b2; --bad:#ff9e91; --warn:#e6bd7e; }
   .home-header { border-color: var(--line); }
   .home-eyebrow, .section-kicker { color: #e1c48a; }
+  .vocabulary-card > summary .vocabulary-eyebrow { color: #e1c48a; }
 }
 @media (max-width: 520px) {
   #app { padding: 14px 16px 10px; }
