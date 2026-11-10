@@ -2,7 +2,7 @@ import * as audio from "./audio.js";
 import { VOCABULARY } from "./vocabulary.js";
 import { LESSONS } from "./listening-lessons.js";
 import { rateCard, selectCards } from "./srs.js";
-import { flatten, score, estimateProgress, mergeSkillStats, weakest, groupsForSkill, updateWrongAnswerQueue, wrongAnswerDue, formatDuration } from "./scoring.js";
+import { flatten, score, estimateProgress, mergeSkillStats, weakest, groupsForSkill, updateWrongAnswerQueue, queueWrongReview, wrongAnswerDue, answeredWrong, answerLocked, formatDuration } from "./scoring.js";
 import { SKILLS, skillLabel } from "./skills.js";
 import { remainingMs, pauseTimer, resumeTimer, elapsedSeconds, startTimedForm, startReading } from "./timer.js";
 import { assembleQuickForm, avoidedGroupIds, createRng, rememberQuickDraw } from "./quick-form.js";
@@ -314,13 +314,13 @@ function renderHome() {
 
     ${last ? `<section class="card"><h2>最近成績</h2>
       <div class="grid">
-        <div class="stat"><b>${Math.round((last.correct / last.total) * 100)}%</b>正確率</div>
+        <div class="stat"><b>${Math.round((last.correct / last.total) * 100)}%</b>正確率${last.peeked ? " · 練習成績" : ""}</div>
         <div class="stat"><b>${last.correct}/${last.total}</b>答對題數</div>
         <div class="stat"><b>${formatDuration(last.secUsed)}</b>耗時</div>
       </div></section>` : ""}
 
     ${history.length ? `<section class="card"><h2>作答紀錄</h2><table><thead><tr><th>日期</th><th>類型</th><th>正確率</th><th>耗時</th><th></th></tr></thead><tbody>
-      ${history.slice().reverse().slice(0, 15).map((h) => `<tr><td>${new Date(h.date).toLocaleString("zh-TW", { hour12: false })}</td><td>${h.mode === "diagnostic" ? "完整／混合" : h.mode === "review" ? "錯題複習" : h.mode === "reading" ? "閱讀專練" : h.mode === "listening" ? "聽力專練" : "弱項練習"}</td><td>${Math.round((h.correct / h.total) * 100)}%</td><td>${formatDuration(h.secUsed)}</td><td><button class="btn small" data-action="view" data-id="${h.id}">檢視</button></td></tr>`).join("")}
+      ${history.slice().reverse().slice(0, 15).map((h) => `<tr><td>${new Date(h.date).toLocaleString("zh-TW", { hour12: false })}</td><td>${h.mode === "diagnostic" ? "完整／混合" : h.mode === "review" ? "錯題複習" : h.mode === "reading" ? "閱讀專練" : h.mode === "listening" ? "聽力專練" : "弱項練習"}${h.peeked ? ' <span class="tag practice">練習成績</span>' : ''}</td><td>${Math.round((h.correct / h.total) * 100)}%</td><td>${formatDuration(h.secUsed)}</td><td><button class="btn small" data-action="view" data-id="${h.id}">檢視</button></td></tr>`).join("")}
       </tbody></table></section>` : ""}
   `;
   document.getElementById('speech-rate').value = String(audio.getRate());
@@ -529,7 +529,11 @@ function renderTest() {
     const pausedNote = officialListening
       ? `${listenProgressLabel(session.officialProgress)}。音檔停在這一題，繼續後從剛才的位置接著播。正式模式：每題只播一次，依正式考試停頓`
       : `剩餘時間 <b>${formatDuration(Math.ceil(remainingMs(session) / 1000))}</b>。作答與倒數已暫停，進度已存在這個瀏覽器。`;
-    app.innerHTML = `<section class="card"><h1>${officialListening ? "聽力已暫停" : "測驗已暫停"}</h1><p>${pausedNote}</p><div class="row"><button class="btn primary" data-action="resume-timer">繼續測驗</button><button class="btn" data-action="home">暫停並回首頁</button></div></section>${progressCard(sessionQuestions(), session.answers)}`;
+    const mistakes = answeredWrong(sessionQuestions(), session.answers);
+    app.innerHTML = `<section class="card"><h1>${officialListening ? "聽力已暫停" : "測驗已暫停"}</h1><p>${pausedNote}</p>
+      <div class="row"><button class="btn primary" data-action="resume-timer">繼續測驗</button><button class="btn" data-action="open-peek" ${mistakes.length ? "" : "disabled"}>看目前錯題（${mistakes.length}）</button><button class="btn" data-action="home">暫停並回首頁</button></div>
+      <div class="peek-confirm notice" id="peek-confirm" hidden><p>看錯題後，這次會改記為練習成績，不計入五力估分與最佳成績。</p><div class="row"><button class="btn primary" data-action="confirm-peek">確定看錯題</button><button class="btn" data-action="cancel-peek">取消</button></div></div>
+      </section>${session.peeked ? `<section class="card"><p><span class="tag practice">練習成績</span> 已看過錯題，這次不計入五力估分與最佳成績。已作答的題目不能再改。</p></section>` : progressCard(sessionQuestions(), session.answers)}`;
     return;
   }
   const qs = sessionQuestions();
@@ -634,11 +638,38 @@ function audioBlock(g) {
 function questionBlock(q, qs, spoken) {
   const num = qs.findIndex((x) => x.id === q.id) + 1;
   const picked = session.answers[q.id];
+  const locked = answerLocked(session, q.id);
   return `<div class="q" data-qid="${q.id}">
     <div class="row" style="justify-content:space-between"><b>${num}. ${esc(q.prompt)}</b>
     <button class="btn small" data-action="flag" data-q="${q.id}">${session.flags[q.id] ? "取消標記" : "標記"}</button></div>
-    <div class="opts">${q.options.map((o, i) => `<button class="opt ${spoken ? "letter-only" : ""} ${picked === i ? "selected" : ""}" data-action="pick" data-q="${q.id}" data-i="${i}" aria-label="選項 ${LETTERS[i]}"><span class="letter">${LETTERS[i]}</span>${spoken ? "" : `<span>${esc(o)}</span>`}</button>`).join("")}</div>
+    ${locked ? `<p class="muted">這題已作答，看過錯題後不能再改。</p>` : ""}
+    <div class="opts">${q.options.map((o, i) => `<button class="opt ${spoken ? "letter-only" : ""} ${picked === i ? "selected" : ""}" data-action="pick" data-q="${q.id}" data-i="${i}" aria-label="選項 ${LETTERS[i]}" ${locked ? "disabled" : ""}><span class="letter">${LETTERS[i]}</span>${spoken ? "" : `<span>${esc(o)}</span>`}</button>`).join("")}</div>
   </div>`;
+}
+
+function renderPeek() {
+  audio.stop();
+  const questions = sessionQuestions();
+  const mistakes = answeredWrong(questions, session.answers);
+  app.innerHTML = `<div class="peek-bar"><button class="btn primary" data-action="resume-timer">回到考試</button><span class="muted">看目前錯題（${mistakes.length}）</span></div>
+    <h1>目前錯題</h1>
+    ${session.peeked ? `<p><span class="tag practice">練習成績</span> 這次不計入五力估分與最佳成績。回到考試後，已作答的題不能再改。</p>` : ""}
+    <div class="peek-list">${mistakes.length ? mistakes.map((q) => peekItem(q, questions)).join("") : `<section class="card"><p>目前沒有已答錯的題目。未作答的題不算錯。</p></section>`}</div>`;
+  window.scrollTo(0, 0);
+}
+
+function peekItem(q, questions) {
+  const chosen = session.answers[q.id];
+  const group = groupById(q.groupId);
+  const number = questions.findIndex((item) => item.id === q.id) + 1;
+  const queued = (session.reviewQueued ?? []).includes(q.id) || (wrongQueue[q.id] && wrongQueue[q.id].stage !== 1);
+  return `<article class="peek-item"><h3>第 ${number} 題 · Part ${q.part}${group?.title ? ` · ${esc(group.title)}` : ""}</h3>
+    <p class="pause-review-prompt">${esc(q.prompt)}</p>
+    <div class="opts">${q.options.map((option, index) => `<div class="opt ${index === q.answer ? "correct" : index === chosen ? "wrong" : ""}"><span class="letter">${LETTERS[index]}</span><span>${esc(option)}${index === q.answer ? " ✓" : ""}${index === chosen && index !== q.answer ? " （你的答案）" : ""}</span></div>`).join("")}</div>
+    <div class="explain">${q.explanation ? esc(q.explanation) : "此題尚未提供解析。"}</div>
+    ${group?.script ? `${transcriptBlock(group, false)}${group.audio ? `<div class="audio"><button class="btn small" data-action="peek-play" data-group="${group.id}">▶ 播放這一題音檔</button><span class="status muted" role="status"></span></div>` : ""}` : ""}
+    <button class="btn small" data-action="queue-wrong" data-q="${q.id}" ${queued ? "disabled" : ""}>${queued ? "已在錯題複習" : "加入錯題複習"}</button>
+  </article>`;
 }
 
 let officialToken = 0;
@@ -866,7 +897,34 @@ document.addEventListener('visibilitychange', () => {
 });
 window.addEventListener('pagehide', pauseForExit);
 
+function resumePausedExam() {
+  audio.stop();
+  if (!session) return;
+  if (session.official && session.phase === "listening") {
+    clearOfficialHold();
+    delete session.pausedRemainingMs;
+    saveSession();
+    renderTest();
+    return;
+  }
+  if (resumeTimer(session)) { saveSession(); renderTest(); }
+}
+
+async function playPeek(gid, button) {
+  if (activePlay) return;
+  const group = groupById(gid);
+  const box = button.closest(".audio") ?? button.parentElement;
+  const status = box.querySelector(".status");
+  button.disabled = true;
+  if (status) status.textContent = "播放中…";
+  const finished = group?.audio && audio.fileSupported() ? await audio.playFile(group.audio) : false;
+  if (!button.isConnected) return;
+  button.disabled = false;
+  if (status) status.textContent = finished ? "播放完畢" : audio.errorMessage();
+}
+
 function pick(qid, i) {
+  if (answerLocked(session, qid)) return;
   if (session.phase && sessionQuestions().find((q) => q.id === qid)?.section !== session.phase) return;
   session.answers[qid] = i;
   saveSession();
@@ -902,10 +960,11 @@ function submit(auto = false) {
   audio.stop();
   const result = score(qs, session.answers);
   const answeredResult = score(qs.filter((q) => session.answers[q.id] !== undefined), session.answers);
-  wrongQueue = updateWrongAnswerQueue(wrongQueue, qs, session.answers);
+  wrongQueue = updateWrongAnswerQueue(wrongQueue, qs, session.answers, Date.now(), session.reviewQueued ?? []);
   store.set(KEY_WRONG_QUEUE, wrongQueue);
   const entry = {
     id: String(Date.now()), date: Date.now(), mode: session.mode, formId: session.formId ?? null,
+    peeked: !!session.peeked,
     secUsed: elapsedSeconds(session),
     groupIds: session.groupIds, questionIds: session.questionIds ?? null, answers: session.answers,
     correct: result.correct, total: result.total, bySkill: answeredResult.bySkill, bySection: answeredResult.bySection
@@ -933,17 +992,20 @@ function renderResult(entry, showAll = false) {
   const skills = Object.entries(answeredStats.bySkill).sort((a, b) => a[1].c / a[1].t - b[1].c / b[1].t);
   const groups = bank.groups.filter((g) => entry.groupIds.includes(g.id)).filter((g) => showAll || g.questions.some((q) => entry.answers[q.id] !== q.answer));
 
+  const estimate = entry.peeked
+    ? `<p class="notice" style="margin-top:12px"><span class="tag practice">練習成績</span> 這次看過暫停中的錯題，不計入五力估分與最佳成績。錯題仍會留在錯題複習。</p>`
+    : `<p class="notice" style="margin-top:12px">已答題粗估（空白題不納入；各區至少答 5 題才顯示；非 ETS 成績）：<br>
+      ${L && R ? `總分 ≈ ${L.low + R.low}–${L.high + R.high}（中間值約 ${L.mid + R.mid}）<br>` : ''}
+      ${L ? `Listening ≈ ${L.low}–${L.high}（${L.answered} 題）` : "聽力樣本不足"}　${R ? `Reading ≈ ${R.low}–${R.high}（${R.answered} 題）` : "閱讀樣本不足"}</p>`;
   app.innerHTML = `
-    <h1>測驗結果</h1>
+    <h1>測驗結果 ${entry.peeked ? '<span class="tag practice">練習成績</span>' : ''}</h1>
     <section class="card"><div class="grid">
       <div class="stat"><b>${r.answered ? `${Math.round((r.correct / r.answered) * 100)}%` : '—'}</b>已答正確率</div>
       <div class="stat"><b>${r.correct}/${r.answered}</b>已答對／已作答</div>
       <div class="stat"><b>${formatDuration(entry.secUsed)}</b>耗時</div>
       <div class="stat"><b>${r.answered}/${r.total}</b>已作答</div>
     </div>
-    <p class="notice" style="margin-top:12px">已答題粗估（空白題不納入；各區至少答 5 題才顯示；非 ETS 成績）：<br>
-      ${L && R ? `總分 ≈ ${L.low + R.low}–${L.high + R.high}（中間值約 ${L.mid + R.mid}）<br>` : ''}
-      ${L ? `Listening ≈ ${L.low}–${L.high}（${L.answered} 題）` : "聽力樣本不足"}　${R ? `Reading ≈ ${R.low}–${R.high}（${R.answered} 題）` : "閱讀樣本不足"}</p></section>
+    ${estimate}</section>
 
     <section class="card"><h2>各題型表現</h2>
       ${skills.map(([k, v]) => `<div class="skillrow"><div>${esc(skillLabel(k))}</div><div>${v.c}/${v.t}</div><div class="bar ${v.c / v.t < 0.6 ? "weak" : ""}" style="grid-column:1 / -1"><i style="width:${(v.c / v.t) * 100}%"></i></div></div>`).join("")}
@@ -1043,16 +1105,33 @@ app.addEventListener("click", (e) => {
       if (pauseTimer(session)) { saveSession(); renderTest(); } else if (remainingMs(session) <= 0) { if (session.phase) renderTest(); else submit(true); }
       break;
     case "official-resume-audio": officialAudioRetry?.(); break;
-    case "resume-timer":
-      if (session?.official && session.phase === "listening") {
-        clearOfficialHold();
-        delete session.pausedRemainingMs;
-        saveSession();
-        renderTest();
+    case "resume-timer": resumePausedExam(); break;
+    case "open-peek":
+      if (session.official && !session.peeked) {
+        document.getElementById("peek-confirm")?.removeAttribute("hidden");
         break;
       }
-      if (resumeTimer(session)) { saveSession(); renderTest(); }
+      renderPeek();
       break;
+    case "cancel-peek": document.getElementById("peek-confirm")?.setAttribute("hidden", ""); break;
+    case "confirm-peek":
+      session.peeked = true;
+      saveSession();
+      renderPeek();
+      break;
+    case "queue-wrong": {
+      const question = sessionQuestions().find((item) => item.id === d.q);
+      if (!question) break;
+      const result = queueWrongReview(wrongQueue, question);
+      wrongQueue = result.queue;
+      store.set(KEY_WRONG_QUEUE, wrongQueue);
+      session.reviewQueued = [...new Set([...(session.reviewQueued ?? []), question.id])];
+      saveSession();
+      t.disabled = true;
+      t.textContent = "已在錯題複習";
+      break;
+    }
+    case "peek-play": playPeek(d.group, t); break;
     case "discard": if (confirm("放棄目前作答進度？")) { pauseOfficialPlayback(); store.del(KEY_SESSION); session = null; renderHome(); } break;
     case "practice": {
       const ids = groupsForSkill(bank, d.skill);
