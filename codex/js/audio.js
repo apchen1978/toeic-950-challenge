@@ -124,9 +124,25 @@ export function shouldFallbackFromRecording(reason) {
 }
 
 /** Fixed role recordings: only onended counts a complete play; stop/failed/stalled playback does not. */
-export function playFile(url) {
+const LISTEN_RATE_KEY = (globalThis.location?.pathname ?? "").includes("/codex/") ? "toeic950.codex.listen-rate.v1" : "toeic950.listen-rate.v1";
+const LISTEN_RATES = [0.9, 1, 1.1];
+
+export function getListenRate() {
+  try {
+    const rate = Number(localStorage.getItem(LISTEN_RATE_KEY));
+    return LISTEN_RATES.includes(rate) ? rate : 1;
+  } catch { return 1; }
+}
+
+export function setListenRate(rate) {
+  const value = Number(rate);
+  if (!LISTEN_RATES.includes(value)) return;
+  try { localStorage.setItem(LISTEN_RATE_KEY, String(value)); } catch { /* ignore */ }
+}
+
+export function playFile(url, rate = getListenRate()) {
   stop();
-  return playRecording(url, token, getRate());
+  return playRecording(url, token, rate);
 }
 
 function playRecording(url, myToken, rate) {
@@ -135,6 +151,9 @@ function playRecording(url, myToken, rate) {
   return new Promise((resolve) => {
     const player = new Audio(url);
     player.playbackRate = rate;
+    player.preservesPitch = true;
+    player.webkitPreservesPitch = true;
+    player.mozPreservesPitch = true;
     let timer, settled = false;
     const done = (ok, reason = '') => {
       if (settled) return;
