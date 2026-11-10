@@ -2,7 +2,7 @@ import * as audio from "./audio.js";
 import { VOCABULARY } from "./vocabulary.js";
 import { LESSONS } from "./listening-lessons.js";
 import { rateCard, selectCards } from "./srs.js";
-import { flatten, score, estimateProgress, mergeSkillStats, weakest, groupsForSkill, updateWrongAnswerQueue, queueWrongReview, wrongAnswerDue, answeredWrong, answerLocked, formatDuration } from "./scoring.js";
+import { flatten, score, estimateProgress, mergeSkillStats, weakest, groupsForSkill, updateWrongAnswerQueue, queueWrongReview, wrongAnswerDue, answeredWrong, answerLocked, formatDuration, normalizeMockSection, opensReadingAfterListening } from "./scoring.js";
 import { SKILLS, skillLabel } from "./skills.js";
 import { remainingMs, pauseTimer, resumeTimer, elapsedSeconds, startTimedForm, startReading } from "./timer.js";
 import { assembleQuickForm, avoidedGroupIds, createRng, rememberQuickDraw } from "./quick-form.js";
@@ -40,6 +40,7 @@ const KEY_VOCAB_LEVEL = `${STORAGE_PREFIX}.vocab-level.v1`;
 const KEY_FLASHCARDS = `${STORAGE_PREFIX}.flashcards.v1`;
 const KEY_FLASH_OPTIONS = `${STORAGE_PREFIX}.flash-options.v1`;
 const KEY_QUICK_RECENT = `${STORAGE_PREFIX}.quick-recent.v1`;
+const KEY_MOCK_SECTION = `${STORAGE_PREFIX}.mock-section.v1`;
 const flashItems = VOCABULARY.flatMap(group => group.words.map(item => ({ ...vocabParts(item), category: group.category })));
 let flashQueue = [];
 let flashRevealed = false;
@@ -58,6 +59,19 @@ function matchesAccent(group) {
 function accentTag(group) {
   const label = ACCENT_OPTIONS.find(([id]) => id === group?.accent)?.[1];
   return label ? `<span class="tag accent-tag">${esc(label)}</span>` : "";
+}
+function mockSectionChoice() {
+  return normalizeMockSection(store.get(KEY_MOCK_SECTION, "full"));
+}
+function sectionChoiceControl() {
+  const current = mockSectionChoice();
+  const options = [["full", "完整模考（聽力→閱讀）"], ["reading", "只考閱讀"], ["listening", "只考聽力"]];
+  return `<div class="segment" role="radiogroup" aria-label="模考範圍">${options.map(([value, label]) => `<label class="segment-item"><input type="radio" name="mock-section" value="${value}" ${current === value ? "checked" : ""}>${label}</label>`).join("")}</div>`;
+}
+function sectionBadge(section) {
+  if (section === "reading") return `<span class="tag">單科成績：閱讀</span>`;
+  if (section === "listening") return `<span class="tag">單科成績：聽力</span>`;
+  return "";
 }
 function vocabLevel() {
   const value = store.get(KEY_VOCAB_LEVEL, "all");
@@ -150,8 +164,14 @@ function approxListeningMinutes(formId, samples = 1) {
   return Math.max(1, Math.round(meanListeningMinutes(bank, audioManifest, formId, randomFns)));
 }
 function quickExamTimeCopy() {
+  const section = mockSectionChoice();
+  if (section === "reading") return "只考閱讀：40 題 15 分鐘、60 題 22 分 30 秒。";
   const quick40 = approxListeningMinutes("quick-40", 5);
   const quick60 = approxListeningMinutes("quick-60", 5);
+  if (section === "listening") {
+    if (!quick40 || !quick60) return "只考聽力：長度依音檔，沒有閱讀。";
+    return `只考聽力：40 題約 ${quick40} 分鐘（依音檔）、60 題約 ${quick60} 分鐘（依音檔）。`;
+  }
   if (!quick40 || !quick60) return "閱讀時間仍是 40 題 15 分鐘、60 題 22 分 30 秒。";
   return `40 題：聽力約 ${quick40} 分鐘（依音檔）＋閱讀 15 分鐘。<br>60 題：聽力約 ${quick60} 分鐘（依音檔）＋閱讀 22 分 30 秒。`;
 }
@@ -190,7 +210,8 @@ function renderHome() {
     ${session ? resumeCard() : ''}
 
     <section class="card quick-card"><p class="section-kicker">PRACTICE TEST</p><h2>快速模考</h2>
-      <p>40 題與 60 題都用正式模式。聽力依音檔連續播放，每題只播一次，沒有聽力倒數；播完才進入閱讀。<br>${quickExamTimeCopy()}</p>
+      <p>40 題與 60 題都用正式模式。聽力依音檔連續播放，每題只播一次，沒有聽力倒數；完整模考播完才進入閱讀。可選只考閱讀或聽力。<br>${quickExamTimeCopy()}</p>
+      ${sectionChoiceControl()}
       <p class="muted">聽力音檔輪流使用美式、英式、加拿大與澳洲口音。作答後才看得到該題口音。</p>
       <button class="btn primary" data-action="start-form" data-form="quick-40">開始 40 題快速模考</button>
       <button class="btn primary" data-action="start-form" data-form="quick-60">開始 60 題快速模考</button>
@@ -276,7 +297,8 @@ function renderHome() {
 
     <section class="card">
       <h2>三套 200 題計時練習</h2>
-      <p>每套聽力依音檔連續播放一次，沒有聽力倒數。${formExamTimeCopy()}三套題目不重複。聽力可暫停，暫停時音檔停在這一題。進入閱讀後不能返回聽力。</p>
+      <p>每套可選完整模考、只考閱讀或只考聽力。聽力依音檔連續播放一次，沒有聽力倒數。${formExamTimeCopy()}三套題目不重複。聽力可暫停，暫停時音檔停在這一題。完整模考進入閱讀後不能返回聽力。</p>
+      ${sectionChoiceControl()}
       <div class="row">${['a', 'b', 'c'].map((id) => `<button class="btn primary" data-action="start-form" data-form="form-${id}">開始第 ${id.toUpperCase()} 套</button>`).join('')}</div>
       <p class="muted">正式模式：每題只播一次，依正式考試停頓。</p>
     </section>
@@ -320,7 +342,7 @@ function renderHome() {
       </div></section>` : ""}
 
     ${history.length ? `<section class="card"><h2>作答紀錄</h2><table><thead><tr><th>日期</th><th>類型</th><th>正確率</th><th>耗時</th><th></th></tr></thead><tbody>
-      ${history.slice().reverse().slice(0, 15).map((h) => `<tr><td>${new Date(h.date).toLocaleString("zh-TW", { hour12: false })}</td><td>${h.mode === "diagnostic" ? "完整／混合" : h.mode === "review" ? "錯題複習" : h.mode === "reading" ? "閱讀專練" : h.mode === "listening" ? "聽力專練" : "弱項練習"}${h.peeked ? ' <span class="tag practice">練習成績</span>' : ''}</td><td>${Math.round((h.correct / h.total) * 100)}%</td><td>${formatDuration(h.secUsed)}</td><td><button class="btn small" data-action="view" data-id="${h.id}">檢視</button></td></tr>`).join("")}
+      ${history.slice().reverse().slice(0, 15).map((h) => `<tr><td>${new Date(h.date).toLocaleString("zh-TW", { hour12: false })}</td><td>${h.mode === "diagnostic" ? "完整／混合" : h.mode === "review" ? "錯題複習" : h.mode === "reading" ? "閱讀專練" : h.mode === "listening" ? "聽力專練" : "弱項練習"}${sectionBadge(h.section)}${h.peeked ? ' <span class="tag practice">練習成績</span>' : ''}</td><td>${Math.round((h.correct / h.total) * 100)}%</td><td>${formatDuration(h.secUsed)}</td><td><button class="btn small" data-action="view" data-id="${h.id}">檢視</button></td></tr>`).join("")}
       </tbody></table></section>` : ""}
   `;
   document.getElementById('speech-rate').value = String(audio.getRate());
@@ -417,6 +439,14 @@ function startSession(mode, groupIds, minutes, questionIds = null, formId = null
   };
   if (formId) startTimedForm(session, formId, now, timing);
   if (extra) Object.assign(session, extra);
+  if (session.section === "reading") {
+    const reading = timing.reading ?? session.readingMinutes ?? 75;
+    session.phase = "reading";
+    session.phaseMinutes = reading;
+    session.readingMinutes = reading;
+    session.completedSeconds = 0;
+    session.endsAt = now + reading * 60000;
+  }
   saveSession();
   renderTest();
   return true;
@@ -457,12 +487,14 @@ async function startQuickForm(formId) {
   let manifest = { groups: {} };
   try { manifest = await loadAudioManifest(); } catch { manifest = { groups: {} }; }
   const accents = Object.fromEntries(Object.entries(manifest.groups ?? {}).map(([id, entry]) => [id, entry.accent]));
-  const draw = assembleQuickForm(bank, formId, { avoid: avoidedGroupIds(recent), accents });
-  const listeningMinutes = officialListeningMinutes(draw.groupIds, manifest);
+  const section = mockSectionChoice();
+  const draw = assembleQuickForm(bank, formId, { avoid: avoidedGroupIds(recent), accents, section });
   const readingMinutes = set.timing?.reading ?? 75;
-  if (startSession("diagnostic", draw.groupIds, listeningMinutes + readingMinutes, null, set.id, { listening: listeningMinutes, reading: readingMinutes }, officialExtra(listeningMinutes))) {
-    store.set(KEY_QUICK_RECENT, rememberQuickDraw(recent, draw.groupIds, formId));
-  }
+  const listeningMinutes = section === "reading" ? 0 : officialListeningMinutes(draw.groupIds, manifest);
+  const started = section === "reading"
+    ? startSession("diagnostic", draw.groupIds, readingMinutes, null, set.id, { reading: readingMinutes }, { official: true, section: "reading" })
+    : startSession("diagnostic", draw.groupIds, listeningMinutes + (section === "listening" ? 0 : readingMinutes), null, set.id, { listening: listeningMinutes, reading: section === "listening" ? 0 : readingMinutes }, { ...officialExtra(listeningMinutes), section });
+  if (started) store.set(KEY_QUICK_RECENT, rememberQuickDraw(recent, draw.groupIds, formId));
 }
 
 function officialListeningMinutes(groupIds, manifest) {
@@ -475,10 +507,19 @@ async function startOfficialSet(formId) {
   if (!set) return;
   let manifest = { groups: {} };
   try { manifest = await loadAudioManifest(); } catch { manifest = { groups: {} }; }
-  const ids = orderedGroupIds(set.groupIds).sort((a, b) => groupById(a).part - groupById(b).part);
-  const listeningMinutes = officialListeningMinutes(ids, manifest);
+  const section = mockSectionChoice();
+  const ids = idsForSection(set.groupIds, section);
   const readingMinutes = set.timing?.reading ?? 75;
-  startSession("diagnostic", ids, listeningMinutes + readingMinutes, null, set.id, { listening: listeningMinutes, reading: readingMinutes }, officialExtra(listeningMinutes));
+  const listeningMinutes = section === "reading" ? 0 : officialListeningMinutes(ids, manifest);
+  if (section === "reading") startSession("diagnostic", ids, readingMinutes, null, set.id, { reading: readingMinutes }, { official: true, section: "reading" });
+  else startSession("diagnostic", ids, listeningMinutes + (section === "listening" ? 0 : readingMinutes), null, set.id, { listening: listeningMinutes, reading: section === "listening" ? 0 : readingMinutes }, { ...officialExtra(listeningMinutes), section });
+}
+
+function idsForSection(ids, section) {
+  const ordered = orderedGroupIds(ids).sort((a, b) => groupById(a).part - groupById(b).part);
+  if (section === "reading") return ordered.filter((id) => groupById(id).section === "reading");
+  if (section === "listening") return ordered.filter((id) => groupById(id).section === "listening");
+  return ordered;
 }
 
 function orderedGroupIds(ids) {
@@ -779,6 +820,10 @@ function finishOfficialListening() {
   session.phaseMinutes = listened / 60;
   session.endsAt = Date.now();
   delete session.pausedRemainingMs;
+  if (!opensReadingAfterListening(session)) {
+    submit(true);
+    return;
+  }
   startReading(session);
   session.cur = session.groupIds.findIndex((id) => groupById(id).section === "reading");
   delete session.officialCursor;
@@ -965,6 +1010,7 @@ function submit(auto = false) {
   const entry = {
     id: String(Date.now()), date: Date.now(), mode: session.mode, formId: session.formId ?? null,
     peeked: !!session.peeked,
+    section: normalizeMockSection(session.section),
     secUsed: elapsedSeconds(session),
     groupIds: session.groupIds, questionIds: session.questionIds ?? null, answers: session.answers,
     correct: result.correct, total: result.total, bySkill: answeredResult.bySkill, bySection: answeredResult.bySection
@@ -992,13 +1038,17 @@ function renderResult(entry, showAll = false) {
   const skills = Object.entries(answeredStats.bySkill).sort((a, b) => a[1].c / a[1].t - b[1].c / b[1].t);
   const groups = bank.groups.filter((g) => entry.groupIds.includes(g.id)).filter((g) => showAll || g.questions.some((q) => entry.answers[q.id] !== q.answer));
 
+  const single = normalizeMockSection(entry.section);
+  const sectionLine = single === "listening"
+    ? (L ? `Listening ≈ ${L.low}–${L.high}（${L.answered} 題）` : "聽力樣本不足")
+    : single === "reading"
+      ? (R ? `Reading ≈ ${R.low}–${R.high}（${R.answered} 題）` : "閱讀樣本不足")
+      : `${L && R ? `總分 ≈ ${L.low + R.low}–${L.high + R.high}（中間值約 ${L.mid + R.mid}）<br>` : ''}${L ? `Listening ≈ ${L.low}–${L.high}（${L.answered} 題）` : "聽力樣本不足"}　${R ? `Reading ≈ ${R.low}–${R.high}（${R.answered} 題）` : "閱讀樣本不足"}`;
   const estimate = entry.peeked
     ? `<p class="notice" style="margin-top:12px"><span class="tag practice">練習成績</span> 這次看過暫停中的錯題，不計入五力估分與最佳成績。錯題仍會留在錯題複習。</p>`
-    : `<p class="notice" style="margin-top:12px">已答題粗估（空白題不納入；各區至少答 5 題才顯示；非 ETS 成績）：<br>
-      ${L && R ? `總分 ≈ ${L.low + R.low}–${L.high + R.high}（中間值約 ${L.mid + R.mid}）<br>` : ''}
-      ${L ? `Listening ≈ ${L.low}–${L.high}（${L.answered} 題）` : "聽力樣本不足"}　${R ? `Reading ≈ ${R.low}–${R.high}（${R.answered} 題）` : "閱讀樣本不足"}</p>`;
+    : `<p class="notice" style="margin-top:12px">已答題粗估（空白題不納入；各區至少答 5 題才顯示；非 ETS 成績）：<br>${sectionLine}</p>`;
   app.innerHTML = `
-    <h1>測驗結果 ${entry.peeked ? '<span class="tag practice">練習成績</span>' : ''}</h1>
+    <h1>測驗結果 ${sectionBadge(entry.section)} ${entry.peeked ? '<span class="tag practice">練習成績</span>' : ''}</h1>
     <section class="card"><div class="grid">
       <div class="stat"><b>${r.answered ? `${Math.round((r.correct / r.answered) * 100)}%` : '—'}</b>已答正確率</div>
       <div class="stat"><b>${r.correct}/${r.answered}</b>已答對／已作答</div>
@@ -1227,6 +1277,7 @@ app.addEventListener("click", (e) => {
 });
 
 app.addEventListener("change", (e) => {
+  if (e.target.name === "mock-section") { store.set(KEY_MOCK_SECTION, normalizeMockSection(e.target.value)); renderHome(); return; }
   if (e.target.id === "accent-filter") { store.set(KEY_ACCENT, e.target.value); renderHome(); return; }
   if (e.target.dataset.action === "listen-rate") { audio.setListenRate(Number(e.target.value)); return; }
   if (e.target.id === 'speech-rate') audio.setRate(Number(e.target.value));
