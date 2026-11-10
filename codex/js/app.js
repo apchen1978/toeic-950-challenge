@@ -1,5 +1,6 @@
 import * as audio from "./audio.js";
 import { VOCABULARY } from "./vocabulary.js";
+import { LESSONS } from "./listening-lessons.js";
 import { rateCard, selectCards } from "./srs.js";
 import { flatten, score, estimateProgress, mergeSkillStats, weakest, groupsForSkill, updateWrongAnswerQueue, wrongAnswerDue, formatDuration } from "./scoring.js";
 import { SKILLS, skillLabel } from "./skills.js";
@@ -204,6 +205,7 @@ function renderHome() {
       </details>
     </section>
 
+    <section class="card lesson-entry"><p class="section-kicker">LISTENING LESSONS</p><h2>聽力小課程</h2><p>用職場情境練習聽力。先聽錄音，再看中文概要、英文逐字稿和實用片語。</p><button class="btn primary" data-action="lessons">開始聽小課程</button></section>
     <section class="practice-grid" aria-label="Listening 聽力與 Reading 閱讀練習">
       <article class="card practice-card listening-card">
         <div class="section-label">LISTENING</div>
@@ -315,6 +317,13 @@ function flashSetup() {
     <div class="row"><button class="btn primary" data-action="flash-start">開始練習</button><button class="btn" data-action="home">回首頁</button></div></section>`;
   document.getElementById('flash-level').value = options.level;
   document.getElementById('flash-category').value = options.category;
+  window.scrollTo(0, 0);
+}
+
+function renderLessons() {
+  stopTimer(); audio.stop();
+  app.innerHTML = `<section class="card"><p class="section-kicker">LISTENING LESSONS</p><h1>聽力小課程</h1><p>先聽錄音，再展開概要與逐字稿。錄音可重播；內容為本站原創，使用合成語音。</p><button class="btn" data-action="home">回首頁</button></section>
+    ${LESSONS.map((lesson, index) => `<article class="card lesson-card"><p class="section-kicker">LESSON ${index + 1} · ${esc(lesson.accent)}</p><h2>${esc(lesson.title)}</h2><audio controls preload="none" src="${esc(lesson.audio)}" data-lesson-audio="${esc(lesson.id)}">此瀏覽器無法播放音檔。</audio><div class="row"><button class="btn small" data-action="lesson-retry" data-lesson="${esc(lesson.id)}">重新載入並播放</button><span class="muted lesson-status" role="status"></span></div><details><summary>查看中文概要</summary><p>${esc(lesson.summary)}</p></details><details><summary>查看英文逐字稿</summary><p lang="en">${esc(lesson.transcript)}</p></details><details><summary>實用片語</summary><ul>${lesson.phrases.map(([phrase, meaning]) => `<li><b lang="en">${esc(phrase)}</b> · ${esc(meaning)}</li>`).join('')}</ul></details></article>`).join('')}`;
   window.scrollTo(0, 0);
 }
 
@@ -748,6 +757,15 @@ app.addEventListener("click", (e) => {
     case "view": renderResult(store.get(KEY_HISTORY, []).find((h) => h.id === d.id)); break;
     case "toggle-all": renderResult(store.get(KEY_HISTORY, []).find((h) => h.id === d.id), d.all === "1"); break;
     case "home": renderHome(); break;
+    case "lessons": renderLessons(); break;
+    case "lesson-retry": {
+      const card = t.closest('.lesson-card');
+      const player = card.querySelector('audio');
+      const status = card.querySelector('.lesson-status');
+      player.load(); status.textContent = '';
+      player.play().catch(() => { status.textContent = '無法播放，請檢查連線後重試。'; });
+      break;
+    }
     case "sample": sampleVoice(d.role, t); break;
     case "retry-voices": fillVoices(); break;
     case "reset-role-voices": for (const role of ['M', 'W', 'N']) audio.setPref(role, ''); fillVoices(); break;
@@ -821,5 +839,16 @@ app.addEventListener("change", (e) => {
   const s = e.target.closest("select[data-voice]");
   if (s) { audio.setPref(s.dataset.voice, s.value); fillVoices(); }
 });
+
+app.addEventListener('error', (e) => {
+  if (!e.target.matches?.('audio[data-lesson-audio]')) return;
+  e.target.closest('.lesson-card').querySelector('.lesson-status').textContent = '音檔載入失敗，請檢查連線後按「重新載入並播放」。';
+}, true);
+
+app.addEventListener('play', (e) => {
+  if (!e.target.matches?.('audio[data-lesson-audio]')) return;
+  for (const player of app.querySelectorAll('audio[data-lesson-audio]')) if (player !== e.target) player.pause();
+  e.target.closest('.lesson-card').querySelector('.lesson-status').textContent = '';
+}, true);
 
 init();
