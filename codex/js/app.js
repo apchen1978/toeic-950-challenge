@@ -1,5 +1,6 @@
 import * as audio from "./audio.js";
 import { VOCABULARY } from "./vocabulary.js";
+import { rateCard, selectCards } from "./srs.js";
 import { flatten, score, estimateProgress, mergeSkillStats, weakest, groupsForSkill, updateWrongAnswerQueue, wrongAnswerDue, formatDuration } from "./scoring.js";
 import { SKILLS, skillLabel } from "./skills.js";
 import { remainingMs, pauseTimer, resumeTimer, elapsedSeconds, startTimedForm, startReading } from "./timer.js";
@@ -33,6 +34,11 @@ function wrongReasonSummary() {
 }
 const KEY_ACCENT = `${STORAGE_PREFIX}.accent-filter.v1`;
 const KEY_VOCAB_LEVEL = `${STORAGE_PREFIX}.vocab-level.v1`;
+const KEY_FLASHCARDS = `${STORAGE_PREFIX}.flashcards.v1`;
+const KEY_FLASH_OPTIONS = `${STORAGE_PREFIX}.flash-options.v1`;
+const flashItems = VOCABULARY.flatMap(group => group.words.map(item => ({ ...vocabParts(item), category: group.category })));
+let flashQueue = [];
+let flashRevealed = false;
 const ACCENT_OPTIONS = [["all", "全部口音"], ["US", "美式 US"], ["UK", "英式 UK"], ["CA", "加拿大 CA"], ["AU", "澳洲 AU"]];
 const ACCENT_LOCALE = { US: "en-US", UK: "en-GB", CA: "en-CA", AU: "en-AU" };
 
@@ -291,6 +297,36 @@ function renderHome() {
   document.getElementById('speech-rate').value = String(audio.getRate());
   paintVocab();
   fillVoices();
+}
+
+function flashSetup() {
+  audio.stop();
+  const progress = store.get(KEY_FLASHCARDS, {});
+  const options = store.get(KEY_FLASH_OPTIONS, { level: 'all', category: 'all', limit: 20 });
+  const learned = flashItems.filter(item => (progress[item.word]?.box ?? 0) >= 4).length;
+  const goldLearned = flashItems.filter(item => item.level === 900 && (progress[item.word]?.box ?? 0) >= 4).length;
+  const started = flashItems.filter(item => progress[item.word]).length;
+  const due = selectCards(flashItems, progress, { ...options, limit: 0 }).length;
+  app.innerHTML = `<section class="card flash-card"><p class="section-kicker">VOCABULARY PRACTICE</p><h1>單字閃卡</h1><p>先回想意思，再翻面核對。進度保存在這個瀏覽器。</p>
+    <p>已學會 ${learned} · 學習中 ${started - learned} · 未開始 ${flashItems.length - started}<br>900 進階：${goldLearned} / ${flashItems.filter(item => item.level === 900).length} 已學會</p><progress aria-label="900 進階學習進度" value="${goldLearned}" max="${flashItems.filter(item => item.level === 900).length}"></progress><p>目前篩選有 ${due} 個到期複習詞。</p>
+    <div class="flash-settings"><label>程度 <select id="flash-level" class="btn"><option value="all">全部</option><option value="800">800 核心</option><option value="900">900 進階</option></select></label>
+    <label>主題 <select id="flash-category" class="btn"><option value="all">全部主題</option>${VOCABULARY.map(group => `<option value="${esc(group.category)}">${esc(group.category)}</option>`).join('')}</select></label>
+    <label>每日新字 <input id="flash-limit" type="number" min="0" max="100" value="${Math.max(0, Math.min(100, Number(options.limit) || 0))}"></label></div>
+    <div class="row"><button class="btn primary" data-action="flash-start">開始練習</button><button class="btn" data-action="home">回首頁</button></div></section>`;
+  document.getElementById('flash-level').value = options.level;
+  document.getElementById('flash-category').value = options.category;
+  window.scrollTo(0, 0);
+}
+
+function flashRender() {
+  audio.stop();
+  const item = flashQueue[0];
+  if (!item) { app.innerHTML = `<section class="card"><h1>這組練習完成</h1><p>今天選取的單字都練習過了。</p><button class="btn primary" data-action="flash-setup">返回單字閃卡</button><button class="btn" data-action="home">回首頁</button></section>`; return; }
+  app.innerHTML = `<section class="card flash-card ${item.level === 900 ? 'flash-gold' : ''}"><p class="section-kicker">${esc(item.category)} · 剩餘 ${flashQueue.length} 個</p><span class="tag">${item.level === 900 ? '900 金色證書' : '800 核心'}</span><h1>${esc(item.word)}</h1>${item.pos ? `<p>${esc(item.pos)}</p>` : ''}
+    <button class="btn small" data-action="flash-speak" ${audio.supported() ? '' : 'disabled'}>播放發音</button><span class="muted" id="flash-audio-status" role="status">${audio.supported() ? '' : '此瀏覽器沒有語音，仍可繼續練習。'}</span>
+    ${flashRevealed ? `<div class="flash-answer"><p><b>${esc(item.meaning)}</b></p><p>${esc(item.example)}</p></div><p>你記得這個字嗎？</p><div class="row"><button class="btn" data-action="flash-rate" data-rating="again">不會</button><button class="btn" data-action="flash-rate" data-rating="hard">有點模糊</button><button class="btn primary" data-action="flash-rate" data-rating="good">會</button></div>` : '<p>先想想意思，再翻面。</p><button class="btn primary" data-action="flash-flip">翻面看答案</button>'}
+    <p id="flash-save-status" role="status"></p><p><button class="btn small" data-action="flash-setup">結束練習</button></p></section>`;
+  window.scrollTo(0, 0);
 }
 
 let voiceLoad = 0;
@@ -744,9 +780,30 @@ app.addEventListener("click", (e) => {
     }
     case "vocab-filter": store.set(KEY_VOCAB_LEVEL, d.vocabFilter); paintVocab(); break;
     case "vocab-open": {
-      const list = app.querySelector(".vocabulary-list");
-      if (list) { list.open = true; list.scrollIntoView({ block: "start" }); }
+      flashSetup();
       break;
+    }
+    case "flash-setup": flashSetup(); break;
+    case "flash-start": {
+      const options = { level: document.getElementById('flash-level').value, category: document.getElementById('flash-category').value, limit: Math.max(0, Math.min(100, Number(document.getElementById('flash-limit').value) || 0)) };
+      store.set(KEY_FLASH_OPTIONS, options);
+      flashQueue = selectCards(flashItems, store.get(KEY_FLASHCARDS, {}), options);
+      flashRevealed = false; flashRender(); break;
+    }
+    case "flash-flip": flashRevealed = true; flashRender(); break;
+    case "flash-speak": {
+      const item = flashQueue[0];
+      if (item) audio.playScript([{ speaker: 'N', text: item.word }], { locale: 'en-US' }).then(ok => { const status = document.getElementById('flash-audio-status'); if (status && !ok) status.textContent = '發音無法播放，請再試一次。'; });
+      break;
+    }
+    case "flash-rate": {
+      const item = flashQueue[0];
+      if (!item || !flashRevealed || !['again', 'hard', 'good'].includes(d.rating)) break;
+      const progress = store.get(KEY_FLASHCARDS, {});
+      progress[item.word] = rateCard(progress[item.word], d.rating);
+      try { localStorage.setItem(KEY_FLASHCARDS, JSON.stringify(progress)); }
+      catch { document.getElementById('flash-save-status').textContent = '無法儲存進度，請檢查瀏覽器儲存空間或隱私設定後重試。'; break; }
+      flashQueue.shift(); flashRevealed = false; flashRender(); break;
     }
     case "vocab-gold": {
       store.set(KEY_VOCAB_LEVEL, "900");

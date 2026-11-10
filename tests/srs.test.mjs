@@ -1,0 +1,25 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { rateCard, selectCards } from '../codex/js/srs.js';
+
+test('ratings schedule repeat, progression, and preserve introduction date', () => {
+  const first = rateCard(null, 'good', 1000);
+  assert.deepEqual(first, { box: 1, dueAt: 86401000, introducedAt: 1000 });
+  const second = rateCard(first, 'good', 86401000);
+  assert.equal(second.box, 2);
+  assert.equal(second.dueAt, 86401000 + 3 * 86400000);
+  assert.equal(rateCard(second, 'again', 200000000).box, 0);
+  assert.equal(rateCard(second, 'hard', 200000000).box, 2);
+  assert.equal(second.introducedAt, 1000);
+  assert.throws(() => rateCard(null, 'other'));
+});
+
+test('due cards do not count against the new-word cap and filters are applied', () => {
+  const now = new Date(2026, 10, 11, 12).getTime();
+  const items = [{word:'a',level:900,category:'x'}, {word:'b',level:900,category:'x'}, {word:'c',level:800,category:'y'}];
+  const progress = {a:{box:1,dueAt:now-1,introducedAt:now-86400000}};
+  assert.deepEqual(selectCards(items, progress, {level:'900',limit:1}, now).map(x=>x.word), ['a','b']);
+  progress.c = {box:1,dueAt:now+1,introducedAt:now};
+  assert.deepEqual(selectCards(items, progress, {level:'900',limit:1}, now).map(x=>x.word), ['a']);
+  assert.deepEqual(selectCards(items, progress, {category:'y',limit:0}, now), []);
+});

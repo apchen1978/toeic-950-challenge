@@ -113,6 +113,13 @@ a { color: var(--brand); text-underline-offset: .17em; }
 .btn.primary { font-weight: 700; }
 .btn:focus-visible, .opt:focus-visible, .pal:focus-visible, summary:focus-visible, select:focus-visible, a:focus-visible { outline: 3px solid #b98731; outline-offset: 3px; }
 .vocabulary-card { border-top: 3px solid #b08b45; }
+.flash-card { max-width: 720px; margin: 24px auto; }
+.flash-card h1 { font-size: clamp(2rem, 7vw, 3rem); overflow-wrap: anywhere; }
+.flash-gold { border: 2px solid #b08b45; }
+.flash-settings { display: grid; gap: 12px; margin: 20px 0; }
+.flash-settings label { display: grid; gap: 4px; }
+.flash-settings select, .flash-settings input { max-width: 100%; font: inherit; padding: 10px; color: var(--ink); background: var(--card); border: 1px solid var(--line); border-radius: 6px; }
+.flash-answer { margin: 20px 0; padding: 16px; background: var(--sel); border-radius: 6px; }
 .vocab-hero { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .vocab-hero-copy { min-width: 0; }
 .vocabulary-eyebrow { margin: 0 0 6px; color: #745d29; font-size: .68rem; font-weight: 750; letter-spacing: .14em; }
