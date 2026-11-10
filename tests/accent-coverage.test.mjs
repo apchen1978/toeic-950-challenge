@@ -45,7 +45,15 @@ test("every listening question points at a real file and Canadian audio is en-CA
   }
   const app = readFileSync(new URL("../codex/js/app.js", import.meta.url), "utf8");
   assert.match(app, /accent-tag/);
-  assert.match(app, /lastErrorCode\(\) === "audio-file"/);
+  assert.match(app, /shouldFallbackFromRecording\(audio\.lastErrorCode\(\)\)/);
   const worker = readFileSync(new URL("../codex/sw.js", import.meta.url), "utf8");
   assert.equal(worker.includes(".mp3\""), false);
+});
+
+test("Part 1 and Part 2 recordings speak every letter immediately before its option", () => {
+  const letters = ["A.", "B.", "C.", "D."];
+  for (const group of bank.groups.filter((item) => item.section === "listening" && [1, 2].includes(item.part))) {
+    const expected = group.questions[0].options.flatMap((option, index) => [letters[index], option]);
+    assert.deepEqual(manifest.groups[group.id].spokenChoices, expected, group.id);
+  }
 });

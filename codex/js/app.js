@@ -448,7 +448,7 @@ async function playGroup(gid, btn) {
   try {
     if (recording && audio.fileSupported()) {
       finished = await audio.playFile(recording);
-      if (!finished && audio.lastErrorCode() === "audio-file") finished = await audio.playScript(lines, { locale });
+      if (!finished && audio.shouldFallbackFromRecording(audio.lastErrorCode())) finished = await audio.playScript(lines, { locale });
     } else finished = await audio.playScript(lines, { locale });
   } catch { finished = false; }
   if (activePlay !== play) return;

@@ -15,7 +15,7 @@ Clips were generated with `scripts/generate-accent-audio.py` and the `edge-tts` 
 | CA | en-CA | en-CA-ClaraNeural | en-CA-LiamNeural |
 | AU | en-AU | en-AU-NatashaNeural | en-AU-WilliamNeural |
 
-Canadian items use the en-CA voices above. They are not American voices with a Canadian label. Each question group has one accent. Inside a Part, accents alternate so the same accent does not play twice in a row. Part 3 uses the female and male voice of that accent. Part 2 uses one voice for the question and the other for the three responses. Part 1 speaks the photograph cue and the four statements, including the letters A–D, in one narrator voice.
+Canadian items use the en-CA voices above. They are not American voices with a Canadian label. Each question group has one accent. Inside a Part, accents alternate so the same accent does not play twice in a row. Part 3 uses the female and male voice of that accent. Part 2 uses one voice for the question and the other for the three responses; each response is introduced by its letter in that response voice. Part 1 speaks the photograph cue and the four statements, including the letters A–D, in one narrator voice.
 
 The `edge-tts` program is MIT licensed. The neural voices are Microsoft Edge voices. No learner name, account, or other personal data is stored in the audio or the manifest.
 
