@@ -115,7 +115,9 @@ a { color: var(--brand); text-underline-offset: .17em; }
 .vocabulary-card > summary .vocabulary-eyebrow { color: #745d29; font-size: .68rem; letter-spacing: .14em; }
 .vocabulary-card > summary .vocabulary-title { font-size: 1.2rem; }
 .vocabulary-card > summary small { color: var(--muted); font-size: .88rem; font-weight: 400; }
+.vocab-filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 4px; }
 .vocabulary-group { border-top: 1px solid var(--line); padding: 12px 0; }
+.vocabulary-group p .tag { margin-left: 6px; }
 .vocabulary-group summary { cursor: pointer; font-weight: 650; }
 .vocabulary-group p { padding-left: 18px; line-height: 1.55; }
 .practice-grid { gap: 16px; margin: 16px 0; }
