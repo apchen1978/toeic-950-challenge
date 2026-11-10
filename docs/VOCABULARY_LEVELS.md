@@ -8,7 +8,7 @@
 
 新加入的約三百個 800 詞，主題是辦公室、會議、雇用、訂單、出差、付款、銷售、設施、電話客服、工廠現場。例句是本站自寫的短句，沒有抄字書。既有詞條的英文、中文與例句沒有改寫，只加上等級。新詞另有詞性（`n.`、`v.`、`adj.`、`adv.`、`phr.`、`prep.`）。
 
-畫面預設顯示 800，因為先前一打開就是整份進階字彙。標題仍會同時寫出 800 與 900 的數量。900 的標籤使用「金色證書」。
+每個主題都同時有 800 與 900，而且 900 至少約佔該主題的兩成。全部檢視會把兩個等級穿插排列，不會先把 800 整段排完。沒有選過篩選時，預設就是全部。800 與 900 的篩選仍可用。每一條詞都看得到自己的等級標籤。900 的標籤使用「金色證書」。既有詞條沒有改等級。
 
 Each entry is tagged `800` or `900`. The tag is a study guide, not an official score conversion.
 
@@ -16,4 +16,4 @@ Each entry is tagged `800` or `900`. The tag is a study guide, not an official s
 
 `900` means advanced language for roughly 860–990, the gold-certificate tier. These are less common, more formal, legal or financial, or easy to confuse in reading. A word that already sat in a high-score category is still tagged `800` when it is everyday language. `deadline`, `invoice`, and `agenda` are 800. `stipulate`, `accrue`, and `in lieu of` are 900.
 
-The new 800 entries are original short examples, not text copied from a vocabulary book. Existing wording was kept; only the level was added. The page opens on 800 so the list does not start as a wall of advanced words. The heading still shows both counts, and 900 keeps the gold-certificate label.
+The new 800 entries are original short examples, not text copied from a vocabulary book. Existing wording was kept; only the level was added. Every theme includes both levels, and at least about 20 percent of each theme is 900. The full view interleaves the two tags instead of listing all 800 entries first. If no filter has been saved, the page opens on that mixed view. The 800 and 900 filters still work, and every entry shows its badge. Existing levels were not retagged. 900 keeps the gold-certificate label.

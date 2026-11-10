@@ -40,11 +40,12 @@ test("headwords are unique, including hyphen, spacing, and simple plural variant
 });
 
 test("the new 800-level entries include a part of speech and the original sentences stay", () => {
-  const added = entries.filter(({ item }) => item.length === 5);
+  const withPos = entries.filter(({ item }) => item.length === 5);
   const original = entries.filter(({ item }) => item.length === 4);
   assert.equal(original.length, 449);
-  assert.ok(added.length >= 250 && added.length <= 350, `new entries ${added.length}`);
-  assert.ok(added.every(({ item }) => item[3] === 800 && item[4]));
+  assert.ok(withPos.filter(({ item }) => item[3] === 800).length >= 250);
+  assert.ok(withPos.every(({ item }) => item[4]));
+  assert.ok(entries.length > 800 && entries.length <= 860, `total ${entries.length}`);
   const byWord = new Map(entries.map(({ item }) => [item[0], item]));
   assert.equal(byWord.get("contingency")[2], "The team prepared a contingency plan for delivery delays.");
   assert.equal(byWord.get("contingency")[3], 900);
@@ -52,4 +53,21 @@ test("the new 800-level entries include a part of speech and the original senten
   assert.equal(byWord.get("agenda")[3], 800);
   assert.equal(byWord.get("invoice")[2], "Please include the purchase order number on the invoice.");
   assert.equal(byWord.get("vacancy")[1], "職缺");
+});
+
+test("every theme mixes 800 and 900, with at least 20 percent advanced", () => {
+  for (const group of VOCABULARY) {
+    const counts = { 800: 0, 900: 0 };
+    for (const item of group.words) counts[item[3]] += 1;
+    assert.ok(counts[800] >= 1 && counts[900] >= 1, group.category);
+    const share = counts[900] / group.words.length;
+    assert.ok(share >= 0.2, `${group.category} ${(share * 100).toFixed(1)}%`);
+    let run = 1;
+    let longest = 1;
+    for (let index = 1; index < group.words.length; index += 1) {
+      run = group.words[index][3] === group.words[index - 1][3] ? run + 1 : 1;
+      longest = Math.max(longest, run);
+    }
+    assert.ok(longest < Math.max(counts[800], counts[900]), `${group.category} run ${longest}`);
+  }
 });
