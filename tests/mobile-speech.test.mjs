@@ -18,6 +18,21 @@ function engine() {
   return synth;
 }
 const english={name:'Mobile English',lang:'en-GB'};
+test('quick US speech selects an en-US voice despite a saved non-US voice', async () => {
+  const s=engine(), audio=await import(`../codex/js/audio.js?role=${serial++}`);
+  const us={name:'Samantha',lang:'en-US'}, uk={name:'Sonia Natural',lang:'en-GB'};
+  s.setVoices([uk,us]); audio.setPref('N',uk.name);
+  assert.equal(await audio.playScript([{speaker:'N',text:'Hello',gap:0}],{locale:'en-US'}),true);
+  assert.equal(s.spoken[0].voice,us);
+  assert.equal(s.spoken[0].lang,'en-US');
+});
+test('quick US speech requests en-US when no matching voice is enumerated', async () => {
+  const s=engine(), audio=await import(`../codex/js/audio.js?role=${serial++}`);
+  s.setVoices([{name:'Sonia',lang:'en-GB'}]);
+  assert.equal(await audio.playScript([{speaker:'N',text:'Hello',gap:0}],{locale:'en-US'}),true);
+  assert.equal(s.spoken[0].voice,undefined);
+  assert.equal(s.spoken[0].lang,'en-US');
+});
 test('A and its answer use the same narrator and requested rate as B and C', async () => {
   const s=engine(), audio=await import(`../codex/js/audio.js?role=${serial++}`);
   const narrator={name:'Samantha',lang:'en-US'};

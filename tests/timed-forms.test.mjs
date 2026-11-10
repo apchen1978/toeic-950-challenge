@@ -45,3 +45,36 @@ test('paused form survives reload and a manual section transition starts a fresh
   assert.equal(elapsedSeconds(saved, 65 * 60000), 15 * 60);
   assert.equal(startReading(saved, 66 * 60000), false);
 });
+
+test('60-question mock keeps all parts and uses 13:30 and 22:30 timers', () => {
+  const bank = JSON.parse(readFileSync(new URL('../codex/data/questions.json', import.meta.url)));
+  const quick = bank.meta.sets.find((set) => set.id === 'quick-60');
+  const groups = quick.groupIds.map((id) => bank.groups.find((g) => g.id === id));
+  assert.ok(groups.every(Boolean));
+  assert.deepEqual(new Set(groups.map((g) => g.part)), new Set([1, 2, 3, 4, 5, 6, 7]));
+  for (const section of ['listening', 'reading']) assert.equal(groups.filter((g) => g.section === section).reduce((n, g) => n + g.questions.length, 0), 30);
+  assert.ok(groups.filter((g) => [3, 4].includes(g.part)).every((g) => g.questions.length === 3));
+  assert.deepEqual(quick.timing, { listening: 13.5, reading: 22.5 });
+  const session = { minutes: 36 };
+  startTimedForm(session, 'quick-60', 0, quick.timing);
+  assert.equal(remainingMs(session, 0), 810000);
+  startReading(session, 810000, true);
+  assert.equal(remainingMs(session, 810000), 1350000);
+  assert.equal(elapsedSeconds(session, 2160000), 2160);
+});
+
+test('quick mock accent files correspond to current scripts and are cached', async () => {
+  const { createHash } = await import('node:crypto');
+  const bank = JSON.parse(readFileSync(new URL('../codex/data/questions.json', import.meta.url)));
+  const sw = readFileSync(new URL('../codex/sw.js', import.meta.url), 'utf8');
+  for (const [id, file, digest] of [
+    ['g-airport-talk-d', 'quick-au-g-airport-talk-d.mp3', 'ec1021f2e695bbd6f4ce2bdc2ff28de120b941ee68c75087f0ea2bf9dd43cdc2'],
+    ['s03-talk2', 'quick-gb-s03-talk2.mp3', '07262b98043edaf10eeb1c9ca790a4b306974faec3da43ea7814f17f6e383f49']
+  ]) {
+    const script = bank.groups.find(g => g.id === id).script;
+    assert.equal(createHash('sha256').update(JSON.stringify(script)).digest('hex'), digest);
+    assert.ok(readFileSync(new URL(`../codex/audio/${file}`, import.meta.url)).length > 1000);
+    assert.ok(sw.includes(file));
+    for (const form of ['quick-40', 'quick-60']) assert.ok(bank.meta.sets.find(s => s.id === form).groupIds.includes(id));
+  }
+});

@@ -1,4 +1,5 @@
 import * as audio from "./audio.js";
+import { VOCABULARY } from "./vocabulary.js";
 import { flatten, score, estimateProgress, mergeSkillStats, weakest, groupsForSkill, updateWrongAnswerQueue, formatDuration } from "./scoring.js";
 import { SKILLS, skillLabel } from "./skills.js";
 import { remainingMs, pauseTimer, resumeTimer, elapsedSeconds, startTimedForm, startReading } from "./timer.js";
@@ -64,6 +65,7 @@ async function init() {
 }
 
 /* ---------- Home ---------- */
+function minutesLabel(minutes) { return Number.isInteger(minutes) ? `${minutes} 分鐘` : `${Math.floor(minutes)} 分 ${Math.round((minutes % 1) * 60)} 秒`; }
 function renderHome() {
   stopTimer();
   audio.stop();
@@ -83,11 +85,20 @@ function renderHome() {
     <p class="muted">上次 955，這次挑戰更高。專注 Listening & Reading 的推論、細節與交叉比對。</p>
     ${session ? resumeCard() : ''}
 
-    <section class="card"><h2>快速模考 · 40 題</h2>
-      <p>聽力 20 題／9 分鐘，閱讀 20 題／15 分鐘，約 24 分鐘。涵蓋七個 Part，完成後可查看解析與非官方粗估。</p>
+    <section class="card"><h2>快速模考</h2>
+      <p>40 題：約 24 分鐘（聽力 9 分鐘、閱讀 15 分鐘）。<br>60 題：約 36 分鐘（聽力 13 分 30 秒、閱讀 22 分 30 秒）。</p>
+      <p class="muted">聽力以美式為主，並加入英式與澳洲口音；語音合成音色依裝置而異。</p>
       <button class="btn primary" data-action="start-form" data-form="quick-40">開始 40 題快速模考</button>
-      <p class="muted">依正式題型與時間近似縮小；對話和文章題組保留完整，因此各 Part 題數不是精確比例。題目取自第 A 套。</p>
+      <button class="btn primary" data-action="start-form" data-form="quick-60">開始 60 題快速模考</button>
+      <p class="muted">依正式題型與時間近似縮小；對話和文章題組保留完整，因此各 Part 題數不是精確比例。題目取自第 A 套，兩種快速模考有重複題目。完成後可查看解析與非官方粗估。</p>
+      <details><summary>口音音檔來源</summary><p>英式：使用 Cori Samuel 聲音模型，資料由 NVIDIA 提供，經修改產生此音檔；<a href="https://www.openslr.org/109/">資料來源</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>。澳洲：使用 DataCraftsmanAustralia 的 en_AU-librivox-medium 模型（Kirsty Leishman），經修改產生音檔；<a href="https://huggingface.co/DataCraftsmanAustralia/piper-en_AU-librivox-medium">模型與作者資料</a> · CC BY 4.0。</p></details>
     </section>
+
+    <details class="card"><summary>高分目標職場字彙 · 中文與例句</summary>
+      <p class="muted">依多益官方職場情境精選；並非官方字頻排行或保證出題。例句為原創。</p>
+      ${VOCABULARY.map(group => `<h3>${esc(group.category)}</h3>${group.words.map(([word, meaning, example]) => `<p><b>${esc(word)}</b> · ${esc(meaning)}<br><span class="muted">${esc(example)}</span></p>`).join('')}`).join('')}
+      <p><a href="https://www.toeic.com.tw/toeic/listening-reading/about/content/" target="_blank" rel="noopener noreferrer">參考：台灣多益官方測驗內容</a></p>
+    </details>
 
     <section class="practice-grid" aria-label="Listening 聽力與 Reading 閱讀練習">
       <article class="card practice-card listening-card">
@@ -280,7 +291,7 @@ function renderTest() {
   app.innerHTML = `
     <div class="topbar">
       <div><span class="tag">${session.mode === "review" ? "錯題複習" : g.section === "listening" ? "Listening" : "Reading"}</span><span class="tag">Part ${g.part}</span><span class="muted">${esc(g.title ?? "")}</span></div>
-      <div class="row">${session.phase ? `<b>${session.phase === 'listening' ? '聽力' : '閱讀'} ${session.phaseMinutes} 分鐘</b>` : ''}<span class="muted" id="count">${answeredCount}/${qs.length} 已答</span><span class="timer" id="timer">--:--</span><button class="btn small" data-action="pause-timer">暫停／看估分</button><button class="btn small primary" data-action="submit">提前交卷</button></div>
+      <div class="row">${session.phase ? `<b>${session.phase === 'listening' ? '聽力' : '閱讀'} ${minutesLabel(session.phaseMinutes)}</b>` : ''}<span class="muted" id="count">${answeredCount}/${qs.length} 已答</span><span class="timer" id="timer">--:--</span><button class="btn small" data-action="pause-timer">暫停／看估分</button><button class="btn small primary" data-action="submit">提前交卷</button></div>
     </div>
 
     <section class="card">
@@ -295,7 +306,7 @@ function renderTest() {
       <button class="btn" data-action="prev" ${session.cur === allowed[0].i ? "disabled" : ""}>← 上一組</button>
       <span class="muted">${session.cur + 1} / ${session.groupIds.length}</span>
       <button class="btn ${isLast ? "" : "primary"}" data-action="next" ${isLast ? "disabled" : ""}>下一組 →</button>
-      ${isLast && session.phase === 'listening' ? `<button class="btn primary" data-action="begin-reading">結束聽力，開始閱讀 ${session.readingMinutes ?? 75} 分鐘</button>` : ''}
+      ${isLast && session.phase === 'listening' ? `<button class="btn primary" data-action="begin-reading">結束聽力，開始閱讀 ${minutesLabel(session.readingMinutes ?? 75)}</button>` : ''}
     </div>
 
     <section class="card"><h3>題號${session.phase ? '（只能作答目前區段）' : ''}</h3><div class="palette">${qs.map((q, i) => `<button class="pal ${session.answers[q.id] !== undefined ? "answered" : ""} ${session.flags[q.id] ? "flag" : ""} ${q.groupId === g.id ? "current" : ""}" data-action="jump" data-group="${q.groupId}" ${session.phase && q.section !== session.phase ? 'disabled' : ''} aria-label="第 ${i + 1} 題">${i + 1}</button>`).join("")}</div></section>
@@ -328,11 +339,18 @@ function transcriptBlock(g, duringPractice = false) {
   </details>`;
 }
 
+const QUICK_ACCENTS = {
+  'g-airport-talk-d': { file: 'audio/quick-au-g-airport-talk-d.mp3', label: '澳洲口音' },
+  's03-talk2': { file: 'audio/quick-gb-s03-talk2.mp3', label: '英式口音' }
+};
+function quickAccent(g) { return ['quick-40', 'quick-60'].includes(session?.formId) ? QUICK_ACCENTS[g.id] : null; }
 function audioBlock(g) {
   const used = session.plays[g.id] ?? 0;
   const left = MAX_PLAYS - used;
+  const accent = quickAccent(g);
+  const recording = accent?.file ?? g.audio;
   return `<div class="audio" data-gid="${g.id}">
-    <button class="btn primary" data-action="play" data-group="${g.id}" ${left <= 0 || !(g.audio ? audio.fileSupported() : audio.supported()) ? "disabled" : ""}>▶ 播放語音</button>${g.audio ? '<span class="tag">固定男女配音</span>' : ''}
+    <button class="btn primary" data-action="play" data-group="${g.id}" ${left <= 0 || !(recording ? audio.fileSupported() : audio.supported()) ? "disabled" : ""}>▶ 播放語音</button>${accent ? `<span class="tag">${accent.label}</span>` : g.audio ? '<span class="tag">固定男女配音</span>' : ''}
     ${left <= 0 ? `<button class="btn small" data-action="reset-plays" data-group="${g.id}">恢復本題播放次數</button>` : ''}
     <button class="btn small" data-action="stop-play" disabled>停止播放</button>
     <span class="muted"><span class="plays">剩餘 ${left} 次</span> · <span class="status" role="status" aria-live="polite">完整播放才計次；中斷或失敗不扣次數。</span></span>
@@ -362,7 +380,8 @@ async function playGroup(gid, btn) {
   status.textContent = "播放中…";
   const lines = g.spokenOptions ? audio.withSpokenOptions(g) : g.script;
   let finished = false;
-  try { finished = g.audio ? await audio.playFile(g.audio) : await audio.playScript(lines); } catch { finished = false; }
+  const recording = quickAccent(g)?.file ?? g.audio;
+  try { finished = recording ? await audio.playFile(recording) : await audio.playScript(lines, { locale: ['quick-40', 'quick-60'].includes(session.formId) ? 'en-US' : null }); } catch { finished = false; }
   if (activePlay !== play) return;
   activePlay = null;
   if (finished && session === playingSession) {
