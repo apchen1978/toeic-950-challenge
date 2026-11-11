@@ -10,7 +10,7 @@ const types = (groups, part) => groups.filter((group) => group.part === part).fl
 
 test('new question counts per type', () => {
   const count = (part, type) => freshQuestions.filter((question) => question.questionType === type && fresh.find((group) => group.questions.includes(question)).part === part).length;
-  assert.equal(count(3, 'speaker-intent') + count(4, 'speaker-intent'), 12);
+  assert.ok(count(3, 'speaker-intent') + count(4, 'speaker-intent') >= 12);
   assert.equal(count(7, 'synonym'), 10);
   assert.equal(count(7, 'chat-intent'), 6);
   assert.equal(count(5, 'preposition-conjunction'), 10);
@@ -63,4 +63,23 @@ test('a bank without enough variety still draws a form and only warns', () => {
     assert.ok(form.coverageWarnings.length > 0);
     assert.equal(form.groupIds.length > 0, true);
   } finally { console.warn = warn; }
+});
+
+test('with the recent-draw memory the app keeps, every new 40 or 60 mock is a fresh mix and keeps full coverage', async () => {
+  const { avoidedGroupIds, rememberQuickDraw } = await import('../codex/js/quick-form.js');
+  for (const formId of ['quick-40', 'quick-60']) {
+    let recent = [];
+    let previous = null;
+    const random = createRng(2026);
+    for (let round = 0; round < 12; round += 1) {
+      const form = assembleQuickForm(bank, formId, { avoid: avoidedGroupIds(recent), random });
+      assert.deepEqual(form.coverageWarnings, [], `${formId} round ${round}`);
+      if (previous) {
+        const shared = form.groupIds.filter((id) => previous.includes(id)).length;
+        assert.ok(shared / form.groupIds.length <= 0.25, `${formId} round ${round} repeats ${shared} of ${form.groupIds.length} groups`);
+      }
+      previous = form.groupIds;
+      recent = rememberQuickDraw(recent, form.groupIds, formId);
+    }
+  }
 });

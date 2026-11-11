@@ -107,7 +107,9 @@ export function assembleQuickForm(bank, formId, options = {}) {
       const scope = unit.map((spec) => spec.part);
       const baseCounts = { ...accentCounts };
       let keep = null;
-      for (let retry = 0; retry < 150; retry += 1) {
+      // Prefer groups not seen in recent draws; if that cannot satisfy the type rules, allow repeats for this part only.
+      for (let retry = 0; retry < 300 && !(keep && keep.issues === 0); retry += 1) {
+        const skip = retry < 150 ? avoid : new Set();
         accentCounts = { ...baseCounts };
         const drawn = [];
         for (const spec of unit) {
@@ -115,13 +117,12 @@ export function assembleQuickForm(bank, formId, options = {}) {
           const accentOf = (group) => accents[group.id] || group.accent || "";
           const counts = spec.part <= 4 ? accentCounts : null;
           const picked = spec.questions
-            ? pickByQuestionTotal(pool, spec.questions, random, avoid, spec.requireMulti === true)
-            : pickWithGraphicPreference(pool, spec, random, avoid, accentOf, counts);
+            ? pickByQuestionTotal(pool, spec.questions, random, skip, spec.requireMulti === true)
+            : pickWithGraphicPreference(pool, spec, random, skip, accentOf, counts);
           drawn.push(...mixByLevel(picked));
         }
         const unitIssues = quickCoverageIssues(chosen.concat(drawn), formId, section).filter((issue) => scope.some((part) => issueScope(issue).includes(part)));
         if (!keep || unitIssues.length < keep.issues) keep = { drawn, counts: { ...accentCounts }, issues: unitIssues.length };
-        if (!unitIssues.length) break;
       }
       chosen.push(...keep.drawn);
       accentCounts = keep.counts;

@@ -20032,12 +20032,12 @@
           "prompt": "What will happen to unclaimed rooms after the extended deadline?",
           "options": [
             "They will be given to the forum speakers.",
-            "They will be held for another month.",
+            "They will be offered to the public.",
             "They will be charged to the man's company.",
-            "They will be offered to the public."
+            "They will be held for another month."
           ],
-          "answer": 3,
-          "explanation": "正解 D「They will be offered to the public.」：女子說期限過後，沒人認領的房間會回到市場開放給大眾訂房。\n【考點】Part 3・細節\n【判斷依據】直接對應原句 go back on sale to the public，換成較概括的說法。",
+          "answer": 1,
+          "explanation": "正解 B「They will be offered to the public.」：女子說期限過後，沒人認領的房間會回到市場開放給大眾訂房。\n【考點】Part 3・細節\n【判斷依據】直接對應原句 go back on sale to the public，換成較概括的說法。",
           "skill": "l-conversation",
           "ability": "L4",
           "questionType": "detail"
@@ -21149,6 +21149,1759 @@
           "skill": "r-grammar",
           "ability": "R5",
           "questionType": "preposition-conjunction"
+        }
+      ]
+    },
+    {
+      "id": "cov-p2-01",
+      "section": "listening",
+      "part": 2,
+      "accent": "UK",
+      "title": "Response practice",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Who's covering the front desk this afternoon?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P2-01",
+          "prompt": "Mark your answer.",
+          "options": [
+            "Yes, I covered it last week.",
+            "Didn't Hiro post the schedule?",
+            "A new front-desk chair."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Didn't Hiro post the schedule?」：對方問誰負責櫃檯，回答用反問帶出『排班表上應該有』；Yes 不能回答 Who，front-desk 是重複字的誘答。\n【考點】Part 2・反問句回答\n【判斷依據】Who 問句不能用 Yes/No 回答；反問句把答案指向排班表，屬於合理的間接回應。",
+          "questionType": "counter-question",
+          "skill": "l-response",
+          "ability": "L5"
+        }
+      ]
+    },
+    {
+      "id": "cov-p2-02",
+      "section": "listening",
+      "part": 2,
+      "accent": "AU",
+      "title": "Response practice",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "M",
+          "text": "Should we order the printer paper today or wait for the sale?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P2-02",
+          "prompt": "Mark your answer.",
+          "options": [
+            "When does the sale start?",
+            "She printed it yesterday.",
+            "The paper is on the second shelf."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「When does the sale start?」：反問特價何時開始，是在取得做決定所需的資訊；其他兩項只是重複 printer／paper 的字根或相似音。\n【考點】Part 2・反問句回答\n【判斷依據】問句是二選一，回應用反問確認條件，仍與問題相關；相似音 printer / printed 是誘答。",
+          "questionType": "counter-question",
+          "skill": "l-response",
+          "ability": "L3"
+        }
+      ]
+    },
+    {
+      "id": "cov-p2-03",
+      "section": "listening",
+      "part": 2,
+      "accent": "US",
+      "title": "Response practice",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Where can I find the visitor parking permits?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P2-03",
+          "prompt": "Mark your answer.",
+          "options": [
+            "Parking is free on weekends.",
+            "Yes, it permits two hours.",
+            "Are you expecting someone today?"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Are you expecting someone today?」：反問對方是否有訪客，是在判斷該領哪種許可；Yes 不能回答 Where，permit／permits 是相似字誘答。\n【考點】Part 2・反問句回答\n【判斷依據】Where 問句的合理回應通常是地點或轉介；反問屬於間接回答，但它與停車許可的情境相關。",
+          "questionType": "counter-question",
+          "skill": "l-response",
+          "ability": "L5"
+        }
+      ]
+    },
+    {
+      "id": "cov-p2-04",
+      "section": "listening",
+      "part": 2,
+      "accent": "AU",
+      "title": "Response practice",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "M",
+          "text": "How much will the catering cost for the workshop?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P2-04",
+          "prompt": "Mark your answer.",
+          "options": [
+            "How many people are attending?",
+            "At the workshop on Friday.",
+            "The cost center is on the third floor."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「How many people are attending?」：價格取決於人數，所以反問人數是合理的回應；其他兩項回答的是地點，或只重複 cost。\n【考點】Part 2・反問句回答\n【判斷依據】How much 的答案通常是金額，但反問取得計算所需資訊也是常見的合理回應，不是必然正解。",
+          "questionType": "counter-question",
+          "skill": "l-response",
+          "ability": "L3"
+        }
+      ]
+    },
+    {
+      "id": "cov-p2-05",
+      "section": "listening",
+      "part": 2,
+      "accent": "CA",
+      "title": "Response practice",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Could you send me the quarterly figures by noon?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P2-05",
+          "prompt": "Mark your answer.",
+          "options": [
+            "Noon is when the cafeteria opens.",
+            "The figures on the wall are new.",
+            "Which department do you need them for?"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Which department do you need them for?」：請求之後以反問確認需要哪個部門的資料，是工作上自然的回應；其他兩項只重複 noon 或 figures。\n【考點】Part 2・反問句回答\n【判斷依據】請求句的回應不一定是 Yes/No，確認細節的反問屬於間接回答。",
+          "questionType": "counter-question",
+          "skill": "l-response",
+          "ability": "L5"
+        }
+      ]
+    },
+    {
+      "id": "cov-p2-06",
+      "section": "listening",
+      "part": 2,
+      "accent": "AU",
+      "title": "Response practice",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "M",
+          "text": "Has the supplier confirmed the delivery date?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P2-06",
+          "prompt": "Mark your answer.",
+          "options": [
+            "I delivered it to the supplier.",
+            "You'd better check with Natalia.",
+            "The date is circled in red."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「You'd better check with Natalia.」：對方不確定，建議去問 Natalia，屬於轉介型的間接回答；其他兩項重複 deliver／date，並沒有回應是否已確認。\n【考點】Part 2・不確定／轉介型回應\n【判斷依據】轉介他人（check with / ask）是常見的合理回應，不是必然正解，要先排除重複字的選項。",
+          "questionType": "indirect-response",
+          "skill": "l-response",
+          "ability": "L5"
+        }
+      ]
+    },
+    {
+      "id": "cov-p2-07",
+      "section": "listening",
+      "part": 2,
+      "accent": "US",
+      "title": "Response practice",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Why was the training session moved to Thursday?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P2-07",
+          "prompt": "Mark your answer.",
+          "options": [
+            "At the training center downtown.",
+            "Yes, it moved smoothly.",
+            "I'm not sure—HR sent the notice."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「I'm not sure—HR sent the notice.」：說不確定並指出通知來自人資，屬於不確定加轉介的間接回答；其他兩項回答 Where 或 Yes/No，與 Why 不符。\n【考點】Part 2・不確定／轉介型回應\n【判斷依據】Why 問句的選項若是地點或 Yes/No 先排除；I'm not sure 加線索是常見的合理回應。",
+          "questionType": "indirect-response",
+          "skill": "l-response",
+          "ability": "L5"
+        }
+      ]
+    },
+    {
+      "id": "cov-p2-08",
+      "section": "listening",
+      "part": 2,
+      "accent": "UK",
+      "title": "Response practice",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "M",
+          "text": "What time does the shuttle to the airport leave?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P2-08",
+          "prompt": "Mark your answer.",
+          "options": [
+            "I haven't seen the new timetable.",
+            "It leaves from the main entrance.",
+            "The airport was renovated last year."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「I haven't seen the new timetable.」：說自己還沒看新時刻表，是不知道時間的間接回答；第二個選項回答地點而不是時間，第三個重複 airport。\n【考點】Part 2・不確定／轉介型回應\n【判斷依據】What time 要的是時間；沒有給時間的選項必須是合理的『不知道』，其他答非所問的要排除。",
+          "questionType": "indirect-response",
+          "skill": "l-response",
+          "ability": "L5"
+        }
+      ]
+    },
+    {
+      "id": "cov-p2-09",
+      "section": "listening",
+      "part": 2,
+      "accent": "CA",
+      "title": "Response practice",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Do you know if the budget report is final?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P2-09",
+          "prompt": "Mark your answer.",
+          "options": [
+            "Yes, it was a long report.",
+            "Ask Mr. Okoye in accounting.",
+            "The final meeting is tomorrow."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Ask Mr. Okoye in accounting.」：建議去問會計部的 Mr. Okoye，是轉介型的間接回答；其他兩項重複 report／final，沒有回應預算報告是否定稿。\n【考點】Part 2・不確定／轉介型回應\n【判斷依據】Do you know 問句常見回應是 Yes/No 或轉介；Yes 後接的內容與問題不合要排除。",
+          "questionType": "indirect-response",
+          "skill": "l-response",
+          "ability": "L5"
+        }
+      ]
+    },
+    {
+      "id": "cov-p2-10",
+      "section": "listening",
+      "part": 2,
+      "accent": "UK",
+      "title": "Response practice",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "M",
+          "text": "Which software are we using for the client presentation?"
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P2-10",
+          "prompt": "Mark your answer.",
+          "options": [
+            "The presentation starts at two.",
+            "No, I prefer the other client.",
+            "I'll find out and let you know."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「I'll find out and let you know.」：表示會去查再告知，屬於不確定的間接回答；其他兩項重複 presentation／client，且 No 不能回答 Which。\n【考點】Part 2・不確定／轉介型回應\n【判斷依據】Which 問句不能用 Yes/No 回答；I'll find out 是常見的合理回應，不是必然正解。",
+          "questionType": "indirect-response",
+          "skill": "l-response",
+          "ability": "L5"
+        }
+      ]
+    },
+    {
+      "id": "cov-p3-05",
+      "section": "listening",
+      "part": 3,
+      "accent": "US",
+      "title": "Launch plan and venue quote",
+      "threeSpeakerDialogue": true,
+      "script": [
+        {
+          "speaker": "M",
+          "text": "Before we finalize the launch plan, I want to confirm who is handling the press kit."
+        },
+        {
+          "speaker": "W",
+          "text": "Samira and I are drafting it, but we're waiting for photos from the design team."
+        },
+        {
+          "speaker": "N",
+          "text": "The photos are finished. I'll upload them to the shared folder this afternoon."
+        },
+        {
+          "speaker": "M",
+          "text": "Good. Then the only open item is the venue. The conference hall quoted us a higher price than last year."
+        },
+        {
+          "speaker": "N",
+          "text": "About fifteen percent more, but the quote includes the sound system."
+        },
+        {
+          "speaker": "W",
+          "text": "That actually helps. Renting audio equipment separately would cost more than that."
+        },
+        {
+          "speaker": "M",
+          "text": "Then let's accept the quote and sign by Friday."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P3-05A",
+          "prompt": "What are the speakers mainly discussing?",
+          "options": [
+            "A change in a supplier's prices.",
+            "A new employee's schedule.",
+            "Preparations for a product launch.",
+            "Plans for an office renovation."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Preparations for a product launch.」：第一句就說要敲定發表計畫，之後談新聞資料袋與場地報價，都是發表會的準備。\n【考點】Part 3・主旨（三人對話）\n【判斷依據】線索出現在對話開頭：主旨題先看第一、二句，再用後面的討論內容確認。",
+          "questionType": "main-purpose",
+          "skill": "l-conversation",
+          "ability": "L1"
+        },
+        {
+          "id": "COV-P3-05B",
+          "prompt": "What is included in the venue's higher price?",
+          "options": [
+            "A sound system.",
+            "Free parking.",
+            "Catering service.",
+            "Printed materials."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「A sound system.」：其中一位說報價包含音響系統，另一位也說另外租音響會更貴。\n【考點】Part 3・細節（三人對話）\n【判斷依據】線索出現在對話中段：注意是誰說話：先聽到價格上漲，再聽 includes the sound system。",
+          "questionType": "detail",
+          "skill": "l-conversation",
+          "ability": "L4"
+        },
+        {
+          "id": "COV-P3-05C",
+          "prompt": "What will the speakers probably do by Friday?",
+          "options": [
+            "Upload the photos to a folder.",
+            "Hire a design team.",
+            "Compare quotes from other venues.",
+            "Sign an agreement with the venue."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Sign an agreement with the venue.」：最後一句說接受報價並在星期五前簽約。\n【考點】Part 3・下一步行動\n【判斷依據】線索出現在對話結尾：下一步通常在結尾，找 let's … by Friday；上傳照片是下午的事，不是星期五。",
+          "questionType": "next-action",
+          "skill": "l-conversation",
+          "ability": "L5"
+        }
+      ]
+    },
+    {
+      "id": "cov-p3-06",
+      "section": "listening",
+      "part": 3,
+      "accent": "UK",
+      "title": "Meeting rooms in the new office",
+      "threeSpeakerDialogue": true,
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Has everyone seen the floor plan for the new office?"
+        },
+        {
+          "speaker": "M",
+          "text": "I have. My team gets the east wing, but there's only one meeting room there."
+        },
+        {
+          "speaker": "N",
+          "text": "That could be a problem. We hold client calls every morning, and sometimes two run at once."
+        },
+        {
+          "speaker": "W",
+          "text": "Facilities said another room could be added if we share the cost of the partition."
+        },
+        {
+          "speaker": "M",
+          "text": "How much would our share be?"
+        },
+        {
+          "speaker": "N",
+          "text": "About eight hundred dollars. I'd say it's worth it."
+        },
+        {
+          "speaker": "W",
+          "text": "I agree. I'll email facilities this afternoon and ask them to start the work before the move."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P3-06A",
+          "prompt": "What is the conversation mainly about?",
+          "options": [
+            "A client's complaint.",
+            "The layout of a new office.",
+            "A team's budget report.",
+            "A schedule for a morning call."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「The layout of a new office.」：開頭談新辦公室的平面圖，後面討論東側的會議室是否足夠。\n【考點】Part 3・主旨（三人對話）\n【判斷依據】線索出現在對話開頭：第一句的 floor plan 與 new office 已點出主題。",
+          "questionType": "main-purpose",
+          "skill": "l-conversation",
+          "ability": "L1"
+        },
+        {
+          "id": "COV-P3-06B",
+          "prompt": "What does the speaker imply when saying, \"sometimes two run at once\"?",
+          "options": [
+            "The morning calls are too short.",
+            "Client calls should be canceled.",
+            "The partition costs too much.",
+            "One meeting room may not be enough."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「One meeting room may not be enough.」：說話者說每天早上都有客戶電話，有時兩通同時進行，而東側只有一間會議室，暗示一間不夠用。\n【考點】Part 3・說話者意圖\n【判斷依據】線索出現在對話中段：合併前一句（東側只有一間會議室）與這句話，推論出擔心的是不夠用。",
+          "questionType": "speaker-intent",
+          "skill": "l-inference",
+          "ability": "L5"
+        },
+        {
+          "id": "COV-P3-06C",
+          "prompt": "What will the woman do this afternoon?",
+          "options": [
+            "Contact the facilities department.",
+            "Move to the east wing.",
+            "Pay for a partition.",
+            "Cancel a client call."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「Contact the facilities department.」：女子在最後一句說今天下午會寫信給總務，請他們在搬遷前動工。\n【考點】Part 3・下一步行動\n【判斷依據】線索出現在對話結尾：找女子說 I'll … this afternoon 的那一句，位於結尾。",
+          "questionType": "next-action",
+          "skill": "l-conversation",
+          "ability": "L4"
+        }
+      ]
+    },
+    {
+      "id": "cov-p3-07",
+      "section": "listening",
+      "part": 3,
+      "accent": "AU",
+      "title": "Rush order of picture books",
+      "threeSpeakerDialogue": true,
+      "script": [
+        {
+          "speaker": "M",
+          "text": "The shipment of children's books came in, but we're short on the picture-book titles for Saturday's reading event."
+        },
+        {
+          "speaker": "W",
+          "text": "I checked the system. The warehouse has forty copies, and they can ship them overnight."
+        },
+        {
+          "speaker": "N",
+          "text": "Overnight shipping costs extra. Is it covered by the event budget?"
+        },
+        {
+          "speaker": "M",
+          "text": "We have enough left in the promotions budget."
+        },
+        {
+          "speaker": "W",
+          "text": "Then I'll place the order now. Should I also order bookmarks for the children?"
+        },
+        {
+          "speaker": "N",
+          "text": "Yes, and make sure they're the blue ones. The green ones weren't popular last time."
+        },
+        {
+          "speaker": "M",
+          "text": "Fine. Let's check the delivery confirmation tomorrow morning."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P3-07A",
+          "prompt": "What problem do the speakers have?",
+          "options": [
+            "A shipment arrived at the wrong store.",
+            "An event has been canceled.",
+            "They do not have enough copies of some books for an event.",
+            "A warehouse closed early."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「They do not have enough copies of some books for an event.」：開頭就說週六朗讀活動缺少繪本，之後討論如何補貨。\n【考點】Part 3・主旨（三人對話）\n【判斷依據】線索出現在對話開頭：問題通常在最前面說明，short on the picture-book titles 就是缺書。",
+          "questionType": "main-purpose",
+          "skill": "l-conversation",
+          "ability": "L1"
+        },
+        {
+          "id": "COV-P3-07B",
+          "prompt": "What concern is raised about overnight shipping?",
+          "options": [
+            "It takes too long.",
+            "It costs extra.",
+            "It is not available on Saturdays.",
+            "It damages books."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「It costs extra.」：其中一位提醒隔夜送貨要另外付費，並問是否由活動預算支付。\n【考點】Part 3・細節（三人對話）\n【判斷依據】線索出現在對話中段：找中段的 costs extra，之後的預算討論也是在回應這點。",
+          "questionType": "detail",
+          "skill": "l-conversation",
+          "ability": "L4"
+        },
+        {
+          "id": "COV-P3-07C",
+          "prompt": "What color of bookmarks is requested?",
+          "options": [
+            "Green",
+            "Red",
+            "Yellow",
+            "Blue"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Blue」：其中一位要求訂藍色，因為綠色上次不受歡迎。\n【考點】Part 3・細節（三人對話）\n【判斷依據】線索出現在對話結尾：顏色在結尾前才出現，不要被前面提到的 green 影響，要聽誰要求哪一種。",
+          "questionType": "detail",
+          "skill": "l-conversation",
+          "ability": "L4"
+        }
+      ]
+    },
+    {
+      "id": "cov-p3-08",
+      "section": "listening",
+      "part": 3,
+      "accent": "CA",
+      "title": "Flights for the sales conference",
+      "threeSpeakerDialogue": true,
+      "script": [
+        {
+          "speaker": "W",
+          "text": "I'm booking flights for the sales conference. Is everyone leaving Tuesday?"
+        },
+        {
+          "speaker": "N",
+          "text": "I can't. I have a client meeting Tuesday morning, so I'd need an afternoon flight."
+        },
+        {
+          "speaker": "M",
+          "text": "My flight can be any time, but I'd like to arrive before the welcome dinner on Tuesday evening."
+        },
+        {
+          "speaker": "W",
+          "text": "An afternoon flight would still arrive in time for dinner. I found one that departs at one fifteen."
+        },
+        {
+          "speaker": "N",
+          "text": "That works for me, as long as I can bring my sample case on board."
+        },
+        {
+          "speaker": "M",
+          "text": "It's carry-on size, so it should be fine. I'll book the hotel too."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P3-08A",
+          "prompt": "Why can't one of the speakers fly on Tuesday morning?",
+          "options": [
+            "A client meeting is scheduled.",
+            "A flight has been canceled.",
+            "A hotel is fully booked.",
+            "A dinner starts early."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「A client meeting is scheduled.」：第二位說話者說星期二早上有客戶會議，所以只能搭下午的班機。\n【考點】Part 3・細節（三人對話）\n【判斷依據】線索出現在對話開頭：第一個問題之後的第二句就給出原因（client meeting Tuesday morning）。",
+          "questionType": "detail",
+          "skill": "l-conversation",
+          "ability": "L4"
+        },
+        {
+          "id": "COV-P3-08B",
+          "prompt": "What does the speaker mean when saying, \"That works for me\"?",
+          "options": [
+            "The hotel is too expensive.",
+            "The sample case is ready.",
+            "The flight time is acceptable.",
+            "The meeting should be canceled."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「The flight time is acceptable.」：女子提出下午一點十五分的班機，這位說話者回答 That works for me 並附帶行李條件，表示這個航班時間可以接受。\n【考點】Part 3・說話者意圖\n【判斷依據】線索出現在對話中段偏後：That 指前一句剛提出的班機，之後的 as long as 只是附帶條件。",
+          "questionType": "speaker-intent",
+          "skill": "l-inference",
+          "ability": "L5"
+        },
+        {
+          "id": "COV-P3-08C",
+          "prompt": "What will the man do next?",
+          "options": [
+            "Bring a sample case.",
+            "Buy a plane ticket.",
+            "Meet a client.",
+            "Book a hotel."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Book a hotel.」：男子最後說他也會訂飯店。\n【考點】Part 3・下一步行動\n【判斷依據】線索出現在對話結尾：題目問 man，對話最後一句 I'll book the hotel too 是男子說的。",
+          "questionType": "next-action",
+          "skill": "l-conversation",
+          "ability": "L4"
+        }
+      ]
+    },
+    {
+      "id": "cov-p3-09",
+      "section": "listening",
+      "part": 3,
+      "accent": "AU",
+      "title": "Coupon error",
+      "graphicView": {
+        "kind": "table",
+        "caption": "This week's coupon sheet",
+        "headers": [
+          "Coupon code",
+          "Item",
+          "Discount"
+        ],
+        "rows": [
+          [
+            "SPRING10",
+            "Shoes",
+            "10%"
+          ],
+          [
+            "SAVE15",
+            "Backpacks",
+            "15%"
+          ],
+          [
+            "WEAR20",
+            "Jackets",
+            "20%"
+          ],
+          [
+            "FREE25",
+            "Accessories",
+            "25%"
+          ]
+        ]
+      },
+      "script": [
+        {
+          "speaker": "M",
+          "text": "Did you see the coupon sheet for this week?"
+        },
+        {
+          "speaker": "W",
+          "text": "Yes, but I think the one for jackets is a mistake. The headquarters email said it should match the backpack discount."
+        },
+        {
+          "speaker": "M",
+          "text": "Then we need to update the sign at the entrance before ten."
+        },
+        {
+          "speaker": "W",
+          "text": "I'll print a new one. Should I also change the accessories coupon?"
+        },
+        {
+          "speaker": "M",
+          "text": "No, that one stays the same."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P3-09A",
+          "prompt": "What are the speakers discussing?",
+          "options": [
+            "A shipment of jackets.",
+            "An error on a promotional sheet.",
+            "A change in store hours.",
+            "A new sales employee."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「An error on a promotional sheet.」：一開始談本週的優待券表，女子認為外套那一項有錯。\n【考點】Part 3・主旨\n【判斷依據】線索出現在對話開頭：開頭的 coupon sheet 與 mistake 指出主題。",
+          "questionType": "main-purpose",
+          "skill": "l-conversation",
+          "ability": "L1"
+        },
+        {
+          "id": "COV-P3-09B",
+          "prompt": "Look at the graphic. Which discount will be changed?",
+          "options": [
+            "10%",
+            "15%",
+            "25%",
+            "20%"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「20%」：女子說外套的優待券有誤，應該與背包的折扣相同。表格中外套是 20%，所以要改的是 20%。\n【考點】Part 3・圖表題（優待券）\n【判斷依據】線索出現在對話中段：先看圖，找出 Jackets 那一列的折扣；音檔只說 jackets，沒有說數字。",
+          "graphic": true,
+          "questionType": "graphic",
+          "skill": "l-conversation",
+          "ability": "L4"
+        },
+        {
+          "id": "COV-P3-09C",
+          "prompt": "What will the woman do?",
+          "options": [
+            "Print a new sign.",
+            "Email headquarters.",
+            "Change the accessories coupon.",
+            "Call a customer."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「Print a new sign.」：女子說她會印新的告示。\n【考點】Part 3・下一步行動\n【判斷依據】線索出現在對話結尾：在結尾 I'll print a new one；配件優待券被明說不變。",
+          "questionType": "next-action",
+          "skill": "l-conversation",
+          "ability": "L4"
+        }
+      ]
+    },
+    {
+      "id": "cov-p3-10",
+      "section": "listening",
+      "part": 3,
+      "accent": "UK",
+      "title": "Visitor at the front desk",
+      "graphicView": {
+        "kind": "table",
+        "caption": "Building directory",
+        "headers": [
+          "Floor",
+          "Suite",
+          "Tenant"
+        ],
+        "rows": [
+          [
+            "2",
+            "201",
+            "Brightline Accounting"
+          ],
+          [
+            "2",
+            "205",
+            "Novak Legal Services"
+          ],
+          [
+            "3",
+            "301",
+            "Orion Travel"
+          ],
+          [
+            "3",
+            "308",
+            "Pinewood Architects"
+          ],
+          [
+            "4",
+            "402",
+            "Harlow Software"
+          ]
+        ]
+      },
+      "script": [
+        {
+          "speaker": "M",
+          "text": "Good morning. I'm here to see Ms. Pavlou at the architecture firm."
+        },
+        {
+          "speaker": "W",
+          "text": "Of course. They're on the third floor. Please sign in on the tablet first."
+        },
+        {
+          "speaker": "M",
+          "text": "Will do. By the way, where can I leave my bicycle?"
+        },
+        {
+          "speaker": "W",
+          "text": "There's a rack behind the building. Use the side door next to the loading area."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P3-10A",
+          "prompt": "Look at the graphic. Which suite will the man most likely visit?",
+          "options": [
+            "Suite 201",
+            "Suite 301",
+            "Suite 402",
+            "Suite 308"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Suite 308」：男子要找建築事務所，女子說在三樓。目錄中三樓的建築事務所是 Pinewood Architects，位於 308。\n【考點】Part 3・圖表題（樓層目錄）\n【判斷依據】線索出現在對話開頭：先看圖，找出『建築事務所』與『三樓』同時符合的那一列；音檔沒有說房號。",
+          "graphic": true,
+          "questionType": "graphic",
+          "skill": "l-conversation",
+          "ability": "L5"
+        },
+        {
+          "id": "COV-P3-10B",
+          "prompt": "What is the man asked to do?",
+          "options": [
+            "Wait in the lobby.",
+            "Call Ms. Pavlou.",
+            "Sign in.",
+            "Take the stairs."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Sign in.」：女子請男子先在平板電腦上簽到。\n【考點】Part 3・要求\n【判斷依據】線索出現在對話開頭：Please sign in 是接待員的第一個要求。",
+          "questionType": "next-action",
+          "skill": "l-conversation",
+          "ability": "L4"
+        },
+        {
+          "id": "COV-P3-10C",
+          "prompt": "Where can the man leave his bicycle?",
+          "options": [
+            "Behind the building.",
+            "In the lobby.",
+            "Next to the tablet.",
+            "On the third floor."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「Behind the building.」：女子說大樓後面有自行車架。\n【考點】Part 3・細節\n【判斷依據】線索出現在對話結尾：地點在最後一句 behind the building，side door 只是進入的路。",
+          "questionType": "detail",
+          "skill": "l-conversation",
+          "ability": "L4"
+        }
+      ]
+    },
+    {
+      "id": "cov-p3-11",
+      "section": "listening",
+      "part": 3,
+      "accent": "AU",
+      "title": "Returning a rental car",
+      "graphicView": {
+        "kind": "table",
+        "caption": "Rental branch hours",
+        "headers": [
+          "Branch",
+          "Address",
+          "Opening hours"
+        ],
+        "rows": [
+          [
+            "Downtown",
+            "12 Pine Street",
+            "8 a.m. – 6 p.m."
+          ],
+          [
+            "Airport",
+            "Terminal 2",
+            "6 a.m. – 11 p.m."
+          ],
+          [
+            "Eastgate",
+            "40 Oak Avenue",
+            "9 a.m. – 9 p.m."
+          ],
+          [
+            "Lakeside",
+            "5 Dock Road",
+            "10 a.m. – 5 p.m."
+          ]
+        ]
+      },
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Thank you for calling Trident Rentals. How can I help you?"
+        },
+        {
+          "speaker": "M",
+          "text": "Hi. I'd like to return a car this evening, around eight thirty, and I'd rather not go through the airport."
+        },
+        {
+          "speaker": "W",
+          "text": "Let me check availability. One moment."
+        },
+        {
+          "speaker": "W",
+          "text": "Yes, we can take your car at that location tonight. Please bring your rental agreement and the fuel receipt."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P3-11A",
+          "prompt": "What does the man want to do?",
+          "options": [
+            "Return a rental car.",
+            "Extend a rental period.",
+            "Reserve a car for tomorrow.",
+            "Ask for a refund."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「Return a rental car.」：男子說他想在今晚還車。\n【考點】Part 3・主旨\n【判斷依據】線索出現在對話開頭：目的在男子第一次發言：I'd like to return a car this evening。",
+          "questionType": "main-purpose",
+          "skill": "l-conversation",
+          "ability": "L4"
+        },
+        {
+          "id": "COV-P3-11B",
+          "prompt": "Look at the graphic. Which location will the man most likely use?",
+          "options": [
+            "Downtown",
+            "Airport",
+            "Eastgate",
+            "Lakeside"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Eastgate」：男子要在八點半左右還車，而且不想去機場。營業到晚上九點且不在機場的只有 Eastgate。\n【考點】Part 3・圖表題（營業時間）\n【判斷依據】線索出現在對話開頭至中段：先看圖，找出營業時間晚於八點半的分店，再排除機場；條件要合併才能得出答案。",
+          "graphic": true,
+          "questionType": "graphic",
+          "skill": "l-conversation",
+          "ability": "L5"
+        },
+        {
+          "id": "COV-P3-11C",
+          "prompt": "What should the man bring?",
+          "options": [
+            "A driver's license and a credit card.",
+            "An insurance form.",
+            "A parking pass.",
+            "A rental agreement and a fuel receipt."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「A rental agreement and a fuel receipt.」：女子最後說請帶租車合約與加油收據。\n【考點】Part 3・細節\n【判斷依據】線索出現在對話結尾：最後一句 Please bring … 就是題目要的物品。",
+          "questionType": "next-action",
+          "skill": "l-conversation",
+          "ability": "L4"
+        }
+      ]
+    },
+    {
+      "id": "cov-p4-05",
+      "section": "listening",
+      "part": 4,
+      "accent": "AU",
+      "title": "Fitness club advertisement",
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Looking for a better way to stay active this winter? Harborview Fitness is opening its new location on Cedar Street, and we're offering three months at half price to anyone who signs up before the end of the month. Our trainers will design a personal plan for you at no extra cost, and children under twelve can join our weekend swim classes for free. Visit our website to reserve a free tour, or just stop by the front desk any day after nine a.m. We look forward to seeing you."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P4-05A",
+          "prompt": "What special offer is mentioned?",
+          "options": [
+            "Free membership for children.",
+            "Half-price membership for three months.",
+            "A free trial week.",
+            "A discount on equipment."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Half-price membership for three months.」：廣告開頭說在月底前報名的人，前三個月半價。\n【考點】Part 4・廣告・細節\n【判斷依據】線索出現在獨白開頭：優惠通常在廣告前段，注意 half price 與 three months。",
+          "questionType": "detail",
+          "skill": "l-talk",
+          "ability": "L4"
+        },
+        {
+          "id": "COV-P4-05B",
+          "prompt": "What is available at no extra cost?",
+          "options": [
+            "A swimming lesson for adults.",
+            "A weekend parking pass.",
+            "A new sports bag.",
+            "A personalized training plan."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「A personalized training plan.」：中段說教練會免費設計個人計畫；免費游泳課只限十二歲以下兒童。\n【考點】Part 4・廣告・細節\n【判斷依據】線索出現在獨白中段：對應 at no extra cost 那一句，並排除只限兒童的免費項目。",
+          "questionType": "detail",
+          "skill": "l-talk",
+          "ability": "L4"
+        },
+        {
+          "id": "COV-P4-05C",
+          "prompt": "What can listeners do on the website?",
+          "options": [
+            "Reserve a free tour.",
+            "Register for a swim class.",
+            "Buy a gift card.",
+            "Order a training plan."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「Reserve a free tour.」：結尾說到網站可以預約免費參觀。\n【考點】Part 4・廣告・細節\n【判斷依據】線索出現在獨白結尾：網站的功能在結尾才出現，對應 reserve a free tour。",
+          "questionType": "next-action",
+          "skill": "l-talk",
+          "ability": "L4"
+        }
+      ]
+    },
+    {
+      "id": "cov-p4-06",
+      "section": "listening",
+      "part": 4,
+      "accent": "CA",
+      "title": "Office supply clearance sale",
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Is your office running low on supplies? This weekend only, Lakeside Office Supply is holding its annual clearance sale. All paper products are thirty percent off, and ink cartridges are buy one, get one free. Orders over one hundred dollars qualify for free delivery within the city. Please note that the sale does not apply to furniture, which will be discounted next month. Bring this advertisement to the store for an extra five dollars off."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P4-06A",
+          "prompt": "What is being advertised?",
+          "options": [
+            "A new furniture collection.",
+            "A delivery service for businesses.",
+            "A clearance sale at an office supply store.",
+            "A printing workshop."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「A clearance sale at an office supply store.」：開頭問辦公用品不夠，接著宣布 Lakeside Office Supply 的年度出清特賣。\n【考點】Part 4・廣告・主旨\n【判斷依據】線索出現在獨白開頭：廣告的主旨通常在前兩句，品牌名稱後面接 clearance sale。",
+          "questionType": "main-purpose",
+          "skill": "l-talk",
+          "ability": "L4"
+        },
+        {
+          "id": "COV-P4-06B",
+          "prompt": "What qualifies for free delivery?",
+          "options": [
+            "Orders over one hundred dollars.",
+            "Orders of paper products only.",
+            "Purchases made on Sunday.",
+            "Orders with a printed coupon."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「Orders over one hundred dollars.」：中段說訂單超過一百美元可免費送貨到市內。\n【考點】Part 4・廣告・細節\n【判斷依據】線索出現在獨白中段：對應 free delivery 的那一句，條件是金額，不是商品或優待券。",
+          "questionType": "detail",
+          "skill": "l-talk",
+          "ability": "L4"
+        },
+        {
+          "id": "COV-P4-06C",
+          "prompt": "Why does the speaker say, \"the sale does not apply to furniture\"?",
+          "options": [
+            "To promote a new sale next week.",
+            "To apologize for a delay.",
+            "To announce a store closing.",
+            "To clarify which items are excluded."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「To clarify which items are excluded.」：這句話是特別說明特價不含家具，並預告家具下個月才打折，目的是釐清排除項目。\n【考點】Part 4・說話者意圖\n【判斷依據】線索出現在獨白結尾前：Please note 通常用來補充例外情況；不要把後面的下個月折扣當成這次活動。",
+          "questionType": "speaker-intent",
+          "skill": "l-inference",
+          "ability": "L5"
+        }
+      ]
+    },
+    {
+      "id": "cov-p4-07",
+      "section": "listening",
+      "part": 4,
+      "accent": "UK",
+      "title": "Traffic report",
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Good morning, commuters. Here is your traffic update. The Marlow Bridge is closed in both directions until noon because of repair work, so drivers heading downtown should use Route 9 instead. Buses will run every ten minutes between the two river stations, and tickets will be free until the bridge reopens. If you're driving, expect delays of about twenty minutes on Route 9. We'll bring you another update at eight thirty."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P4-07A",
+          "prompt": "What is the report mainly about?",
+          "options": [
+            "A bus company's new schedule.",
+            "A bridge construction proposal.",
+            "A change in ticket prices.",
+            "A road closure and alternative routes."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「A road closure and alternative routes.」：開頭報告 Marlow Bridge 封閉，並說明改走 Route 9 與巴士的替代方案。\n【考點】Part 4・廣播公告・主旨\n【判斷依據】線索出現在獨白開頭：第一個主要訊息是橋封閉，其餘都是替代方案。",
+          "questionType": "main-purpose",
+          "skill": "l-talk",
+          "ability": "L2"
+        },
+        {
+          "id": "COV-P4-07B",
+          "prompt": "What is offered free of charge?",
+          "options": [
+            "Parking near the bridge.",
+            "Bus rides between two stations.",
+            "A route map.",
+            "Repair service for vehicles."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Bus rides between two stations.」：中段說橋重新開放之前，兩個河邊車站間的巴士車票免費。\n【考點】Part 4・廣播公告・細節\n【判斷依據】線索出現在獨白中段：對應 tickets will be free 的那一句，注意免費的範圍是兩站之間的巴士。",
+          "questionType": "detail",
+          "skill": "l-talk",
+          "ability": "L4"
+        },
+        {
+          "id": "COV-P4-07C",
+          "prompt": "When will the next update be given?",
+          "options": [
+            "At eight thirty.",
+            "At noon.",
+            "In twenty minutes.",
+            "When the bridge reopens."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「At eight thirty.」：結尾說八點半會再播報最新路況。\n【考點】Part 4・廣播公告・細節\n【判斷依據】線索出現在獨白結尾：時間有三個（noon、twenty minutes、eight thirty），題目問 next update，要聽結尾。",
+          "questionType": "detail",
+          "skill": "l-talk",
+          "ability": "L4"
+        }
+      ]
+    },
+    {
+      "id": "cov-p4-08",
+      "section": "listening",
+      "part": 4,
+      "accent": "CA",
+      "title": "Recycling day reminder",
+      "script": [
+        {
+          "speaker": "N",
+          "text": "This is a reminder for residents of the Westbrook area. The annual recycling day will take place this Saturday at the community center parking lot. Please bring electronics, batteries, and old paper, but no paint or chemicals, which will have a special collection in May. Volunteers will be on hand from eight until two to help unload your vehicles. And if you have extra time, we're still looking for two more volunteers. Just call the number on our website."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P4-08A",
+          "prompt": "Who is the announcement for?",
+          "options": [
+            "Community center employees.",
+            "Visiting recycling experts.",
+            "People who live in a neighborhood.",
+            "Owners of local businesses."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「People who live in a neighborhood.」：開頭說這是給 Westbrook 地區居民的提醒。\n【考點】Part 4・廣播公告・對象\n【判斷依據】線索出現在獨白開頭：對象通常在第一句，residents of the Westbrook area。",
+          "questionType": "detail",
+          "skill": "l-talk",
+          "ability": "L2"
+        },
+        {
+          "id": "COV-P4-08B",
+          "prompt": "What will happen in May?",
+          "options": [
+            "Electronics will be recycled.",
+            "Volunteers will be trained.",
+            "The community center will close.",
+            "Paint and chemicals will be collected."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Paint and chemicals will be collected.」：中段說油漆與化學品要等到五月的特別回收。\n【考點】Part 4・廣播公告・細節\n【判斷依據】線索出現在獨白中段：對應 no paint or chemicals, which will have a special collection in May。",
+          "questionType": "detail",
+          "skill": "l-talk",
+          "ability": "L4"
+        },
+        {
+          "id": "COV-P4-08C",
+          "prompt": "What are listeners asked to do if they have extra time?",
+          "options": [
+            "Bring old paper.",
+            "Call to volunteer.",
+            "Visit a website for a map.",
+            "Help unload paint."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Call to volunteer.」：結尾說還缺兩位志工，有空的人可以打電話。\n【考點】Part 4・廣播公告・下一步行動\n【判斷依據】線索出現在獨白結尾：if you have extra time 後面接的就是請聽者做的事。",
+          "questionType": "next-action",
+          "skill": "l-talk",
+          "ability": "L4"
+        }
+      ]
+    },
+    {
+      "id": "cov-p4-09",
+      "section": "listening",
+      "part": 4,
+      "accent": "AU",
+      "title": "Dental appointment voicemail",
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Hello, this is Taylor from Brightsmile Dental Clinic calling for Mr. Alvarez. I'm calling about your appointment on Wednesday. Our dentist has to attend an emergency training that morning, so we need to move your visit to the afternoon. We have openings at one thirty or three o'clock. Please call us back or reply to the text message we've sent you. If we don't hear from you by tomorrow, we'll keep you at three o'clock."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P4-09A",
+          "prompt": "Why is the speaker calling?",
+          "options": [
+            "To change an appointment time.",
+            "To confirm a payment.",
+            "To cancel a service.",
+            "To request a medical report."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「To change an appointment time.」：開頭說明來電是為了星期三的預約，並要求把時間改到下午。\n【考點】Part 4・語音留言・主旨\n【判斷依據】線索出現在獨白開頭：留言的目的通常在第二句 I'm calling about …，後面說明需要改時間。",
+          "questionType": "main-purpose",
+          "skill": "l-talk",
+          "ability": "L4"
+        },
+        {
+          "id": "COV-P4-09B",
+          "prompt": "Why does the clinic need to make a change?",
+          "options": [
+            "The clinic is moving.",
+            "A patient requested a new time.",
+            "The dentist will attend a training.",
+            "A machine is being repaired."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「The dentist will attend a training.」：中段說牙醫早上要參加緊急訓練，所以診療要改到下午。\n【考點】Part 4・語音留言・細節\n【判斷依據】線索出現在獨白中段：原因出現在 so 之前的那一句。",
+          "questionType": "detail",
+          "skill": "l-talk",
+          "ability": "L4"
+        },
+        {
+          "id": "COV-P4-09C",
+          "prompt": "What does the speaker imply by saying, \"we'll keep you at three o'clock\"?",
+          "options": [
+            "The patient must pay at three.",
+            "The later time will be assigned if there is no reply.",
+            "The clinic will close at three.",
+            "The patient's visit will be canceled."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「The later time will be assigned if there is no reply.」：這句話接在『明天前沒收到回覆』之後，意思是若沒有回覆，就直接安排三點。\n【考點】Part 4・說話者意圖\n【判斷依據】線索出現在獨白結尾：if 子句是條件；結論句 we'll keep you at 就是預設安排。",
+          "questionType": "speaker-intent",
+          "skill": "l-inference",
+          "ability": "L5"
+        }
+      ]
+    },
+    {
+      "id": "cov-p4-10",
+      "section": "listening",
+      "part": 4,
+      "accent": "US",
+      "title": "Damaged desk voicemail",
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Hi, this is Jordan from Eastside Furniture, returning your call about the desk you ordered. The desk arrived at our warehouse yesterday, but one of the legs is damaged, so we've asked the manufacturer to send a replacement. That usually takes about a week. We can either deliver the desk as soon as the new leg arrives, or you can pick it up now and we'll mail the leg to you later. Please let me know which you prefer. I'm in the store until six today."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P4-10A",
+          "prompt": "What is the problem?",
+          "options": [
+            "The desk was delivered late.",
+            "The wrong desk was ordered.",
+            "The warehouse is closed.",
+            "A part of the desk is damaged."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「A part of the desk is damaged.」：開頭交代桌子到倉庫了，但其中一隻桌腳損壞。\n【考點】Part 4・語音留言・細節\n【判斷依據】線索出現在獨白開頭：but 後面才是問題：one of the legs is damaged。",
+          "questionType": "detail",
+          "skill": "l-talk",
+          "ability": "L4"
+        },
+        {
+          "id": "COV-P4-10B",
+          "prompt": "How long will a replacement usually take?",
+          "options": [
+            "About a week.",
+            "About a day.",
+            "About a month.",
+            "About two hours."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「About a week.」：中段說明替換零件通常要一週。\n【考點】Part 4・語音留言・細節\n【判斷依據】線索出現在獨白中段：時間資訊緊接在要求製造商寄零件之後。",
+          "questionType": "detail",
+          "skill": "l-talk",
+          "ability": "L4"
+        },
+        {
+          "id": "COV-P4-10C",
+          "prompt": "What does the speaker ask the listener to do?",
+          "options": [
+            "Return the desk.",
+            "Visit the manufacturer.",
+            "Choose a delivery option.",
+            "Pay a repair fee."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Choose a delivery option.」：結尾說兩種方式（等零件到再送，或先取貨零件稍後寄），請聽者告知偏好哪一種。\n【考點】Part 4・語音留言・下一步行動\n【判斷依據】線索出現在獨白結尾：請求通常在結尾，Please let me know which you prefer 就是請對方選擇。",
+          "questionType": "next-action",
+          "skill": "l-talk",
+          "ability": "L4"
+        }
+      ]
+    },
+    {
+      "id": "cov-p4-11",
+      "section": "listening",
+      "part": 4,
+      "accent": "AU",
+      "title": "Botanical garden tour",
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Welcome to the Maple Hill Botanical Garden. I'll be your guide for the next hour. We'll begin in the glass conservatory, where you'll see tropical plants from three continents. After that, we'll walk through the herb garden, which was planted by volunteers last spring. Please stay on the marked paths, as some plants are very delicate. At the end of the tour, you're welcome to visit the gift shop, where all proceeds support the garden's education programs."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P4-11A",
+          "prompt": "Where will the tour begin?",
+          "options": [
+            "In the herb garden.",
+            "In a glass conservatory.",
+            "At the gift shop.",
+            "At the volunteer office."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「In a glass conservatory.」：開頭說我們會先從玻璃溫室開始。\n【考點】Part 4・導覽・細節\n【判斷依據】線索出現在獨白開頭：導覽的順序用 begin / after that / at the end 標示，問起點就聽第一站。",
+          "questionType": "detail",
+          "skill": "l-talk",
+          "ability": "L4"
+        },
+        {
+          "id": "COV-P4-11B",
+          "prompt": "What are visitors asked to do?",
+          "options": [
+            "Plant some herbs.",
+            "Wear protective glasses.",
+            "Join a volunteer group.",
+            "Stay on the marked paths."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Stay on the marked paths.」：中段說請待在標示的步道上，因為有些植物很脆弱。\n【考點】Part 4・導覽・要求\n【判斷依據】線索出現在獨白中段：Please … 後面接的是對參觀者的要求，注意它在第二站之後。",
+          "questionType": "next-action",
+          "skill": "l-talk",
+          "ability": "L4"
+        },
+        {
+          "id": "COV-P4-11C",
+          "prompt": "What is mentioned about the gift shop?",
+          "options": [
+            "Its income supports education programs.",
+            "It sells tropical plants only.",
+            "It is open only to volunteers.",
+            "It is located in the conservatory."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「Its income supports education programs.」：結尾說禮品店的所有收益用於花園的教育計畫。\n【考點】Part 4・導覽・細節\n【判斷依據】線索出現在獨白結尾：禮品店資訊在結尾，proceeds support 就是收益用於。",
+          "questionType": "detail",
+          "skill": "l-talk",
+          "ability": "L4"
+        }
+      ]
+    },
+    {
+      "id": "cov-p4-12",
+      "section": "listening",
+      "part": 4,
+      "accent": "UK",
+      "title": "Chocolate factory tour",
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Good morning, everyone, and welcome to the Pembrook Chocolate Factory. Before we start, please put on the safety glasses and hairnets provided at the door. The tour takes about forty-five minutes and covers four stages: roasting, grinding, molding, and packaging. Photography is allowed everywhere except the packaging area, where new equipment is being tested. At the end, each visitor will receive a small box of samples. If you have any questions, please wait until we reach the tasting room."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P4-12A",
+          "prompt": "What are visitors asked to do first?",
+          "options": [
+            "Take photographs.",
+            "Taste some samples.",
+            "Put on protective items.",
+            "Sign a form."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Put on protective items.」：開頭說開始前先戴上門口提供的護目鏡與髮網。\n【考點】Part 4・導覽・要求\n【判斷依據】線索出現在獨白開頭：first 對應第一個要求，before we start 之後的那一句。",
+          "questionType": "next-action",
+          "skill": "l-talk",
+          "ability": "L4"
+        },
+        {
+          "id": "COV-P4-12B",
+          "prompt": "Where is photography not allowed?",
+          "options": [
+            "In the roasting area.",
+            "In the packaging area.",
+            "In the tasting room.",
+            "At the entrance."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「In the packaging area.」：中段說除了包裝區以外都可以拍照，因為那裡在測試新設備。\n【考點】Part 4・導覽・細節\n【判斷依據】線索出現在獨白中段：except 引導例外，答案是被排除的地點。",
+          "questionType": "detail",
+          "skill": "l-talk",
+          "ability": "L4"
+        },
+        {
+          "id": "COV-P4-12C",
+          "prompt": "When should visitors ask questions?",
+          "options": [
+            "At the end of the tour.",
+            "Before the tour starts.",
+            "After they receive samples.",
+            "When they reach the tasting room."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「When they reach the tasting room.」：最後一句說有問題請等到品嚐室再問。\n【考點】Part 4・導覽・細節\n【判斷依據】線索出現在獨白結尾：At the end 是領樣品的時間，不是提問時間，要聽最後一句 wait until。",
+          "questionType": "detail",
+          "skill": "l-talk",
+          "ability": "L4"
+        }
+      ]
+    },
+    {
+      "id": "cov-p4-13",
+      "section": "listening",
+      "part": 4,
+      "accent": "US",
+      "title": "Park festival notice",
+      "graphicView": {
+        "kind": "svg",
+        "caption": "Fernhill Park map",
+        "svg": "<svg viewBox=\"0 0 500 290\" role=\"img\" aria-label=\"Park map with areas A to D and a lake\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"1\" y=\"1\" width=\"498\" height=\"288\" fill=\"#f7f7f2\" stroke=\"#8b8b80\"/><rect x=\"10\" y=\"10\" width=\"150\" height=\"125\" fill=\"#e8f0e0\" stroke=\"#5c6b4f\"/><text x=\"85\" y=\"78\" text-anchor=\"middle\" font-size=\"16\" fill=\"#26301f\">A  Entrance</text><rect x=\"170\" y=\"10\" width=\"150\" height=\"125\" fill=\"#efe8d8\" stroke=\"#7a6a4a\"/><text x=\"245\" y=\"78\" text-anchor=\"middle\" font-size=\"16\" fill=\"#3a3220\">B  Stage</text><rect x=\"330\" y=\"10\" width=\"80\" height=\"270\" fill=\"#e6e6ef\" stroke=\"#5c5c7a\"/><text x=\"370\" y=\"148\" text-anchor=\"middle\" font-size=\"16\" fill=\"#2a2a44\">C  Terrace</text><rect x=\"420\" y=\"10\" width=\"70\" height=\"270\" fill=\"#bcd8ea\" stroke=\"#4d7a96\"/><text x=\"455\" y=\"148\" text-anchor=\"middle\" font-size=\"16\" fill=\"#1c3a4d\">Lake</text><rect x=\"10\" y=\"145\" width=\"310\" height=\"135\" fill=\"#f0e4e4\" stroke=\"#7a5555\"/><text x=\"165\" y=\"217\" text-anchor=\"middle\" font-size=\"16\" fill=\"#3d2424\">D  Playground</text></svg>"
+      },
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Welcome to the Fernhill Park summer festival. Because of a water pipe repair, the area next to the lake is closed this afternoon. Visitors with boat reservations should meet at the stage at three o'clock instead, where a staff member will guide them. The food stalls will remain open all day, and the festival concert begins at six."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P4-13A",
+          "prompt": "Look at the graphic. Which area is closed?",
+          "options": [
+            "Area A",
+            "Area B",
+            "Area C",
+            "Area D"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Area C」：說話者說靠近湖的區域關閉。地圖上與湖相鄰的是 C 區。\n【考點】Part 4・圖表題（平面圖）\n【判斷依據】線索出現在獨白開頭：先看圖，找出『靠湖』的區域是哪一格；音檔只說位置，沒有說字母，必須對照地圖。",
+          "graphic": true,
+          "questionType": "graphic",
+          "skill": "l-talk",
+          "ability": "L4"
+        },
+        {
+          "id": "COV-P4-13B",
+          "prompt": "Look at the graphic. Where should visitors with boat reservations go?",
+          "options": [
+            "Area B",
+            "Area A",
+            "Area C",
+            "Area D"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「Area B」：有船隻預約的人要到舞台集合，地圖上舞台在 B 區。\n【考點】Part 4・圖表題（平面圖）\n【判斷依據】線索出現在獨白中段：先看圖，找出 Stage 所在的格子；音檔說的是地點名稱，答案要用字母。",
+          "graphic": true,
+          "questionType": "graphic",
+          "skill": "l-talk",
+          "ability": "L4"
+        },
+        {
+          "id": "COV-P4-13C",
+          "prompt": "When does the festival concert begin?",
+          "options": [
+            "At three o'clock",
+            "At noon",
+            "At nine o'clock",
+            "At six o'clock"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「At six o'clock」：結尾說音樂會六點開始，三點是船隻預約集合的時間。\n【考點】Part 4・細節\n【判斷依據】線索出現在獨白結尾：時間有三、六兩個，題目問音樂會，聽最後一句。",
+          "questionType": "detail",
+          "skill": "l-talk",
+          "ability": "L4"
+        }
+      ]
+    },
+    {
+      "id": "cov-p4-14",
+      "section": "listening",
+      "part": 4,
+      "accent": "AU",
+      "title": "Design team meeting",
+      "graphicView": {
+        "kind": "table",
+        "caption": "Design team calendar",
+        "headers": [
+          "Day",
+          "Morning",
+          "Afternoon"
+        ],
+        "rows": [
+          [
+            "Monday",
+            "Sales review",
+            "—"
+          ],
+          [
+            "Tuesday",
+            "Client call",
+            "Training"
+          ],
+          [
+            "Wednesday",
+            "—",
+            "—"
+          ],
+          [
+            "Thursday",
+            "Budget meeting",
+            "Site visit"
+          ],
+          [
+            "Friday",
+            "Design review",
+            "Team lunch"
+          ]
+        ]
+      },
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Hi, this is Rita from the project office. We need a one-hour meeting this week with the whole design team to review the new layout. Let's choose the day when the team has no other commitments, so nobody has to rush. Please confirm by email by the end of today, and I'll send the room details after that."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P4-14A",
+          "prompt": "What will the meeting be about?",
+          "options": [
+            "A budget proposal.",
+            "A client visit.",
+            "A new layout.",
+            "A training schedule."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「A new layout.」：開頭說要開會檢討新的配置。\n【考點】Part 4・語音留言・細節\n【判斷依據】線索出現在獨白開頭：主題出現在第一個要求之後：to review the new layout。",
+          "questionType": "detail",
+          "skill": "l-talk",
+          "ability": "L4"
+        },
+        {
+          "id": "COV-P4-14B",
+          "prompt": "Look at the graphic. On which day will the meeting probably be held?",
+          "options": [
+            "Monday",
+            "Wednesday",
+            "Tuesday",
+            "Thursday"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Wednesday」：說話者要選全隊沒有其他安排的日子。行事曆上只有星期三整天都是空的。\n【考點】Part 4・圖表題（行事曆）\n【判斷依據】線索出現在獨白中段：先看圖，找出上午與下午都空白的那一天；音檔只說條件，沒有說星期幾。",
+          "graphic": true,
+          "questionType": "graphic",
+          "skill": "l-talk",
+          "ability": "L5"
+        },
+        {
+          "id": "COV-P4-14C",
+          "prompt": "What does the speaker ask the listener to do?",
+          "options": [
+            "Book a conference room.",
+            "Cancel a training session.",
+            "Prepare a presentation.",
+            "Confirm by email."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Confirm by email.」：結尾說請在今天結束前以電子郵件確認。\n【考點】Part 4・下一步行動\n【判斷依據】線索出現在獨白結尾：請求在最後：Please confirm by email。",
+          "questionType": "next-action",
+          "skill": "l-talk",
+          "ability": "L4"
+        }
+      ]
+    },
+    {
+      "id": "cov-p4-15",
+      "section": "listening",
+      "part": 4,
+      "accent": "UK",
+      "title": "Print order ready",
+      "graphicView": {
+        "kind": "table",
+        "caption": "Print shop price list",
+        "headers": [
+          "Item",
+          "Size",
+          "Price"
+        ],
+        "rows": [
+          [
+            "Banner",
+            "Small",
+            "$25"
+          ],
+          [
+            "Banner",
+            "Large",
+            "$45"
+          ],
+          [
+            "Poster",
+            "Medium",
+            "$18"
+          ],
+          [
+            "Flyers (100)",
+            "Small",
+            "$30"
+          ]
+        ]
+      },
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Hello, this is the Printwell shop with a message for Ms. Dunn. Your order of one large banner and two medium posters is ready. We can deliver it to your office for a five-dollar fee, or you can pick it up at the shop. If you come in person, please bring your order number, since we close at six."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P4-15A",
+          "prompt": "Look at the graphic. How much is the order before any delivery fee?",
+          "options": [
+            "$63",
+            "$81",
+            "$86",
+            "$99"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「$81」：一張大海報橫幅 $45，加上兩張中型海報 2 × $18 = $36，合計 $81；$86 是加了運費的金額。\n【考點】Part 4・圖表題（價目表）\n【判斷依據】線索出現在獨白開頭：先看圖，找出 Large banner 與 Medium poster 的單價，再依音檔的數量計算；運費不算在內。",
+          "graphic": true,
+          "questionType": "graphic",
+          "skill": "l-talk",
+          "ability": "L4"
+        },
+        {
+          "id": "COV-P4-15B",
+          "prompt": "What does the speaker offer?",
+          "options": [
+            "A discount on future orders.",
+            "Free flyers.",
+            "Delivery to an office for a fee.",
+            "A refund for a small banner."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Delivery to an office for a fee.」：中段說可以付五美元送到辦公室。\n【考點】Part 4・細節\n【判斷依據】線索出現在獨白中段：對應 deliver it to your office for a five-dollar fee。",
+          "questionType": "detail",
+          "skill": "l-talk",
+          "ability": "L4"
+        },
+        {
+          "id": "COV-P4-15C",
+          "prompt": "What should the listener bring when picking up the order?",
+          "options": [
+            "An order number.",
+            "A price list.",
+            "A payment receipt.",
+            "A photo of the banner."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「An order number.」：結尾說親自取貨請帶訂單編號，因為六點打烊。\n【考點】Part 4・細節\n【判斷依據】線索出現在獨白結尾：最後一句 please bring your order number。",
+          "questionType": "next-action",
+          "skill": "l-talk",
+          "ability": "L4"
+        }
+      ]
+    },
+    {
+      "id": "cov-p2-11",
+      "section": "listening",
+      "part": 2,
+      "accent": "AU",
+      "title": "Response practice",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "W",
+          "text": "The conference room projector isn't working this morning."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P2-11",
+          "prompt": "Mark your answer.",
+          "options": [
+            "I'll ask IT to bring a spare one.",
+            "The room is on the fourth floor.",
+            "Our working hours changed this morning."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「I'll ask IT to bring a spare one.」：直述句報告問題，合理的回應是提出解決辦法；其他兩項只是重複 room 或 morning。\n【考點】Part 2・直述句回應\n【判斷依據】直述句沒有固定答案形式，要選能回應說話者處境的句子，並排除重複字的選項；這類回應是常見的合理選擇，不是必然正解。",
+          "questionType": "statement-response",
+          "skill": "l-response",
+          "ability": "L5"
+        }
+      ]
+    },
+    {
+      "id": "cov-p2-12",
+      "section": "listening",
+      "part": 2,
+      "accent": "CA",
+      "title": "Response practice",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "M",
+          "text": "The sales figures for March are higher than we expected."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P2-12",
+          "prompt": "Mark your answer.",
+          "options": [
+            "The march begins at noon.",
+            "That's encouraging news.",
+            "Sales are on the second floor."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「That's encouraging news.」：對方報告好消息，回應表示欣喜最自然；其他兩項重複 March（march）或 sales。\n【考點】Part 2・直述句回應\n【判斷依據】先判斷說話者的語氣（好消息），再排除重複字或相似音的選項。",
+          "questionType": "statement-response",
+          "skill": "l-response",
+          "ability": "L5"
         }
       ]
     }

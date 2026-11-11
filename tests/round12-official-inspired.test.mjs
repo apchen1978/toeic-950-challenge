@@ -16,7 +16,7 @@ const listeningCount = (groups) => groups.reduce((sum, group) => sum + group.que
 
 test('every bank question has an ability label matching the ten-category model', () => {
   const questions = bank.groups.flatMap((group) => group.questions);
-  assert.equal(questions.length, 887);
+  assert.equal(questions.length, 953);
   for (const group of bank.groups) {
     for (const question of group.questions) {
       assert.ok(ABILITIES[question.ability], `${question.id} has an unknown ability`);
@@ -79,7 +79,7 @@ test('Part 2 statements are 15–20 percent and every item has an echo or sound-
   const questions = part2.flatMap((group) => group.questions);
   const statements = part2.reduce((sum, group) => sum + group.questions.filter(() => group.script.some((line) => !/[?？]\s*$/.test(line.text))).length, 0);
   const ratio = statements / questions.length;
-  assert.equal(questions.length, 102);
+  assert.equal(questions.length, 114);
   assert.ok(ratio >= 0.15 && ratio <= 0.20, `statement share ${ratio}`);
 
   for (const group of part2) {
