@@ -154,6 +154,7 @@ a { color: var(--brand); text-underline-offset: .17em; }
 .lesson-card summary { cursor: pointer; color: var(--brand); font-weight: 700; }
 .flash-card { max-width: 720px; margin: 24px auto; }
 .flash-card h1 { font-size: clamp(2rem, 7vw, 3rem); overflow-wrap: anywhere; }
+.vocab-full { font-size: 0.72em; font-weight: 500; color: var(--muted); }
 .flash-gold { border: 2px solid #b08b45; }
 .flash-settings { display: grid; gap: 12px; margin: 20px 0; }
 .flash-settings label { display: grid; gap: 4px; }

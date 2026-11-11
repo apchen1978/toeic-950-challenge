@@ -9,7 +9,7 @@ const styles = readFileSync(new URL("../codex/styles.css", import.meta.url), "ut
 test("home vocabulary feature derives its totals from the data and keeps direct study actions", () => {
   const counts = { 800: 0, 900: 0 };
   for (const group of VOCABULARY) for (const word of group.words) counts[word[3]] += 1;
-  assert.deepEqual(counts, { 800: 646, 900: 354 });
+  assert.deepEqual(counts, { 800: 698, 900: 502 });
   assert.match(app, /const vocab = vocabCounts\(\)/);
   assert.match(app, /const vocabTotal = vocab\[800\] \+ vocab\[900\]/);
   assert.match(app, /class="card vocabulary-card"/);
@@ -17,6 +17,17 @@ test("home vocabulary feature derives its totals from the data and keeps direct 
   assert.match(app, /data-action="vocab-gold"/);
   assert.match(app, /case "vocab-gold":\s*\{\s*store\.set\(KEY_VOCAB_LEVEL, "900"\)/);
   assert.match(app, /list\.open = true/);
+});
+
+test("abbreviation full forms appear next to headwords in the list and flashcards", () => {
+  const entries = VOCABULARY.flatMap((group) => group.words);
+  for (const word of ["cc", "RFP", "Q&A session", "employee ID", "net 30"]) {
+    assert.ok(entries.find((entry) => entry[0] === word)?.[5], word);
+  }
+  assert.match(app, /function vocabName\(item\)/);
+  assert.match(app, /esc\(item\.full\)/);
+  assert.match(app, /<b>\$\{vocabName\(entry\)\}<\/b>/);
+  assert.match(app, /<h1>\$\{vocabName\(item\)\}<\/h1>/);
 });
 
 test("vocabulary cover adapts its actions and gold seal for mobile and dark mode", () => {

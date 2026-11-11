@@ -82,9 +82,10 @@ function vocabLevel() {
   return value === "all" || value === "900" || value === "800" ? value : "all";
 }
 function vocabParts(item) {
-  const [word, meaning, example, level, pos = ""] = item;
-  return { word, meaning, example, level, pos };
+  const [word, meaning, example, level, pos = "", full = ""] = item;
+  return { word, meaning, example, level, pos, full };
 }
+function vocabName(item) { return `${esc(item.word)}${item.full ? ` <span class="vocab-full">(${esc(item.full)})</span>` : ""}`; }
 function vocabCounts() {
   const counts = { 800: 0, 900: 0 };
   for (const group of VOCABULARY) for (const item of group.words) counts[item[3]] += 1;
@@ -294,7 +295,7 @@ function renderHome() {
           <button type="button" class="btn small" data-action="vocab-filter" data-vocab-filter="900">900 進階</button>
           <button type="button" class="btn small" data-action="vocab-filter" data-vocab-filter="all">全部</button>
         </div>
-        ${VOCABULARY.map((group) => `<details class="vocabulary-group" data-vocab-group><summary>${esc(group.category)} · <span data-vocab-count>${group.words.length} 個詞條</span></summary>${group.words.map((item) => { const { word, meaning, example, level, pos } = vocabParts(item); return `<p class="${level === 900 ? "vocab-gold" : "vocab-core"}" data-vocab-level="${level}"><b>${esc(word)}</b>${pos ? ` <span class="muted">${esc(pos)}</span>` : ""} <span class="tag">${level === 900 ? "900 金色證書" : "800 核心"}</span> · ${esc(meaning)}<br><span class="muted">${esc(example)}</span></p>`; }).join("")}</details>`).join("")}
+        ${VOCABULARY.map((group) => `<details class="vocabulary-group" data-vocab-group><summary>${esc(group.category)} · <span data-vocab-count>${group.words.length} 個詞條</span></summary>${group.words.map((item) => { const entry = vocabParts(item); const { meaning, example, level, pos } = entry; return `<p class="${level === 900 ? "vocab-gold" : "vocab-core"}" data-vocab-level="${level}"><b>${vocabName(entry)}</b>${pos ? ` <span class="muted">${esc(pos)}</span>` : ""} <span class="tag">${level === 900 ? "900 金色證書" : "800 核心"}</span> · ${esc(meaning)}<br><span class="muted">${esc(example)}</span></p>`; }).join("")}</details>`).join("")}
         <p><a href="https://www.toeic.com.tw/toeic/listening-reading/about/content/" target="_blank" rel="noopener noreferrer">參考：台灣多益官方測驗內容</a> · <a href="https://dictionary.cambridge.org/dictionary/english/" target="_blank" rel="noopener noreferrer">Cambridge Dictionary</a></p>
       </details>
     </section>
@@ -429,7 +430,7 @@ function flashRender() {
   audio.stop();
   const item = flashQueue[0];
   if (!item) { app.innerHTML = `<section class="card"><h1>這組練習完成</h1><p>今天選取的單字都練習過了。</p><button class="btn primary" data-action="flash-setup">返回單字閃卡</button><button class="btn" data-action="home">回首頁</button></section>`; return; }
-  app.innerHTML = `<section class="card flash-card ${item.level === 900 ? 'flash-gold' : ''}"><p class="section-kicker">${esc(item.category)} · 剩餘 ${flashQueue.length} 個</p><span class="tag">${item.level === 900 ? '900 金色證書' : '800 核心'}</span><h1>${esc(item.word)}</h1>${item.pos ? `<p>${esc(item.pos)}</p>` : ''}
+  app.innerHTML = `<section class="card flash-card ${item.level === 900 ? 'flash-gold' : ''}"><p class="section-kicker">${esc(item.category)} · 剩餘 ${flashQueue.length} 個</p><span class="tag">${item.level === 900 ? '900 金色證書' : '800 核心'}</span><h1>${vocabName(item)}</h1>${item.pos ? `<p>${esc(item.pos)}</p>` : ''}
     <button class="btn small" data-action="flash-speak" ${audio.supported() ? '' : 'disabled'}>播放發音</button><span class="muted" id="flash-audio-status" role="status">${audio.supported() ? '' : '此瀏覽器沒有語音，仍可繼續練習。'}</span>
     ${flashRevealed ? `<div class="flash-answer"><p><b>${esc(item.meaning)}</b></p><p>${esc(item.example)}</p></div><p>你記得這個字嗎？</p><div class="row"><button class="btn" data-action="flash-rate" data-rating="again">不會</button><button class="btn" data-action="flash-rate" data-rating="hard">有點模糊</button><button class="btn primary" data-action="flash-rate" data-rating="good">會</button></div>` : '<p>先想想意思，再翻面。</p><button class="btn primary" data-action="flash-flip">翻面看答案</button>'}
     <p id="flash-save-status" role="status"></p><p><button class="btn small" data-action="flash-setup">結束練習</button></p></section>`;
