@@ -1,6 +1,19 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { rateCard, selectCards } from '../codex/js/srs.js';
+import { migrateFlashcardProgress, rateCard, selectCards } from '../codex/js/srs.js';
+
+test('renamed flashcard keeps its saved schedule and does not overwrite newer progress', () => {
+  const saved = { box: 3, dueAt: 123, introducedAt: 45 };
+  const old = { 'complimentary offer': saved, other: { box: 1 } };
+  const migrated = migrateFlashcardProgress(old);
+  assert.equal(migrated.changed, true);
+  assert.deepEqual(migrated.progress['free trial offer'], saved);
+  assert.equal(migrated.progress['complimentary offer'], undefined);
+  assert.deepEqual(old['complimentary offer'], saved);
+  const newer = { ...old, 'free trial offer': { box: 4 } };
+  assert.equal(migrateFlashcardProgress(newer).changed, false);
+  assert.deepEqual(migrateFlashcardProgress(newer).progress['free trial offer'], { box: 4 });
+});
 
 test('ratings schedule repeat, progression, and preserve introduction date', () => {
   const first = rateCard(null, 'good', 1000);

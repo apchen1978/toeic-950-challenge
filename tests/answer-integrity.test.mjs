@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { migrateChoiceIndexes, CHOICE_REVISION } from '../codex/js/choice-legacy.js';
 import { PREVIOUS_OPTIONS } from '../codex/js/choice-order-v3.js';
+import { PREVIOUS_P2_OPTIONS } from '../codex/js/choice-order-v4.js';
 
 const bank = JSON.parse(readFileSync(new URL('../codex/data/questions.json', import.meta.url), 'utf8'));
 const byId = Object.fromEntries(bank.groups.flatMap((group) => group.questions.map((question) => [question.id, question])));
@@ -82,6 +83,19 @@ test('saved answer indexes follow the same option text after revision 4', () => 
     for (let index = 0; index < previous.length; index++) {
       const result = migrateChoiceIndexes({ [id]: index }, 3, byId);
       assert.equal(byId[id].options[result.answers[id]], previous[index], `${id} old option ${index}`);
+    }
+  }
+});
+
+test('non-Form Part 2 answer positions are balanced and old choices survive revision 5', () => {
+  const questions = bank.groups.filter((group) => group.part === 2 && !frozenGroups.has(group.id)).flatMap((group) => group.questions);
+  assert.equal(questions.length, 27);
+  const counts = questions.reduce((result, question) => { result[question.answer]++; return result; }, [0, 0, 0]);
+  for (const count of counts) assert.ok(count / questions.length >= 0.25 && count / questions.length <= 0.40, counts.join('/'));
+  for (const [id, previous] of Object.entries(PREVIOUS_P2_OPTIONS)) {
+    for (let index = 0; index < previous.length; index++) {
+      const result = migrateChoiceIndexes({ [id]: index }, 4, byId);
+      assert.equal(byId[id].options[result.answers[id]], previous[index], `${id} option ${index}`);
     }
   }
 });
