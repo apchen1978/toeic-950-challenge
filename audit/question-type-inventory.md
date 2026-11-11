@@ -25,23 +25,24 @@
 | P4 main-purpose | 9 | 9 | 15 |
 | P4 next-action | 1 | 1 | 8 |
 | P4 speaker-intent | 4 | 1 | 10 |
-| P5 part-of-speech | 13 | 17 | 17 |
+| P5 part-of-speech | 13 | 17 | 33 |
 | P5 preposition-conjunction | 22 | 15 | 25 |
-| P5 pronoun | 8 | 8 | 8 |
+| P5 pronoun | 8 | 8 | 12 |
 | P5 relative-pronoun | 8 | 8 | 8 |
-| P5 verb-tense-voice | 6 | 9 | 9 |
+| P5 verb-tense-voice | 6 | 9 | 17 |
 | P5 vocabulary-collocation | 53 | 53 | 53 |
 | P6 conjunctive-adverb | 4 | 4 | 5 |
 | P6 grammar | 19 | 19 | 33 |
 | P6 sentence-insertion | 17 | 17 | 23 |
 | P6 vocabulary | 24 | 24 | 27 |
 | P7 chat-intent | 1 | 1 | 7 |
-| P7 cross-document | 59 | 59 | 59 |
-| P7 detail | 103 | 103 | 111 |
-| P7 inference | 44 | 44 | 44 |
+| P7 cross-document | 59 | 59 | 63 |
+| P7 detail | 103 | 103 | 113 |
+| P7 inference | 44 | 44 | 50 |
 | P7 main-purpose | 30 | 30 | 30 |
+| P7 not-question | 0 | 0 | 6 |
 | P7 synonym | 0 | 0 | 10 |
-| P7 text-insertion | 1 | 1 | 1 |
+| P7 text-insertion | 1 | 1 | 5 |
 
 ## 標籤校正（10 題，只改標籤）
 

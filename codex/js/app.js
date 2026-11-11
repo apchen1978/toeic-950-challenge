@@ -269,6 +269,12 @@ function renderHome() {
       <p class="muted">音檔是練習用的合成語音，存在這個網站裡，播放時不連到外部語音服務。不是 ETS 官方錄音。</p>
     </section>
 
+    <section class="card reading-full-card"><p class="section-kicker">READING MOCK</p><h2>閱讀完整模擬 · 100 題／75 分鐘</h2>
+      <p>Part 5 30 題、Part 6 16 題、Part 7 54 題（單篇 29 題、雙篇 10 題、三篇 15 題），依正式順序作答，75 分鐘倒數，可跳題與回頭修改。提早做完可直接交卷。結果頁會統計每個 Part 的用時與錯題的題型。</p>
+      <p class="muted">題目包含推論、NOT、句子插入位置、同義字、簡訊意圖與跨文件整合題，著重高分段容易失分的題型。題目為原創模擬題，不是 ETS 官方試題。</p>
+      <div class="row"><button class="btn primary" data-action="start-form" data-form="read-full-1">開始閱讀完整模擬 1</button> <button class="btn primary" data-action="start-form" data-form="read-full-2">開始閱讀完整模擬 2</button></div>
+    </section>
+
     <section class="card vocabulary-card" aria-labelledby="vocabulary-title">
       <div class="vocab-hero">
         <div class="vocab-hero-copy">
@@ -552,6 +558,16 @@ function officialListeningMinutes(groupIds, manifest) {
   return sequenceSeconds(buildOfficialSequence(groups, manifest)) / 60;
 }
 
+const isReadingFullForm = (formId) => /^read-full-\d+$/.test(String(formId));
+
+function startReadingFull(formId) {
+  const set = bank.meta.sets.find((item) => item.id === formId);
+  if (!set) return;
+  const ids = orderedGroupIds(set.groupIds).sort((a, b) => groupById(a).part - groupById(b).part);
+  const minutes = set.timing?.reading ?? 75;
+  startSession("diagnostic", ids, minutes, null, set.id, { reading: minutes }, { official: true, section: "reading", partSecs: { 5: 0, 6: 0, 7: 0 } });
+}
+
 async function startOfficialSet(formId) {
   const set = bank.meta.sets.find((item) => item.id === formId);
   if (!set) return;
@@ -580,6 +596,10 @@ function startTimer() {
   stopTimer();
   if (session?.official && session.phase === "listening") return;
   const tick = () => {
+    if (session?.partSecs && !Number.isFinite(session.pausedRemainingMs)) {
+      const part = groupById(session.groupIds[session.cur])?.part;
+      if (part in session.partSecs) session.partSecs[part] += 1;
+    }
     const left = Math.ceil(remainingMs(session) / 1000);
     const el = document.getElementById("timer");
     if (el) {
@@ -1093,6 +1113,7 @@ function submit(auto = false) {
     peeked: !!session.peeked,
     section: normalizeMockSection(session.section),
     secUsed: elapsedSeconds(session),
+    partSecs: session.partSecs ?? null,
     groupIds: session.groupIds, questionIds: session.questionIds ?? null, answers: session.answers,
     choiceRevision: session.choiceRevision ?? CHOICE_REVISION,
     correct: result.correct, total: result.total, bySkill: answeredResult.bySkill, bySection: answeredResult.bySection
@@ -1159,6 +1180,8 @@ function renderResult(entry, showAll = false) {
       ${skills.map(([k, v]) => `<div class="skillrow"><div>${esc(skillLabel(k))}</div><div>${v.c}/${v.t}</div><div class="bar ${v.c / v.t < 0.6 ? "weak" : ""}" style="grid-column:1 / -1"><i style="width:${(v.c / v.t) * 100}%"></i></div></div>`).join("")}
     </section>
 
+    ${readingFullReport(entry, qs)}
+
     <section class="card"><h2>下一次練習建議</h2>
       ${weak.length ? weak.map((w) => `<div class="skillrow"><div><b>${esc(skillLabel(w.skill))}</b>（${w.c}/${w.t}）<div class="muted">${esc(SKILLS[w.skill]?.tip ?? "")}</div></div><div><button class="btn small" data-action="practice" data-skill="${esc(w.skill)}">練習</button></div></div>`).join("")
         : `<p>${r.answered ? '已答題目前沒有錯題；可繼續練習其他題型。' : '尚未作答，沒有足夠資料建議下一次練習。'}</p>`}
@@ -1171,6 +1194,43 @@ function renderResult(entry, showAll = false) {
     <div class="row"><button class="btn primary" data-action="home">回首頁</button></div>
   `;
   window.scrollTo(0, 0);
+}
+
+const TYPE_LABELS = {
+  "part-of-speech": "詞性", "verb-tense-voice": "時態／語態", "preposition-conjunction": "介系詞／連接詞", pronoun: "代名詞",
+  "relative-pronoun": "關係詞", "vocabulary-collocation": "字彙搭配", vocabulary: "字彙", grammar: "文法", "conjunctive-adverb": "連接副詞",
+  "sentence-insertion": "句子插入", "main-purpose": "主旨／目的", detail: "細節", inference: "推論", "not-question": "NOT 題",
+  synonym: "同義字", "text-insertion": "插入位置", "chat-intent": "簡訊／聊天意圖", "cross-document": "跨文件整合"
+};
+const PART_PACE = { 5: 10, 6: 8, 7: 57 };
+
+function readingFullReport(entry, qs) {
+  if (!isReadingFullForm(entry.formId)) return "";
+  const partOf = (q) => groupById(q.groupId)?.part;
+  const rows = [5, 6, 7].map((part) => {
+    const list = qs.filter((q) => partOf(q) === part);
+    const right = list.filter((q) => entry.answers[q.id] === q.answer).length;
+    const secs = entry.partSecs?.[part];
+    const used = Number.isFinite(secs) ? formatDuration(secs) : "—";
+    const over = Number.isFinite(secs) && secs > PART_PACE[part] * 60;
+    return `<tr><td>Part ${part}</td><td>${right}/${list.length}</td><td>${used}${over ? ' <span class="tag practice">超過參考配速</span>' : ""}</td><td>${PART_PACE[part]} 分</td></tr>`;
+  }).join("");
+  const byType = new Map();
+  for (const q of qs) {
+    const key = `${partOf(q)}|${q.questionType ?? "other"}`;
+    const cell = byType.get(key) ?? { part: partOf(q), type: q.questionType ?? "other", wrong: 0, total: 0 };
+    cell.total += 1;
+    if (entry.answers[q.id] !== q.answer) cell.wrong += 1;
+    byType.set(key, cell);
+  }
+  const ranked = [...byType.values()].sort((a, b) => b.wrong - a.wrong || b.wrong / b.total - a.wrong / a.total);
+  const worst = ranked[0] && ranked[0].wrong > 0 ? ranked[0] : null;
+  return `<section class="card"><h2>各 Part 與題型統計</h2>
+    <p class="muted">用時只計算停在該 Part 題目上的時間。參考配速：Part 5 約 10 分、Part 6 約 8 分，其餘留給 Part 7；這是練習起點，可依自己的狀況調整。</p>
+    <table><thead><tr><th>Part</th><th>答對</th><th>實際用時</th><th>參考配速</th></tr></thead><tbody>${rows}</tbody></table>
+    ${worst ? `<p><b>錯最多的題型：</b>Part ${worst.part}・${esc(TYPE_LABELS[worst.type] ?? worst.type)}（錯或未答 ${worst.wrong}／${worst.total} 題）</p>` : "<p>本次沒有錯題。</p>"}
+    <table><thead><tr><th>題型</th><th>錯題（含未作答）</th><th>題數</th></tr></thead><tbody>${ranked.map((c) => `<tr><td>Part ${c.part}・${esc(TYPE_LABELS[c.type] ?? c.type)}</td><td>${c.wrong}</td><td>${c.total}</td></tr>`).join("")}</tbody></table>
+  </section>`;
 }
 
 function reviewGroup(g, entry) {
@@ -1206,6 +1266,7 @@ app.addEventListener("click", (e) => {
     }
     case "start-form": {
       if (d.form === "quick-40" || d.form === "quick-60") { startQuickForm(d.form); break; }
+      if (isReadingFullForm(d.form)) { startReadingFull(d.form); break; }
       if (isOfficialForm(d.form)) { startOfficialSet(d.form); break; }
       const set = bank.meta.sets.find((s) => s.id === d.form);
       const ids = orderedGroupIds(set.groupIds).sort((a, b) => groupById(a).part - groupById(b).part);

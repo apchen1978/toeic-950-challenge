@@ -34,7 +34,7 @@ test('new questions: unique ids, answer keys, balanced positions, banned phrases
       assert.match(question.explanation, /【判斷依據】/);
       assert.doesNotMatch(question.explanation, /秒殺|萬能|80%/);
       const quoted = question.prompt.match(/"([^"]+)"/);
-      if (quoted && question.questionType !== 'synonym') assert.ok(source.includes(quoted[1]), `${question.id} quote must appear in the source`);
+      if (quoted && !['synonym', 'text-insertion'].includes(question.questionType)) assert.ok(source.includes(quoted[1]), `${question.id} quote must appear in the source`);
       if (question.questionType === 'synonym') assert.ok(source.includes(quoted[1]), `${question.id} target word must appear in the passage`);
       assert.equal(question.options[question.answer], question.explanation.match(/正解 [A-D]「([^」]+)」/)[1], question.id);
     }
