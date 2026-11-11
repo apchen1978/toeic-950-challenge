@@ -627,7 +627,7 @@ function renderTips() {
   app.innerHTML = `<section class="card tips-page"><p class="section-kicker">BEFORE THE TEST</p><h1>考前技巧</h1><p class="muted">以下只整理可以對上公開說明的做法。它不會改測驗時間，也不能保證分數。</p>
     ${TIP_SECTIONS.map((section) => `<article><h2>${esc(section.title)}</h2><p>${esc(section.short)}</p>
       ${section.tips.map((tip) => `<h3>${esc(tip.title)}</h3><p>${esc(tip.body)}</p><p class="muted">為什麼：${esc(tip.why)}</p>`).join("")}
-      <p class="tips-sources">參考：${section.sources.map((source) => `<a href="${esc(source.href)}" target="_blank" rel="noopener">${esc(source.name)}</a>`).join(" · ")}</p>
+      <p class="tips-sources">${section.personal ? "個人整理，非官方，僅供練習參考。" : `參考：${section.sources.map((source) => `<a href="${esc(source.href)}" target="_blank" rel="noopener">${esc(source.name)}</a>`).join(" · ")}`}</p>
     </article>`).join("")}
     <button type="button" class="btn" data-action="home">回首頁</button></section>`;
 }
