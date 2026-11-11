@@ -9,6 +9,7 @@ import { remainingMs, pauseTimer, resumeTimer, elapsedSeconds, startTimedForm, s
 import { assembleQuickForm, avoidedGroupIds, createRng, isActiveGroup, rememberQuickDraw } from "./quick-form.js";
 import { allowsReplay, buildOfficialSequence, isOfficialForm, listenProgressLabel, meanListeningMinutes, playbackRateFor, progressForStep, sequenceSeconds } from "./official-listening.js";
 import { graphicHtml } from "./graphic.js";
+import { paceHint, paceSummary } from "./pace.js";
 import { CHOICE_REVISION, migrateChoiceIndexes } from "./choice-legacy.js";
 import { TIP_SECTIONS, TIPS_STORAGE_KEY, tipForPart, tipsEnabled } from "./tips.js";
 import { ABILITIES, abilityStats, scoreBand } from "./abilities.js";
@@ -601,6 +602,7 @@ function startTimer() {
       if (part in session.partSecs) session.partSecs[part] += 1;
     }
     const left = Math.ceil(remainingMs(session) / 1000);
+    updatePaceHint(left);
     const el = document.getElementById("timer");
     if (el) {
       el.textContent = formatDuration(left);
@@ -621,6 +623,22 @@ function startTimer() {
   if (session && !Number.isFinite(session.pausedRemainingMs) && !timerId) timerId = setInterval(tick, 1000);
 }
 function stopTimer() { if (timerId) clearInterval(timerId); timerId = null; }
+
+function updatePaceHint(leftSeconds) {
+  if (!session?.partSecs) return;
+  const el = document.getElementById("pace-hint");
+  if (!el) return;
+  const part = groupById(session.groupIds[session.cur])?.part;
+  const hint = paceHint(part, leftSeconds, session.partSecs);
+  el.textContent = hint.text;
+  el.classList.toggle("behind", hint.behind);
+}
+
+function paceHintBlock(g) {
+  if (!session?.partSecs || !isReadingFullForm(session.formId)) return "";
+  const hint = paceHint(g.part, Math.ceil(remainingMs(session) / 1000), session.partSecs);
+  return `<section class="pace-card" aria-live="polite"><p class="pace-summary">${esc(paceSummary())}</p><p id="pace-hint" class="pace-hint${hint.behind ? " behind" : ""}">${esc(hint.text)}</p></section>`;
+}
 
 /* ---------- Test view ---------- */
 function showTips() {
@@ -691,6 +709,7 @@ function renderTest() {
       <div class="row">${clock}<span class="muted" id="count">${answeredCount}/${qs.length} 已答</span><button class="btn small" data-action="pause-timer">暫停／看估分</button><button class="btn small primary" data-action="submit">提前交卷</button></div>
     </div>
 
+    ${paceHintBlock(g)}
     ${partTipBlock(g)}
     <section class="card">
       ${g.image ? `<img class="question-image" src="${esc(g.image)}" alt="${g.part === 1 ? "照片題圖片" : "聽力題組附圖"}；若圖片載入失敗，請連網重新開啟。">` : ""}
@@ -1202,7 +1221,7 @@ const TYPE_LABELS = {
   "sentence-insertion": "句子插入", "main-purpose": "主旨／目的", detail: "細節", inference: "推論", "not-question": "NOT 題",
   synonym: "同義字", "text-insertion": "插入位置", "chat-intent": "簡訊／聊天意圖", "cross-document": "跨文件整合"
 };
-const PART_PACE = { 5: 10, 6: 8, 7: 57 };
+const PART_PACE = { 5: 10, 6: 8, 7: 52 };
 
 function readingFullReport(entry, qs) {
   if (!isReadingFullForm(entry.formId)) return "";
@@ -1226,7 +1245,7 @@ function readingFullReport(entry, qs) {
   const ranked = [...byType.values()].sort((a, b) => b.wrong - a.wrong || b.wrong / b.total - a.wrong / a.total);
   const worst = ranked[0] && ranked[0].wrong > 0 ? ranked[0] : null;
   return `<section class="card"><h2>各 Part 與題型統計</h2>
-    <p class="muted">用時只計算停在該 Part 題目上的時間。參考配速：Part 5 約 10 分、Part 6 約 8 分，其餘留給 Part 7；這是練習起點，可依自己的狀況調整。</p>
+    <p class="muted">用時只計算停在該 Part 題目上的時間。參考配速：Part 5 約 10 分、Part 6 約 8 分、Part 7 約 52 分，最後留約 5 分檢查；這是個人整理的練習起點，可依自己的狀況調整。</p>
     <table><thead><tr><th>Part</th><th>答對</th><th>實際用時</th><th>參考配速</th></tr></thead><tbody>${rows}</tbody></table>
     ${worst ? `<p><b>錯最多的題型：</b>Part ${worst.part}・${esc(TYPE_LABELS[worst.type] ?? worst.type)}（錯或未答 ${worst.wrong}／${worst.total} 題）</p>` : "<p>本次沒有錯題。</p>"}
     <table><thead><tr><th>題型</th><th>錯題（含未作答）</th><th>題數</th></tr></thead><tbody>${ranked.map((c) => `<tr><td>Part ${c.part}・${esc(TYPE_LABELS[c.type] ?? c.type)}</td><td>${c.wrong}</td><td>${c.total}</td></tr>`).join("")}</tbody></table>

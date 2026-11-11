@@ -247,3 +247,8 @@ a { color: var(--brand); text-underline-offset: .17em; }
   .vocab-stat span { font-size: .76rem; }
   .vocab-actions .btn { flex-basis: 100%; width: 100%; }
 }
+
+.pace-card { border: 1px solid var(--line); border-left: 4px solid var(--brand); border-radius: 8px; padding: 8px 12px; margin: 8px 0; background: var(--bg); }
+.pace-summary { margin: 0 0 4px; font-size: .9rem; color: var(--muted, #666); }
+.pace-hint { margin: 0; font-weight: 600; }
+.pace-hint.behind { color: var(--bad); }
