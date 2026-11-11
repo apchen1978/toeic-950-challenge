@@ -929,6 +929,124 @@
           "listening": 45,
           "reading": 75
         }
+      },
+      {
+        "id": "read-full-1",
+        "label": "閱讀完整模擬 1 · 100 題／75 分鐘",
+        "groupIds": [
+          "g-cov-p5-13",
+          "g-cov-p5-17",
+          "g-cov-p5-30",
+          "xf-p5-26",
+          "g-cov-p5-11",
+          "g-vocab-c-10",
+          "g-cov-p5-01",
+          "g-cov-p5-15",
+          "g-a-p5-01",
+          "g-cov-p5-02",
+          "g-extra-r-10",
+          "g-cov-p5-36",
+          "g-new-r3",
+          "g-cov-p5-29",
+          "g-cov-p5-28",
+          "g-cov-p5-18",
+          "g-vocab-c-8",
+          "g-cov-p5-14",
+          "g-cov-p5-12",
+          "g-cov-p5-27",
+          "s03-sentence3",
+          "g-cov-p5-35",
+          "g-cov-p5-16",
+          "g-cov-p5-05",
+          "g-cov-p5-03",
+          "g-extra-r-03",
+          "g-cov-p5-04",
+          "g-vocab-c-6",
+          "g-vocab-c-3",
+          "g-xs-r15",
+          "g-cov-p6-01",
+          "g-cov-p6-02",
+          "g-cov-p6-03",
+          "g-cov-p6-04",
+          "g-cov-p7-syn-01",
+          "g-cov-p7-syn-02",
+          "g-cov-p7-syn-03",
+          "g-cov-p7-chat-01",
+          "g-cov-p7-ins-01",
+          "g-cov-p7-ins-02",
+          "g-r09",
+          "g-f-single-1",
+          "g-rdnew-028",
+          "g-rdnew-025",
+          "g-rd-pay-01",
+          "g-rd-job-01",
+          "g-rt-train-01",
+          "g-rdnew-036",
+          "g-cov-p7-tri-01"
+        ],
+        "durationMin": 75,
+        "timing": {
+          "reading": 75
+        }
+      },
+      {
+        "id": "read-full-2",
+        "label": "閱讀完整模擬 2 · 100 題／75 分鐘",
+        "groupIds": [
+          "g-cov-p5-09",
+          "g-cov-p5-22",
+          "g-cov-p5-19",
+          "g-cov-p5-23",
+          "g-cov-p5-20",
+          "g-extra-r-01",
+          "g-vocab-c-9",
+          "g-cov-p5-06",
+          "g-cov-p5-25",
+          "g-extra-r-04",
+          "g-cov-p5-31",
+          "g-cov-p5-24",
+          "xr2-p5-06",
+          "g-cov-p5-21",
+          "g-cov-p5-33",
+          "g-cov-p5-07",
+          "g-extra-r-06",
+          "g-cov-p5-32",
+          "xf-p5-22",
+          "s03-sentence6",
+          "g-cov-p5-26",
+          "g-xs-r05",
+          "g-cov-p5-10",
+          "g-cov-p5-34",
+          "xr2-p5-02",
+          "xr-p5-07",
+          "g-cov-p5-37",
+          "g-cov-p5-38",
+          "g-cov-p5-08",
+          "g-vocab-c-5",
+          "g-cov-p6-05",
+          "g-cov-p6-06",
+          "xr2-p6-theater",
+          "xr2-p6-utilities",
+          "g-cov-p7-syn-04",
+          "g-cov-p7-syn-05",
+          "g-cov-p7-chat-02",
+          "g-cov-p7-chat-03",
+          "g-cov-p7-ins-03",
+          "g-cov-p7-ins-04",
+          "xfc-p7-archive",
+          "g-f-single-2",
+          "g-rdnew-026",
+          "g-rdnew-031",
+          "g-rd-ship-01",
+          "g-rdnew-033",
+          "g-cov-p7-tri-02",
+          "g-rdnew-037",
+          "g-rdnew-038"
+        ],
+        "durationMin": 75,
+        "timing": {
+          "reading": 75
+        }
       }
     ]
   },
@@ -23742,6 +23860,1070 @@
           "explanation": "正解 A「if」：『如果這個變動造成您不便，我很抱歉』用 if。unless 表除非，whereas 表對比，during 是介系詞，不能接子句。\n【考點】Part 6・文法\n【判斷依據】先看空格前後的詞性與句型，再用整句語意檢查。",
           "questionType": "grammar",
           "ability": "R5"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-11",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-11",
+          "prompt": "The consultant's ------- of the budget revealed several overlooked expenses.",
+          "options": [
+            "analyze",
+            "analysis",
+            "analytical",
+            "analytically"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「analysis」：空格前有 The consultant's（所有格），後面接 of，需要名詞，所以用 analysis。analyze 是動詞，analytical 是形容詞，analytically 是副詞。\n【考點】Part 5・詞性判斷\n【判斷依據】先看空格前後的詞（冠詞、所有格、be 動詞、形容詞），決定空格需要名詞、形容詞還是副詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "part-of-speech"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-12",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-12",
+          "prompt": "Ms. Tanaka was ------- appointed as regional director after the merger.",
+          "options": [
+            "formalize",
+            "formal",
+            "formality",
+            "formally"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「formally」：was 與 appointed（過去分詞）之間需要副詞修飾動詞，所以用 formally。formal 是形容詞，formality 是名詞，formalize 是動詞。\n【考點】Part 5・詞性判斷\n【判斷依據】先看空格前後的詞（冠詞、所有格、be 動詞、形容詞），決定空格需要名詞、形容詞還是副詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "part-of-speech"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-13",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-13",
+          "prompt": "Applicants must submit ------- documentation of their work experience.",
+          "options": [
+            "verification",
+            "verify",
+            "verifiable",
+            "verifiably"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「verifiable」：空格修飾名詞 documentation，需要形容詞 verifiable（可查證的）。verification 是名詞，verify 是動詞，verifiably 是副詞。\n【考點】Part 5・詞性判斷\n【判斷依據】先看空格前後的詞（冠詞、所有格、be 動詞、形容詞），決定空格需要名詞、形容詞還是副詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "part-of-speech"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-14",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-14",
+          "prompt": "The new scheduling software has made our team significantly more -------.",
+          "options": [
+            "efficiently",
+            "efficiency",
+            "efficiencies",
+            "efficient"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「efficient」：more 後面接形容詞，作 made our team more 的補語，所以用 efficient。efficiently 是副詞，efficiency 與 efficiencies 是名詞。\n【考點】Part 5・詞性判斷\n【判斷依據】先看空格前後的詞（冠詞、所有格、be 動詞、形容詞），決定空格需要名詞、形容詞還是副詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "part-of-speech"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-15",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-15",
+          "prompt": "Please review the ------- guidelines before submitting your expense report.",
+          "options": [
+            "attaching",
+            "attach",
+            "attachment",
+            "attached"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「attached」：空格修飾名詞 guidelines，需要過去分詞形容詞 attached（隨附的）。attach 是動詞，attachment 是名詞，attaching 的主動意義不符。\n【考點】Part 5・詞性判斷\n【判斷依據】先看空格前後的詞（冠詞、所有格、be 動詞、形容詞），決定空格需要名詞、形容詞還是副詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "part-of-speech"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-16",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-16",
+          "prompt": "Mr. Reyes was praised for his ------- to resolve the client's complaint.",
+          "options": [
+            "willing",
+            "willingness",
+            "willingly",
+            "willed"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「willingness」：所有格 his 後面需要名詞，willingness to 是『願意去…』。willing 是形容詞，willingly 是副詞，willed 是動詞過去式。\n【考點】Part 5・詞性判斷\n【判斷依據】先看空格前後的詞（冠詞、所有格、be 動詞、形容詞），決定空格需要名詞、形容詞還是副詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "part-of-speech"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-17",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-17",
+          "prompt": "Sales of the new product line have been ------- strong since the launch.",
+          "options": [
+            "consistent",
+            "consistency",
+            "consistently",
+            "consist"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「consistently」：空格位於 been 與形容詞 strong 之間，需要副詞修飾形容詞，所以用 consistently。consistent 是形容詞，consistency 是名詞，consist 是動詞。\n【考點】Part 5・詞性判斷\n【判斷依據】先看空格前後的詞（冠詞、所有格、be 動詞、形容詞），決定空格需要名詞、形容詞還是副詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "part-of-speech"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-18",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-18",
+          "prompt": "The company's ------- growth has attracted several new investors.",
+          "options": [
+            "remarkably",
+            "remark",
+            "remarking",
+            "remarkable"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「remarkable」：空格修飾名詞 growth，需要形容詞 remarkable。remarkably 是副詞，remark 是名詞或動詞，remarking 是現在分詞。\n【考點】Part 5・詞性判斷\n【判斷依據】先看空格前後的詞（冠詞、所有格、be 動詞、形容詞），決定空格需要名詞、形容詞還是副詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "part-of-speech"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-19",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-19",
+          "prompt": "Employees are ------- to attend the safety briefing on Monday.",
+          "options": [
+            "required",
+            "requiring",
+            "requirement",
+            "requires"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「required」：are 之後用過去分詞構成被動，are required to 表示『被要求去…』。requiring 的主動意義不符，requirement 是名詞，requires 是單數動詞。\n【考點】Part 5・詞性判斷\n【判斷依據】先看空格前後的詞（冠詞、所有格、be 動詞、形容詞），決定空格需要名詞、形容詞還是副詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "part-of-speech"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-20",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-20",
+          "prompt": "The ------- of the old warehouse will begin in March.",
+          "options": [
+            "renovate",
+            "renovation",
+            "renovated",
+            "renovating"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「renovation」：冠詞 The 後面需要名詞，所以用 renovation。renovate 是動詞，renovated 是過去分詞，renovating 是現在分詞。\n【考點】Part 5・詞性判斷\n【判斷依據】先看空格前後的詞（冠詞、所有格、be 動詞、形容詞），決定空格需要名詞、形容詞還是副詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "part-of-speech"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-21",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-21",
+          "prompt": "Dr. Weiss gave a ------- presentation on supply-chain risks.",
+          "options": [
+            "persuade",
+            "persuasively",
+            "persuasive",
+            "persuasion"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「persuasive」：空格修飾名詞 presentation，需要形容詞 persuasive（有說服力的）。persuade 是動詞，persuasively 是副詞，persuasion 是名詞。\n【考點】Part 5・詞性判斷\n【判斷依據】先看空格前後的詞（冠詞、所有格、be 動詞、形容詞），決定空格需要名詞、形容詞還是副詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "part-of-speech"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-22",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-22",
+          "prompt": "The committee has not yet reached a ------- decision.",
+          "options": [
+            "final",
+            "finally",
+            "finalize",
+            "finalization"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「final」：冠詞 a 與名詞 decision 之間需要形容詞，所以用 final。finally 是副詞，finalize 是動詞，finalization 是名詞。\n【考點】Part 5・詞性判斷\n【判斷依據】先看空格前後的詞（冠詞、所有格、be 動詞、形容詞），決定空格需要名詞、形容詞還是副詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "part-of-speech"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-23",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-23",
+          "prompt": "Travelers are advised to arrive ------- early during the holiday season.",
+          "options": [
+            "considerable",
+            "considerably",
+            "consideration",
+            "considering"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「considerably」：空格修飾形容詞 early，需要副詞 considerably（相當地）。considerable 是形容詞，consideration 是名詞，considering 是現在分詞。\n【考點】Part 5・詞性判斷\n【判斷依據】先看空格前後的詞（冠詞、所有格、be 動詞、形容詞），決定空格需要名詞、形容詞還是副詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "part-of-speech"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-24",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-24",
+          "prompt": "The ------- of the contract requires approval from both parties.",
+          "options": [
+            "modify",
+            "modifiable",
+            "modified",
+            "modification"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「modification」：冠詞 The 後面且接 of，需要名詞 modification。modify 是動詞，modifiable 是形容詞，modified 是過去分詞。\n【考點】Part 5・詞性判斷\n【判斷依據】先看空格前後的詞（冠詞、所有格、be 動詞、形容詞），決定空格需要名詞、形容詞還是副詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "part-of-speech"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-25",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-25",
+          "prompt": "We are ------- to announce that our new branch will open next month.",
+          "options": [
+            "please",
+            "pleasing",
+            "pleased",
+            "pleasure"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「pleased」：be 動詞 are 後面用形容詞，be pleased to 是固定用法。please 是動詞，pleasing 是『令人愉快的』，pleasure 是名詞。\n【考點】Part 5・詞性判斷\n【判斷依據】先看空格前後的詞（冠詞、所有格、be 動詞、形容詞），決定空格需要名詞、形容詞還是副詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "part-of-speech"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-26",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-26",
+          "prompt": "The vendor responded ------- to our request for a revised quote.",
+          "options": [
+            "prompt",
+            "promptly",
+            "promptness",
+            "prompted"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「promptly」：空格修飾動詞 responded，需要副詞 promptly。prompt 是形容詞或動詞，promptness 是名詞，prompted 是過去式。\n【考點】Part 5・詞性判斷\n【判斷依據】先看空格前後的詞（冠詞、所有格、be 動詞、形容詞），決定空格需要名詞、形容詞還是副詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "part-of-speech"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-27",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-27",
+          "prompt": "By the time the auditors arrive, the finance team ------- all the records.",
+          "options": [
+            "has completed",
+            "will have completed",
+            "completes",
+            "completed"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「will have completed」：By the time 子句用現在式 arrive 表示未來，主句要用未來完成式 will have completed，表示在審計員到達之前已完成。\n【考點】Part 5・動詞時態／語態\n【判斷依據】先找時間標記（by the time、since、if）與主詞是否為動作承受者，再決定時態與語態。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "verb-tense-voice"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-28",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-28",
+          "prompt": "The new policy ------- into effect on January 1 and has reduced travel costs since.",
+          "options": [
+            "came",
+            "comes",
+            "has come",
+            "is coming"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「came」：有明確過去時間 on January 1，且後面用 has reduced 敘述之後的結果，所以用過去式 came。\n【考點】Part 5・動詞時態／語態\n【判斷依據】先找時間標記（by the time、since、if）與主詞是否為動作承受者，再決定時態與語態。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "verb-tense-voice"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-29",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-29",
+          "prompt": "All visitor badges ------- at the front desk before entering the laboratory.",
+          "options": [
+            "must collect",
+            "must have collected",
+            "must be collected",
+            "must collecting"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「must be collected」：badges 是被收取的對象，需要被動語態 must be collected。must collect 是主動，must have collected 表示推測過去，must collecting 形式錯誤。\n【考點】Part 5・動詞時態／語態\n【判斷依據】先找時間標記（by the time、since、if）與主詞是否為動作承受者，再決定時態與語態。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "verb-tense-voice"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-30",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-30",
+          "prompt": "If the shipment ------- by Friday, we will cancel the order.",
+          "options": [
+            "does not arrive",
+            "will not arrive",
+            "would not arrive",
+            "not arrived"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「does not arrive」：條件句 If 子句要用現在式表示未來，所以用 does not arrive。will 與 would 不能放在 If 子句，not arrived 缺少助動詞。\n【考點】Part 5・動詞時態／語態\n【判斷依據】先找時間標記（by the time、since、if）與主詞是否為動作承受者，再決定時態與語態。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "verb-tense-voice"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-31",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-31",
+          "prompt": "The manager, along with her assistants, ------- the quarterly figures tomorrow.",
+          "options": [
+            "review",
+            "reviews",
+            "have reviewed",
+            "are reviewing"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「reviews」：主詞 The manager 是單數（along with 不改變單複數），且 tomorrow 表示已排定的未來，用現在式 reviews。review、have reviewed、are reviewing 的單複數或時態都不符。\n【考點】Part 5・動詞時態／語態\n【判斷依據】先找時間標記（by the time、since、if）與主詞是否為動作承受者，再決定時態與語態。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "verb-tense-voice"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-32",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-32",
+          "prompt": "Had the company ------- its inventory earlier, it would have avoided the shortage.",
+          "options": [
+            "monitor",
+            "monitoring",
+            "been monitored",
+            "monitored"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「monitored」：這是省略 if 的假設句（Had + 過去分詞），所以空格用過去分詞 monitored。monitor 與 monitoring 形式不符，been monitored 是被動，主詞 the company 是監控者。\n【考點】Part 5・動詞時態／語態\n【判斷依據】先找時間標記（by the time、since、if）與主詞是否為動作承受者，再決定時態與語態。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "verb-tense-voice"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-33",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-33",
+          "prompt": "The conference room ------- by the maintenance team until noon, so please use Room B.",
+          "options": [
+            "is being cleaned",
+            "is cleaning",
+            "has cleaned",
+            "will clean"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「is being cleaned」：會議室被清潔人員清掃，需要進行式被動 is being cleaned。is cleaning 是主動，has cleaned 與 will clean 的主動語態不合邏輯。\n【考點】Part 5・動詞時態／語態\n【判斷依據】先找時間標記（by the time、since、if）與主詞是否為動作承受者，再決定時態與語態。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "verb-tense-voice"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-34",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-34",
+          "prompt": "Mr. Chen ------- the sales team since 2019.",
+          "options": [
+            "leads",
+            "is leading",
+            "has been leading",
+            "led"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「has been leading」：since 2019 表示從過去延續到現在，需要現在完成進行式 has been leading。其他三個時態不能與 since 搭配。\n【考點】Part 5・動詞時態／語態\n【判斷依據】先找時間標記（by the time、since、if）與主詞是否為動作承受者，再決定時態與語態。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "verb-tense-voice"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-35",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-35",
+          "prompt": "Ms. Park asked Mr. Lee to send ------- the revised schedule.",
+          "options": [
+            "she",
+            "her",
+            "hers",
+            "herself"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「her」：send 的間接受詞需要受格 her。she 是主格，hers 是所有格代名詞，herself 是反身代名詞，不符。\n【考點】Part 5・代名詞\n【判斷依據】先看空格在句中的位置（主詞、受詞、所有格、強調主詞），再決定代名詞的格。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "pronoun"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-36",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-36",
+          "prompt": "The two directors reviewed the plan ------- before the meeting.",
+          "options": [
+            "themselves",
+            "them",
+            "their",
+            "they"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「themselves」：空格強調主詞自己完成，需要反身代名詞 themselves。them 是受格，their 是所有格，they 是主格。\n【考點】Part 5・代名詞\n【判斷依據】先看空格在句中的位置（主詞、受詞、所有格、強調主詞），再決定代名詞的格。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "pronoun"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-37",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-37",
+          "prompt": "Of the three proposals, ------- from Lakeview Design was the most detailed.",
+          "options": [
+            "one",
+            "it",
+            "the one",
+            "this"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「the one」：from Lakeview Design 修飾前面的代名詞，需要 the one（指其中一份提案）。單獨的 one、it、this 都不能被 from 片語修飾而指稱三份提案中的一份。\n【考點】Part 5・代名詞\n【判斷依據】先看空格在句中的位置（主詞、受詞、所有格、強調主詞），再決定代名詞的格。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "pronoun"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-38",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-38",
+          "prompt": "Employees who wish to change ------- schedules must notify their supervisors.",
+          "options": [
+            "them",
+            "theirs",
+            "they",
+            "their"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「their」：空格修飾名詞 schedules，需要所有格形容詞 their。them 是受格，theirs 是所有格代名詞，they 是主格。\n【考點】Part 5・代名詞\n【判斷依據】先看空格在句中的位置（主詞、受詞、所有格、強調主詞），再決定代名詞的格。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "pronoun"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p7-ins-01",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: remote work pilot",
+      "passage": {
+        "docs": [
+          {
+            "label": "Email",
+            "text": "To: All staff\nFrom: Daniela Ruiz, Human Resources\nSubject: Remote work pilot\n\nBeginning in January, employees in the accounting and design teams may work from home up to two days per week. [1] The pilot will run for six months. [2] After that, the company will review productivity reports and employee feedback before deciding whether to extend the program. [3] Employees who want to take part must submit a request to their supervisors by December 5. [4]\n\nParticipants should confirm that they have a reliable internet connection and a quiet workspace. The company will lend a laptop to anyone who does not have one, but monitors and other equipment must be arranged by the employee. Questions can be directed to the HR office.\n\nDaniela Ruiz"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "COV-P7-I01A",
+          "prompt": "In which of the positions marked [1], [2], [3], and [4] does the following sentence best belong?\n\"During that period, participants will complete a short survey each month.\"",
+          "options": [
+            "[1]",
+            "[2]",
+            "[3]",
+            "[4]"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「[2]」：That period 指前一句的『六個月試辦期』，所以插入句要放在 The pilot will run for six months 之後，也就是 [2]。放在 [1] 時還沒有出現可以被 that period 指稱的期間。\n【考點】Part 7・句子插入位置\n【判斷依據】先找插入句裡的指示詞（that period），再找前面哪一句剛好出現被指稱的對象。",
+          "skill": "r-inference",
+          "questionType": "text-insertion",
+          "ability": "R1"
+        },
+        {
+          "id": "COV-P7-I01B",
+          "prompt": "According to the email, what will the company NOT provide to participants?",
+          "options": [
+            "A laptop for employees who lack one",
+            "A review of the program after the trial",
+            "A point of contact for questions",
+            "Monitors and other equipment"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Monitors and other equipment」：第二段說公司會借筆電給沒有的人，但螢幕和其他設備要由員工自行安排，所以公司不提供的是螢幕和其他設備。其餘三項在文中都有提供或提到。\n【考點】Part 7・NOT 題\n【判斷依據】NOT 題要逐一用原文核對三個『有提供』的選項，剩下沒有出現的就是答案。",
+          "skill": "r-detail",
+          "questionType": "not-question",
+          "ability": "R2"
+        },
+        {
+          "id": "COV-P7-I01C",
+          "prompt": "What is suggested about the remote work pilot?",
+          "options": [
+            "It may continue after the trial if the results are good.",
+            "It is open to every department.",
+            "It will start immediately.",
+            "It requires employees to buy a laptop."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「It may continue after the trial if the results are good.」：公司會在六個月後檢視生產力報告與員工回饋，再決定是否延長，暗示若成果好可能延續。只有會計與設計團隊可以參加，開始時間是一月，公司也會借筆電。\n【考點】Part 7・推論\n【判斷依據】推論題的依據是『review ... before deciding whether to extend』這句，答案不會直接出現在原文，而是換句話說。",
+          "skill": "r-inference",
+          "questionType": "inference",
+          "ability": "R1"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p7-ins-02",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: indoor winter market",
+      "passage": {
+        "docs": [
+          {
+            "label": "News article",
+            "text": "Harbor Street Market to Move Indoors for Winter\n\nThe Harbor Street Farmers' Market will move to the former Dunmore Hardware building from November through March, organizers announced on Tuesday. [1] Vendors have operated in the open-air lot beside the train station since 2012, with about fifty stalls each summer, but cold weather has reduced attendance in recent winters. [2] The new space includes heating, a loading dock, and room for about thirty stalls. [3] Market manager Alison Greer said stall assignments will be decided by lottery, with priority for vendors who attended at least ten markets last season. [4]\n\nCustomers can still expect fresh produce, bread, and handmade goods, though fewer outdoor vendors, such as flower sellers, will take part. The market will return to the station lot in April."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "COV-P7-I02A",
+          "prompt": "In which of the positions marked [1], [2], [3], and [4] does the following sentence best belong?\n\"That is twenty fewer stalls than in the summer.\"",
+          "options": [
+            "[1]",
+            "[2]",
+            "[3]",
+            "[4]"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「[3]」：That 指前一句的『大約三十個攤位』，夏季約五十個，所以少了二十個。插入句應放在 room for about thirty stalls 之後，也就是 [3]。\n【考點】Part 7・句子插入位置\n【判斷依據】先算數字關係（五十減三十），再找前一句剛提到三十個攤位的位置。",
+          "skill": "r-inference",
+          "questionType": "text-insertion",
+          "ability": "R1"
+        },
+        {
+          "id": "COV-P7-I02B",
+          "prompt": "What is NOT mentioned as a feature of the new market location?",
+          "options": [
+            "Heating",
+            "A parking garage",
+            "A loading dock",
+            "Space for about thirty stalls"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「A parking garage」：第一段列出新場地有暖氣、裝卸區和約三十個攤位的空間，沒有提到停車場。\n【考點】Part 7・NOT 題\n【判斷依據】逐一把三個選項對回原文，沒出現的就是答案。",
+          "skill": "r-detail",
+          "questionType": "not-question",
+          "ability": "R2"
+        },
+        {
+          "id": "COV-P7-I02C",
+          "prompt": "What can be inferred about vendors who attended fewer than ten markets last season?",
+          "options": [
+            "They are not allowed to sell in winter.",
+            "They will be given larger stalls.",
+            "They will sell outdoors in April.",
+            "They have a lower chance of getting a stall."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「They have a lower chance of getting a stall.」：攤位以抽籤決定，但參加至少十場的攤商有優先權，所以參加較少的攤商拿到攤位的機會較低。\n【考點】Part 7・推論\n【判斷依據】從『priority for vendors who attended at least ten markets』反推沒有優先權的人。",
+          "skill": "r-inference",
+          "questionType": "inference",
+          "ability": "R1"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p7-ins-03",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: workshop date change",
+      "passage": {
+        "docs": [
+          {
+            "label": "Letter",
+            "text": "Dear Mr. Haddad,\n\nThank you for registering for the Advanced Spreadsheet Workshop. [1] The session you selected, originally scheduled for March 14, has been moved to March 21 because the instructor, Ms. Kowalczyk, will be presenting at a conference that week. [2] Your registration has been transferred automatically, and no further action is required. [3] If the new date does not suit you, you may switch to our evening session on March 18 or request a full refund by replying to this letter before March 10. [4]\n\nThe workshop will be held in Room 204 of the Brightwell Training Center and runs from 9:00 a.m. to 4:00 p.m. Lunch is provided, and participants should bring a laptop with the latest version of the software installed.\n\nSincerely,\nBrightwell Training Center"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "COV-P7-I03A",
+          "prompt": "In which of the positions marked [1], [2], [3], and [4] does the following sentence best belong?\n\"Please note that the evening session has limited seating.\"",
+          "options": [
+            "[1]",
+            "[2]",
+            "[3]",
+            "[4]"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「[4]」：the evening session 在最後一句才出現，所以插入句要放在 [4]，說明剛提到的晚上場次座位有限。放在前面時還沒有介紹晚間場次。\n【考點】Part 7・句子插入位置\n【判斷依據】定冠詞 the 代表讀者已經知道這個對象，要找它第一次被介紹的句子之後。",
+          "skill": "r-inference",
+          "questionType": "text-insertion",
+          "ability": "R1"
+        },
+        {
+          "id": "COV-P7-I03B",
+          "prompt": "What is NOT indicated about the workshop?",
+          "options": [
+            "The registration fee",
+            "The location",
+            "The lunch arrangement",
+            "The software requirement"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「The registration fee」：第二段提到地點是 Brightwell 的 204 教室、有提供午餐、需要自備安裝最新軟體的筆電，但全文沒有提到報名費。\n【考點】Part 7・NOT 題\n【判斷依據】NOT 題要先找三項有提到的，剩下的就是答案。",
+          "skill": "r-detail",
+          "questionType": "not-question",
+          "ability": "R2"
+        },
+        {
+          "id": "COV-P7-I03C",
+          "prompt": "What will happen if Mr. Haddad takes no action?",
+          "options": [
+            "His registration will be canceled.",
+            "He will receive a refund automatically.",
+            "He will attend the workshop on the new date.",
+            "He will be moved to the evening session."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「He will attend the workshop on the new date.」：信中說他的報名已自動轉到新日期，不需要再做任何事，所以什麼都不做會參加新日期的課程。\n【考點】Part 7・推論\n【判斷依據】從『transferred automatically, and no further action is required』推出不處理的結果。",
+          "skill": "r-inference",
+          "questionType": "inference",
+          "ability": "R1"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p7-ins-04",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: forklift certification",
+      "passage": {
+        "docs": [
+          {
+            "label": "Memo",
+            "text": "To: Warehouse supervisors\nFrom: Kenji Watanabe, Safety Office\nSubject: Forklift certification\n\nStarting next quarter, every employee who operates a forklift must hold a current certification. Employees may attend a one-day course at the Eastgate training center or complete an online module followed by a practical test on site. [1] The company will cover the course fee for the first attempt only. [2] Certificates are valid for three years, and the safety office will contact those whose certification expires within six months. [3] Supervisors will also receive a monthly status report. [4]\n\nSupervisors should provide a list of forklift operators on their teams by the end of the month. Operators who have not completed certification by the deadline will be reassigned to non-driving duties until they do so."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "COV-P7-I04A",
+          "prompt": "In which of the positions marked [1], [2], [3], and [4] does the following sentence best belong?\n\"In either case, the employee must finish within sixty days.\"",
+          "options": [
+            "[1]",
+            "[2]",
+            "[3]",
+            "[4]"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「[1]」：In either case 指前一句的兩種取得證照方式（一天課程或線上模組加實測），所以插入句要放在 [1]。\n【考點】Part 7・句子插入位置\n【判斷依據】either 代表剛列出兩個選項，要找緊接在兩個選項之後的位置。",
+          "skill": "r-inference",
+          "questionType": "text-insertion",
+          "ability": "R1"
+        },
+        {
+          "id": "COV-P7-I04B",
+          "prompt": "What is NOT mentioned about the certification?",
+          "options": [
+            "How long it remains valid",
+            "Who covers the course fee",
+            "The name of the course instructor",
+            "When supervisors must send a list"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「The name of the course instructor」：備忘錄提到有效期三年、公司負擔第一次的課程費用、主管月底前提交名單，沒有提到講師的姓名。\n【考點】Part 7・NOT 題\n【判斷依據】把三個選項在文中各找一次，找不到的就是答案。",
+          "skill": "r-detail",
+          "questionType": "not-question",
+          "ability": "R2"
+        },
+        {
+          "id": "COV-P7-I04C",
+          "prompt": "What will happen to an operator who is not certified by the deadline?",
+          "options": [
+            "The operator will lose the job.",
+            "The operator will be given duties that do not involve driving.",
+            "The operator will be fined.",
+            "The operator will repeat the course for free."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「The operator will be given duties that do not involve driving.」：最後一句說未取得證照的操作員會被調去不需要開車的工作，直到取得證照為止。\n【考點】Part 7・推論\n【判斷依據】題目問的是未達標的後果，對應最後一句 reassigned to non-driving duties。",
+          "skill": "r-inference",
+          "questionType": "inference",
+          "ability": "R1"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p7-tri-01",
+      "section": "reading",
+      "part": 7,
+      "title": "Triple passage: logistics summit registration",
+      "passage": {
+        "docs": [
+          {
+            "label": "Announcement",
+            "text": "NORTHFIELD LOGISTICS SUMMIT\nRegistration is now open for the two-day summit at the Lakeshore Convention Center.\n\nEarly-bird registration (through May 10): $320\nRegular registration (after May 10): $420\n\nThe fee covers all keynote and panel sessions and lunch on both days. Workshops are not included; each workshop may be added for $60 per person.\n\nCancellations received at least ten days before the summit receive a full refund."
+          },
+          {
+            "label": "Day 1 program",
+            "text": "DAY 1 PROGRAM\n9:00 – 10:15  Opening keynote (Hall A)\n10:30 – 12:00  Workshop 1: Route Planning (Room 2)\n10:30 – 12:00  Workshop 2: Customs Compliance (Room 3)\n12:00 – 1:00  Lunch\n1:00 – 2:30  Panel: Warehouse Automation (Hall A)"
+          },
+          {
+            "label": "Email",
+            "text": "To: Summit Registration Desk\nFrom: Ayesha Rahman\nSubject: My registration\n\nHello,\n\nI registered on May 6 and added Workshop 2. Could you confirm my total? My flight lands at 10:00 a.m. on the first day, so I expect to reach the center shortly before the workshops begin. Also, will the panel discussion be recorded? I would like to review it afterward.\n\nThank you,\nAyesha Rahman"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "COV-P7-T01A",
+          "prompt": "How much should Ms. Rahman pay in total?",
+          "options": [
+            "$320",
+            "$380",
+            "$420",
+            "$480"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「$380」：Cross-reference: Announcement + Day 1 program + Email。她在 5 月 6 日報名，適用早鳥價 $320（公告：5 月 10 日前），再加一場工作坊 $60，共 $380。\n【考點】Part 7・跨文件整合題\n【判斷依據】需要公告（價格與日期）和電子郵件（報名日期與工作坊）一起看。",
+          "skill": "r-crossref",
+          "questionType": "cross-document",
+          "crossRef": true,
+          "ability": "R3"
+        },
+        {
+          "id": "COV-P7-T01B",
+          "prompt": "Where will Ms. Rahman most likely attend the workshop?",
+          "options": [
+            "In Hall A.",
+            "In Room 2.",
+            "In Room 3.",
+            "At the registration desk."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「In Room 3.」：Cross-reference: Announcement + Day 1 program + Email。電子郵件說她加選 Workshop 2，節目表顯示 Workshop 2 是 Customs Compliance，在 Room 3。\n【考點】Part 7・跨文件整合題\n【判斷依據】電子郵件給編號，節目表把編號對到教室。",
+          "skill": "r-crossref",
+          "questionType": "cross-document",
+          "crossRef": true,
+          "ability": "R3"
+        },
+        {
+          "id": "COV-P7-T01C",
+          "prompt": "What is suggested about Ms. Rahman's arrival?",
+          "options": [
+            "She will miss the opening keynote.",
+            "She will arrive a day early.",
+            "She will skip the workshops.",
+            "She has already attended the panel."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「She will miss the opening keynote.」：Cross-reference: Announcement + Day 1 program + Email。她的班機在第一天 10:00 抵達，而開幕演講在 10:15 結束前進行，她是在工作坊開始前才會到達，所以會錯過演講。\n【考點】Part 7・推論\n【判斷依據】把她的抵達時間與節目表的時間對照。",
+          "skill": "r-inference",
+          "questionType": "inference",
+          "crossRef": true,
+          "ability": "R3"
+        },
+        {
+          "id": "COV-P7-T01D",
+          "prompt": "What is NOT included in the base registration fee?",
+          "options": [
+            "Lunch on both days",
+            "Panel sessions",
+            "The opening keynote",
+            "Workshop sessions"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Workshop sessions」：公告說基本費用包含所有演講、座談與兩天午餐，工作坊要另外加價。\n【考點】Part 7・NOT 題\n【判斷依據】NOT 題逐一核對費用包含的項目。",
+          "skill": "r-detail",
+          "questionType": "not-question",
+          "ability": "R2"
+        },
+        {
+          "id": "COV-P7-T01E",
+          "prompt": "What does Ms. Rahman ask about?",
+          "options": [
+            "Whether lunch is vegetarian",
+            "Whether a session will be recorded",
+            "Whether the summit has a student discount",
+            "Whether a refund is possible"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Whether a session will be recorded」：她詢問座談是否會錄影，以便事後觀看，同時確認總金額。\n【考點】Part 7・細節\n【判斷依據】回到電子郵件中以 Also 開頭的提問。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p7-tri-02",
+      "section": "reading",
+      "part": 7,
+      "title": "Triple passage: logistics coordinator application",
+      "passage": {
+        "docs": [
+          {
+            "label": "Job posting",
+            "text": "HARMON FOODS — Logistics Coordinator\nLocation: Riverside distribution center\n\nRequirements:\n• At least three years of experience in dispatch or warehouse coordination\n• Working knowledge of inventory software\n• Willingness to work some weekends\n\nFluency in Spanish is preferred.\n\nSalary: $52,000 – $58,000 per year. Planned start date: July 15.\nApply by June 14 through the Human Resources office."
+          },
+          {
+            "label": "Cover email",
+            "text": "Dear Hiring Team,\n\nI am applying for the Logistics Coordinator position. For the past four years I have coordinated truck dispatch at Corbett Shipping, where I used inventory software daily. I speak English and Portuguese, and I am studying Spanish. I am available to start on July 29 because of a notice period at my current employer.\n\nIf you invite me to interview, please note that I am traveling from June 20 through June 26 and can attend interviews only in the afternoon.\n\nSincerely,\nMarco Bianchi"
+          },
+          {
+            "label": "Interview notice",
+            "text": "HARMON FOODS — Interview slots for Logistics Coordinator candidates\n\nTuesday, June 18 — 10:00 a.m.\nWednesday, June 19 — 2:00 p.m.\nMonday, June 24 — 1:00 p.m.\nTuesday, June 25 — 11:00 a.m.\n\nPlease reply to the Human Resources office with your preferred slot within two business days."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "COV-P7-T02A",
+          "prompt": "Which interview slot is the best fit for Mr. Bianchi?",
+          "options": [
+            "Tuesday, June 18 at 10:00 a.m.",
+            "Monday, June 24 at 1:00 p.m.",
+            "Wednesday, June 19 at 2:00 p.m.",
+            "Tuesday, June 25 at 11:00 a.m."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Wednesday, June 19 at 2:00 p.m.」：Cross-reference: Job posting + Cover email + Interview notice。他 6 月 20 日到 26 日在外地，且只能下午面試。6 月 24、25 日他不在；6 月 18 日是上午。只剩 6 月 19 日下午 2:00。\n【考點】Part 7・跨文件整合題\n【判斷依據】把求職信的限制（日期、下午）逐一對上面試通知的時段。",
+          "skill": "r-crossref",
+          "questionType": "cross-document",
+          "crossRef": true,
+          "ability": "R3"
+        },
+        {
+          "id": "COV-P7-T02B",
+          "prompt": "How does Mr. Bianchi's possible start date compare with the planned start date?",
+          "options": [
+            "It is two weeks later.",
+            "It is one week earlier.",
+            "It is the same.",
+            "It is a month later."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「It is two weeks later.」：Cross-reference: Job posting + Cover email + Interview notice。公司預計 7 月 15 日開始，他最早能在 7 月 29 日開始，晚了兩週。\n【考點】Part 7・跨文件整合題\n【判斷依據】招聘公告提供預計日期，求職信提供他的可到職日。",
+          "skill": "r-crossref",
+          "questionType": "cross-document",
+          "crossRef": true,
+          "ability": "R3"
+        },
+        {
+          "id": "COV-P7-T02C",
+          "prompt": "What can be inferred about Mr. Bianchi?",
+          "options": [
+            "He is fluent in Spanish.",
+            "He lives near the distribution center.",
+            "He applied after the deadline.",
+            "He meets the stated experience requirement."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「He meets the stated experience requirement.」：Cross-reference: Job posting + Cover email + Interview notice。公告要求至少三年經驗，他有四年的調度經驗，所以符合。他只說正在學西班牙文。\n【考點】Part 7・推論\n【判斷依據】對照公告的要求與求職信所說的資歷。",
+          "skill": "r-inference",
+          "questionType": "inference",
+          "crossRef": true,
+          "ability": "R3"
+        },
+        {
+          "id": "COV-P7-T02D",
+          "prompt": "What is NOT listed as a requirement in the job posting?",
+          "options": [
+            "Experience in dispatch or warehouse coordination",
+            "Fluency in Spanish",
+            "Knowledge of inventory software",
+            "Willingness to work some weekends"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Fluency in Spanish」：公告把西班牙文流利列為『偏好』，不是必要條件；其他三項都列在 Requirements 之下。\n【考點】Part 7・NOT 題\n【判斷依據】注意 preferred 與 required 的差別。",
+          "skill": "r-detail",
+          "questionType": "not-question",
+          "ability": "R2"
+        },
+        {
+          "id": "COV-P7-T02E",
+          "prompt": "What are candidates asked to do after receiving the interview notice?",
+          "options": [
+            "Reply with a preferred time slot",
+            "Send a list of references",
+            "Visit the distribution center",
+            "Complete an online test"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「Reply with a preferred time slot」：面試通知最後一句要求在兩個工作日內回覆偏好的時段。\n【考點】Part 7・細節\n【判斷依據】回到面試通知的最後一句。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
         }
       ]
     }
