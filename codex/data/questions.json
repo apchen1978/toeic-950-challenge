@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": 2,
+    "version": 3,
     "title": "TOEIC 955 → Higher — Listening & Reading",
     "durationMin": 30,
     "disclaimer": "本 App 題目為依多益題型自行編寫的模擬題，並非 ETS 官方試題。 All questions are original simulations of TOEIC question types, not ETS official items.",
@@ -15421,6 +15421,278 @@
           ],
           "answer": 3,
           "explanation": "正解 D「as long as」：表示只要提供原收據即可交換，後接完整子句。A even though 表讓步；B in contrast to 與 C because of 後接名詞／動名詞，皆不符合句型與語意。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-021",
+      "section": "reading",
+      "part": 6,
+      "title": "Updated equipment return procedure",
+      "passage": {
+        "docs": [
+          {
+            "label": "Email",
+            "text": "To: Site supervisors\nSubject: Equipment returns\n\nBeginning May 6, all portable devices sent for repair must be registered at the service desk. Staff should [1] that the device serial number is recorded before it leaves the site.\n\nPlease attach a signed yellow tag to each item. Devices arriving [2] this tag will be placed in a separate holding area. [3]\n\nThis procedure applies only to portable devices. Large equipment should [4] be reported through the existing facilities portal."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "rd-new-021",
+          "prompt": "Select the best word for [1].",
+          "skill": "r-vocabulary",
+          "options": [
+            "confirm",
+            "repair",
+            "imagine",
+            "postpone"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「confirm」：此處要表示核實設備序號已記錄。B repair 是修理，C imagine 是想像，D postpone 是延後，都不是確認紀錄。"
+        },
+        {
+          "id": "rd-new-022",
+          "prompt": "Select the best word for [2].",
+          "skill": "r-grammar",
+          "options": [
+            "among",
+            "without",
+            "beside",
+            "despite"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「without」：表示物品缺少簽名標籤。A among 表在群體之中，C beside 表在旁邊，D despite 表儘管，均不表示缺少文件。"
+        },
+        {
+          "id": "rd-new-023",
+          "prompt": "Select the best sentence for [3].",
+          "skill": "r-purpose",
+          "options": [
+            "The new cafeteria menu will be posted next week.",
+            "Managers may request an extra desk for the reception area.",
+            "A blank tag is attached for teams that need additional copies.",
+            "The loading dock will reopen on Friday."
+          ],
+          "answer": 2,
+          "explanation": "正解 C：附件提供空白標籤，正好承接前文「每件物品要附標籤」的指示。A 餐廳菜單、B 接待桌、D 卸貨區重開都與設備退還程序無關。"
+        },
+        {
+          "id": "rd-new-024",
+          "prompt": "Select the best word for [4].",
+          "skill": "r-grammar",
+          "options": [
+            "also",
+            "ever",
+            "otherwise",
+            "still"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「still」：表示其他大型設備仍沿用原設施系統通報。A also 表增加另一項，B ever 表曾經／任何時候，C otherwise 表否則或不同做法，均不合「維持原流程」。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-022",
+      "section": "reading",
+      "part": 6,
+      "title": "Workshop registration update",
+      "passage": {
+        "docs": [
+          {
+            "label": "Email",
+            "text": "To: Workshop participants\nSubject: Choosing an attendance option\n\nPlease indicate [1] you will attend the May workshop in person or online. Room capacity is limited, so changes to an in-person selection must be submitted [2] May 2. [3]\n\nParticipants who need accessibility support should contact the coordinator. Recorded sessions will [4] be available to those who cannot attend live."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "rd-new-025",
+          "prompt": "Select the best word for [1].",
+          "skill": "r-grammar",
+          "options": [
+            "whether",
+            "although",
+            "despite",
+            "because"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「whether」：indicate 後接 whether 引導的間接選擇問句。B although 表讓步，C despite 後接名詞，D because 表原因，不能引出是否到場的選擇。"
+        },
+        {
+          "id": "rd-new-026",
+          "prompt": "Select the best word for [2].",
+          "skill": "r-grammar",
+          "options": [
+            "because",
+            "by",
+            "unless",
+            "whereas"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「by」：表示最遲須於 5 月 2 日前提出變更。A because 表原因，C unless 設條件，D whereas 作對比，皆不表示期限。"
+        },
+        {
+          "id": "rd-new-027",
+          "prompt": "Select the best sentence for [3].",
+          "skill": "r-purpose",
+          "options": [
+            "A new parking area will open behind the library.",
+            "The instructor has published a different course title.",
+            "A confirmation message will be sent after registration is processed.",
+            "Workshop participants should arrive ten minutes early."
+          ],
+          "answer": 2,
+          "explanation": "正解 C：完成報名後會收到確認訊息，直接說明登記後續。A 停車區、B 課程名稱、D 提早到場都與報名確認流程無關。"
+        },
+        {
+          "id": "rd-new-028",
+          "prompt": "Select the best word for [4].",
+          "skill": "r-grammar",
+          "options": [
+            "too",
+            "nearly",
+            "rather",
+            "still"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「still」：表示無法即時參加者仍可看錄影。A too 表過度／也，B nearly 表幾乎，C rather 通常需搭配 than，皆不合語意。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-023",
+      "section": "reading",
+      "part": 6,
+      "title": "Revised invoice review steps",
+      "passage": {
+        "docs": [
+          {
+            "label": "Memo",
+            "text": "To: Department administrators\nSubject: Invoice review\n\nBefore approving an invoice, compare each line with the purchase record to ensure the amounts are [1]. If a line does not match, send the invoice back to the requester [2] three business days. [3]\n\nAfter correction, the reviewer may approve the invoice in the system. Changes to supplier banking details may [4] be approved by the finance manager."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "rd-new-029",
+          "prompt": "Select the best word for [1].",
+          "skill": "r-vocabulary",
+          "options": [
+            "accurate",
+            "temporary",
+            "optional",
+            "incomplete"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「accurate」：審核人要確認數字與佐證文件相符。B temporary 指暫時，C optional 指可選，D incomplete 指不完整，皆非正確無誤。"
+        },
+        {
+          "id": "rd-new-030",
+          "prompt": "Select the best word for [2].",
+          "skill": "r-grammar",
+          "options": [
+            "at",
+            "within",
+            "until",
+            "beside"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「within」：表示三個工作日的期限內。A at 指時間點，C until 指持續到某時，D beside 表位置，都不表示期間上限。"
+        },
+        {
+          "id": "rd-new-031",
+          "prompt": "Select the best sentence for [3].",
+          "skill": "r-purpose",
+          "options": [
+            "The office will replace its chairs this summer.",
+            "The new staff directory includes a map of the campus.",
+            "The revised checklist is available in the finance portal.",
+            "The art gallery will host a reception on Friday."
+          ],
+          "answer": 2,
+          "explanation": "正解 C：財務入口網站提供剛提到的新版檢核表。A 換椅子、B 校園地圖、D 藝廊活動都與發票審核公告無關。"
+        },
+        {
+          "id": "rd-new-032",
+          "prompt": "Select the best word for [4].",
+          "skill": "r-grammar",
+          "options": [
+            "still",
+            "already",
+            "even",
+            "only"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「only」：限定銀行資料變更僅能由財務經理核准。A still 表仍然，B already 表已經，C even 表甚至，都沒有排他限制的意思。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-024",
+      "section": "reading",
+      "part": 6,
+      "title": "Library room reservations",
+      "passage": {
+        "docs": [
+          {
+            "label": "Notice",
+            "text": "Study rooms may be reserved for periods of up to two hours. Reservations open seven days in advance, and groups must arrive within ten minutes of the start time. [1]\n\nRequests for a particular room should be submitted [2] one day ahead. [3]\n\nPlease leave the room clean and return any borrowed adapters to the front desk. A display cable and a whiteboard [4] be available in each room."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "rd-new-033",
+          "prompt": "Select the best word for [1].",
+          "skill": "r-grammar",
+          "options": [
+            "available",
+            "availability",
+            "avail",
+            "unavailable"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「available」：be 後需形容詞作補語。B availability 是名詞，C avail 不是此處所需的形容詞，D unavailable 意思相反。"
+        },
+        {
+          "id": "rd-new-034",
+          "prompt": "Select the best word for [2].",
+          "skill": "r-grammar",
+          "options": [
+            "because",
+            "at least",
+            "unless",
+            "although"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「at least」：表示至少提前一天提出需求。A because 表原因，C unless 設條件，D although 表讓步，都不表示最低提前時間。"
+        },
+        {
+          "id": "rd-new-035",
+          "prompt": "Select the best sentence for [3].",
+          "skill": "r-purpose",
+          "options": [
+            "A new café will open outside the west entrance.",
+            "The history collection has been moved to another floor.",
+            "A calendar showing room availability is posted on the library website.",
+            "The art gallery will host a reception on Friday."
+          ],
+          "answer": 2,
+          "explanation": "正解 C：網站行事曆提供剛才提到的空房資訊查詢方式。A 咖啡廳、B 收藏搬樓層、D 藝廊招待會都與預約房間無關。"
+        },
+        {
+          "id": "rd-new-036",
+          "prompt": "Select the best word for [4].",
+          "skill": "r-grammar",
+          "options": [
+            "either",
+            "neither",
+            "both",
+            "also"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「also」：表示除了預約房間，房內也會提供線材與白板。A either、B neither 需與 or/nor 搭配，C both 表兩者皆然但放在此句位置不合。"
         }
       ]
     }
