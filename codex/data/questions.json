@@ -14792,12 +14792,12 @@
           "skill": "l-conversation",
           "prompt": "Which figure does the woman want the team to highlight?",
           "options": [
-            "The short bar",
             "The bar at seventy",
+            "The short bar",
             "Every quarter",
             "The client meeting"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "She says to highlight the tall bar at seventy in the client note.",
           "graphic": false,
           "ability": "L4"
@@ -14822,12 +14822,12 @@
           "skill": "l-conversation",
           "prompt": "What will the man do?",
           "options": [
-            "Delete the short bar",
             "Highlight the figure the woman named",
+            "Delete the short bar",
             "Cancel the client note",
             "Average all four bars"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "He agrees to highlight the figure she told him to copy.",
           "graphic": false,
           "ability": "L4"
@@ -14896,12 +14896,12 @@
           "skill": "l-conversation",
           "prompt": "What change does the woman request?",
           "options": [
-            "Cancel the hold line",
             "Make the rush quantity thirty",
+            "Cancel the hold line",
             "Add a new item",
             "Send two forms"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "She says to change the rush line to thirty units.",
           "graphic": false,
           "ability": "L4"
@@ -14911,12 +14911,12 @@
           "skill": "l-conversation",
           "prompt": "Look at the graphic. Which item will have its quantity changed to thirty?",
           "options": [
-            "Notebooks",
             "Pens",
             "Folders",
+            "Notebooks",
             "Binders"
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "They discuss the row whose note says rush. The form shows that note on notebooks. Nobody says notebooks.",
           "graphic": true,
           "ability": "L4"
@@ -14927,11 +14927,11 @@
           "prompt": "What will the man do next?",
           "options": [
             "Hold every item",
-            "Update the row and send the form",
             "Order fifty of each item",
-            "Ask about binders"
+            "Ask about binders",
+            "Update the row and send the form"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "He says he will update that row and send the form.",
           "graphic": false,
           "ability": "L4"
@@ -15001,11 +15001,11 @@
           "prompt": "Which departure will the speakers take?",
           "options": [
             "The eight ten",
-            "The eight forty",
             "The nine oh five",
-            "The nine thirty"
+            "The nine thirty",
+            "The eight forty"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "The man says their train is the eight forty.",
           "graphic": false,
           "ability": "L4"
@@ -15016,11 +15016,11 @@
           "prompt": "Look at the graphic. Which platform does their train leave from?",
           "options": [
             "Platform 2",
-            "Platform 5",
             "Platform 1",
-            "Platform 4"
+            "Platform 4",
+            "Platform 5"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "The eight forty departure is the one they will take. The board lists 8:40 on platform 5. They never say the platform number.",
           "graphic": true,
           "ability": "L4"
@@ -15031,11 +15031,11 @@
           "prompt": "What will the woman do?",
           "options": [
             "Buy a riverside ticket",
-            "Watch the departure board",
             "Change to the eight ten",
-            "Leave the station"
+            "Leave the station",
+            "Watch the departure board"
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "She says she will keep an eye on the board.",
           "graphic": false,
           "ability": "L4"
@@ -15341,12 +15341,12 @@
           "skill": "l-talk",
           "prompt": "What should the report avoid?",
           "options": [
-            "Mentioning ninety",
             "Averaging in the later months",
+            "Mentioning ninety",
             "Ignoring January",
             "Sending the report"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "He says the later months are lower and should not be averaged in.",
           "graphic": false,
           "ability": "L4"
@@ -15398,12 +15398,12 @@
           "skill": "l-talk",
           "prompt": "What can wait until Friday?",
           "options": [
-            "The back-ordered line",
             "The rush line",
+            "The back-ordered line",
             "Every in-stock item",
             "The whole warehouse"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "The speaker says the rush line can wait until Friday.",
           "graphic": false,
           "ability": "L4"
@@ -15413,12 +15413,12 @@
           "skill": "l-talk",
           "prompt": "Look at the graphic. Which product should the listener contact the supplier about first?",
           "options": [
-            "Lamps",
             "Desks",
+            "Lamps",
             "Chairs",
             "Cabinets"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "The speaker says to contact the supplier about the back-ordered line first. The chart marks desks as back-ordered; the speaker does not say desks.",
           "graphic": true,
           "ability": "L4"
@@ -15428,12 +15428,12 @@
           "skill": "l-talk",
           "prompt": "What should happen to in-stock goods today?",
           "options": [
-            "Ship them first",
             "Leave them in the warehouse",
+            "Ship them first",
             "Mark them rush",
             "Return them"
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "She says anything already in stock should stay in the warehouse today.",
           "graphic": false,
           "ability": "L4"
@@ -16541,11 +16541,11 @@
           "skill": "r-detail",
           "options": [
             "The walk-in refrigerator.",
-            "The dishwasher.",
             "The ventilation fan.",
+            "The dishwasher.",
             "The gas oven."
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "洗碗機評為 2，是已安裝設備中的最低分；冰箱為 4、風扇為 3，氣體烤箱未安裝。其餘選項分數較高或不適用。",
           "ability": "R2"
         },
@@ -16598,13 +16598,13 @@
           "prompt": "In the notice, what does “issued” mean?",
           "skill": "r-vocabulary",
           "options": [
-            "reported a problem",
             "distributed officially",
+            "reported a problem",
             "paid an invoice",
             "cancelled the pass"
           ],
-          "answer": 1,
-          "explanation": "正解 B「distributed officially」：此處 issued 指正式發出通行證。A 是回報問題，C 是支付帳款，D 是取消通行證，均非核發。",
+          "answer": 0,
+          "explanation": "正解 A「distributed officially」：此處 issued 指正式發出通行證。A 是回報問題，C 是支付帳款，D 是取消通行證，均非核發。",
           "ability": "R4"
         },
         {
@@ -16714,13 +16714,13 @@
           "prompt": "What is Ms. Allen mainly asking the support team to do?",
           "skill": "r-purpose",
           "options": [
-            "Refund her annual membership.",
             "Change the delivery instructions.",
+            "Refund her annual membership.",
             "Replace a damaged item.",
             "Cancel the shipment."
           ],
-          "answer": 1,
-          "explanation": "正解 B「Change the delivery instructions.」：Allen 要求把包裹交給管理室。A 退款、C 換貨、D 取消訂單都不是她的要求。",
+          "answer": 0,
+          "explanation": "正解 A「Change the delivery instructions.」：Allen 要求把包裹交給管理室。A 退款、C 換貨、D 取消訂單都不是她的要求。",
           "ability": "R1"
         },
         {
@@ -16800,13 +16800,13 @@
           "prompt": "What does the notice suggest about telephone appointments?",
           "skill": "r-inference",
           "options": [
-            "They will be unavailable all day.",
             "They remain possible in the evening.",
+            "They will be unavailable all day.",
             "They must be booked through the website.",
             "They require an in-person visit."
           ],
-          "answer": 1,
-          "explanation": "正解 B：夜間電話線照常，故仍可在晚間電話預約。A 全日停用與公告矛盾；C 網站預約在維護時暫停；D 必須親訪沒有提及。",
+          "answer": 0,
+          "explanation": "正解 A：夜間電話線照常，故仍可在晚間電話預約。A 全日停用與公告矛盾；C 網站預約在維護時暫停；D 必須親訪沒有提及。",
           "ability": "R1"
         }
       ]
@@ -16844,13 +16844,13 @@
           "prompt": "Which repair has been assigned the highest priority?",
           "skill": "r-detail",
           "options": [
-            "Replacing lobby lighting.",
             "Repairing the west stairwell handrail.",
+            "Replacing lobby lighting.",
             "Repainting the meeting room.",
             "Repairing the elevator door."
           ],
-          "answer": 1,
-          "explanation": "正解 B：西側樓梯扶手標示 Priority 1，高於大廳燈具 Priority 2，會議室油漆則延後。D 電梯門未列在報告中。",
+          "answer": 0,
+          "explanation": "正解 A：西側樓梯扶手標示 Priority 1，高於大廳燈具 Priority 2，會議室油漆則延後。D 電梯門未列在報告中。",
           "ability": "R2"
         },
         {
@@ -16946,13 +16946,13 @@
           "prompt": "In the article, what does “opened” mean?",
           "skill": "r-vocabulary",
           "options": [
-            "examined carefully",
             "began operating for the public",
+            "examined carefully",
             "created a new account",
             "declared the building closed"
           ],
-          "answer": 1,
-          "explanation": "正解 B「began operating for the public」：opened 描述陶藝工作室正式開放。A 可指仔細檢查，C 指建立帳戶，D 指宣布關閉，皆非此處意思。",
+          "answer": 0,
+          "explanation": "正解 A「began operating for the public」：opened 描述陶藝工作室正式開放。A 可指仔細檢查，C 指建立帳戶，D 指宣布關閉，皆非此處意思。",
           "ability": "R4"
         },
         {
@@ -17036,13 +17036,13 @@
           "prompt": "When should Dale make sure the side entrance is clear for the receiving team?",
           "skill": "r-crossref",
           "options": [
+            "Thursday between 10:00 a.m. and noon.",
             "Wednesday morning.",
             "Friday afternoon.",
-            "After the loading bay reopens next week.",
-            "Thursday between 10:00 a.m. and noon."
+            "After the loading bay reopens next week."
           ],
-          "answer": 3,
-          "explanation": "跨篇比對：Building notice要求側門保持暢通；Carrier email給出改期後週四 10 點至中午送達時間。兩篇合併可知須在該時段清出通道。正解 D；A 是原定時段，B、C不是更新後安排。",
+          "answer": 0,
+          "explanation": "跨篇比對：Building notice要求側門保持暢通；Carrier email給出改期後週四 10 點至中午送達時間。兩篇合併可知須在該時段清出通道。正解 A；A 是原定時段，B、C不是更新後安排。",
           "crossRef": true,
           "ability": "R3"
         },
@@ -17141,13 +17141,13 @@
           "prompt": "What time does the in-person course start?",
           "skill": "r-crossref",
           "options": [
-            "9:00 a.m.",
             "1:30 p.m.",
+            "9:00 a.m.",
             "3:00 p.m.",
             "2:00 p.m."
           ],
-          "answer": 1,
-          "explanation": "跨篇比對：Training bulletin列出安全示範在 1:30 p.m.；Ford email確認她報名安全示範。兩篇合併後可得課程時間。正解 B；A 是另一課時間，C 是遠端課時間，D 未列出。",
+          "answer": 0,
+          "explanation": "跨篇比對：Training bulletin列出安全示範在 1:30 p.m.；Ford email確認她報名安全示範。兩篇合併後可得課程時間。正解 A；A 是另一課時間，C 是遠端課時間，D 未列出。",
           "crossRef": true,
           "ability": "R3"
         },
@@ -17219,13 +17219,13 @@
           "prompt": "What can customers receive at the store?",
           "skill": "r-detail",
           "options": [
-            "A new dispenser at no charge.",
             "A replacement cartridge or a refund.",
+            "A new dispenser at no charge.",
             "A free countertop dispenser.",
             "A discount on a future service call."
           ],
-          "answer": 1,
-          "explanation": "正解 B：店家提供替換濾芯或退款。A、C 免費主機都不在方案內；D 未承諾未來維修折扣。",
+          "answer": 0,
+          "explanation": "正解 A：店家提供替換濾芯或退款。A、C 免費主機都不在方案內；D 未承諾未來維修折扣。",
           "ability": "R2"
         },
         {
@@ -17248,13 +17248,13 @@
           "prompt": "Why might a customer need to check the lot code before visiting?",
           "skill": "r-crossref",
           "options": [
-            "The store accepts only unopened cartons.",
             "Only lot 24B is affected; lot 24C follows a different instruction.",
+            "The store accepts only unopened cartons.",
             "All cartridges in lots 24B and 24C must be returned.",
             "The refund amount depends on the purchase date."
           ],
-          "answer": 1,
-          "explanation": "跨篇比對：Safety notice說24B受影響、24C可繼續使用；Retailer email說受影響批次可帶回退換。兩篇合併說明需先核對批號。正解 B；A未要求未拆封，C把24C錯列為受影響，D退款不依購買日期。",
+          "answer": 0,
+          "explanation": "跨篇比對：Safety notice說24B受影響、24C可繼續使用；Retailer email說受影響批次可帶回退換。兩篇合併說明需先核對批號。正解 A；A未要求未拆封，C把24C錯列為受影響，D退款不依購買日期。",
           "crossRef": true,
           "ability": "R3"
         }
@@ -17288,12 +17288,12 @@
           "skill": "r-detail",
           "options": [
             "Panel discussion.",
-            "Registration desk.",
             "Workshop: Building Clear Procedures.",
+            "Registration desk.",
             "Networking lunch."
           ],
-          "answer": 1,
-          "explanation": "正解 B「Registration desk.」：報到 8:15 開始，早於 9:00 的 panel、10:15 的 workshop 和 12:15 的午餐。",
+          "answer": 2,
+          "explanation": "正解 C「Registration desk.」：報到 8:15 開始，早於 9:00 的 panel、10:15 的 workshop 和 12:15 的午餐。",
           "ability": "R2"
         },
         {
@@ -17315,13 +17315,13 @@
           "prompt": "Who must approve the reimbursement request?",
           "skill": "r-detail",
           "options": [
-            "The employee’s manager.",
             "The forum host.",
             "A hotel receptionist.",
-            "Another attendee."
+            "Another attendee.",
+            "The employee’s manager."
           ],
-          "answer": 0,
-          "explanation": "正解 A：差旅政策明確規定由員工主管在費用系統核准申請。B 主辦方、C 飯店櫃檯、D 同行者都沒有核准權。",
+          "answer": 3,
+          "explanation": "正解 D：差旅政策明確規定由員工主管在費用系統核准申請。B 主辦方、C 飯店櫃檯、D 同行者都沒有核准權。",
           "ability": "R2"
         },
         {
@@ -17330,12 +17330,12 @@
           "skill": "r-crossref",
           "options": [
             "At 8:15 a.m.",
-            "No later than 7:55 a.m.",
             "At 9:00 a.m.",
+            "No later than 7:55 a.m.",
             "At 8:05 a.m."
           ],
-          "answer": 1,
-          "explanation": "跨篇比對：Invitation說旅館到會場步行約20分鐘；Schedule列報到8:15開始。兩篇合併得出最晚7:55出發。正解 B；A、C太晚，D也太晚。",
+          "answer": 2,
+          "explanation": "跨篇比對：Invitation說旅館到會場步行約20分鐘；Schedule列報到8:15開始。兩篇合併得出最晚7:55出發。正解 C；A、C太晚，D也太晚。",
           "crossRef": true,
           "ability": "R3"
         },
@@ -17346,11 +17346,11 @@
           "options": [
             "Yes, all meals are reimbursed.",
             "Yes, if her manager approves it.",
-            "No, event-provided meals are excluded.",
-            "No, because travel costs are never eligible."
+            "No, because travel costs are never eligible.",
+            "No, event-provided meals are excluded."
           ],
-          "answer": 2,
-          "explanation": "跨篇比對：Schedule列有活動提供的 networking lunch；Travel policy排除活動供餐的報銷，因此即使有收據也不能申報。正解 C；A、B錯誤准許報銷，D把所有差旅費一概排除。",
+          "answer": 3,
+          "explanation": "跨篇比對：Schedule列有活動提供的 networking lunch；Travel policy排除活動供餐的報銷，因此即使有收據也不能申報。正解 D；A、B錯誤准許報銷，D把所有差旅費一概排除。",
           "crossRef": true,
           "ability": "R3"
         }
@@ -17397,13 +17397,13 @@
           "prompt": "Why does Mr. Bell ask for a temporary workspace?",
           "skill": "r-detail",
           "options": [
-            "Noise from floor repairs near the usual meeting room.",
             "A shortage of computers in the digital room.",
             "Closure of the entire library for the month.",
+            "Noise from floor repairs near the usual meeting room.",
             "A move of the team to a hotel."
           ],
-          "answer": 0,
-          "explanation": "正解 A：郵件指出原會議室靠近西閱覽室，週二和週四早上的施工噪音會影響會議。B 電腦不足、C 整月閉館、D 改到旅館都未在原文提及。",
+          "answer": 2,
+          "explanation": "正解 C：郵件指出原會議室靠近西閱覽室，週二和週四早上的施工噪音會影響會議。B 電腦不足、C 整月閉館、D 改到旅館都未在原文提及。",
           "ability": "R2"
         },
         {
@@ -17426,12 +17426,12 @@
           "skill": "r-crossref",
           "options": [
             "The west reading room.",
-            "The digital research room.",
             "The children’s desk.",
+            "The digital research room.",
             "The floor-repair area."
           ],
-          "answer": 1,
-          "explanation": "跨篇比對：公告指出週四早上西閱覽室和兒童櫃台關閉，數位研究室仍開放；場地指南說未被培訓預訂時可供員工會議使用。正解 B，仍須先向設施部查詢空檔。A、C、D 都在施工或關閉區域。",
+          "answer": 2,
+          "explanation": "跨篇比對：公告指出週四早上西閱覽室和兒童櫃台關閉，數位研究室仍開放；場地指南說未被培訓預訂時可供員工會議使用。正解 C，仍須先向設施部查詢空檔。A、C、D 都在施工或關閉區域。",
           "crossRef": true,
           "ability": "R3"
         },
@@ -17494,12 +17494,12 @@
           "skill": "r-detail",
           "options": [
             "7:00 a.m.",
-            "8:00 a.m.",
             "9:30 a.m.",
+            "8:00 a.m.",
             "6:30 a.m."
           ],
-          "answer": 1,
-          "explanation": "正解 B「8:00 a.m.」：營運通知規定卸貨車須於 8 點前離開卸貨作業。A、D是進場時刻，C是市集對外開放時間。",
+          "answer": 2,
+          "explanation": "正解 C「8:00 a.m.」：營運通知規定卸貨車須於 8 點前離開卸貨作業。A、D是進場時刻，C是市集對外開放時間。",
           "ability": "R2"
         },
         {
@@ -17507,13 +17507,13 @@
           "prompt": "What should vendors do if their vehicle is taller than the garage limit?",
           "skill": "r-detail",
           "options": [
-            "Use the service entrance and follow staff directions.",
             "Park in the east visitor lot before unloading.",
             "Unload on the north walkway.",
+            "Use the service entrance and follow staff directions.",
             "Ask the event office to open the garage."
           ],
-          "answer": 0,
-          "explanation": "正解 A：超高車輛須從 Mill Street 服務入口進入並聽從工作人員。B 是卸貨後停車位置；C 會阻塞行人道；D 沒有開放超高車輛進入車庫。",
+          "answer": 2,
+          "explanation": "正解 C：超高車輛須從 Mill Street 服務入口進入並聽從工作人員。B 是卸貨後停車位置；C 會阻塞行人道；D 沒有開放超高車輛進入車庫。",
           "ability": "R2"
         },
         {
@@ -17523,11 +17523,11 @@
           "options": [
             "At the main visitor entrance.",
             "At the east parking lot.",
-            "The south service lane behind the south plaza.",
-            "At the visitor center."
+            "At the visitor center.",
+            "The south service lane behind the south plaza."
           ],
-          "answer": 2,
-          "explanation": "跨篇比對：Vendor letter把食物攤位安排在 south plaza；Site map標出其後方 service lane；Operations message要求車輛走 Mill Street service entrance。合併位置與車輛指示，正解 C。A、B、D是不同區域。",
+          "answer": 3,
+          "explanation": "跨篇比對：Vendor letter把食物攤位安排在 south plaza；Site map標出其後方 service lane；Operations message要求車輛走 Mill Street service entrance。合併位置與車輛指示，正解 D。A、B、D是不同區域。",
           "crossRef": true,
           "ability": "R3"
         },
@@ -17537,12 +17537,12 @@
           "skill": "r-crossref",
           "options": [
             "Friday, July 18.",
-            "Saturday, July 19.",
             "Saturday, July 20.",
-            "Saturday, July 26."
+            "Saturday, July 26.",
+            "Saturday, July 19."
           ],
-          "answer": 1,
-          "explanation": "跨篇比對：Vendor letter確認 Ms. Cho參加的是7月19日星期六市集；Operations message規定該活動8:00前完成卸貨。兩篇合併得出日期。正解 B；A、C、D日期不同。",
+          "answer": 3,
+          "explanation": "跨篇比對：Vendor letter確認 Ms. Cho參加的是7月19日星期六市集；Operations message規定該活動8:00前完成卸貨。兩篇合併得出日期。正解 D；A、C、D日期不同。",
           "crossRef": true,
           "ability": "R3"
         }
@@ -17966,12 +17966,12 @@
           "skill": "l-inference",
           "prompt": "Why does the woman say, “You sound relieved”?",
           "options": [
-            "She thinks the man is glad the proposal was accepted.",
             "She believes the supplier rejected the proposal.",
             "She wants him to contact a different supplier.",
-            "She thinks the man is worried about the shipment size."
+            "She thinks the man is worried about the shipment size.",
+            "She thinks the man is glad the proposal was accepted."
           ],
-          "answer": 0,
+          "answer": 3,
           "explanation": "Her comment interprets the man’s exclamation as relief that the proposal was accepted. The supplier accepted it, and she does not ask him to change suppliers.",
           "ability": "L5"
         },
@@ -17995,12 +17995,12 @@
           "skill": "l-inference",
           "prompt": "What will the speakers most likely do next?",
           "options": [
-            "Compare expedited delivery options for the Flex unit.",
             "Cancel the accepted proposal.",
             "Raise the budget to $1,180.",
-            "Ask the supplier to remove the delivery fee."
+            "Ask the supplier to remove the delivery fee.",
+            "Compare expedited delivery options for the Flex unit."
           ],
-          "answer": 0,
+          "answer": 3,
           "explanation": "They agree to compare expedited service so the selected Flex unit can meet their schedule. They neither cancel the accepted proposal nor approve a higher budget.",
           "ability": "L5"
         }
@@ -18051,12 +18051,12 @@
           "prompt": "Who will speak last after the schedule change?",
           "graphic": true,
           "options": [
-            "Dr. Bell.",
             "Ms. Chen.",
+            "Dr. Bell.",
             "Mr. Diaz.",
             "No speaker has been assigned to the final session."
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "The printed schedule has Mr. Diaz last, but the announcement says the last two speakers will trade places. Ms. Chen therefore moves to the final slot.",
           "ability": "L4"
         },
@@ -18148,11 +18148,11 @@
           "graphic": true,
           "options": [
             "Cedar.",
-            "Maple.",
             "Pine.",
-            "None of the rooms meets both conditions."
+            "None of the rooms meets both conditions.",
+            "Maple."
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "Maple seats 48 and its $230 equipment fee is under the $250 limit. Cedar is too small for 45 people, while Pine exceeds the fee limit.",
           "ability": "L4"
         },
@@ -18161,12 +18161,12 @@
           "skill": "l-inference",
           "prompt": "Why does the man mention the equipment fee?",
           "options": [
-            "To explain why the Pine room does not qualify.",
             "To ask the client to bring a display.",
             "To confirm that Cedar is already reserved.",
-            "To say the client approved the higher limit."
+            "To say the client approved the higher limit.",
+            "To explain why the Pine room does not qualify."
           ],
-          "answer": 0,
+          "answer": 3,
           "explanation": "The fee is over the stated limit, which rules out Pine. The speakers do not ask the client to bring equipment or say Cedar is reserved.",
           "ability": "L5"
         },
@@ -18176,11 +18176,11 @@
           "prompt": "What will reception be asked to do?",
           "options": [
             "Change the fee limit.",
-            "Prepare revised name cards.",
             "Move the display to Cedar.",
-            "Ask the client to bring a display."
+            "Ask the client to bring a display.",
+            "Prepare revised name cards."
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "The man explicitly asks for updated name cards. No one proposes changing the budget or moving the display.",
           "ability": "L4"
         }
@@ -18232,11 +18232,11 @@
           "graphic": true,
           "options": [
             "Alder.",
-            "Birch.",
             "Willow.",
+            "Birch.",
             "None of the rooms is available."
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Birch holds 56 people and has a step-free entrance. Alder is too small and Willow is unavailable.",
           "ability": "L4"
         },
@@ -18246,11 +18246,11 @@
           "prompt": "Why can the coordinators not use Willow?",
           "options": [
             "It does not have a projector.",
-            "It has already been reserved by another group.",
             "Its capacity is below the registration count.",
+            "It has already been reserved by another group.",
             "It does not have enough seats."
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "The announcement says another group has reserved Willow. Its capacity and listed features are not the reason.",
           "ability": "L5"
         },
@@ -18259,12 +18259,12 @@
           "skill": "l-talk",
           "prompt": "When can the room be prepared?",
           "options": [
-            "At 8:30.",
             "At 9:00.",
             "At 10:30.",
+            "At 8:30.",
             "At 9:30."
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "The speaker says the room will open for setup at 8:30. The later times are not mentioned.",
           "ability": "L4"
         }
@@ -18808,11 +18808,11 @@
           "prompt": "Who is the speaker most likely?",
           "options": [
             "A customer requesting a refund.",
-            "An instructor leading support training.",
             "A courier delivering guidebooks.",
+            "An instructor leading support training.",
             "A manager interviewing applicants."
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "The speaker says they will lead the practice sessions and explains the workshop exercises. This identifies an instructor rather than a customer or courier."
         },
         {
@@ -18850,12 +18850,12 @@
           "ability": "L2",
           "prompt": "What is the purpose of the announcement?",
           "options": [
-            "To explain a revised process for found items.",
             "To announce a new train timetable.",
             "To invite passengers to a station tour.",
+            "To explain a revised process for found items.",
             "To report a change in ticket prices."
           ],
-          "answer": 0,
+          "answer": 2,
           "explanation": "The speaker introduces a new procedure for recording, labeling, and storing lost property. The announcement does not discuss train schedules or tickets."
         },
         {
@@ -18865,11 +18865,11 @@
           "prompt": "Who is the announcement intended for?",
           "options": [
             "Passengers buying season tickets.",
-            "Station employees handling lost property.",
             "Local business owners.",
+            "Station employees handling lost property.",
             "Courier drivers collecting parcels."
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "It opens by addressing station staff and gives internal steps for the desk team and duty supervisor. These instructions are for employees handling found items."
         },
         {
@@ -18907,12 +18907,12 @@
           "ability": "L2",
           "prompt": "What is the speaker mainly explaining?",
           "options": [
-            "A new method for submitting invoices.",
             "A change in product prices.",
             "A reduction in regional offices.",
-            "A delay in opening a warehouse."
+            "A delay in opening a warehouse.",
+            "A new method for submitting invoices."
           ],
-          "answer": 0,
+          "answer": 3,
           "explanation": "The message tells suppliers to switch invoice submission from email to a portal and explains the required purchase order field. Its focus is the submission process."
         },
         {
@@ -18922,11 +18922,11 @@
           "prompt": "Who is the intended audience?",
           "options": [
             "Employees requesting annual leave.",
-            "Suppliers billing regional offices.",
             "Customers tracking deliveries.",
-            "New office managers."
+            "New office managers.",
+            "Suppliers billing regional offices."
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "The speaker addresses suppliers who send invoices to regional offices. The upload instructions are directed to them, not employees or customers."
         },
         {
@@ -18937,10 +18937,10 @@
           "options": [
             "An office manager's email.",
             "An invoice payment date.",
-            "The purchase order number.",
-            "A delivery vehicle number."
+            "A delivery vehicle number.",
+            "The purchase order number."
           ],
-          "answer": 2,
+          "answer": 3,
           "explanation": "The speaker says the purchase order number must be placed in the first field or the invoice upload will be rejected."
         }
       ]
@@ -18964,12 +18964,12 @@
           "ability": "L2",
           "prompt": "What is the main purpose of the announcement?",
           "options": [
-            "To explain how guests should use a temporary shuttle arrangement.",
             "To advertise a new airline route.",
             "To describe a permanent hotel renovation.",
-            "To invite guests to a city tour."
+            "To invite guests to a city tour.",
+            "To explain how guests should use a temporary shuttle arrangement."
           ],
-          "answer": 0,
+          "answer": 3,
           "explanation": "The speaker gives the temporary pickup location, departure pattern, and luggage instructions for a hotel airport shuttle while driveway work continues."
         },
         {
@@ -18978,12 +18978,12 @@
           "ability": "L2",
           "prompt": "Where is this announcement most likely being made?",
           "options": [
-            "At a hotel's guest service area.",
             "Inside an aircraft cabin.",
             "At a railway ticket office.",
-            "At a car rental counter."
+            "At a car rental counter.",
+            "At a hotel's guest service area."
           ],
-          "answer": 0,
+          "answer": 3,
           "explanation": "The speaker addresses guests, mentions hotel reception, a lift, and an airport shuttle. These combined cues indicate a hotel guest service setting."
         },
         {
@@ -18993,11 +18993,11 @@
           "prompt": "What should guests with large luggage do?",
           "options": [
             "Use the main driveway.",
-            "Tell reception tonight.",
             "Arrive after nine.",
-            "Buy an extra shuttle ticket."
+            "Buy an extra shuttle ticket.",
+            "Tell reception tonight."
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "Guests with large luggage are asked to notify reception tonight so staff can reserve space on the shuttle. No extra ticket is required."
         }
       ]
@@ -19021,12 +19021,12 @@
           "ability": "L2",
           "prompt": "What is the speaker mainly reminding listeners to do?",
           "options": [
-            "Return rented display equipment correctly.",
             "Register for another business fair.",
             "Move venue furniture to the lobby.",
-            "Purchase new screens for their booths."
+            "Purchase new screens for their booths.",
+            "Return rented display equipment correctly."
           ],
-          "answer": 0,
+          "answer": 3,
           "explanation": "The announcement specifies when and where to return rental screens, which items to bring, and how to arrange collection if a booth remains open."
         },
         {
@@ -19035,12 +19035,12 @@
           "ability": "L2",
           "prompt": "Who is the announcement primarily for?",
           "options": [
-            "Fair exhibitors using rented equipment.",
             "Visitors waiting to enter the fair.",
             "Venue staff replacing furniture.",
-            "Drivers delivering new screens."
+            "Drivers delivering new screens.",
+            "Fair exhibitors using rented equipment."
           ],
-          "answer": 0,
+          "answer": 3,
           "explanation": "The speaker addresses exhibitors and provides return instructions for rented screens at their booths. Visitors and drivers are not the primary audience."
         },
         {
@@ -19050,11 +19050,11 @@
           "prompt": "What should an exhibitor do if the booth remains open at five?",
           "options": [
             "Leave the screens beside the freight lift.",
-            "Call the service counter before four.",
             "Return only the protective cases.",
-            "Ask visitors to move the furniture."
+            "Ask visitors to move the furniture.",
+            "Call the service counter before four."
           ],
-          "answer": 1,
+          "answer": 3,
           "explanation": "An exhibitor who will still be serving visitors at five should call the service counter before four to arrange collection."
         }
       ]

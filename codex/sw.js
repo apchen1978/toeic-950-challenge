@@ -22,6 +22,7 @@ const SHELL = [
   "js/tips.js",
   "js/abilities.js",
   "js/choice-legacy.js",
+  "js/choice-order-v3.js",
   "data/questions.json",
   "audio/manifest.json",
   "icons/icon-192.png",

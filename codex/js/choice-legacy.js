@@ -1,6 +1,8 @@
 // Option order before the Round 12 shuffle. Saved sessions store the chosen index,
 // so an old index is turned back into the same option text and then into the new index.
-export const CHOICE_REVISION = 3;
+import { PREVIOUS_OPTIONS } from "./choice-order-v3.js";
+
+export const CHOICE_REVISION = 4;
 
 // These four published items had choices copied from unrelated passages.
 // Earlier selections cannot be interpreted against the repaired choices.
@@ -35,6 +37,13 @@ export function migrateChoiceIndexes(answers, revision, questionsById) {
     if (!options) continue;
     const index = options.indexOf(legacy[chosen]);
     if (index >= 0) source[id] = index;
+  }
+  if (storedRevision < 4) for (const [id, previous] of Object.entries(PREVIOUS_OPTIONS)) {
+    const chosen = source[id];
+    if (!Number.isInteger(chosen) || chosen < 0 || chosen >= previous.length) continue;
+    const options = questionsById?.[id]?.options;
+    const next = options?.indexOf(previous[chosen]) ?? -1;
+    if (next >= 0) source[id] = next;
   }
   for (const id of INVALID_OLD_CHOICES) {
     if (Number.isInteger(source[id])) source[id] = null;

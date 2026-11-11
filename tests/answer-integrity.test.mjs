@@ -2,9 +2,11 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { migrateChoiceIndexes, CHOICE_REVISION } from '../codex/js/choice-legacy.js';
+import { PREVIOUS_OPTIONS } from '../codex/js/choice-order-v3.js';
 
 const bank = JSON.parse(readFileSync(new URL('../codex/data/questions.json', import.meta.url), 'utf8'));
 const byId = Object.fromEntries(bank.groups.flatMap((group) => group.questions.map((question) => [question.id, question])));
+const frozenGroups = new Set(bank.meta.sets.filter((set) => /^form-[abc]$/.test(set.id)).flatMap((set) => set.groupIds));
 const scenarioDates = new Set(['R09', 'R47', 'XF45', 'XR227', 'XR29', 'XRS02', 'X7S-02', 'X7S-03', 'X7S-28']);
 const dateTerm = /\b(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday|January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec|\d{1,2}:\d{2}\s*(?:a\.?m\.?|p\.?m\.?)?)\b/g;
 
@@ -30,8 +32,8 @@ test('prompt dates, weekdays, and times are grounded in the source or reviewed s
 });
 
 test('old answers to the four unrelated-choice items become unanswered, while corrected answer keys regrade', () => {
-  assert.equal(byId['rd-new-064'].answer, 3);
-  assert.equal(byId['rd-new-076'].answer, 1);
+  assert.equal(byId['rd-new-064'].options[byId['rd-new-064'].answer], 'Three supply crates.');
+  assert.equal(byId['rd-new-076'].options[byId['rd-new-076'].answer], 'Registration desk.');
   assert.match(byId['rd-new-062'].prompt, /Wednesday/);
   const ids = ['rd-new-077', 'rd-new-078', 'rd-new-082', 'rd-new-084'];
   const answers = { 'rd-new-064': 2, 'rd-new-076': 0, ...Object.fromEntries(ids.map((id) => [id, byId[id].answer])) };
@@ -61,4 +63,25 @@ test('the audit table includes every question ID exactly once', () => {
   const ids = rows.slice(1).map((row) => row.slice(0, row.indexOf(',')));
   assert.equal(ids.length, Object.keys(byId).length);
   assert.deepEqual(new Set(ids), new Set(Object.keys(byId)));
+});
+
+test('new 39 questions and non-Form Parts 3, 4, and 7 balance A/B/C/D', () => {
+  const fresh = bank.groups.filter((group) => /^audit-p[34]-/.test(group.id)).flatMap((group) => group.questions);
+  const counts = (questions) => questions.reduce((result, question) => { result[question.answer]++; return result; }, [0, 0, 0, 0]);
+  assert.deepEqual(counts(fresh).sort((a, b) => a - b), [9, 10, 10, 10]);
+  for (const part of [3, 4, 7]) {
+    const questions = bank.groups.filter((group) => group.part === part && !frozenGroups.has(group.id)).flatMap((group) => group.questions);
+    for (const count of counts(questions)) assert.ok(count / questions.length >= 0.2 && count / questions.length <= 0.3, `Part ${part}: ${counts(questions)}`);
+  }
+});
+
+test('saved answer indexes follow the same option text after revision 4', () => {
+  assert.ok(Object.keys(PREVIOUS_OPTIONS).length > 0);
+  for (const [id, previous] of Object.entries(PREVIOUS_OPTIONS)) {
+    if (['rd-new-077', 'rd-new-078', 'rd-new-082', 'rd-new-084'].includes(id)) continue;
+    for (let index = 0; index < previous.length; index++) {
+      const result = migrateChoiceIndexes({ [id]: index }, 3, byId);
+      assert.equal(byId[id].options[result.answers[id]], previous[index], `${id} old option ${index}`);
+    }
+  }
 });
