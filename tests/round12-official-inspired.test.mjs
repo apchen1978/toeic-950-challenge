@@ -16,7 +16,7 @@ const listeningCount = (groups) => groups.reduce((sum, group) => sum + group.que
 
 test('every bank question has an ability label matching the ten-category model', () => {
   const questions = bank.groups.flatMap((group) => group.questions);
-  assert.equal(questions.length, 1039);
+  assert.equal(questions.length, 1047);
   for (const group of bank.groups) {
     for (const question of group.questions) {
       assert.ok(ABILITIES[question.ability], `${question.id} has an unknown ability`);
