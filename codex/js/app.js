@@ -208,7 +208,7 @@ function quickExamTimeCopy() {
   return `40 題：聽力約 ${quick40} 分鐘（依音檔）＋閱讀 15 分鐘。<br>60 題：聽力約 ${quick60} 分鐘（依音檔）＋閱讀 22 分 30 秒。`;
 }
 function formExamTimeCopy() {
-  const lengths = ["form-a", "form-b", "form-c"].map((id) => approxListeningMinutes(id));
+  const lengths = ["form-a", "form-b", "form-c", "form-d"].map((id) => approxListeningMinutes(id));
   if (lengths.some((length) => !length)) return "接著閱讀 100 題／75 分鐘。";
   const low = Math.min(...lengths);
   const high = Math.max(...lengths);
@@ -329,15 +329,15 @@ function renderHome() {
     </details>
 
     <section class="card">
-      <h2>三套 200 題計時練習</h2>
-      <p>每套可選完整模考、只考閱讀或只考聽力。聽力依音檔連續播放一次，沒有聽力倒數。${formExamTimeCopy()}三套題目不重複。聽力可暫停，暫停時音檔停在這一題。完整模考進入閱讀後不能返回聽力。</p>
+      <h2>四套 200 題計時練習</h2>
+      <p>每套可選完整模考、只考閱讀或只考聽力。聽力依音檔連續播放一次，沒有聽力倒數。${formExamTimeCopy()}A、B、C 題目維持原樣；D 使用新增閱讀題，並重用 A 的聽力音檔與 10 題既有 Part 5。聽力可暫停，暫停時音檔停在這一題。完整模考進入閱讀後不能返回聽力。</p>
       ${sectionChoiceControl("mock-section-forms")}
-      <div class="row">${['a', 'b', 'c'].map((id) => `<button class="btn primary" data-action="start-form" data-form="form-${id}">開始第 ${id.toUpperCase()} 套</button>`).join('')}</div>
+      <div class="row">${['a', 'b', 'c', 'd'].map((id) => `<button class="btn primary" data-action="start-form" data-form="form-${id}">開始第 ${id.toUpperCase()} 套</button>`).join('')}</div>
       <p class="muted">正式模式：每題只播一次，依正式考試停頓。</p>
     </section>
     <section class="card">
-      <h2>其他／短題組練習</h2>
-      <p>題庫共 ${n} 題原創練習，分套作答；每題附答案與英文解析。聽力文字稿預設收合，可自行展開，每段最多播放 ${MAX_PLAYS} 次。</p>
+      <h2>題庫說明與其他練習</h2>
+      <p>題庫共 ${n} 題原創模擬練習，依多益題型自行編寫，並非 ETS 官方試題。 All questions are original simulations based on TOEIC question types, not ETS official test questions. 題目附答案與解析；聽力文字稿預設收合，可自行展開，每段最多播放 ${MAX_PLAYS} 次。</p>
       <label for="test-set">今天練哪一套？</label>
       <select id="test-set" class="btn">${bank.meta.sets.map(s=>`<option value="${s.id}">${esc(s.label)} · ${s.durationMin} 分鐘</option>`).join('')}</select>
       <div class="row">
@@ -364,7 +364,7 @@ function renderHome() {
     </section>
 
     <section class="card" id="voicecard"><h2>聽力音色</h2><p class="muted">先試聽，再開始。音色依此裝置與瀏覽器提供，清單優先排列較自然的候選音色。</p><label for="speech-rate">語速</label> <select class="btn" id="speech-rate"><option value="0.85">0.85× · 精聽</option><option value="1">1× · 正常</option><option value="1.1">1.1× · 挑戰</option></select><div id="voices" class="muted">載入語音中…</div></section>
-    <section class="card"><h2>官方樣題與練習方式</h2><p>先做一套練習，再從錯題解析找失分原因；閱讀可獨立練習。可選三套 200 題分段計時練習，或使用短題組；照片題目前有 ${photoCount} 題試做。</p><p><a href="https://www.ets.org/pdfs/toeic/toeic-listening-reading-sample-test.pdf" target="_blank" rel="noopener">ETS 官方公開樣題 PDF（含解答與聽力稿）</a> · <a href="https://toeic.com.tw/toeic/listening-reading/about/content/" target="_blank" rel="noopener">台灣官方題型與時間</a></p><p class="muted">官方內容於來源頁開啟；本機題庫與官方樣題分開。正式閱讀為 100 題、75 分鐘。</p></section>
+    <section class="card"><h2>官方樣題與練習方式</h2><p>先做一套練習，再從錯題解析找失分原因；閱讀可獨立練習。可選四套 200 題分段計時練習，或使用短題組；照片題目前有 ${photoCount} 題試做。</p><p><a href="https://www.ets.org/pdfs/toeic/toeic-listening-reading-sample-test.pdf" target="_blank" rel="noopener">ETS 官方公開樣題 PDF（含解答與聽力稿）</a> · <a href="https://toeic.com.tw/toeic/listening-reading/about/content/" target="_blank" rel="noopener">台灣官方題型與時間</a></p><p class="muted">官方內容於來源頁開啟；本機題庫與官方樣題分開。正式閱讀為 100 題、75 分鐘。</p></section>
     <section class="card"><h2>正式考試與素材庫</h2><p>正式 Listening 100 題／約 45 分鐘；Reading 100 題／75 分鐘。實際作答約 2 小時，連基本資料及問卷約 2.5 小時。</p><details><summary>查看正式題數分配</summary><p>Part 1 照片 6 題 · Part 2 應答 25 題 · Part 3 對話 39 題 · Part 4 獨白 30 題。</p><p>Part 5 句子填空 30 題 · Part 6 段落填空 16 題 · Part 7 單篇 29 題、多篇 25 題。</p></details><p>台灣官方範例（在來源頁練習與核對答案）：</p><ul><li><a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample03.html" target="_blank" rel="noopener">Part 3 聽力對話</a> · <a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample04.html" target="_blank" rel="noopener">Part 4 聽力獨白</a></li><li><a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample05.html" target="_blank" rel="noopener">Part 5 句子填空</a> · <a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample06.html" target="_blank" rel="noopener">Part 6 段落填空</a> · <a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample07_03.html" target="_blank" rel="noopener">Part 7 多篇閱讀</a></li></ul><p class="muted">新增挑戰 03：聽力 20 題＋閱讀 20 題；也可只選閱讀 03。做完可以依錯題與弱項，決定下一回要練聽力、閱讀或照片題。</p></section>
 
     ${last ? `<section class="card"><h2>最近成績</h2>

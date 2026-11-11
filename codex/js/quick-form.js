@@ -193,7 +193,13 @@ export const VERIFIED_CROSSREF_GROUP_IDS = new Set([
   "g-rd-pay-01",
   "g-rd-job-01",
   "g-rt-train-01",
-  "g-rd-ship-01"
+  "g-rd-ship-01",
+  "g-rdnew-033",
+  "g-rdnew-034",
+  "g-rdnew-035",
+  "g-rdnew-036",
+  "g-rdnew-037",
+  "g-rdnew-038"
 ]);
 
 export function isVerifiedCrossRef(group) {

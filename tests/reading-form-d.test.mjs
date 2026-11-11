@@ -2,6 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
+import { isOfficialForm } from '../codex/js/official-listening.js';
+import { isVerifiedCrossRef } from '../codex/js/quick-form.js';
 
 const bank = JSON.parse(readFileSync(new URL('../codex/data/questions.json', import.meta.url), 'utf8'));
 const byId = new Map(bank.groups.map((group) => [group.id, group]));
@@ -22,6 +24,23 @@ test('original Form A, B, and C group and question ID sequences are unchanged', 
     assert.equal(digest(set.groupIds), groupsHash, `${id} group IDs`);
     assert.equal(digest(questionIds), questionsHash, `${id} question IDs`);
   }
+});
+
+test('Form D has the required 200-question distribution and reuses existing listening groups', () => {
+  const formA = bank.meta.sets.find((item) => item.id === 'form-a');
+  const formD = bank.meta.sets.find((item) => item.id === 'form-d');
+  assert.ok(formD);
+  assert.ok(isOfficialForm('form-d'));
+  const counts = {};
+  for (const id of formD.groupIds) {
+    const group = byId.get(id);
+    counts[group.part] = (counts[group.part] ?? 0) + group.questions.length;
+  }
+  assert.deepEqual(counts, { 1: 6, 2: 25, 3: 39, 4: 30, 5: 30, 6: 16, 7: 54 });
+  assert.equal(formD.groupIds.reduce((sum, id) => sum + byId.get(id).questions.length, 0), 200);
+  assert.deepEqual(formD.groupIds.filter((id) => byId.get(id).part <= 4), formA.groupIds.filter((id) => byId.get(id).part <= 4));
+  assert.equal(formD.timing.listening, 45);
+  assert.equal(formD.timing.reading, 75);
 });
 
 test('the original Part 7 draft is integrated as three original questions', () => {
@@ -77,8 +96,21 @@ test('every new multiple-document group has a cited cross-reference question', (
   const multi = newGroups.filter((group) => group.part === 7 && group.passage.docs.length > 1);
   assert.equal(multi.length, 6);
   for (const group of multi) {
+    assert.ok(isVerifiedCrossRef(group), `${group.id} is preferred by quick forms`);
     const questions = group.questions.filter((question) => question.crossRef === true);
     assert.ok(questions.length >= 1, group.id);
     for (const question of questions) assert.match(question.explanation, /跨篇比對：/, question.id);
+  }
+});
+
+test('app and bank identify the questions as original simulations, not ETS material', () => {
+  const app = readFileSync(new URL('../codex/js/app.js', import.meta.url), 'utf8');
+  const page = readFileSync(new URL('../codex/index.html', import.meta.url), 'utf8');
+  const readme = readFileSync(new URL('../README.md', import.meta.url), 'utf8');
+  const disclaimer = bank.meta.disclaimer;
+  for (const text of [app, page, readme, disclaimer]) {
+    assert.match(text, /並非 ETS 官方試題/);
+    assert.match(text, /original simulations/i);
+    assert.match(text, /ETS/i);
   }
 });
