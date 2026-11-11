@@ -65,7 +65,10 @@ test("multi-document groups carry a cross-reference, and new ones have five ques
     if (docs.length === 3) triples += 1;
     const cross = group.questions.filter((question) => question.crossRef === true);
     assert.ok(cross.length >= 1, group.id);
-    for (const question of cross) assert.match(question.explanation, /Cross-reference:/, question.id);
+    for (const question of cross) {
+      if (question.id.startsWith("rd-new-")) assert.match(question.explanation, /跨篇比對：/, question.id);
+      else assert.match(question.explanation, /Cross-reference:/, question.id);
+    }
     if (!published.has(group.id)) assert.equal(group.questions.length, 5, group.id);
   }
   assert.ok(doubles >= 6, doubles);

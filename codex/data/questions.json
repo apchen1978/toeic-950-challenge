@@ -1,9 +1,9 @@
 {
   "meta": {
-    "version": 1,
+    "version": 8,
     "title": "TOEIC 955 → Higher — Listening & Reading",
     "durationMin": 30,
-    "disclaimer": "All items are original practice material written for this app. Scores are unofficial estimates and are not equivalent to ETS TOEIC scores.",
+    "disclaimer": "本 App 題目為依多益題型自行編寫的模擬題，並非 ETS 官方試題。 All questions are original simulations of TOEIC question types, not ETS official items.",
     "sets": [
       {
         "id": "original",
@@ -816,6 +816,119 @@
           "g-deep-reading-supplier-02"
         ],
         "durationMin": 18
+      },
+      {
+        "id": "form-d",
+        "label": "200 題練習卷 D · 新閱讀題",
+        "groupIds": [
+          "g-photo-01",
+          "g-photo-04",
+          "g-photo-07",
+          "g-photo-12",
+          "g-photo-15",
+          "g-photo-18",
+          "g-l01",
+          "g-l04",
+          "g-new-l1",
+          "g-new-l4",
+          "s03-l2",
+          "s03-l5",
+          "g-a-p2-03",
+          "g-extra-l-01",
+          "g-extra-l-04",
+          "g-extra-l-07",
+          "g-extra-l-10",
+          "xf-p2-03",
+          "xf-p2-06",
+          "xf-p2-09",
+          "xf-p2-12",
+          "xf-p2-15",
+          "xf-p2-18",
+          "g-xl-p2-01",
+          "g-xl-p2-04",
+          "g-xl-p2-07",
+          "g-xs-l01",
+          "g-xs-l04",
+          "g-xs-l07",
+          "g-xs-l10",
+          "g-xs-l13",
+          "g-new-conv1",
+          "s03-conversation2",
+          "g-new-cv-b",
+          "g-voice-e-vendor",
+          "g-f-dialogue-3",
+          "xfc-p3-hotel",
+          "g-xl2-p3-03",
+          "g-xl2-p3-06",
+          "g-xl-p3-03",
+          "g-xl3-01",
+          "g-xl3-04",
+          "g-xl3-07",
+          "g-xl3-10",
+          "g-l09",
+          "s03-talk2",
+          "g-airport-talk-d",
+          "g-f-talk-2",
+          "g-xl2-p4-03",
+          "g-xl-p4-02",
+          "g-x4f-03",
+          "g-x4f-06",
+          "g-x4f-09",
+          "g-x4f-12",
+          "g-r01",
+          "g-r04",
+          "g-new-r0",
+          "g-new-r3",
+          "g-new-r6",
+          "s03-sentence1",
+          "s03-sentence4",
+          "s03-sentence7",
+          "g-a-p5-03",
+          "g-extra-r-01",
+          "g-rdnew-001",
+          "g-rdnew-002",
+          "g-rdnew-003",
+          "g-rdnew-004",
+          "g-rdnew-005",
+          "g-rdnew-006",
+          "g-rdnew-007",
+          "g-rdnew-008",
+          "g-rdnew-009",
+          "g-rdnew-010",
+          "g-rdnew-011",
+          "g-rdnew-012",
+          "g-rdnew-013",
+          "g-rdnew-014",
+          "g-rdnew-015",
+          "g-rdnew-016",
+          "g-rdnew-017",
+          "g-rdnew-018",
+          "g-rdnew-019",
+          "g-rdnew-020",
+          "g-rdnew-021",
+          "g-rdnew-022",
+          "g-rdnew-023",
+          "g-rdnew-024",
+          "g-rdnew-025",
+          "g-rdnew-026",
+          "g-rdnew-027",
+          "g-rdnew-028",
+          "g-rdnew-029",
+          "g-rdnew-030",
+          "g-rdnew-031",
+          "g-rdnew-032",
+          "g-rdnew-033",
+          "g-rdnew-034",
+          "g-rdnew-035",
+          "g-rdnew-036",
+          "g-rdnew-037",
+          "g-rdnew-038"
+        ],
+        "durationMin": 120,
+        "timing": {
+          "listening": 45,
+          "reading": 75
+        }
       }
     ]
   },
@@ -15021,6 +15134,1651 @@
           ],
           "answer": 1,
           "explanation": "She asks them to confirm the east dock and that the truck should return the next morning if the gate is closed."
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-001",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-001",
+          "prompt": "The regional director asked that every branch ------- its inventory before the quarterly review.",
+          "skill": "r-grammar",
+          "options": [
+            "update",
+            "updates",
+            "updated",
+            "updating"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「update」：asked that 後接原形，為要求/建議類動詞的虛擬語氣。B updates 是第三人稱單數，C updated 是過去式，D updating 是分詞，皆不符合此結構。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-002",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-002",
+          "prompt": "Because the service agreement ------- in December, the procurement team has begun reviewing renewal offers.",
+          "skill": "r-grammar",
+          "options": [
+            "will expire",
+            "expires",
+            "expired",
+            "is expiring"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「expires」：固定時程常用現在簡單式表未來安排。A will expire 文法可通但較不自然地描述既定時程；C expired 表過去；D is expiring 強調正在變化，非此處日期公告。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-003",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-003",
+          "prompt": "The new labeling process was ------- designed to make returned packages easier to sort.",
+          "skill": "r-grammar",
+          "options": [
+            "care",
+            "careful",
+            "carefully",
+            "more carefully"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「carefully」：副詞修飾 designed。A care 是名詞，B careful 是形容詞，D more carefully 是比較級但句中沒有比較對象。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-004",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-004",
+          "prompt": "Neither of the proposed routes ------- the loading dock, so the delivery schedule can remain unchanged.",
+          "skill": "r-grammar",
+          "options": [
+            "pass",
+            "passing",
+            "have passed",
+            "passes"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「passes」：主詞 neither 視為單數，故動詞用 passes。A pass 缺第三人稱單數變化；B passing 是分詞；C have passed 為複數助動詞。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-005",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-005",
+          "prompt": "The supplier will replace the damaged panels ------- the inspection confirms that they were defective on arrival.",
+          "skill": "r-grammar",
+          "options": [
+            "provided that",
+            "in spite of",
+            "rather than",
+            "even though"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「provided that」：表示「只要／若」，後接完整子句作條件。B in spite of 要接名詞或動名詞；C rather than 表選擇；D even though 表讓步對比，均不符合此條件。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-006",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-006",
+          "prompt": "By the time the auditors arrive, the accounting staff ------- the supporting receipts in a shared folder.",
+          "skill": "r-grammar",
+          "options": [
+            "organizes",
+            "will have organized",
+            "organized",
+            "will organize"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「will have organized」：未來完成式表示稽核員到達前已整理完畢。A organizes 是現在式；C organized 是過去式；D will organize 只表未來，未強調期限前完成。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-007",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-007",
+          "prompt": "The revised safety checklist must be completed ------- the equipment is returned to service.",
+          "skill": "r-grammar",
+          "options": [
+            "during",
+            "while",
+            "before",
+            "despite"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「before」：表示先完成清單，再讓設備恢復使用。A during 後接名詞；B while 表同時；D despite 後接名詞或動名詞，皆不合句型或順序。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-008",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-008",
+          "prompt": "Ms. Ito will present the forecast, and Mr. Leung will explain ------- assumptions behind it.",
+          "skill": "r-grammar",
+          "options": [
+            "he",
+            "him",
+            "himself",
+            "his"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「his」：所有格限定詞修飾 assumptions，指 Mr. Leung 的假設。A he 是主格，B him 是受格，C himself 是反身代名詞，不能直接限定名詞。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-009",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-009",
+          "prompt": "The museum shop is extending its hours this month ------- more visitors can browse after the evening tour.",
+          "skill": "r-grammar",
+          "options": [
+            "so that",
+            "even if",
+            "as soon as",
+            "because"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「so that」：引出延長營業時間的目的。B even if 表條件，C as soon as 表時間，D because 表原因，語意皆非此處目的。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-010",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-010",
+          "prompt": "All maintenance requests ------- through the facilities portal receive a tracking number automatically.",
+          "skill": "r-grammar",
+          "options": [
+            "submitting",
+            "submitted",
+            "to submit",
+            "was submitted"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「submitted」：requests 是被提交的，過去分詞可縮減為被動關係子句。A submitting 表主動；C to submit 是不定詞；D was submitted 是單數過去被動，不能修飾複數名詞作一般規則。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-011",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-011",
+          "prompt": "The conference room is available on Thursday, ------- it has already been reserved for a client meeting on Friday.",
+          "skill": "r-grammar",
+          "options": [
+            "because",
+            "unless",
+            "although",
+            "therefore"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「although」：連接週四可用與週五已預約的對比。A because 表原因；B unless 設條件；D therefore 是副詞，不能用此逗號直接連接兩個子句。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-012",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-012",
+          "prompt": "A detailed map of the storage area is available to ------- who needs to locate archived files.",
+          "skill": "r-grammar",
+          "options": [
+            "any",
+            "someone",
+            "every",
+            "anyone"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「anyone」：泛指任何需要地圖的人，後接 who 子句自然。A any 與 C every 是限定詞，後需名詞；B someone 雖可指某個人，但不如 anyone 符合開放給所有需要者的語意。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-013",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-013",
+          "prompt": "The training coordinator ------- the attendance list before sending the completion certificates yesterday.",
+          "skill": "r-grammar",
+          "options": [
+            "checked",
+            "checks",
+            "has checked",
+            "will check"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「checked」：yesterday 指明已完成的過去時間。B checks 是現在式；C has checked 不與明確過去時間搭配；D will check 是未來式。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-014",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-014",
+          "prompt": "The package was returned to the sender because its address label had become ------- during transit.",
+          "skill": "r-grammar",
+          "options": [
+            "illegibly",
+            "illegible",
+            "illegibility",
+            "legible"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「illegible」：become 後接形容詞作主詞補語，意為標籤變得難以辨讀。A illegibly 是副詞；C illegibility 是名詞；D legible 意思相反。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-015",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-015",
+          "prompt": "The committee will publish the final schedule ------- the venue confirms the room assignments.",
+          "skill": "r-grammar",
+          "options": [
+            "despite",
+            "in addition to",
+            "once",
+            "whereas"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「once」：表示場地確認後就會發布時程，兼具時間／條件關係。A despite 和 B in addition to 後接名詞或動名詞；D whereas 表對比。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-016",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-016",
+          "prompt": "Each of the new service desks ------- a screen that can be adjusted for standing customers.",
+          "skill": "r-grammar",
+          "options": [
+            "have",
+            "are having",
+            "were given",
+            "has been given"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「has been given」：Each 為單數，使用現在完成被動式說明每張服務台都已配備螢幕。A have 是複數；B are having 不自然地表短暫擁有；C were given 是過去式。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-017",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-017",
+          "prompt": "The analyst compared the two proposals -------, paying particular attention to their maintenance costs.",
+          "skill": "r-grammar",
+          "options": [
+            "carefully",
+            "careful",
+            "carefulness",
+            "more carefully"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「carefully」：副詞修飾 compared。B careful 是形容詞；C carefulness 是名詞；D more carefully 是比較級，但句中沒有比較對象。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-018",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-018",
+          "prompt": "The updated directory contains the names of employees ------- responsibilities include approving travel expenses.",
+          "skill": "r-grammar",
+          "options": [
+            "who",
+            "whose",
+            "whom",
+            "which"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「whose」：表員工「其職責」包含核准差旅費，whose 表所有關係。A who 是主格；C whom 是受格；D which 指物，不能表員工所有關係。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-019",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-019",
+          "prompt": "The repair crew finished the lobby floor ------- the building remained open to visitors.",
+          "skill": "r-grammar",
+          "options": [
+            "because",
+            "unless",
+            "while",
+            "therefore"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「while」：說明修理與大樓開放同時進行。A because 表原因；B unless 設條件；D therefore 是副詞，不能以此方式連接句子。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-020",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-020",
+          "prompt": "Customers may exchange an unused item within 30 days, ------- they provide the original receipt.",
+          "skill": "r-grammar",
+          "options": [
+            "even though",
+            "in contrast to",
+            "because of",
+            "as long as"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「as long as」：表示只要提供原收據即可交換，後接完整子句。A even though 表讓步；B in contrast to 與 C because of 後接名詞／動名詞，皆不符合句型與語意。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-021",
+      "section": "reading",
+      "part": 6,
+      "title": "Updated equipment return procedure",
+      "passage": {
+        "docs": [
+          {
+            "label": "Email",
+            "text": "To: Site supervisors\nSubject: Equipment returns\n\nBeginning May 6, all portable devices sent for repair must be registered at the service desk. Staff should [1] that the device serial number is recorded before it leaves the site.\n\nPlease attach a signed yellow tag to each item. Devices arriving [2] this tag will be placed in a separate holding area. [3]\n\nThis procedure applies only to portable devices. Large equipment should [4] be reported through the existing facilities portal."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "rd-new-021",
+          "prompt": "Select the best word for [1].",
+          "skill": "r-vocabulary",
+          "options": [
+            "confirm",
+            "repair",
+            "imagine",
+            "postpone"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「confirm」：此處要表示核實設備序號已記錄。B repair 是修理，C imagine 是想像，D postpone 是延後，都不是確認紀錄。"
+        },
+        {
+          "id": "rd-new-022",
+          "prompt": "Select the best word for [2].",
+          "skill": "r-grammar",
+          "options": [
+            "among",
+            "without",
+            "beside",
+            "despite"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「without」：表示物品缺少簽名標籤。A among 表在群體之中，C beside 表在旁邊，D despite 表儘管，均不表示缺少文件。"
+        },
+        {
+          "id": "rd-new-023",
+          "prompt": "Select the best sentence for [3].",
+          "skill": "r-purpose",
+          "options": [
+            "The new cafeteria menu will be posted next week.",
+            "Managers may request an extra desk for the reception area.",
+            "A blank tag is attached for teams that need additional copies.",
+            "The loading dock will reopen on Friday."
+          ],
+          "answer": 2,
+          "explanation": "正解 C：附件提供空白標籤，正好承接前文「每件物品要附標籤」的指示。A 餐廳菜單、B 接待桌、D 卸貨區重開都與設備退還程序無關。"
+        },
+        {
+          "id": "rd-new-024",
+          "prompt": "Select the best word for [4].",
+          "skill": "r-grammar",
+          "options": [
+            "also",
+            "ever",
+            "otherwise",
+            "still"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「still」：表示其他大型設備仍沿用原設施系統通報。A also 表增加另一項，B ever 表曾經／任何時候，C otherwise 表否則或不同做法，均不合「維持原流程」。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-022",
+      "section": "reading",
+      "part": 6,
+      "title": "Workshop registration update",
+      "passage": {
+        "docs": [
+          {
+            "label": "Email",
+            "text": "To: Workshop participants\nSubject: Choosing an attendance option\n\nPlease indicate [1] you will attend the May workshop in person or online. Room capacity is limited, so changes to an in-person selection must be submitted [2] May 2. [3]\n\nParticipants who need accessibility support should contact the coordinator. Recorded sessions will [4] be available to those who cannot attend live."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "rd-new-025",
+          "prompt": "Select the best word for [1].",
+          "skill": "r-grammar",
+          "options": [
+            "whether",
+            "although",
+            "despite",
+            "because"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「whether」：indicate 後接 whether 引導的間接選擇問句。B although 表讓步，C despite 後接名詞，D because 表原因，不能引出是否到場的選擇。"
+        },
+        {
+          "id": "rd-new-026",
+          "prompt": "Select the best word for [2].",
+          "skill": "r-grammar",
+          "options": [
+            "because",
+            "by",
+            "unless",
+            "whereas"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「by」：表示最遲須於 5 月 2 日前提出變更。A because 表原因，C unless 設條件，D whereas 作對比，皆不表示期限。"
+        },
+        {
+          "id": "rd-new-027",
+          "prompt": "Select the best sentence for [3].",
+          "skill": "r-purpose",
+          "options": [
+            "A new parking area will open behind the library.",
+            "The instructor has published a different course title.",
+            "A confirmation message will be sent after registration is processed.",
+            "Workshop participants should arrive ten minutes early."
+          ],
+          "answer": 2,
+          "explanation": "正解 C：完成報名後會收到確認訊息，直接說明登記後續。A 停車區、B 課程名稱、D 提早到場都與報名確認流程無關。"
+        },
+        {
+          "id": "rd-new-028",
+          "prompt": "Select the best word for [4].",
+          "skill": "r-grammar",
+          "options": [
+            "too",
+            "nearly",
+            "rather",
+            "still"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「still」：表示無法即時參加者仍可看錄影。A too 表過度／也，B nearly 表幾乎，C rather 通常需搭配 than，皆不合語意。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-023",
+      "section": "reading",
+      "part": 6,
+      "title": "Revised invoice review steps",
+      "passage": {
+        "docs": [
+          {
+            "label": "Memo",
+            "text": "To: Department administrators\nSubject: Invoice review\n\nBefore approving an invoice, compare each line with the purchase record to ensure the amounts are [1]. If a line does not match, send the invoice back to the requester [2] three business days. [3]\n\nAfter correction, the reviewer may approve the invoice in the system. Changes to supplier banking details may [4] be approved by the finance manager."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "rd-new-029",
+          "prompt": "Select the best word for [1].",
+          "skill": "r-vocabulary",
+          "options": [
+            "accurate",
+            "temporary",
+            "optional",
+            "incomplete"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「accurate」：審核人要確認數字與佐證文件相符。B temporary 指暫時，C optional 指可選，D incomplete 指不完整，皆非正確無誤。"
+        },
+        {
+          "id": "rd-new-030",
+          "prompt": "Select the best word for [2].",
+          "skill": "r-grammar",
+          "options": [
+            "at",
+            "within",
+            "until",
+            "beside"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「within」：表示三個工作日的期限內。A at 指時間點，C until 指持續到某時，D beside 表位置，都不表示期間上限。"
+        },
+        {
+          "id": "rd-new-031",
+          "prompt": "Select the best sentence for [3].",
+          "skill": "r-purpose",
+          "options": [
+            "The office will replace its chairs this summer.",
+            "The new staff directory includes a map of the campus.",
+            "The revised checklist is available in the finance portal.",
+            "The art gallery will host a reception on Friday."
+          ],
+          "answer": 2,
+          "explanation": "正解 C：財務入口網站提供剛提到的新版檢核表。A 換椅子、B 校園地圖、D 藝廊活動都與發票審核公告無關。"
+        },
+        {
+          "id": "rd-new-032",
+          "prompt": "Select the best word for [4].",
+          "skill": "r-grammar",
+          "options": [
+            "still",
+            "already",
+            "even",
+            "only"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「only」：限定銀行資料變更僅能由財務經理核准。A still 表仍然，B already 表已經，C even 表甚至，都沒有排他限制的意思。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-024",
+      "section": "reading",
+      "part": 6,
+      "title": "Library room reservations",
+      "passage": {
+        "docs": [
+          {
+            "label": "Notice",
+            "text": "Study rooms may be reserved for periods of up to two hours. Reservations open seven days in advance, and groups must arrive within ten minutes of the start time. [1]\n\nRequests for a particular room should be submitted [2] one day ahead. [3]\n\nPlease leave the room clean and return any borrowed adapters to the front desk. A display cable and a whiteboard [4] be available in each room."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "rd-new-033",
+          "prompt": "Select the best word for [1].",
+          "skill": "r-grammar",
+          "options": [
+            "available",
+            "availability",
+            "avail",
+            "unavailable"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「available」：be 後需形容詞作補語。B availability 是名詞，C avail 不是此處所需的形容詞，D unavailable 意思相反。"
+        },
+        {
+          "id": "rd-new-034",
+          "prompt": "Select the best word for [2].",
+          "skill": "r-grammar",
+          "options": [
+            "because",
+            "at least",
+            "unless",
+            "although"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「at least」：表示至少提前一天提出需求。A because 表原因，C unless 設條件，D although 表讓步，都不表示最低提前時間。"
+        },
+        {
+          "id": "rd-new-035",
+          "prompt": "Select the best sentence for [3].",
+          "skill": "r-purpose",
+          "options": [
+            "A new café will open outside the west entrance.",
+            "The history collection has been moved to another floor.",
+            "A calendar showing room availability is posted on the library website.",
+            "The art gallery will host a reception on Friday."
+          ],
+          "answer": 2,
+          "explanation": "正解 C：網站行事曆提供剛才提到的空房資訊查詢方式。A 咖啡廳、B 收藏搬樓層、D 藝廊招待會都與預約房間無關。"
+        },
+        {
+          "id": "rd-new-036",
+          "prompt": "Select the best word for [4].",
+          "skill": "r-grammar",
+          "options": [
+            "either",
+            "neither",
+            "both",
+            "also"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「also」：表示除了預約房間，房內也會提供線材與白板。A either、B neither 需與 or/nor 搭配，C both 表兩者皆然但放在此句位置不合。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-025",
+      "section": "reading",
+      "part": 7,
+      "title": "Kitchen equipment inspection report",
+      "passage": {
+        "docs": [
+          {
+            "label": "Report",
+            "text": "SEABROOK HOTEL — KITCHEN EQUIPMENT INSPECTION\nInspector: Nina Park · Inspection date: 18 April\n\nRating scale: 1 = unsafe; 2 = repair soon; 3 = serviceable with monitoring; 4 = good. N/A means the equipment is not installed at this site.\n\nEquipment | Rating | Inspector note\nWalk-in refrigerator | 4 | Temperature controls responded normally.\nDishwasher | 2 | A worn door seal causes occasional leakage.\nVentilation fan | 3 | Vibration is within limits; recheck next month.\nGas oven | N/A | The kitchen uses electric ovens only.\n\nThe maintenance team should submit a repair estimate for the lowest-rated installed item by 25 April. Nina will review the estimate before any work is scheduled."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "rd-new-037",
+          "prompt": "Which equipment should the maintenance team include in its estimate?",
+          "skill": "r-detail",
+          "options": [
+            "The walk-in refrigerator.",
+            "The dishwasher.",
+            "The ventilation fan.",
+            "The gas oven."
+          ],
+          "answer": 1,
+          "explanation": "洗碗機評為 2，是已安裝設備中的最低分；冰箱為 4、風扇為 3，氣體烤箱未安裝。其餘選項分數較高或不適用。"
+        },
+        {
+          "id": "rd-new-038",
+          "prompt": "What can be inferred about the hotel kitchen?",
+          "skill": "r-inference",
+          "options": [
+            "It has no refrigeration.",
+            "Its ventilation fan is unsafe.",
+            "It does not have a gas oven.",
+            "The whole kitchen will close for repairs."
+          ],
+          "answer": 2,
+          "explanation": "正解 C：N/A 定義及「只使用電烤箱」顯示廚房沒有氣體烤箱。A 與表格相反；B 評分 3 表示風扇可用但需監測；D 全面關閉未被提及。"
+        },
+        {
+          "id": "rd-new-039",
+          "prompt": "What will Nina probably do next?",
+          "skill": "r-inference",
+          "options": [
+            "Review a repair estimate.",
+            "Replace the door seal herself.",
+            "Close the kitchen on April 25.",
+            "Order a gas oven."
+          ],
+          "answer": 0,
+          "explanation": "正解 A：維修團隊應先提交估價，Nina 接著審核。B 報告未要求她親自修理；C 沒有關閉日期；D 報告未建議添購烤箱。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-026",
+      "section": "reading",
+      "part": 7,
+      "title": "Campus bulletin",
+      "passage": {
+        "docs": [
+          {
+            "label": "Notice",
+            "text": "RIVERTON CAMPUS — NEW STAFF ORIENTATION\n\nThe next orientation session will be held Thursday, June 12, from 9:00 to 11:30 a.m. in East Hall, Room 204. Please register through the staff portal by June 9 so that printed materials can be prepared.\n\nVisitor passes for the building may be collected at the south reception desk. Parking spaces are not reserved for this event. Employees who cannot attend in person will receive a link to the recording after the session."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "rd-new-040",
+          "prompt": "In the notice, what does “issued” mean?",
+          "skill": "r-vocabulary",
+          "options": [
+            "reported a problem",
+            "distributed officially",
+            "paid an invoice",
+            "cancelled the pass"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「distributed officially」：此處 issued 指正式發出通行證。A 是回報問題，C 是支付帳款，D 是取消通行證，均非核發。"
+        },
+        {
+          "id": "rd-new-041",
+          "prompt": "What is indicated about the orientation session?",
+          "skill": "r-detail",
+          "options": [
+            "It will be held in the west auditorium.",
+            "It is open to visitors without registration.",
+            "It has been postponed until Friday.",
+            "It will be held in East Hall."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「held in East Hall」：公告指定 East Hall、週四舉行且須事先登記。A 地點錯誤；B 說免登記，與規定相反；C 日期錯誤。"
+        },
+        {
+          "id": "rd-new-042",
+          "prompt": "What should a participant do if unable to attend?",
+          "skill": "r-inference",
+          "options": [
+            "Collect a visitor pass at the west desk.",
+            "Ask a colleague to reserve a parking space.",
+            "Watch for a follow-up recording.",
+            "Request a live make-up session."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「看後續錄影」：公告表示缺席者會收到錄影連結。A 領訪客證、B 安排停車無關；D 要求補課並未提及。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-027",
+      "section": "reading",
+      "part": 7,
+      "title": "Email about a room change",
+      "passage": {
+        "docs": [
+          {
+            "label": "Email",
+            "text": "From: Elena Rivera\nTo: Marcus Chen\nSubject: Tuesday project review\n\nHi Marcus,\n\nThe Cedar Room is available after all, so our review will move from Maple Room to Cedar Room on the third floor. We will still meet at 10:30 a.m. on Tuesday. Please bring the vendor comparison sheet you prepared; I will bring the revised cost summary.\n\nThe room change has been added to the calendar invitation. [1] No other part of the agenda has changed.\n\nBest,\nElena"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "rd-new-043",
+          "prompt": "Why did Ms. Rivera send the email?",
+          "skill": "r-purpose",
+          "options": [
+            "To inform a colleague of a meeting-room change.",
+            "To cancel a project review.",
+            "To request a new laptop.",
+            "To request that the review be postponed."
+          ],
+          "answer": 0,
+          "explanation": "正解 A：寄件者通知會議改到 Cedar Room。B 說取消會議，C 請求筆電，D 要求延後審查，都不是郵件目的。"
+        },
+        {
+          "id": "rd-new-044",
+          "prompt": "What does Mr. Chen need to bring?",
+          "skill": "r-detail",
+          "options": [
+            "A printed building map.",
+            "A revised budget.",
+            "The vendor comparison sheet.",
+            "An employee identification card."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「供應商比較表」：郵件直接要求 Chen 攜帶此表。A 地圖、B 預算、D 員工證都沒有被要求。"
+        },
+        {
+          "id": "rd-new-045",
+          "prompt": "Select the best sentence for [1].",
+          "skill": "r-inference",
+          "options": [
+            "The supplier comparison will be presented at a later meeting.",
+            "Employees may request a laptop through the support portal.",
+            "The meeting has been moved to next Tuesday.",
+            "Please use the revised invitation to confirm the room location."
+          ],
+          "answer": 3,
+          "explanation": "正解 D：用更新後的邀請確認房間，承接行事曆已更新的訊息。A 延後報告、B 申請筆電、C 改到下週均與「其餘議程不變」矛盾或無關。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-028",
+      "section": "reading",
+      "part": 7,
+      "title": "Customer service conversation log",
+      "passage": {
+        "docs": [
+          {
+            "label": "Chat transcript",
+            "text": "10:14 — Allen: The tracking page says my package may arrive tomorrow. I will be at work until 6:00 p.m.\n10:15 — Support: Would you like us to request another delivery date?\n10:16 — Allen: That is not necessary. The building manager can accept parcels at the front desk.\n10:17 — Support: I can add that instruction to the delivery record.\n10:18 — Allen: Great. Please ask the courier to leave it with the manager, not outside my apartment door.\n10:19 — Support: Understood. I will update the note now."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "rd-new-046",
+          "prompt": "What is Ms. Allen mainly asking the support team to do?",
+          "skill": "r-purpose",
+          "options": [
+            "Refund her annual membership.",
+            "Change the delivery instructions.",
+            "Replace a damaged item.",
+            "Cancel the shipment."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「更改投遞指示」：Allen 要求把包裹交給管理室。A 退款、C 換貨、D 取消訂單都不是她的要求。"
+        },
+        {
+          "id": "rd-new-047",
+          "prompt": "Why does Ms. Allen mention that she works until 6:00 p.m.?",
+          "skill": "r-inference",
+          "options": [
+            "To explain why she may not be home for delivery.",
+            "To ask the courier to deliver on Sunday.",
+            "To report her office closing time.",
+            "To ask that her work shift be changed."
+          ],
+          "answer": 0,
+          "explanation": "正解 A：她說下班時間晚，是解釋可能不在家收件。B 週日配送、C 公司關門時間、D 改班都沒有提出。"
+        },
+        {
+          "id": "rd-new-048",
+          "prompt": "What will the support agent probably do next?",
+          "skill": "r-inference",
+          "options": [
+            "Cancel the order immediately.",
+            "Send a new invoice.",
+            "Arrange a weekend appointment.",
+            "Update the delivery record."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「更新配送紀錄」：客服說會把管理室代收指示加到紀錄。A 取消、B 重開帳單、C 安排週末都沒有依據。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-029",
+      "section": "reading",
+      "part": 7,
+      "title": "Service interruption notice",
+      "passage": {
+        "docs": [
+          {
+            "label": "Notice",
+            "text": "HARBOR COMMUNITY CLINIC\n\nElectrical work will take place at the north entrance on Wednesday, September 17, from 7:00 a.m. to 1:00 p.m. During that period, visitors should enter through the south entrance. The online appointment system will also be unavailable from 8:00 to 10:00 a.m. while it is moved to a new server.\n\nTelephone service will remain available during regular daytime hours. The evening telephone line will operate as usual. Patients who need an appointment while the website is offline may call the clinic."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "rd-new-049",
+          "prompt": "Which service will be unavailable from 8:00 to 10:00 a.m.?",
+          "skill": "r-detail",
+          "options": [
+            "The north entrance.",
+            "The online appointment system.",
+            "The evening telephone service.",
+            "Telephone service during regular daytime hours."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「線上預約系統」：公告明確說該系統在 8–10 時暫停。A 是入口而非服務；C 夜間電話與 D 日間電話均照常。"
+        },
+        {
+          "id": "rd-new-050",
+          "prompt": "When should visitors use the south entrance?",
+          "skill": "r-detail",
+          "options": [
+            "Between 7:00 a.m. and 1:00 p.m. on Wednesday.",
+            "Throughout the entire week.",
+            "Only after 5:00 p.m.",
+            "Between 8:00 and 10:00 a.m. on Thursday."
+          ],
+          "answer": 0,
+          "explanation": "正解 A：南入口使用時段是週三上午 7 點至下午 1 點。B 整週、C 下午 5 點後都超出公告指定時段；D 指其他日期。"
+        },
+        {
+          "id": "rd-new-051",
+          "prompt": "What does the notice suggest about telephone appointments?",
+          "skill": "r-inference",
+          "options": [
+            "They will be unavailable all day.",
+            "They remain possible in the evening.",
+            "They must be booked through the website.",
+            "They require an in-person visit."
+          ],
+          "answer": 1,
+          "explanation": "正解 B：夜間電話線照常，故仍可在晚間電話預約。A 全日停用與公告矛盾；C 網站預約在維護時暫停；D 必須親訪沒有提及。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-030",
+      "section": "reading",
+      "part": 7,
+      "title": "Facilities inspection summary",
+      "passage": {
+        "docs": [
+          {
+            "label": "Report",
+            "text": "FACILITIES REVIEW — NORTH ANNEX\nReview date: October 7\n\nItem | Finding | Priority | Next step\nWest stairwell handrail | Loose at lower bracket | 1 | Measure before ordering a replacement bracket\nLobby lighting | Two fixtures flicker | 2 | Replace during the next scheduled service\nMeeting room walls | Paint is worn near the entrance | Deferred | Reassess after the winter closure\n\nThe team will post a temporary caution sign by the west stairwell until the bracket has been repaired. No rooms need to close during the lighting work."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "rd-new-052",
+          "prompt": "What does “deferred” mean in the report?",
+          "skill": "r-vocabulary",
+          "options": [
+            "completed ahead of schedule",
+            "assigned to a different team",
+            "cancelled permanently",
+            "postponed until later"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「延後到稍後」：deferred 表示暫緩處理。A 已提前完成、B 換團隊、C 永久取消都不等於延期。"
+        },
+        {
+          "id": "rd-new-053",
+          "prompt": "Which repair has been assigned the highest priority?",
+          "skill": "r-detail",
+          "options": [
+            "Replacing lobby lighting.",
+            "Repairing the west stairwell handrail.",
+            "Repainting the meeting room.",
+            "Repairing the elevator door."
+          ],
+          "answer": 1,
+          "explanation": "正解 B：西側樓梯扶手標示 Priority 1，高於大廳燈具 Priority 2，會議室油漆則延後。D 電梯門未列在報告中。"
+        },
+        {
+          "id": "rd-new-054",
+          "prompt": "What will the facilities team do before ordering parts?",
+          "skill": "r-detail",
+          "options": [
+            "Measure the stairwell handrail.",
+            "Close the entire building.",
+            "Ask tenants to repaint the meeting room.",
+            "Replace the lobby light fixtures first."
+          ],
+          "answer": 0,
+          "explanation": "正解 A：採購替換支架前要測量扶手。B 關閉整棟、C 請租戶油漆、D 優先換燈都不是報告列出的扶手處理步驟。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-031",
+      "section": "reading",
+      "part": 7,
+      "title": "Letter concerning a service renewal",
+      "passage": {
+        "docs": [
+          {
+            "label": "Letter",
+            "text": "NORTHLINE SERVICE COOPERATIVE\n\nFebruary 20\n\nDear Ms. Bell,\n\nYour equipment-support agreement is scheduled to renew on April 1 for a 12-month term. The monthly fee will remain unchanged unless you select the expanded coverage option by March 21. A comparison of the two plans is enclosed.\n\nPlease return the signed renewal form by March 14. If we do not receive a response by then, your current plan will renew automatically at its existing monthly rate. To change the billing contact, include the revised details on the form.\n\nSincerely,\nMember Services"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "rd-new-055",
+          "prompt": "In the letter, what does “term” refer to?",
+          "skill": "r-vocabulary",
+          "options": [
+            "a technical word in the handbook",
+            "an item being returned",
+            "the length of the agreement",
+            "a condition written into the agreement"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「合約期間」：term 在此指服務續約的 12 個月期間。A 技術用語、B 退回物品、D 合約條款均非此句語境。"
+        },
+        {
+          "id": "rd-new-056",
+          "prompt": "By what date must the signed form be returned?",
+          "skill": "r-detail",
+          "options": [
+            "March 14",
+            "March 21",
+            "April 1",
+            "February 28"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「March 14」：信件要求此日前交回簽妥表格。B March 21 是選擇加值方案的期限，C April 1 是續約開始日，D 日期未提及。"
+        },
+        {
+          "id": "rd-new-057",
+          "prompt": "What will happen if the customer takes no action?",
+          "skill": "r-inference",
+          "options": [
+            "The current service will end immediately.",
+            "The fee will be reduced automatically.",
+            "A new device will be shipped.",
+            "The current plan will renew at its existing monthly rate."
+          ],
+          "answer": 3,
+          "explanation": "正解 D：未回覆時現有方案會按原月費自動續約。A 立即終止、B 自動降價、C 寄新設備皆與信件相反。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-032",
+      "section": "reading",
+      "part": 7,
+      "title": "Local business news",
+      "passage": {
+        "docs": [
+          {
+            "label": "News article",
+            "text": "A former neighborhood post office has opened as a ceramics studio after six months of renovation. Owner Lena Ortiz said the building was selected because its large sorting room could accommodate a classroom as well as worktables.\n\nThe studio will offer weekday demonstrations at no charge. Weekend workshops require advance online registration and a materials fee. Its first public exhibition, featuring work by local residents, is scheduled for November 8.\n\nOrtiz said the studio plans to add evening classes next year if demand remains steady. The building’s old mail counter has been retained as a reception desk."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "rd-new-058",
+          "prompt": "In the article, what does “opened” mean?",
+          "skill": "r-vocabulary",
+          "options": [
+            "examined carefully",
+            "began operating for the public",
+            "created a new account",
+            "declared the building closed"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「開始對外營運」：opened 描述陶藝工作室正式開放。A 可指仔細檢查，C 指建立帳戶，D 指宣布關閉，皆非此處意思。"
+        },
+        {
+          "id": "rd-new-059",
+          "prompt": "What is indicated about the studio’s workshops?",
+          "skill": "r-detail",
+          "options": [
+            "They begin in the morning.",
+            "They are free for all visitors.",
+            "They are available only in winter.",
+            "They require advance online registration and a materials fee."
+          ],
+          "answer": 3,
+          "explanation": "正解 D：週末工作坊需先在線報名並支付材料費。A 開始時間、B 免費、C 只在冬季均與文章不符。"
+        },
+        {
+          "id": "rd-new-060",
+          "prompt": "Why did the owner choose the former post office?",
+          "skill": "r-detail",
+          "options": [
+            "It was near the train station.",
+            "It offered free equipment.",
+            "Its large sorting room could accommodate a classroom.",
+            "The city offered it rent-free."
+          ],
+          "answer": 2,
+          "explanation": "正解 C：舊郵局的分揀大廳夠大，可以同時放教室和工作桌。A 火車站旁、B 免費設備、D 租金優惠都未在文章提及。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-033",
+      "section": "reading",
+      "part": 7,
+      "title": "Delivery change: notice and customer email",
+      "passage": {
+        "docs": [
+          {
+            "label": "Building notice",
+            "text": "DELIVERY ACCESS — EAST WING\nThe loading bay will be closed Wednesday, October 15, from 8:00 a.m. until 5:00 p.m. for floor repairs. Deliveries originally scheduled during that period will be rebooked for Thursday, October 16, between 10:00 a.m. and noon. Please keep the side entrance clear."
+          },
+          {
+            "label": "Email",
+            "text": "From: Carrier Support\nTo: Jordan Dale\nSubject: Revised crate delivery\n\nHello Mr. Dale,\n\nYour three supply crates were originally scheduled for Wednesday. Because the building loading bay will be unavailable, we can deliver Thursday between 10:00 a.m. and noon. Please reply by 3:00 p.m. Wednesday to confirm that someone will be available to receive them. Once confirmed, we will keep the revised appointment.\n\nRegards,\nMira, Carrier Support"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "rd-new-061",
+          "prompt": "Why was the delivery moved to Thursday?",
+          "skill": "r-detail",
+          "options": [
+            "The customer requested a later date.",
+            "The carrier lost the shipment.",
+            "The building loading bay is closed Wednesday.",
+            "The recipient will be away all week."
+          ],
+          "answer": 2,
+          "explanation": "正解 C：公告和客服信都指出週三 loading bay 關閉，因此原週三配送改到週四。A 客戶沒有要求改期；B 貨物未遺失；D 收件人週四可安排收貨。"
+        },
+        {
+          "id": "rd-new-062",
+          "prompt": "What should Mr. Dale do before 3:00 p.m. Thursday?",
+          "skill": "r-detail",
+          "options": [
+            "Confirm that a staff member can receive the crates.",
+            "Pay an additional storage fee.",
+            "Collect the crates at the carrier depot.",
+            "Ask the carrier to leave them outside."
+          ],
+          "answer": 0,
+          "explanation": "正解 A：Dale 須在週三下午 3 點前確認有人收貨。B 額外倉儲費與 C 自取都未提；D 要求放在外面反而違反收貨安排。"
+        },
+        {
+          "id": "rd-new-063",
+          "prompt": "When should Dale make sure the side entrance is clear for the receiving team?",
+          "skill": "r-crossref",
+          "options": [
+            "Wednesday morning.",
+            "Friday afternoon.",
+            "After the loading bay reopens next week.",
+            "Thursday between 10:00 a.m. and noon."
+          ],
+          "answer": 3,
+          "explanation": "跨篇比對：Building notice要求側門保持暢通；Carrier email給出改期後週四 10 點至中午送達時間。兩篇合併可知須在該時段清出通道。正解 D；A 是原定時段，B、C不是更新後安排。",
+          "crossRef": true
+        },
+        {
+          "id": "rd-new-064",
+          "prompt": "What is implied about the shipment?",
+          "skill": "r-inference",
+          "options": [
+            "Refrigerated food.",
+            "Office furniture.",
+            "Printed brochures.",
+            "Three supply crates."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Three supply crates」：客服郵件說這批貨是三箱用品。A 冷藏食品、B 辦公家具、D 宣傳手冊都沒有在信中提到。"
+        },
+        {
+          "id": "rd-new-065",
+          "prompt": "What will the carrier do after receiving Mr. Dale’s confirmation?",
+          "skill": "r-detail",
+          "options": [
+            "Cancel the shipment.",
+            "Request a new loading-bay inspection.",
+            "Send the crates to another branch.",
+            "Keep the revised Thursday appointment."
+          ],
+          "answer": 3,
+          "explanation": "正解 D：客服收到收貨確認後會保留週四改期時段。A 取消、B 要求再檢查卸貨區、C 改送別處都沒有提及。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-034",
+      "section": "reading",
+      "part": 7,
+      "title": "Training schedule: bulletin and registration",
+      "passage": {
+        "docs": [
+          {
+            "label": "Training bulletin",
+            "text": "OCTOBER SKILLS WEEK\nSpreadsheet basics — remote or in person, 9:00 a.m.\nSafety demonstration — in person only, 1:30 p.m., Demonstration Lab 2\nProject handoff — remote, 3:00 p.m.\n\nPrint the checklist linked in the staff portal and bring it to any in-person session. Registration closes October 2."
+          },
+          {
+            "label": "Email",
+            "text": "From: Dana Ford\nTo: Training Desk\nSubject: Session selection\n\nI would like to register for the safety demonstration. The morning session would conflict with a supplier visit, so the afternoon time works well. I will bring the printed checklist mentioned in the bulletin. Please let me know if I need to prepare anything else.\n\nThank you,\nDana"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "rd-new-066",
+          "prompt": "Which course is offered only in person?",
+          "skill": "r-detail",
+          "options": [
+            "Spreadsheet basics.",
+            "Project handoff.",
+            "Safety demonstration.",
+            "A guided campus tour."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Safety demonstration」：公告標示此課只能現場參加。A 試算表課與 B 專案交接課都可遠端；D 校園導覽未列在課表。"
+        },
+        {
+          "id": "rd-new-067",
+          "prompt": "Why did Ms. Ford choose the afternoon session?",
+          "skill": "r-detail",
+          "options": [
+            "The morning course is full.",
+            "She wants to attend remotely.",
+            "Her manager asked her to switch.",
+            "Her morning conflicts with a supplier visit."
+          ],
+          "answer": 3,
+          "explanation": "正解 D：Ford 說早上需接待供應商，所以選下午場。A 課程額滿、B 想遠端、C 經理要求更換都不是她給的原因。"
+        },
+        {
+          "id": "rd-new-068",
+          "prompt": "What is Ms. Ford expected to do before attending?",
+          "skill": "r-detail",
+          "options": [
+            "Bring the printed checklist.",
+            "Submit an expense receipt.",
+            "Complete a safety exam.",
+            "Reserve a demonstration kit."
+          ],
+          "answer": 0,
+          "explanation": "正解 A：她要攜帶公告要求的列印檢核表。B 費用收據、C 安全考試、D 預約示範套件都未要求。"
+        },
+        {
+          "id": "rd-new-069",
+          "prompt": "What time does the in-person course start?",
+          "skill": "r-crossref",
+          "options": [
+            "9:00 a.m.",
+            "1:30 p.m.",
+            "3:00 p.m.",
+            "2:00 p.m."
+          ],
+          "answer": 1,
+          "explanation": "跨篇比對：Training bulletin列出安全示範在 1:30 p.m.；Ford email確認她報名安全示範。兩篇合併後可得課程時間。正解 B；A 是另一課時間，C 是遠端課時間，D 未列出。",
+          "crossRef": true
+        },
+        {
+          "id": "rd-new-070",
+          "prompt": "Where should Ms. Ford go?",
+          "skill": "r-crossref",
+          "options": [
+            "Training Room A.",
+            "The supplier reception desk.",
+            "The main reception area.",
+            "Demonstration Lab 2."
+          ],
+          "answer": 3,
+          "explanation": "跨篇比對：Training bulletin指定安全示範在 Demonstration Lab 2；Ford email確認她報名該課。兩篇合併後可判斷教室。正解 D；A、B、C都不是指定地點。",
+          "crossRef": true
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-035",
+      "section": "reading",
+      "part": 7,
+      "title": "Product recall: public notice and store message",
+      "passage": {
+        "docs": [
+          {
+            "label": "Safety notice",
+            "text": "PRODUCT SAFETY UPDATE\n\nStop using Model K replacement cartridges from lot 24B. A small number may not seal correctly. The lot code is printed on the side of the cartridge. Cartridges from lot 24C are not included in this notice and may continue to be used. Affected customers should contact the retailer for return instructions."
+          },
+          {
+            "label": "Retailer email",
+            "text": "From: Customer Care\nSubject: Model K cartridge return\n\nIf you have a Model K cartridge marked lot 24B, stop using it immediately and bring it to any branch during store hours. We can provide a replacement cartridge or refund the cartridge price. Please do not return the countertop dispenser; it is not part of the safety notice."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "rd-new-071",
+          "prompt": "Which product should customers stop using?",
+          "skill": "r-detail",
+          "options": [
+            "Model K replacement cartridges from lot 24B.",
+            "All water filters sold this year.",
+            "The countertop dispenser unit.",
+            "Model K cartridges from lot 24C."
+          ],
+          "answer": 0,
+          "explanation": "正解 A：安全公告只要求停用 Model K 濾芯 lot 24B。B 所有年度濾水器、C 主機與 D lot 24C 都不在停用範圍。"
+        },
+        {
+          "id": "rd-new-072",
+          "prompt": "What does the store advise customers to do?",
+          "skill": "r-detail",
+          "options": [
+            "Return the product by mail without contacting anyone.",
+            "Continue using it until a replacement arrives.",
+            "Wait for the next routine inspection.",
+            "Stop using the lot 24B cartridge and bring it to a branch."
+          ],
+          "answer": 3,
+          "explanation": "正解 D：店家要求立即停用 lot 24B 並帶到分店。A 郵寄不聯絡、B 繼續使用、C 等下次檢查都違反信中指示。"
+        },
+        {
+          "id": "rd-new-073",
+          "prompt": "What can customers receive at the store?",
+          "skill": "r-detail",
+          "options": [
+            "A new dispenser at no charge.",
+            "A replacement cartridge or a refund.",
+            "A free countertop dispenser.",
+            "A discount on a future service call."
+          ],
+          "answer": 1,
+          "explanation": "正解 B：店家提供替換濾芯或退款。A、C 免費主機都不在方案內；D 未承諾未來維修折扣。"
+        },
+        {
+          "id": "rd-new-074",
+          "prompt": "When should the customer bring the cartridge?",
+          "skill": "r-crossref",
+          "options": [
+            "Any time before the safety notice is posted.",
+            "Only after using all remaining water.",
+            "During store hours after stopping use immediately.",
+            "Only after receiving a replacement."
+          ],
+          "answer": 2,
+          "explanation": "跨篇比對：Safety notice要求lot 24B立即停用；Retailer email指定營業時間帶回分店。合併兩篇才能得到完整時間與處置。正解 C；A、B違反立即停用，D不是店家要求。",
+          "crossRef": true
+        },
+        {
+          "id": "rd-new-075",
+          "prompt": "Why might a customer need to check the lot code before visiting?",
+          "skill": "r-crossref",
+          "options": [
+            "The store accepts only unopened cartons.",
+            "Only lot 24B is affected; lot 24C follows a different instruction.",
+            "All cartridges in lots 24B and 24C must be returned.",
+            "The refund amount depends on the purchase date."
+          ],
+          "answer": 1,
+          "explanation": "跨篇比對：Safety notice說24B受影響、24C可繼續使用；Retailer email說受影響批次可帶回退換。兩篇合併說明需先核對批號。正解 B；A未要求未拆封，C把24C錯列為受影響，D退款不依購買日期。",
+          "crossRef": true
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-036",
+      "section": "reading",
+      "part": 7,
+      "title": "Conference travel: invitation, schedule and policy",
+      "passage": {
+        "docs": [
+          {
+            "label": "Invitation",
+            "text": "You are invited to the Regional Operations Forum on Thursday, May 22, at the Calder Conference Center. Registration opens at 8:15 a.m.; the first panel begins at 9:00 a.m. The center is about a 20-minute walk from the Harborview Hotel. Please bring your registration confirmation."
+          },
+          {
+            "label": "Schedule",
+            "text": "THURSDAY PROGRAM\n8:15–8:50 Registration\n9:00–10:00 Panel: Improving Service Handoffs\n10:15–11:30 Workshop: Building Clear Procedures\n12:15 Networking lunch"
+          },
+          {
+            "label": "Travel policy",
+            "text": "Employees may claim local travel and registration costs after attending an approved event. Submit itemized receipts and proof of attendance within ten business days. Meals provided by the event are not reimbursable. The employee’s manager must approve the request in the expense portal."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "rd-new-076",
+          "prompt": "Which session begins first on Thursday?",
+          "skill": "r-detail",
+          "options": [
+            "Panel discussion.",
+            "Registration desk.",
+            "Workshop: Building Clear Procedures.",
+            "Networking lunch."
+          ],
+          "answer": 0,
+          "explanation": "正解 B「Registration desk」：報到 8:15 開始，早於 9:00 的 panel、10:15 的 workshop 和 12:15 的午餐。"
+        },
+        {
+          "id": "rd-new-077",
+          "prompt": "What does Ms. Nair need to provide to receive reimbursement?",
+          "skill": "r-detail",
+          "options": [
+            "Replacing lobby lighting.",
+            "Repairing the west stairwell handrail.",
+            "Repainting the meeting room.",
+            "Repairing the elevator door."
+          ],
+          "answer": 3,
+          "explanation": "正解 D：政策要求逐項收據與出席證明。A 只有信用卡帳單、B 是活動手冊、C 是口頭核准，均不能替代規定文件。"
+        },
+        {
+          "id": "rd-new-078",
+          "prompt": "Who must approve the reimbursement request?",
+          "skill": "r-detail",
+          "options": [
+            "Measure the stairwell handrail.",
+            "Close the entire building.",
+            "Ask tenants to repaint the meeting room.",
+            "Replace lobby light fixtures first."
+          ],
+          "answer": 0,
+          "explanation": "正解 A：差旅政策規定由員工主管在費用系統核准。B 主辦方、C 飯店櫃檯、D 同行者都不是核准人。"
+        },
+        {
+          "id": "rd-new-079",
+          "prompt": "What time should Ms. Nair leave the hotel to reach registration on time?",
+          "skill": "r-crossref",
+          "options": [
+            "At 8:15 a.m.",
+            "No later than 7:55 a.m.",
+            "At 9:00 a.m.",
+            "At 8:05 a.m."
+          ],
+          "answer": 1,
+          "explanation": "跨篇比對：Invitation說旅館到會場步行約20分鐘；Schedule列報到8:15開始。兩篇合併得出最晚7:55出發。正解 B；A、C太晚，D也太晚。",
+          "crossRef": true
+        },
+        {
+          "id": "rd-new-080",
+          "prompt": "Can Ms. Nair claim the networking lunch if she submits a receipt?",
+          "skill": "r-crossref",
+          "options": [
+            "Yes, all meals are reimbursed.",
+            "Yes, if her manager approves it.",
+            "No, event-provided meals are excluded.",
+            "No, because travel costs are never eligible."
+          ],
+          "answer": 2,
+          "explanation": "跨篇比對：Schedule列有活動提供的 networking lunch；Travel policy排除活動供餐的報銷，因此即使有收據也不能申報。正解 C；A、B錯誤准許報銷，D把所有差旅費一概排除。",
+          "crossRef": true
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-037",
+      "section": "reading",
+      "part": 7,
+      "title": "Library renovation: notice, email and room plan",
+      "passage": {
+        "docs": [
+          {
+            "label": "Renovation notice",
+            "text": "CENTRAL LIBRARY — READING ROOM WORK\n\nFloor repairs will take place on Tuesday and Thursday mornings from 8:00 to noon. The west reading room and children’s desk will be closed during those hours. The digital research room will remain open. Work is expected to finish by June 6."
+          },
+          {
+            "label": "Email",
+            "text": "From: Oliver Bell\nTo: Library Facilities\nSubject: Temporary meeting room\n\nOur project team’s usual room is next to the west reading room, and the noise will make our Tuesday and Thursday morning meetings difficult. Could we reserve another space for those two sessions? We can use the facilities calendar if you tell us which rooms remain open.\n\nThanks,\nOliver"
+          },
+          {
+            "label": "Room guide",
+            "text": "DIGITAL RESEARCH ROOM\nCapacity: 12 people\nAvailable for staff meetings when not booked for training. Reserve a time in the facilities calendar at least one day in advance. Please keep the central workstation available for public use."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "rd-new-081",
+          "prompt": "Which area will remain open during the renovation?",
+          "skill": "r-detail",
+          "options": [
+            "The west reading room.",
+            "The children’s desk.",
+            "The digital research room.",
+            "The floor-repair zone."
+          ],
+          "answer": 2,
+          "explanation": "正解 C：公告明說 digital research room 仍開放；A west reading room與B children’s desk在施工時段關閉；D floor-repair zone是施工區。"
+        },
+        {
+          "id": "rd-new-082",
+          "prompt": "Why does Mr. Bell ask for a temporary workspace?",
+          "skill": "r-detail",
+          "options": [
+            "examined carefully",
+            "began operating for the public",
+            "created a new account",
+            "declared the building closed"
+          ],
+          "answer": 0,
+          "explanation": "正解 A：郵件說團隊原房間週二、週四早上受噪音影響。B 數位室缺電腦、C 全月閉館、D 改到旅館都不是寄件者所述原因。"
+        },
+        {
+          "id": "rd-new-083",
+          "prompt": "When will the west reading room be closed?",
+          "skill": "r-detail",
+          "options": [
+            "Monday and Wednesday mornings.",
+            "Every weekday afternoon.",
+            "Wednesday and Friday mornings.",
+            "Tuesday and Thursday mornings."
+          ],
+          "answer": 3,
+          "explanation": "正解 D：公告列週二、週四上午 8 點至中午關閉。A 日期錯誤；B 下午開放時段錯；C 把週二換成週三並加入週五。"
+        },
+        {
+          "id": "rd-new-084",
+          "prompt": "Where can Mr. Bell’s team meet on Thursday morning?",
+          "skill": "r-crossref",
+          "options": [
+            "It was near the train station.",
+            "It offered free equipment.",
+            "Its large sorting room could accommodate a classroom.",
+            "The city offered it rent-free."
+          ],
+          "answer": 1,
+          "explanation": "跨篇比對：Renovation notice說週四早上 digital research room開放；Oliver email說團隊週四早上需找臨時會議室。兩篇合併可選該空間。正解 B；A、C在施工時關閉，D屬關閉區域。",
+          "crossRef": true
+        },
+        {
+          "id": "rd-new-085",
+          "prompt": "If the team wants the room Thursday morning, by which day should Mr. Bell reserve it?",
+          "skill": "r-crossref",
+          "options": [
+            "Monday.",
+            "Thursday morning.",
+            "By Wednesday.",
+            "Friday."
+          ],
+          "answer": 2,
+          "explanation": "跨篇比對：Oliver email說會議在週四早上；Room guide要求至少提前一天在設施行事曆預約，因此最遲週三完成。正解 C；A太早，B、D都晚於期限。",
+          "crossRef": true
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-038",
+      "section": "reading",
+      "part": 7,
+      "title": "Market event: vendor letter, site map and operations message",
+      "passage": {
+        "docs": [
+          {
+            "label": "Vendor letter",
+            "text": "Hello Ms. Cho,\n\nYour food stall has been accepted for the Riverside Market on Saturday, July 19. Please display your event permit at the booth. Food vendors will be assigned within the south plaza area shown on the attached map. The market opens to the public at 9:30 a.m.\n\nRegards,\nRiverside Market Office"
+          },
+          {
+            "label": "Site map",
+            "text": "RIVERSIDE MARKET SITE\nNorth walkway: craft booths\nSouth plaza: food court and dining tables\nEast parking lot: visitor parking\nService lane: access from Mill Street, behind the south plaza\nVisitor center: information and first aid"
+          },
+          {
+            "label": "Operations message",
+            "text": "Vendor access begins at 6:30 a.m. All vehicles must finish unloading by 8:00 a.m. and then move to visitor parking. Vehicles above the garage height limit should use the service entrance on Mill Street and follow staff directions. Keep the public walkway clear. Each booth must display its event permit where staff can see it."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "rd-new-086",
+          "prompt": "Where will the food vendors be located?",
+          "skill": "r-detail",
+          "options": [
+            "In the east parking lot.",
+            "Inside the visitor center.",
+            "Along the north walkway.",
+            "The south plaza."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「south plaza」：主辦信說食物攤位配置在南廣場，地圖標出該區。A 是停車場，B 是服務設施，C 是手作攤位區。"
+        },
+        {
+          "id": "rd-new-087",
+          "prompt": "What time must vendors finish unloading?",
+          "skill": "r-detail",
+          "options": [
+            "7:00 a.m.",
+            "8:00 a.m.",
+            "9:30 a.m.",
+            "6:30 a.m."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「8:00 a.m.」：營運通知規定卸貨車須於 8 點前離開卸貨作業。A、D是進場時刻，C是市集對外開放時間。"
+        },
+        {
+          "id": "rd-new-088",
+          "prompt": "What should vendors do if their vehicle is taller than the garage limit?",
+          "skill": "r-detail",
+          "options": [
+            "Use the service entrance and follow staff directions.",
+            "Park in the east visitor lot before unloading.",
+            "Unload on the north walkway.",
+            "Ask the event office to open the garage."
+          ],
+          "answer": 0,
+          "explanation": "正解 A：超高車輛須從 Mill Street 服務入口進入並聽從工作人員。B 是卸貨後停車位置；C 會阻塞行人道；D 沒有開放超高車輛進入車庫。"
+        },
+        {
+          "id": "rd-new-089",
+          "prompt": "Where should the food vendor unload?",
+          "skill": "r-crossref",
+          "options": [
+            "At the main visitor entrance.",
+            "At the east parking lot.",
+            "The south service lane behind the south plaza.",
+            "At the visitor center."
+          ],
+          "answer": 2,
+          "explanation": "跨篇比對：Vendor letter把食物攤位安排在 south plaza；Site map標出其後方 service lane；Operations message要求車輛走 Mill Street service entrance。合併位置與車輛指示，正解 C。A、B、D是不同區域。",
+          "crossRef": true
+        },
+        {
+          "id": "rd-new-090",
+          "prompt": "On what date does the 8:00 a.m. unloading cutoff apply to Ms. Cho?",
+          "skill": "r-crossref",
+          "options": [
+            "Friday, July 18.",
+            "Saturday, July 19.",
+            "Saturday, July 20.",
+            "Saturday, July 26."
+          ],
+          "answer": 1,
+          "explanation": "跨篇比對：Vendor letter確認 Ms. Cho參加的是7月19日星期六市集；Operations message規定該活動8:00前完成卸貨。兩篇合併得出日期。正解 B；A、C、D日期不同。",
+          "crossRef": true
         }
       ]
     }

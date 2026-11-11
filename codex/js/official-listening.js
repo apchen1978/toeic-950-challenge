@@ -1,7 +1,7 @@
 // Official mock listening: one pass, with the pauses a real TOEIC recording leaves for answers.
 import { assembleQuickForm } from "./quick-form.js";
 
-export const OFFICIAL_FORMS = ["quick-40", "quick-60", "form-a", "form-b", "form-c"];
+export const OFFICIAL_FORMS = ["quick-40", "quick-60", "form-a", "form-b", "form-c", "form-d"];
 export const OFFICIAL_PAUSES = { item: 5, question: 8, graphic: 12 };
 export const LISTEN_RATES = [0.9, 1, 1.1];
 

@@ -15,7 +15,8 @@ npm test              # 單元測試（題庫結構 + 計分）
 - 根目錄 `data/questions.json`、`js/scoring.js`、`js/skills.js`：舊的 30 題題庫，單元測試仍會讀。畫面上不再使用。
 
 ## 注意
-- 所有題目為原創；分數為「非官方估計」，不等同 ETS 成績。
+- 本 App 題目為依多益題型自行編寫的模擬題，並非 ETS 官方試題。 All questions are original simulations based on TOEIC question types; none are official ETS test questions.
+- 分數為「非官方估計」，不等同 ETS 成績。 Scores are unofficial estimates and do not represent an ETS score.
 - 聽力音質取決於裝置語音與已內建的固定配音。
 - 作答進度與紀錄存在瀏覽器 localStorage（換瀏覽器／清除資料會消失）。
 - GitHub 的 `main` 是唯一正式來源。其他副本請先拉取再改。
