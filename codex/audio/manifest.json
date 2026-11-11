@@ -11179,6 +11179,354 @@
       "durationSec": 20.41,
       "bytes": 123068,
       "questionClips": []
+    },
+    "cov-p1-01": {
+      "file": "audio/cov-p1-01.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "26377aa598feeb52a19e41a4d6727ec5878ae09c5c219c06b8a27f0e0dc57c2b",
+      "spokenChoices": [
+        "A.",
+        "A mug has been placed on the conference table.",
+        "B.",
+        "A plant is hanging from the ceiling.",
+        "C.",
+        "The window is being cleaned.",
+        "D.",
+        "A notebook is being passed across the table."
+      ],
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 26.85,
+      "bytes": 161660,
+      "questionClips": []
+    },
+    "cov-p1-02": {
+      "file": "audio/cov-p1-02.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "26377aa598feeb52a19e41a4d6727ec5878ae09c5c219c06b8a27f0e0dc57c2b",
+      "spokenChoices": [
+        "A.",
+        "A bicycle is being ridden along the sidewalk.",
+        "B.",
+        "Some boxes are being unloaded from a van.",
+        "C.",
+        "A bicycle is parked beside a fence.",
+        "D.",
+        "A cart is being lifted onto a truck."
+      ],
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 27.57,
+      "bytes": 165980,
+      "questionClips": []
+    },
+    "cov-p1-03": {
+      "file": "audio/cov-p1-03.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "26377aa598feeb52a19e41a4d6727ec5878ae09c5c219c06b8a27f0e0dc57c2b",
+      "spokenChoices": [
+        "A.",
+        "A watering can is sitting on the floor.",
+        "B.",
+        "A ladder is leaning against a wall.",
+        "C.",
+        "Some pots are being stacked outdoors.",
+        "D.",
+        "A woman is climbing up the ladder."
+      ],
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 26.3,
+      "bytes": 158348,
+      "questionClips": []
+    },
+    "cov-p1-04": {
+      "file": "audio/cov-p1-04.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "26377aa598feeb52a19e41a4d6727ec5878ae09c5c219c06b8a27f0e0dc57c2b",
+      "spokenChoices": [
+        "A.",
+        "A vase of flowers is being carried away.",
+        "B.",
+        "Some plates are being cleared from the table.",
+        "C.",
+        "A menu is being handed to the guest.",
+        "D.",
+        "A candle has been placed on the table."
+      ],
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 25.58,
+      "bytes": 154028,
+      "questionClips": []
+    },
+    "cov-p1-05": {
+      "file": "audio/cov-p1-05.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "26377aa598feeb52a19e41a4d6727ec5878ae09c5c219c06b8a27f0e0dc57c2b",
+      "spokenChoices": [
+        "A.",
+        "Some boxes have been placed on shelves.",
+        "B.",
+        "Boxes are being loaded into a truck.",
+        "C.",
+        "A pallet is being carried by a forklift.",
+        "D.",
+        "A shelf is being assembled."
+      ],
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 26.75,
+      "bytes": 161084,
+      "questionClips": []
+    },
+    "cov-p1-06": {
+      "file": "audio/cov-p1-06.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "26377aa598feeb52a19e41a4d6727ec5878ae09c5c219c06b8a27f0e0dc57c2b",
+      "spokenChoices": [
+        "A.",
+        "A table is being set for dinner.",
+        "B.",
+        "Some chairs are stacked on top of each other.",
+        "C.",
+        "Some leaves are scattered on the paving stones.",
+        "D.",
+        "A customer is reading a menu."
+      ],
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 26.2,
+      "bytes": 157772,
+      "questionClips": []
+    },
+    "cov-p1-07": {
+      "file": "audio/cov-p1-07.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "26377aa598feeb52a19e41a4d6727ec5878ae09c5c219c06b8a27f0e0dc57c2b",
+      "spokenChoices": [
+        "A.",
+        "A bicycle is being washed with a hose.",
+        "B.",
+        "A rental bicycle is being locked by a passerby.",
+        "C.",
+        "Some bicycles are being stored in a garage.",
+        "D.",
+        "A toolbox has been opened on the pavement."
+      ],
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 28.14,
+      "bytes": 169436,
+      "questionClips": []
+    },
+    "cov-p1-08": {
+      "file": "audio/cov-p1-08.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "26377aa598feeb52a19e41a4d6727ec5878ae09c5c219c06b8a27f0e0dc57c2b",
+      "spokenChoices": [
+        "A.",
+        "A woman is climbing up a ladder.",
+        "B.",
+        "A woman is holding a ladder steady.",
+        "C.",
+        "A man is carrying a ladder downstairs.",
+        "D.",
+        "A woman is writing on a sign."
+      ],
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 25.53,
+      "bytes": 153740,
+      "questionClips": []
+    },
+    "cov-p1-09": {
+      "file": "audio/cov-p1-09.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "26377aa598feeb52a19e41a4d6727ec5878ae09c5c219c06b8a27f0e0dc57c2b",
+      "spokenChoices": [
+        "A.",
+        "Some posters are hanging on a wall.",
+        "B.",
+        "A copier is being moved across the floor.",
+        "C.",
+        "A stack of printed pages is on a table.",
+        "D.",
+        "A worker is boxing the cut paper."
+      ],
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 26.97,
+      "bytes": 162380,
+      "questionClips": []
+    },
+    "cov-p1-10": {
+      "file": "audio/cov-p1-10.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "26377aa598feeb52a19e41a4d6727ec5878ae09c5c219c06b8a27f0e0dc57c2b",
+      "spokenChoices": [
+        "A.",
+        "A woman is holding the handle of a suitcase.",
+        "B.",
+        "A woman is pulling a suitcase onto a train.",
+        "C.",
+        "A woman is buying a ticket at a machine.",
+        "D.",
+        "A conductor is waving a flag."
+      ],
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 24.83,
+      "bytes": 149564,
+      "questionClips": []
+    },
+    "cov-p1-11": {
+      "file": "audio/cov-p1-11.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "26377aa598feeb52a19e41a4d6727ec5878ae09c5c219c06b8a27f0e0dc57c2b",
+      "spokenChoices": [
+        "A.",
+        "Some archive boxes are being moved to a truck.",
+        "B.",
+        "A cabinet is being carried down a hallway.",
+        "C.",
+        "A shelf is being painted.",
+        "D.",
+        "A drawer of a filing cabinet has been pulled open."
+      ],
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 25.94,
+      "bytes": 156188,
+      "questionClips": []
+    },
+    "cov-p1-12": {
+      "file": "audio/cov-p1-12.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "26377aa598feeb52a19e41a4d6727ec5878ae09c5c219c06b8a27f0e0dc57c2b",
+      "spokenChoices": [
+        "A.",
+        "A bucket is being filled with water.",
+        "B.",
+        "A pair of scissors is lying on the table.",
+        "C.",
+        "Some roses are being thrown away.",
+        "D.",
+        "A ribbon is being cut."
+      ],
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 25.74,
+      "bytes": 155036,
+      "questionClips": []
     }
   }
 }

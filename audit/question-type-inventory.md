@@ -4,8 +4,9 @@
 
 | 題型 | 補題前 | 校正後 | 補題後 |
 |---|---:|---:|---:|
+| P1 object-position | 0 | 0 | 10 |
 | P1 object-state-being-processed | 12 | 12 | 12 |
-| P1 person-action | 6 | 6 | 6 |
+| P1 person-action | 6 | 6 | 8 |
 | P2 5w1h-question | 28 | 28 | 28 |
 | P2 choice-question | 3 | 3 | 3 |
 | P2 counter-question | 0 | 0 | 5 |
@@ -30,10 +31,10 @@
 | P5 relative-pronoun | 8 | 8 | 8 |
 | P5 verb-tense-voice | 6 | 9 | 9 |
 | P5 vocabulary-collocation | 53 | 53 | 53 |
-| P6 conjunctive-adverb | 4 | 4 | 4 |
-| P6 grammar | 19 | 19 | 19 |
-| P6 sentence-insertion | 17 | 17 | 17 |
-| P6 vocabulary | 24 | 24 | 24 |
+| P6 conjunctive-adverb | 4 | 4 | 5 |
+| P6 grammar | 19 | 19 | 33 |
+| P6 sentence-insertion | 17 | 17 | 23 |
+| P6 vocabulary | 24 | 24 | 27 |
 | P7 chat-intent | 1 | 1 | 7 |
 | P7 cross-document | 59 | 59 | 59 |
 | P7 detail | 103 | 103 | 111 |
@@ -47,24 +48,12 @@
 - 聽力：AUD-P4-01B、AUD-P4-04B、AUD-P4-05B 問的是聽眾身分，原標 speaker-intent，改為 detail。
 - Part 5：R19、XR03、XS-R06、rd-new-014 改為 part-of-speech；R39、XR08、rd-new-002 改為 verb-tense-voice（原標為介系詞／連接詞，但實際不是）。
 
-## 本輪新增（共 38 組聽力、90 題；24 組 P7、24 題；10 題 P5）
-
-- Part 2：+12 題（反問句回答 5、不確定／轉介 5、直述句回應 2）
-- Part 3：+11 組（說話者意圖 4、三人對話 4、圖表 3）；Part 4：+15 組（說話者意圖 4、廣告 2、廣播公告 2、語音留言 2、導覽 2、圖表 3）
-- 圖表題組 +6：平面圖（SVG）、優待券、樓層目錄、行事曆、營業時間、價目表（表格）；答案必須對照圖表
-- Part 7：同義字 +10、聊天意圖 +6；Part 5：介系詞 vs 連接詞 +10
-- 新題的【判斷依據】標示線索在開頭、中段或結尾；圖表題寫明先看圖找哪一項資訊
-
-## 未完成
-
-- Part 1 照片題 +12（沒有照片來源）、Part 6 句子插入 +6、讀題技巧小卡、舊題的兩行解析
-
 ## 口音（聽力題數）
 
 | 口音 | 全題庫 | 占比 | 本輪新增 | 占比 |
 |---|---:|---:|---:|---:|
-| AU | 135 | 26.6% | 34 | 37.8% |
-| UK | 129 | 25.4% | 24 | 26.7% |
-| CA | 121 | 23.9% | 18 | 20.0% |
-| US | 122 | 24.1% | 14 | 15.6% |
-| 合計 | 507 | | 90 | |
+| AU | 139 | 26.8% | 38 | 37.3% |
+| UK | 133 | 25.6% | 28 | 27.5% |
+| CA | 123 | 23.7% | 20 | 19.6% |
+| US | 124 | 23.9% | 16 | 15.7% |
+| 合計 | 519 | | 102 | |

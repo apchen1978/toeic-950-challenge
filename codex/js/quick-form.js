@@ -184,6 +184,8 @@ export function quickCoverageIssues(groups, formId, section = "full") {
     if (!groups.some((group) => [3, 4].includes(group.part) && questionTypes(group).some((type) => /intent|meaning|implied/i.test(type)))) issues.push("P3/P4 speaker intent");
     if (!groups.some((group) => [3, 4].includes(group.part) && isGraphicGroup(group))) issues.push("P3/P4 graphic");
     if (long && new Set(groups.filter((group) => group.part === 1).flatMap(questionTypes)).size < 2) issues.push("P1 two types");
+    const photos = groups.filter((group) => group.part === 1).map((group) => group.image).filter(Boolean);
+    if (new Set(photos).size < photos.length) issues.push("P1 distinct photos");
   }
   if (reading) {
     const p5 = groups.filter((group) => group.part === 5).flatMap((group) => group.questions ?? []);

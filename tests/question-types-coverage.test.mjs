@@ -14,12 +14,14 @@ test('new question counts per type', () => {
   assert.equal(count(7, 'synonym'), 10);
   assert.equal(count(7, 'chat-intent'), 6);
   assert.equal(count(5, 'preposition-conjunction'), 10);
+  assert.equal(count(6, 'sentence-insertion'), 6);
+  assert.equal(fresh.filter((group) => group.part === 1).length, 12);
 });
 
 test('new questions: unique ids, answer keys, balanced positions, banned phrases, grounded intent quotes and synonyms', () => {
   const ids = bank.groups.flatMap((group) => group.questions.map((question) => question.id));
   assert.equal(new Set(ids).size, ids.length);
-  for (const part of [3, 4, 7, 5]) {
+  for (const part of [3, 4, 7, 5, 6, 1]) {
     const questions = fresh.filter((group) => group.part === part).flatMap((group) => group.questions);
     const counts = [0, 0, 0, 0];
     for (const question of questions) counts[question.answer] += 1;
