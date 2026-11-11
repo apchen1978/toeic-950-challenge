@@ -26,7 +26,10 @@ test("Codex bank: existing groups follow section, part, choice-count, and conten
     for (const question of group.questions) {
       assert.equal(question.options.length, group.part === 2 ? 3 : 4, `${question.id}: choice count`);
       assert.ok(Number.isInteger(question.answer) && question.answer >= 0 && question.answer < question.options.length, `${question.id}: answer`);
-      assert.ok(question.explanation.length > 30 && /[A-Za-z]/.test(question.explanation), `${question.id}: explanation`);
+      const hasExpectedLanguage = question.id.startsWith("rd-new-")
+        ? /[\u4e00-\u9fff]/.test(question.explanation)
+        : /[A-Za-z]/.test(question.explanation);
+      assert.ok(question.explanation.length > 30 && hasExpectedLanguage, `${question.id}: explanation`);
     }
   }
 });
