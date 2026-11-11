@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { FLASHCARD_RENAMES, migrateFlashcardProgress, rateCard, selectCards } from '../codex/js/srs.js';
+import { VOCABULARY } from '../codex/js/vocabulary.js';
+import { FLASHCARD_RENAMES, finalFlashcardWord, migrateFlashcardProgress, rateCard, selectCards } from '../codex/js/srs.js';
 
 test('renamed flashcard keeps its saved schedule and does not overwrite newer progress', () => {
   const saved = { box: 3, dueAt: 123, introducedAt: 45 };
@@ -15,14 +16,32 @@ test('renamed flashcard keeps its saved schedule and does not overwrite newer pr
   assert.deepEqual(migrateFlashcardProgress(newer).progress['free trial offer'], { box: 4 });
 });
 
-test('all retired vocabulary headwords transfer their flashcard schedules', () => {
-  const old = Object.fromEntries(Object.keys(FLASHCARD_RENAMES).map((word, index) => [word, { box: 2, dueAt: index + 10, introducedAt: index }]));
-  const migrated = migrateFlashcardProgress(old);
-  assert.equal(migrated.changed, true);
-  for (const [word, replacement] of Object.entries(FLASHCARD_RENAMES)) {
-    assert.deepEqual(migrated.progress[replacement], old[word], word);
+test('all retired vocabulary headwords transfer their flashcard schedules to a word that still exists', () => {
+  const live = new Set(VOCABULARY.flatMap((group) => group.words.map((entry) => Array.isArray(entry) ? entry[0] : entry.word)));
+  for (const word of Object.keys(FLASHCARD_RENAMES)) {
+    assert.ok(live.has(finalFlashcardWord(word)), `${word} -> ${finalFlashcardWord(word)} must be a live word`);
+    assert.equal(live.has(word), false, `${word} is renamed away, so it must not be a live word`);
+  }
+  for (const [index, word] of Object.keys(FLASHCARD_RENAMES).entries()) {
+    const saved = { box: 2, dueAt: index + 10, introducedAt: index };
+    const migrated = migrateFlashcardProgress({ [word]: saved });
+    assert.equal(migrated.changed, true, word);
+    assert.deepEqual(migrated.progress[finalFlashcardWord(word)], saved, word);
     assert.equal(migrated.progress[word], undefined, word);
   }
+});
+
+test('minority interest progress lands on contingency plan, whether or not it was already moved once', () => {
+  const saved = { box: 3, dueAt: 777, introducedAt: 5 };
+  assert.equal(finalFlashcardWord('minority interest'), 'contingency plan');
+  const fromOldest = migrateFlashcardProgress({ 'minority interest': saved });
+  assert.deepEqual(fromOldest.progress['contingency plan'], saved);
+  assert.equal(fromOldest.progress['minority interest'], undefined);
+  assert.equal(fromOldest.progress['beneficial ownership'], undefined);
+  const fromPr57 = migrateFlashcardProgress({ 'beneficial ownership': saved });
+  assert.deepEqual(fromPr57.progress['contingency plan'], saved);
+  const live = migrateFlashcardProgress({ 'emergency procedure': { box: 1 } });
+  assert.equal(live.changed, false);
 });
 
 test('ratings schedule repeat, progression, and preserve introduction date', () => {

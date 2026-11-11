@@ -96,22 +96,48 @@ export function assembleQuickForm(bank, formId, options = {}) {
   let chosen = [];
   let accentCounts = { US: 0, UK: 0, CA: 0, AU: 0 };
   let issues = [];
+  let best = null;
   for (let attempt = 0; attempt < 300; attempt += 1) {
     chosen = [];
     accentCounts = { US: 0, UK: 0, CA: 0, AU: 0 };
-    for (const spec of partsForSection(blueprint.parts, section)) {
-      const pool = bank.groups.filter((group) => isActiveGroup(group) && group.part === spec.part && (!spec.questionsEach || group.questions.length === spec.questionsEach));
-      const accentOf = (group) => accents[group.id] || group.accent || "";
-      const counts = spec.part <= 4 ? accentCounts : null;
-      const picked = spec.questions
-        ? pickByQuestionTotal(pool, spec.questions, random, avoid, spec.requireMulti === true)
-        : pickWithGraphicPreference(pool, spec, random, avoid, accentOf, counts);
-      chosen.push(...mixByLevel(picked));
+    const specs = partsForSection(blueprint.parts, section);
+    for (let at = 0; at < specs.length; at += 1) {
+      // Parts 3 and 4 share the intent/graphic rules, so they are redrawn together; every other part is redrawn alone.
+      const unit = specs[at].part === 3 && specs[at + 1]?.part === 4 ? [specs[at], specs[at + 1]] : [specs[at]];
+      const scope = unit.map((spec) => spec.part);
+      const baseCounts = { ...accentCounts };
+      let keep = null;
+      for (let retry = 0; retry < 150; retry += 1) {
+        accentCounts = { ...baseCounts };
+        const drawn = [];
+        for (const spec of unit) {
+          const pool = bank.groups.filter((group) => isActiveGroup(group) && group.part === spec.part && (!spec.questionsEach || group.questions.length === spec.questionsEach));
+          const accentOf = (group) => accents[group.id] || group.accent || "";
+          const counts = spec.part <= 4 ? accentCounts : null;
+          const picked = spec.questions
+            ? pickByQuestionTotal(pool, spec.questions, random, avoid, spec.requireMulti === true)
+            : pickWithGraphicPreference(pool, spec, random, avoid, accentOf, counts);
+          drawn.push(...mixByLevel(picked));
+        }
+        const unitIssues = quickCoverageIssues(chosen.concat(drawn), formId, section).filter((issue) => scope.some((part) => issueScope(issue).includes(part)));
+        if (!keep || unitIssues.length < keep.issues) keep = { drawn, counts: { ...accentCounts }, issues: unitIssues.length };
+        if (!unitIssues.length) break;
+      }
+      chosen.push(...keep.drawn);
+      accentCounts = keep.counts;
+      at += unit.length - 1;
     }
     issues = quickCoverageIssues(chosen, formId, section);
+    if (!best || issues.length < best.issues.length) best = { chosen: chosen.slice(), accentCounts: { ...accentCounts }, issues };
     if (!issues.length) break;
   }
-  if (issues.length) throw new Error(formId + " could not meet type coverage: " + issues.join(", "));
+  // Coverage is best effort: if the bank cannot satisfy every rule, keep the closest draw and warn. Never throw for coverage.
+  if (issues.length && best) {
+    chosen = best.chosen;
+    accentCounts = best.accentCounts;
+    issues = best.issues;
+    if (typeof console !== "undefined") console.warn(formId + " could not meet every type coverage rule: " + issues.join(", "));
+  }
   const groupIds = chosen.map((group) => group.id);
   if (new Set(groupIds).size !== groupIds.length) throw new Error(`duplicate group in ${formId}`);
   const listening = chosen.filter((group) => group.section === "listening").reduce((sum, group) => sum + group.questions.length, 0);
@@ -127,7 +153,13 @@ export function assembleQuickForm(bank, formId, options = {}) {
       ? { listening: blueprint.timing.listening }
       : blueprint.timing;
   const minutes = section === "reading" ? blueprint.timing.reading : section === "listening" ? blueprint.listening : blueprint.minutes;
-  return { formId, section, groupIds, timing, minutes, accentCounts: { ...accentCounts } };
+  return { formId, section, groupIds, timing, minutes, accentCounts: { ...accentCounts }, coverageWarnings: issues.slice() };
+}
+
+function issueScope(issue) {
+  if (issue.startsWith("P3/P4")) return [3, 4];
+  const match = /^P(\d)/.exec(issue);
+  return match ? [Number(match[1])] : [];
 }
 
 function questionTypes(group) {
