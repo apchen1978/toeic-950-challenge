@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": 5,
+    "version": 6,
     "title": "TOEIC 955 → Higher — Listening & Reading",
     "durationMin": 30,
     "disclaimer": "本 App 題目為依多益題型自行編寫的模擬題，並非 ETS 官方試題。 All questions are original simulations of TOEIC question types, not ETS official items.",
@@ -16133,6 +16133,266 @@
           ],
           "answer": 2,
           "explanation": "正解 C：舊郵局的分揀大廳夠大，可以同時放教室和工作桌。A 火車站旁、B 免費設備、D 租金優惠都未在文章提及。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-033",
+      "section": "reading",
+      "part": 7,
+      "title": "Delivery change: notice and customer email",
+      "passage": {
+        "docs": [
+          {
+            "label": "Building notice",
+            "text": "DELIVERY ACCESS — EAST WING\nThe loading bay will be closed Wednesday, October 15, from 8:00 a.m. until 5:00 p.m. for floor repairs. Deliveries originally scheduled during that period will be rebooked for Thursday, October 16, between 10:00 a.m. and noon. Please keep the side entrance clear."
+          },
+          {
+            "label": "Email",
+            "text": "From: Carrier Support\nTo: Jordan Dale\nSubject: Revised crate delivery\n\nHello Mr. Dale,\n\nYour three supply crates were originally scheduled for Wednesday. Because the building loading bay will be unavailable, we can deliver Thursday between 10:00 a.m. and noon. Please reply by 3:00 p.m. Wednesday to confirm that someone will be available to receive them. Once confirmed, we will keep the revised appointment.\n\nRegards,\nMira, Carrier Support"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "rd-new-061",
+          "prompt": "Why was the delivery moved to Thursday?",
+          "skill": "r-detail",
+          "options": [
+            "The customer requested a later date.",
+            "The carrier lost the shipment.",
+            "The building loading bay is closed Wednesday.",
+            "The recipient will be away all week."
+          ],
+          "answer": 2,
+          "explanation": "正解 C：公告和客服信都指出週三 loading bay 關閉，因此原週三配送改到週四。A 客戶沒有要求改期；B 貨物未遺失；D 收件人週四可安排收貨。"
+        },
+        {
+          "id": "rd-new-062",
+          "prompt": "What should Mr. Dale do before 3:00 p.m. Thursday?",
+          "skill": "r-detail",
+          "options": [
+            "Confirm that a staff member can receive the crates.",
+            "Pay an additional storage fee.",
+            "Collect the crates at the carrier depot.",
+            "Ask the carrier to leave them outside."
+          ],
+          "answer": 0,
+          "explanation": "正解 A：Dale 須在週三下午 3 點前確認有人收貨。B 額外倉儲費與 C 自取都未提；D 要求放在外面反而違反收貨安排。"
+        },
+        {
+          "id": "rd-new-063",
+          "prompt": "When should Dale make sure the side entrance is clear for the receiving team?",
+          "skill": "r-crossref",
+          "options": [
+            "Wednesday morning.",
+            "Friday afternoon.",
+            "After the loading bay reopens next week.",
+            "Thursday between 10:00 a.m. and noon."
+          ],
+          "answer": 3,
+          "explanation": "跨篇比對：Building notice要求側門保持暢通；Carrier email給出改期後週四 10 點至中午送達時間。兩篇合併可知須在該時段清出通道。正解 D；A 是原定時段，B、C不是更新後安排。",
+          "crossRef": true
+        },
+        {
+          "id": "rd-new-064",
+          "prompt": "What is implied about the shipment?",
+          "skill": "r-inference",
+          "options": [
+            "Refrigerated food.",
+            "Office furniture.",
+            "Three supply crates.",
+            "Printed brochures."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Three supply crates」：郵件說這批貨是三箱用品。A 冷藏食品、B 辦公家具、D 宣傳手冊都沒有在信中提到。"
+        },
+        {
+          "id": "rd-new-065",
+          "prompt": "What will the carrier do after receiving Mr. Dale’s confirmation?",
+          "skill": "r-detail",
+          "options": [
+            "Cancel the shipment.",
+            "Keep the revised Thursday appointment.",
+            "Send the crates to another branch.",
+            "Request a new loading-bay inspection."
+          ],
+          "answer": 1,
+          "explanation": "正解 B：客服收到收貨確認後會保留週四改期時段。A 取消、C 改送別處、D 再檢查卸貨區都沒有提及。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-034",
+      "section": "reading",
+      "part": 7,
+      "title": "Training schedule: bulletin and registration",
+      "passage": {
+        "docs": [
+          {
+            "label": "Training bulletin",
+            "text": "OCTOBER SKILLS WEEK\nSpreadsheet basics — remote or in person, 9:00 a.m.\nSafety demonstration — in person only, 1:30 p.m., Demonstration Lab 2\nProject handoff — remote, 3:00 p.m.\n\nPrint the checklist linked in the staff portal and bring it to any in-person session. Registration closes October 2."
+          },
+          {
+            "label": "Email",
+            "text": "From: Dana Ford\nTo: Training Desk\nSubject: Session selection\n\nI would like to register for the safety demonstration. The morning session would conflict with a supplier visit, so the afternoon time works well. I will bring the printed checklist mentioned in the bulletin. Please let me know if I need to prepare anything else.\n\nThank you,\nDana"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "rd-new-066",
+          "prompt": "Which course is offered only in person?",
+          "skill": "r-detail",
+          "options": [
+            "Spreadsheet basics.",
+            "Project handoff.",
+            "Safety demonstration.",
+            "A guided campus tour."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Safety demonstration」：公告標示此課只能現場參加。A 試算表課與 B 專案交接課都可遠端；D 校園導覽未列在課表。"
+        },
+        {
+          "id": "rd-new-067",
+          "prompt": "Why did Ms. Ford choose the afternoon session?",
+          "skill": "r-detail",
+          "options": [
+            "The morning course is full.",
+            "She wants to attend remotely.",
+            "Her manager asked her to switch.",
+            "Her morning conflicts with a supplier visit."
+          ],
+          "answer": 3,
+          "explanation": "正解 D：Ford 說早上需接待供應商，所以選下午場。A 課程額滿、B 想遠端、C 經理要求更換都不是她給的原因。"
+        },
+        {
+          "id": "rd-new-068",
+          "prompt": "What is Ms. Ford expected to do before attending?",
+          "skill": "r-detail",
+          "options": [
+            "Bring the printed checklist.",
+            "Submit an expense receipt.",
+            "Complete a safety exam.",
+            "Reserve a demonstration kit."
+          ],
+          "answer": 0,
+          "explanation": "正解 A：她要攜帶公告要求的列印檢核表。B 費用收據、C 安全考試、D 預約示範套件都未要求。"
+        },
+        {
+          "id": "rd-new-069",
+          "prompt": "What time does the in-person course start?",
+          "skill": "r-crossref",
+          "options": [
+            "9:00 a.m.",
+            "1:30 p.m.",
+            "3:00 p.m.",
+            "2:00 p.m."
+          ],
+          "answer": 1,
+          "explanation": "跨篇比對：Training bulletin列出安全示範在 1:30 p.m.；Ford email確認她報名安全示範。兩篇合併後可得課程時間。正解 B；A 是另一課時間，C 是遠端課時間，D 未列出。",
+          "crossRef": true
+        },
+        {
+          "id": "rd-new-070",
+          "prompt": "Where should Ms. Ford go?",
+          "skill": "r-crossref",
+          "options": [
+            "Training Room A.",
+            "The supplier reception desk.",
+            "Demonstration Lab 2.",
+            "The main reception area."
+          ],
+          "answer": 2,
+          "explanation": "跨篇比對：Training bulletin指定安全示範在 Demonstration Lab 2；Ford email確認她報名該課。兩篇合併後可判斷教室。正解 C；A、B、D都不是指定地點。",
+          "crossRef": true
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-035",
+      "section": "reading",
+      "part": 7,
+      "title": "Product recall: public notice and store message",
+      "passage": {
+        "docs": [
+          {
+            "label": "Safety notice",
+            "text": "PRODUCT SAFETY UPDATE\n\nStop using Model K replacement cartridges from lot 24B. A small number may not seal correctly. The lot code is printed on the side of the cartridge. Cartridges from lot 24C are not included in this notice and may continue to be used. Affected customers should contact the retailer for return instructions."
+          },
+          {
+            "label": "Retailer email",
+            "text": "From: Customer Care\nSubject: Model K cartridge return\n\nIf you have a Model K cartridge marked lot 24B, stop using it immediately and bring it to any branch during store hours. We can provide a replacement cartridge or refund the cartridge price. Please do not return the countertop dispenser; it is not part of the safety notice."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "rd-new-071",
+          "prompt": "Which product should customers stop using?",
+          "skill": "r-detail",
+          "options": [
+            "Model K replacement cartridges from lot 24B.",
+            "All water filters sold this year.",
+            "The countertop dispenser unit.",
+            "Model K cartridges from lot 24C."
+          ],
+          "answer": 0,
+          "explanation": "正解 A：安全公告只要求停用 Model K 濾芯 lot 24B。B 所有年度濾水器、C 主機與 D lot 24C 都不在停用範圍。"
+        },
+        {
+          "id": "rd-new-072",
+          "prompt": "What does the store advise customers to do?",
+          "skill": "r-detail",
+          "options": [
+            "Return the product by mail without contacting anyone.",
+            "Continue using it until a replacement arrives.",
+            "Wait for the next routine inspection.",
+            "Stop using the lot 24B cartridge and bring it to a branch."
+          ],
+          "answer": 3,
+          "explanation": "正解 D：店家要求立即停用 lot 24B 並帶到分店。A 郵寄不聯絡、B 繼續使用、C 等下次檢查都違反信中指示。"
+        },
+        {
+          "id": "rd-new-073",
+          "prompt": "What can customers receive at the store?",
+          "skill": "r-detail",
+          "options": [
+            "A new dispenser at no charge.",
+            "A replacement cartridge or a refund.",
+            "A free countertop dispenser.",
+            "A discount on a future service call."
+          ],
+          "answer": 1,
+          "explanation": "正解 B：店家提供替換濾芯或退款。A、C 免費主機都不在方案內；D 未承諾未來維修折扣。"
+        },
+        {
+          "id": "rd-new-074",
+          "prompt": "When should the customer bring the cartridge?",
+          "skill": "r-crossref",
+          "options": [
+            "Any time before the safety notice is posted.",
+            "Only after using all remaining water.",
+            "During store hours after stopping use immediately.",
+            "Only after receiving a replacement."
+          ],
+          "answer": 2,
+          "explanation": "跨篇比對：Safety notice要求lot 24B立即停用；Retailer email指定營業時間帶回分店。合併兩篇才能得到完整時間與處置。正解 C；A、B違反立即停用，D不是店家要求。",
+          "crossRef": true
+        },
+        {
+          "id": "rd-new-075",
+          "prompt": "Why might a customer need to check the lot code before visiting?",
+          "skill": "r-crossref",
+          "options": [
+            "The store accepts only unopened cartons.",
+            "Only lot 24B is affected; lot 24C follows a different instruction.",
+            "All cartridges in lots 24B and 24C must be returned.",
+            "The refund amount depends on the purchase date."
+          ],
+          "answer": 1,
+          "explanation": "跨篇比對：Safety notice說24B受影響、24C可繼續使用；Retailer email說受影響批次可帶回退換。兩篇合併說明需先核對批號。正解 B；A未要求未拆封，C把24C錯列為受影響，D退款不依購買日期。",
+          "crossRef": true
         }
       ]
     }
