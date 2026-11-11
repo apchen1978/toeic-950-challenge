@@ -11,6 +11,7 @@ import { allowsReplay, buildOfficialSequence, isOfficialForm, listenProgressLabe
 import { graphicHtml } from "./graphic.js";
 import { CHOICE_REVISION, migrateChoiceIndexes } from "./choice-legacy.js";
 import { TIP_SECTIONS, TIPS_STORAGE_KEY, tipForPart, tipsEnabled } from "./tips.js";
+import { ABILITIES, abilityStats, scoreBand } from "./abilities.js";
 
 const EXAM_DATE = "2026-11-29";
 const MAX_PLAYS = 2;
@@ -330,7 +331,7 @@ function renderHome() {
 
     <section class="card">
       <h2>四套 200 題計時練習</h2>
-      <p>每套可選完整模考、只考閱讀或只考聽力。聽力依音檔連續播放一次，沒有聽力倒數。${formExamTimeCopy()}A、B、C 題目維持原樣；D 使用新增閱讀題，並重用 A 的聽力音檔與 10 題既有 Part 5。聽力可暫停，暫停時音檔停在這一題。完整模考進入閱讀後不能返回聽力。</p>
+      <p>每套可選完整模考、只考閱讀或只考聽力。聽力依音檔連續播放一次，沒有聽力倒數。${formExamTimeCopy()}A、B、C 題目維持原樣；D 保留原有 100 題閱讀，聽力則由 B、C 與非模考題池重組。聽力可暫停，暫停時音檔停在這一題。完整模考進入閱讀後不能返回聽力。</p>
       ${sectionChoiceControl("mock-section-forms")}
       <div class="row">${['a', 'b', 'c', 'd'].map((id) => `<button class="btn primary" data-action="start-form" data-form="form-${id}">開始第 ${id.toUpperCase()} 套</button>`).join('')}</div>
       <p class="muted">正式模式：每題只播一次，依正式考試停頓。</p>
@@ -1096,11 +1097,19 @@ function renderResult(entry, showAll = false) {
   const r = score(qs, entry.answers);
   const answeredQs = qs.filter((q) => entry.answers[q.id] !== undefined);
   const answeredStats = score(answeredQs, entry.answers);
+  const byAbility = abilityStats(answeredQs, entry.answers);
   const progress = estimateProgress(qs, entry.answers);
   const L = progress.ranges.listening;
   const R = progress.ranges.reading;
   const weak = weakest(answeredStats.bySkill, 3, 1);
   const skills = Object.entries(answeredStats.bySkill).sort((a, b) => a[1].c / a[1].t - b[1].c / b[1].t);
+  const testedAbilities = new Set(qs.map((question) => question.ability));
+  const abilityReport = Object.entries(ABILITIES).map(([id, definition]) => {
+    const stats = byAbility[id];
+    const percent = stats.answered ? Math.round((stats.correct / stats.answered) * 100) : null;
+    const note = !testedAbilities.has(id) ? "本套未測" : stats.answered < 5 ? `題數少，僅供參考 · ${stats.answered} 題` : `${stats.answered} 題`;
+    return `<div class="ability-row"><div class="ability-head"><div><b>${id}</b> ${esc(definition.title)}</div><strong>${percent === null ? "—" : `${percent}%`}</strong></div><div class="muted">${note}</div><div class="bar ${percent !== null && percent < 60 ? "weak" : ""}" role="progressbar" aria-label="${id} ${esc(definition.title)} 正答率" aria-valuemin="0" aria-valuemax="100" ${percent === null ? "aria-valuetext=\"未作答\"" : `aria-valuenow="${percent}"`}><i style="width:${percent ?? 0}%"></i></div></div>`;
+  }).join("");
   const groups = bank.groups.filter((g) => entry.groupIds.includes(g.id)).filter((g) => showAll || g.questions.some((q) => entry.answers[q.id] !== q.answer));
 
   const single = normalizeMockSection(entry.section);
@@ -1111,7 +1120,11 @@ function renderResult(entry, showAll = false) {
       : `${L && R ? `總分 ≈ ${L.low + R.low}–${L.high + R.high}（中間值約 ${L.mid + R.mid}）<br>` : ''}${L ? `Listening ≈ ${L.low}–${L.high}（${L.answered} 題）` : "聽力樣本不足"}　${R ? `Reading ≈ ${R.low}–${R.high}（${R.answered} 題）` : "閱讀樣本不足"}`;
   const estimate = entry.peeked
     ? `<p class="notice" style="margin-top:12px"><span class="tag practice">練習成績</span> 這次看過暫停中的錯題，不計入五力估分與最佳成績。錯題仍會留在錯題複習。</p>`
-    : `<p class="notice" style="margin-top:12px">已答題粗估（空白題不納入；各區至少答 5 題才顯示；非 ETS 成績）：<br>${sectionLine}</p>`;
+    : `<p class="notice" style="margin-top:12px">已答題粗估（空白題不納入；各區至少答 5 題才顯示；非 ETS 成績）。本站依目前答對比例推估；正式 TOEIC 會依試卷難度等化，將原始答對數換成量尺分數，因此兩者可能不同，也沒有通過或不通過：<br>${sectionLine}</p>`;
+  const bandSummary = [
+    ["聽力", L && scoreBand("listening", L.mid)],
+    ["閱讀", R && scoreBand("reading", R.mid)]
+  ].filter(([, band]) => band).map(([label, band]) => `<article class="score-band"><h3>${label} ${band.level}</h3><p><b>目前強項：</b>${band.strength}</p><p><b>可加強：</b>${band.gap}</p><p><b>下一步：</b>${band.next}</p></article>`).join("");
   app.innerHTML = `
     <h1>測驗結果 ${sectionBadge(entry.section)} ${entry.peeked ? '<span class="tag practice">練習成績</span>' : ''}</h1>
     <section class="card"><div class="grid">
@@ -1121,6 +1134,10 @@ function renderResult(entry, showAll = false) {
       <div class="stat"><b>${r.answered}/${r.total}</b>已作答</div>
     </div>
     ${estimate}</section>
+
+    <section class="card"><h2>目標能力正答率</h2><p class="muted">依本次已作答題目呈現的練習統計，非 ETS 官方成績報告。每項少於 5 題時，結果僅供參考。</p><div class="ability-list">${abilityReport}</div></section>
+
+    ${bandSummary ? `<section class="card"><h2>分數區間能力參考</h2><p class="muted">依本站非官方估分提供練習方向。以下為原創改寫的學習建議，不是 ETS 對個人的能力診斷。</p>${bandSummary}<p class="tips-sources">參考：<a href="https://www.ets.org/content/dam/ets-org/fr/pdfs/toeic/toeic-listening-reading-score-descriptors.pdf" target="_blank" rel="noopener">ETS 聽力與閱讀分數描述</a> · <a href="https://www.ets.org/content/dam/ets-org/fr/pdfs/toeic/toeic-listening-reading-test-examinee-handbook.pdf" target="_blank" rel="noopener">ETS 應試者手冊：量尺分數與等化</a></p></section>` : ""}
 
     <section class="card"><h2>各題型表現</h2>
       ${skills.map(([k, v]) => `<div class="skillrow"><div>${esc(skillLabel(k))}</div><div>${v.c}/${v.t}</div><div class="bar ${v.c / v.t < 0.6 ? "weak" : ""}" style="grid-column:1 / -1"><i style="width:${(v.c / v.t) * 100}%"></i></div></div>`).join("")}

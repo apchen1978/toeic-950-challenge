@@ -1,8 +1,9 @@
 """Build the four-accent listening bank with Microsoft Edge neural voices.
 
 One accent per group, alternating US / UK / CA / AU inside each part.
-Part 3 uses two voices (male and female) of that accent. Part 2 uses a
-different voice for the question and the responses. Output is mono
+Part 3 uses male and female voices of that accent. Marked three-speaker
+dialogues add a lightly pitch-shifted third role. Part 2 uses a different
+voice for the question and the responses. Output is mono
 24 kHz, 48 kbps MP3. Re-running skips a group whose finished file matches
 the saved plan in /tmp/toeic-accent-ok.
 """
@@ -13,6 +14,7 @@ import os
 import subprocess
 import sys
 import tempfile
+import uuid
 import wave
 from pathlib import Path
 
@@ -110,13 +112,18 @@ def clips_for(group, accent, index):
     pieces = []
     for line in group["script"]:
         speaker = line["speaker"]
+        pitch = "+0Hz"
         if speaker == "N":
-            speaker = "W" if index % 2 == 0 else "M"
+            if group.get("threeSpeakerDialogue"):
+                speaker = "W"
+                pitch = "+10Hz"
+            else:
+                speaker = "W" if index % 2 == 0 else "M"
             role = "N"
         else:
             role = speaker
         voice, locale = voice_for(accent, speaker if speaker in ("M", "W") else "W")
-        pieces.append({"text": line["text"], "role": role, "voice": voice, "locale": locale, "gap": TURN_GAP, "rate": speech_rate(part)})
+        pieces.append({"text": line["text"], "role": role, "voice": voice, "locale": locale, "gap": TURN_GAP, "rate": speech_rate(part), "pitch": pitch})
     return pieces
 
 
@@ -147,14 +154,14 @@ def script_sha256(script):
 
 def plan_signature(pieces):
     raw = json.dumps(
-        [{"t": piece["text"], "v": piece["voice"], "g": piece.get("gap"), "r": piece.get("rate", RATE)} for piece in pieces],
+        [{"t": piece["text"], "v": piece["voice"], "g": piece.get("gap"), "r": piece.get("rate", RATE), "p": piece.get("pitch", "+0Hz")} for piece in pieces],
         ensure_ascii=False,
         separators=(",", ":"),
     ).encode()
     return hashlib.sha256(raw).hexdigest()
 
 
-async def synthesize(text, voice, dest, rate=RATE):
+async def synthesize(text, voice, dest, rate=RATE, pitch="+0Hz"):
     dest.parent.mkdir(parents=True, exist_ok=True)
     last = "no attempt"
     partial = dest.with_suffix(f".{voice}.part.mp3")
@@ -162,7 +169,7 @@ async def synthesize(text, voice, dest, rate=RATE):
         try:
             if partial.exists():
                 partial.unlink()
-            await asyncio.wait_for(edge_tts.Communicate(text, voice, rate=rate).save(str(partial)), 90)
+            await asyncio.wait_for(edge_tts.Communicate(text, voice, rate=rate, pitch=pitch).save(str(partial)), 90)
             if partial.stat().st_size > 300:
                 partial.replace(dest)
                 return
@@ -195,17 +202,19 @@ def write_mp3(pieces_pcm, gaps, dest):
         pcm.extend(chunk)
         if index < len(pieces_pcm) - 1:
             pcm.extend(silence[gaps[index]])
-    wav_path = dest.with_suffix(".wav")
+    wav_path = AUDIO_DIR / f".{dest.stem}-{uuid.uuid4().hex}.wav"
     with wave.open(str(wav_path), "wb") as target:
         target.setnchannels(1)
         target.setsampwidth(2)
         target.setframerate(24000)
         target.writeframes(pcm)
-    subprocess.run(
-        [FFMPEG, "-y", "-v", "error", "-i", str(wav_path), "-c:a", "libmp3lame", "-b:a", "48k", "-ar", "24000", "-ac", "1", str(dest)],
-        check=True,
-    )
-    wav_path.unlink(missing_ok=True)
+    try:
+        subprocess.run(
+            [FFMPEG, "-y", "-v", "error", "-i", str(wav_path), "-c:a", "libmp3lame", "-b:a", "48k", "-ar", "24000", "-ac", "1", str(dest)],
+            check=True,
+        )
+    finally:
+        wav_path.unlink(missing_ok=True)
     return round(len(pcm) / 2 / 24000, 2)
 
 
@@ -225,6 +234,8 @@ def unique_voices(pieces):
     seen = []
     for piece in pieces:
         item = {"role": piece["role"], "voice": piece["voice"], "locale": piece["locale"]}
+        if piece.get("pitch", "+0Hz") != "+0Hz":
+            item["pitch"] = piece["pitch"]
         if item not in seen:
             seen.append(item)
     return seen
@@ -241,7 +252,7 @@ def line_lock(key):
 
 async def build_question_clip(clip, semaphore):
     dest = AUDIO_DIR / Path(clip["file"]).name
-    key = hashlib.sha256(f"{clip['rate']}\n{clip['voice']}\n{clip['text']}".encode()).hexdigest()
+    key = hashlib.sha256(f"{clip['rate']}\n{clip.get('pitch', '+0Hz')}\n{clip['voice']}\n{clip['text']}".encode()).hexdigest()
     line_mp3 = CACHE_DIR / f"{key}.mp3"
     async with line_lock(key):
         if not line_mp3.exists() or line_mp3.stat().st_size < 300:
@@ -274,12 +285,12 @@ async def build_group(group, accent, index, semaphore):
             return stamp["entry"]
     pcm_parts = []
     for piece in pieces:
-        key = hashlib.sha256(f"{piece.get('rate', RATE)}\n{piece['voice']}\n{piece['text']}".encode()).hexdigest()
+        key = hashlib.sha256(f"{piece.get('rate', RATE)}\n{piece.get('pitch', '+0Hz')}\n{piece['voice']}\n{piece['text']}".encode()).hexdigest()
         line_mp3 = CACHE_DIR / f"{key}.mp3"
         async with line_lock(key):
             if not line_mp3.exists() or line_mp3.stat().st_size < 300:
                 async with semaphore:
-                    await synthesize(piece["text"], piece["voice"], line_mp3, piece.get("rate", RATE))
+                    await synthesize(piece["text"], piece["voice"], line_mp3, piece.get("rate", RATE), piece.get("pitch", "+0Hz"))
         pcm_parts.append(await asyncio.to_thread(pcm_bytes, line_mp3))
     duration = await asyncio.to_thread(write_mp3, pcm_parts, [piece["gap"] for piece in pieces], dest)
     question_clips = []
@@ -372,6 +383,8 @@ async def main():
         saved = saved_plan(groups)
         for index, group in enumerate(groups):
             accent = saved[0][index] if saved else plan[index]
+            if group["id"] not in entries_by_id:
+                continue
             entry = entries_by_id[group["id"]]
             pieces = clips_for(group, accent, index)
             entry["spokenChoices"] = [piece["text"] for piece in pieces[len(group["script"]):]]
@@ -392,11 +405,12 @@ async def main():
             ordered[group["id"]] = manifest["groups"][group["id"]]
     manifest["groups"] = ordered
     MANIFEST_PATH.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    for retired in ("quick-au-g-airport-talk-d.mp3", "quick-gb-s03-talk2.mp3"):
-        path = AUDIO_DIR / retired
-        if path.exists():
-            path.unlink()
-            print("removed", retired)
+    if only_ids is None:
+        for retired in ("quick-au-g-airport-talk-d.mp3", "quick-gb-s03-talk2.mp3"):
+            path = AUDIO_DIR / retired
+            if path.exists():
+                path.unlink()
+                print("removed", retired)
     total = sum(entry["bytes"] for entry in ordered.values())
     print(f"groups {len(ordered)} mp3 bytes {total}")
 

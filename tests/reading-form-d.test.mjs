@@ -27,7 +27,6 @@ test('original Form A, B, and C group and question ID sequences are unchanged', 
 });
 
 test('Form D has the required 200-question distribution and reuses existing listening groups', () => {
-  const formA = bank.meta.sets.find((item) => item.id === 'form-a');
   const formD = bank.meta.sets.find((item) => item.id === 'form-d');
   assert.ok(formD);
   assert.ok(isOfficialForm('form-d'));
@@ -38,7 +37,13 @@ test('Form D has the required 200-question distribution and reuses existing list
   }
   assert.deepEqual(counts, { 1: 6, 2: 25, 3: 39, 4: 30, 5: 30, 6: 16, 7: 54 });
   assert.equal(formD.groupIds.reduce((sum, id) => sum + byId.get(id).questions.length, 0), 200);
-  assert.deepEqual(formD.groupIds.filter((id) => byId.get(id).part <= 4), formA.groupIds.filter((id) => byId.get(id).part <= 4));
+  const listeningIds = (set) => new Set(set.groupIds.filter((id) => byId.get(id).part <= 4));
+  for (const id of ['form-a', 'form-b', 'form-c']) {
+    const other = listeningIds(bank.meta.sets.find((item) => item.id === id));
+    const overlap = formD.groupIds.filter((groupId) => byId.get(groupId).part <= 4 && other.has(groupId))
+      .reduce((sum, groupId) => sum + byId.get(groupId).questions.length, 0);
+    assert.ok(overlap <= 33, `${id} listening overlap ${overlap}/100`);
+  }
   assert.equal(formD.timing.listening, 45);
   assert.equal(formD.timing.reading, 75);
 });

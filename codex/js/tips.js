@@ -9,6 +9,22 @@ export function tipsEnabled(stored) {
 
 export const TIP_SECTIONS = [
   {
+    id: "answer-every-question",
+    part: null,
+    title: "作答策略 Answer every question",
+    short: "答錯不倒扣；時間用完前，每題都選一個最有把握的答案。",
+    tips: [
+      {
+        title: "不要留白",
+        body: "正式 TOEIC Listening & Reading 依各區答對題數換算分數，答錯不倒扣；快到時間時，把尚未作答的題目都選完。",
+        why: "留白不會增加正答數；猜答至少保留答對的可能。",
+      }
+    ],
+    sources: [
+      { name: "ETS 應試者手冊：答錯不倒扣與量尺分數", href: "https://www.ets.org/content/dam/ets-org/fr/pdfs/toeic/toeic-listening-reading-test-examinee-handbook.pdf" }
+    ]
+  },
+  {
     id: "p1",
     part: 1,
     title: "Part 1 照片描述 Photographs",
