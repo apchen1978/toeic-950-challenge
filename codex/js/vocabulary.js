@@ -196,7 +196,7 @@ export const VOCABULARY = [
     ["luggage", "行李", "Please do not leave your luggage unattended.", 800, "n."],
     ["carry-on", "隨身行李", "A carry-on must fit under the seat or in the bin.", 800, "n."],
     ["window seat", "靠窗座位", "I requested a window seat for the morning flight.", 800, "n."],
-    ["blackout date", "不可兌換日期", "The award ticket cannot be used on a blackout date.", 900, "n."],
+    ["blackout date", "不適用日期（如優惠或兌換）", "The award ticket cannot be used on a blackout date.", 900, "n."],
     ["nonstop flight", "直飛航班", "The nonstop flight leaves at 7:40.", 800, "n."],
     ["direct flight", "直達航班", "Is there a direct flight to Kaohsiung tonight?", 800, "n."],
     ["flight delay", "航班延誤", "The flight delay was about two hours.", 800, "n."],
@@ -228,7 +228,7 @@ export const VOCABULARY = [
     ["luggage cart", "行李推車", "Luggage carts are free in the arrivals hall.", 800, "n."],
     ["overhead bin", "艙內置物櫃", "Please put your bag in the overhead bin.", 800, "n."],
     ["round-trip ticket", "來回票", "A round-trip ticket is cheaper than two singles.", 800, "n."],
-    ["excess baggage", "超重行李", "Excess baggage was charged at the check-in counter.", 900, "n."],
+    ["excess baggage", "超額行李", "Excess baggage was charged at the check-in counter.", 900, "n."],
     ["hotel voucher", "住宿券", "The hotel voucher covers one night.", 800, "n."],
     ["suitcase", "行李箱", "Her suitcase was too heavy for the overhead bin.", 800, "n."]
     ]
@@ -733,7 +733,7 @@ export const VOCABULARY = [
     ["processing fee", "手續費", "A processing fee applies to international transfers.", 800],
     ["refund", "退款", "The customer received a full refund.", 800],
     ["accrual basis", "權責發生制", "These books are kept on an accrual basis, not when cash moves.", 900, "n."],
-    ["tax deduction", "稅額扣除項目", "The accountant explained the available tax deductions.", 800],
+    ["tax deduction", "所得扣除額；可扣抵所得的費用", "The accountant explained the available tax deductions.", 800],
     ["deferred revenue", "遞延收入", "Deferred revenue is recorded when the service is actually delivered.", 900, "n."],
     ["spreadsheet", "試算表", "The spreadsheet lists income and expenses for May.", 800, "n."]
     ]
@@ -765,7 +765,7 @@ export const VOCABULARY = [
     ["warehouse", "倉庫", "The goods are stored at our warehouse.", 800],
     ["delivery confirmation", "送達確認", "You will receive a delivery confirmation by email.", 800],
     ["estimated arrival", "預計抵達時間", "The estimated arrival has changed to 3 p.m.", 800],
-    ["cube out", "貨櫃容積先滿（重量還沒到上限）", "The truck will cube out before it reaches the weight limit.", 900, "phr."],
+    ["cube out", "車廂或貨櫃容積先滿（重量還沒到上限）", "The truck will cube out before it reaches the weight limit.", 900, "phr."],
     ["driver", "司機", "The driver needs the gate code to enter the lot.", 800, "n."]
     ]
   },
@@ -778,7 +778,7 @@ export const VOCABULARY = [
     ["brand awareness", "品牌知名度", "The event helped increase brand awareness.", 800],
     ["brochure", "宣傳冊", "The brochure describes the available services.", 800],
     ["customer retention", "客戶留存", "The program aims to improve customer retention.", 900],
-    ["complimentary offer", "免費提供的優惠", "The package includes a complimentary offer for guests.", 800],
+    ["free trial offer", "免費試用優惠", "The company sent a free trial offer for its new software.", 800],
     ["discount code", "折扣代碼", "Enter the discount code at checkout.", 800],
     ["sales forecast", "銷售預測", "The sales forecast was updated this morning.", 900],
     ["exclusive", "專屬的；獨家的", "Members receive access to exclusive offers.", 800],
@@ -844,7 +844,7 @@ export const VOCABULARY = [
     ["confirm a booking", "確認預訂", "Please confirm your booking by email.", 800],
     ["conference room", "會議室", "The conference room is reserved until noon.", 800],
     ["front desk", "飯店櫃台", "Please leave your key at the front desk.", 800],
-    ["room block", "保留房", "The room block for the conference expires on April 30.", 900, "n."],
+    ["room block", "團體保留房", "The room block for the conference expires on April 30.", 900, "n."],
     ["guest speaker", "受邀講者", "The guest speaker will join us after lunch.", 800],
     ["housekeeping", "客房清潔服務", "Contact housekeeping if you need extra towels.", 800],
     ["lodging", "住宿", "The registration fee does not include lodging.", 800],

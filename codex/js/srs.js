@@ -1,6 +1,13 @@
 const DAY = 86400000;
 const INTERVALS = [0, 1, 3, 7, 14];
 
+export function migrateFlashcardProgress(progress) {
+  if (!progress || !Object.hasOwn(progress, 'complimentary offer') || Object.hasOwn(progress, 'free trial offer')) return { progress, changed: false };
+  const next = { ...progress, 'free trial offer': progress['complimentary offer'] };
+  delete next['complimentary offer'];
+  return { progress: next, changed: true };
+}
+
 export function rateCard(previous, rating, now = Date.now()) {
   if (!['again', 'hard', 'good'].includes(rating)) throw new Error('Invalid rating');
   const oldBox = Math.max(0, Math.min(4, previous?.box ?? 0));

@@ -38,7 +38,7 @@ npm test                                # node --test tests/*.test.mjs
 
 安裝時只預先快取程式殼與資料（HTML、CSS、JS、`data/questions.json`、`audio/manifest.json`、圖示）。照片與 MP3 在第一次成功載入時寫入快取；之後同一檔案走 cache-first，離線可以再看、再聽。音檔的 `Range` 要求會從完整檔案回 206，避免手機播放中斷。
 
-聽力音檔不在安裝清單裡，第一次播放才快取。改過程式殼、題庫、音檔清單或這個快取策略後，把 `codex/sw.js` 的 `CACHE` 從 `toeic950-codex-vN` 加一版再部署。目前版本是 `toeic950-codex-v60`。已安裝的人需要連網開啟一次才會換上新的 service worker。換版會清掉舊快取；看過的圖片與聽過的音檔要在連網時再打開一次，才會重新留下。
+聽力音檔不在安裝清單裡，第一次播放才快取。改過程式殼、題庫、音檔清單或這個快取策略後，把 `codex/sw.js` 的 `CACHE` 從 `toeic950-codex-vN` 加一版再部署。目前版本是 `toeic950-codex-v61`。已安裝的人需要連網開啟一次才會換上新的 service worker。換版會清掉舊快取；看過的圖片與聽過的音檔要在連網時再打開一次，才會重新留下。
 
 ## 來源
 

@@ -1,7 +1,7 @@
 import * as audio from "./audio.js";
 import { VOCABULARY } from "./vocabulary.js";
 import { LESSONS } from "./listening-lessons.js";
-import { rateCard, selectCards } from "./srs.js";
+import { migrateFlashcardProgress, rateCard, selectCards } from "./srs.js";
 import { flatten, score, estimateProgress, mergeSkillStats, weakest, groupsForSkill, updateWrongAnswerQueue, queueWrongReview, wrongAnswerDue, answeredWrong, answerLocked, formatDuration, normalizeMockSection, opensReadingAfterListening } from "./scoring.js";
 import { sectionChoiceHtml, selectMockSection } from "./mock-section.js";
 import { SKILLS, skillLabel } from "./skills.js";
@@ -197,6 +197,8 @@ async function init() {
   session = store.get(KEY_SESSION, null);
   if (session && session.bankVersion !== bank.meta.version) session = null;
   migrateStoredChoices();
+  const flashcardMigration = migrateFlashcardProgress(store.get(KEY_FLASHCARDS, {}));
+  if (flashcardMigration.changed) store.set(KEY_FLASHCARDS, flashcardMigration.progress);
   wrongQueue = store.get(KEY_WRONG_QUEUE, {});
   document.getElementById("open-tips")?.addEventListener("click", () => renderTips());
   renderHome();
