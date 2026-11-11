@@ -9338,6 +9338,453 @@
           "graphic": false
         }
       ]
+    },
+    "cov-p3-01": {
+      "file": "audio/cov-p3-01.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "e4a9c8c6a384114c6bb862fc14980a5d9bf82d02b84a7312f0092c035a3ee48e",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "W",
+        "M",
+        "W",
+        "M",
+        "W",
+        "M"
+      ],
+      "durationSec": 33.56,
+      "bytes": 201980,
+      "questionClips": [
+        {
+          "id": "COV-P3-01A",
+          "file": "audio/q-COV-P3-01A.mp3",
+          "durationSec": 3.98,
+          "bytes": 24428,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P3-01B",
+          "file": "audio/q-COV-P3-01B.mp3",
+          "durationSec": 5.95,
+          "bytes": 36236,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P3-01C",
+          "file": "audio/q-COV-P3-01C.mp3",
+          "durationSec": 2.45,
+          "bytes": 15212,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "cov-p3-02": {
+      "file": "audio/cov-p3-02.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "21a6e1d6c7660392e9107226a24de6839b7ce8a5d8519522dcc5aee9b19e1fe2",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "M",
+        "W",
+        "M",
+        "W",
+        "M"
+      ],
+      "durationSec": 32.34,
+      "bytes": 194636,
+      "questionClips": [
+        {
+          "id": "COV-P3-02A",
+          "file": "audio/q-COV-P3-02A.mp3",
+          "durationSec": 1.92,
+          "bytes": 12044,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P3-02B",
+          "file": "audio/q-COV-P3-02B.mp3",
+          "durationSec": 3.58,
+          "bytes": 21980,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P3-02C",
+          "file": "audio/q-COV-P3-02C.mp3",
+          "durationSec": 4.15,
+          "bytes": 25436,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "cov-p3-03": {
+      "file": "audio/cov-p3-03.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "b8263ba2abd7355d8bf5b1bb19875179a0c83b15bdd547a5b94d06796560f120",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "W",
+        "M",
+        "W",
+        "M",
+        "W",
+        "M"
+      ],
+      "durationSec": 36.83,
+      "bytes": 221564,
+      "questionClips": [
+        {
+          "id": "COV-P3-03A",
+          "file": "audio/q-COV-P3-03A.mp3",
+          "durationSec": 2.57,
+          "bytes": 15932,
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P3-03B",
+          "file": "audio/q-COV-P3-03B.mp3",
+          "durationSec": 4.2,
+          "bytes": 25724,
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P3-03C",
+          "file": "audio/q-COV-P3-03C.mp3",
+          "durationSec": 2.4,
+          "bytes": 14924,
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "cov-p3-04": {
+      "file": "audio/cov-p3-04.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "911684a107fb649bd9d5701e4a6776e181849ed1ad48ab50138c91d4460b1a32",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "M",
+        "W",
+        "M",
+        "W",
+        "M",
+        "W"
+      ],
+      "durationSec": 36.27,
+      "bytes": 218252,
+      "questionClips": [
+        {
+          "id": "COV-P3-04A",
+          "file": "audio/q-COV-P3-04A.mp3",
+          "durationSec": 3.05,
+          "bytes": 18812,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P3-04B",
+          "file": "audio/q-COV-P3-04B.mp3",
+          "durationSec": 4.39,
+          "bytes": 26876,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P3-04C",
+          "file": "audio/q-COV-P3-04C.mp3",
+          "durationSec": 2.98,
+          "bytes": 18380,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "cov-p4-01": {
+      "file": "audio/cov-p4-01.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "2a466f6b7d4d87238a67ba46a05640a322abae187561d8d417b5de2ea3966535",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 38.02,
+      "bytes": 228620,
+      "questionClips": [
+        {
+          "id": "COV-P4-01A",
+          "file": "audio/q-COV-P4-01A.mp3",
+          "durationSec": 2.86,
+          "bytes": 17660,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P4-01B",
+          "file": "audio/q-COV-P4-01B.mp3",
+          "durationSec": 3.94,
+          "bytes": 24140,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P4-01C",
+          "file": "audio/q-COV-P4-01C.mp3",
+          "durationSec": 4.75,
+          "bytes": 29036,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "cov-p4-02": {
+      "file": "audio/cov-p4-02.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "f68ecd1222d107114665044be67e25a07b1818ba24b882050fa8d2116476cd54",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 32.16,
+      "bytes": 193484,
+      "questionClips": [
+        {
+          "id": "COV-P4-02A",
+          "file": "audio/q-COV-P4-02A.mp3",
+          "durationSec": 6.12,
+          "bytes": 37244,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P4-02B",
+          "file": "audio/q-COV-P4-02B.mp3",
+          "durationSec": 3.84,
+          "bytes": 23564,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P4-02C",
+          "file": "audio/q-COV-P4-02C.mp3",
+          "durationSec": 5.86,
+          "bytes": 35660,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "cov-p4-03": {
+      "file": "audio/cov-p4-03.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "3874232cb572748d05b5ca6f2802bcdf74984b3d42b8c0aaa3087dc5fd28f342",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 36.22,
+      "bytes": 217820,
+      "questionClips": [
+        {
+          "id": "COV-P4-03A",
+          "file": "audio/q-COV-P4-03A.mp3",
+          "durationSec": 2.59,
+          "bytes": 16076,
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P4-03B",
+          "file": "audio/q-COV-P4-03B.mp3",
+          "durationSec": 4.78,
+          "bytes": 29180,
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P4-03C",
+          "file": "audio/q-COV-P4-03C.mp3",
+          "durationSec": 6.65,
+          "bytes": 40412,
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "cov-p4-04": {
+      "file": "audio/cov-p4-04.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "c315276ee54fd23c884596d3aace34b8aef70ba26f1e9635eea92703d92af875",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 31.06,
+      "bytes": 186860,
+      "questionClips": [
+        {
+          "id": "COV-P4-04A",
+          "file": "audio/q-COV-P4-04A.mp3",
+          "durationSec": 2.76,
+          "bytes": 17084,
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P4-04B",
+          "file": "audio/q-COV-P4-04B.mp3",
+          "durationSec": 5.02,
+          "bytes": 30620,
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P4-04C",
+          "file": "audio/q-COV-P4-04C.mp3",
+          "durationSec": 4.51,
+          "bytes": 27596,
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA",
+          "role": "N",
+          "graphic": false
+        }
+      ]
     }
   }
 }

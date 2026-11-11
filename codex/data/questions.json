@@ -2139,7 +2139,7 @@
           "answer": 2,
           "explanation": "Remain is a linking verb here and takes the adjective available, describing the positions.",
           "ability": "R5",
-          "questionType": "preposition-conjunction"
+          "questionType": "part-of-speech"
         }
       ]
     },
@@ -3074,7 +3074,7 @@
           "answer": 3,
           "explanation": "Placed is a past participle modifying orders, equivalent to that are placed. The passive meaning is required because customers place orders.",
           "ability": "R5",
-          "questionType": "preposition-conjunction"
+          "questionType": "verb-tense-voice"
         }
       ]
     },
@@ -12611,7 +12611,7 @@
           "answer": 0,
           "explanation": "Alternative is an adjective meaning a substitute and correctly modifies access point. Alternatively is an adverb, alternating means taking turns, and alternation is a noun; none expresses a substitute access point in this structure.",
           "ability": "R5",
-          "questionType": "preposition-conjunction"
+          "questionType": "part-of-speech"
         }
       ]
     },
@@ -12721,7 +12721,7 @@
           "answer": 1,
           "explanation": "The singular subject manager takes is; the phrase along with two members does not change subject–verb agreement. Are and were are plural, while have cannot introduce scheduled here.",
           "ability": "R5",
-          "questionType": "preposition-conjunction"
+          "questionType": "verb-tense-voice"
         }
       ]
     },
@@ -13718,7 +13718,7 @@
           "answer": 2,
           "explanation": "Following is the adjective modifying business day. Follow and follows are verbs, while followed does not express the next day in this construction.",
           "ability": "R5",
-          "questionType": "preposition-conjunction"
+          "questionType": "part-of-speech"
         }
       ]
     },
@@ -16529,7 +16529,7 @@
           "answer": 1,
           "explanation": "正解 B「expires」：主詞 service agreement 為單數，表示合約在十二月到期的既定事實。A、D 是名詞，C 是分詞，不能獨立充當此句的限定動詞。",
           "ability": "R5",
-          "questionType": "preposition-conjunction"
+          "questionType": "verb-tense-voice"
         }
       ]
     },
@@ -16793,7 +16793,7 @@
           "answer": 1,
           "explanation": "正解 B「illegible」：become 後接形容詞作主詞補語，意為標籤變得難以辨讀。A illegibly 是副詞；C illegibility 是名詞；D legible 意思相反。",
           "ability": "R5",
-          "questionType": "preposition-conjunction"
+          "questionType": "part-of-speech"
         }
       ]
     },
@@ -19509,7 +19509,7 @@
           ],
           "answer": 1,
           "explanation": "The speaker addresses third-floor employees, mentions staff room reservations, and says inspection results will appear on the staff portal.",
-          "questionType": "speaker-intent"
+          "questionType": "detail"
         },
         {
           "id": "AUD-P4-01C",
@@ -19689,7 +19689,7 @@
           ],
           "answer": 2,
           "explanation": "It opens by addressing station staff and gives internal steps for the desk team and duty supervisor. These instructions are for employees handling found items.",
-          "questionType": "speaker-intent"
+          "questionType": "detail"
         },
         {
           "id": "AUD-P4-04C",
@@ -19749,7 +19749,7 @@
           ],
           "answer": 3,
           "explanation": "The speaker addresses suppliers who send invoices to regional offices. The upload instructions are directed to them, not employees or customers.",
-          "questionType": "speaker-intent"
+          "questionType": "detail"
         },
         {
           "id": "AUD-P4-05C",
@@ -19885,6 +19885,1270 @@
           "answer": 3,
           "explanation": "An exhibitor who will still be serving visitors at five should call the service counter before four to arrange collection.",
           "questionType": "detail"
+        }
+      ]
+    },
+    {
+      "id": "cov-p3-01",
+      "section": "listening",
+      "part": 3,
+      "accent": "AU",
+      "title": "Borrowing toner cartridges",
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Hi Tomasz, did the new toner cartridges arrive for the fourth-floor printers?"
+        },
+        {
+          "speaker": "M",
+          "text": "They did, but only half of the order. The supplier says the rest ships next Wednesday."
+        },
+        {
+          "speaker": "W",
+          "text": "That's a problem. We have the quarterly reports to print on Monday."
+        },
+        {
+          "speaker": "M",
+          "text": "Well, the second-floor copy room has plenty in stock."
+        },
+        {
+          "speaker": "W",
+          "text": "Good idea. Could you ask Priya whether we can borrow six cartridges until our shipment arrives?"
+        },
+        {
+          "speaker": "M",
+          "text": "Sure. I'll walk over there now."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P3-01A",
+          "prompt": "What does the woman mean when she says, \"That's a problem\"?",
+          "options": [
+            "She cannot find the cartridges that arrived.",
+            "The partial delivery may delay a planned task.",
+            "She wants to change to a different supplier.",
+            "She is unhappy with the printer model."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「The partial delivery may delay a planned task.」：只到貨一半，而她提到星期一要印季報，所以她擔心的是不完整的到貨會耽誤預定工作。\n【考點】Part 3・說話者意圖\n【判斷依據】先看前一句（只到一半），再看她接著提出的時間壓力（星期一要印報告）。",
+          "skill": "l-inference",
+          "ability": "L5",
+          "questionType": "speaker-intent"
+        },
+        {
+          "id": "COV-P3-01B",
+          "prompt": "What does the man imply when he says, \"the second-floor copy room has plenty in stock\"?",
+          "options": [
+            "The supplier should be paid sooner.",
+            "The order was placed twice by mistake.",
+            "The copy room should be reorganized.",
+            "Cartridges could be borrowed from another area."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Cartridges could be borrowed from another area.」：他指出二樓影印室存貨充足，女子隨即請他詢問能否借用六個，可見他的意思是可向其他區域調借。\n【考點】Part 3・說話者意圖\n【判斷依據】看對方接下來的反應：女子說 Good idea 並提出借用，印證他暗示的做法。",
+          "skill": "l-inference",
+          "ability": "L5",
+          "questionType": "speaker-intent"
+        },
+        {
+          "id": "COV-P3-01C",
+          "prompt": "What will the man do next?",
+          "options": [
+            "Speak with a colleague on another floor.",
+            "Call the supplier about the shipment.",
+            "Print the quarterly reports.",
+            "Order more toner online."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「Speak with a colleague on another floor.」：女子請他問 Priya 能否借用卡匣，他回答 I'll walk over there now，表示立刻過去詢問。\n【考點】Part 3・下一步行動\n【判斷依據】下一步行動通常出現在對話最後一兩句，注意 I'll … now 這類承諾。",
+          "skill": "l-conversation",
+          "ability": "L4",
+          "questionType": "next-action"
+        }
+      ]
+    },
+    {
+      "id": "cov-p3-02",
+      "section": "listening",
+      "part": 3,
+      "accent": "UK",
+      "title": "Extending a hotel room block",
+      "script": [
+        {
+          "speaker": "M",
+          "text": "Hello, I'm calling about the room block for the Dunmore Logistics Forum next month."
+        },
+        {
+          "speaker": "W",
+          "text": "Of course, Mr. Hall. We're holding twenty rooms under your company name, and the guest names are due this Friday."
+        },
+        {
+          "speaker": "M",
+          "text": "I'm still waiting to hear back from three colleagues. Could you extend that deadline?"
+        },
+        {
+          "speaker": "W",
+          "text": "I can give you until Tuesday. After that, any unclaimed rooms go back on sale to the public."
+        },
+        {
+          "speaker": "M",
+          "text": "That should do it. I'll send the full list on Monday."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P3-02A",
+          "prompt": "Why is the man calling?",
+          "options": [
+            "To cancel a conference registration.",
+            "To request a refund for a stay.",
+            "To ask about a deadline for reserved rooms.",
+            "To book a venue for a forum."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「To ask about a deadline for reserved rooms.」：男子為公司預留的二十間客房來電，問能否延後提交住客名單的期限。\n【考點】Part 3・主旨或目的\n【判斷依據】目的常在第一、二句出現，再用他後面的請求（extend that deadline）確認。",
+          "skill": "l-conversation",
+          "ability": "L4",
+          "questionType": "main-purpose"
+        },
+        {
+          "id": "COV-P3-02B",
+          "prompt": "What does the man mean when he says, \"That should do it\"?",
+          "options": [
+            "The new deadline will be long enough for him.",
+            "The hotel has enough rooms available.",
+            "He is ready to cancel the group booking.",
+            "The price of the rooms is acceptable."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「The new deadline will be long enough for him.」：女子給他到星期二的新期限，他回答 That should do it 並說星期一會寄出名單，表示這個期限足夠。\n【考點】Part 3・說話者意圖\n【判斷依據】it 指的是上一句剛提出的延期方案，再看他接著承諾的時間（星期一）。",
+          "skill": "l-inference",
+          "ability": "L5",
+          "questionType": "speaker-intent"
+        },
+        {
+          "id": "COV-P3-02C",
+          "prompt": "What will happen to unclaimed rooms after the extended deadline?",
+          "options": [
+            "They will be given to the forum speakers.",
+            "They will be held for another month.",
+            "They will be charged to the man's company.",
+            "They will be offered to the public."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「They will be offered to the public.」：女子說期限過後，沒人認領的房間會回到市場開放給大眾訂房。\n【考點】Part 3・細節\n【判斷依據】直接對應原句 go back on sale to the public，換成較概括的說法。",
+          "skill": "l-conversation",
+          "ability": "L4",
+          "questionType": "detail"
+        }
+      ]
+    },
+    {
+      "id": "cov-p3-03",
+      "section": "listening",
+      "part": 3,
+      "accent": "CA",
+      "title": "Late flour delivery",
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Marcus, the flour delivery for the downtown bakery is running late again."
+        },
+        {
+          "speaker": "M",
+          "text": "I know. I spoke with the driver, and he's stuck behind a road closure on Mill Avenue."
+        },
+        {
+          "speaker": "W",
+          "text": "We open in forty minutes. We can't bake without it."
+        },
+        {
+          "speaker": "M",
+          "text": "Don't worry. The north branch ordered extra last week, so I'll ask them to send a few bags with a courier."
+        },
+        {
+          "speaker": "W",
+          "text": "Perfect. Then I'll let the morning crew know the first batch will be a little late."
+        },
+        {
+          "speaker": "M",
+          "text": "Sounds good. I'll text you as soon as the courier leaves."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P3-03A",
+          "prompt": "Why is the woman concerned?",
+          "options": [
+            "A delivery has not arrived on time.",
+            "A road has been permanently closed.",
+            "A branch ordered too much flour.",
+            "A courier lost a package."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「A delivery has not arrived on time.」：女子一開始就說麵粉配送又遲了，後面討論的都是如何補救。\n【考點】Part 3・主旨或目的\n【判斷依據】問題通常在開頭一兩句交代，之後的對話都圍繞它。",
+          "skill": "l-conversation",
+          "ability": "L4",
+          "questionType": "main-purpose"
+        },
+        {
+          "id": "COV-P3-03B",
+          "prompt": "What does the woman imply when she says, \"We can't bake without it\"?",
+          "options": [
+            "She wants to change the recipe.",
+            "The ovens are not working.",
+            "The delay is urgent for the bakery.",
+            "She needs to hire more bakers."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「The delay is urgent for the bakery.」：她先說四十分鐘後開門，再說沒有麵粉就不能烤，表示配送延遲對開店很急迫。\n【考點】Part 3・說話者意圖\n【判斷依據】合併前一句的時間壓力（四十分鐘後開門）與這句話，判斷她想強調急迫性。",
+          "skill": "l-inference",
+          "ability": "L5",
+          "questionType": "speaker-intent"
+        },
+        {
+          "id": "COV-P3-03C",
+          "prompt": "What will the man do next?",
+          "options": [
+            "Cancel the morning shift.",
+            "Ask another branch to send flour.",
+            "Drive to the supplier himself.",
+            "Inform customers about the delay."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Ask another branch to send flour.」：男子說北區分店多訂了麵粉，他會請對方用快遞送幾袋過來。\n【考點】Part 3・下一步行動\n【判斷依據】找他說出 I'll ask them to … 的那一句，這就是他接下來要做的事。",
+          "skill": "l-conversation",
+          "ability": "L4",
+          "questionType": "next-action"
+        }
+      ]
+    },
+    {
+      "id": "cov-p3-04",
+      "section": "listening",
+      "part": 3,
+      "accent": "AU",
+      "title": "Camera will not connect",
+      "script": [
+        {
+          "speaker": "M",
+          "text": "Hi, Elena. Is the large conference room ready for the board presentation at ten?"
+        },
+        {
+          "speaker": "W",
+          "text": "Almost. The projector is working, but the video conference camera won't connect to the laptop."
+        },
+        {
+          "speaker": "M",
+          "text": "Hmm. Did the IT team replace the cable last week?"
+        },
+        {
+          "speaker": "W",
+          "text": "They did. That's what I'm wondering — maybe the new one isn't compatible."
+        },
+        {
+          "speaker": "M",
+          "text": "Let me call the help desk. They said they'd have a technician available until noon."
+        },
+        {
+          "speaker": "W",
+          "text": "Good. I'll move the printed handouts to the table while we wait."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P3-04A",
+          "prompt": "What problem are the speakers discussing?",
+          "options": [
+            "A projector has stopped working.",
+            "A board meeting was canceled.",
+            "A help desk is closed until noon.",
+            "A camera is not connecting to a laptop."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「A camera is not connecting to a laptop.」：女子說投影機正常，但視訊鏡頭連不上筆電，這是兩人討論的問題。\n【考點】Part 3・主旨或目的\n【判斷依據】注意轉折詞 but 後面才是真正的問題，前面的 projector 是正常的。",
+          "skill": "l-conversation",
+          "ability": "L1",
+          "questionType": "main-purpose"
+        },
+        {
+          "id": "COV-P3-04B",
+          "prompt": "What does the woman mean when she says, \"That's what I'm wondering\"?",
+          "options": [
+            "She is unsure whether the meeting starts at ten.",
+            "She suspects the new cable may be the cause.",
+            "She wants to know who called the help desk.",
+            "She doubts the camera is turned on."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「She suspects the new cable may be the cause.」：男子問上週有沒有換線，她回答有，並補充新線可能不相容，所以她懷疑原因出在新線。\n【考點】Part 3・說話者意圖\n【判斷依據】That 指前一句的問題（換線），再看她同一句後半段提出的推測。",
+          "skill": "l-inference",
+          "ability": "L5",
+          "questionType": "speaker-intent"
+        },
+        {
+          "id": "COV-P3-04C",
+          "prompt": "What will the woman do while they wait?",
+          "options": [
+            "Test the projector again.",
+            "Contact the board members.",
+            "Move printed handouts to a table.",
+            "Replace the cable herself."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Move printed handouts to a table.」：女子最後說會在等待時把印好的講義移到桌上。\n【考點】Part 3・下一步行動\n【判斷依據】題目問 while they wait，對應最後一句 while we wait 前面的動作。",
+          "skill": "l-conversation",
+          "ability": "L4",
+          "questionType": "next-action"
+        }
+      ]
+    },
+    {
+      "id": "cov-p4-01",
+      "section": "listening",
+      "part": 4,
+      "accent": "UK",
+      "title": "Monthly team meeting remarks",
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Good morning, everyone, and thank you for joining the monthly team meeting. First, I'm pleased to say we've reached ninety-two percent of our annual customer-service target, with two months still to go. That's an impressive result, especially after the system upgrade this spring. Now, some of you have asked whether the upgrade is finished. Well, let's just say there's a little more work ahead. Our technology partner will add a reporting feature in November, and each department will receive a short training session before it goes live. Please check your calendars for your session time."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P4-01A",
+          "prompt": "What is the main purpose of the talk?",
+          "options": [
+            "To announce a change in company leadership.",
+            "To ask staff to apply for a new position.",
+            "To share progress and describe upcoming work.",
+            "To explain why a target was missed."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「To share progress and describe upcoming work.」：說話者先報告目標達成進度，再說明之後會新增報告功能與培訓安排。\n【考點】Part 4・主旨或目的\n【判斷依據】整合開頭的成果報告與後半的後續安排，而不是只看某一個細節。",
+          "skill": "l-talk",
+          "ability": "L2",
+          "questionType": "main-purpose"
+        },
+        {
+          "id": "COV-P4-01B",
+          "prompt": "Why does the speaker say, \"That's an impressive result\"?",
+          "options": [
+            "To recognize the team's progress.",
+            "To suggest the target should be raised.",
+            "To explain a technology problem.",
+            "To introduce a new employee."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「To recognize the team's progress.」：這句話緊接在九成二的達成率之後，用來肯定團隊的表現。\n【考點】Part 4・說話者意圖\n【判斷依據】That 指前一句剛報告的成績，語氣是稱讚。",
+          "skill": "l-inference",
+          "ability": "L5",
+          "questionType": "speaker-intent"
+        },
+        {
+          "id": "COV-P4-01C",
+          "prompt": "What does the speaker mean when she says, \"there's a little more work ahead\"?",
+          "options": [
+            "The staff will work extra hours next month.",
+            "The target has already been reached.",
+            "The training sessions have been canceled.",
+            "The system upgrade is not completely finished."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「The system upgrade is not completely finished.」：這句話是在回答大家問升級是否完成，後面接著說還要新增報告功能，所以升級尚未全部結束。\n【考點】Part 4・說話者意圖\n【判斷依據】看問題（升級完成了嗎）和後面的具體說明（十一月還要新增功能），而不是只看字面的 work。",
+          "skill": "l-inference",
+          "ability": "L5",
+          "questionType": "speaker-intent"
+        }
+      ]
+    },
+    {
+      "id": "cov-p4-02",
+      "section": "listening",
+      "part": 4,
+      "accent": "AU",
+      "title": "Museum welcome",
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Welcome to the Harbour Maritime Museum. Before we begin the tour, a few quick notes. Now, I know some of you came for the ship models. The east gallery is being cleaned this week, so that room is closed. However, you can still see our collection of navigation instruments in the main hall. Photographs are welcome everywhere except the archive room. And if you'd like to join the free talk about harbour history, it starts at two o'clock in the annex across the courtyard. I promise you'll find it worth the walk."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P4-02A",
+          "prompt": "What does the speaker imply when saying, \"I know some of you came for the ship models\"?",
+          "options": [
+            "The models will be sold at the museum shop.",
+            "Some visitors may be disappointed.",
+            "The tour will focus only on ships.",
+            "Visitors must pay to see the models."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Some visitors may be disappointed.」：說話者接著說東側展廳本週清潔而關閉，顯示她知道想看船模的人可能會失望。\n【考點】Part 4・說話者意圖\n【判斷依據】看這句話後面緊接的壞消息（展廳關閉），判斷說話者預期的反應。",
+          "skill": "l-inference",
+          "ability": "L5",
+          "questionType": "speaker-intent"
+        },
+        {
+          "id": "COV-P4-02B",
+          "prompt": "Where can visitors see the navigation instruments?",
+          "options": [
+            "In the east gallery.",
+            "In the archive room.",
+            "In the annex.",
+            "In the main hall."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「In the main hall.」：說話者說東側展廳關閉，但航海儀器收藏仍可在主展廳看到。\n【考點】Part 4・細節\n【判斷依據】題目問地點，要分清楚哪些地點是關閉、禁止拍照或舉辦講座，哪一個才放了航海儀器。",
+          "skill": "l-talk",
+          "ability": "L4",
+          "questionType": "detail"
+        },
+        {
+          "id": "COV-P4-02C",
+          "prompt": "What does the speaker mean when saying, \"I promise you'll find it worth the walk\"?",
+          "options": [
+            "The speaker is encouraging visitors to attend a talk.",
+            "She is warning that the museum is far from the station.",
+            "She is offering a refund for the tour.",
+            "She is asking visitors to leave early."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「The speaker is encouraging visitors to attend a talk.」：這句話緊接在免費講座位於庭院對面的別館之後，用來鼓勵參觀者走過去參加。\n【考點】Part 4・說話者意圖\n【判斷依據】worth the walk 指前一句提到的距離（庭院對面），語氣是推薦，不是警告。",
+          "skill": "l-inference",
+          "ability": "L5",
+          "questionType": "speaker-intent"
+        }
+      ]
+    },
+    {
+      "id": "cov-p4-03",
+      "section": "listening",
+      "part": 4,
+      "accent": "US",
+      "title": "Appliance repair voicemail",
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Hello, this is Danielle Reyes from Birchwood Appliance Repair, calling for Ms. Navarro. I'm returning your call about the dishwasher. Based on what you described, the pump may need replacing, and that part usually takes three to four days to arrive. I do have an opening this Thursday morning to look at it, and if I can confirm the problem, I'll order the part right away. Of course, I can't promise a final price until I see the machine. If Thursday doesn't suit you, please call me back at the number on your invoice."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P4-03A",
+          "prompt": "Why is the speaker calling?",
+          "options": [
+            "To collect a payment.",
+            "To cancel an appointment.",
+            "To respond to a repair request.",
+            "To advertise a new service."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「To respond to a repair request.」：說話者說是回覆對方關於洗碗機的來電，並安排檢查時間。\n【考點】Part 4・主旨或目的\n【判斷依據】語音留言通常在第一、二句交代來電原因（returning your call about…）。",
+          "skill": "l-talk",
+          "ability": "L4",
+          "questionType": "main-purpose"
+        },
+        {
+          "id": "COV-P4-03B",
+          "prompt": "What does the speaker mean when saying, \"Based on what you described\"?",
+          "options": [
+            "The machine has already been repaired.",
+            "Her diagnosis is only a first estimate.",
+            "A written description of the invoice is needed.",
+            "The speaker is repeating the customer's complaint."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Her diagnosis is only a first estimate.」：說話者只是依電話中的描述推測幫浦可能要更換，還要到現場確認，所以診斷只是初步判斷。\n【考點】Part 4・說話者意圖\n【判斷依據】注意後面的 may need（可能）和 if I can confirm（若確認），語氣不是定論。",
+          "skill": "l-inference",
+          "ability": "L5",
+          "questionType": "speaker-intent"
+        },
+        {
+          "id": "COV-P4-03C",
+          "prompt": "What does the speaker imply when saying, \"I can't promise a final price until I see the machine\"?",
+          "options": [
+            "The cost depends on an inspection.",
+            "The machine is too old to repair.",
+            "The price will be lower on Thursday.",
+            "The customer must buy a new pump first."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「The cost depends on an inspection.」：說話者表示看到機器之前無法保證最終價格，意思是費用要等檢查後才能確定。\n【考點】Part 4・說話者意圖\n【判斷依據】until 引導出條件：先檢查，才能決定價格。",
+          "skill": "l-inference",
+          "ability": "L5",
+          "questionType": "speaker-intent"
+        }
+      ]
+    },
+    {
+      "id": "cov-p4-04",
+      "section": "listening",
+      "part": 4,
+      "accent": "CA",
+      "title": "Shift change announcement",
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Attention all assembly-line staff. Starting Monday, the second shift will begin at three o'clock instead of two-thirty. The change is part of a plan to reduce crowding at the loading dock, where we've had a few near misses. I realize half an hour may sound small, but it makes a real difference for our forklift drivers. Shift leaders will hand out revised schedules at the end of today's shift. If the new time creates a transportation problem for you, please speak with your supervisor by Friday."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P4-04A",
+          "prompt": "What is the announcement about?",
+          "options": [
+            "A new safety training course.",
+            "A change to a shift start time.",
+            "A plan to hire forklift drivers.",
+            "A repair at the loading dock."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「A change to a shift start time.」：公告的重點是第二班的開始時間從兩點半改為三點。\n【考點】Part 4・主旨或目的\n【判斷依據】開頭已說明變更內容，後面的理由與指示都在補充這個變更。",
+          "skill": "l-talk",
+          "ability": "L4",
+          "questionType": "main-purpose"
+        },
+        {
+          "id": "COV-P4-04B",
+          "prompt": "What does the speaker mean when saying, \"half an hour may sound small\"?",
+          "options": [
+            "The shift will be shortened by half.",
+            "The workers should arrive earlier.",
+            "The drivers have asked for more time.",
+            "The change has an important effect."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「The change has an important effect.」：說話者緊接著說這半小時對堆高機駕駛有實際的影響，所以是在強調變更的重要性。\n【考點】Part 4・說話者意圖\n【判斷依據】may sound … but 的結構表示說話者要反駁表面印象，重點在 but 後面。",
+          "skill": "l-inference",
+          "ability": "L5",
+          "questionType": "speaker-intent"
+        },
+        {
+          "id": "COV-P4-04C",
+          "prompt": "What are employees with transportation problems asked to do?",
+          "options": [
+            "Move to the first shift permanently.",
+            "Submit a request to the loading dock.",
+            "Talk to a supervisor.",
+            "Wait for a revised schedule."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Talk to a supervisor.」：說話者說若新時間造成交通問題，請在星期五前找主管談。\n【考點】Part 4・細節\n【判斷依據】對應最後一句 speak with your supervisor，注意不要和發放新班表的人（shift leaders）混淆。",
+          "skill": "l-talk",
+          "ability": "L4",
+          "questionType": "detail"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p7-syn-01",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: atrium floor refinishing",
+      "passage": {
+        "docs": [
+          {
+            "label": "Email",
+            "text": "To: All Department Leads\nFrom: Naomi Castellanos, Facilities\nSubject: Atrium floor refinishing\n\nHello everyone,\n\nBeginning Monday, the contractors will refinish the floor of the main atrium. The work is expected to take four days, and the atrium will be closed during that time. Please direct visitors to the side entrance on Pearl Street, where staff will issue temporary badges. We will also set up a small waiting area on the second floor for clients who arrive early.\n\nThe contractors have asked that we avoid moving heavy equipment near the area until the new finish has fully cured. If you plan to relocate any large items, please notify our office by Friday so we can arrange a suitable time.\n\nThank you for your patience.\nNaomi Castellanos"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "COV-P7-S01A",
+          "prompt": "What are department leads asked to do during the work?",
+          "options": [
+            "Send visitors to the Pearl Street entrance.",
+            "Move heavy equipment to the second floor.",
+            "Issue badges at the main atrium.",
+            "Close their offices for four days."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「Send visitors to the Pearl Street entrance.」：信中請各部門主管把訪客引導到 Pearl Street 的側門，並由職員發放臨時識別證。\n【考點】Part 7・細節\n【判斷依據】回到文章中提到訪客的那一句，找出具體的指示。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "COV-P7-S01B",
+          "prompt": "The word \"direct\" in paragraph 1 is closest in meaning to",
+          "options": [
+            "command",
+            "aim",
+            "send",
+            "supervise"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「send」：Please direct visitors to the side entrance 的意思是請把訪客引導（送）到側門，send 最符合上下文。\n【考點】Part 7・同義字（closest in meaning）\n【判斷依據】把選項代回原句：direct visitors to the entrance 在這裡是『把訪客引導到』，不是『命令』或『瞄準』。",
+          "skill": "r-vocabulary",
+          "ability": "R4",
+          "questionType": "synonym"
+        },
+        {
+          "id": "COV-P7-S01C",
+          "prompt": "The word \"cured\" in paragraph 2 is closest in meaning to",
+          "options": [
+            "healed",
+            "hardened",
+            "preserved",
+            "decorated"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「hardened」：地板新的表面處理要完全 cured，指的是完全硬化定型，hardened 符合；healed 是治癒的意思，與地板無關。\n【考點】Part 7・同義字（closest in meaning）\n【判斷依據】先確認被修飾的對象是地板的表面處理，再選擇符合該情境的字義。",
+          "skill": "r-vocabulary",
+          "ability": "R4",
+          "questionType": "synonym"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p7-syn-02",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: library borrowing rules",
+      "passage": {
+        "docs": [
+          {
+            "label": "Notice",
+            "text": "RIVERSIDE PUBLIC LIBRARY — Revised Borrowing Rules\n\nEffective next month, patrons may borrow up to twelve items at one time, an increase from eight. Loan periods for books remain three weeks, but audiovisual items will now be lent for one week rather than two. Patrons who return items late will be charged fifty cents per day, up to a maximum of ten dollars per item.\n\nThe library will waive these charges for patrons under sixteen. Members with an outstanding balance of more than twenty dollars may not borrow additional items until the balance is settled. Questions about the new rules should be directed to the front desk."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "COV-P7-S02A",
+          "prompt": "How long may audiovisual items be borrowed under the new rules?",
+          "options": [
+            "Two weeks",
+            "Three weeks",
+            "Twelve days",
+            "One week"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「One week」：公告說影音資料之後借期為一週，而不是原本的兩週。\n【考點】Part 7・細節\n【判斷依據】找到 audiovisual items 那一句，注意 rather than two 是舊規則。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "COV-P7-S02B",
+          "prompt": "The word \"waive\" in paragraph 2 is closest in meaning to",
+          "options": [
+            "increase",
+            "cancel",
+            "delay",
+            "record"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「cancel」：waive these charges 是免除這些罰款，與 cancel 的意思最接近。\n【考點】Part 7・同義字（closest in meaning）\n【判斷依據】代入原句：未滿十六歲的讀者不必付罰款，所以是免除（取消）而不是增加或延後。",
+          "skill": "r-vocabulary",
+          "ability": "R4",
+          "questionType": "synonym"
+        },
+        {
+          "id": "COV-P7-S02C",
+          "prompt": "The word \"outstanding\" in paragraph 2 is closest in meaning to",
+          "options": [
+            "excellent",
+            "famous",
+            "unpaid",
+            "temporary"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「unpaid」：outstanding balance 指未付清的餘額，unpaid 最符合；excellent 是 outstanding 的另一個常見字義，但放在這裡不通。\n【考點】Part 7・同義字（closest in meaning）\n【判斷依據】常見字有多個意思時，用搭配詞 balance 與後面的 until settled 判斷是『未付清』。",
+          "skill": "r-vocabulary",
+          "ability": "R4",
+          "questionType": "synonym"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p7-syn-03",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: bakery expansion",
+      "passage": {
+        "docs": [
+          {
+            "label": "Article",
+            "text": "Greenfield Bakery Expands to Second Location\n\nAfter eight years on Linden Street, Greenfield Bakery will open a second shop near the Eastgate train station this fall. Owner Sung-min Park said the expansion was prompted by rising demand for the bakery's whole-grain loaves, which now account for more than half of its sales.\n\n\"We were turning customers away on weekends,\" Park said. \"A second kitchen lets us keep up without lowering quality.\" The new location will employ twelve people, and Park expects to recruit most of them from the neighborhood. He is also planning a weekly baking class, which he describes as a way to connect with the community."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "COV-P7-S03A",
+          "prompt": "Why is the bakery opening a second location?",
+          "options": [
+            "Its original shop is being sold.",
+            "Demand for a certain bread has grown.",
+            "A train station requested a bakery.",
+            "Weekend customers prefer baking classes."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Demand for a certain bread has grown.」：文章說擴店是因為全麥麵包的需求增加，這類麵包已占銷售一半以上。\n【考點】Part 7・細節\n【判斷依據】找 expansion 的原因，句中 prompted by 後面就是答案。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "COV-P7-S03B",
+          "prompt": "The word \"prompted\" in paragraph 1 is closest in meaning to",
+          "options": [
+            "reminded",
+            "delayed",
+            "interrupted",
+            "caused"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「caused」：the expansion was prompted by rising demand 是『擴店是由需求增加所促成』，caused 最接近。\n【考點】Part 7・同義字（closest in meaning）\n【判斷依據】把選項代回 was ___ by rising demand，只有 caused 在語意與搭配上都成立。",
+          "skill": "r-vocabulary",
+          "ability": "R4",
+          "questionType": "synonym"
+        },
+        {
+          "id": "COV-P7-S03C",
+          "prompt": "The word \"recruit\" in paragraph 2 is closest in meaning to",
+          "options": [
+            "hire",
+            "train",
+            "replace",
+            "promote"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「hire」：新店要僱用十二個人，並預計從附近社區招募大部分員工，recruit 在此等於 hire。\n【考點】Part 7・同義字（closest in meaning）\n【判斷依據】看前一句 will employ twelve people，可知 recruit 指的是聘僱。",
+          "skill": "r-vocabulary",
+          "ability": "R4",
+          "questionType": "synonym"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p7-syn-04",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: evening English courses",
+      "passage": {
+        "docs": [
+          {
+            "label": "Advertisement",
+            "text": "HARTWELL LANGUAGE INSTITUTE — Evening Business English\n\nImprove your professional communication this term. Our evening courses meet twice a week for ten weeks, and each class is limited to fourteen students so that every participant receives personal attention. Instructors have at least five years of experience in international business settings. Participants who attend all sessions will receive a certificate recognized by many employers in the region.\n\nRegister by the end of the month and receive a 15 percent discount on materials. Companies that enroll three or more employees are eligible for a group rate; please contact our office for details. Space is limited, so early registration is strongly advised."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "COV-P7-S04A",
+          "prompt": "According to the advertisement, why are classes limited to fourteen students?",
+          "options": [
+            "So instructors can work part time.",
+            "Because the institute has few classrooms.",
+            "So each student receives individual attention.",
+            "To reduce the cost of materials."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「So each student receives individual attention.」：廣告說每班限十四人，是為了讓每位學員都能得到個別關注。\n【考點】Part 7・細節\n【判斷依據】原文用 so that 引導目的，直接對應題目問的原因。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "COV-P7-S04B",
+          "prompt": "The word \"recognized\" in paragraph 1 is closest in meaning to",
+          "options": [
+            "accepted",
+            "remembered",
+            "noticed",
+            "identified"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「accepted」：certificate recognized by many employers 指許多雇主認可（接受）這張證書，accepted 最接近。\n【考點】Part 7・同義字（closest in meaning）\n【判斷依據】主詞是證書、動作者是雇主，所以是『被認可』而非『被記住』。",
+          "skill": "r-vocabulary",
+          "ability": "R4",
+          "questionType": "synonym"
+        },
+        {
+          "id": "COV-P7-S04C",
+          "prompt": "The word \"eligible\" in paragraph 2 is closest in meaning to",
+          "options": [
+            "required",
+            "invited",
+            "likely",
+            "qualified"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「qualified」：eligible for a group rate 是『符合資格享有團體價』，qualified 最接近。\n【考點】Part 7・同義字（closest in meaning）\n【判斷依據】看前面的條件（三位以上員工），表示符合條件才可享有，不是被強制或被邀請。",
+          "skill": "r-vocabulary",
+          "ability": "R4",
+          "questionType": "synonym"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p7-syn-05",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: new ticket procedure",
+      "passage": {
+        "docs": [
+          {
+            "label": "Memo",
+            "text": "To: Customer Support Team\nFrom: Lucia Bernard, Support Manager\nRe: New ticket procedure\n\nStarting next week, all customer requests must be logged in the new ticket system before any response is sent. Agents should record the customer's name, the product concerned, and a brief description of the issue. Tickets that remain unresolved after two business days will be escalated to a team supervisor.\n\nThe previous email-only process will be phased out over the next two months. During the transition, you may continue to answer simple questions by phone, provided that you log the call afterward. A training video is available on the staff portal, and I will hold a question-and-answer session on Thursday."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "COV-P7-S05A",
+          "prompt": "What happens to a ticket that is unresolved after two business days?",
+          "options": [
+            "It is closed automatically.",
+            "It is passed to a team supervisor.",
+            "It is sent back to the customer.",
+            "It is deleted from the system."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「It is passed to a team supervisor.」：備忘錄說兩個工作天後仍未解決的案件會被升級（escalated）交給組長。\n【考點】Part 7・細節\n【判斷依據】找出 two business days 那一句，escalated to a team supervisor 就是交給組長處理。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "COV-P7-S05B",
+          "prompt": "The word \"logged\" in paragraph 1 is closest in meaning to",
+          "options": [
+            "reviewed",
+            "forwarded",
+            "recorded",
+            "canceled"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「recorded」：logged in the new ticket system 是登錄在新系統中，後面也說明要記錄姓名等資料，recorded 最接近。\n【考點】Part 7・同義字（closest in meaning）\n【判斷依據】用下一句 record the customer's name 的內容佐證登錄就是記錄。",
+          "skill": "r-vocabulary",
+          "ability": "R4",
+          "questionType": "synonym"
+        },
+        {
+          "id": "COV-P7-S05C",
+          "prompt": "The phrase \"phased out\" in paragraph 2 is closest in meaning to",
+          "options": [
+            "discontinued",
+            "improved",
+            "repeated",
+            "postponed"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「discontinued」：舊的僅用電子郵件的流程會在兩個月內逐步淘汰，discontinued 最接近；同時還有過渡期可繼續電話回覆，說明流程是逐步停止。\n【考點】Part 7・同義字（closest in meaning）\n【判斷依據】留意過渡期（transition）與 previous process 這些字，可知舊流程逐步停止使用。",
+          "skill": "r-vocabulary",
+          "ability": "R4",
+          "questionType": "synonym"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p7-chat-01",
+      "section": "reading",
+      "part": 7,
+      "title": "Text-message chain: dock delivery",
+      "passage": {
+        "docs": [
+          {
+            "label": "Text-message chain",
+            "text": "Hana Mori [9:02 A.M.]\nAre you at the loading dock yet?\n\nPeter Dalton [9:04 A.M.]\nJust arrived. The truck from Calloway Foods is here, but the driver says he's missing the paperwork.\n\nHana Mori [9:05 A.M.]\nCan you check the portal? Those documents should have been emailed yesterday.\n\nPeter Dalton [9:07 A.M.]\nFound them. They were in the spam folder.\n\nHana Mori [9:08 A.M.]\nThat figures. Please print two copies and have the driver sign one.\n\nPeter Dalton [9:10 A.M.]\nWill do. Should I start unloading in the meantime?\n\nHana Mori [9:11 A.M.]\nGo ahead. Just keep the frozen items together."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "COV-P7-C01A",
+          "prompt": "At 9:08 A.M., what does Ms. Mori most likely mean when she writes, \"That figures\"?",
+          "options": [
+            "She wants the delivery numbers checked.",
+            "She disagrees with the driver.",
+            "She is confused about the paperwork.",
+            "She is not surprised by the explanation."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「She is not surprised by the explanation.」：Dalton 說文件在垃圾郵件匣，Mori 回 That figures，意思是這個原因並不令她意外。\n【考點】Part 7・聊天訊息的意圖\n【判斷依據】That figures 是慣用語（『難怪／不意外』），不是在說『數字』；用前一則訊息的內容判斷。",
+          "skill": "r-intent",
+          "ability": "R1",
+          "questionType": "chat-intent"
+        },
+        {
+          "id": "COV-P7-C01B",
+          "prompt": "At 9:11 A.M., what does Ms. Mori mean when she writes, \"Go ahead\"?",
+          "options": [
+            "Mr. Dalton may begin unloading.",
+            "Mr. Dalton should leave the dock.",
+            "The driver should print the documents.",
+            "The frozen items should be returned."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「Mr. Dalton may begin unloading.」：Dalton 問是否可以先卸貨，Mori 回 Go ahead 並補充冷凍品要放在一起，表示同意他先卸貨。\n【考點】Part 7・聊天訊息的意圖\n【判斷依據】Go ahead 是對前一則提問的回應，答案要對應 Should I start unloading。",
+          "skill": "r-intent",
+          "ability": "R1",
+          "questionType": "chat-intent"
+        },
+        {
+          "id": "COV-P7-C01C",
+          "prompt": "Where did Mr. Dalton find the missing documents?",
+          "options": [
+            "On the driver's truck",
+            "In the loading dock office",
+            "In a spam folder",
+            "On a printer"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「In a spam folder」：Dalton 在 9:07 說文件在垃圾郵件匣裡。\n【考點】Part 7・細節\n【判斷依據】直接找原文 spam folder，注意不要被 portal 和 printer 這些相關字影響。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p7-chat-02",
+      "section": "reading",
+      "part": 7,
+      "title": "Text-message chain: brochure price list",
+      "passage": {
+        "docs": [
+          {
+            "label": "Text-message chain",
+            "text": "Olivia Grant [1:15 P.M.]\nDid you get a chance to look at the draft brochure?\n\nMarcus Yeo [1:18 P.M.]\nI did. The layout looks great, but the price list on page three is still last season's.\n\nOlivia Grant [1:20 P.M.]\nOh no. I thought finance had sent the new numbers.\n\nMarcus Yeo [1:21 P.M.]\nThey sent them to Jessica, not to us. I'll forward her email.\n\nOlivia Grant [1:22 P.M.]\nYou're a lifesaver. The printer needs the final file by Thursday noon.\n\nMarcus Yeo [1:24 P.M.]\nNo problem. Give me an hour and I'll have the corrected page ready."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "COV-P7-C02A",
+          "prompt": "At 1:20 P.M., what does Ms. Grant most likely mean when she writes, \"Oh no\"?",
+          "options": [
+            "She forgot to send the brochure to the printer.",
+            "She is worried about outdated information.",
+            "She disagrees with the layout.",
+            "She does not want to contact finance."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「She is worried about outdated information.」：Yeo 說價目表還是上一季的，Grant 回 Oh no 並說以為財務部已寄新數字，表示她擔心資料過時。\n【考點】Part 7・聊天訊息的意圖\n【判斷依據】看前一則訊息提出的問題（price list is last season's），以及她接著說的話。",
+          "skill": "r-intent",
+          "ability": "R1",
+          "questionType": "chat-intent"
+        },
+        {
+          "id": "COV-P7-C02B",
+          "prompt": "At 1:22 P.M., what does Ms. Grant mean when she writes, \"You're a lifesaver\"?",
+          "options": [
+            "She thinks the deadline has been missed.",
+            "She wants Mr. Yeo to contact the printer.",
+            "She believes the brochure is finished.",
+            "She is grateful for Mr. Yeo's help."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「She is grateful for Mr. Yeo's help.」：Yeo 說他會轉寄 Jessica 的信，Grant 以 lifesaver 表示感謝。\n【考點】Part 7・聊天訊息的意圖\n【判斷依據】lifesaver 是慣用語，用來感謝解決問題的人，不是字面的救命。",
+          "skill": "r-intent",
+          "ability": "R1",
+          "questionType": "chat-intent"
+        },
+        {
+          "id": "COV-P7-C02C",
+          "prompt": "When does the printer need the final file?",
+          "options": [
+            "By Thursday noon",
+            "In one hour",
+            "By Friday evening",
+            "On the following Monday"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「By Thursday noon」：Grant 在 1:22 說印刷廠需要在星期四中午前收到最終檔案。\n【考點】Part 7・細節\n【判斷依據】不要把 Yeo 說的 an hour（修改頁面所需時間）當成印刷廠的截止時間。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p7-chat-03",
+      "section": "reading",
+      "part": 7,
+      "title": "Text-message chain: ballroom setup",
+      "passage": {
+        "docs": [
+          {
+            "label": "Text-message chain",
+            "text": "Ravi Shah [4:41 P.M.]\nHow is the setup going in the ballroom?\n\nElise Moreau [4:43 P.M.]\nPretty well. The tables are done, but we're two microphones short.\n\nRavi Shah [4:44 P.M.]\nI can bring two from the audio storage room. Will that cover it?\n\nElise Moreau [4:45 P.M.]\nIt will if they're wireless. The speakers need to move around the stage.\n\nRavi Shah [4:46 P.M.]\nThey are. I'll be there in ten minutes.\n\nElise Moreau [4:47 P.M.]\nPerfect. By the way, the catering team hasn't shown up yet.\n\nRavi Shah [4:48 P.M.]\nI'll stop by their office on my way."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "COV-P7-C03A",
+          "prompt": "At 4:45 P.M., what does Ms. Moreau mean when she writes, \"It will if they're wireless\"?",
+          "options": [
+            "She wants to buy more microphones.",
+            "The ballroom does not need audio equipment.",
+            "Wireless microphones would solve the problem.",
+            "The microphones are too expensive."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Wireless microphones would solve the problem.」：她回答兩支夠用的條件是無線，因為講者要在舞台上走動，所以無線麥克風才能解決缺麥克風的問題。\n【考點】Part 7・聊天訊息的意圖\n【判斷依據】if 引導出條件，後面一句說明了條件的理由（講者要移動）。",
+          "skill": "r-intent",
+          "ability": "R1",
+          "questionType": "chat-intent"
+        },
+        {
+          "id": "COV-P7-C03B",
+          "prompt": "At 4:48 P.M., what does Mr. Shah most likely mean when he writes, \"I'll stop by their office on my way\"?",
+          "options": [
+            "He will cancel the catering order.",
+            "He will check on the catering team.",
+            "He will ask the caterers to bring microphones.",
+            "He will move the tables to the office."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「He will check on the catering team.」：Moreau 剛說外燴團隊還沒到，Shah 表示他會順路去他們的辦公室，也就是去確認外燴的狀況。\n【考點】Part 7・聊天訊息的意圖\n【判斷依據】他的回應接在外燴團隊還沒到的訊息後面，所以目的是查看他們的狀況。",
+          "skill": "r-intent",
+          "ability": "R1",
+          "questionType": "chat-intent"
+        },
+        {
+          "id": "COV-P7-C03C",
+          "prompt": "What does Mr. Shah plan to bring to the ballroom?",
+          "options": [
+            "Two extra tables",
+            "A new sound system",
+            "Lunch for the speakers",
+            "Two wireless microphones"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Two wireless microphones」：Shah 說他可以從音響儲藏室帶兩支來，並確認是無線的。\n【考點】Part 7・細節\n【判斷依據】綜合 4:44 和 4:46 兩則訊息：兩支，而且是無線的。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-01",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-01",
+          "prompt": "------- the heavy rain, the outdoor concert started on time.",
+          "options": [
+            "Although",
+            "Despite",
+            "Even though",
+            "However"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Despite」：空格後面是名詞片語 the heavy rain，需要介系詞；Although、Even though 後面要接完整子句，However 是副詞。\n【考點】Part 5・介系詞 vs 連接詞\n【判斷依據】先看空格後面接的是名詞片語還是有主詞和動詞的完整子句，再決定選介系詞或連接詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "preposition-conjunction"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-02",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-02",
+          "prompt": "The ferry was canceled ------- the storm warning issued on Monday.",
+          "options": [
+            "because",
+            "although",
+            "due to",
+            "so that"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「due to」：空格後是名詞片語 the storm warning，需要介系詞片語 due to；because、although、so that 都要接子句。\n【考點】Part 5・介系詞 vs 連接詞\n【判斷依據】先看空格後面接的是名詞片語還是有主詞和動詞的完整子句，再決定選介系詞或連接詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "preposition-conjunction"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-03",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-03",
+          "prompt": "Please keep your badge visible ------- you are inside the laboratory.",
+          "options": [
+            "while",
+            "during",
+            "throughout",
+            "in spite of"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「while」：空格後有完整子句 you are inside the laboratory，需要連接詞 while；during、throughout、in spite of 後面接名詞。\n【考點】Part 5・介系詞 vs 連接詞\n【判斷依據】先看空格後面接的是名詞片語還是有主詞和動詞的完整子句，再決定選介系詞或連接詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "preposition-conjunction"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-04",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-04",
+          "prompt": "Visitors must sign in at the front desk ------- the safety briefing.",
+          "options": [
+            "while",
+            "when",
+            "whenever",
+            "during"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「during」：空格後是名詞片語 the safety briefing，沒有主詞與動詞，所以用介系詞 during；while、when、whenever 都是連接詞，要接子句。\n【考點】Part 5・介系詞 vs 連接詞\n【判斷依據】先看空格後面接的是名詞片語還是有主詞和動詞的完整子句，再決定選介系詞或連接詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "preposition-conjunction"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-05",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-05",
+          "prompt": "The warehouse will stay open late ------- the holiday orders are shipped.",
+          "options": [
+            "by",
+            "during",
+            "until",
+            "despite"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「until」：空格後是完整子句，until 可當連接詞表示『直到…為止』；by、during、despite 是介系詞，不能直接接子句。\n【考點】Part 5・介系詞 vs 連接詞\n【判斷依據】先看空格後面接的是名詞片語還是有主詞和動詞的完整子句，再決定選介系詞或連接詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "preposition-conjunction"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-06",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-06",
+          "prompt": "Ms. Okafor was promoted ------- her excellent sales record.",
+          "options": [
+            "because",
+            "because of",
+            "although",
+            "whereas"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「because of」：空格後是名詞片語 her excellent sales record，需要介系詞片語 because of；because、although、whereas 都要接子句。\n【考點】Part 5・介系詞 vs 連接詞\n【判斷依據】先看空格後面接的是名詞片語還是有主詞和動詞的完整子句，再決定選介系詞或連接詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "preposition-conjunction"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-07",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-07",
+          "prompt": "------- the printer is repaired, employees should use the machine on the second floor.",
+          "options": [
+            "Until",
+            "Throughout",
+            "Despite",
+            "Beside"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「Until」：空格後是完整子句 the printer is repaired，需要連接詞；選項中只有 Until 是連接詞，語意也通順，其他三個是介系詞。\n【考點】Part 5・介系詞 vs 連接詞\n【判斷依據】先看空格後面接的是名詞片語還是有主詞和動詞的完整子句，再決定選介系詞或連接詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "preposition-conjunction"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-08",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-08",
+          "prompt": "Passengers may board early ------- they have a priority card.",
+          "options": [
+            "as well as",
+            "in case of",
+            "regardless of",
+            "as long as"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「as long as」：空格後是完整子句 they have a priority card，需要連接詞，as long as 表示『只要』；其他選項後面應接名詞。\n【考點】Part 5・介系詞 vs 連接詞\n【判斷依據】先看空格後面接的是名詞片語還是有主詞和動詞的完整子句，再決定選介系詞或連接詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "preposition-conjunction"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-09",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-09",
+          "prompt": "The training will go ahead as scheduled ------- the low enrollment.",
+          "options": [
+            "even though",
+            "in spite of",
+            "although",
+            "whereas"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「in spite of」：空格後是名詞片語 the low enrollment，需要介系詞片語 in spite of；even though、although、whereas 都要接子句。\n【考點】Part 5・介系詞 vs 連接詞\n【判斷依據】先看空格後面接的是名詞片語還是有主詞和動詞的完整子句，再決定選介系詞或連接詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "preposition-conjunction"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p5-10",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "COV-P5-10",
+          "prompt": "Applicants will be notified by email ------- the review is finished.",
+          "options": [
+            "regarding",
+            "owing to",
+            "once",
+            "thanks to"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「once」：空格後是完整子句 the review is finished，需要連接詞 once（一旦…就）；regarding、owing to、thanks to 後面接名詞。\n【考點】Part 5・介系詞 vs 連接詞\n【判斷依據】先看空格後面接的是名詞片語還是有主詞和動詞的完整子句，再決定選介系詞或連接詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "preposition-conjunction"
         }
       ]
     }
