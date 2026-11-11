@@ -1711,7 +1711,7 @@
             "It was delivered, but it is still being configured."
           ],
           "answer": 2,
-          "explanation": "The equipment has arrived but is not ready for use. A repeats the action of scanning rather than answering the delivery question. The distractor repeats “scanner” but gives a warranty fact, not an arrival update.",
+          "explanation": "C explains that the scanner arrived but is not ready. A gives a warranty date rather than a delivery update; B gives a receptionist’s hours.",
           "ability": "L3"
         }
       ],
@@ -3435,7 +3435,7 @@
             "It delivered the previous batch on Tuesday."
           ],
           "answer": 0,
-          "explanation": "A gives a condition that determines whether the deadline is still achievable. B describes a shipping option without confirming the supplier's schedule, and C refers to an earlier delivery. The distractor repeats “replacement sensors” but gives a past test, not a delivery deadline.",
+          "explanation": "A states the condition for meeting the deadline. B gives the sensors’ test date rather than a delivery deadline; C concerns an earlier batch.",
           "ability": "L3"
         }
       ]
@@ -3463,7 +3463,7 @@
             "The revised rate sheet was included in the newsletter."
           ],
           "answer": 0,
-          "explanation": "A identifies a person who can verify distribution through the dispatch log. B mentions the record but does not identify who can check it, while C gives the rates' effective timing. The distractor repeats “revised rate sheet” but does not identify who can verify distribution.",
+          "explanation": "A names the person who keeps the dispatch log and can verify distribution. B names an archive, not a person; C says the rate sheet was in a newsletter but identifies no checker.",
           "ability": "L3"
         }
       ]
@@ -4242,7 +4242,7 @@
           ],
           "answer": 0,
           "explanation": "The promotion starts Wednesday, but the updated signs are expected Thursday.",
-          "ability": "L4"
+          "ability": "L1"
         },
         {
           "id": "CV-A-2",
@@ -5728,7 +5728,7 @@
           ],
           "answer": 1,
           "explanation": "They discuss a guest lecturer and a talk in a lecture hall.",
-          "ability": "L4"
+          "ability": "L1"
         },
         {
           "id": "VOICE-CAMPUS-2",
@@ -6981,7 +6981,7 @@
             "About sixty people are expected."
           ],
           "answer": 0,
-          "explanation": "The events-coordinator response identifies who is responsible. Expected attendance and chair delivery do not answer who is handling the plan. The distractor repeats “revised seating plan” but does not name the person handling it.",
+          "explanation": "A names the events coordinator responsible for the plan. B says where the seating plan is posted without naming the person; C gives attendance only.",
           "ability": "L3"
         }
       ]
@@ -7037,7 +7037,7 @@
             "The technician has not confirmed a date yet."
           ],
           "answer": 2,
-          "explanation": "The technician has not confirmed a date, which answers when indirectly. Function and location answer different questions. The distractor repeats “replacement scanner” but gives a warranty date, not an installation date.",
+          "explanation": "C indirectly answers when: the technician has not confirmed a date. A is a location; B gives a scanner warranty date, not an installation date.",
           "ability": "L5"
         }
       ]
@@ -7093,7 +7093,7 @@
             "A vehicle inspection took longer than expected."
           ],
           "answer": 2,
-          "explanation": "The inspection gives a reason for the delay. The other responses give a place and schedule. The distractor repeats “airport shuttle” but gives a stop, not the cause of the delay.",
+          "explanation": "C gives the reason for the shuttle delay. A names a stop; B gives a departure-lane location.",
           "ability": "L3"
         }
       ]
@@ -7261,8 +7261,8 @@
             "They came from three sites."
           ],
           "answer": 0,
-          "explanation": "Results expected tomorrow imply testing is not yet fully complete. The other responses concern sample origins and different equipment. The distractor repeats “water samples” but says nothing about whether testing is complete.",
-          "ability": "L5"
+          "explanation": "A indicates the results will be ready tomorrow, so testing is not complete yet. B tells how samples arrived; C gives their origin.",
+          "ability": "L3"
         }
       ]
     },
@@ -8120,7 +8120,7 @@
           ],
           "answer": 1,
           "explanation": "Forty-six people are confirmed for a forty-seat room. The instructor, parking capacity, and registration opening are not the issue.",
-          "ability": "L4"
+          "ability": "L1"
         },
         {
           "id": "XFC05",
@@ -8302,7 +8302,7 @@
           ],
           "answer": 0,
           "explanation": "Two people withdrew from the afternoon entrance shift. The morning fair is staffed, and neither the ticket booth nor noon tour is described as understaffed.",
-          "ability": "L4"
+          "ability": "L1"
         },
         {
           "id": "XL2-P3-02B",
@@ -8945,8 +8945,8 @@
             "I thought the communications team was assigning someone today."
           ],
           "answer": 2,
-          "explanation": "The correct answer indirectly says the assignment may not yet be final. The number of languages and the entrance location do not identify who is handling the work. The distractor repeats “translation” and “visitor guide” but does not identify the person responsible.",
-          "ability": "L5"
+          "explanation": "C implies the assignment is not yet final. A gives the visitor guide’s translation deadline; B gives an entrance location.",
+          "ability": "L3"
         }
       ]
     },
@@ -12752,7 +12752,7 @@
             "Finance promised the numbers by four."
           ],
           "answer": 2,
-          "explanation": "The imminent arrival of final figures supports waiting. Printer location and attendee count do not resolve the timing choice. The distractor repeats “final figures” but refers to an earlier report, not whether to print now.",
+          "explanation": "C says Finance will send final numbers by four, so printing should wait. A concerns an older report; B gives an attendee count.",
           "ability": "L3"
         }
       ]
@@ -14534,7 +14534,7 @@
       "questions": [
         {
           "id": "GXP301A",
-          "skill": "l-inference",
+          "skill": "l-conversation",
           "prompt": "What did the man first think was scheduled at ten thirty?",
           "options": [
             "The budget review",
@@ -14545,7 +14545,7 @@
           "answer": 2,
           "explanation": "He says he thought the hiring panel was at ten thirty. The woman corrects him.",
           "graphic": false,
-          "ability": "L5"
+          "ability": "L4"
         },
         {
           "id": "GXP301B",
@@ -14663,7 +14663,7 @@
         },
         {
           "id": "GXP302C",
-          "skill": "l-inference",
+          "skill": "l-conversation",
           "prompt": "What will the man do before noon?",
           "options": [
             "Design a banner",
@@ -14674,7 +14674,7 @@
           "answer": 1,
           "explanation": "He says he will mark the order on the form before noon.",
           "graphic": false,
-          "ability": "L5"
+          "ability": "L4"
         }
       ]
     },
@@ -14741,7 +14741,7 @@
         },
         {
           "id": "GXP303C",
-          "skill": "l-inference",
+          "skill": "l-conversation",
           "prompt": "Why does the woman reject the cafe?",
           "options": [
             "It is closed",
@@ -14752,7 +14752,7 @@
           "answer": 2,
           "explanation": "She says to stay at the desk so he can see the elevators.",
           "graphic": false,
-          "ability": "L5"
+          "ability": "L4"
         }
       ]
     },
@@ -14819,7 +14819,7 @@
         },
         {
           "id": "GXP304C",
-          "skill": "l-inference",
+          "skill": "l-conversation",
           "prompt": "What will the man do?",
           "options": [
             "Delete the short bar",
@@ -14830,7 +14830,7 @@
           "answer": 1,
           "explanation": "He agrees to highlight the figure she told him to copy.",
           "graphic": false,
-          "ability": "L5"
+          "ability": "L4"
         }
       ]
     },
@@ -14923,7 +14923,7 @@
         },
         {
           "id": "GXP305C",
-          "skill": "l-inference",
+          "skill": "l-conversation",
           "prompt": "What will the man do next?",
           "options": [
             "Hold every item",
@@ -14934,7 +14934,7 @@
           "answer": 1,
           "explanation": "He says he will update that row and send the form.",
           "graphic": false,
-          "ability": "L5"
+          "ability": "L4"
         }
       ]
     },
@@ -15027,7 +15027,7 @@
         },
         {
           "id": "GXP306C",
-          "skill": "l-inference",
+          "skill": "l-conversation",
           "prompt": "What will the woman do?",
           "options": [
             "Buy a riverside ticket",
@@ -15038,7 +15038,7 @@
           "answer": 1,
           "explanation": "She says she will keep an eye on the board.",
           "graphic": false,
-          "ability": "L5"
+          "ability": "L4"
         }
       ]
     },
@@ -15119,7 +15119,7 @@
         },
         {
           "id": "GXP401C",
-          "skill": "l-inference",
+          "skill": "l-talk",
           "prompt": "Who is the four o'clock closing for?",
           "options": [
             "Only lab-tour guests",
@@ -15130,7 +15130,7 @@
           "answer": 2,
           "explanation": "The speaker says the four o'clock closing is for everyone.",
           "graphic": false,
-          "ability": "L5"
+          "ability": "L2"
         }
       ]
     },
@@ -15206,7 +15206,7 @@
         },
         {
           "id": "GXP402C",
-          "skill": "l-inference",
+          "skill": "l-talk",
           "prompt": "What mistake does the speaker warn against?",
           "options": [
             "Charging members the higher rate",
@@ -15217,7 +15217,7 @@
           "answer": 0,
           "explanation": "He says not to charge members the forty-dollar rate.",
           "graphic": false,
-          "ability": "L5"
+          "ability": "L4"
         }
       ]
     },
@@ -15272,7 +15272,7 @@
         },
         {
           "id": "GXP403C",
-          "skill": "l-inference",
+          "skill": "l-talk",
           "prompt": "What does the speaker say about auditorium seats?",
           "options": [
             "They are assigned",
@@ -15283,7 +15283,7 @@
           "answer": 1,
           "explanation": "She says seating is open until the talk begins.",
           "graphic": false,
-          "ability": "L5"
+          "ability": "L4"
         }
       ]
     },
@@ -15338,7 +15338,7 @@
         },
         {
           "id": "GXP404C",
-          "skill": "l-inference",
+          "skill": "l-talk",
           "prompt": "What should the report avoid?",
           "options": [
             "Mentioning ninety",
@@ -15349,7 +15349,7 @@
           "answer": 1,
           "explanation": "He says the later months are lower and should not be averaged in.",
           "graphic": false,
-          "ability": "L5"
+          "ability": "L4"
         }
       ]
     },
@@ -15425,7 +15425,7 @@
         },
         {
           "id": "GXP405C",
-          "skill": "l-inference",
+          "skill": "l-talk",
           "prompt": "What should happen to in-stock goods today?",
           "options": [
             "Ship them first",
@@ -15436,7 +15436,7 @@
           "answer": 1,
           "explanation": "She says anything already in stock should stay in the warehouse today.",
           "graphic": false,
-          "ability": "L5"
+          "ability": "L4"
         }
       ]
     },
@@ -15844,13 +15844,13 @@
           "prompt": "Because the service agreement ------- in December, the procurement team has begun reviewing renewal offers.",
           "skill": "r-grammar",
           "options": [
-            "will expire",
+            "expiration",
             "expires",
-            "expired",
-            "is expiring"
+            "expiring",
+            "expiry"
           ],
           "answer": 1,
-          "explanation": "正解 B「expires」：固定時程常用現在簡單式表未來安排。A will expire 文法可通但較不自然地描述既定時程；C expired 表過去；D is expiring 強調正在變化，非此處日期公告。",
+          "explanation": "正解 B「expires」：主詞 service agreement 為單數，表示合約在十二月到期的既定事實。A、D 是名詞，C 是分詞，不能獨立充當此句的限定動詞。",
           "ability": "R5"
         }
       ]
@@ -15868,10 +15868,10 @@
             "care",
             "careful",
             "carefully",
-            "more carefully"
+            "carefulness"
           ],
           "answer": 2,
-          "explanation": "正解 C「carefully」：副詞修飾 designed。A care 是名詞，B careful 是形容詞，D more carefully 是比較級但句中沒有比較對象。",
+          "explanation": "正解 C「carefully」：副詞修飾 designed。A、D 為名詞，B 為形容詞，都不能放在此處修飾動詞。",
           "ability": "R5"
         }
       ]
@@ -16030,7 +16030,7 @@
       "questions": [
         {
           "id": "rd-new-011",
-          "prompt": "The conference room is available on Thursday, ------- it has already been reserved for a client meeting on Friday.",
+          "prompt": "The supplier can deliver on Thursday, ------- the warehouse cannot receive the shipment until Friday.",
           "skill": "r-grammar",
           "options": [
             "because",
@@ -16039,7 +16039,7 @@
             "therefore"
           ],
           "answer": 2,
-          "explanation": "正解 C「although」：連接週四可用與週五已預約的對比。A because 表原因；B unless 設條件；D therefore 是副詞，不能用此逗號直接連接兩個子句。",
+          "explanation": "正解 C『although』：供應商週四能送達，然而倉庫要到週五才能收貨，形成讓步對比。A because 無法表達此對比；B unless 設條件；D therefore 是副詞，不能用逗號直接連接兩個子句。",
           "ability": "R5"
         }
       ]
@@ -16055,12 +16055,12 @@
           "skill": "r-grammar",
           "options": [
             "any",
-            "someone",
+            "some",
             "every",
             "anyone"
           ],
           "answer": 3,
-          "explanation": "正解 D「anyone」：泛指任何需要地圖的人，後接 who 子句自然。A any 與 C every 是限定詞，後需名詞；B someone 雖可指某個人，但不如 anyone 符合開放給所有需要者的語意。",
+          "explanation": "正解 D「anyone」：後接 who 子句，表示任何需要查找檔案的人。A、B、C 都是限定詞，後面需要先接名詞。",
           "ability": "R5"
         }
       ]
@@ -16162,10 +16162,10 @@
             "carefully",
             "careful",
             "carefulness",
-            "more carefully"
+            "careless"
           ],
           "answer": 0,
-          "explanation": "正解 A「carefully」：副詞修飾 compared。B careful 是形容詞；C carefulness 是名詞；D more carefully 是比較級，但句中沒有比較對象。",
+          "explanation": "正解 A「carefully」：副詞修飾 compared。B、D 為形容詞，C 為名詞，不能修飾此處的動詞。",
           "ability": "R5"
         }
       ]
@@ -16618,7 +16618,7 @@
             "It will be held in East Hall."
           ],
           "answer": 3,
-          "explanation": "正解 D「held in East Hall」：公告指定 East Hall、週四舉行且須事先登記。A 地點錯誤；B 說免登記，與規定相反；C 日期錯誤。",
+          "explanation": "正解 D「It will be held in East Hall.」：公告指定 East Hall、週四舉行且須事先登記。A 地點錯誤；B 說免登記，與規定相反；C 日期錯誤。",
           "ability": "R2"
         },
         {
@@ -16632,7 +16632,7 @@
             "Request a live make-up session."
           ],
           "answer": 2,
-          "explanation": "正解 C「看後續錄影」：公告表示缺席者會收到錄影連結。A 領訪客證、B 安排停車無關；D 要求補課並未提及。",
+          "explanation": "正解 C「Watch for a follow-up recording.」：公告表示缺席者會收到錄影連結。A 領訪客證、B 安排停車無關；D 要求補課並未提及。",
           "ability": "R1"
         }
       ]
@@ -16676,7 +16676,7 @@
             "An employee identification card."
           ],
           "answer": 2,
-          "explanation": "正解 C「供應商比較表」：郵件直接要求 Chen 攜帶此表。A 地圖、B 預算、D 員工證都沒有被要求。",
+          "explanation": "正解 C「The vendor comparison sheet.」：郵件直接要求 Chen 攜帶此表。A 地圖、B 預算、D 員工證都沒有被要求。",
           "ability": "R2"
         },
         {
@@ -16720,7 +16720,7 @@
             "Cancel the shipment."
           ],
           "answer": 1,
-          "explanation": "正解 B「更改投遞指示」：Allen 要求把包裹交給管理室。A 退款、C 換貨、D 取消訂單都不是她的要求。",
+          "explanation": "正解 B「Change the delivery instructions.」：Allen 要求把包裹交給管理室。A 退款、C 換貨、D 取消訂單都不是她的要求。",
           "ability": "R1"
         },
         {
@@ -16748,7 +16748,7 @@
             "Update the delivery record."
           ],
           "answer": 3,
-          "explanation": "正解 D「更新配送紀錄」：客服說會把管理室代收指示加到紀錄。A 取消、B 重開帳單、C 安排週末都沒有依據。",
+          "explanation": "正解 D「Update the delivery record.」：客服說會把管理室代收指示加到紀錄。A 取消、B 重開帳單、C 安排週末都沒有依據。",
           "ability": "R1"
         }
       ]
@@ -16778,7 +16778,7 @@
             "Telephone service during regular daytime hours."
           ],
           "answer": 1,
-          "explanation": "正解 B「線上預約系統」：公告明確說該系統在 8–10 時暫停。A 是入口而非服務；C 夜間電話與 D 日間電話均照常。",
+          "explanation": "正解 B「The online appointment system.」：公告明確說該系統在 8–10 時暫停。A 是入口而非服務；C 夜間電話與 D 日間電話均照常。",
           "ability": "R2"
         },
         {
@@ -16836,7 +16836,7 @@
             "postponed until later"
           ],
           "answer": 3,
-          "explanation": "正解 D「延後到稍後」：deferred 表示暫緩處理。A 已提前完成、B 換團隊、C 永久取消都不等於延期。",
+          "explanation": "正解 D「postponed until later」：deferred 表示暫緩處理。A 已提前完成、B 換團隊、C 永久取消都不等於延期。",
           "ability": "R4"
         },
         {
@@ -16894,7 +16894,7 @@
             "a condition written into the agreement"
           ],
           "answer": 2,
-          "explanation": "正解 C「合約期間」：term 在此指服務續約的 12 個月期間。A 技術用語、B 退回物品、D 合約條款均非此句語境。",
+          "explanation": "正解 C「the length of the agreement」：term 在此指服務續約的 12 個月期間。A 技術用語、B 退回物品、D 合約條款均非此句語境。",
           "ability": "R4"
         },
         {
@@ -16952,7 +16952,7 @@
             "declared the building closed"
           ],
           "answer": 1,
-          "explanation": "正解 B「開始對外營運」：opened 描述陶藝工作室正式開放。A 可指仔細檢查，C 指建立帳戶，D 指宣布關閉，皆非此處意思。",
+          "explanation": "正解 B「began operating for the public」：opened 描述陶藝工作室正式開放。A 可指仔細檢查，C 指建立帳戶，D 指宣布關閉，皆非此處意思。",
           "ability": "R4"
         },
         {
@@ -17057,7 +17057,7 @@
             "Three supply crates."
           ],
           "answer": 3,
-          "explanation": "正解 D「Three supply crates」：客服郵件明確指出配送的是三箱用品。A 冷藏食品、B 辦公家具、C 宣傳手冊都未在信中提到。",
+          "explanation": "正解 D「Three supply crates.」：客服郵件明確指出配送的是三箱用品。A 冷藏食品、B 辦公家具、C 宣傳手冊都未在信中提到。",
           "ability": "R2"
         },
         {
@@ -17105,7 +17105,7 @@
             "A guided campus tour."
           ],
           "answer": 2,
-          "explanation": "正解 C「Safety demonstration」：公告標示此課只能現場參加。A 試算表課與 B 專案交接課都可遠端；D 校園導覽未列在課表。",
+          "explanation": "正解 C「Safety demonstration.」：公告標示此課只能現場參加。A 試算表課與 B 專案交接課都可遠端；D 校園導覽未列在課表。",
           "ability": "R2"
         },
         {
@@ -17284,7 +17284,7 @@
       "questions": [
         {
           "id": "rd-new-076",
-          "prompt": "Which activity begins first on Thursday?",
+          "prompt": "Which item on Thursday’s schedule begins first?",
           "skill": "r-detail",
           "options": [
             "Panel discussion.",
@@ -17293,21 +17293,21 @@
             "Networking lunch."
           ],
           "answer": 1,
-          "explanation": "正解 B「Registration desk」：報到 8:15 開始，早於 9:00 的 panel、10:15 的 workshop 和 12:15 的午餐。",
+          "explanation": "正解 B「Registration desk.」：報到 8:15 開始，早於 9:00 的 panel、10:15 的 workshop 和 12:15 的午餐。",
           "ability": "R2"
         },
         {
           "id": "rd-new-077",
-          "prompt": "What does Ms. Nair need to provide to receive reimbursement?",
+          "prompt": "What must an employee provide to receive reimbursement?",
           "skill": "r-detail",
           "options": [
-            "Replacing lobby lighting.",
-            "Repairing the west stairwell handrail.",
-            "Repainting the meeting room.",
-            "Repairing the elevator door."
+            "A credit-card summary only.",
+            "A copy of the event brochure.",
+            "Verbal approval from the organizer.",
+            "Itemized receipts and proof of attendance."
           ],
           "answer": 3,
-          "explanation": "正解 D：政策要求逐項收據與出席證明。A 只有信用卡帳單、B 是活動手冊、C 是口頭核准，均不能替代規定文件。",
+          "explanation": "正解 D：差旅政策要求逐項收據與出席證明。A 只有信用卡摘要、B 活動手冊、C 主辦人口頭核准，都不能替代這兩項文件。",
           "ability": "R2"
         },
         {
@@ -17315,18 +17315,18 @@
           "prompt": "Who must approve the reimbursement request?",
           "skill": "r-detail",
           "options": [
-            "Measure the stairwell handrail.",
-            "Close the entire building.",
-            "Ask tenants to repaint the meeting room.",
-            "Replace lobby light fixtures first."
+            "The employee’s manager.",
+            "The forum host.",
+            "A hotel receptionist.",
+            "Another attendee."
           ],
           "answer": 0,
-          "explanation": "正解 A：差旅政策規定由員工主管在費用系統核准。B 主辦方、C 飯店櫃檯、D 同行者都不是核准人。",
+          "explanation": "正解 A：差旅政策明確規定由員工主管在費用系統核准申請。B 主辦方、C 飯店櫃檯、D 同行者都沒有核准權。",
           "ability": "R2"
         },
         {
           "id": "rd-new-079",
-          "prompt": "What time should Ms. Nair leave the hotel to reach registration on time?",
+          "prompt": "What time should an employee leave the hotel to reach registration on time?",
           "skill": "r-crossref",
           "options": [
             "At 8:15 a.m.",
@@ -17341,7 +17341,7 @@
         },
         {
           "id": "rd-new-080",
-          "prompt": "Can Ms. Nair claim the networking lunch if she submits a receipt?",
+          "prompt": "Can an employee claim the networking lunch if they submit a receipt?",
           "skill": "r-crossref",
           "options": [
             "Yes, all meals are reimbursed.",
@@ -17397,13 +17397,13 @@
           "prompt": "Why does Mr. Bell ask for a temporary workspace?",
           "skill": "r-detail",
           "options": [
-            "examined carefully",
-            "began operating for the public",
-            "created a new account",
-            "declared the building closed"
+            "Noise from floor repairs near the usual meeting room.",
+            "A shortage of computers in the digital room.",
+            "Closure of the entire library for the month.",
+            "A move of the team to a hotel."
           ],
           "answer": 0,
-          "explanation": "正解 A：郵件說團隊原房間週二、週四早上受噪音影響。B 數位室缺電腦、C 全月閉館、D 改到旅館都不是寄件者所述原因。",
+          "explanation": "正解 A：郵件指出原會議室靠近西閱覽室，週二和週四早上的施工噪音會影響會議。B 電腦不足、C 整月閉館、D 改到旅館都未在原文提及。",
           "ability": "R2"
         },
         {
@@ -17422,16 +17422,16 @@
         },
         {
           "id": "rd-new-084",
-          "prompt": "Where can Mr. Bell’s team meet on Thursday morning?",
+          "prompt": "Which room could Mr. Bell’s team request for Thursday morning?",
           "skill": "r-crossref",
           "options": [
-            "It was near the train station.",
-            "It offered free equipment.",
-            "Its large sorting room could accommodate a classroom.",
-            "The city offered it rent-free."
+            "The west reading room.",
+            "The digital research room.",
+            "The children’s desk.",
+            "The floor-repair area."
           ],
           "answer": 1,
-          "explanation": "跨篇比對：Renovation notice說週四早上 digital research room開放；Oliver email說團隊週四早上需找臨時會議室。兩篇合併可選該空間。正解 B；A、C在施工時關閉，D屬關閉區域。",
+          "explanation": "跨篇比對：公告指出週四早上西閱覽室和兒童櫃台關閉，數位研究室仍開放；場地指南說未被培訓預訂時可供員工會議使用。正解 B，仍須先向設施部查詢空檔。A、C、D 都在施工或關閉區域。",
           "crossRef": true,
           "ability": "R3"
         },
@@ -17485,7 +17485,7 @@
             "The south plaza."
           ],
           "answer": 3,
-          "explanation": "正解 D「south plaza」：主辦信說食物攤位配置在南廣場，地圖標出該區。A 是停車場，B 是服務設施，C 是手作攤位區。",
+          "explanation": "正解 D「The south plaza.」：主辦信說食物攤位配置在南廣場，地圖標出該區。A 是停車場，B 是服務設施，C 是手作攤位區。",
           "ability": "R2"
         },
         {
@@ -18267,6 +18267,795 @@
           "answer": 0,
           "explanation": "The speaker says the room will open for setup at 8:30. The later times are not mentioned.",
           "ability": "L4"
+        }
+      ]
+    },
+    {
+      "id": "audit-p3-01",
+      "section": "listening",
+      "part": 3,
+      "accent": "US",
+      "title": "Shipment label review",
+      "script": [
+        {
+          "speaker": "W",
+          "text": "The cartons for the Toronto branch are ready, but two have labels showing the Vancouver address."
+        },
+        {
+          "speaker": "M",
+          "text": "I'll hold the whole pallet until we check the barcode file. If only the outer labels are wrong, we can print replacements here."
+        },
+        {
+          "speaker": "W",
+          "text": "Good. The carrier arrives at four, so tell the loading team what you find by three thirty."
+        }
+      ],
+      "questions": [
+        {
+          "id": "AUD-P3-01A",
+          "skill": "l-conversation",
+          "ability": "L1",
+          "prompt": "What are the speakers mainly discussing?",
+          "options": [
+            "Correcting a possible shipping-label error.",
+            "Selecting a new delivery company.",
+            "Changing the destination of an order.",
+            "Preparing a branch sales report."
+          ],
+          "answer": 0,
+          "explanation": "Two cartons appear to carry the wrong address. The speakers plan to verify the barcode file and relabel them if necessary; they do not change the order's destination."
+        },
+        {
+          "id": "AUD-P3-01B",
+          "skill": "l-conversation",
+          "ability": "L1",
+          "prompt": "Where are the speakers most likely?",
+          "options": [
+            "At a customer service counter.",
+            "In a distribution warehouse.",
+            "At a branch sales meeting.",
+            "Inside a delivery vehicle."
+          ],
+          "answer": 1,
+          "explanation": "They refer to a pallet, a loading team, cartons, and printing labels on site. Together those clues point to a distribution warehouse rather than a sales or customer service setting."
+        },
+        {
+          "id": "AUD-P3-01C",
+          "skill": "l-conversation",
+          "ability": "L4",
+          "prompt": "By when does the woman want an update?",
+          "options": [
+            "Before noon.",
+            "By three thirty.",
+            "At four thirty.",
+            "The following morning."
+          ],
+          "answer": 1,
+          "explanation": "She asks for the result by three thirty, before the carrier's four o'clock arrival. The other times are not the requested update deadline."
+        }
+      ]
+    },
+    {
+      "id": "audit-p3-02",
+      "section": "listening",
+      "part": 3,
+      "accent": "UK",
+      "title": "Meeting room conflict",
+      "script": [
+        {
+          "speaker": "M",
+          "text": "The client briefing and the supplier workshop have both been assigned to Room Twelve tomorrow morning."
+        },
+        {
+          "speaker": "W",
+          "text": "The briefing has a video link, so it needs the installed camera. The workshop only needs movable tables."
+        },
+        {
+          "speaker": "M",
+          "text": "Then I'll move the workshop to Room Eight and ask facilities to set up the tables there. I'll send revised invitations before lunch."
+        }
+      ],
+      "questions": [
+        {
+          "id": "AUD-P3-02A",
+          "skill": "l-conversation",
+          "ability": "L1",
+          "prompt": "What is the main purpose of the conversation?",
+          "options": [
+            "To divide a training budget.",
+            "To resolve a room booking conflict.",
+            "To cancel a client presentation.",
+            "To compare video software."
+          ],
+          "answer": 1,
+          "explanation": "Two events were booked in the same room. The speakers decide which event needs the installed camera and move the other event to a suitable room."
+        },
+        {
+          "id": "AUD-P3-02B",
+          "skill": "l-conversation",
+          "ability": "L1",
+          "prompt": "What kind of workplace are the speakers most likely in?",
+          "options": [
+            "An office with meeting facilities.",
+            "A vehicle repair shop.",
+            "A shipping terminal.",
+            "A retail clothing store."
+          ],
+          "answer": 0,
+          "explanation": "The discussion concerns client briefings, supplier workshops, room reservations, facilities staff, and invitations. Those combined clues fit an office with meeting facilities."
+        },
+        {
+          "id": "AUD-P3-02C",
+          "skill": "l-conversation",
+          "ability": "L4",
+          "prompt": "Which event will move to Room Eight?",
+          "options": [
+            "The client briefing.",
+            "The video installation.",
+            "The supplier workshop.",
+            "The facilities inspection."
+          ],
+          "answer": 2,
+          "explanation": "The man says he will move the workshop to Room Eight because it only needs movable tables. The camera-dependent briefing remains in Room Twelve."
+        }
+      ]
+    },
+    {
+      "id": "audit-p3-03",
+      "section": "listening",
+      "part": 3,
+      "accent": "CA",
+      "title": "Laboratory intake records",
+      "script": [
+        {
+          "speaker": "W",
+          "text": "The clinic sent six samples, but the intake system shows only five barcodes."
+        },
+        {
+          "speaker": "M",
+          "text": "One tube may have been listed under yesterday's batch. Let's compare the handwritten collection sheet before creating another label."
+        },
+        {
+          "speaker": "W",
+          "text": "Agreed. We shouldn't process anything until each tube matches a patient record. I'll ask the courier to wait for the count."
+        }
+      ],
+      "questions": [
+        {
+          "id": "AUD-P3-03A",
+          "skill": "l-conversation",
+          "ability": "L1",
+          "prompt": "What are the speakers mainly trying to do?",
+          "options": [
+            "Arrange a later courier route.",
+            "Check a mismatch in incoming records.",
+            "Order new laboratory equipment.",
+            "Explain a test result to a patient."
+          ],
+          "answer": 1,
+          "explanation": "The sample count and barcode count differ. The speakers plan to compare collection records before labeling or processing the tubes, which addresses an intake mismatch."
+        },
+        {
+          "id": "AUD-P3-03B",
+          "skill": "l-conversation",
+          "ability": "L1",
+          "prompt": "Where does this conversation most likely take place?",
+          "options": [
+            "At a laboratory intake desk.",
+            "Inside a clinic examination room.",
+            "At an insurance agency.",
+            "In a pharmacy sales area."
+          ],
+          "answer": 0,
+          "explanation": "The speakers handle incoming sample tubes, barcodes, a collection sheet, and processing rules. Those clues place them at a laboratory intake desk."
+        },
+        {
+          "id": "AUD-P3-03C",
+          "skill": "l-conversation",
+          "ability": "L4",
+          "prompt": "What will the speakers compare first?",
+          "options": [
+            "A monthly invoice.",
+            "A courier's route map.",
+            "The handwritten collection sheet.",
+            "An equipment warranty."
+          ],
+          "answer": 2,
+          "explanation": "The man proposes checking the handwritten collection sheet against the intake records before printing another barcode label. The other documents are not mentioned."
+        }
+      ]
+    },
+    {
+      "id": "audit-p3-04",
+      "section": "listening",
+      "part": 3,
+      "accent": "AU",
+      "title": "Retail display proposal",
+      "script": [
+        {
+          "speaker": "M",
+          "text": "The new product display looks good, but the window mock-up blocks the entrance sign."
+        },
+        {
+          "speaker": "W",
+          "text": "We could lower the panels, although the product would be harder to see from the street."
+        },
+        {
+          "speaker": "M",
+          "text": "What if we move the display beside the entrance and keep the sign clear? Please revise the layout before the store manager visits on Friday."
+        }
+      ],
+      "questions": [
+        {
+          "id": "AUD-P3-04A",
+          "skill": "l-conversation",
+          "ability": "L1",
+          "prompt": "What are the speakers mainly discussing?",
+          "options": [
+            "The location of a promotional display.",
+            "The cost of a new entrance sign.",
+            "A change to store opening hours.",
+            "The launch date of a product."
+          ],
+          "answer": 0,
+          "explanation": "They consider where to place a product display so shoppers can still see the entrance sign. They do not discuss sign cost, opening hours, or launch timing."
+        },
+        {
+          "id": "AUD-P3-04B",
+          "skill": "l-conversation",
+          "ability": "L1",
+          "prompt": "Who are the speakers most likely?",
+          "options": [
+            "Travel agents planning an itinerary.",
+            "Store staff planning a sales floor.",
+            "Technicians repairing a window.",
+            "Customers returning merchandise."
+          ],
+          "answer": 1,
+          "explanation": "They discuss a window mock-up, product visibility, an entrance sign, and a store manager's review. These are tasks for staff planning a retail display."
+        },
+        {
+          "id": "AUD-P3-04C",
+          "skill": "l-conversation",
+          "ability": "L4",
+          "prompt": "When should the revised layout be ready?",
+          "options": [
+            "Before the manager's Friday visit.",
+            "After the weekend sale.",
+            "By Monday morning.",
+            "After the sign is replaced."
+          ],
+          "answer": 0,
+          "explanation": "The man asks for the layout to be revised before the store manager visits on Friday. No weekend sale or replacement sign is planned."
+        }
+      ]
+    },
+    {
+      "id": "audit-p3-05",
+      "section": "listening",
+      "part": 3,
+      "accent": "US",
+      "title": "Training video accessibility",
+      "script": [
+        {
+          "speaker": "W",
+          "text": "The safety video is ready, but the captions leave out several machine names."
+        },
+        {
+          "speaker": "M",
+          "text": "The editor used an automatic transcript. I'll send her the approved terminology list so she can correct it."
+        },
+        {
+          "speaker": "W",
+          "text": "Please have her upload a new version before the orientation session. We need everyone to follow the instructions, including colleagues watching without sound."
+        }
+      ],
+      "questions": [
+        {
+          "id": "AUD-P3-05A",
+          "skill": "l-conversation",
+          "ability": "L1",
+          "prompt": "What issue are the speakers mainly addressing?",
+          "options": [
+            "A delayed equipment delivery.",
+            "Errors in a training video's captions.",
+            "A room shortage for orientation.",
+            "A change in safety regulations."
+          ],
+          "answer": 1,
+          "explanation": "The captions omit important machine names because an automatic transcript was used. The speakers arrange a terminology-based correction before orientation."
+        },
+        {
+          "id": "AUD-P3-05B",
+          "skill": "l-conversation",
+          "ability": "L1",
+          "prompt": "Why was the video prepared?",
+          "options": [
+            "To advertise a new machine.",
+            "To record a board meeting.",
+            "To instruct employees during orientation.",
+            "To compare editing software."
+          ],
+          "answer": 2,
+          "explanation": "The woman says the corrected video is needed before an orientation session and emphasizes that colleagues must follow safety instructions. This identifies its training purpose."
+        },
+        {
+          "id": "AUD-P3-05C",
+          "skill": "l-conversation",
+          "ability": "L4",
+          "prompt": "What will the man send to the editor?",
+          "options": [
+            "An approved terminology list.",
+            "A replacement video camera.",
+            "The orientation attendance sheet.",
+            "A copy of the machine warranty."
+          ],
+          "answer": 0,
+          "explanation": "He offers to send the editor the approved terminology list so the missing machine names can be corrected in the captions."
+        }
+      ]
+    },
+    {
+      "id": "audit-p3-06",
+      "section": "listening",
+      "part": 3,
+      "accent": "CA",
+      "title": "Cargo document discrepancy",
+      "script": [
+        {
+          "speaker": "M",
+          "text": "The customs form lists four cartons, but the carrier's receipt lists five."
+        },
+        {
+          "speaker": "W",
+          "text": "The fifth carton contains the display samples we added yesterday. I updated the packing list but forgot to send it to the broker."
+        },
+        {
+          "speaker": "M",
+          "text": "I'll forward the revised list now. Keep the shipment in the inspection area until the broker confirms that the documents match."
+        }
+      ],
+      "questions": [
+        {
+          "id": "AUD-P3-06A",
+          "skill": "l-conversation",
+          "ability": "L1",
+          "prompt": "What are the speakers mainly dealing with?",
+          "options": [
+            "A disagreement over product prices.",
+            "A missing package on a delivery truck.",
+            "Inconsistent paperwork for a shipment.",
+            "A request to delay a trade show."
+          ],
+          "answer": 2,
+          "explanation": "The customs form and receipt show different carton counts. The speakers explain the added carton and plan to send corrected paperwork to the broker."
+        },
+        {
+          "id": "AUD-P3-06B",
+          "skill": "l-conversation",
+          "ability": "L1",
+          "prompt": "Where are the speakers most likely working?",
+          "options": [
+            "At a cargo handling site.",
+            "In a restaurant kitchen.",
+            "At a publishing office.",
+            "Inside a retail fitting room."
+          ],
+          "answer": 0,
+          "explanation": "They discuss a carrier's receipt, packing list, customs form, broker, and an inspection area. Together these details indicate a cargo handling site."
+        },
+        {
+          "id": "AUD-P3-06C",
+          "skill": "l-conversation",
+          "ability": "L4",
+          "prompt": "What was added to the shipment yesterday?",
+          "options": [
+            "A second customs form.",
+            "Display samples.",
+            "A set of inspection tools.",
+            "Four replacement cartons."
+          ],
+          "answer": 1,
+          "explanation": "The woman identifies the fifth carton as display samples added yesterday. She updated the packing list but had not sent it to the broker."
+        }
+      ]
+    },
+    {
+      "id": "audit-p4-01",
+      "section": "listening",
+      "part": 4,
+      "accent": "US",
+      "title": "Office ventilation notice",
+      "script": [
+        {
+          "speaker": "N",
+          "text": "A notice for employees on the third floor. The ventilation system will be inspected tomorrow between seven and nine in the morning. During that time, the west meeting rooms will be unavailable. Anyone with an early reservation should use the two small rooms on the east side, which will remain open. Facilities will post the inspection results on the staff portal before noon. Thank you for moving personal items away from the west-side vents today."
+        }
+      ],
+      "questions": [
+        {
+          "id": "AUD-P4-01A",
+          "skill": "l-talk",
+          "ability": "L2",
+          "prompt": "What is the main purpose of the announcement?",
+          "options": [
+            "To explain a temporary change in room availability.",
+            "To invite staff to a new meeting.",
+            "To announce a building relocation.",
+            "To report a completed repair."
+          ],
+          "answer": 0,
+          "explanation": "An upcoming ventilation inspection makes some rooms unavailable. The speaker gives alternatives and instructions, so the announcement concerns a temporary facilities change."
+        },
+        {
+          "id": "AUD-P4-01B",
+          "skill": "l-talk",
+          "ability": "L2",
+          "prompt": "Who is the intended audience?",
+          "options": [
+            "Outside job applicants.",
+            "Employees using the third floor.",
+            "Customers waiting for a delivery.",
+            "Building contractors only."
+          ],
+          "answer": 1,
+          "explanation": "The speaker addresses third-floor employees, mentions staff room reservations, and says inspection results will appear on the staff portal."
+        },
+        {
+          "id": "AUD-P4-01C",
+          "skill": "l-talk",
+          "ability": "L4",
+          "prompt": "Where can employees find the inspection results?",
+          "options": [
+            "On the staff portal.",
+            "At the security desk.",
+            "In the east meeting rooms.",
+            "In a printed customer letter."
+          ],
+          "answer": 0,
+          "explanation": "Facilities will post the inspection results on the staff portal before noon. The other locations are not named as information channels."
+        }
+      ]
+    },
+    {
+      "id": "audit-p4-02",
+      "section": "listening",
+      "part": 4,
+      "accent": "UK",
+      "title": "Corporate event setup briefing",
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Good morning, event staff. Tonight's company reception is moving from the garden to the main hall because rain is expected. Please keep the entrance route clear while the catering team unloads its equipment. The seating plan has already been updated in the shared folder, and the name cards should be placed by table number, not alphabetically. The first guests are expected at six, so the room must be ready for a walk-through at five fifteen."
+        }
+      ],
+      "questions": [
+        {
+          "id": "AUD-P4-02A",
+          "skill": "l-talk",
+          "ability": "L2",
+          "prompt": "What is the speaker mainly doing?",
+          "options": [
+            "Promoting an outdoor concert.",
+            "Giving staff revised event setup instructions.",
+            "Asking guests to change their travel plans.",
+            "Reviewing last year's catering expenses."
+          ],
+          "answer": 1,
+          "explanation": "The speaker explains a venue change and gives event staff specific setup tasks and deadlines. The talk is an operational briefing for tonight's reception."
+        },
+        {
+          "id": "AUD-P4-02B",
+          "skill": "l-talk",
+          "ability": "L2",
+          "prompt": "Who is the speaker most likely addressing?",
+          "options": [
+            "Guests arriving at a reception.",
+            "Employees arranging a reception.",
+            "Residents of a neighborhood.",
+            "Suppliers bidding for a contract."
+          ],
+          "answer": 1,
+          "explanation": "The instructions concern moving seating, placing name cards, and preparing the room before guests arrive. This indicates the audience is the event setup team."
+        },
+        {
+          "id": "AUD-P4-02C",
+          "skill": "l-talk",
+          "ability": "L4",
+          "prompt": "How should the name cards be arranged?",
+          "options": [
+            "By arrival time.",
+            "By last name.",
+            "By table number.",
+            "By department name."
+          ],
+          "answer": 2,
+          "explanation": "The speaker explicitly says to place name cards by table number rather than alphabetically. No other order is requested."
+        }
+      ]
+    },
+    {
+      "id": "audit-p4-03",
+      "section": "listening",
+      "part": 4,
+      "accent": "CA",
+      "title": "New employee workshop orientation",
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Welcome to the first day of the client-support workshop. I will lead the practice sessions, and our product specialist will join us after lunch for questions about the new service package. Please complete the short customer-call exercise before the break. The guide on your desk includes sample conversations, but you should write your own response rather than copy a sample. At the end of the day, give your exercise sheet to the person at the front table."
+        }
+      ],
+      "questions": [
+        {
+          "id": "AUD-P4-03A",
+          "skill": "l-talk",
+          "ability": "L2",
+          "prompt": "What is the main purpose of the talk?",
+          "options": [
+            "To introduce a workplace training session.",
+            "To announce a product recall.",
+            "To describe a customer complaint.",
+            "To advertise a new office location."
+          ],
+          "answer": 0,
+          "explanation": "The speaker welcomes participants, outlines a practice exercise and a specialist's visit, and gives instructions for the day. These details introduce a training session."
+        },
+        {
+          "id": "AUD-P4-03B",
+          "skill": "l-talk",
+          "ability": "L2",
+          "prompt": "Who is the speaker most likely?",
+          "options": [
+            "A customer requesting a refund.",
+            "An instructor leading support training.",
+            "A courier delivering guidebooks.",
+            "A manager interviewing applicants."
+          ],
+          "answer": 1,
+          "explanation": "The speaker says they will lead the practice sessions and explains the workshop exercises. This identifies an instructor rather than a customer or courier."
+        },
+        {
+          "id": "AUD-P4-03C",
+          "skill": "l-talk",
+          "ability": "L4",
+          "prompt": "What should participants do before the break?",
+          "options": [
+            "Meet the product specialist.",
+            "Submit an expense claim.",
+            "Complete a customer-call exercise.",
+            "Return the guide to reception."
+          ],
+          "answer": 2,
+          "explanation": "Participants are asked to complete the short customer-call exercise before the break. The product specialist arrives after lunch."
+        }
+      ]
+    },
+    {
+      "id": "audit-p4-04",
+      "section": "listening",
+      "part": 4,
+      "accent": "AU",
+      "title": "Rail lost-property procedure",
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Attention station staff: please use the updated lost-property procedure starting Monday. Every found item must be entered into the online register before it is moved to the secure cabinet. Attach a printed reference label to each item so the desk team can match it to a passenger's report. Cash and identification documents should be handed directly to the duty supervisor. If a passenger calls about a missing item, do not promise collection until the register shows that it has been checked in."
+        }
+      ],
+      "questions": [
+        {
+          "id": "AUD-P4-04A",
+          "skill": "l-talk",
+          "ability": "L2",
+          "prompt": "What is the purpose of the announcement?",
+          "options": [
+            "To explain a revised process for found items.",
+            "To announce a new train timetable.",
+            "To invite passengers to a station tour.",
+            "To report a change in ticket prices."
+          ],
+          "answer": 0,
+          "explanation": "The speaker introduces a new procedure for recording, labeling, and storing lost property. The announcement does not discuss train schedules or tickets."
+        },
+        {
+          "id": "AUD-P4-04B",
+          "skill": "l-talk",
+          "ability": "L2",
+          "prompt": "Who is the announcement intended for?",
+          "options": [
+            "Passengers buying season tickets.",
+            "Station employees handling lost property.",
+            "Local business owners.",
+            "Courier drivers collecting parcels."
+          ],
+          "answer": 1,
+          "explanation": "It opens by addressing station staff and gives internal steps for the desk team and duty supervisor. These instructions are for employees handling found items."
+        },
+        {
+          "id": "AUD-P4-04C",
+          "skill": "l-talk",
+          "ability": "L4",
+          "prompt": "What must happen before an item is placed in the secure cabinet?",
+          "options": [
+            "A passenger must identify it.",
+            "Its value must be estimated.",
+            "It must be entered into the online register.",
+            "It must be delivered to the station manager."
+          ],
+          "answer": 2,
+          "explanation": "Every found item must be entered in the online register before being moved to the secure cabinet. Passenger identification occurs later."
+        }
+      ]
+    },
+    {
+      "id": "audit-p4-05",
+      "section": "listening",
+      "part": 4,
+      "accent": "US",
+      "title": "Supplier portal transition",
+      "script": [
+        {
+          "speaker": "N",
+          "text": "This message is for suppliers who send invoices to our regional offices. Beginning next month, please upload invoices through the vendor portal instead of emailing individual office managers. The purchase order number must appear in the first field, or the upload will be rejected. We will keep the old email address active for questions for another two weeks, but invoices sent there after the change will not be processed. A step-by-step guide is available on the portal home page."
+        }
+      ],
+      "questions": [
+        {
+          "id": "AUD-P4-05A",
+          "skill": "l-talk",
+          "ability": "L2",
+          "prompt": "What is the speaker mainly explaining?",
+          "options": [
+            "A new method for submitting invoices.",
+            "A change in product prices.",
+            "A reduction in regional offices.",
+            "A delay in opening a warehouse."
+          ],
+          "answer": 0,
+          "explanation": "The message tells suppliers to switch invoice submission from email to a portal and explains the required purchase order field. Its focus is the submission process."
+        },
+        {
+          "id": "AUD-P4-05B",
+          "skill": "l-talk",
+          "ability": "L2",
+          "prompt": "Who is the intended audience?",
+          "options": [
+            "Employees requesting annual leave.",
+            "Suppliers billing regional offices.",
+            "Customers tracking deliveries.",
+            "New office managers."
+          ],
+          "answer": 1,
+          "explanation": "The speaker addresses suppliers who send invoices to regional offices. The upload instructions are directed to them, not employees or customers."
+        },
+        {
+          "id": "AUD-P4-05C",
+          "skill": "l-talk",
+          "ability": "L4",
+          "prompt": "What information is required in the first portal field?",
+          "options": [
+            "An office manager's email.",
+            "An invoice payment date.",
+            "The purchase order number.",
+            "A delivery vehicle number."
+          ],
+          "answer": 2,
+          "explanation": "The speaker says the purchase order number must be placed in the first field or the invoice upload will be rejected."
+        }
+      ]
+    },
+    {
+      "id": "audit-p4-06",
+      "section": "listening",
+      "part": 4,
+      "accent": "UK",
+      "title": "Hotel airport shuttle update",
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Good evening, guests. Tomorrow morning's airport shuttle will leave from the side entrance while work continues on the main driveway. The first service departs at six thirty, followed by departures every half hour until nine. Please be at the side entrance ten minutes before your chosen service because the driver cannot wait beyond the scheduled time. If you have large luggage, let reception know tonight so staff can reserve space. Printed schedules are available beside the lift."
+        }
+      ],
+      "questions": [
+        {
+          "id": "AUD-P4-06A",
+          "skill": "l-talk",
+          "ability": "L2",
+          "prompt": "What is the main purpose of the announcement?",
+          "options": [
+            "To explain how guests should use a temporary shuttle arrangement.",
+            "To advertise a new airline route.",
+            "To describe a permanent hotel renovation.",
+            "To invite guests to a city tour."
+          ],
+          "answer": 0,
+          "explanation": "The speaker gives the temporary pickup location, departure pattern, and luggage instructions for a hotel airport shuttle while driveway work continues."
+        },
+        {
+          "id": "AUD-P4-06B",
+          "skill": "l-talk",
+          "ability": "L2",
+          "prompt": "Where is this announcement most likely being made?",
+          "options": [
+            "At a hotel's guest service area.",
+            "Inside an aircraft cabin.",
+            "At a railway ticket office.",
+            "At a car rental counter."
+          ],
+          "answer": 0,
+          "explanation": "The speaker addresses guests, mentions hotel reception, a lift, and an airport shuttle. These combined cues indicate a hotel guest service setting."
+        },
+        {
+          "id": "AUD-P4-06C",
+          "skill": "l-talk",
+          "ability": "L4",
+          "prompt": "What should guests with large luggage do?",
+          "options": [
+            "Use the main driveway.",
+            "Tell reception tonight.",
+            "Arrive after nine.",
+            "Buy an extra shuttle ticket."
+          ],
+          "answer": 1,
+          "explanation": "Guests with large luggage are asked to notify reception tonight so staff can reserve space on the shuttle. No extra ticket is required."
+        }
+      ]
+    },
+    {
+      "id": "audit-p4-07",
+      "section": "listening",
+      "part": 4,
+      "accent": "AU",
+      "title": "Trade fair equipment return",
+      "script": [
+        {
+          "speaker": "N",
+          "text": "A reminder to exhibitors at the business fair: rented display screens must be returned to the service counter by five this afternoon. The counter is in the east lobby, next to the freight lift. Keep the protective cases with the screens, and bring your rental receipt so the team can confirm the return. Booth furniture belongs to the venue and should remain where it is. If your booth is still serving visitors at five, call the service counter before four to arrange collection."
+        }
+      ],
+      "questions": [
+        {
+          "id": "AUD-P4-07A",
+          "skill": "l-talk",
+          "ability": "L2",
+          "prompt": "What is the speaker mainly reminding listeners to do?",
+          "options": [
+            "Return rented display equipment correctly.",
+            "Register for another business fair.",
+            "Move venue furniture to the lobby.",
+            "Purchase new screens for their booths."
+          ],
+          "answer": 0,
+          "explanation": "The announcement specifies when and where to return rental screens, which items to bring, and how to arrange collection if a booth remains open."
+        },
+        {
+          "id": "AUD-P4-07B",
+          "skill": "l-talk",
+          "ability": "L2",
+          "prompt": "Who is the announcement primarily for?",
+          "options": [
+            "Fair exhibitors using rented equipment.",
+            "Visitors waiting to enter the fair.",
+            "Venue staff replacing furniture.",
+            "Drivers delivering new screens."
+          ],
+          "answer": 0,
+          "explanation": "The speaker addresses exhibitors and provides return instructions for rented screens at their booths. Visitors and drivers are not the primary audience."
+        },
+        {
+          "id": "AUD-P4-07C",
+          "skill": "l-talk",
+          "ability": "L4",
+          "prompt": "What should an exhibitor do if the booth remains open at five?",
+          "options": [
+            "Leave the screens beside the freight lift.",
+            "Call the service counter before four.",
+            "Return only the protective cases.",
+            "Ask visitors to move the furniture."
+          ],
+          "answer": 1,
+          "explanation": "An exhibitor who will still be serving visitors at five should call the service counter before four to arrange collection."
         }
       ]
     }

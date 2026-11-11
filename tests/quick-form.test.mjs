@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { flatten, score, updateWrongAnswerQueue } from "../codex/js/scoring.js";
-import { assembleQuickForm, avoidedGroupIds, createRng, mixByLevel, QUICK_BLUEPRINTS, rememberQuickDraw } from "../codex/js/quick-form.js";
+import { assembleQuickForm, avoidedGroupIds, createRng, isActiveGroup, mixByLevel, QUICK_BLUEPRINTS, rememberQuickDraw } from "../codex/js/quick-form.js";
 
 const bank = JSON.parse(readFileSync(new URL("../codex/data/questions.json", import.meta.url), "utf8"));
 const manifest = JSON.parse(readFileSync(new URL("../codex/audio/manifest.json", import.meta.url), "utf8"));
@@ -25,6 +25,18 @@ function questionsInOrder(entry) {
   if (entry.formId) questions.sort((a, b) => entry.groupIds.indexOf(a.groupId) - entry.groupIds.indexOf(b.groupId));
   return questions;
 }
+
+test("retired groups stay available for old forms but leave new quick draws", () => {
+  const oldGroup = bank.groups.find((group) => group.part === 2);
+  const retired = { ...oldGroup, retired: true };
+  const synthetic = { ...bank, groups: bank.groups.map((group) => group.id === oldGroup.id ? retired : group) };
+  assert.equal(isActiveGroup(retired), false);
+  assert.ok(synthetic.groups.find((group) => group.id === oldGroup.id));
+  for (const seed of [1, 7, 19]) {
+    const form = assembleQuickForm(synthetic, "quick-60", { random: createRng(seed), accents });
+    assert.ok(!form.groupIds.includes(oldGroup.id));
+  }
+});
 
 test("40 and 60 hit the blueprint exactly and never split a group", () => {
   assert.deepEqual(QUICK_BLUEPRINTS["quick-40"].timing, { listening: 9, reading: 15 });

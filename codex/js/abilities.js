@@ -11,7 +11,7 @@ export const ABILITIES = {
   R5: { section: "reading", title: "文法", detail: "運用句型、詞性、時態與連接關係" }
 };
 
-const MAIN_PURPOSE = /main purpose|mainly about|primary purpose|purpose of|what is the message|what are the speakers discussing|what .* speakers (?:are )?discussing|why are the speakers discussing/i;
+const MAIN_PURPOSE = /main purpose|mainly|primary purpose|purpose of|what is the message|what (?:problem|issue) (?:do|are|have) the speakers|what .* speakers (?:are )?discuss|what are the speakers preparing for|where (?:are the speakers|does .*conversation .*take place)|who are the speakers|what kind of workplace|who is the (?:speaker|intended audience|announcement)|who is .* addressing|who is .* for|where is this announcement|why was the video prepared/i;
 const IMPLIED = /infer|imply|suggest|intend|mean\b|why does .* say|why does .* mention|why is .* said|most likely|probably|indirect|implied|隱含|間接/i;
 
 export function assignAbility(group, question) {
@@ -23,8 +23,8 @@ export function assignAbility(group, question) {
       const statement = (group.script ?? []).some((line) => !/[?？]\s*$/.test(line.text ?? ""));
       return statement || question.skill === "l-inference" || IMPLIED.test(`${prompt} ${explanation}`) ? "L5" : "L3";
     }
-    if (IMPLIED.test(prompt) || question.skill === "l-inference" || question.skill === "l-intent") return "L5";
     if (MAIN_PURPOSE.test(prompt)) return group.part === 3 ? "L1" : "L2";
+    if (IMPLIED.test(prompt) || question.skill === "l-inference" || question.skill === "l-intent") return "L5";
     return "L4";
   }
 
