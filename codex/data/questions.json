@@ -1,9 +1,9 @@
 {
   "meta": {
-    "version": 1,
+    "version": 2,
     "title": "TOEIC 955 → Higher — Listening & Reading",
     "durationMin": 30,
-    "disclaimer": "All items are original practice material written for this app. Scores are unofficial estimates and are not equivalent to ETS TOEIC scores.",
+    "disclaimer": "本 App 題目為依多益題型自行編寫的模擬題，並非 ETS 官方試題。 All questions are original simulations of TOEIC question types, not ETS official items.",
     "sets": [
       {
         "id": "original",
@@ -15021,6 +15021,406 @@
           ],
           "answer": 1,
           "explanation": "She asks them to confirm the east dock and that the truck should return the next morning if the gate is closed."
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-001",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-001",
+          "prompt": "The regional director asked that every branch ------- its inventory before the quarterly review.",
+          "skill": "r-grammar",
+          "options": [
+            "update",
+            "updates",
+            "updated",
+            "updating"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「update」：asked that 後接原形，為要求/建議類動詞的虛擬語氣。B updates 是第三人稱單數，C updated 是過去式，D updating 是分詞，皆不符合此結構。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-002",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-002",
+          "prompt": "Because the service agreement ------- in December, the procurement team has begun reviewing renewal offers.",
+          "skill": "r-grammar",
+          "options": [
+            "will expire",
+            "expires",
+            "expired",
+            "is expiring"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「expires」：固定時程常用現在簡單式表未來安排。A will expire 文法可通但較不自然地描述既定時程；C expired 表過去；D is expiring 強調正在變化，非此處日期公告。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-003",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-003",
+          "prompt": "The new labeling process was ------- designed to make returned packages easier to sort.",
+          "skill": "r-grammar",
+          "options": [
+            "care",
+            "careful",
+            "carefully",
+            "more carefully"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「carefully」：副詞修飾 designed。A care 是名詞，B careful 是形容詞，D more carefully 是比較級但句中沒有比較對象。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-004",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-004",
+          "prompt": "Neither of the proposed routes ------- the loading dock, so the delivery schedule can remain unchanged.",
+          "skill": "r-grammar",
+          "options": [
+            "pass",
+            "passing",
+            "have passed",
+            "passes"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「passes」：主詞 neither 視為單數，故動詞用 passes。A pass 缺第三人稱單數變化；B passing 是分詞；C have passed 為複數助動詞。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-005",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-005",
+          "prompt": "The supplier will replace the damaged panels ------- the inspection confirms that they were defective on arrival.",
+          "skill": "r-grammar",
+          "options": [
+            "provided that",
+            "in spite of",
+            "rather than",
+            "even though"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「provided that」：表示「只要／若」，後接完整子句作條件。B in spite of 要接名詞或動名詞；C rather than 表選擇；D even though 表讓步對比，均不符合此條件。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-006",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-006",
+          "prompt": "By the time the auditors arrive, the accounting staff ------- the supporting receipts in a shared folder.",
+          "skill": "r-grammar",
+          "options": [
+            "organizes",
+            "will have organized",
+            "organized",
+            "will organize"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「will have organized」：未來完成式表示稽核員到達前已整理完畢。A organizes 是現在式；C organized 是過去式；D will organize 只表未來，未強調期限前完成。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-007",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-007",
+          "prompt": "The revised safety checklist must be completed ------- the equipment is returned to service.",
+          "skill": "r-grammar",
+          "options": [
+            "during",
+            "while",
+            "before",
+            "despite"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「before」：表示先完成清單，再讓設備恢復使用。A during 後接名詞；B while 表同時；D despite 後接名詞或動名詞，皆不合句型或順序。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-008",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-008",
+          "prompt": "Ms. Ito will present the forecast, and Mr. Leung will explain ------- assumptions behind it.",
+          "skill": "r-grammar",
+          "options": [
+            "he",
+            "him",
+            "himself",
+            "his"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「his」：所有格限定詞修飾 assumptions，指 Mr. Leung 的假設。A he 是主格，B him 是受格，C himself 是反身代名詞，不能直接限定名詞。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-009",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-009",
+          "prompt": "The museum shop is extending its hours this month ------- more visitors can browse after the evening tour.",
+          "skill": "r-grammar",
+          "options": [
+            "so that",
+            "even if",
+            "as soon as",
+            "because"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「so that」：引出延長營業時間的目的。B even if 表條件，C as soon as 表時間，D because 表原因，語意皆非此處目的。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-010",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-010",
+          "prompt": "All maintenance requests ------- through the facilities portal receive a tracking number automatically.",
+          "skill": "r-grammar",
+          "options": [
+            "submitting",
+            "submitted",
+            "to submit",
+            "was submitted"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「submitted」：requests 是被提交的，過去分詞可縮減為被動關係子句。A submitting 表主動；C to submit 是不定詞；D was submitted 是單數過去被動，不能修飾複數名詞作一般規則。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-011",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-011",
+          "prompt": "The conference room is available on Thursday, ------- it has already been reserved for a client meeting on Friday.",
+          "skill": "r-grammar",
+          "options": [
+            "because",
+            "unless",
+            "although",
+            "therefore"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「although」：連接週四可用與週五已預約的對比。A because 表原因；B unless 設條件；D therefore 是副詞，不能用此逗號直接連接兩個子句。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-012",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-012",
+          "prompt": "A detailed map of the storage area is available to ------- who needs to locate archived files.",
+          "skill": "r-grammar",
+          "options": [
+            "any",
+            "someone",
+            "every",
+            "anyone"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「anyone」：泛指任何需要地圖的人，後接 who 子句自然。A any 與 C every 是限定詞，後需名詞；B someone 雖可指某個人，但不如 anyone 符合開放給所有需要者的語意。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-013",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-013",
+          "prompt": "The training coordinator ------- the attendance list before sending the completion certificates yesterday.",
+          "skill": "r-grammar",
+          "options": [
+            "checked",
+            "checks",
+            "has checked",
+            "will check"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「checked」：yesterday 指明已完成的過去時間。B checks 是現在式；C has checked 不與明確過去時間搭配；D will check 是未來式。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-014",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-014",
+          "prompt": "The package was returned to the sender because its address label had become ------- during transit.",
+          "skill": "r-grammar",
+          "options": [
+            "illegibly",
+            "illegible",
+            "illegibility",
+            "legible"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「illegible」：become 後接形容詞作主詞補語，意為標籤變得難以辨讀。A illegibly 是副詞；C illegibility 是名詞；D legible 意思相反。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-015",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-015",
+          "prompt": "The committee will publish the final schedule ------- the venue confirms the room assignments.",
+          "skill": "r-grammar",
+          "options": [
+            "despite",
+            "in addition to",
+            "once",
+            "whereas"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「once」：表示場地確認後就會發布時程，兼具時間／條件關係。A despite 和 B in addition to 後接名詞或動名詞；D whereas 表對比。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-016",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-016",
+          "prompt": "Each of the new service desks ------- a screen that can be adjusted for standing customers.",
+          "skill": "r-grammar",
+          "options": [
+            "have",
+            "are having",
+            "were given",
+            "has been given"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「has been given」：Each 為單數，使用現在完成被動式說明每張服務台都已配備螢幕。A have 是複數；B are having 不自然地表短暫擁有；C were given 是過去式。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-017",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-017",
+          "prompt": "The analyst compared the two proposals -------, paying particular attention to their maintenance costs.",
+          "skill": "r-grammar",
+          "options": [
+            "carefully",
+            "careful",
+            "carefulness",
+            "more carefully"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「carefully」：副詞修飾 compared。B careful 是形容詞；C carefulness 是名詞；D more carefully 是比較級，但句中沒有比較對象。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-018",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-018",
+          "prompt": "The updated directory contains the names of employees ------- responsibilities include approving travel expenses.",
+          "skill": "r-grammar",
+          "options": [
+            "who",
+            "whose",
+            "whom",
+            "which"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「whose」：表員工「其職責」包含核准差旅費，whose 表所有關係。A who 是主格；C whom 是受格；D which 指物，不能表員工所有關係。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-019",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-019",
+          "prompt": "The repair crew finished the lobby floor ------- the building remained open to visitors.",
+          "skill": "r-grammar",
+          "options": [
+            "because",
+            "unless",
+            "while",
+            "therefore"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「while」：說明修理與大樓開放同時進行。A because 表原因；B unless 設條件；D therefore 是副詞，不能以此方式連接句子。"
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-020",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "rd-new-020",
+          "prompt": "Customers may exchange an unused item within 30 days, ------- they provide the original receipt.",
+          "skill": "r-grammar",
+          "options": [
+            "even though",
+            "in contrast to",
+            "because of",
+            "as long as"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「as long as」：表示只要提供原收據即可交換，後接完整子句。A even though 表讓步；B in contrast to 與 C because of 後接名詞／動名詞，皆不符合句型與語意。"
         }
       ]
     }
