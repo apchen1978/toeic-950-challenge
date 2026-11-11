@@ -9338,6 +9338,1847 @@
           "graphic": false
         }
       ]
+    },
+    "cov-p3-01": {
+      "file": "audio/cov-p3-01.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "e4a9c8c6a384114c6bb862fc14980a5d9bf82d02b84a7312f0092c035a3ee48e",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "W",
+        "M",
+        "W",
+        "M",
+        "W",
+        "M"
+      ],
+      "durationSec": 33.56,
+      "bytes": 201980,
+      "questionClips": [
+        {
+          "id": "COV-P3-01A",
+          "file": "audio/q-COV-P3-01A.mp3",
+          "durationSec": 3.98,
+          "bytes": 24428,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P3-01B",
+          "file": "audio/q-COV-P3-01B.mp3",
+          "durationSec": 5.95,
+          "bytes": 36236,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P3-01C",
+          "file": "audio/q-COV-P3-01C.mp3",
+          "durationSec": 2.45,
+          "bytes": 15212,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "cov-p3-02": {
+      "file": "audio/cov-p3-02.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "21a6e1d6c7660392e9107226a24de6839b7ce8a5d8519522dcc5aee9b19e1fe2",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "M",
+        "W",
+        "M",
+        "W",
+        "M"
+      ],
+      "durationSec": 32.34,
+      "bytes": 194636,
+      "questionClips": [
+        {
+          "id": "COV-P3-02A",
+          "file": "audio/q-COV-P3-02A.mp3",
+          "durationSec": 1.92,
+          "bytes": 12044,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P3-02B",
+          "file": "audio/q-COV-P3-02B.mp3",
+          "durationSec": 3.58,
+          "bytes": 21980,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P3-02C",
+          "file": "audio/q-COV-P3-02C.mp3",
+          "durationSec": 4.15,
+          "bytes": 25436,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "cov-p3-03": {
+      "file": "audio/cov-p3-03.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "b8263ba2abd7355d8bf5b1bb19875179a0c83b15bdd547a5b94d06796560f120",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "W",
+        "M",
+        "W",
+        "M",
+        "W",
+        "M"
+      ],
+      "durationSec": 36.83,
+      "bytes": 221564,
+      "questionClips": [
+        {
+          "id": "COV-P3-03A",
+          "file": "audio/q-COV-P3-03A.mp3",
+          "durationSec": 2.57,
+          "bytes": 15932,
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P3-03B",
+          "file": "audio/q-COV-P3-03B.mp3",
+          "durationSec": 4.2,
+          "bytes": 25724,
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P3-03C",
+          "file": "audio/q-COV-P3-03C.mp3",
+          "durationSec": 2.4,
+          "bytes": 14924,
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "cov-p3-04": {
+      "file": "audio/cov-p3-04.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "911684a107fb649bd9d5701e4a6776e181849ed1ad48ab50138c91d4460b1a32",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "M",
+        "W",
+        "M",
+        "W",
+        "M",
+        "W"
+      ],
+      "durationSec": 36.27,
+      "bytes": 218252,
+      "questionClips": [
+        {
+          "id": "COV-P3-04A",
+          "file": "audio/q-COV-P3-04A.mp3",
+          "durationSec": 3.05,
+          "bytes": 18812,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P3-04B",
+          "file": "audio/q-COV-P3-04B.mp3",
+          "durationSec": 4.39,
+          "bytes": 26876,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P3-04C",
+          "file": "audio/q-COV-P3-04C.mp3",
+          "durationSec": 2.98,
+          "bytes": 18380,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "cov-p4-01": {
+      "file": "audio/cov-p4-01.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "2a466f6b7d4d87238a67ba46a05640a322abae187561d8d417b5de2ea3966535",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 38.02,
+      "bytes": 228620,
+      "questionClips": [
+        {
+          "id": "COV-P4-01A",
+          "file": "audio/q-COV-P4-01A.mp3",
+          "durationSec": 2.86,
+          "bytes": 17660,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P4-01B",
+          "file": "audio/q-COV-P4-01B.mp3",
+          "durationSec": 3.94,
+          "bytes": 24140,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P4-01C",
+          "file": "audio/q-COV-P4-01C.mp3",
+          "durationSec": 4.75,
+          "bytes": 29036,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "cov-p4-02": {
+      "file": "audio/cov-p4-02.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "f68ecd1222d107114665044be67e25a07b1818ba24b882050fa8d2116476cd54",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 32.16,
+      "bytes": 193484,
+      "questionClips": [
+        {
+          "id": "COV-P4-02A",
+          "file": "audio/q-COV-P4-02A.mp3",
+          "durationSec": 6.12,
+          "bytes": 37244,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P4-02B",
+          "file": "audio/q-COV-P4-02B.mp3",
+          "durationSec": 3.84,
+          "bytes": 23564,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P4-02C",
+          "file": "audio/q-COV-P4-02C.mp3",
+          "durationSec": 5.86,
+          "bytes": 35660,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "cov-p4-03": {
+      "file": "audio/cov-p4-03.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "3874232cb572748d05b5ca6f2802bcdf74984b3d42b8c0aaa3087dc5fd28f342",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 36.22,
+      "bytes": 217820,
+      "questionClips": [
+        {
+          "id": "COV-P4-03A",
+          "file": "audio/q-COV-P4-03A.mp3",
+          "durationSec": 2.59,
+          "bytes": 16076,
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P4-03B",
+          "file": "audio/q-COV-P4-03B.mp3",
+          "durationSec": 4.78,
+          "bytes": 29180,
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P4-03C",
+          "file": "audio/q-COV-P4-03C.mp3",
+          "durationSec": 6.65,
+          "bytes": 40412,
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "cov-p4-04": {
+      "file": "audio/cov-p4-04.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "c315276ee54fd23c884596d3aace34b8aef70ba26f1e9635eea92703d92af875",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 31.06,
+      "bytes": 186860,
+      "questionClips": [
+        {
+          "id": "COV-P4-04A",
+          "file": "audio/q-COV-P4-04A.mp3",
+          "durationSec": 2.76,
+          "bytes": 17084,
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P4-04B",
+          "file": "audio/q-COV-P4-04B.mp3",
+          "durationSec": 5.02,
+          "bytes": 30620,
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P4-04C",
+          "file": "audio/q-COV-P4-04C.mp3",
+          "durationSec": 4.51,
+          "bytes": 27596,
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "cov-p2-01": {
+      "file": "audio/cov-p2-01.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "16739b183d89f54bde3998be57c88d4817298405c203df9475c71e2b0a31053a",
+      "spokenChoices": [
+        "A.",
+        "Yes, I covered it last week.",
+        "B.",
+        "Didn't Hiro post the schedule?",
+        "C.",
+        "A new front-desk chair."
+      ],
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 19.73,
+      "bytes": 119036,
+      "questionClips": []
+    },
+    "cov-p2-02": {
+      "file": "audio/cov-p2-02.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "16bb52dbd772495cac05cdd42e2d65ee066dc9312f3ed465bf3f57ba321bb156",
+      "spokenChoices": [
+        "A.",
+        "When does the sale start?",
+        "B.",
+        "She printed it yesterday.",
+        "C.",
+        "The paper is on the second shelf."
+      ],
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 19.97,
+      "bytes": 120476,
+      "questionClips": []
+    },
+    "cov-p2-03": {
+      "file": "audio/cov-p2-03.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "9eba623b3c2e408f9038b9e7f41d0b586b0f8f2fcce6c7e65027c54706f45104",
+      "spokenChoices": [
+        "A.",
+        "Parking is free on weekends.",
+        "B.",
+        "Yes, it permits two hours.",
+        "C.",
+        "Are you expecting someone today?"
+      ],
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 20.79,
+      "bytes": 125372,
+      "questionClips": []
+    },
+    "cov-p2-04": {
+      "file": "audio/cov-p2-04.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "bccfdcdc1c7ec1b75b5b83c90c894620392aff240c5beb550abbaab945577fbe",
+      "spokenChoices": [
+        "A.",
+        "How many people are attending?",
+        "B.",
+        "At the workshop on Friday.",
+        "C.",
+        "The cost center is on the third floor."
+      ],
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 20.26,
+      "bytes": 122204,
+      "questionClips": []
+    },
+    "cov-p2-05": {
+      "file": "audio/cov-p2-05.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "7fea06dfec12ac4e39b788db5eae5f7abf18ebd5aeefc37204aa204c6a0eb2bd",
+      "spokenChoices": [
+        "A.",
+        "Noon is when the cafeteria opens.",
+        "B.",
+        "The figures on the wall are new.",
+        "C.",
+        "Which department do you need them for?"
+      ],
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 20.36,
+      "bytes": 122780,
+      "questionClips": []
+    },
+    "cov-p2-06": {
+      "file": "audio/cov-p2-06.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "81dc849f3ffb15c44635cd72938e27cab4262b18434fd196c82a056ef50c7afd",
+      "spokenChoices": [
+        "A.",
+        "I delivered it to the supplier.",
+        "B.",
+        "You'd better check with Natalia.",
+        "C.",
+        "The date is circled in red."
+      ],
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 19.88,
+      "bytes": 119900,
+      "questionClips": []
+    },
+    "cov-p2-07": {
+      "file": "audio/cov-p2-07.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "74ea60f23c1319bd264092335592508faec9aeea687c9a19c45abb70a4a1912a",
+      "spokenChoices": [
+        "A.",
+        "At the training center downtown.",
+        "B.",
+        "Yes, it moved smoothly.",
+        "C.",
+        "I'm not sure—HR sent the notice."
+      ],
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 20.93,
+      "bytes": 126236,
+      "questionClips": []
+    },
+    "cov-p2-08": {
+      "file": "audio/cov-p2-08.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "bcf8184509925f64a8d731e5e11d5d5f0f48d9120e8e6a8ddb85c866fcbd8528",
+      "spokenChoices": [
+        "A.",
+        "I haven't seen the new timetable.",
+        "B.",
+        "It leaves from the main entrance.",
+        "C.",
+        "The airport was renovated last year."
+      ],
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 20.14,
+      "bytes": 121484,
+      "questionClips": []
+    },
+    "cov-p2-09": {
+      "file": "audio/cov-p2-09.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "4870014d02cc223ecf9f8467454cb29fb0029ea3b611d19f3ac79b3d0d507622",
+      "spokenChoices": [
+        "A.",
+        "Yes, it was a long report.",
+        "B.",
+        "Ask Mr. Okoye in accounting.",
+        "C.",
+        "The final meeting is tomorrow."
+      ],
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 20.19,
+      "bytes": 121772,
+      "questionClips": []
+    },
+    "cov-p2-10": {
+      "file": "audio/cov-p2-10.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "ece27feb3ec12f3424cc6ea6de8a37dabf0eaf1c14f4427901e5607f0c19b074",
+      "spokenChoices": [
+        "A.",
+        "The presentation starts at two.",
+        "B.",
+        "No, I prefer the other client.",
+        "C.",
+        "I'll find out and let you know."
+      ],
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 20.48,
+      "bytes": 123500,
+      "questionClips": []
+    },
+    "cov-p3-05": {
+      "file": "audio/cov-p3-05.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "bd47e8f2df5333949a3240cc8cd6d5824a984c446dcc03fb2b33c8e8ec05e1a9",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "N",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US",
+          "pitch": "+10Hz"
+        }
+      ],
+      "roles": [
+        "M",
+        "W",
+        "N",
+        "M",
+        "N",
+        "W",
+        "M"
+      ],
+      "durationSec": 42.97,
+      "bytes": 258428,
+      "questionClips": [
+        {
+          "id": "COV-P3-05A",
+          "file": "audio/q-COV-P3-05A.mp3",
+          "durationSec": 2.93,
+          "bytes": 18092,
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P3-05B",
+          "file": "audio/q-COV-P3-05B.mp3",
+          "durationSec": 3.29,
+          "bytes": 20252,
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P3-05C",
+          "file": "audio/q-COV-P3-05C.mp3",
+          "durationSec": 3.41,
+          "bytes": 20972,
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "cov-p3-06": {
+      "file": "audio/cov-p3-06.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "8c00b80b1daa37621820ba5bb4016457217b9ac68c31e7a891a24b7e237a2664",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "N",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "pitch": "+10Hz"
+        }
+      ],
+      "roles": [
+        "W",
+        "M",
+        "N",
+        "W",
+        "M",
+        "N",
+        "W"
+      ],
+      "durationSec": 36.97,
+      "bytes": 222428,
+      "questionClips": [
+        {
+          "id": "COV-P3-06A",
+          "file": "audio/q-COV-P3-06A.mp3",
+          "durationSec": 2.83,
+          "bytes": 17516,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P3-06B",
+          "file": "audio/q-COV-P3-06B.mp3",
+          "durationSec": 4.61,
+          "bytes": 28172,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P3-06C",
+          "file": "audio/q-COV-P3-06C.mp3",
+          "durationSec": 2.59,
+          "bytes": 16076,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "cov-p3-07": {
+      "file": "audio/cov-p3-07.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "3f1331c6d9869ec53e5f277cde4e9a821111e1bea1fcbf1c010c9bbf326cf1d3",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "N",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "pitch": "+10Hz"
+        }
+      ],
+      "roles": [
+        "M",
+        "W",
+        "N",
+        "M",
+        "W",
+        "N",
+        "M"
+      ],
+      "durationSec": 41.6,
+      "bytes": 250220,
+      "questionClips": [
+        {
+          "id": "COV-P3-07A",
+          "file": "audio/q-COV-P3-07A.mp3",
+          "durationSec": 2.74,
+          "bytes": 16940,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P3-07B",
+          "file": "audio/q-COV-P3-07B.mp3",
+          "durationSec": 3.65,
+          "bytes": 22412,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P3-07C",
+          "file": "audio/q-COV-P3-07C.mp3",
+          "durationSec": 3.1,
+          "bytes": 19100,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "cov-p3-08": {
+      "file": "audio/cov-p3-08.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "34374ee51608a25c5a7607a5cb2f3803ff3d4e7ffb8ac0aaa1686852ce43bacd",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "N",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA",
+          "pitch": "+10Hz"
+        },
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "W",
+        "N",
+        "M",
+        "W",
+        "N",
+        "M"
+      ],
+      "durationSec": 38.19,
+      "bytes": 229772,
+      "questionClips": [
+        {
+          "id": "COV-P3-08A",
+          "file": "audio/q-COV-P3-08A.mp3",
+          "durationSec": 3.86,
+          "bytes": 23708,
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P3-08B",
+          "file": "audio/q-COV-P3-08B.mp3",
+          "durationSec": 3.82,
+          "bytes": 23420,
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P3-08C",
+          "file": "audio/q-COV-P3-08C.mp3",
+          "durationSec": 2.4,
+          "bytes": 14924,
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "cov-p3-09": {
+      "file": "audio/cov-p3-09.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "bb3237870c462a5a2c7f49e3319824711f592d11954fd97f513ed11e2157c30d",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "M",
+        "W",
+        "M",
+        "W",
+        "M"
+      ],
+      "durationSec": 24.97,
+      "bytes": 150428,
+      "questionClips": [
+        {
+          "id": "COV-P3-09A",
+          "file": "audio/q-COV-P3-09A.mp3",
+          "durationSec": 2.57,
+          "bytes": 15932,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P3-09B",
+          "file": "audio/q-COV-P3-09B.mp3",
+          "durationSec": 4.68,
+          "bytes": 28604,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": true
+        },
+        {
+          "id": "COV-P3-09C",
+          "file": "audio/q-COV-P3-09C.mp3",
+          "durationSec": 2.23,
+          "bytes": 13916,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "cov-p3-10": {
+      "file": "audio/cov-p3-10.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "1550b34dc1d026fc48127ecd03263353791e56a41e07fe811f6d5d6df200bd13",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "M",
+        "W",
+        "M",
+        "W"
+      ],
+      "durationSec": 22.85,
+      "bytes": 137756,
+      "questionClips": [
+        {
+          "id": "COV-P3-10A",
+          "file": "audio/q-COV-P3-10A.mp3",
+          "durationSec": 4.66,
+          "bytes": 28460,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": true
+        },
+        {
+          "id": "COV-P3-10B",
+          "file": "audio/q-COV-P3-10B.mp3",
+          "durationSec": 2.23,
+          "bytes": 13916,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P3-10C",
+          "file": "audio/q-COV-P3-10C.mp3",
+          "durationSec": 2.54,
+          "bytes": 15788,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "cov-p3-11": {
+      "file": "audio/cov-p3-11.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "2e440ee1c18af65dc69ed60206d497070c4a6d59988cb3c7ca7c7a9040e877b8",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "W",
+        "M",
+        "W",
+        "W"
+      ],
+      "durationSec": 25.78,
+      "bytes": 155324,
+      "questionClips": [
+        {
+          "id": "COV-P3-11A",
+          "file": "audio/q-COV-P3-11A.mp3",
+          "durationSec": 2.62,
+          "bytes": 16220,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P3-11B",
+          "file": "audio/q-COV-P3-11B.mp3",
+          "durationSec": 5.59,
+          "bytes": 34076,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": true
+        },
+        {
+          "id": "COV-P3-11C",
+          "file": "audio/q-COV-P3-11C.mp3",
+          "durationSec": 2.28,
+          "bytes": 14204,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "cov-p4-05": {
+      "file": "audio/cov-p4-05.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "31f3cae01d716fedca7be42ed4928bac15161f039ac203e7af5f653437cdafb4",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 35.11,
+      "bytes": 211196,
+      "questionClips": [
+        {
+          "id": "COV-P4-05A",
+          "file": "audio/q-COV-P4-05A.mp3",
+          "durationSec": 3.0,
+          "bytes": 18524,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P4-05B",
+          "file": "audio/q-COV-P4-05B.mp3",
+          "durationSec": 3.53,
+          "bytes": 21692,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P4-05C",
+          "file": "audio/q-COV-P4-05C.mp3",
+          "durationSec": 3.22,
+          "bytes": 19820,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "cov-p4-06": {
+      "file": "audio/cov-p4-06.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "5a01aaba4cc593505f8f395a1ce033082a117f094e7320d95eebdbdcc8fcb0a0",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 29.23,
+      "bytes": 175916,
+      "questionClips": [
+        {
+          "id": "COV-P4-06A",
+          "file": "audio/q-COV-P4-06A.mp3",
+          "durationSec": 2.76,
+          "bytes": 17084,
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P4-06B",
+          "file": "audio/q-COV-P4-06B.mp3",
+          "durationSec": 3.17,
+          "bytes": 19532,
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P4-06C",
+          "file": "audio/q-COV-P4-06C.mp3",
+          "durationSec": 4.63,
+          "bytes": 28316,
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "cov-p4-07": {
+      "file": "audio/cov-p4-07.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "d657634dcb3a2d8131b2e344335e88fe4d524e330eb2dd02fc4dda11e2d8a373",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 29.18,
+      "bytes": 175628,
+      "questionClips": [
+        {
+          "id": "COV-P4-07A",
+          "file": "audio/q-COV-P4-07A.mp3",
+          "durationSec": 2.71,
+          "bytes": 16796,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P4-07B",
+          "file": "audio/q-COV-P4-07B.mp3",
+          "durationSec": 2.38,
+          "bytes": 14780,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P4-07C",
+          "file": "audio/q-COV-P4-07C.mp3",
+          "durationSec": 2.71,
+          "bytes": 16796,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "cov-p4-08": {
+      "file": "audio/cov-p4-08.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "8dce3f2693c9d66e998fcc058971e89f844a6c1bece9c972412ce71d4a38195e",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 29.45,
+      "bytes": 177212,
+      "questionClips": [
+        {
+          "id": "COV-P4-08A",
+          "file": "audio/q-COV-P4-08A.mp3",
+          "durationSec": 2.62,
+          "bytes": 16220,
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P4-08B",
+          "file": "audio/q-COV-P4-08B.mp3",
+          "durationSec": 2.5,
+          "bytes": 15500,
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P4-08C",
+          "file": "audio/q-COV-P4-08C.mp3",
+          "durationSec": 4.03,
+          "bytes": 24716,
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "cov-p4-09": {
+      "file": "audio/cov-p4-09.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "e7dfe291c7b0f6bd86c07d24a58939d9be618aa5d1b409b34b68f591caf95afe",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 31.37,
+      "bytes": 188732,
+      "questionClips": [
+        {
+          "id": "COV-P4-09A",
+          "file": "audio/q-COV-P4-09A.mp3",
+          "durationSec": 2.66,
+          "bytes": 16508,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P4-09B",
+          "file": "audio/q-COV-P4-09B.mp3",
+          "durationSec": 3.53,
+          "bytes": 21692,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P4-09C",
+          "file": "audio/q-COV-P4-09C.mp3",
+          "durationSec": 5.11,
+          "bytes": 31196,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "cov-p4-10": {
+      "file": "audio/cov-p4-10.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "1475012f59307d33cc935314a58eb8f12dac83a2bf1fb603e6a5e702b00f7b05",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 30.6,
+      "bytes": 184124,
+      "questionClips": [
+        {
+          "id": "COV-P4-10A",
+          "file": "audio/q-COV-P4-10A.mp3",
+          "durationSec": 2.14,
+          "bytes": 13340,
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P4-10B",
+          "file": "audio/q-COV-P4-10B.mp3",
+          "durationSec": 3.55,
+          "bytes": 21836,
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P4-10C",
+          "file": "audio/q-COV-P4-10C.mp3",
+          "durationSec": 3.43,
+          "bytes": 21116,
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "cov-p4-11": {
+      "file": "audio/cov-p4-11.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "80ad5a2408f5c0bd495f21deebe9197b4a8c18a7f945f06d6b6c6e50ea8c1e07",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 32.88,
+      "bytes": 197804,
+      "questionClips": [
+        {
+          "id": "COV-P4-11A",
+          "file": "audio/q-COV-P4-11A.mp3",
+          "durationSec": 2.5,
+          "bytes": 15500,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P4-11B",
+          "file": "audio/q-COV-P4-11B.mp3",
+          "durationSec": 2.86,
+          "bytes": 17660,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P4-11C",
+          "file": "audio/q-COV-P4-11C.mp3",
+          "durationSec": 3.07,
+          "bytes": 18956,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "cov-p4-12": {
+      "file": "audio/cov-p4-12.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "e29733cc71ac85c2558b7d00e016c69a277cc974f2c64e10463001388e903d4a",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 34.51,
+      "bytes": 207596,
+      "questionClips": [
+        {
+          "id": "COV-P4-12A",
+          "file": "audio/q-COV-P4-12A.mp3",
+          "durationSec": 3.0,
+          "bytes": 18524,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P4-12B",
+          "file": "audio/q-COV-P4-12B.mp3",
+          "durationSec": 2.66,
+          "bytes": 16508,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P4-12C",
+          "file": "audio/q-COV-P4-12C.mp3",
+          "durationSec": 2.9,
+          "bytes": 17948,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "cov-p4-13": {
+      "file": "audio/cov-p4-13.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "73ed444e54c9f350cec98160863060694025e19977c816eb84e8248008cf30d5",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 23.16,
+      "bytes": 139484,
+      "questionClips": [
+        {
+          "id": "COV-P4-13A",
+          "file": "audio/q-COV-P4-13A.mp3",
+          "durationSec": 4.75,
+          "bytes": 29036,
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US",
+          "role": "N",
+          "graphic": true
+        },
+        {
+          "id": "COV-P4-13B",
+          "file": "audio/q-COV-P4-13B.mp3",
+          "durationSec": 5.86,
+          "bytes": 35660,
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US",
+          "role": "N",
+          "graphic": true
+        },
+        {
+          "id": "COV-P4-13C",
+          "file": "audio/q-COV-P4-13C.mp3",
+          "durationSec": 3.19,
+          "bytes": 19676,
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "cov-p4-14": {
+      "file": "audio/cov-p4-14.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "b3138a4d1d9b1f80b3cb7368b8010162c6828ec97df0b02942bc8b2f942d73aa",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 18.79,
+      "bytes": 113276,
+      "questionClips": [
+        {
+          "id": "COV-P4-14A",
+          "file": "audio/q-COV-P4-14A.mp3",
+          "durationSec": 2.69,
+          "bytes": 16652,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P4-14B",
+          "file": "audio/q-COV-P4-14B.mp3",
+          "durationSec": 5.74,
+          "bytes": 34940,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": true
+        },
+        {
+          "id": "COV-P4-14C",
+          "file": "audio/q-COV-P4-14C.mp3",
+          "durationSec": 3.62,
+          "bytes": 22268,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "cov-p4-15": {
+      "file": "audio/cov-p4-15.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "71e6444304bb154a8db4ed2e8b097e93aecc096ded6db302284a4fc27a424b90",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 19.7,
+      "bytes": 118748,
+      "questionClips": [
+        {
+          "id": "COV-P4-15A",
+          "file": "audio/q-COV-P4-15A.mp3",
+          "durationSec": 5.35,
+          "bytes": 32636,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": true
+        },
+        {
+          "id": "COV-P4-15B",
+          "file": "audio/q-COV-P4-15B.mp3",
+          "durationSec": 2.23,
+          "bytes": 13916,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "COV-P4-15C",
+          "file": "audio/q-COV-P4-15C.mp3",
+          "durationSec": 3.5,
+          "bytes": 21548,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "cov-p2-11": {
+      "file": "audio/cov-p2-11.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "2bc23c0ad9936f15227f0e9c0689874a037501d1eead6c0e0d8c2382b1ea7994",
+      "spokenChoices": [
+        "A.",
+        "I'll ask IT to bring a spare one.",
+        "B.",
+        "The room is on the fourth floor.",
+        "C.",
+        "Our working hours changed this morning."
+      ],
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 20.14,
+      "bytes": 121484,
+      "questionClips": []
+    },
+    "cov-p2-12": {
+      "file": "audio/cov-p2-12.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "2cec7dbaae1ccbdd045fdd2a052db43d023410472287352e908de57345a86178",
+      "spokenChoices": [
+        "A.",
+        "The march begins at noon.",
+        "B.",
+        "That's encouraging news.",
+        "C.",
+        "Sales are on the second floor."
+      ],
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 20.41,
+      "bytes": 123068,
+      "questionClips": []
     }
   }
 }

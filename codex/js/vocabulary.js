@@ -467,7 +467,7 @@ export const VOCABULARY = [
     category: "契約與規範",
     words: [
     ["contingency", "應變事項；備案", "The team prepared a contingency plan for delivery delays.", 900],
-    ["comply with", "遵守", "All suppliers must comply with the safety requirements.", 800],
+    ["comply with","遵守","All suppliers must comply with the safety requirements.",900],
     ["waive", "免除", "The hotel agreed to waive the cancellation fee.", 900],
     ["stipulate", "明訂", "The contract stipulates payment within thirty days.", 900],
     ["binding", "有約束力的", "Both parties signed a legally binding agreement.", 900],
@@ -478,11 +478,11 @@ export const VOCABULARY = [
   {
     category: "財務與採購",
     words: [
-    ["allocate", "分配", "The director allocated additional funds to the project.", 800],
+    ["allocate","分配","The director allocated additional funds to the project.",900],
     ["reconcile", "核對使一致", "Please reconcile the invoices with our payment records.", 900],
     ["outstanding", "尚未付清的", "The outstanding balance is due by Friday.", 800],
     ["discrepancy", "差異；不一致", "Report any billing discrepancy to the accounting department.", 900],
-    ["reimburse", "報銷；償還", "The company will reimburse employees for travel expenses.", 800],
+    ["reimburse","報銷；償還","The company will reimburse employees for travel expenses.",900],
     ["encumbrance", "預算保留數", "The encumbrance reserves money for the order we already signed.", 900, "n."],
     ["purchase", "採購", "This purchase needs a second signature over five thousand.", 800, "n."]
     ]
@@ -493,7 +493,7 @@ export const VOCABULARY = [
     ["tentative", "暫定的", "We have prepared a tentative schedule for the conference.", 800],
     ["expedite", "加快處理", "We will expedite the shipment at no extra charge.", 900],
     ["postpone", "延期", "The manager decided to postpone the meeting until Friday.", 800],
-    ["accommodate", "配合；滿足需求", "Can the venue accommodate a later starting time?", 800],
+    ["accommodate","配合；滿足需求","Can the venue accommodate a later starting time?",900],
     ["slack time", "寬裕時間", "There is little slack time between the morning and afternoon shifts.", 900, "n."],
     ["coordinate", "協調", "Please coordinate with the supplier before placing the order.", 800],
     ["fast track", "加速處理", "We will fast track the permit so the counter can open on time.", 900, "phr."],
@@ -1244,7 +1244,7 @@ const EXTRA_WORDS = {
   ],
   "銷售與客戶": [
     ["CRM","客戶關係管理系統","The sales team records every call in the CRM.",800,"abbr.","customer relationship management"],
-    ["sales growth","銷售成長","The report shows steady sales growth in the northern region.",900,"n."],
+    ["sales growth","銷售成長","The report shows steady sales growth in the northern region.",800,"n."],
     ["renewal reminder","續約提醒","The provider sent a renewal reminder before the contract expired.",900,"n."],
     ["customer lifetime value","客戶終身價值","The team compared customer lifetime value by market.",900,"n."],
     ["qualified lead","合格潛在客戶","A qualified lead has a budget and a clear need.",900,"n."],
@@ -1260,7 +1260,7 @@ const EXTRA_WORDS = {
     ["automated attendant","自動電話總機","The automated attendant directs callers to the right extension.",800,"n."],
     ["referral to a supervisor","轉交主管處理","A referral to a supervisor resolved the billing dispute.",900,"n."],
     ["corrective action","矯正措施","The quality team proposed corrective action after the inspection.",900,"n."],
-    ["processing time","處理時間","The processing time for refunds is five business days.",900,"n."],
+    ["processing time","處理時間","The processing time for refunds is five business days.",800,"n."],
     ["customer satisfaction score","顧客滿意度分數","The survey revealed an improvement in the customer satisfaction score.",900,"n."],
   ],
   "生產與現場": [
@@ -1330,7 +1330,7 @@ const EXTRA_WORDS = {
     ["KPI","關鍵績效指標","The team reviewed its KPIs at the monthly meeting.",800,"abbr.","key performance indicator"],
     ["merit increase","績效加薪","Employees will be notified of any merit increase in April.",900,"n."],
     ["workforce planning","人力規劃","Workforce planning identified a skills gap.",900,"n."],
-    ["responsibility","責任；職責","The supervisor explained each team member’s responsibility.",900,"n."],
+    ["responsibility","責任；職責","The supervisor explained each team member’s responsibility.",800,"n."],
     ["management trainee","儲備主管","A management trainee will rotate through three departments.",900,"n."],
   ],
   "信件、公告與閱讀推論": [
@@ -1434,7 +1434,7 @@ const EXTRA_WORDS = {
     ["earnings guidance","盈餘預測指引","The company revised its earnings guidance after the merger.",900,"n."],
     ["CEO","執行長","The CEO will present the restructuring plan to investors.",900,"abbr.","chief executive officer"],
     ["debt covenant","債務契約條款","The lender reviewed compliance with each debt covenant.",900,"n."],
-    ["beneficial ownership","實質所有權","The filing identifies the beneficial ownership of each shareholder.",900,"n."],
+    ["contingency plan","應變計畫","The operations team prepared a contingency plan for service interruptions.",900,"n."],
   ],
   "風險、法規與治理": [
     ["risk assessment","風險評估","The team completed a risk assessment before launch.",800,"n."],
@@ -1445,7 +1445,7 @@ const EXTRA_WORDS = {
   ],
   "供應鏈、製造與品質": [
     ["assembly check","組裝檢查","The technician completed an assembly check before shipping.",800,"n."],
-    ["inspection result","檢查結果","The supplier sent the inspection result with the shipment.",900,"n."],
+    ["inspection result","檢查結果","The supplier sent the inspection result with the shipment.",800,"n."],
     ["supplier scorecard","供應商評分表","The buyer updated the supplier scorecard after inspection.",900,"n."],
     ["batch traceability","批次追溯能力","Batch traceability helped staff locate the affected goods.",900,"n."],
     ["R&D","研究與開發","The R&D team tested a lighter packaging material.",900,"abbr.","research and development"],

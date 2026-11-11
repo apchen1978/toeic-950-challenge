@@ -39,14 +39,28 @@ export const FLASHCARD_RENAMES = {
   "in compliance with": "under the terms of",
   "vendor lead time": "delivery estimate",
   "task deadline": "submission deadline",
-  "contingency plan": "emergency procedure"
+  "beneficial ownership": "contingency plan"
 };
+
+// Follow a rename chain (minority interest -> beneficial ownership -> contingency plan) to the word that exists now.
+export function finalFlashcardWord(word) {
+  const seen = new Set([word]);
+  let current = word;
+  while (Object.hasOwn(FLASHCARD_RENAMES, current)) {
+    const next = FLASHCARD_RENAMES[current];
+    if (seen.has(next)) break;
+    seen.add(next);
+    current = next;
+  }
+  return current;
+}
 
 export function migrateFlashcardProgress(progress) {
   if (!progress || typeof progress !== 'object') return { progress, changed: false };
   let next = progress;
-  for (const [oldWord, newWord] of Object.entries(FLASHCARD_RENAMES)) {
-    if (!Object.hasOwn(next, oldWord) || Object.hasOwn(next, newWord)) continue;
+  for (const oldWord of Object.keys(FLASHCARD_RENAMES)) {
+    const newWord = finalFlashcardWord(oldWord);
+    if (newWord === oldWord || !Object.hasOwn(next, oldWord) || Object.hasOwn(next, newWord)) continue;
     if (next === progress) next = { ...progress };
     next[newWord] = next[oldWord];
     delete next[oldWord];

@@ -89,7 +89,7 @@ test('saved answer indexes follow the same option text after revision 4', () => 
 
 test('non-Form Part 2 answer positions are balanced and old choices survive revision 5', () => {
   const questions = bank.groups.filter((group) => group.part === 2 && !frozenGroups.has(group.id)).flatMap((group) => group.questions);
-  assert.equal(questions.length, 27);
+  assert.equal(questions.length, 39);
   const counts = questions.reduce((result, question) => { result[question.answer]++; return result; }, [0, 0, 0]);
   for (const count of counts) assert.ok(count / questions.length >= 0.25 && count / questions.length <= 0.40, counts.join('/'));
   for (const [id, previous] of Object.entries(PREVIOUS_P2_OPTIONS)) {
