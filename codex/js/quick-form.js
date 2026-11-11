@@ -93,17 +93,25 @@ export function assembleQuickForm(bank, formId, options = {}) {
   const section = options.section === "listening" || options.section === "reading" ? options.section : "full";
   const avoid = options.avoid instanceof Set ? options.avoid : new Set(options.avoid ?? []);
   const accents = options.accents ?? {};
-  const accentCounts = { US: 0, UK: 0, CA: 0, AU: 0 };
-  const chosen = [];
-  for (const spec of partsForSection(blueprint.parts, section)) {
-    const pool = bank.groups.filter((group) => isActiveGroup(group) && group.part === spec.part && (!spec.questionsEach || group.questions.length === spec.questionsEach));
-    const accentOf = (group) => accents[group.id] || group.accent || "";
-    const counts = spec.part <= 4 ? accentCounts : null;
-    const picked = spec.questions
-      ? pickByQuestionTotal(pool, spec.questions, random, avoid, spec.requireMulti === true)
-      : pickWithGraphicPreference(pool, spec, random, avoid, accentOf, counts);
-    chosen.push(...mixByLevel(picked));
+  let chosen = [];
+  let accentCounts = { US: 0, UK: 0, CA: 0, AU: 0 };
+  let issues = [];
+  for (let attempt = 0; attempt < 300; attempt += 1) {
+    chosen = [];
+    accentCounts = { US: 0, UK: 0, CA: 0, AU: 0 };
+    for (const spec of partsForSection(blueprint.parts, section)) {
+      const pool = bank.groups.filter((group) => isActiveGroup(group) && group.part === spec.part && (!spec.questionsEach || group.questions.length === spec.questionsEach));
+      const accentOf = (group) => accents[group.id] || group.accent || "";
+      const counts = spec.part <= 4 ? accentCounts : null;
+      const picked = spec.questions
+        ? pickByQuestionTotal(pool, spec.questions, random, avoid, spec.requireMulti === true)
+        : pickWithGraphicPreference(pool, spec, random, avoid, accentOf, counts);
+      chosen.push(...mixByLevel(picked));
+    }
+    issues = quickCoverageIssues(chosen, formId, section);
+    if (!issues.length) break;
   }
+  if (issues.length) throw new Error(formId + " could not meet type coverage: " + issues.join(", "));
   const groupIds = chosen.map((group) => group.id);
   if (new Set(groupIds).size !== groupIds.length) throw new Error(`duplicate group in ${formId}`);
   const listening = chosen.filter((group) => group.section === "listening").reduce((sum, group) => sum + group.questions.length, 0);
@@ -120,6 +128,48 @@ export function assembleQuickForm(bank, formId, options = {}) {
       : blueprint.timing;
   const minutes = section === "reading" ? blueprint.timing.reading : section === "listening" ? blueprint.listening : blueprint.minutes;
   return { formId, section, groupIds, timing, minutes, accentCounts: { ...accentCounts } };
+}
+
+function questionTypes(group) {
+  return (group.questions ?? []).map((question) => String(question.questionType ?? "").toLowerCase());
+}
+
+function hasType(groups, part, pattern) {
+  return groups.some((group) => group.part === part && questionTypes(group).some((type) => pattern.test(type)));
+}
+
+export function quickCoverageIssues(groups, formId, section = "full") {
+  const full = formId === "quick-40" || formId === "quick-60";
+  const long = formId === "quick-60";
+  if (!full) return [];
+  const issues = [];
+  const listening = section !== "reading";
+  const reading = section !== "listening";
+  if (listening) {
+    const p2Types = new Set(groups.filter((group) => group.part === 2).flatMap(questionTypes));
+    if (p2Types.size < 4) issues.push("P2 four response types");
+    if (!groups.some((group) => [3, 4].includes(group.part) && questionTypes(group).some((type) => /intent|meaning|implied/i.test(type)))) issues.push("P3/P4 speaker intent");
+    if (!groups.some((group) => [3, 4].includes(group.part) && isGraphicGroup(group))) issues.push("P3/P4 graphic");
+    if (long && new Set(groups.filter((group) => group.part === 1).flatMap(questionTypes)).size < 2) issues.push("P1 two types");
+  }
+  if (reading) {
+    const p5 = groups.filter((group) => group.part === 5).flatMap((group) => group.questions ?? []);
+    const types = new Set(p5.map((question) => String(question.questionType ?? "").toLowerCase()));
+    const p5Coverage = [
+      /part.of.speech|word.form|vocab.*form/i,
+      /tense|verb.form|passive/i,
+      /preposition|conjunction|connector/i,
+      /vocab|collocation|word.choice/i
+    ].every((pattern) => [...types].some((type) => pattern.test(type)));
+    if (!p5Coverage) issues.push("P5 grammar and vocabulary types");
+    if (!hasType(groups, 6, /sentence.insertion|insert.sentence/i)) issues.push("P6 sentence insertion");
+    if (!groups.some((group) => group.part === 7 && isVerifiedCrossRef(group))) issues.push("P7 cross-reference");
+    const p7Synonym = hasType(groups, 7, /synonym|closest.in.meaning|vocab.in.context/i);
+    const p7Intent = hasType(groups, 7, /intent|purpose.of.message|text.message.intent/i);
+    if (long && (!p7Synonym || !p7Intent)) issues.push("P7 synonym and intent");
+    if (!long && !p7Synonym && !p7Intent) issues.push("P7 synonym or intent");
+  }
+  return issues;
 }
 
 function levelOf(group) {

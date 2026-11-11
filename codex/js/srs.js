@@ -39,7 +39,8 @@ export const FLASHCARD_RENAMES = {
   "in compliance with": "under the terms of",
   "vendor lead time": "delivery estimate",
   "task deadline": "submission deadline",
-  "contingency plan": "emergency procedure"
+  "emergency procedure": "contingency plan",
+  "beneficial ownership": "contingency plan"
 };
 
 export function migrateFlashcardProgress(progress) {
