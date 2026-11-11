@@ -36,7 +36,7 @@ test("listening accents stay within 20 to 30 percent in every part and overall",
 test("every listening question points at a real file and Canadian audio is en-CA", () => {
   const listening = bank.groups.filter((group) => group.section === "listening");
   const questions = listening.reduce((sum, group) => sum + group.questions.length, 0);
-  assert.equal(questions, 507);
+  assert.equal(questions, 519);
   for (const group of listening) {
     const entry = manifest.groups[group.id];
     assert.ok(entry, group.id);

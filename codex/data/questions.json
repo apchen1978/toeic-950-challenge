@@ -22904,6 +22904,846 @@
           "ability": "L5"
         }
       ]
+    },
+    {
+      "id": "cov-p1-01",
+      "section": "listening",
+      "part": 1,
+      "accent": "AU",
+      "title": "照片描述",
+      "image": "images/photo-meeting.jpg",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Look at the photograph."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P1-01",
+          "skill": "l-photo",
+          "prompt": "聽四個敘述，選出最符合照片的一句。",
+          "options": [
+            "A mug has been placed on the conference table.",
+            "A plant is hanging from the ceiling.",
+            "The window is being cleaned.",
+            "A notebook is being passed across the table."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「A mug has been placed on the conference table.」：桌上放著一個白色馬克杯，狀態是『已被放置』。植物放在窗台上、不是吊在天花板；沒有人在擦窗，也沒有人在傳筆記本。\n【考點】Part 1・物品位置與狀態\n【判斷依據】物品位置題先找畫面中的物品與它所在的位置，再排除位置或動作不符的選項（being cleaned、being passed 都需要有人正在做動作）。",
+          "questionType": "object-position",
+          "ability": "L3"
+        }
+      ]
+    },
+    {
+      "id": "cov-p1-02",
+      "section": "listening",
+      "part": 1,
+      "accent": "UK",
+      "title": "照片描述",
+      "image": "images/photo-delivery.jpg",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Look at the photograph."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P1-02",
+          "skill": "l-photo",
+          "prompt": "聽四個敘述，選出最符合照片的一句。",
+          "options": [
+            "A bicycle is being ridden along the sidewalk.",
+            "Some boxes are being unloaded from a van.",
+            "A bicycle is parked beside a fence.",
+            "A cart is being lifted onto a truck."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「A bicycle is parked beside a fence.」：背景的欄杆旁停著一輛自行車。沒有人在騎車、沒有貨車，推車也沒有被抬起。\n【考點】Part 1・物品位置與狀態\n【判斷依據】先找背景中的物品（自行車）與位置（欄杆旁），再排除需要有人正在操作的選項。",
+          "questionType": "object-position",
+          "ability": "L3"
+        }
+      ]
+    },
+    {
+      "id": "cov-p1-03",
+      "section": "listening",
+      "part": 1,
+      "accent": "AU",
+      "title": "照片描述",
+      "image": "images/photo-plants.jpg",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Look at the photograph."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P1-03",
+          "skill": "l-photo",
+          "prompt": "聽四個敘述，選出最符合照片的一句。",
+          "options": [
+            "A watering can is sitting on the floor.",
+            "A ladder is leaning against a wall.",
+            "Some pots are being stacked outdoors.",
+            "A woman is climbing up the ladder."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「A ladder is leaning against a wall.」：右側的折疊梯靠在牆邊。澆水壺放在架子上而不是地板；盆栽在室內；女子是跪著擺放盆栽，沒有爬梯子。\n【考點】Part 1・物品位置與狀態\n【判斷依據】梯子的位置在圖的右側靠牆；Woman is climbing 是人物動作，與畫面不符。",
+          "questionType": "object-position",
+          "ability": "L3"
+        }
+      ]
+    },
+    {
+      "id": "cov-p1-04",
+      "section": "listening",
+      "part": 1,
+      "accent": "CA",
+      "title": "照片描述",
+      "image": "images/photo-restaurant.jpg",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Look at the photograph."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P1-04",
+          "skill": "l-photo",
+          "prompt": "聽四個敘述，選出最符合照片的一句。",
+          "options": [
+            "A vase of flowers is being carried away.",
+            "Some plates are being cleared from the table.",
+            "A menu is being handed to the guest.",
+            "A candle has been placed on the table."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「A candle has been placed on the table.」：餐桌上放著一個點燃的燭台。花瓶留在桌上，沒有人收盤子，也沒有人遞菜單。\n【考點】Part 1・物品位置與狀態\n【判斷依據】先找桌上的物品（燭台），再排除 being carried / cleared / handed 這些需要有人動作的敘述。",
+          "questionType": "object-position",
+          "ability": "L3"
+        }
+      ]
+    },
+    {
+      "id": "cov-p1-05",
+      "section": "listening",
+      "part": 1,
+      "accent": "AU",
+      "title": "照片描述",
+      "image": "images/photo-warehouse.jpg",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Look at the photograph."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P1-05",
+          "skill": "l-photo",
+          "prompt": "聽四個敘述，選出最符合照片的一句。",
+          "options": [
+            "Some boxes have been placed on shelves.",
+            "Boxes are being loaded into a truck.",
+            "A pallet is being carried by a forklift.",
+            "A shelf is being assembled."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「Some boxes have been placed on shelves.」：背景的貨架上放著許多紙箱。畫面中沒有貨車、堆高機，也沒有人在組裝貨架。\n【考點】Part 1・物品位置與狀態\n【判斷依據】狀態（have been placed）描述已完成的結果；進行式（being …）需要畫面中有人正在做。",
+          "questionType": "object-position",
+          "ability": "L3"
+        }
+      ]
+    },
+    {
+      "id": "cov-p1-06",
+      "section": "listening",
+      "part": 1,
+      "accent": "UK",
+      "title": "照片描述",
+      "image": "images/photo-terrace.jpg",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Look at the photograph."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P1-06",
+          "skill": "l-photo",
+          "prompt": "聽四個敘述，選出最符合照片的一句。",
+          "options": [
+            "A table is being set for dinner.",
+            "Some chairs are stacked on top of each other.",
+            "Some leaves are scattered on the paving stones.",
+            "A customer is reading a menu."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Some leaves are scattered on the paving stones.」：地面石板上有幾片落葉，男子正在掃地。沒有人擺餐桌，椅子沒有疊起來，也沒有客人。\n【考點】Part 1・物品位置與狀態\n【判斷依據】先找地面上的物品（落葉），再確認沒有餐廳客人或擺桌動作。",
+          "questionType": "object-position",
+          "ability": "L3"
+        }
+      ]
+    },
+    {
+      "id": "cov-p1-07",
+      "section": "listening",
+      "part": 1,
+      "accent": "US",
+      "title": "照片描述",
+      "image": "images/photo-bicycle.jpg",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Look at the photograph."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P1-07",
+          "skill": "l-photo",
+          "prompt": "聽四個敘述，選出最符合照片的一句。",
+          "options": [
+            "A bicycle is being washed with a hose.",
+            "A rental bicycle is being locked by a passerby.",
+            "Some bicycles are being stored in a garage.",
+            "A toolbox has been opened on the pavement."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「A toolbox has been opened on the pavement.」：女子身旁的人行道上有一個打開的工具箱。沒有人在洗車；背景路人只是走過，沒有鎖車；車子在戶外租借站，不在車庫。\n【考點】Part 1・物品位置與狀態\n【判斷依據】工具箱的位置在前景地面；背景的路人沒有在鎖車，要看清楚動作的主詞與地點。",
+          "questionType": "object-position",
+          "ability": "L3"
+        }
+      ]
+    },
+    {
+      "id": "cov-p1-08",
+      "section": "listening",
+      "part": 1,
+      "accent": "UK",
+      "title": "照片描述",
+      "image": "images/photo-airport-maintenance.jpg",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Look at the photograph."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P1-08",
+          "skill": "l-photo",
+          "prompt": "聽四個敘述，選出最符合照片的一句。",
+          "options": [
+            "A woman is climbing up a ladder.",
+            "A woman is holding a ladder steady.",
+            "A man is carrying a ladder downstairs.",
+            "A woman is writing on a sign."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「A woman is holding a ladder steady.」：女子站在地面雙手扶著梯子，男子才在梯子上。她沒有爬梯子，也沒有搬梯子或寫字。\n【考點】Part 1・人物動作\n【判斷依據】題目問的是女子的動作：扶著梯子（holding steady）；爬梯子的是男子，是主詞不同的陷阱。",
+          "questionType": "person-action",
+          "ability": "L3"
+        }
+      ]
+    },
+    {
+      "id": "cov-p1-09",
+      "section": "listening",
+      "part": 1,
+      "accent": "CA",
+      "title": "照片描述",
+      "image": "images/photo-09.jpg",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Look at the photograph."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P1-09",
+          "skill": "l-photo",
+          "prompt": "聽四個敘述，選出最符合照片的一句。",
+          "options": [
+            "Some posters are hanging on a wall.",
+            "A copier is being moved across the floor.",
+            "A stack of printed pages is on a table.",
+            "A worker is boxing the cut paper."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「A stack of printed pages is on a table.」：左前方的桌上放著一疊印好的紙。牆上沒有海報，影印機沒有被搬動，女子在切紙機前整理紙張，沒有裝箱。\n【考點】Part 1・物品位置與狀態\n【判斷依據】先找圖中的物品（一疊紙）與位置（桌上），其餘選項的動作都沒有出現在畫面中。",
+          "questionType": "object-position",
+          "ability": "L3"
+        }
+      ]
+    },
+    {
+      "id": "cov-p1-10",
+      "section": "listening",
+      "part": 1,
+      "accent": "AU",
+      "title": "照片描述",
+      "image": "images/photo-10.jpg",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Look at the photograph."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P1-10",
+          "skill": "l-photo",
+          "prompt": "聽四個敘述，選出最符合照片的一句。",
+          "options": [
+            "A woman is holding the handle of a suitcase.",
+            "A woman is pulling a suitcase onto a train.",
+            "A woman is buying a ticket at a machine.",
+            "A conductor is waving a flag."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「A woman is holding the handle of a suitcase.」：月台上的女子手握著行李箱的拉桿，還沒有上車。沒有售票機，也沒有人揮旗。\n【考點】Part 1・人物動作\n【判斷依據】動作是 holding（握著），pulling onto a train 表示正在上車，與畫面不符。",
+          "questionType": "person-action",
+          "ability": "L3"
+        }
+      ]
+    },
+    {
+      "id": "cov-p1-11",
+      "section": "listening",
+      "part": 1,
+      "accent": "UK",
+      "title": "照片描述",
+      "image": "images/photo-11.jpg",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Look at the photograph."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P1-11",
+          "skill": "l-photo",
+          "prompt": "聽四個敘述，選出最符合照片的一句。",
+          "options": [
+            "Some archive boxes are being moved to a truck.",
+            "A cabinet is being carried down a hallway.",
+            "A shelf is being painted.",
+            "A drawer of a filing cabinet has been pulled open."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「A drawer of a filing cabinet has been pulled open.」：檔案櫃的一個抽屜被拉開了。紙箱放在架上沒有被搬動，櫃子沒有被抬走，架子也沒有在上漆。\n【考點】Part 1・物品位置與狀態\n【判斷依據】has been pulled open 描述抽屜的狀態；其他選項都是進行式，畫面中沒有人在做這些動作。",
+          "questionType": "object-position",
+          "ability": "L3"
+        }
+      ]
+    },
+    {
+      "id": "cov-p1-12",
+      "section": "listening",
+      "part": 1,
+      "accent": "US",
+      "title": "照片描述",
+      "image": "images/photo-12.jpg",
+      "spokenOptions": true,
+      "script": [
+        {
+          "speaker": "N",
+          "text": "Look at the photograph."
+        }
+      ],
+      "questions": [
+        {
+          "id": "COV-P1-12",
+          "skill": "l-photo",
+          "prompt": "聽四個敘述，選出最符合照片的一句。",
+          "options": [
+            "A bucket is being filled with water.",
+            "A pair of scissors is lying on the table.",
+            "Some roses are being thrown away.",
+            "A ribbon is being cut."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「A pair of scissors is lying on the table.」：桌面左側放著一把剪刀。沒有人在裝水，玫瑰放在桌上，花店店員正在綁緞帶，不是剪緞帶。\n【考點】Part 1・物品位置與狀態\n【判斷依據】先找桌上的物品（剪刀），再注意 being cut 是動作陷阱：她在綁（tying），不是剪（cutting）。",
+          "questionType": "object-position",
+          "ability": "L3"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p6-01",
+      "section": "reading",
+      "part": 6,
+      "title": "New parking permits",
+      "passage": {
+        "docs": [
+          {
+            "label": "Email",
+            "text": "To: All employees\nSubject: New parking permits\n\nBeginning next month, all employees who park in the company lot must [1] a permit to the windshield of their vehicle. Permits can be requested through the facilities portal and are issued within three business days.\n\nVisitors are not required to have a permit, [2] they must sign in at the reception desk. [3] Employees who carpool may share a single permit among up to three people.\n\nIf you have questions about the new system, please contact the facilities office. We [4] your cooperation in advance."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "COV-P6-01A",
+          "prompt": "Select the best word for [1].",
+          "skill": "r-vocabulary",
+          "options": [
+            "attach",
+            "attend",
+            "attract",
+            "attempt"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「attach」：把許可證貼在擋風玻璃上，動詞 attach（貼附）符合。attend 是出席，attract 是吸引，attempt 是嘗試，語意都不通。\n【考點】Part 6・字彙\n【判斷依據】先看空格前後的詞性與句型，再用整句語意檢查。",
+          "questionType": "vocabulary",
+          "ability": "R4"
+        },
+        {
+          "id": "COV-P6-01B",
+          "prompt": "Select the best word for [2].",
+          "skill": "r-grammar",
+          "options": [
+            "so",
+            "but",
+            "or",
+            "because"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「but」：前句說訪客不需要許可證，後句說仍須簽到，兩者是轉折關係，所以用 but。so 表結果，or 表選擇，because 表原因，都不合邏輯。\n【考點】Part 6・文法\n【判斷依據】先看空格前後的詞性與句型，再用整句語意檢查。",
+          "questionType": "grammar",
+          "ability": "R5"
+        },
+        {
+          "id": "COV-P6-01C",
+          "prompt": "Select the best sentence for [3].",
+          "skill": "r-purpose",
+          "options": [
+            "The company picnic will be held in June.",
+            "Our supplier changed the paper size for invoices.",
+            "A temporary badge will be provided at that time.",
+            "The elevators on the second floor are being repaired."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「A temporary badge will be provided at that time.」：空格前一句說訪客要在接待櫃檯簽到，插入『屆時會提供臨時識別證』最能承接；其他三句與停車許可、訪客簽到無關。\n【考點】Part 6・句子插入\n【判斷依據】先讀空格前後兩句，找出插入句要承接的對象（人、物或事件），再排除主題無關或與前後文矛盾的選項。",
+          "questionType": "sentence-insertion",
+          "ability": "R3"
+        },
+        {
+          "id": "COV-P6-01D",
+          "prompt": "Select the best word for [4].",
+          "skill": "r-grammar",
+          "options": [
+            "appreciation",
+            "appreciative",
+            "appreciates",
+            "appreciate"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「appreciate」：We 後面需要動詞，主詞是複數 We，所以用原形 appreciate。appreciation 是名詞，appreciative 是形容詞，appreciates 的主詞單複數不符。\n【考點】Part 6・文法\n【判斷依據】先看空格前後的詞性與句型，再用整句語意檢查。",
+          "questionType": "grammar",
+          "ability": "R5"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p6-02",
+      "section": "reading",
+      "part": 6,
+      "title": "Library closure notice",
+      "passage": {
+        "docs": [
+          {
+            "label": "Notice",
+            "text": "NOTICE\n\nThe Eastwood Branch Library will close for floor repairs from Monday to Wednesday next week. During this period, patrons may return books at the [1] drop box beside the main entrance.\n\nBooks due during the closure will be [2] as on time if they are returned by Thursday. [3] Readers who need a book urgently can reserve it at the Lakeside Branch.\n\nWe apologize for any [4] and thank you for your patience."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "COV-P6-02A",
+          "prompt": "Select the best word for [1].",
+          "skill": "r-grammar",
+          "options": [
+            "outdoors",
+            "outdoor",
+            "out",
+            "outwardly"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「outdoor」：空格修飾名詞 drop box，要用形容詞 outdoor。outdoors 與 outwardly 是副詞，out 不能直接當作這裡的形容詞。\n【考點】Part 6・文法\n【判斷依據】先看空格前後的詞性與句型，再用整句語意檢查。",
+          "questionType": "grammar",
+          "ability": "R5"
+        },
+        {
+          "id": "COV-P6-02B",
+          "prompt": "Select the best word for [2].",
+          "skill": "r-grammar",
+          "options": [
+            "counting",
+            "count",
+            "counted",
+            "counts"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「counted」：will be 後面接過去分詞表示被動：『被視為準時』，所以用 counted。其他三個形式放在 will be 之後都不合文法。\n【考點】Part 6・文法\n【判斷依據】先看空格前後的詞性與句型，再用整句語意檢查。",
+          "questionType": "grammar",
+          "ability": "R5"
+        },
+        {
+          "id": "COV-P6-02C",
+          "prompt": "Select the best sentence for [3].",
+          "skill": "r-purpose",
+          "options": [
+            "The library will hire two new librarians in the spring.",
+            "Lakeside Branch will close permanently next month.",
+            "Floor repairs will cost about ten thousand dollars.",
+            "No late fees will be charged for those items."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「No late fees will be charged for those items.」：前句說閉館期間到期的書星期四前還都算準時，接『這些書不收逾期費』最自然。Lakeside Branch 將永久關閉與下一句要讀者去該分館借書矛盾；其他兩句與歸還書籍無關。\n【考點】Part 6・句子插入\n【判斷依據】先讀空格前後兩句，找出插入句要承接的對象（人、物或事件），再排除主題無關或與前後文矛盾的選項。",
+          "questionType": "sentence-insertion",
+          "ability": "R3"
+        },
+        {
+          "id": "COV-P6-02D",
+          "prompt": "Select the best word for [4].",
+          "skill": "r-grammar",
+          "options": [
+            "inconvenience",
+            "inconvenient",
+            "inconveniently",
+            "inconvenienced"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「inconvenience」：any 之後需要名詞，所以用 inconvenience。inconvenient 是形容詞，inconveniently 是副詞，inconvenienced 是動詞過去式。\n【考點】Part 6・文法\n【判斷依據】先看空格前後的詞性與句型，再用整句語意檢查。",
+          "questionType": "grammar",
+          "ability": "R5"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p6-03",
+      "section": "reading",
+      "part": 6,
+      "title": "Design software update",
+      "passage": {
+        "docs": [
+          {
+            "label": "Memo",
+            "text": "To: Marketing team\nSubject: Design software update\n\nOur design software will be updated this Friday evening. The update is expected to [1] about one hour, so please save and close all files before you leave.\n\n[2] you work from home, the update will install automatically the next time you connect to the company network. [3]\n\nOnce the update is complete, the new templates will be available in the shared folder. [4], please report any errors to the help desk."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "COV-P6-03A",
+          "prompt": "Select the best word for [1].",
+          "skill": "r-grammar",
+          "options": [
+            "takes",
+            "taking",
+            "take",
+            "taken"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「take」：is expected to 之後接原形動詞，所以用 take。takes、taking、taken 都不能接在不定詞 to 後面。\n【考點】Part 6・文法\n【判斷依據】先看空格前後的詞性與句型，再用整句語意檢查。",
+          "questionType": "grammar",
+          "ability": "R5"
+        },
+        {
+          "id": "COV-P6-03B",
+          "prompt": "Select the best word for [2].",
+          "skill": "r-grammar",
+          "options": [
+            "If",
+            "Despite",
+            "During",
+            "Throughout"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「If」：後面接完整子句 you work from home，需要連接詞，語意是『如果在家工作』，用 If。Despite、During、Throughout 是介系詞，不能直接接子句。\n【考點】Part 6・文法\n【判斷依據】先看空格前後的詞性與句型，再用整句語意檢查。",
+          "questionType": "grammar",
+          "ability": "R5"
+        },
+        {
+          "id": "COV-P6-03C",
+          "prompt": "Select the best sentence for [3].",
+          "skill": "r-purpose",
+          "options": [
+            "The annual conference will take place in May.",
+            "No action is required from you in that case.",
+            "Visitors may borrow a laptop at reception.",
+            "The cafeteria menu changes every month."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「No action is required from you in that case.」：前句說在家工作的人連上公司網路時會自動安裝，接『這種情況下你不需要做任何事』最合理。其他三句與更新沒有關係。\n【考點】Part 6・句子插入\n【判斷依據】先讀空格前後兩句，找出插入句要承接的對象（人、物或事件），再排除主題無關或與前後文矛盾的選項。",
+          "questionType": "sentence-insertion",
+          "ability": "R3"
+        },
+        {
+          "id": "COV-P6-03D",
+          "prompt": "Select the best word for [4].",
+          "skill": "r-grammar",
+          "options": [
+            "In contrast",
+            "Instead",
+            "On the other hand",
+            "As always"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「As always」：新範本上線後請回報錯誤是延續一般做法的提醒，用 As always。In contrast 與 On the other hand 表對比，Instead 表取代，前文沒有可對比或被取代的內容。\n【考點】Part 6・連接副詞\n【判斷依據】先看空格前後的詞性與句型，再用整句語意檢查。",
+          "questionType": "conjunctive-adverb",
+          "ability": "R5"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p6-04",
+      "section": "reading",
+      "part": 6,
+      "title": "Damaged chairs reply",
+      "passage": {
+        "docs": [
+          {
+            "label": "Letter",
+            "text": "Dear Ms. Reyes,\n\nThank you for contacting us about your recent order of office chairs. We [1] that two of the chairs arrived with damaged armrests.\n\n[2] a replacement set has already been sent, you do not need to return the damaged chairs. [3] They may be kept or donated as you prefer.\n\nTo thank you for your patience, we have applied a ten percent discount to your [4] purchase."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "COV-P6-04A",
+          "prompt": "Select the best word for [1].",
+          "skill": "r-vocabulary",
+          "options": [
+            "expect",
+            "assume",
+            "request",
+            "regret"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「regret」：We regret that... 表示對椅子受損感到抱歉，符合致歉信的語氣。expect、assume 表示預期、假設，request 後面不接這種事實子句，語意都不合。\n【考點】Part 6・字彙\n【判斷依據】先看空格前後的詞性與句型，再用整句語意檢查。",
+          "questionType": "vocabulary",
+          "ability": "R4"
+        },
+        {
+          "id": "COV-P6-04B",
+          "prompt": "Select the best word for [2].",
+          "skill": "r-grammar",
+          "options": [
+            "Because",
+            "Despite",
+            "Unless",
+            "Whereas"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「Because」：已經寄出替換品是『不用退回』的原因，用 Because。Despite 後面要接名詞，Unless 表條件否定，Whereas 表對比，邏輯都不合。\n【考點】Part 6・文法\n【判斷依據】先看空格前後的詞性與句型，再用整句語意檢查。",
+          "questionType": "grammar",
+          "ability": "R5"
+        },
+        {
+          "id": "COV-P6-04C",
+          "prompt": "Select the best sentence for [3].",
+          "skill": "r-purpose",
+          "options": [
+            "Our showroom hours have changed for the winter.",
+            "We will not charge you for the damaged set.",
+            "The replacement chairs come in three colors.",
+            "Please return the chairs within thirty days."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「We will not charge you for the damaged set.」：插入句後一句 They may be kept or donated 的 They 指受損的椅子，所以前面提到受損的一組椅子（the damaged set）最合理。要求三十天內退回與前文『不用退回』矛盾；其他兩句與受損椅子無關。\n【考點】Part 6・句子插入\n【判斷依據】先讀空格前後兩句，找出插入句要承接的對象（人、物或事件），再排除主題無關或與前後文矛盾的選項。",
+          "questionType": "sentence-insertion",
+          "ability": "R3"
+        },
+        {
+          "id": "COV-P6-04D",
+          "prompt": "Select the best word for [4].",
+          "skill": "r-grammar",
+          "options": [
+            "follow",
+            "followed",
+            "following",
+            "follows"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「following」：空格修飾名詞 purchase，following（下一次的）是形容詞，表示接下來的購買。follow 與 follows 是動詞，followed 的意思是『被跟隨的』，語意不符。\n【考點】Part 6・文法\n【判斷依據】先看空格前後的詞性與句型，再用整句語意檢查。",
+          "questionType": "grammar",
+          "ability": "R5"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p6-05",
+      "section": "reading",
+      "part": 6,
+      "title": "Staff fitness center",
+      "passage": {
+        "docs": [
+          {
+            "label": "Announcement",
+            "text": "The staff fitness center will reopen on Monday after two weeks of renovation. The room now has [1] equipment, including six treadmills and a rowing machine.\n\nEmployees [2] want to use the center must complete a short safety orientation. [3] Sessions are offered at noon and at five o'clock on weekdays.\n\nThe center will be [4] from six a.m. to nine p.m."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "COV-P6-05A",
+          "prompt": "Select the best word for [1].",
+          "skill": "r-grammar",
+          "options": [
+            "updated",
+            "updating",
+            "update",
+            "updates"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「updated」：空格修飾名詞 equipment，過去分詞 updated 當形容詞，表示『更新過的』。updating 的語意是『正在更新的』，update 與 updates 是名詞或動詞。\n【考點】Part 6・文法\n【判斷依據】先看空格前後的詞性與句型，再用整句語意檢查。",
+          "questionType": "grammar",
+          "ability": "R5"
+        },
+        {
+          "id": "COV-P6-05B",
+          "prompt": "Select the best word for [2].",
+          "skill": "r-grammar",
+          "options": [
+            "whom",
+            "who",
+            "whose",
+            "which"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「who」：先行詞是人（Employees），在子句中當主詞，所以用關代 who。whom 是受詞，whose 表所有，which 不用於人。\n【考點】Part 6・文法\n【判斷依據】先看空格前後的詞性與句型，再用整句語意檢查。",
+          "questionType": "grammar",
+          "ability": "R5"
+        },
+        {
+          "id": "COV-P6-05C",
+          "prompt": "Select the best sentence for [3].",
+          "skill": "r-purpose",
+          "options": [
+            "The cafeteria will add a new salad menu.",
+            "Parking permits must be renewed in January.",
+            "The orientation takes about twenty minutes.",
+            "The renovation cost more than expected."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「The orientation takes about twenty minutes.」：前句要求先完成安全說明會，下一句說明會場次，中間插入『說明會約二十分鐘』最合邏輯。其他三句與說明會無關。\n【考點】Part 6・句子插入\n【判斷依據】先讀空格前後兩句，找出插入句要承接的對象（人、物或事件），再排除主題無關或與前後文矛盾的選項。",
+          "questionType": "sentence-insertion",
+          "ability": "R3"
+        },
+        {
+          "id": "COV-P6-05D",
+          "prompt": "Select the best word for [4].",
+          "skill": "r-grammar",
+          "options": [
+            "avail",
+            "availably",
+            "availability",
+            "available"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「available」：will be 後面需要形容詞，available（可使用）符合。avail 是動詞，availably 不是常用的字，availability 是名詞。\n【考點】Part 6・文法\n【判斷依據】先看空格前後的詞性與句型，再用整句語意檢查。",
+          "questionType": "grammar",
+          "ability": "R5"
+        }
+      ]
+    },
+    {
+      "id": "g-cov-p6-06",
+      "section": "reading",
+      "part": 6,
+      "title": "Meeting date change",
+      "passage": {
+        "docs": [
+          {
+            "label": "Email",
+            "text": "Dear Mr. Okada,\n\nWe would like to [1] our meeting from Tuesday to Thursday because our director will be traveling on Tuesday.\n\n[2] the date, nothing about the meeting will change. It will begin at ten o'clock in the same conference room. [3]\n\nI apologize [4] this change causes you any inconvenience and hope Thursday works for you."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "COV-P6-06A",
+          "prompt": "Select the best word for [1].",
+          "skill": "r-vocabulary",
+          "options": [
+            "reserve",
+            "reschedule",
+            "reduce",
+            "remove"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「reschedule」：把會議從星期二改到星期四是 reschedule（重新安排）。reserve 是預訂，reduce 是減少，remove 是移除，都不能接『from Tuesday to Thursday』。\n【考點】Part 6・字彙\n【判斷依據】先看空格前後的詞性與句型，再用整句語意檢查。",
+          "questionType": "vocabulary",
+          "ability": "R4"
+        },
+        {
+          "id": "COV-P6-06B",
+          "prompt": "Select the best word for [2].",
+          "skill": "r-grammar",
+          "options": [
+            "Instead",
+            "Because",
+            "Except for",
+            "Unless"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Except for」：後面接名詞片語 the date，需要介系詞片語，Except for 表示『除了…之外』。Instead 要接 of，Because 與 Unless 是連接詞，後面要接子句。\n【考點】Part 6・文法\n【判斷依據】先看空格前後的詞性與句型，再用整句語意檢查。",
+          "questionType": "grammar",
+          "ability": "R5"
+        },
+        {
+          "id": "COV-P6-06C",
+          "prompt": "Select the best sentence for [3].",
+          "skill": "r-purpose",
+          "options": [
+            "The new parking garage opens next month.",
+            "Our accounting software was updated last year.",
+            "Several employees will attend a course in May.",
+            "Please bring the updated sales figures."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Please bring the updated sales figures.」：前面在說明會議時間與地點，接『請帶更新後的銷售數字』是會議相關的要求。其他三句與這場會議無關。\n【考點】Part 6・句子插入\n【判斷依據】先讀空格前後兩句，找出插入句要承接的對象（人、物或事件），再排除主題無關或與前後文矛盾的選項。",
+          "questionType": "sentence-insertion",
+          "ability": "R3"
+        },
+        {
+          "id": "COV-P6-06D",
+          "prompt": "Select the best word for [4].",
+          "skill": "r-grammar",
+          "options": [
+            "if",
+            "unless",
+            "whereas",
+            "during"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「if」：『如果這個變動造成您不便，我很抱歉』用 if。unless 表除非，whereas 表對比，during 是介系詞，不能接子句。\n【考點】Part 6・文法\n【判斷依據】先看空格前後的詞性與句型，再用整句語意檢查。",
+          "questionType": "grammar",
+          "ability": "R5"
+        }
+      ]
     }
   ]
 }
