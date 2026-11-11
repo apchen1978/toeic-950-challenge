@@ -17019,7 +17019,7 @@
         },
         {
           "id": "rd-new-062",
-          "prompt": "What should Mr. Dale do before 3:00 p.m. Thursday?",
+          "prompt": "What should Mr. Dale do before 3:00 p.m. Wednesday?",
           "skill": "r-detail",
           "options": [
             "Confirm that a staff member can receive the crates.",
@@ -17048,17 +17048,17 @@
         },
         {
           "id": "rd-new-064",
-          "prompt": "What is implied about the shipment?",
-          "skill": "r-inference",
+          "prompt": "What items are being delivered to Mr. Dale?",
+          "skill": "r-detail",
           "options": [
             "Refrigerated food.",
             "Office furniture.",
             "Printed brochures.",
             "Three supply crates."
           ],
-          "answer": 2,
-          "explanation": "正解 C「Three supply crates」：客服郵件說這批貨是三箱用品。A 冷藏食品、B 辦公家具、D 宣傳手冊都沒有在信中提到。",
-          "ability": "R1"
+          "answer": 3,
+          "explanation": "正解 D「Three supply crates」：客服郵件明確指出配送的是三箱用品。A 冷藏食品、B 辦公家具、C 宣傳手冊都未在信中提到。",
+          "ability": "R2"
         },
         {
           "id": "rd-new-065",
@@ -17284,7 +17284,7 @@
       "questions": [
         {
           "id": "rd-new-076",
-          "prompt": "Which session begins first on Thursday?",
+          "prompt": "Which activity begins first on Thursday?",
           "skill": "r-detail",
           "options": [
             "Panel discussion.",
@@ -17292,7 +17292,7 @@
             "Workshop: Building Clear Procedures.",
             "Networking lunch."
           ],
-          "answer": 0,
+          "answer": 1,
           "explanation": "正解 B「Registration desk」：報到 8:15 開始，早於 9:00 的 panel、10:15 的 workshop 和 12:15 的午餐。",
           "ability": "R2"
         },

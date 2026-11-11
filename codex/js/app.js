@@ -161,10 +161,21 @@ function migrateStoredChoices() {
   for (const entry of history) {
     if (!entry?.answers) continue;
     const migrated = migrateChoiceIndexes(entry.answers, entry.choiceRevision, lookup);
-    if (!migrated.changed) continue;
-    entry.answers = migrated.answers;
-    entry.choiceRevision = migrated.revision;
-    historyChanged = true;
+    if (migrated.changed) {
+      entry.answers = migrated.answers;
+      entry.choiceRevision = migrated.revision;
+      historyChanged = true;
+    }
+    const questions = questionsFor(entry);
+    const result = score(questions, entry.answers);
+    if (entry.correct !== result.correct || entry.total !== result.total) {
+      const answered = score(questions.filter((question) => entry.answers[question.id] !== undefined), entry.answers);
+      entry.correct = result.correct;
+      entry.total = result.total;
+      entry.bySkill = answered.bySkill;
+      entry.bySection = answered.bySection;
+      historyChanged = true;
+    }
   }
   if (historyChanged) store.set(KEY_HISTORY, history);
 }
