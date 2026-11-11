@@ -428,7 +428,7 @@
       "scriptSha256": "4c82287574ff1ff74e806ff1f788b2a0a74c0779dc19f8110024b14c74c706f8",
       "spokenChoices": [
         "A.",
-        "No, I scanned it twice.",
+        "The replacement scanner’s warranty expires next month.",
         "B.",
         "The receptionist starts at nine.",
         "C.",
@@ -449,8 +449,8 @@
       "roles": [
         "M"
       ],
-      "durationSec": 20.86,
-      "bytes": 125805,
+      "durationSec": 22.73,
+      "bytes": 137036,
       "questionClips": []
     },
     "g-new-l2": {
@@ -462,7 +462,7 @@
         "A.",
         "Her deputy has signing authority.",
         "B.",
-        "The trip was quite expensive.",
+        "The expense report still needs a signature.",
         "C.",
         "She approved the itinerary last month."
       ],
@@ -481,8 +481,8 @@
       "roles": [
         "W"
       ],
-      "durationSec": 19.81,
-      "bytes": 119469,
+      "durationSec": 20.45,
+      "bytes": 123356,
       "questionClips": []
     },
     "g-new-l3": {
@@ -1201,7 +1201,7 @@
         "A.",
         "Only if we approve its revised quotation today.",
         "B.",
-        "The revised quotation includes expedited freight.",
+        "The replacement sensors were tested last week.",
         "C.",
         "It delivered the previous batch on Tuesday."
       ],
@@ -1220,8 +1220,8 @@
       "roles": [
         "M"
       ],
-      "durationSec": 25.06,
-      "bytes": 151005,
+      "durationSec": 24.46,
+      "bytes": 147404,
       "questionClips": []
     },
     "g-a-p2-02": {
@@ -1235,7 +1235,7 @@
         "B.",
         "The dispatch log was archived with last quarter's files.",
         "C.",
-        "Those rates take effect after the next renewal cycle."
+        "The revised rate sheet was included in the newsletter."
       ],
       "voices": [
         {
@@ -1252,8 +1252,8 @@
       "roles": [
         "W"
       ],
-      "durationSec": 25.3,
-      "bytes": 152445,
+      "durationSec": 25.11,
+      "bytes": 151292,
       "questionClips": []
     },
     "g-a-p2-03": {
@@ -2749,7 +2749,7 @@
         "A.",
         "The events coordinator said she would.",
         "B.",
-        "The chairs have already arrived.",
+        "The revised seating plan is posted on the conference portal.",
         "C.",
         "About sixty people are expected."
       ],
@@ -2768,8 +2768,8 @@
       "roles": [
         "W"
       ],
-      "durationSec": 20.48,
-      "bytes": 123501,
+      "durationSec": 21.73,
+      "bytes": 130988,
       "questionClips": []
     },
     "xf-p2-02": {
@@ -2813,7 +2813,7 @@
         "A.",
         "In the supply closet beside the printer.",
         "B.",
-        "It scans both sides automatically.",
+        "The replacement scanner’s warranty expires in June.",
         "C.",
         "The technician has not confirmed a date yet."
       ],
@@ -2832,8 +2832,8 @@
       "roles": [
         "W"
       ],
-      "durationSec": 21.56,
-      "bytes": 129981,
+      "durationSec": 22.3,
+      "bytes": 134444,
       "questionClips": []
     },
     "xf-p2-04": {
@@ -2875,7 +2875,7 @@
       "scriptSha256": "55ed910380aa7d0fbea4e3b9bf8f2e7c4ab762a62ead7f029a97890384b70323",
       "spokenChoices": [
         "A.",
-        "It leaves every half hour.",
+        "The airport shuttle stops at Terminal 2.",
         "B.",
         "At the departure lane near Gate Four.",
         "C.",
@@ -2896,8 +2896,8 @@
       "roles": [
         "W"
       ],
-      "durationSec": 20.09,
-      "bytes": 121197,
+      "durationSec": 20.89,
+      "bytes": 125948,
       "questionClips": []
     },
     "xf-p2-06": {
@@ -2943,7 +2943,7 @@
         "B.",
         "The renewal fee was paid in March.",
         "C.",
-        "It covers three regional offices."
+        "The service contract covers three regional offices."
       ],
       "voices": [
         {
@@ -2960,8 +2960,8 @@
       "roles": [
         "W"
       ],
-      "durationSec": 21.63,
-      "bytes": 130413,
+      "durationSec": 22.54,
+      "bytes": 135884,
       "questionClips": []
     },
     "xf-p2-08": {
@@ -3069,7 +3069,7 @@
         "A.",
         "The final results should be ready tomorrow.",
         "B.",
-        "We tested the new machine last week.",
+        "The water samples arrived in two coolers.",
         "C.",
         "They came from three sites."
       ],
@@ -3088,8 +3088,8 @@
       "roles": [
         "W"
       ],
-      "durationSec": 21.73,
-      "bytes": 130989,
+      "durationSec": 22.01,
+      "bytes": 132716,
       "questionClips": []
     },
     "xf-p2-12": {
@@ -3099,7 +3099,7 @@
       "scriptSha256": "d9e80da780346474134ffc5b5104493de83aea48f246f4dc0585f7c054188629",
       "spokenChoices": [
         "A.",
-        "It was copied on blue paper.",
+        "The lease copy has a blue cover.",
         "B.",
         "The landlord has two offices.",
         "C.",
@@ -3120,8 +3120,8 @@
       "roles": [
         "M"
       ],
-      "durationSec": 20.79,
-      "bytes": 125373,
+      "durationSec": 21.17,
+      "bytes": 127676,
       "questionClips": []
     },
     "xf-p2-13": {
@@ -4159,7 +4159,7 @@
       "scriptSha256": "267fe348b6fa7d94d2d237ddd9857c4c583e45a30d73155c2ee1a243c5096781",
       "spokenChoices": [
         "A.",
-        "It is available in four languages.",
+        "The translation of the visitor guide is due next week.",
         "B.",
         "At the visitors' entrance near the elevators.",
         "C.",
@@ -4180,8 +4180,8 @@
       "roles": [
         "M"
       ],
-      "durationSec": 23.07,
-      "bytes": 139053,
+      "durationSec": 23.05,
+      "bytes": 138908,
       "questionClips": []
     },
     "g-xl-p2-05": {
@@ -4225,7 +4225,7 @@
         "A.",
         "Her flight confirmation is in the shared folder.",
         "B.",
-        "Yes, she is giving two lectures.",
+        "The guest lecturer will give two sessions.",
         "C.",
         "At the international terminal."
       ],
@@ -4244,8 +4244,8 @@
       "roles": [
         "M"
       ],
-      "durationSec": 22.21,
-      "bytes": 133869,
+      "durationSec": 22.37,
+      "bytes": 134876,
       "questionClips": []
     },
     "g-xl-p2-07": {
@@ -6588,7 +6588,7 @@
       "scriptSha256": "4706507ce8eb618b923d9b4225b65cbe6b1dd19a062bedcbb464e01d7ae942f1",
       "spokenChoices": [
         "A.",
-        "The printer is on the second floor.",
+        "The final figures appear in last quarter’s report.",
         "B.",
         "There are thirty people attending.",
         "C.",
@@ -6609,8 +6609,8 @@
       "roles": [
         "W"
       ],
-      "durationSec": 22.4,
-      "bytes": 135021,
+      "durationSec": 23.17,
+      "bytes": 139628,
       "questionClips": []
     },
     "g-xs-l06": {
@@ -7006,7 +7006,7 @@
         "A.",
         "Friday comes after Thursday.",
         "B.",
-        "The printer needs more paper.",
+        "The meeting memo is filed on the shared drive.",
         "C.",
         "Hasn't the memo gone out?"
       ],
@@ -7025,8 +7025,8 @@
       "roles": [
         "W"
       ],
-      "durationSec": 19.76,
-      "bytes": 119181,
+      "durationSec": 20.69,
+      "bytes": 124796,
       "questionClips": []
     },
     "g-gx-p2-04": {
@@ -7100,7 +7100,7 @@
       "scriptSha256": "d58440df6e203100f18d95742c5f4431b97e6103f54fabcca5365279cd2b646c",
       "spokenChoices": [
         "A.",
-        "The warehouse has two loading doors.",
+        "The delayed shipment is at the north warehouse.",
         "B.",
         "A storm is forecast for next week.",
         "C.",
@@ -7121,8 +7121,8 @@
       "roles": [
         "M"
       ],
-      "durationSec": 20.43,
-      "bytes": 123213,
+      "durationSec": 20.69,
+      "bytes": 124796,
       "questionClips": []
     },
     "g-gx-p2-07": {
@@ -7230,7 +7230,7 @@
         "A.",
         "Try asking the legal team.",
         "B.",
-        "The legal team meets on Tuesday.",
+        "The contract renewal date is listed on page six.",
         "C.",
         "The copier needs more paper."
       ],
@@ -7249,8 +7249,8 @@
       "roles": [
         "M"
       ],
-      "durationSec": 19.85,
-      "bytes": 119757,
+      "durationSec": 21.25,
+      "bytes": 128108,
       "questionClips": []
     },
     "g-gx-p2-11": {
@@ -8017,6 +8017,618 @@
           "bytes": 21404,
           "voice": "en-CA-ClaraNeural",
           "locale": "en-CA",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "g-round12-p2-01": {
+      "file": "audio/g-round12-p2-01.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "198e37fd983d619f42f13d80bf665c0ecc2ffd6cb674df3183984e26ff9e9b99",
+      "spokenChoices": [
+        "A.",
+        "The copier’s warranty expires in May.",
+        "B.",
+        "I’ll tell the team where it is now.",
+        "C.",
+        "The supply order arrives next week."
+      ],
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 21.61,
+      "bytes": 130268,
+      "questionClips": []
+    },
+    "g-round12-p2-02": {
+      "file": "audio/g-round12-p2-02.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "001a0a2ddb384fd937da4c4e7fcea350d6cf1dd992e047aeac117f95792b43e2",
+      "spokenChoices": [
+        "A.",
+        "The chair near the window is reserved.",
+        "B.",
+        "I’ll send him the latest agenda.",
+        "C.",
+        "Planning begins after the budget review."
+      ],
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 21.2,
+      "bytes": 127820,
+      "questionClips": []
+    },
+    "g-round12-p2-03": {
+      "file": "audio/g-round12-p2-03.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "19fd712de482d38cb6f04214c07e3aeed6ca5cc204ec93f07016bdb7b0fa06af",
+      "spokenChoices": [
+        "A.",
+        "I attended a workshop at headquarters last year.",
+        "B.",
+        "Friday’s report is already complete.",
+        "C.",
+        "I’ll check whether the training suite is free."
+      ],
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 22.69,
+      "bytes": 136748,
+      "questionClips": []
+    },
+    "g-round12-p2-04": {
+      "file": "audio/g-round12-p2-04.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "737071abcfea346c0f858426a12208bea69555d5cfa57ac5eaa5ec0fcb18ea23",
+      "spokenChoices": [
+        "A.",
+        "We cleaned the window in the loading bay.",
+        "B.",
+        "I’ll update the receiving team.",
+        "C.",
+        "The delivery driver has a new uniform."
+      ],
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 20.5,
+      "bytes": 123644,
+      "questionClips": []
+    },
+    "g-round12-p2-05": {
+      "file": "audio/g-round12-p2-05.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "03b2740d2214b5f2d346374f7136041dd3f1bc2c801f7667df9d6adf81031287",
+      "spokenChoices": [
+        "A.",
+        "The estimate is attached to the client’s old invoice.",
+        "B.",
+        "Then we can schedule the work.",
+        "C.",
+        "I estimated the trip would take an hour."
+      ],
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 21.92,
+      "bytes": 132140,
+      "questionClips": []
+    },
+    "g-round12-p2-06": {
+      "file": "audio/g-round12-p2-06.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "902690be6d4c67601a0964f9772cddc70a1b1415b67e1a1781a2fdfd0477c130",
+      "spokenChoices": [
+        "A.",
+        "The entrance sign needs a new coat of paint.",
+        "B.",
+        "Visitors can use the east doors.",
+        "C.",
+        "The repair estimate is in the blue folder."
+      ],
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 21.53,
+      "bytes": 129836,
+      "questionClips": []
+    },
+    "g-round12-p2-07": {
+      "file": "audio/g-round12-p2-07.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "7226a3caba02b11b1732af0840a8ddd9f34aee6f0ce24faac882a86ace780ab3",
+      "spokenChoices": [
+        "A.",
+        "A table near the window is available after noon.",
+        "B.",
+        "Great, I’ll let the guests know.",
+        "C.",
+        "The reservation fee was included in the invoice."
+      ],
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 22.83,
+      "bytes": 137612,
+      "questionClips": []
+    },
+    "g-round12-p2-08": {
+      "file": "audio/g-round12-p2-08.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "5ce9ff5f514614138e5360e9a65c98eed2f428389ac8c5bd830d05e9f704b35e",
+      "spokenChoices": [
+        "A.",
+        "The higher floor has a larger meeting room.",
+        "B.",
+        "I’ll prepare an access card for the new employee.",
+        "C.",
+        "The hiring notice was posted yesterday."
+      ],
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 20.43,
+      "bytes": 123212,
+      "questionClips": []
+    },
+    "g-round12-p2-09": {
+      "file": "audio/g-round12-p2-09.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "4d764fd3430aead9272f527408f417569b95c5c44a9c6d3dfee1b280c6d43885",
+      "spokenChoices": [
+        "A.",
+        "I reported the supply shortage last month.",
+        "B.",
+        "Please send me the electronic copy.",
+        "C.",
+        "The report cover is being redesigned."
+      ],
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 21.82,
+      "bytes": 131564,
+      "questionClips": []
+    },
+    "g-round12-p2-10": {
+      "file": "audio/g-round12-p2-10.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "ac02a6be8b85dab78052bf9d1aaf4cb2728d762a86e77a83d50d233b26f16463",
+      "spokenChoices": [
+        "A.",
+        "The budget spreadsheet is in the shared folder.",
+        "B.",
+        "I’ll notify the department heads.",
+        "C.",
+        "The meeting room has a new projector."
+      ],
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 20.89,
+      "bytes": 125948,
+      "questionClips": []
+    },
+    "g-round12-p2-11": {
+      "file": "audio/g-round12-p2-11.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "1f7f86f2fda6935901935dfb04f72832224e62dc6272325628959c3f0cb57b0b",
+      "spokenChoices": [
+        "A.",
+        "The freight shipment arrived yesterday.",
+        "B.",
+        "I’ll let the pickup driver know.",
+        "C.",
+        "Singapore has two international terminals."
+      ],
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 21.13,
+      "bytes": 127388,
+      "questionClips": []
+    },
+    "g-round12-p2-12": {
+      "file": "audio/g-round12-p2-12.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "ee9e76568119d5124f919a4c107697b5591bd74a26fef2e71b89492ae0e2f906",
+      "spokenChoices": [
+        "A.",
+        "The café offers a discount on Thursdays.",
+        "B.",
+        "I’ll post a notice by the elevators.",
+        "C.",
+        "A cafeteria table was moved this morning."
+      ],
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 21.08,
+      "bytes": 127100,
+      "questionClips": []
+    },
+    "g-round12-p3-three": {
+      "file": "audio/g-round12-p3-three.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "e65a1d214c75805084c3965a5b5e5728115b8bf925c051dd2aa5b47223bb9e47",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "N",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US",
+          "pitch": "+10Hz"
+        }
+      ],
+      "roles": [
+        "M",
+        "W",
+        "N",
+        "M",
+        "W",
+        "N"
+      ],
+      "durationSec": 38.67,
+      "bytes": 232652,
+      "questionClips": [
+        {
+          "id": "R12-P3-01",
+          "file": "audio/q-R12-P3-01.mp3",
+          "durationSec": 3.36,
+          "bytes": 20684,
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "R12-P3-02",
+          "file": "audio/q-R12-P3-02.mp3",
+          "durationSec": 4.63,
+          "bytes": 28316,
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US",
+          "role": "N",
+          "graphic": true
+        },
+        {
+          "id": "R12-P3-03",
+          "file": "audio/q-R12-P3-03.mp3",
+          "durationSec": 3.29,
+          "bytes": 20252,
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "g-round12-p4-schedule": {
+      "file": "audio/g-round12-p4-schedule.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "4163c1a01c6f3d2fd6464fe25418ba2353ed3704ef01a823867f5fdb0701a987",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 21.31,
+      "bytes": 128396,
+      "questionClips": [
+        {
+          "id": "R12-P4-01",
+          "file": "audio/q-R12-P4-01.mp3",
+          "durationSec": 3.89,
+          "bytes": 23852,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": true
+        },
+        {
+          "id": "R12-P4-02",
+          "file": "audio/q-R12-P4-02.mp3",
+          "durationSec": 3.7,
+          "bytes": 22700,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "R12-P4-03",
+          "file": "audio/q-R12-P4-03.mp3",
+          "durationSec": 3.67,
+          "bytes": 22556,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "g-round12-p3-accent-ca": {
+      "file": "audio/g-round12-p3-accent-ca.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "82a45b799900a62c3e60df43a9b7782a8fbb9564d867892b3a285dcab705f568",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "W",
+        "M",
+        "W",
+        "M"
+      ],
+      "durationSec": 26.09,
+      "bytes": 157196,
+      "questionClips": [
+        {
+          "id": "R12-P3-04",
+          "file": "audio/q-R12-P3-04.mp3",
+          "durationSec": 2.76,
+          "bytes": 17084,
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA",
+          "role": "N",
+          "graphic": true
+        },
+        {
+          "id": "R12-P3-05",
+          "file": "audio/q-R12-P3-05.mp3",
+          "durationSec": 3.14,
+          "bytes": 19388,
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "R12-P3-06",
+          "file": "audio/q-R12-P3-06.mp3",
+          "durationSec": 2.9,
+          "bytes": 17948,
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "g-round12-p4-accent-uk": {
+      "file": "audio/g-round12-p4-accent-uk.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "b01c0a9f609903ad2b0a4cb547ccfd9997eb5d9c3149a38c60e41bcd52823ff0",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "N",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "N"
+      ],
+      "durationSec": 21.0,
+      "bytes": 126524,
+      "questionClips": [
+        {
+          "id": "R12-P4-04",
+          "file": "audio/q-R12-P4-04.mp3",
+          "durationSec": 3.22,
+          "bytes": 19820,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": true
+        },
+        {
+          "id": "R12-P4-05",
+          "file": "audio/q-R12-P4-05.mp3",
+          "durationSec": 3.26,
+          "bytes": 20108,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "R12-P4-06",
+          "file": "audio/q-R12-P4-06.mp3",
+          "durationSec": 2.42,
+          "bytes": 15068,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
           "role": "N",
           "graphic": false
         }
