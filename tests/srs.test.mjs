@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { migrateFlashcardProgress, rateCard, selectCards } from '../codex/js/srs.js';
+import { FLASHCARD_RENAMES, migrateFlashcardProgress, rateCard, selectCards } from '../codex/js/srs.js';
 
 test('renamed flashcard keeps its saved schedule and does not overwrite newer progress', () => {
   const saved = { box: 3, dueAt: 123, introducedAt: 45 };
@@ -13,6 +13,16 @@ test('renamed flashcard keeps its saved schedule and does not overwrite newer pr
   const newer = { ...old, 'free trial offer': { box: 4 } };
   assert.equal(migrateFlashcardProgress(newer).changed, false);
   assert.deepEqual(migrateFlashcardProgress(newer).progress['free trial offer'], { box: 4 });
+});
+
+test('all retired vocabulary headwords transfer their flashcard schedules', () => {
+  const old = Object.fromEntries(Object.keys(FLASHCARD_RENAMES).map((word, index) => [word, { box: 2, dueAt: index + 10, introducedAt: index }]));
+  const migrated = migrateFlashcardProgress(old);
+  assert.equal(migrated.changed, true);
+  for (const [word, replacement] of Object.entries(FLASHCARD_RENAMES)) {
+    assert.deepEqual(migrated.progress[replacement], old[word], word);
+    assert.equal(migrated.progress[word], undefined, word);
+  }
 });
 
 test('ratings schedule repeat, progression, and preserve introduction date', () => {

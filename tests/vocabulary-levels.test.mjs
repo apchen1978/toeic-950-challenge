@@ -40,6 +40,15 @@ test("headwords are unique, including hyphen, spacing, and simple plural variant
   }
 });
 
+test("new acronym headwords have an abbreviation label and full form", () => {
+  const byWord = new Map(entries.map(({ item }) => [item[0], item]));
+  for (const word of ["FYI", "EOD", "SOP", "RSVP", "ETA", "HR", "FTE", "P.O.", "SKU", "CRM", "PPE", "QC", "NDA", "RFQ", "FAQ", "LOI", "VAT", "WMS", "KPI", "TBC", "CFO", "ROI", "CEO", "R&D", "ASAP"]) {
+    const entry = byWord.get(word);
+    assert.equal(entry?.[4], "abbr.", word);
+    assert.ok(entry?.[5], word);
+  }
+});
+
 test("the new 800-level entries include a part of speech and the original sentences stay", () => {
   const withPos = entries.filter(({ item }) => item.length === 5);
   const original = entries.filter(({ item }) => item.length === 4);

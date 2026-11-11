@@ -1,11 +1,57 @@
 const DAY = 86400000;
 const INTERVALS = [0, 1, 3, 7, 14];
 
+export const FLASHCARD_RENAMES = {
+  "complimentary offer": "free trial offer",
+  "sales funnel leakage": "sales growth",
+  "follow-up owner": "liaison",
+  "service touchpoint": "service request",
+  "expectation setting": "clarification",
+  "contingency window": "provisional date",
+  "performance calibration": "merit increase",
+  "role clarity": "responsibility",
+  "action register": "follow-up task",
+  "throughput bottleneck": "production backlog",
+  "meeting cadence": "closing remarks",
+  "decision log": "meeting resolution",
+  "customer acknowledgment": "written confirmation",
+  "response-time target": "processing time",
+  "complaint resolution plan": "corrective action",
+  "schedule dependency": "postponement",
+  "consent decree": "settlement agreement",
+  "minority interest": "beneficial ownership",
+  "deferred tax asset": "taxable income",
+  "fare basis": "fare adjustment",
+  "flight manifest": "flight connection",
+  "BEO": "banquet reservation",
+  "ASN": "dispatch notice",
+  "IVR": "automated attendant",
+  "duty of care policy": "itinerary change",
+  "succession pipeline": "management trainee",
+  "renewal pipeline": "renewal reminder",
+  "goodwill adjustment": "goodwill gesture",
+  "enclosure notation": "enclosed document",
+  "call escalation": "referral to a supervisor",
+  "lead qualification": "prospective customer",
+  "succession candidate": "internal applicant",
+  "first-pass yield": "inspection result",
+  "sales pipeline": "sales projection",
+  "in compliance with": "under the terms of",
+  "vendor lead time": "delivery estimate",
+  "task deadline": "submission deadline",
+  "contingency plan": "emergency procedure"
+};
+
 export function migrateFlashcardProgress(progress) {
-  if (!progress || !Object.hasOwn(progress, 'complimentary offer') || Object.hasOwn(progress, 'free trial offer')) return { progress, changed: false };
-  const next = { ...progress, 'free trial offer': progress['complimentary offer'] };
-  delete next['complimentary offer'];
-  return { progress: next, changed: true };
+  if (!progress || typeof progress !== 'object') return { progress, changed: false };
+  let next = progress;
+  for (const [oldWord, newWord] of Object.entries(FLASHCARD_RENAMES)) {
+    if (!Object.hasOwn(next, oldWord) || Object.hasOwn(next, newWord)) continue;
+    if (next === progress) next = { ...progress };
+    next[newWord] = next[oldWord];
+    delete next[oldWord];
+  }
+  return { progress: next, changed: next !== progress };
 }
 
 export function rateCard(previous, rating, now = Date.now()) {
