@@ -8029,9 +8029,9 @@
       "scriptSha256": "198e37fd983d619f42f13d80bf665c0ecc2ffd6cb674df3183984e26ff9e9b99",
       "spokenChoices": [
         "A.",
-        "The copier’s warranty expires in May.",
-        "B.",
         "I’ll tell the team where it is now.",
+        "B.",
+        "The copier’s warranty expires in May.",
         "C.",
         "The supply order arrives next week."
       ],
@@ -8061,9 +8061,9 @@
       "scriptSha256": "001a0a2ddb384fd937da4c4e7fcea350d6cf1dd992e047aeac117f95792b43e2",
       "spokenChoices": [
         "A.",
-        "The chair near the window is reserved.",
-        "B.",
         "I’ll send him the latest agenda.",
+        "B.",
+        "The chair near the window is reserved.",
         "C.",
         "Planning begins after the budget review."
       ],
@@ -8125,9 +8125,9 @@
       "scriptSha256": "737071abcfea346c0f858426a12208bea69555d5cfa57ac5eaa5ec0fcb18ea23",
       "spokenChoices": [
         "A.",
-        "We cleaned the window in the loading bay.",
-        "B.",
         "I’ll update the receiving team.",
+        "B.",
+        "We cleaned the window in the loading bay.",
         "C.",
         "The delivery driver has a new uniform."
       ],
@@ -8157,9 +8157,9 @@
       "scriptSha256": "03b2740d2214b5f2d346374f7136041dd3f1bc2c801f7667df9d6adf81031287",
       "spokenChoices": [
         "A.",
-        "The estimate is attached to the client’s old invoice.",
-        "B.",
         "Then we can schedule the work.",
+        "B.",
+        "The estimate is attached to the client’s old invoice.",
         "C.",
         "I estimated the trip would take an hour."
       ],
@@ -8191,9 +8191,9 @@
         "A.",
         "The entrance sign needs a new coat of paint.",
         "B.",
-        "Visitors can use the east doors.",
+        "The repair estimate is in the blue folder.",
         "C.",
-        "The repair estimate is in the blue folder."
+        "Visitors can use the east doors."
       ],
       "voices": [
         {
@@ -8223,9 +8223,9 @@
         "A.",
         "A table near the window is available after noon.",
         "B.",
-        "Great, I’ll let the guests know.",
+        "The reservation fee was included in the invoice.",
         "C.",
-        "The reservation fee was included in the invoice."
+        "Great, I’ll let the guests know."
       ],
       "voices": [
         {
@@ -8255,9 +8255,9 @@
         "A.",
         "The higher floor has a larger meeting room.",
         "B.",
-        "I’ll prepare an access card for the new employee.",
+        "The hiring notice was posted yesterday.",
         "C.",
-        "The hiring notice was posted yesterday."
+        "I’ll prepare an access card for the new employee."
       ],
       "voices": [
         {

@@ -17567,11 +17567,11 @@
           "skill": "l-response",
           "prompt": "Mark your answer.",
           "options": [
-            "The copier’s warranty expires in May.",
             "I’ll tell the team where it is now.",
+            "The copier’s warranty expires in May.",
             "The supply order arrives next week."
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "The response acknowledges the update and offers to pass along the new location. The copier warranty and supply order do not respond to the move.",
           "ability": "L5"
         }
@@ -17596,11 +17596,11 @@
           "skill": "l-response",
           "prompt": "Mark your answer.",
           "options": [
-            "The chair near the window is reserved.",
             "I’ll send him the latest agenda.",
+            "The chair near the window is reserved.",
             "Planning begins after the budget review."
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "The response follows up by preparing material for the person leading the meeting. The chair refers to furniture, and the budget timing does not address the announcement.",
           "ability": "L5"
         }
@@ -17654,11 +17654,11 @@
           "skill": "l-response",
           "prompt": "Mark your answer.",
           "options": [
-            "We cleaned the window in the loading bay.",
             "I’ll update the receiving team.",
+            "We cleaned the window in the loading bay.",
             "The delivery driver has a new uniform."
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Updating receiving staff is a useful response to the changed delivery time. The other options reuse “window” or “delivery” without addressing the schedule update.",
           "ability": "L5"
         }
@@ -17683,11 +17683,11 @@
           "skill": "l-response",
           "prompt": "Mark your answer.",
           "options": [
-            "The estimate is attached to the client’s old invoice.",
             "Then we can schedule the work.",
+            "The estimate is attached to the client’s old invoice.",
             "I estimated the trip would take an hour."
           ],
-          "answer": 1,
+          "answer": 0,
           "explanation": "Approval means the work can move forward. The other choices echo “estimate” but do not respond to the client’s decision.",
           "ability": "L5"
         }
@@ -17713,10 +17713,10 @@
           "prompt": "Mark your answer.",
           "options": [
             "The entrance sign needs a new coat of paint.",
-            "Visitors can use the east doors.",
-            "The repair estimate is in the blue folder."
+            "The repair estimate is in the blue folder.",
+            "Visitors can use the east doors."
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "The east doors provide an alternative route during the closure. The sign and estimate choices repeat words but do not give access guidance.",
           "ability": "L5"
         }
@@ -17742,10 +17742,10 @@
           "prompt": "Mark your answer.",
           "options": [
             "A table near the window is available after noon.",
-            "Great, I’ll let the guests know.",
-            "The reservation fee was included in the invoice."
+            "The reservation fee was included in the invoice.",
+            "Great, I’ll let the guests know."
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Notifying the guests follows naturally from the reservation. The other choices echo “table” or “reservation” without acknowledging the completed booking.",
           "ability": "L5"
         }
@@ -17771,10 +17771,10 @@
           "prompt": "Mark your answer.",
           "options": [
             "The higher floor has a larger meeting room.",
-            "I’ll prepare an access card for the new employee.",
-            "The hiring notice was posted yesterday."
+            "The hiring notice was posted yesterday.",
+            "I’ll prepare an access card for the new employee."
           ],
-          "answer": 1,
+          "answer": 2,
           "explanation": "Preparing an access card is an appropriate next step for a new employee. “Higher” is a sound-alike distractor for “hire”; the notice does not answer the statement.",
           "ability": "L5"
         }
