@@ -82,6 +82,10 @@ export function partsForSection(parts, section) {
   return parts;
 }
 
+export function isActiveGroup(group) {
+  return !group.retired && !group.questions?.some((question) => question.retired);
+}
+
 export function assembleQuickForm(bank, formId, options = {}) {
   const blueprint = QUICK_BLUEPRINTS[formId];
   if (!blueprint) throw new Error(`unknown quick form ${formId}`);
@@ -92,7 +96,7 @@ export function assembleQuickForm(bank, formId, options = {}) {
   const accentCounts = { US: 0, UK: 0, CA: 0, AU: 0 };
   const chosen = [];
   for (const spec of partsForSection(blueprint.parts, section)) {
-    const pool = bank.groups.filter((group) => group.part === spec.part && (!spec.questionsEach || group.questions.length === spec.questionsEach));
+    const pool = bank.groups.filter((group) => isActiveGroup(group) && group.part === spec.part && (!spec.questionsEach || group.questions.length === spec.questionsEach));
     const accentOf = (group) => accents[group.id] || group.accent || "";
     const counts = spec.part <= 4 ? accentCounts : null;
     const picked = spec.questions

@@ -1,6 +1,12 @@
 // Option order before the Round 12 shuffle. Saved sessions store the chosen index,
 // so an old index is turned back into the same option text and then into the new index.
-export const CHOICE_REVISION = 2;
+import { PREVIOUS_OPTIONS } from "./choice-order-v3.js";
+
+export const CHOICE_REVISION = 4;
+
+// These four published items had choices copied from unrelated passages.
+// Earlier selections cannot be interpreted against the repaired choices.
+const INVALID_OLD_CHOICES = new Set(["rd-new-077", "rd-new-078", "rd-new-082", "rd-new-084"]);
 
 export const LEGACY_OPTIONS = {
   GXP201: ["Ask Sarah, she's handling it.", "The logo is printed in blue.", "The client arrived by train."],
@@ -22,14 +28,25 @@ export const LEGACY_OPTIONS = {
 
 export function migrateChoiceIndexes(answers, revision, questionsById) {
   const source = answers && typeof answers === "object" ? { ...answers } : {};
-  if (revision >= CHOICE_REVISION) return { answers: source, revision: CHOICE_REVISION, changed: false };
-  for (const [id, legacy] of Object.entries(LEGACY_OPTIONS)) {
+  const storedRevision = Number.isInteger(revision) ? revision : 0;
+  if (storedRevision >= CHOICE_REVISION) return { answers: source, revision: CHOICE_REVISION, changed: false };
+  if (storedRevision < 2) for (const [id, legacy] of Object.entries(LEGACY_OPTIONS)) {
     const chosen = source[id];
     if (!Number.isInteger(chosen) || chosen < 0 || chosen >= legacy.length) continue;
     const options = questionsById?.[id]?.options;
     if (!options) continue;
     const index = options.indexOf(legacy[chosen]);
     if (index >= 0) source[id] = index;
+  }
+  if (storedRevision < 4) for (const [id, previous] of Object.entries(PREVIOUS_OPTIONS)) {
+    const chosen = source[id];
+    if (!Number.isInteger(chosen) || chosen < 0 || chosen >= previous.length) continue;
+    const options = questionsById?.[id]?.options;
+    const next = options?.indexOf(previous[chosen]) ?? -1;
+    if (next >= 0) source[id] = next;
+  }
+  for (const id of INVALID_OLD_CHOICES) {
+    if (Number.isInteger(source[id])) source[id] = null;
   }
   return { answers: source, revision: CHOICE_REVISION, changed: true };
 }

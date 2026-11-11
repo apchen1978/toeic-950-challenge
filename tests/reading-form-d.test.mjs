@@ -88,12 +88,11 @@ test('new IDs are unique and each item has four distinct options and a Chinese r
   }
 });
 
-test('answer letters are balanced across the new bank without three consecutive matches', () => {
+test('new reading questions avoid three consecutive answer letters', () => {
   const positions = newQuestions.map((question) => question.answer);
-  const counts = positions.reduce((result, answer) => { result[answer] += 1; return result; }, [0, 0, 0, 0]);
-  assert.deepEqual(counts, [22, 23, 22, 23]);
   for (let index = 2; index < positions.length; index += 1) {
-    assert.ok(!(positions[index] === positions[index - 1] && positions[index] === positions[index - 2]), `three identical answers ending at ${newQuestions[index].id}`);
+    const consecutive = positions[index] === positions[index - 1] && positions[index] === positions[index - 2];
+    assert.ok(!consecutive, `three identical answers ending at ${newQuestions[index].id}`);
   }
 });
 

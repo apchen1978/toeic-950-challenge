@@ -6,7 +6,7 @@ import { flatten, score, estimateProgress, mergeSkillStats, weakest, groupsForSk
 import { sectionChoiceHtml, selectMockSection } from "./mock-section.js";
 import { SKILLS, skillLabel } from "./skills.js";
 import { remainingMs, pauseTimer, resumeTimer, elapsedSeconds, startTimedForm, startReading } from "./timer.js";
-import { assembleQuickForm, avoidedGroupIds, createRng, rememberQuickDraw } from "./quick-form.js";
+import { assembleQuickForm, avoidedGroupIds, createRng, isActiveGroup, rememberQuickDraw } from "./quick-form.js";
 import { allowsReplay, buildOfficialSequence, isOfficialForm, listenProgressLabel, meanListeningMinutes, playbackRateFor, progressForStep, sequenceSeconds } from "./official-listening.js";
 import { graphicHtml } from "./graphic.js";
 import { CHOICE_REVISION, migrateChoiceIndexes } from "./choice-legacy.js";
@@ -161,10 +161,23 @@ function migrateStoredChoices() {
   for (const entry of history) {
     if (!entry?.answers) continue;
     const migrated = migrateChoiceIndexes(entry.answers, entry.choiceRevision, lookup);
-    if (!migrated.changed) continue;
-    entry.answers = migrated.answers;
-    entry.choiceRevision = migrated.revision;
-    historyChanged = true;
+    if (migrated.changed) {
+      entry.answers = migrated.answers;
+      entry.choiceRevision = migrated.revision;
+      historyChanged = true;
+    }
+    const questions = questionsFor(entry);
+    const result = score(questions, entry.answers);
+    const answered = score(questions.filter((question) => entry.answers[question.id] !== undefined && entry.answers[question.id] !== null), entry.answers);
+    if (entry.correct !== result.correct || entry.total !== result.total ||
+      JSON.stringify(entry.bySkill) !== JSON.stringify(answered.bySkill) ||
+      JSON.stringify(entry.bySection) !== JSON.stringify(answered.bySection)) {
+      entry.correct = result.correct;
+      entry.total = result.total;
+      entry.bySkill = answered.bySkill;
+      entry.bySection = answered.bySection;
+      historyChanged = true;
+    }
   }
   if (historyChanged) store.set(KEY_HISTORY, history);
 }
@@ -1069,7 +1082,7 @@ function submit(auto = false) {
   stopTimer();
   audio.stop();
   const result = score(qs, session.answers);
-  const answeredResult = score(qs.filter((q) => session.answers[q.id] !== undefined), session.answers);
+  const answeredResult = score(qs.filter((q) => session.answers[q.id] !== undefined && session.answers[q.id] !== null), session.answers);
   wrongQueue = updateWrongAnswerQueue(wrongQueue, qs, session.answers, Date.now(), session.reviewQueued ?? []);
   store.set(KEY_WRONG_QUEUE, wrongQueue);
   const entry = {
@@ -1204,7 +1217,7 @@ app.addEventListener("click", (e) => {
       }
       break;
     case "start-section": {
-      const groups = bank.groups.filter((g) => g.section === d.section && (d.section !== "listening" || matchesAccent(g)));
+      const groups = bank.groups.filter((g) => isActiveGroup(g) && g.section === d.section && (d.section !== "listening" || matchesAccent(g)));
       const groupIds = groups.map((g) => g.id);
       const questionCount = groups.reduce((sum, g) => sum + g.questions.length, 0);
       if (!questionCount) break;
