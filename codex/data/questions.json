@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": 6,
+    "version": 7,
     "title": "TOEIC 955 → Higher — Listening & Reading",
     "durationMin": 30,
     "disclaimer": "本 App 題目為依多益題型自行編寫的模擬題，並非 ETS 官方試題。 All questions are original simulations of TOEIC question types, not ETS official items.",
@@ -16201,11 +16201,11 @@
           "options": [
             "Refrigerated food.",
             "Office furniture.",
-            "Three supply crates.",
-            "Printed brochures."
+            "Printed brochures.",
+            "Three supply crates."
           ],
           "answer": 2,
-          "explanation": "正解 C「Three supply crates」：郵件說這批貨是三箱用品。A 冷藏食品、B 辦公家具、D 宣傳手冊都沒有在信中提到。"
+          "explanation": "正解 C「Three supply crates」：客服郵件說這批貨是三箱用品。A 冷藏食品、B 辦公家具、D 宣傳手冊都沒有在信中提到。"
         },
         {
           "id": "rd-new-065",
@@ -16213,12 +16213,12 @@
           "skill": "r-detail",
           "options": [
             "Cancel the shipment.",
-            "Keep the revised Thursday appointment.",
+            "Request a new loading-bay inspection.",
             "Send the crates to another branch.",
-            "Request a new loading-bay inspection."
+            "Keep the revised Thursday appointment."
           ],
-          "answer": 1,
-          "explanation": "正解 B：客服收到收貨確認後會保留週四改期時段。A 取消、C 改送別處、D 再檢查卸貨區都沒有提及。"
+          "answer": 3,
+          "explanation": "正解 D：客服收到收貨確認後會保留週四改期時段。A 取消、B 要求再檢查卸貨區、C 改送別處都沒有提及。"
         }
       ]
     },
@@ -16300,11 +16300,11 @@
           "options": [
             "Training Room A.",
             "The supplier reception desk.",
-            "Demonstration Lab 2.",
-            "The main reception area."
+            "The main reception area.",
+            "Demonstration Lab 2."
           ],
-          "answer": 2,
-          "explanation": "跨篇比對：Training bulletin指定安全示範在 Demonstration Lab 2；Ford email確認她報名該課。兩篇合併後可判斷教室。正解 C；A、B、D都不是指定地點。",
+          "answer": 3,
+          "explanation": "跨篇比對：Training bulletin指定安全示範在 Demonstration Lab 2；Ford email確認她報名該課。兩篇合併後可判斷教室。正解 D；A、B、C都不是指定地點。",
           "crossRef": true
         }
       ]
@@ -16392,6 +16392,279 @@
           ],
           "answer": 1,
           "explanation": "跨篇比對：Safety notice說24B受影響、24C可繼續使用；Retailer email說受影響批次可帶回退換。兩篇合併說明需先核對批號。正解 B；A未要求未拆封，C把24C錯列為受影響，D退款不依購買日期。",
+          "crossRef": true
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-036",
+      "section": "reading",
+      "part": 7,
+      "title": "Conference travel: invitation, schedule and policy",
+      "passage": {
+        "docs": [
+          {
+            "label": "Invitation",
+            "text": "You are invited to the Regional Operations Forum on Thursday, May 22, at the Calder Conference Center. Registration opens at 8:15 a.m.; the first panel begins at 9:00 a.m. The center is about a 20-minute walk from the Harborview Hotel. Please bring your registration confirmation."
+          },
+          {
+            "label": "Schedule",
+            "text": "THURSDAY PROGRAM\n8:15–8:50 Registration\n9:00–10:00 Panel: Improving Service Handoffs\n10:15–11:30 Workshop: Building Clear Procedures\n12:15 Networking lunch"
+          },
+          {
+            "label": "Travel policy",
+            "text": "Employees may claim local travel and registration costs after attending an approved event. Submit itemized receipts and proof of attendance within ten business days. Meals provided by the event are not reimbursable. The employee’s manager must approve the request in the expense portal."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "rd-new-076",
+          "prompt": "Which session begins first on Thursday?",
+          "skill": "r-detail",
+          "options": [
+            "Panel discussion.",
+            "Registration desk.",
+            "Workshop: Building Clear Procedures.",
+            "Networking lunch."
+          ],
+          "answer": 0,
+          "explanation": "正解 B「Registration desk」：報到 8:15 開始，早於 9:00 的 panel、10:15 的 workshop 和 12:15 的午餐。"
+        },
+        {
+          "id": "rd-new-077",
+          "prompt": "What does Ms. Nair need to provide to receive reimbursement?",
+          "skill": "r-detail",
+          "options": [
+            "Replacing lobby lighting.",
+            "Repairing the west stairwell handrail.",
+            "Repainting the meeting room.",
+            "Repairing the elevator door."
+          ],
+          "answer": 3,
+          "explanation": "正解 D：政策要求逐項收據與出席證明。A 只有信用卡帳單、B 是活動手冊、C 是口頭核准，均不能替代規定文件。"
+        },
+        {
+          "id": "rd-new-078",
+          "prompt": "Who must approve the reimbursement request?",
+          "skill": "r-detail",
+          "options": [
+            "Measure the stairwell handrail.",
+            "Close the entire building.",
+            "Ask tenants to repaint the meeting room.",
+            "Replace lobby light fixtures first."
+          ],
+          "answer": 0,
+          "explanation": "正解 A：差旅政策規定由員工主管在費用系統核准。B 主辦方、C 飯店櫃檯、D 同行者都不是核准人。"
+        },
+        {
+          "id": "rd-new-079",
+          "prompt": "What time should Ms. Nair leave the hotel to reach registration on time?",
+          "skill": "r-crossref",
+          "options": [
+            "At 8:15 a.m.",
+            "No later than 7:55 a.m.",
+            "At 9:00 a.m.",
+            "At 8:05 a.m."
+          ],
+          "answer": 1,
+          "explanation": "跨篇比對：Invitation說旅館到會場步行約20分鐘；Schedule列報到8:15開始。兩篇合併得出最晚7:55出發。正解 B；A、C太晚，D也太晚。",
+          "crossRef": true
+        },
+        {
+          "id": "rd-new-080",
+          "prompt": "Can Ms. Nair claim the networking lunch if she submits a receipt?",
+          "skill": "r-crossref",
+          "options": [
+            "Yes, all meals are reimbursed.",
+            "Yes, if her manager approves it.",
+            "No, event-provided meals are excluded.",
+            "No, because travel costs are never eligible."
+          ],
+          "answer": 2,
+          "explanation": "跨篇比對：Schedule列有活動提供的 networking lunch；Travel policy排除活動供餐的報銷，因此即使有收據也不能申報。正解 C；A、B錯誤准許報銷，D把所有差旅費一概排除。",
+          "crossRef": true
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-037",
+      "section": "reading",
+      "part": 7,
+      "title": "Library renovation: notice, email and room plan",
+      "passage": {
+        "docs": [
+          {
+            "label": "Renovation notice",
+            "text": "CENTRAL LIBRARY — READING ROOM WORK\n\nFloor repairs will take place on Tuesday and Thursday mornings from 8:00 to noon. The west reading room and children’s desk will be closed during those hours. The digital research room will remain open. Work is expected to finish by June 6."
+          },
+          {
+            "label": "Email",
+            "text": "From: Oliver Bell\nTo: Library Facilities\nSubject: Temporary meeting room\n\nOur project team’s usual room is next to the west reading room, and the noise will make our Tuesday and Thursday morning meetings difficult. Could we reserve another space for those two sessions? We can use the facilities calendar if you tell us which rooms remain open.\n\nThanks,\nOliver"
+          },
+          {
+            "label": "Room guide",
+            "text": "DIGITAL RESEARCH ROOM\nCapacity: 12 people\nAvailable for staff meetings when not booked for training. Reserve a time in the facilities calendar at least one day in advance. Please keep the central workstation available for public use."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "rd-new-081",
+          "prompt": "Which area will remain open during the renovation?",
+          "skill": "r-detail",
+          "options": [
+            "The west reading room.",
+            "The children’s desk.",
+            "The digital research room.",
+            "The floor-repair zone."
+          ],
+          "answer": 2,
+          "explanation": "正解 C：公告明說 digital research room 仍開放；A west reading room與B children’s desk在施工時段關閉；D floor-repair zone是施工區。"
+        },
+        {
+          "id": "rd-new-082",
+          "prompt": "Why does Mr. Bell ask for a temporary workspace?",
+          "skill": "r-detail",
+          "options": [
+            "examined carefully",
+            "began operating for the public",
+            "created a new account",
+            "declared the building closed"
+          ],
+          "answer": 0,
+          "explanation": "正解 A：郵件說團隊原房間週二、週四早上受噪音影響。B 數位室缺電腦、C 全月閉館、D 改到旅館都不是寄件者所述原因。"
+        },
+        {
+          "id": "rd-new-083",
+          "prompt": "When will the west reading room be closed?",
+          "skill": "r-detail",
+          "options": [
+            "Monday and Wednesday mornings.",
+            "Every weekday afternoon.",
+            "Wednesday and Friday mornings.",
+            "Tuesday and Thursday mornings."
+          ],
+          "answer": 3,
+          "explanation": "正解 D：公告列週二、週四上午 8 點至中午關閉。A 日期錯誤；B 下午開放時段錯；C 把週二換成週三並加入週五。"
+        },
+        {
+          "id": "rd-new-084",
+          "prompt": "Where can Mr. Bell’s team meet on Thursday morning?",
+          "skill": "r-crossref",
+          "options": [
+            "It was near the train station.",
+            "It offered free equipment.",
+            "Its large sorting room could accommodate a classroom.",
+            "The city offered it rent-free."
+          ],
+          "answer": 1,
+          "explanation": "跨篇比對：Renovation notice說週四早上 digital research room開放；Oliver email說團隊週四早上需找臨時會議室。兩篇合併可選該空間。正解 B；A、C在施工時關閉，D屬關閉區域。",
+          "crossRef": true
+        },
+        {
+          "id": "rd-new-085",
+          "prompt": "If the team wants the room Thursday morning, by which day should Mr. Bell reserve it?",
+          "skill": "r-crossref",
+          "options": [
+            "Monday.",
+            "Thursday morning.",
+            "By Wednesday.",
+            "Friday."
+          ],
+          "answer": 2,
+          "explanation": "跨篇比對：Oliver email說會議在週四早上；Room guide要求至少提前一天在設施行事曆預約，因此最遲週三完成。正解 C；A太早，B、D都晚於期限。",
+          "crossRef": true
+        }
+      ]
+    },
+    {
+      "id": "g-rdnew-038",
+      "section": "reading",
+      "part": 7,
+      "title": "Market event: vendor letter, site map and operations message",
+      "passage": {
+        "docs": [
+          {
+            "label": "Vendor letter",
+            "text": "Hello Ms. Cho,\n\nYour food stall has been accepted for the Riverside Market on Saturday, July 19. Please display your event permit at the booth. Food vendors will be assigned within the south plaza area shown on the attached map. The market opens to the public at 9:30 a.m.\n\nRegards,\nRiverside Market Office"
+          },
+          {
+            "label": "Site map",
+            "text": "RIVERSIDE MARKET SITE\nNorth walkway: craft booths\nSouth plaza: food court and dining tables\nEast parking lot: visitor parking\nService lane: access from Mill Street, behind the south plaza\nVisitor center: information and first aid"
+          },
+          {
+            "label": "Operations message",
+            "text": "Vendor access begins at 6:30 a.m. All vehicles must finish unloading by 8:00 a.m. and then move to visitor parking. Vehicles above the garage height limit should use the service entrance on Mill Street and follow staff directions. Keep the public walkway clear. Each booth must display its event permit where staff can see it."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "rd-new-086",
+          "prompt": "Where will the food vendors be located?",
+          "skill": "r-detail",
+          "options": [
+            "In the east parking lot.",
+            "Inside the visitor center.",
+            "Along the north walkway.",
+            "The south plaza."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「south plaza」：主辦信說食物攤位配置在南廣場，地圖標出該區。A 是停車場，B 是服務設施，C 是手作攤位區。"
+        },
+        {
+          "id": "rd-new-087",
+          "prompt": "What time must vendors finish unloading?",
+          "skill": "r-detail",
+          "options": [
+            "7:00 a.m.",
+            "8:00 a.m.",
+            "9:30 a.m.",
+            "6:30 a.m."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「8:00 a.m.」：營運通知規定卸貨車須於 8 點前離開卸貨作業。A、D是進場時刻，C是市集對外開放時間。"
+        },
+        {
+          "id": "rd-new-088",
+          "prompt": "What should vendors do if their vehicle is taller than the garage limit?",
+          "skill": "r-detail",
+          "options": [
+            "Use the service entrance and follow staff directions.",
+            "Park in the east visitor lot before unloading.",
+            "Unload on the north walkway.",
+            "Ask the event office to open the garage."
+          ],
+          "answer": 0,
+          "explanation": "正解 A：超高車輛須從 Mill Street 服務入口進入並聽從工作人員。B 是卸貨後停車位置；C 會阻塞行人道；D 沒有開放超高車輛進入車庫。"
+        },
+        {
+          "id": "rd-new-089",
+          "prompt": "Where should the food vendor unload?",
+          "skill": "r-crossref",
+          "options": [
+            "At the main visitor entrance.",
+            "At the east parking lot.",
+            "The south service lane behind the south plaza.",
+            "At the visitor center."
+          ],
+          "answer": 2,
+          "explanation": "跨篇比對：Vendor letter把食物攤位安排在 south plaza；Site map標出其後方 service lane；Operations message要求車輛走 Mill Street service entrance。合併位置與車輛指示，正解 C。A、B、D是不同區域。",
+          "crossRef": true
+        },
+        {
+          "id": "rd-new-090",
+          "prompt": "On what date does the 8:00 a.m. unloading cutoff apply to Ms. Cho?",
+          "skill": "r-crossref",
+          "options": [
+            "Friday, July 18.",
+            "Saturday, July 19.",
+            "Saturday, July 20.",
+            "Saturday, July 26."
+          ],
+          "answer": 1,
+          "explanation": "跨篇比對：Vendor letter確認 Ms. Cho參加的是7月19日星期六市集；Operations message規定該活動8:00前完成卸貨。兩篇合併得出日期。正解 B；A、C、D日期不同。",
           "crossRef": true
         }
       ]
