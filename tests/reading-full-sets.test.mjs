@@ -92,25 +92,37 @@ test('the app wires the reading-full start button, per-part timing and the per-t
   assert.match(app, /readingFullReport/);
 });
 
-test('Part 7 format additions have complete, balanced and original question records', () => {
-  const groups = bank.groups.filter((group) => group.id.startsWith('p7f-'));
-  assert.equal(groups.length, 23);
-  const counts = [0, 0, 0, 0];
-  const banned = /Sam Bach|Salinas|Pablo['’]s|Sparky Paints|Business Audio Pro|Springfield|Two Swan Press|Bartowsky|Nostilde|San Jose Starlings|Loftgren|秒殺|萬能|80%/i;
-  for (const group of groups) {
-    assert.doesNotMatch(JSON.stringify(group), banned, group.id);
-    if (group.passage.docs.length > 1) assert.ok(group.questions.filter((question) => question.crossRef === true).length >= 2, group.id);
-    for (const question of group.questions) {
-      assert.match(question.id, /^p7f-/);
-      assert.equal(new Set(question.options).size, 4, question.id);
-      assert.equal(question.options.length, 4, question.id);
-      assert.ok(Number.isInteger(question.answer) && question.answer >= 0 && question.answer <= 3, question.id);
-      for (const field of ['questionType', 'skill', 'ability', 'explanation']) assert.ok(question[field]?.trim(), `${question.id} ${field}`);
-      if (question.questionType === 'cross-document') assert.equal(question.crossRef, true, question.id);
-      counts[question.answer]++;
+for (const [prefix, expectedGroups, expectedTotal] of [['p7f-', 23, 78], ['p7r-', 14, 40]]) {
+  test(`Part 7 ${prefix} additions have complete, balanced and original question records`, () => {
+    const groups = bank.groups.filter((group) => group.id.startsWith(prefix));
+    assert.equal(groups.length, expectedGroups);
+    const counts = [0, 0, 0, 0];
+    const banned = /Sam Bach|Salinas|Pablo['’]s|Sparky Paints|Business Audio Pro|Springfield|Two Swan Press|Bartowsky|Nostilde|San Jose Starlings|Loftgren|秒殺|萬能|80%/i;
+    for (const group of groups) {
+      assert.doesNotMatch(JSON.stringify(group), banned, group.id);
+      if (group.passage.docs.length > 1) assert.ok(group.questions.filter((question) => question.crossRef === true).length >= 2, group.id);
+      for (const question of group.questions) {
+        assert.ok(question.id.startsWith(prefix), question.id);
+        assert.equal(new Set(question.options).size, 4, question.id);
+        assert.equal(question.options.length, 4, question.id);
+        assert.ok(Number.isInteger(question.answer) && question.answer >= 0 && question.answer <= 3, question.id);
+        for (const field of ['questionType', 'skill', 'ability', 'explanation']) assert.ok(question[field]?.trim(), `${question.id} ${field}`);
+        if (question.questionType === 'cross-document') assert.equal(question.crossRef, true, question.id);
+        if (prefix === 'p7r-') {
+          assert.match(question.explanation, /【考點】.+\n【判斷依據】.+/, question.id);
+          if (question.questionType === 'text-insertion') {
+            assert.deepEqual(question.options, ['[1]', '[2]', '[3]', '[4]']);
+            const [doc] = group.passage.docs;
+            for (const position of question.options) assert.equal(doc.text.split(position).length, 2, `${question.id} ${position}`);
+            const sentence = question.prompt.match(/"([^"]+)"/)?.[1];
+            assert.ok(sentence && !doc.text.includes(sentence), question.id);
+          }
+        }
+        counts[question.answer]++;
+      }
     }
-  }
-  const total = counts.reduce((sum, count) => sum + count, 0);
-  assert.equal(total, 78);
-  assert.ok(counts.every((count) => count / total >= 0.2 && count / total <= 0.3), counts.join('/'));
-});
+    const total = counts.reduce((sum, count) => sum + count, 0);
+    assert.equal(total, expectedTotal);
+    assert.ok(counts.every((count) => count / total >= 0.2 && count / total <= 0.3), counts.join('/'));
+  });
+}
