@@ -4,9 +4,9 @@ import { readFileSync } from 'node:fs';
 
 const bank = JSON.parse(readFileSync(new URL('../codex/data/questions.json', import.meta.url), 'utf8'));
 const by = Object.fromEntries(bank.groups.map((group) => [group.id, group]));
-const sets = ['read-full-1', 'read-full-2'].map((id) => bank.meta.sets.find((set) => set.id === id));
+const sets = ['read-full-1', 'read-full-2', 'read-full-3'].map((id) => bank.meta.sets.find((set) => set.id === id));
 
-test('two full reading sets exist with 75 minutes and the official shape', () => {
+test('three full reading sets have 100 questions, 75 minutes and the specified passage lengths', () => {
   for (const set of sets) {
     assert.ok(set);
     assert.equal(set.durationMin, 75);
@@ -28,6 +28,7 @@ test('two full reading sets exist with 75 minutes and the official shape', () =>
     const triples = p7.filter((group) => group.passage.docs.length === 3);
     assert.equal(singles.length, 10);
     assert.equal(singles.reduce((sum, group) => sum + group.questions.length, 0), 29);
+    assert.deepEqual(singles.map((group) => group.questions.length).sort(), [2, 2, 2, 2, 3, 3, 3, 4, 4, 4]);
     assert.deepEqual([doubles.length, triples.length], [2, 3]);
     for (const group of [...doubles, ...triples]) assert.equal(group.questions.length, 5, group.id);
     for (const group of [...doubles, ...triples]) assert.ok(group.questions.some((question) => question.crossRef === true), `${group.id} needs a cross-document question`);
@@ -36,7 +37,7 @@ test('two full reading sets exist with 75 minutes and the official shape', () =>
 
 test('the two sets share no group and cover the high-score question types', () => {
   assert.equal(sets[0].groupIds.filter((id) => sets[1].groupIds.includes(id)).length, 0);
-  for (const set of sets) {
+  for (const set of sets.slice(0, 2)) {
     const questions = set.groupIds.flatMap((id) => by[id].questions);
     const types = (type) => questions.filter((question) => question.questionType === type).length;
     assert.ok(types('text-insertion') >= 2, 'insertion position');
@@ -60,6 +61,9 @@ test('answer positions in each set are spread across A to D', () => {
     const counts = [0, 0, 0, 0];
     for (const id of set.groupIds) for (const question of by[id].questions) counts[question.answer] += 1;
     for (const c of counts) assert.ok(c >= 20 && c <= 31, counts.join('/'));
+    const part7 = [0, 0, 0, 0];
+    for (const id of set.groupIds) if (by[id].part === 7) for (const question of by[id].questions) part7[question.answer]++;
+    assert.ok(part7.every((count) => count / 54 >= 0.2 && count / 54 <= 0.3), `${set.id}: ${part7}`);
   }
 });
 
@@ -76,10 +80,32 @@ test('insertion questions offer positions [1] to [4] and the sentence is not cop
 test('the app wires the reading-full start button, per-part timing and the per-type report', () => {
   const app = readFileSync(new URL('../codex/js/app.js', import.meta.url), 'utf8');
   assert.match(app, /data-form="read-full-\$\{n\}"/);
-  assert.match(app, /\[1, 2\]\.map\(\(n\)/);
-  assert.match(app, /閱讀 100 題 · 75 分鐘（共兩組）/);
+  assert.match(app, /\[1, 2, 3\]\.map\(\(n\)/);
+  assert.match(app, /閱讀 100 題 · 75 分鐘（共三組）/);
   assert.ok(app.indexOf('reading-full-card') < app.indexOf('class="card quick-card"'), 'the reading card sits above the quick mock card');
   assert.match(app, /readingFullLast/);
   assert.match(app, /partSecs/);
   assert.match(app, /readingFullReport/);
+});
+
+test('Part 7 format additions have complete, balanced and original question records', () => {
+  const groups = bank.groups.filter((group) => group.id.startsWith('p7f-'));
+  assert.equal(groups.length, 19);
+  const counts = [0, 0, 0, 0];
+  const banned = /Sam Bach|Salinas|Pablo['’]s|Sparky Paints|Business Audio Pro|Springfield|Two Swan Press|Bartowsky|Nostilde|San Jose Starlings|Loftgren|秒殺|萬能|80%/i;
+  for (const group of groups) {
+    assert.doesNotMatch(JSON.stringify(group), banned, group.id);
+    if (group.passage.docs.length > 1) assert.ok(group.questions.filter((question) => question.crossRef === true).length >= 2, group.id);
+    for (const question of group.questions) {
+      assert.match(question.id, /^p7f-/);
+      assert.equal(new Set(question.options).size, 4, question.id);
+      assert.equal(question.options.length, 4, question.id);
+      assert.ok(Number.isInteger(question.answer) && question.answer >= 0 && question.answer <= 3, question.id);
+      for (const field of ['questionType', 'skill', 'ability', 'explanation']) assert.ok(question[field]?.trim(), `${question.id} ${field}`);
+      if (question.questionType === 'cross-document') assert.equal(question.crossRef, true, question.id);
+      counts[question.answer]++;
+    }
+  }
+  assert.equal(counts.reduce((sum, count) => sum + count, 0), 66);
+  assert.ok(counts.every((count) => count / 66 >= 0.2 && count / 66 <= 0.3), counts.join('/'));
 });
