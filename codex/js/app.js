@@ -80,15 +80,18 @@ function sectionBadge(section) {
 }
 function vocabLevel() {
   const value = store.get(KEY_VOCAB_LEVEL, "all");
-  return value === "all" || value === "900" || value === "800" ? value : "all";
+  return ["all", "700", "800", "900"].includes(value) ? value : "all";
 }
 function vocabParts(item) {
   const [word, meaning, example, level, pos = "", full = ""] = item;
   return { word, meaning, example, level, pos, full };
 }
 function vocabName(item) { return `${esc(item.word)}${item.full ? ` <span class="vocab-full">(${esc(item.full)})</span>` : ""}`; }
+function vocabLevelLabel(level) {
+  return level === 900 ? "900 金色證書" : level === 700 ? "常考單字" : "800 核心";
+}
 function vocabCounts() {
-  const counts = { 800: 0, 900: 0 };
+  const counts = { 700: 0, 800: 0, 900: 0 };
   for (const group of VOCABULARY) for (const item of group.words) counts[item[3]] += 1;
   return counts;
 }
@@ -238,7 +241,7 @@ function renderHome() {
   audio.stop();
   pauseOfficialPlayback();
   const vocab = vocabCounts();
-  const vocabTotal = vocab[800] + vocab[900];
+  const vocabTotal = vocab[700] + vocab[800] + vocab[900];
   const history = store.get(KEY_HISTORY, []);
   const days = Math.ceil((new Date(`${EXAM_DATE}T00:00:00`) - new Date()) / 86400000);
   const weak = weakest(mergeSkillStats(history), 3, 2);
@@ -280,13 +283,14 @@ function renderHome() {
       <div class="vocab-hero">
         <div class="vocab-hero-copy">
           <p class="vocabulary-eyebrow">WORKPLACE VOCABULARY</p>
-          <h2 id="vocabulary-title">職場字彙 <span>${vocabTotal}</span></h2>
-          <p class="vocab-hero-subtitle">800 打底 <span aria-hidden="true">·</span> 900 衝金色證書</p>
+          <h2 id="vocabulary-title">職場字彙 <span>1000+</span></h2>
+          <p class="vocab-hero-subtitle">常考單字入門 <span aria-hidden="true">·</span> 800 打底 <span aria-hidden="true">·</span> 900 衝金色證書</p>
         </div>
         <div class="vocab-seal" aria-hidden="true"><b>900</b><span>GOLD<br>CERTIFICATE</span></div>
       </div>
       <div class="vocab-stats" aria-label="字彙庫統計">
         <div class="vocab-stat"><b>${vocabTotal}</b><span>總詞條</span></div>
+        <div class="vocab-stat"><b>${vocab[700]}</b><span>常考單字</span></div>
         <div class="vocab-stat"><b>${vocab[800]}</b><span>800 核心</span></div>
         <div class="vocab-stat vocab-stat-gold"><b>${vocab[900]}</b><span>900 進階</span></div>
       </div>
@@ -296,13 +300,14 @@ function renderHome() {
       </div>
       <details class="vocabulary-list">
         <summary>瀏覽單字與主題</summary>
-        <p class="muted">全部會把 800 與 900 穿插列出。例句由本站撰寫，並非官方題目或官方字表。</p>
+        <p class="muted">全部會把常考單字、800 與 900 穿插列出。例句由本站撰寫，並非官方題目或官方字表。</p>
         <div class="vocab-filters" role="group" aria-label="字彙程度">
+          <button type="button" class="btn small" data-action="vocab-filter" data-vocab-filter="700">常考單字</button>
           <button type="button" class="btn small" data-action="vocab-filter" data-vocab-filter="800">800 核心</button>
           <button type="button" class="btn small" data-action="vocab-filter" data-vocab-filter="900">900 進階</button>
           <button type="button" class="btn small" data-action="vocab-filter" data-vocab-filter="all">全部</button>
         </div>
-        ${VOCABULARY.map((group) => `<details class="vocabulary-group" data-vocab-group><summary>${esc(group.category)} · <span data-vocab-count>${group.words.length} 個詞條</span></summary>${group.words.map((item) => { const entry = vocabParts(item); const { meaning, example, level, pos } = entry; return `<p class="${level === 900 ? "vocab-gold" : "vocab-core"}" data-vocab-level="${level}"><b>${vocabName(entry)}</b>${pos ? ` <span class="muted">${esc(pos)}</span>` : ""} <span class="tag">${level === 900 ? "900 金色證書" : "800 核心"}</span> · ${esc(meaning)}<br><span class="muted">${esc(example)}</span></p>`; }).join("")}</details>`).join("")}
+        ${VOCABULARY.map((group) => `<details class="vocabulary-group" data-vocab-group><summary>${esc(group.category)} · <span data-vocab-count>${group.words.length} 個詞條</span></summary>${group.words.map((item) => { const entry = vocabParts(item); const { meaning, example, level, pos } = entry; return `<p class="${level === 900 ? "vocab-gold" : level === 700 ? "vocab-common" : "vocab-core"}" data-vocab-level="${level}"><b>${vocabName(entry)}</b>${pos ? ` <span class="muted">${esc(pos)}</span>` : ""} <span class="tag">${vocabLevelLabel(level)}</span> · ${esc(meaning)}<br><span class="muted">${esc(example)}</span></p>`; }).join("")}</details>`).join("")}
         <p><a href="https://www.toeic.com.tw/toeic/listening-reading/about/content/" target="_blank" rel="noopener noreferrer">參考：台灣多益官方測驗內容</a> · <a href="https://dictionary.cambridge.org/dictionary/english/" target="_blank" rel="noopener noreferrer">Cambridge Dictionary</a></p>
       </details>
     </section>
@@ -417,7 +422,7 @@ function flashSetup() {
   const due = selectCards(flashItems, progress, { ...options, limit: 0 }).length;
   app.innerHTML = `<section class="card flash-card"><p class="section-kicker">VOCABULARY PRACTICE</p><h1>單字閃卡</h1><p>先回想意思，再翻面核對。進度保存在這個瀏覽器。</p>
     <p>已學會 ${learned} · 學習中 ${started - learned} · 未開始 ${flashItems.length - started}<br>900 進階：${goldLearned} / ${flashItems.filter(item => item.level === 900).length} 已學會</p><progress aria-label="900 進階學習進度" value="${goldLearned}" max="${flashItems.filter(item => item.level === 900).length}"></progress><p>目前篩選有 ${due} 個到期複習詞。</p>
-    <div class="flash-settings"><label>程度 <select id="flash-level" class="btn"><option value="all">全部</option><option value="800">800 核心</option><option value="900">900 進階</option></select></label>
+    <div class="flash-settings"><label>程度 <select id="flash-level" class="btn"><option value="all">全部</option><option value="700">常考單字</option><option value="800">800 核心</option><option value="900">900 進階</option></select></label>
     <label>主題 <select id="flash-category" class="btn"><option value="all">全部主題</option>${VOCABULARY.map(group => `<option value="${esc(group.category)}">${esc(group.category)}</option>`).join('')}</select></label>
     <label>每日新字 <input id="flash-limit" type="number" min="0" max="100" value="${Math.max(0, Math.min(100, Number(options.limit) || 0))}"></label></div>
     <div class="row"><button class="btn primary" data-action="flash-start">開始練習</button><button class="btn" data-action="home">回首頁</button></div></section>`;
@@ -437,7 +442,7 @@ function flashRender() {
   audio.stop();
   const item = flashQueue[0];
   if (!item) { app.innerHTML = `<section class="card"><h1>這組練習完成</h1><p>今天選取的單字都練習過了。</p><button class="btn primary" data-action="flash-setup">返回單字閃卡</button><button class="btn" data-action="home">回首頁</button></section>`; return; }
-  app.innerHTML = `<section class="card flash-card ${item.level === 900 ? 'flash-gold' : ''}"><p class="section-kicker">${esc(item.category)} · 剩餘 ${flashQueue.length} 個</p><span class="tag">${item.level === 900 ? '900 金色證書' : '800 核心'}</span><h1>${vocabName(item)}</h1>${item.pos ? `<p>${esc(item.pos)}</p>` : ''}
+  app.innerHTML = `<section class="card flash-card ${item.level === 900 ? 'flash-gold' : ''}"><p class="section-kicker">${esc(item.category)} · 剩餘 ${flashQueue.length} 個</p><span class="tag">${vocabLevelLabel(item.level)}</span><h1>${vocabName(item)}</h1>${item.pos ? `<p>${esc(item.pos)}</p>` : ''}
     <button class="btn small" data-action="flash-speak" ${audio.supported() ? '' : 'disabled'}>播放發音</button><span class="muted" id="flash-audio-status" role="status">${audio.supported() ? '' : '此瀏覽器沒有語音，仍可繼續練習。'}</span>
     ${flashRevealed ? `<div class="flash-answer"><p><b>${esc(item.meaning)}</b></p><p>${esc(item.example)}</p></div><p>你記得這個字嗎？</p><div class="row"><button class="btn" data-action="flash-rate" data-rating="again">不會</button><button class="btn" data-action="flash-rate" data-rating="hard">有點模糊</button><button class="btn primary" data-action="flash-rate" data-rating="good">會</button></div>` : '<p>先想想意思，再翻面。</p><button class="btn primary" data-action="flash-flip">翻面看答案</button>'}
     <p id="flash-save-status" role="status"></p><p><button class="btn small" data-action="flash-setup">結束練習</button></p></section>`;

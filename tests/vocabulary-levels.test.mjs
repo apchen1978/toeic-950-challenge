@@ -24,7 +24,7 @@ test("every vocabulary entry has a headword, Chinese meaning, example, and level
     assert.match(word, /[A-Za-z]/, word);
     assert.match(meaning, /[\u4e00-\u9fff]/, word);
     assert.ok(example.length > 20 && /[A-Za-z]/.test(example) && /[.?!]/.test(example), word);
-    assert.ok(level === 800 || level === 900, word);
+    assert.ok(level === 700 || level === 800 || level === 900, word);
     if (pos) assert.match(pos, /^(n|v|adj|adv|phr|prep|conj|abbr)\.$/, `${word} ${pos}`);
     if (full) assert.match(full, /[A-Za-z]{3,}/, `${word} ${full}`);
   }
@@ -55,10 +55,10 @@ test("the new 800-level entries include a part of speech and the original senten
   assert.equal(original.length, 449);
   assert.ok(withPos.filter(({ item }) => item[3] === 800).length >= 250);
   assert.ok(withPos.every(({ item }) => item[4]));
-  assert.equal(entries.length, 1200);
-  const levels = { 800: 0, 900: 0 };
+  assert.equal(entries.length, 1653);
+  const levels = { 700: 0, 800: 0, 900: 0 };
   for (const { item } of entries) levels[item[3]] += 1;
-  assert.deepEqual(levels, { 800: 698, 900: 502 });
+  assert.deepEqual(levels, { 700: 453, 800: 698, 900: 502 });
   const byWord = new Map(entries.map(({ item }) => [item[0], item]));
   assert.equal(byWord.get("contingency")[2], "The team prepared a contingency plan for delivery delays.");
   assert.equal(byWord.get("contingency")[3], 900);
@@ -68,12 +68,12 @@ test("the new 800-level entries include a part of speech and the original senten
   assert.equal(byWord.get("vacancy")[1], "職缺");
 });
 
-test("every theme mixes 800 and 900, with at least 20 percent advanced", () => {
+test("every theme mixes 800 and 900, with at least 20 percent advanced among scored entries", () => {
   for (const group of VOCABULARY) {
-    const counts = { 800: 0, 900: 0 };
+    const counts = { 700: 0, 800: 0, 900: 0 };
     for (const item of group.words) counts[item[3]] += 1;
     assert.ok(counts[800] >= 1 && counts[900] >= 1, group.category);
-    const share = counts[900] / group.words.length;
+    const share = counts[900] / (counts[800] + counts[900]);
     assert.ok(share >= 0.2, `${group.category} ${(share * 100).toFixed(1)}%`);
     let run = 1;
     let longest = 1;
@@ -81,6 +81,21 @@ test("every theme mixes 800 and 900, with at least 20 percent advanced", () => {
       run = group.words[index][3] === group.words[index - 1][3] ? run + 1 : 1;
       longest = Math.max(longest, run);
     }
-    assert.ok(longest < Math.max(counts[800], counts[900]), `${group.category} run ${longest}`);
+    assert.ok(longest < Math.max(counts[700], counts[800], counts[900]), `${group.category} run ${longest}`);
+  }
+});
+
+test("common words are new headwords with a meaning, part of speech and an example that uses the word", () => {
+  const common = entries.filter(({ item }) => item[3] === 700);
+  assert.equal(common.length, 453);
+  const heads = entries.map(({ item }) => norm(item[0]));
+  assert.equal(new Set(heads).size, heads.length, "no duplicate headwords");
+  for (const { item } of common) {
+    const [word, meaning, example, , pos] = item;
+    assert.ok(word && meaning && example && pos, word);
+    assert.match(meaning, /[一-鿿]/, word);
+    assert.ok(/[.?!]["”]?$/.test(example), word);
+    const stems = [...variants(word.split(" ")[0])];
+    assert.ok(stems.some((stem) => norm(example).includes(stem.slice(0, Math.max(3, stem.length - 2)))), `${word} example should use the word`);
   }
 });
