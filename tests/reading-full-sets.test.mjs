@@ -75,8 +75,11 @@ test('insertion questions offer positions [1] to [4] and the sentence is not cop
 
 test('the app wires the reading-full start button, per-part timing and the per-type report', () => {
   const app = readFileSync(new URL('../codex/js/app.js', import.meta.url), 'utf8');
-  assert.match(app, /data-form="read-full-1"/);
-  assert.match(app, /data-form="read-full-2"/);
+  assert.match(app, /data-form="read-full-\$\{n\}"/);
+  assert.match(app, /\[1, 2\]\.map\(\(n\)/);
+  assert.match(app, /閱讀 100 題 · 75 分鐘（共兩組）/);
+  assert.ok(app.indexOf('reading-full-card') < app.indexOf('class="card quick-card"'), 'the reading card sits above the quick mock card');
+  assert.match(app, /readingFullLast/);
   assert.match(app, /partSecs/);
   assert.match(app, /readingFullReport/);
 });

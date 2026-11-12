@@ -252,3 +252,12 @@ a { color: var(--brand); text-underline-offset: .17em; }
 .pace-summary { margin: 0 0 4px; font-size: .9rem; color: var(--muted, #666); }
 .pace-hint { margin: 0; font-weight: 600; }
 .pace-hint.behind { color: var(--warn); }
+
+.reading-full-card { border-top: 3px solid var(--brand); }
+.reading-full-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.reading-full-head .section-kicker { margin: 0; }
+.reading-full-badge { background: var(--brand); color: var(--brand-ink); font-weight: 800; letter-spacing: .06em; font-size: .8rem; padding: 3px 9px; border-radius: 999px; }
+.reading-full-sets { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 12px 0; }
+.reading-full-set { border: 1px solid var(--line); border-radius: 8px; padding: 12px; background: var(--bg); }
+.reading-full-set h3 { margin: 0 0 4px; }
+.reading-full-set p { margin: 4px 0; }
