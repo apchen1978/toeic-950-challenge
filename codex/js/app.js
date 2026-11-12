@@ -307,10 +307,10 @@ function renderHome() {
 
     <section class="card reading-full-card" id="nav-mock" aria-labelledby="reading-full-title">
       <div class="reading-full-head"><span class="reading-full-badge">75 MIN</span><p class="section-kicker">READING MOCK · 閱讀完整模擬</p></div>
-      <h2 id="reading-full-title">閱讀 100 題 · 75 分鐘（共兩組）</h2>
+      <h2 id="reading-full-title">閱讀 100 題 · 75 分鐘（共三組）</h2>
       <p>Part 5 30 題 → Part 6 16 題 → Part 7 54 題，依正式順序作答，75 分鐘倒數。</p>
       <div class="reading-full-sets">
-        ${[1, 2].map((n) => `<div class="reading-full-set"><h3>閱讀模擬 ${n}</h3><p class="muted">100 題 · 75 分鐘 · 有配速提示</p><p class="muted">${readingFullLast(history, "read-full-" + n)}</p><button class="btn primary" data-action="start-form" data-form="read-full-${n}">開始閱讀模擬 ${n}</button></div>`).join("")}
+        ${[1, 2, 3].map((n) => `<div class="reading-full-set"><h3>閱讀模擬 ${n}</h3><p class="muted">100 題 · 75 分鐘 · 有配速提示</p><p class="muted">${readingFullLast(history, "read-full-" + n)}</p><button class="btn primary" data-action="start-form" data-form="read-full-${n}">開始閱讀模擬 ${n}</button></div>`).join("")}
       </div>
       <details class="card-more"><summary>配速提示與題目說明</summary>
         <p class="muted">可跳題與回頭修改。作答時畫面上方有配速提示：Part 5 約 10 分、Part 6 約 8 分、Part 7 約 52 分，留約 5 分檢查。提示只是參考，不是必須達到的標準。</p>
@@ -737,6 +737,25 @@ function renderTips() {
     <button type="button" class="btn" data-action="home">回首頁</button></section>`;
 }
 
+function passageTextHtml(text) {
+  return text.split(/\n{2,}/).map((block) => {
+    const rows = block.split("\n").map((line) => line.split("|").map((cell) => cell.trim()));
+    const width = rows[0].length;
+    if (rows.length < 2 || width < 2 || !rows.every((row) => row.length === width)) return esc(block);
+    const body = rows.slice(1).filter((row) => !row.every((cell) => /^:?-+:?$/.test(cell)));
+    return `<div class="passage-table" tabindex="0" role="region" aria-label="文件表格"><table><thead><tr>${rows[0].map((cell) => `<th scope="col">${esc(cell)}</th>`).join("")}</tr></thead><tbody>${body.map((row) => `<tr>${row.map((cell) => `<td>${esc(cell)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+  }).join("\n\n");
+}
+
+function readingPassageHtml(group) {
+  if (!group.passage) return "";
+  const docs = group.passage.docs;
+  const docId = (index) => `doc-${esc(group.id)}-${index}`;
+  const links = group.id.startsWith("p7f-") && docs.length > 1
+    ? `<nav class="passage-links" aria-label="跳至文件">${docs.map((doc, index) => `<a class="btn small" href="#${docId(index)}">${index + 1}. ${esc(doc.label)}</a>`).join("")}</nav>` : "";
+  return links + docs.map((doc, index) => `<div class="doclabel" id="${docId(index)}">${esc(doc.label)}</div><div class="passage">${passageTextHtml(doc.text)}</div>`).join("");
+}
+
 function renderTest() {
   if (!officialRunning) audio.stop();
   const officialListening = session.official && session.phase === "listening";
@@ -783,7 +802,7 @@ function renderTest() {
       ${g.image ? `<img class="question-image" src="${esc(g.image)}" alt="${g.part === 1 ? "照片題圖片" : "聽力題組附圖"}；若圖片載入失敗，請連網重新開啟。">` : ""}
       ${graphicHtml(g.graphicView)}
       ${g.script ? audioBlock(g) : ""}
-      ${g.passage ? g.passage.docs.map((d) => `<div class="doclabel">${esc(d.label)}</div><div class="passage">${esc(d.text)}</div>`).join("") : ""}
+      ${readingPassageHtml(g)}
       ${g.questions.filter((q) => !session.questionIds || session.questionIds.includes(q.id)).map((q) => questionBlock(q, qs, spoken)).join("")}
       ${g.script ? `${session.mode === 'review' ? accentTag(g) : ''}${transcriptBlock(g, session.mode !== 'review')}` : ''}
     </section>
@@ -1326,7 +1345,7 @@ function reviewGroup(g, entry) {
     <div class="doclabel">Part ${g.part} ${esc(g.title ?? "")} ${accentTag(g)}</div>
     ${g.image ? `<img class="question-image" src="${esc(g.image)}" alt="${g.part === 1 ? "本題照片" : "本題附圖"}；若載入失敗，請連網重新開啟。">` : ""}
     ${g.script ? transcriptBlock(g) : ""}
-    ${g.passage ? g.passage.docs.map((d) => `<div class="doclabel">${esc(d.label)}</div><div class="passage">${esc(d.text)}</div>`).join("") : ""}
+    ${readingPassageHtml(g)}
     ${g.questions.filter((q) => !entry.questionIds || entry.questionIds.includes(q.id)).map((q) => {
       const a = entry.answers[q.id];
       const num = qs.findIndex((x) => x.id === q.id) + 1;

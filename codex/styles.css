@@ -208,6 +208,16 @@ a { color: var(--brand); text-underline-offset: .17em; }
 .practice-card .practice-count { color: var(--brand); }
 .topbar { background: var(--bg); }
 .passage { line-height: 1.75; padding: 18px; }
+.passage-table { max-width: 100%; overflow-x: auto; white-space: normal; }
+.passage-table table { width: 100%; border-collapse: collapse; }
+.passage-table th, .passage-table td { border: 1px solid var(--line); padding: 6px 8px; text-align: left; }
+@media (max-width: 520px) {
+  .passage:has(.passage-table) { padding: 10px; }
+  .passage-table { font-size: 0.8rem; line-height: 1.4; }
+  .passage-table th, .passage-table td { padding: 3px 2px; }
+}
+.passage-links { display: flex; flex-wrap: wrap; gap: 6px; }
+.doclabel[id] { scroll-margin-top: 10rem; }
 .pause-review-item { padding: 16px 0; }
 .opt { border-width: 1px; }
 .opt.selected { border-width: 2px; }
