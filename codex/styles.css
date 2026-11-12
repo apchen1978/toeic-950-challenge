@@ -261,3 +261,21 @@ a { color: var(--brand); text-underline-offset: .17em; }
 .reading-full-set { border: 1px solid var(--line); border-radius: 8px; padding: 12px; background: var(--bg); }
 .reading-full-set h3 { margin: 0 0 4px; }
 .reading-full-set p { margin: 4px 0; }
+
+/* Home: compact "today" row and collapsed secondary cards */
+.today-strip { border: 1px solid var(--line); background: var(--card); border-radius: 6px; padding: 14px 18px; margin: 0 0 16px; }
+.today-title { margin: 0 0 8px; font-weight: 700; }
+.today-title .muted { font-weight: 400; font-size: .9rem; }
+.today-items { display: flex; flex-wrap: wrap; gap: 10px 28px; align-items: center; }
+.today-item { display: flex; align-items: baseline; gap: 8px; }
+.today-item b { font-size: 1.5rem; color: var(--brand); line-height: 1; }
+.today-item span { color: var(--muted); font-size: .92rem; }
+.today-item .btn { margin-left: 4px; }
+.today-empty { margin: 8px 0 0; font-size: .92rem; }
+details.fold > summary { cursor: pointer; list-style: none; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+details.fold > summary::-webkit-details-marker { display: none; }
+details.fold > summary::after { content: "展開"; margin-left: auto; color: var(--brand); font-size: .9rem; }
+details.fold[open] > summary::after { content: "收合"; }
+details.fold > summary h2 { margin: 0; font-size: 1.1rem; }
+details.fold > summary .fold-hint { color: var(--muted); font-size: .9rem; }
+details.fold[open] > summary { margin-bottom: 12px; }
