@@ -13,14 +13,15 @@ test('hints say when to move on and flag a part that runs behind', () => {
   const onTime = paceHint(5, 70 * 60, { 5: 300 });
   assert.equal(onTime.behind, false);
   assert.match(onTime.text, /Part 5 已用 05:00/);
-  assert.match(onTime.text, /65:00 前進入 Part 6/);
+  assert.match(onTime.text, /65:00 左右進入 Part 6/);
   const late = paceHint(5, 64 * 60, { 5: 660 });
   assert.equal(late.behind, true);
-  assert.match(late.text, /落後/);
+  assert.match(late.text, /沒關係/);
+  assert.doesNotMatch(late.text, /落後|必須|馬上/);
   assert.equal(paceHint(6, 60 * 60, {}).behind, false);
   assert.equal(paceHint(6, 56 * 60, {}).behind, true);
   assert.equal(paceHint(7, 20 * 60, {}).behind, false);
-  assert.match(paceHint(7, 4 * 60, {}).text, /最後 5 分鐘/);
+  assert.match(paceHint(7, 4 * 60, {}).text, /照自己的步調/);
   assert.match(paceHint(7, 30, {}).text, /答錯不倒扣/);
   assert.equal(paceHint(1, 100, {}).text, '');
 });
