@@ -673,7 +673,14 @@ function updatePaceHint(leftSeconds) {
 function paceHintBlock(g) {
   if (!session?.partSecs || !isReadingFullForm(session.formId)) return "";
   const hint = paceHint(g.part, Math.ceil(remainingMs(session) / 1000), session.partSecs);
-  return `<section class="pace-card" aria-live="polite"><p class="pace-summary">${esc(paceSummary())}</p><p id="pace-hint" class="pace-hint${hint.behind ? " behind" : ""}">${esc(hint.text)}</p></section>`;
+  return `<section class="pace-card"><p class="pace-summary">${esc(paceSummary())}</p></section>`;
+}
+
+// The live hint sits inside the sticky top bar so it stays visible while scrolling a long passage.
+function paceLine(g) {
+  if (!session?.partSecs || !isReadingFullForm(session.formId)) return "";
+  const hint = paceHint(g.part, Math.ceil(remainingMs(session) / 1000), session.partSecs);
+  return `<p id="pace-hint" class="pace-hint pace-inline${hint.behind ? " behind" : ""}" aria-live="polite">${esc(hint.text)}</p>`;
 }
 
 /* ---------- Test view ---------- */
@@ -743,6 +750,7 @@ function renderTest() {
     <div class="topbar">
       <div><span class="tag">${session.mode === "review" ? "錯題複習" : g.section === "listening" ? "Listening" : "Reading"}</span><span class="tag">Part ${g.part}</span><span class="muted">${esc(g.title ?? "")}</span>${session.official ? `<span class="tag">正式模式：每題只播一次，依正式考試停頓</span>` : ""}</div>
       <div class="row">${clock}<span class="muted" id="count">${answeredCount}/${qs.length} 已答</span><button class="btn small" data-action="pause-timer">暫停／看估分</button><button class="btn small primary" data-action="submit">提前交卷</button></div>
+      ${paceLine(g)}
     </div>
 
     ${paceHintBlock(g)}
@@ -756,7 +764,7 @@ function renderTest() {
       ${g.script ? `${session.mode === 'review' ? accentTag(g) : ''}${transcriptBlock(g, session.mode !== 'review')}` : ''}
     </section>
 
-    <div class="row" style="justify-content:space-between">
+    <div class="row nav-bar">
       <button class="btn" data-action="prev" ${session.cur === allowed[0].i ? "disabled" : ""}>← 上一組</button>
       <span class="muted">${session.cur + 1} / ${session.groupIds.length}</span>
       <button class="btn ${isLast ? "" : "primary"}" data-action="next" ${isLast ? "disabled" : ""}>下一組 →</button>
