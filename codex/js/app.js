@@ -284,22 +284,28 @@ function renderHome() {
     <section class="card reading-full-card" aria-labelledby="reading-full-title">
       <div class="reading-full-head"><span class="reading-full-badge">75 MIN</span><p class="section-kicker">READING MOCK · 閱讀完整模擬</p></div>
       <h2 id="reading-full-title">閱讀 100 題 · 75 分鐘（共兩組）</h2>
-      <p>Part 5 30 題 → Part 6 16 題 → Part 7 54 題，依正式順序作答，75 分鐘倒數，可跳題與回頭修改。作答時畫面上方有配速提示：Part 5 約 10 分、Part 6 約 8 分、Part 7 約 52 分，留約 5 分檢查。提示只是參考，不是必須達到的標準。</p>
+      <p>Part 5 30 題 → Part 6 16 題 → Part 7 54 題，依正式順序作答，75 分鐘倒數。</p>
       <div class="reading-full-sets">
         ${[1, 2].map((n) => `<div class="reading-full-set"><h3>閱讀模擬 ${n}</h3><p class="muted">100 題 · 75 分鐘 · 有配速提示</p><p class="muted">${readingFullLast(history, "read-full-" + n)}</p><button class="btn primary" data-action="start-form" data-form="read-full-${n}">開始閱讀模擬 ${n}</button></div>`).join("")}
       </div>
-      <p class="muted">題目包含推論、NOT、句子插入位置、同義字、簡訊意圖與跨文件整合題，難度由簡單到進階混合。結果頁會顯示每個 Part 的用時與錯題的題型。題目為原創模擬題，不是 ETS 官方試題。</p>
+      <details class="card-more"><summary>配速提示與題目說明</summary>
+        <p class="muted">可跳題與回頭修改。作答時畫面上方有配速提示：Part 5 約 10 分、Part 6 約 8 分、Part 7 約 52 分，留約 5 分檢查。提示只是參考，不是必須達到的標準。</p>
+        <p class="muted">題目包含推論、NOT、句子插入位置、同義字、簡訊意圖與跨文件整合題，難度由簡單到進階混合。結果頁會顯示每個 Part 的用時與錯題的題型。題目為原創模擬題，不是 ETS 官方試題。</p>
+      </details>
     </section>
 
     <section class="card quick-card"><p class="section-kicker">PRACTICE TEST</p><h2>快速模考</h2>
-      <p>40 題與 60 題都用正式模式。聽力依音檔連續播放，每題只播一次，沒有聽力倒數；完整模考播完才進入閱讀。可選只考閱讀或聽力。<br>${quickExamTimeCopy()}</p>
+      <p>40 題或 60 題，正式模式；可選只考閱讀或聽力。<br>${quickExamTimeCopy()}</p>
       ${sectionChoiceControl("mock-section-quick")}
-      <p class="muted">聽力音檔輪流使用美式、英式、加拿大與澳洲口音。作答後才看得到該題口音。</p>
       <button class="btn primary" data-action="start-form" data-form="quick-40">開始 40 題快速模考</button>
       <button class="btn primary" data-action="start-form" data-form="quick-60">開始 60 題快速模考</button>
+      <details class="card-more"><summary>正式模式與音檔說明</summary>
+      <p class="muted">聽力依音檔連續播放，每題只播一次，沒有聽力倒數；完整模考播完才進入閱讀。</p>
+      <p class="muted">聽力音檔輪流使用美式、英式、加拿大與澳洲口音。作答後才看得到該題口音。</p>
       <p class="muted">正式模式：每題只播一次，依正式考試停頓。Part 1、Part 2 每題後約停 5 秒；Part 3、Part 4 會唸出題目，每題後約停 8 秒，有圖表的題目約停 12 秒。</p>
       <p class="muted">依正式題型與時間近似縮小；對話和文章題組保留完整，因此各 Part 題數不是精確比例。每次從全部題庫隨機組題，依正式題型比例縮小；聽力四種口音平均，最近考過的題目會盡量避開。完成後可查看解析與非官方粗估。</p>
       <p class="muted">音檔是練習用的合成語音，存在這個網站裡，播放時不連到外部語音服務。不是 ETS 官方錄音。</p>
+      </details>
     </section>
 
 
