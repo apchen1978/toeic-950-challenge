@@ -305,3 +305,17 @@ details.card-more > summary:hover, details.fold > summary:hover { opacity: .85; 
   .reading-full-card h2, .quick-card h2 { font-size: 1.3rem; }
   .today-items { gap: 8px 20px; }
 }
+
+/* Test view: live pace hint lives in the sticky top bar; prev/next stay reachable at the bottom */
+.topbar .pace-inline { flex: 1 1 100%; margin: 0; padding: 4px 0 0; font-size: .9rem; font-weight: 600; }
+.nav-bar { position: sticky; bottom: 0; z-index: 5; justify-content: space-between; align-items: center; gap: 8px; background: var(--bg); border-top: 1px solid var(--line); padding: 10px 0 calc(10px + env(safe-area-inset-bottom)); margin: 12px 0; }
+.nav-bar .btn { min-height: 48px; }
+@media (max-width: 640px) {
+  .nav-bar .btn { flex: 1 1 0; padding-left: 8px; padding-right: 8px; }
+  .nav-bar .muted { display: none; }
+}
+@media (max-width: 640px) {
+  .topbar { padding: 6px 0; }
+  .topbar > div:first-child .muted, .topbar > div:first-child .tag:nth-of-type(n+3) { display: none; }
+  .topbar .pace-inline { font-size: .85rem; }
+}
