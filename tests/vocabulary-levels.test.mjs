@@ -55,10 +55,10 @@ test("the new 800-level entries include a part of speech and the original senten
   assert.equal(original.length, 449);
   assert.ok(withPos.filter(({ item }) => item[3] === 800).length >= 250);
   assert.ok(withPos.every(({ item }) => item[4]));
-  assert.equal(entries.length, 1638);
+  assert.equal(entries.length, 1634);
   const levels = { 700: 0, 800: 0, 900: 0 };
   for (const { item } of entries) levels[item[3]] += 1;
-  assert.deepEqual(levels, { 700: 438, 800: 698, 900: 502 });
+  assert.deepEqual(levels, { 700: 434, 800: 698, 900: 502 });
   const byWord = new Map(entries.map(({ item }) => [item[0], item]));
   assert.equal(byWord.get("contingency")[2], "The team prepared a contingency plan for delivery delays.");
   assert.equal(byWord.get("contingency")[3], 900);
@@ -112,7 +112,7 @@ test("common words have no overlap with each other or with existing words, and s
 
 test("common words are new headwords with a meaning, part of speech and an example that uses the word", () => {
   const common = entries.filter(({ item }) => item[3] === 700);
-  assert.equal(common.length, 438);
+  assert.equal(common.length, 434);
   const heads = entries.map(({ item }) => norm(item[0]));
   assert.equal(new Set(heads).size, heads.length, "no duplicate headwords");
   for (const { item } of common) {

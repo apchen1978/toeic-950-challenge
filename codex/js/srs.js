@@ -48,7 +48,18 @@ export const FLASHCARD_RENAMES = {
   "follow up": "follow up on",
   "apologize": "apologize for",
   "hold on": "hold",
-  "repairman": "repair person"
+  "repairman": "repair person",
+  "attach": "attached",
+  "recycle": "recycling",
+  "warn": "warning",
+  "reserve": "book",
+  "inspect": "check",
+  "power": "electricity",
+  "delayed": "delay",
+  "main point": "point",
+  "bulletin board": "notice board",
+  "gift wrap": "wrap",
+  "supervise": "supervisor"
 };
 
 // Follow a rename chain (minority interest -> beneficial ownership -> contingency plan) to the word that exists now.

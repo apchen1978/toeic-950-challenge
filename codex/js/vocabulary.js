@@ -1525,7 +1525,6 @@ const COMMON_WORDS = {
     ["proofread","校對","Please proofread the letter before you send it out.",700,"v."],
     ["template","範本","Use the template to write your weekly report.",700,"n."],
     ["backup","備份","Always keep a backup of your important files.",700,"n."],
-    ["bulletin board","佈告欄","Please post the flyer on the bulletin board near the lobby.",700,"n."]
   ],
   "會議與時間": [
     ["meeting","會議","The meeting starts at nine o'clock.",700,"n."],
@@ -1598,7 +1597,6 @@ const COMMON_WORDS = {
     ["achievement","成就","Winning the award was a great achievement.",700,"n."],
     ["employer","雇主","My employer pays for the course.",700,"n."],
     ["commute","通勤","My commute to the office takes about forty minutes.",700,"n."],
-    ["supervise","監督；督導","Ms. Alvarez will supervise the new trainees.",700,"v."]
   ],
   "訂單與包裝": [
     ["order","訂購；下訂單","I would like to order ten boxes of paper.",700,"v."],
@@ -1629,7 +1627,6 @@ const COMMON_WORDS = {
     ["on the way","在途中","Your order is on the way.",700,"phr."],
     ["by hand","手工；用手","These cups are made by hand.",700,"phr."],
     ["in bulk","大量地","We buy printer paper in bulk to save money.",700,"phr."],
-    ["gift wrap","禮品包裝","Would you like us to gift wrap the book?",700,"v."]
   ],
   "出差與交通": [
     ["travel","旅行；出差","I travel to Tokyo twice a year.",700,"v."],
@@ -1644,7 +1641,7 @@ const COMMON_WORDS = {
     ["bus stop","公車站","The bus stop is across the street.",700,"n."],
     ["traffic","交通；車流","Traffic was heavy this morning, so I arrived late for work.",700,"n."],
     ["rent a car","租車","We will rent a car at the airport.",700,"phr."],
-    ["direction","方向；指示","Could you give me directions to the office?",700,"n."],
+    ["direction","方向；路線（directions）","Could you give me directions to the office?",700,"n."],
     ["get on","上（車）","Get on the bus at the next stop.",700,"v."],
     ["get off","下（車）","Get off the train at Central Station.",700,"v."],
     ["seat","座位","Excuse me, is this seat taken?",700,"n."],
@@ -1687,7 +1684,6 @@ const COMMON_WORDS = {
     ["pay in full","全額付款","Please pay in full before delivery.",700,"phr."],
     ["owe","欠（錢）","How much do I owe you?",700,"v."],
     ["earn","賺取","She earns a good salary as a sales manager.",700,"v."],
-    ["statement","對帳單","Your credit card statement is available online.",700,"n."],
     ["petty cash","零用金","We keep a small amount of petty cash in the office.",700,"n."]
   ],
   "銷售與客戶": [
@@ -1756,7 +1752,7 @@ const COMMON_WORDS = {
     ["turn off","關掉","Turn off the lights before you go.",700,"v."],
     ["turn on","打開","Can you turn on the projector?",700,"v."],
     ["renovation","整修","The lobby is closed for renovation.",700,"n."],
-    ["injury","受傷","Wear gloves at all times to avoid injury.",700,"n."],
+    ["injury","傷害；受傷","Wear gloves at all times to avoid injury.",700,"n."],
     ["protect","保護","Safety helmets protect your head on the construction site.",700,"v."],
     ["noisy","吵雜的","The street is noisy at night.",700,"adj."],
     ["quiet","安靜的","Please keep the library quiet while others are studying.",700,"adj."],
@@ -1907,7 +1903,7 @@ const COMMON_WORDS = {
     ["volunteer","志工；自願","We need volunteers for the event.",700,"n."],
     ["donate","捐贈","Employees donated books to the school.",700,"v."],
     ["community","社區","The company supports the local community.",700,"n."],
-    ["opening","開幕；空缺","The store opening is on June 1.",700,"n."],
+    ["opening","開幕","The store opening is on June 1.",700,"n."],
     ["closing time","打烊時間","Closing time is nine p.m. on weekdays.",700,"n."]
   ],
   "專案與營運": [

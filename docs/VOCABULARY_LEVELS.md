@@ -20,6 +20,6 @@ The new 800 entries are original short examples, not text copied from a vocabula
 
 ## 常考單字（2026-11-13）
 
-新增 438 個常考單字（2026-11-13 審查後調整，原為 453），內部等級是 `700`，畫面上只顯示「常考單字」，不標分數。對象是以 600–750 分為目標、或剛開始準備多益的人：辦公室、會議、雇用、訂單、出差、付款、銷售、設施、電話客服、工廠、飯店活動、公告書信、專案營運裡最常見的單字與片語。每個詞條都有中文、詞性與本站自寫的短例句，不抄字書，也和既有的 800、900 詞條不重複（含複數與連字號變體）。常考單字平均穿插在各主題中；800 與 900 的標籤和數量都沒有改。首頁標題改為「職場字彙 1000+」。
+新增 434 個常考單字（2026-11-13 審查後調整，原為 453），內部等級是 `700`，畫面上只顯示「常考單字」，不標分數。對象是以 600–750 分為目標、或剛開始準備多益的人：辦公室、會議、雇用、訂單、出差、付款、銷售、設施、電話客服、工廠、飯店活動、公告書信、專案營運裡最常見的單字與片語。每個詞條都有中文、詞性與本站自寫的短例句，不抄字書，也和既有的 800、900 詞條不重複（含複數與連字號變體）。常考單字平均穿插在各主題中；800 與 900 的標籤和數量都沒有改。首頁標題改為「職場字彙 1000+」。
 
-Added 438 common words (after review; first release had 453) (internal level `700`, labelled 常考單字 with no score) for learners aiming at roughly 600–750. Examples are original. Existing 800 and 900 entries are unchanged.
+Added 434 common words (after review; first release had 453) (internal level `700`, labelled 常考單字 with no score) for learners aiming at roughly 600–750. Examples are original. Existing 800 and 900 entries are unchanged.
