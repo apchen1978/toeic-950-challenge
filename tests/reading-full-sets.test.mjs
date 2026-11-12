@@ -35,8 +35,12 @@ test('three full reading sets have 100 questions, 75 minutes and the specified p
   }
 });
 
-test('the two sets share no group and cover the high-score question types', () => {
-  assert.equal(sets[0].groupIds.filter((id) => sets[1].groupIds.includes(id)).length, 0);
+test('all three full reading mocks have pairwise disjoint group IDs', () => {
+  const groups = sets.flatMap((set) => set.groupIds);
+  assert.equal(new Set(groups).size, groups.length);
+});
+
+test('the first two reading sets cover the high-score question types', () => {
   for (const set of sets.slice(0, 2)) {
     const questions = set.groupIds.flatMap((id) => by[id].questions);
     const types = (type) => questions.filter((question) => question.questionType === type).length;
@@ -90,7 +94,7 @@ test('the app wires the reading-full start button, per-part timing and the per-t
 
 test('Part 7 format additions have complete, balanced and original question records', () => {
   const groups = bank.groups.filter((group) => group.id.startsWith('p7f-'));
-  assert.equal(groups.length, 19);
+  assert.equal(groups.length, 23);
   const counts = [0, 0, 0, 0];
   const banned = /Sam Bach|Salinas|Pablo['’]s|Sparky Paints|Business Audio Pro|Springfield|Two Swan Press|Bartowsky|Nostilde|San Jose Starlings|Loftgren|秒殺|萬能|80%/i;
   for (const group of groups) {
@@ -106,6 +110,7 @@ test('Part 7 format additions have complete, balanced and original question reco
       counts[question.answer]++;
     }
   }
-  assert.equal(counts.reduce((sum, count) => sum + count, 0), 66);
-  assert.ok(counts.every((count) => count / 66 >= 0.2 && count / 66 <= 0.3), counts.join('/'));
+  const total = counts.reduce((sum, count) => sum + count, 0);
+  assert.equal(total, 78);
+  assert.ok(counts.every((count) => count / total >= 0.2 && count / total <= 0.3), counts.join('/'));
 });

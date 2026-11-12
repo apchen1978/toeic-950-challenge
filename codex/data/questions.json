@@ -974,8 +974,8 @@
           "g-cov-p7-chat-01",
           "g-r07",
           "g-r11",
-          "p7f-s02-02",
-          "p7f-s04-01",
+          "p7f-s02-07",
+          "p7f-s04-06",
           "p7f-s04-03",
           "p7f-s04-05",
           "g-rd-pay-01",
@@ -1032,11 +1032,11 @@
           "g-cov-p7-chat-02",
           "g-cov-p7-ins-03",
           "g-r13",
-          "p7f-s02-03",
+          "p7f-s02-08",
           "p7f-s02-04",
           "xr-p7-single",
           "g-single-e-campus",
-          "p7f-s04-02",
+          "p7f-s04-07",
           "g-rd-ship-01",
           "g-rdnew-033",
           "g-cov-p7-tri-02",
@@ -25171,7 +25171,7 @@
         "docs": [
           {
             "label": "Text message chain",
-            "text": "11:26 — Mina: The sample case came back from the repair shop. Shall I leave it on your desk?\n11:31 — Jules: I’m at the North Quay branch training its staff through the end of the week. My return ticket is in my bag, but the carrier has moved the departure.\n11:34 — Mina: I could send the case to the branch this afternoon.\n11:37 — Jules: Let’s leave it where it is. The branch has already lent me a case for the demonstrations.\n11:41 — Mina: Understood. I’ll lock it in the sample cabinet."
+            "text": "11:26 — Mina: The repair shop just delivered the sample case to our main office. Shall I leave it on your desk?\n11:31 — Jules: I’m at the North Quay branch training its staff through the end of the week. My return ticket is in my bag, but the carrier has moved the departure.\n11:34 — Mina: I could send the case to the branch this afternoon.\n11:37 — Jules: Let’s leave it where it is. The branch has already lent me a case for the demonstrations.\n11:41 — Mina: Understood. I’ll lock it in the sample cabinet."
           }
         ]
       },
@@ -25197,11 +25197,11 @@
           "options": [
             "Mina should return the case to the repair shop.",
             "The branch should keep its loaned case permanently.",
-            "Mina should keep the case at the home office.",
+            "Mina should keep the case at the main office.",
             "Mina should send the case as soon as the carrier departs."
           ],
           "answer": 2,
-          "explanation": "正解 C「Mina should keep the case at the home office.」：這是回應 Mina 要寄箱子的提議。Jules 已借到一個，因此請 Mina 把修好的箱子留在原處。\n【考點】Part 7・簡訊意圖\n【判斷依據】這是回應 Mina 要寄箱子的提議。Jules 已借到一個，因此請 Mina 把修好的箱子留在原處。",
+          "explanation": "正解 C「Mina should keep the case at the main office.」：這是回應 Mina 要寄箱子的提議。Jules 已借到一個，因此請 Mina 把修好的箱子留在總辦公室。\n【考點】Part 7・簡訊意圖\n【判斷依據】這是回應 Mina 要寄箱子的提議。Jules 已借到一個，因此請 Mina 把修好的箱子留在總辦公室。",
           "skill": "r-intent",
           "ability": "R1",
           "questionType": "chat-intent"
@@ -25706,7 +25706,7 @@
         "docs": [
           {
             "label": "Letter",
-            "text": "Dear Mr. Renwick,\n\nThank you for offering to lend your photograph collection to the Saltmere Community Archive. We would like to scan the photographs of the former ferry terminal first because we are preparing an online exhibition about the waterfront. [1] Family portraits in the same box are outside the scope of the exhibition, so we will leave those untouched. [2]\n\nOur scanning room will be staffed throughout the next project period. You may deliver the box to the reception desk or arrange for our volunteer driver to collect it at your address. [3] Please reply to this letter to tell us which arrangement suits you. [4]\n\nWe expect to return the box within eighteen days of receiving it. We will also provide a digital copy of each scanned image on a memory card. We will publish only the images you approve on the release form, and we will credit the photographer whenever you can identify one.\n\nSincerely,\nNyra Kendell, Collections Coordinator"
+            "text": "Dear Mr. Renwick,\n\nThank you for offering to lend your photograph collection to the Saltmere Community Archive. We would like to scan the photographs of the former ferry terminal first because we are preparing an online exhibition about the waterfront. [1] Family portraits in the same box are outside the scope of the exhibition, so we will leave those untouched. [2]\n\nOur scanning room will be staffed throughout the next project period. You may deliver the box to the reception desk or arrange for our volunteer driver to collect it at your address. [3] Please reply to this letter to tell us which arrangement suits you.\n\nWe expect to return the box within eighteen days of receiving it. We will also provide a digital copy of each scanned image on a memory card. We will publish only the images you approve on the release form, and we will credit the photographer whenever you can identify one. [4]\n\nSincerely,\nNyra Kendell, Collections Coordinator"
           }
         ]
       },
@@ -25736,7 +25736,7 @@
             "[4]"
           ],
           "answer": 2,
-          "explanation": "正解 C「[3]」：Either handover option 指前一句的親送櫃檯或志工到府收件，因此放 [3]。\n【考點】Part 7・句子插入\n【判斷依據】Either handover option 指前一句的親送櫃檯或志工到府收件，因此放 [3]。",
+          "explanation": "正解 C「[3]」：Either handover option 指前一句的親送櫃檯或志工到府收件，因此放 [3]。[4] 已轉到照片歸還和公開授權，離兩種交接選項較遠。\n【考點】Part 7・句子插入\n【判斷依據】Either handover option 指前一句的親送櫃檯或志工到府收件，因此放 [3]。[4] 已轉到照片歸還和公開授權，離兩種交接選項較遠。",
           "skill": "r-inference",
           "ability": "R1",
           "questionType": "text-insertion"
@@ -26495,6 +26495,250 @@
           "ability": "R3",
           "questionType": "cross-document",
           "crossRef": true
+        }
+      ]
+    },
+    {
+      "id": "p7f-s02-07",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: booking a shared equipment room",
+      "passage": {
+        "docs": [
+          {
+            "label": "Web FAQ",
+            "text": "KESTREL BEND MAKER HUB — EQUIPMENT ROOM FAQ\n\nCan my colleague use the slot I booked?\nYes, if the colleague is a registered member who has completed the equipment orientation. Contact the desk before your slot begins so we can put the booking in that person’s name. The entrance reader checks the name on the booking against the badge presented at the door.\n\nWhat if I need more time?\nAsk the desk while your session is still in progress. The desk can add up to twenty-two minutes if no one is booked immediately after you. We cannot extend a session once you have checked out."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7f-s02-07-1",
+          "prompt": "What is suggested about a colleague who arrives with a valid badge before the booking name is changed?",
+          "options": [
+            "The colleague can enter during any vacant slot.",
+            "The badge alone will not grant access for that booking.",
+            "The colleague can finish orientation at the entrance.",
+            "The badge will be cancelled."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「The badge alone will not grant access for that booking.」\n【考點】Part 7・推論\n【判斷依據】讀卡機比對門禁卡與預約姓名。即使卡片有效，未改名的預約也不會和同事的卡片相符。",
+          "skill": "r-inference",
+          "questionType": "inference",
+          "ability": "R1"
+        },
+        {
+          "id": "p7f-s02-07-2",
+          "prompt": "When can a member ask for an extension?",
+          "options": [
+            "After checking out.",
+            "Only before the original booking begins.",
+            "As soon as the following member arrives.",
+            "During the current session."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「During the current session.」\n【考點】Part 7・細節定位\n【判斷依據】FAQ 明說要在使用時段仍在進行時詢問櫃檯，結束簽退後不能延長。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
+    },
+    {
+      "id": "p7f-s02-08",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: an invoice for a repaired label printer",
+      "passage": {
+        "docs": [
+          {
+            "label": "Invoice",
+            "text": "THISTLE VANE REPAIR — INVOICE TV-6318\nBill to: Rindle Market Cooperative\nWork completed: Replace the feed roller on label printer LP-46.\n\nItem | Amount\nFeed roller | $28.40\nWorkshop labor | $51.60\nReturn delivery | $12.50\nAdvance payment received | −$40.00\nBalance due | $52.50\n\nThe return parcel has not been dispatched. We will email the tracking number after the outstanding balance is paid. If you prefer counter pickup, contact us before paying so we can issue an invoice without the delivery charge."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7f-s02-08-1",
+          "prompt": "What can be inferred about Rindle Market Cooperative?",
+          "options": [
+            "It has already paid part of the bill.",
+            "It has collected the printer.",
+            "It was charged for two replacement rollers.",
+            "It has received a tracking number."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「It has already paid part of the bill.」\n【考點】Part 7・推論\n【判斷依據】發票扣除了已收到的 $40.00 預付款，表示客戶已付部分金額。",
+          "skill": "r-inference",
+          "questionType": "inference",
+          "ability": "R1"
+        },
+        {
+          "id": "p7f-s02-08-2",
+          "prompt": "What should the customer do to collect the printer at the counter?",
+          "options": [
+            "Present the tracking number on arrival.",
+            "Ask for a revised invoice before paying.",
+            "Pay the delivery charge separately.",
+            "Cancel the repair request."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Ask for a revised invoice before paying.」\n【考點】Part 7・細節定位\n【判斷依據】結尾要求選擇自取的客戶在付款前聯絡店家，讓店家先開立不含運費的發票。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
+    },
+    {
+      "id": "p7f-s04-06",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: hiring a conservation technician",
+      "passage": {
+        "docs": [
+          {
+            "label": "Job advertisement",
+            "text": "VELMERE PRINT ARCHIVE — CONSERVATION TECHNICIAN\n\nOur conservation team prepares maps and prints for digitization. The technician will check each item for damage and record its condition before it goes to the imaging studio. [1] The post is based at the Fenwick Lane site. Weekend shifts are assigned on a rotating basis. [2]\n\nApplicants must send a résumé and one sample condition report. A report completed during a training course is acceptable. [3] Please remove any client names or contact details from the sample before uploading it. [4]\n\nShortlisted applicants will be asked to carry out a practical exercise using copies of damaged prints. The exercise is intended to assess observation and record keeping. The archive will supply all tools, and no repair work will be required during the exercise. New staff will receive training on the archive’s imaging workflow during their first week."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7f-s04-06-1",
+          "prompt": "What is the purpose of the advertisement?",
+          "options": [
+            "To recruit someone to examine and document archive items.",
+            "To invite the public to a print repair demonstration.",
+            "To offer an imaging course to other archives.",
+            "To ask clients to update their contact details."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「To recruit someone to examine and document archive items.」\n【考點】Part 7・主旨目的\n【判斷依據】標題與內文列出職缺職責、申請資料和甄選方式，工作重點是檢查並記錄館藏狀況。",
+          "skill": "r-purpose",
+          "questionType": "main-purpose",
+          "ability": "R1"
+        },
+        {
+          "id": "p7f-s04-06-2",
+          "prompt": "In which of the positions marked [1], [2], [3], and [4] does the following sentence best belong?\n\"This means that applicants without paid conservation experience can still meet the sample requirement.\"",
+          "options": [
+            "[1]",
+            "[2]",
+            "[3]",
+            "[4]"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「[3]」\n【考點】Part 7・句子插入\n【判斷依據】This 指上一句接受訓練課程的報告。把句子放在 [3]，先說明為何沒有受僱經驗也能達成要求，再交代上傳前要移除哪些資料。",
+          "skill": "r-inference",
+          "questionType": "text-insertion",
+          "ability": "R1"
+        },
+        {
+          "id": "p7f-s04-06-3",
+          "prompt": "The word “assess” is closest in meaning to",
+          "options": [
+            "record.",
+            "improve.",
+            "require.",
+            "evaluate."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「evaluate.」\n【考點】Part 7・語境同義字\n【判斷依據】實作練習用來判斷應徵者的觀察和記錄能力，因此 assess 在此意為 evaluate。",
+          "skill": "r-vocabulary",
+          "questionType": "synonym",
+          "ability": "R4"
+        },
+        {
+          "id": "p7f-s04-06-4",
+          "prompt": "What is stated about the practical exercise?",
+          "options": [
+            "The archive will provide the tools.",
+            "Applicants must repair an original map.",
+            "It will take place on the first day of employment.",
+            "Applicants must use their own damaged prints."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「The archive will provide the tools.」\n【考點】Part 7・細節定位\n【判斷依據】末段明說檔案館會提供所有工具，並用受損印刷品的複本進行練習。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
+    },
+    {
+      "id": "p7f-s04-07",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: customer survey results after a lobby change",
+      "passage": {
+        "docs": [
+          {
+            "label": "Customer survey results",
+            "text": "MARENLOFT CONFERENCE CENTRE — VISITOR SURVEY SUMMARY\n\nWe surveyed recent guests after moving the registration desk away from the main doors. [1] Guests who had visited before the move reported a shorter wait at busy times. However, several first-time visitors said they walked past the registration desk because the entrance map still showed its former location. [2]\n\nIn the next trial, we will update the map and place a sign beside the doors. We will also add a symbol for the desk on the printed event schedule. [3] The sign and the schedule will both use the same symbol, so guests can recognize it when they arrive.\n\nWe will compare first-time visitors’ responses in the next survey with those from this survey. [4] If fewer new visitors report trouble finding the desk, we will keep the sign and the new symbol. Staff will continue recording wait times to make sure the new arrangement still keeps the entrance clear."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7f-s04-07-1",
+          "prompt": "What is the main purpose of the summary?",
+          "options": [
+            "To announce a new registration fee.",
+            "To report visitor feedback and outline the next trial.",
+            "To compare the printed schedules of two events.",
+            "To explain why a survey was cancelled."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「To report visitor feedback and outline the next trial.」\n【考點】Part 7・主旨目的\n【判斷依據】第一段整理櫃檯搬遷後的回饋，後兩段說明要試行的導引措施與評估方式。",
+          "skill": "r-purpose",
+          "questionType": "main-purpose",
+          "ability": "R1"
+        },
+        {
+          "id": "p7f-s04-07-2",
+          "prompt": "In which of the positions marked [1], [2], [3], and [4] does the following sentence best belong?\n\"It will be a small illustration of a name badge.\"",
+          "options": [
+            "[1]",
+            "[2]",
+            "[3]",
+            "[4]"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「[3]」\n【考點】Part 7・句子插入\n【判斷依據】It 指 [3] 正前方首次提到的指示圖示。插入後先定義圖樣，再說明招牌和印刷議程會使用同一圖示。",
+          "skill": "r-inference",
+          "questionType": "text-insertion",
+          "ability": "R1"
+        },
+        {
+          "id": "p7f-s04-07-3",
+          "prompt": "The word “former” is closest in meaning to",
+          "options": [
+            "nearest.",
+            "temporary.",
+            "previous.",
+            "preferred."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「previous.」\n【考點】Part 7・語境同義字\n【判斷依據】地圖仍標示搬遷前的櫃檯位置，所以 former 指 previous。",
+          "skill": "r-vocabulary",
+          "questionType": "synonym",
+          "ability": "R4"
+        },
+        {
+          "id": "p7f-s04-07-4",
+          "prompt": "What is suggested about the new desk location?",
+          "options": [
+            "It will be moved again before the next event.",
+            "It was chosen because it was shown on the map.",
+            "It made repeat visitors wait longer.",
+            "It improved one aspect of registration while creating a wayfinding problem."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「It improved one aspect of registration while creating a wayfinding problem.」\n【考點】Part 7・推論\n【判斷依據】回訪者等待時間縮短，但部分初訪者因舊地圖走過櫃檯，顯示兩種效果同時存在。",
+          "skill": "r-inference",
+          "questionType": "inference",
+          "ability": "R1"
         }
       ]
     }

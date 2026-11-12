@@ -2,13 +2,13 @@
 
 基線為 fb5de8c。文件標籤依資料原樣計數，大小寫不同視為不同標籤。
 
-原題庫已有 10 題同義字、7 題聊天意圖與 63 題跨文件題。本次保留既有雙篇及三篇題組，新增的 5 組多文件題只填補文件形態和計算情境。三份模擬可共用單篇題組，前兩份仍完全互斥。第三份 Part 5／6 全取自前兩份以外的現有題組。
+原題庫已有 10 題同義字、7 題聊天意圖與 63 題跨文件題。本次保留既有雙篇及三篇題組，新增的 5 組多文件題只填補文件形態和計算情境。修正另新增 4 組單篇，目前共新增 23 組、78 題。三份模擬之間的 groupId 完全互斥。第三份 Part 5／6 全取自前兩份以外的現有題組。
 
 ### Part 7 文件數（題組）
 
 | 分類 | 修改前 | 修改後 |
 |---|---:|---:|
-| 1 | 42 | 56 |
+| 1 | 42 | 60 |
 | 2 | 10 | 12 |
 | 3 | 19 | 22 |
 
@@ -16,9 +16,9 @@
 
 | 分類 | 修改前 | 修改後 |
 |---|---:|---:|
-| 2 | 5 | 11 |
+| 2 | 5 | 13 |
 | 3 | 23 | 26 |
-| 4 | 4 | 9 |
+| 4 | 4 | 11 |
 | 5 | 8 | 8 |
 | 6 | 2 | 2 |
 
@@ -47,6 +47,7 @@
 | Course schedule | 0 | 1 |
 | Cover email | 1 | 1 |
 | Customer bulletin | 1 | 1 |
+| Customer survey results | 0 | 1 |
 | Day 1 program | 1 | 1 |
 | E-mail from supplier | 1 | 1 |
 | E-mail — June 8 | 1 | 1 |
@@ -64,7 +65,8 @@
 | Internal memo — Tuesday, August 13 | 1 | 1 |
 | Interview notice | 1 | 1 |
 | Invitation | 1 | 1 |
-| Invoice | 1 | 1 |
+| Invoice | 1 | 2 |
+| Job advertisement | 0 | 1 |
 | Job posting | 1 | 1 |
 | Letter | 2 | 5 |
 | Local business article | 1 | 1 |
@@ -121,6 +123,7 @@
 | Travel policy | 1 | 1 |
 | Vendor letter | 1 | 1 |
 | Venue web page | 1 | 1 |
+| Web FAQ | 0 | 1 |
 | Web page | 1 | 1 |
 | Workshop listing | 1 | 1 |
 
@@ -161,12 +164,12 @@
 | P6 · vocabulary | 28 | 28 |
 | P7 · chat-intent | 7 | 9 |
 | P7 · cross-document | 63 | 73 |
-| P7 · detail | 113 | 138 |
-| P7 · inference | 50 | 60 |
-| P7 · main-purpose | 30 | 39 |
+| P7 · detail | 113 | 141 |
+| P7 · inference | 50 | 63 |
+| P7 · main-purpose | 30 | 41 |
 | P7 · not-question | 6 | 8 |
-| P7 · synonym | 10 | 15 |
-| P7 · text-insertion | 5 | 8 |
+| P7 · synonym | 10 | 17 |
+| P7 · text-insertion | 5 | 10 |
 
 ### read-full-1 questionType（題）
 
@@ -181,9 +184,9 @@
 | P6 · grammar | 8 | 8 |
 | P6 · sentence-insertion | 4 | 4 |
 | P6 · vocabulary | 3 | 3 |
-| P7 · chat-intent | 2 | 3 |
+| P7 · chat-intent | 2 | 2 |
 | P7 · cross-document | 11 | 11 |
-| P7 · detail | 17 | 21 |
+| P7 · detail | 17 | 22 |
 | P7 · inference | 9 | 5 |
 | P7 · main-purpose | 4 | 6 |
 | P7 · not-question | 3 | 2 |
@@ -204,11 +207,11 @@
 | P6 · vocabulary | 4 | 4 |
 | P7 · chat-intent | 4 | 3 |
 | P7 · cross-document | 9 | 9 |
-| P7 · detail | 24 | 24 |
+| P7 · detail | 24 | 23 |
 | P7 · inference | 7 | 7 |
 | P7 · main-purpose | 1 | 4 |
 | P7 · not-question | 3 | 3 |
-| P7 · synonym | 4 | 2 |
+| P7 · synonym | 4 | 3 |
 | P7 · text-insertion | 2 | 2 |
 
 ### read-full-3 questionType（題）
@@ -256,19 +259,23 @@
 | p7f-triple-pilot | Production schedule ＋ Email ＋ News report | 5 | cross-document ×2、synonym ×1、detail ×1、inference ×1 |
 | p7f-triple-swatches | Advertisement ＋ Online shopping cart ＋ Email | 5 | detail ×3、cross-document ×2 |
 | p7f-triple-tickets | Email ＋ Flyer ＋ Match schedule | 5 | main-purpose ×1、inference ×1、detail ×1、cross-document ×2 |
+| p7f-s02-07 | Web FAQ | 2 | inference ×1、detail ×1 |
+| p7f-s02-08 | Invoice | 2 | inference ×1、detail ×1 |
+| p7f-s04-06 | Job advertisement | 4 | main-purpose ×1、text-insertion ×1、synonym ×1、detail ×1 |
+| p7f-s04-07 | Customer survey results | 4 | main-purpose ×1、text-insertion ×1、synonym ×1、inference ×1 |
 
 ## 換題與答案位置
 
 ### read-full-1
 
 - 移出 g-cov-p7-syn-01、g-cov-p7-syn-02、g-cov-p7-ins-01、g-cov-p7-ins-02、g-rdnew-028、g-rdnew-025
-- 換入 g-r07、g-r11、p7f-s02-02、p7f-s04-01、p7f-s04-03、p7f-s04-05
-- Part 7 A／B／C／D 14／16／13／11。全卷 24／28／24／24。
+- 換入 g-r07、g-r11、p7f-s02-07、p7f-s04-06、p7f-s04-03、p7f-s04-05
+- Part 7 A／B／C／D 14／16／12／12。全卷 24／28／23／25。
 
 ### read-full-2
 
 - 移出 g-cov-p7-syn-04、g-cov-p7-chat-03、g-cov-p7-ins-04、g-f-single-2、g-rdnew-026、g-rdnew-031
-- 換入 g-r13、p7f-s02-03、p7f-s02-04、xr-p7-single、g-single-e-campus、p7f-s04-02
+- 換入 g-r13、p7f-s02-08、p7f-s02-04、xr-p7-single、g-single-e-campus、p7f-s04-07
 - Part 7 A／B／C／D 15／12／15／12。全卷 25／25／29／21。
 
 ### read-full-3
@@ -279,12 +286,13 @@
 - Part 6 xr2-p6-publisher、g-new-text、g-rdnew-023、g-new-part6-a
 - Part 7 A／B／C／D 14／14／15／11。全卷 24／25／27／24。
 
-新題 A／B／C／D 18／15／18／15。
+新題 A／B／C／D 21／18／21／18。
 
-## 驗收
+## PR #73 去重修正
 
-- `npm test` 176 項通過，SW 為 v79。
-- 逐題依原文重做 66 題，並核對跨文件算式與干擾選項。全部既有題組及閱讀模擬以外的 set 均與基線相同。
-- 在本機伺服器以 Edge 的 390px 手機視窗啟動第三份模擬，確認 75 分鐘計時與配速、課表四列、聊天時間戳和三篇文件跳轉。三篇保留在同一頁，方便對照。
-- 以兩份原始模擬的已存紀錄驗證結果頁，兩份都能顯示已移出的題組。
-- 截圖：[課程表](part7-mobile-table.png)、[簡訊](part7-mobile-chat.png)、[三篇跳轉](part7-mobile-triple.png)。
+- 模擬 1 以 p7f-s02-07、p7f-s04-06 取代 p7f-s02-02、p7f-s04-01。
+- 模擬 2 以 p7f-s02-08、p7f-s04-07 取代 p7f-s02-03、p7f-s04-02。
+- 三份的 groupId 交集均為 0。模擬 3 的題組清單完全相同。4 組替換題的 A／B／C／D 為 3／3／3／3。
+- Mina 在總辦公室收到箱子，選項及解析改用 main office。[4] 移至照片授權與歸還段落的末尾，保留 [3] 為兩種交接方式後唯一合適的插入位置。
+- npm test 177 項通過，SW 為 v80。4 組新增題已逐題核對原文和選項。
+- 首次提交以 Edge 的 390px 視窗檢查模擬 3 與模擬 1／2 的舊作答紀錄。截圖為當時版本：[課程表](part7-mobile-table.png)、[簡訊](part7-mobile-chat.png)、[三篇跳轉](part7-mobile-triple.png)。
