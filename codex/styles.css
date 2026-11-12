@@ -319,3 +319,17 @@ details.card-more > summary:hover, details.fold > summary:hover { opacity: .85; 
   .topbar > div:first-child .muted, .topbar > div:first-child .tag:nth-of-type(n+3) { display: none; }
   .topbar .pace-inline { font-size: .85rem; }
 }
+
+/* Home section shortcuts: sticky pill bar on wide screens, bottom tab bar on phones */
+.home-nav { position: sticky; top: 0; z-index: 6; display: flex; gap: 8px; padding: 8px 0; margin: 0 0 12px; background: var(--bg); border-bottom: 1px solid var(--line); }
+.home-nav-item { position: relative; flex: 0 0 auto; font: inherit; font-weight: 600; min-height: 40px; padding: 6px 18px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--ink); cursor: pointer; }
+.home-nav-item.is-active { background: var(--brand); border-color: var(--brand); color: var(--brand-ink); }
+.home-nav-count { margin-left: 6px; min-width: 1.4em; padding: 0 6px; border-radius: 999px; background: var(--warn); color: #fff; font-size: .8125rem; line-height: 1.5; display: inline-block; text-align: center; }
+[id^="nav-"] { scroll-margin-top: 64px; }
+@media (max-width: 640px) {
+  .home-nav { position: fixed; top: auto; bottom: 0; left: 0; right: 0; margin: 0; gap: 0; padding: 0 0 env(safe-area-inset-bottom); border-top: 1px solid var(--line); border-bottom: 0; box-shadow: 0 -4px 14px rgba(0,0,0,.18); }
+  .home-nav-item { flex: 1 1 0; border: 0; border-radius: 0; min-height: 56px; padding: 6px 4px; background: var(--card); }
+  .home-nav-item.is-active { background: var(--brand); }
+  body:has(.home-nav) { padding-bottom: 72px; }
+  [id^="nav-"] { scroll-margin-top: 12px; }
+}
