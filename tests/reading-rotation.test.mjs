@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import { assembleReadingRotation, originalReadingGroups, readingRotationPools } from '../codex/js/reading-rotation.js';
 import { avoidedGroupIds, rememberQuickDraw } from '../codex/js/quick-form.js';
@@ -15,10 +16,16 @@ const docs = (group) => group.passage?.docs.length ?? 0;
 const partGroups = (groups, part) => groups.filter((group) => group.part === part);
 const shape = (group) => [group.part, docs(group), group.questions.length];
 const key = (group) => shape(group).join('/');
+const originalDigests = {
+  'read-full-1': '8fbb2dbb315267f4a0c0ff1195b350878bc0a052719f6477fae78a1b2caf351e',
+  'read-full-2': 'e53b203cdf15933562f0b224e6b560eb92d1f33b988ab3334bc24dfa5dad881b',
+  'read-full-3': '4b0b2cbf428a68f7bd0f23d0bf1dc473e99137fe464a501d0e8ca3880d369e78'
+};
 
 test('50 seeds per reading mock preserve structure, answer keys and group exclusions', () => {
   let recent = [];
   const stats = { changed: [], positions: [[], [], [], []] };
+  const singlesByForm = new Map(forms.map((id) => [id, { 2: new Set(), 4: new Set() }]));
   for (let seed = 0; seed < 50; seed++) for (const formId of forms) {
     const base = originalReadingGroups(bank, formId);
     const baseIds = new Set(base.map((group) => group.id));
@@ -49,6 +56,9 @@ test('50 seeds per reading mock preserve structure, answer keys and group exclus
     assert.equal(partGroups(added, 5).length, 10);
     assert.equal(partGroups(added, 6).length, 1);
     assert.deepEqual(partGroups(added, 7).filter((group) => docs(group) === 1).map((group) => group.questions.length), [2, 3, 4]);
+    for (const group of partGroups(added, 7).filter((item) => docs(item) === 1)) {
+      singlesByForm.get(formId)[group.questions.length]?.add(group.id);
+    }
     assert.equal(partGroups(added, 7).filter((group) => docs(group) === 3).length, 1);
     const positions = [0, 0, 0, 0];
     for (const question of part7.flatMap((group) => group.questions)) positions[question.answer]++;
@@ -68,15 +78,37 @@ test('50 seeds per reading mock preserve structure, answer keys and group exclus
   assert.deepEqual(bank, JSON.parse(source), 'assembly never edits the bank');
   const range = (values) => [Math.min(...values), Math.max(...values)];
   console.log('Reading rotation ranges across 150 draws:', { changed: range(stats.changed), positions: stats.positions.map(range) });
+  for (const [formId, singles] of singlesByForm) {
+    assert.ok(singles[2].size >= 6, `${formId} two-question singles`);
+    assert.ok(singles[4].size >= 5, `${formId} four-question singles`);
+    console.log(`${formId}: ${singles[2].size} two-question and ${singles[4].size} four-question replacement groups`);
+  }
 });
 
 test('original reading mocks follow the existing bank and set ordering', () => {
   for (const id of forms) {
     const { groupIds } = bank.meta.sets.find((set) => set.id === id);
+    assert.equal(createHash('sha256').update(JSON.stringify(groupIds)).digest('hex'), originalDigests[id], id);
     const original = originalReadingGroups(bank, id).map((group) => group.id);
     const expected = [5, 6, 7].flatMap((part) => partGroups(bank.groups, part).filter((group) => groupIds.includes(group.id)).map((group) => group.id));
     assert.deepEqual(original, expected);
     assert.deepEqual([...original].sort(), [...groupIds].sort());
+  }
+});
+
+test('the 14 new single passages are in the eligible replacement pools and absent from every fixed set', () => {
+  const pools = readingRotationPools(bank);
+  const reserved = new Set(bank.meta.sets.flatMap((set) => set.groupIds));
+  for (const [size, count, minPool] of [[2, 8, 9], [4, 6, 8]]) {
+    const pool = pools.get(`7/${size}/1`);
+    assert.ok(pool.length >= minPool);
+    const groups = pool.filter((group) => group.id.startsWith(`p7r-s0${size}-`));
+    assert.deepEqual(groups.map((group) => group.id).sort(), Array.from({ length: count }, (_, i) => `p7r-s0${size}-0${i + 1}`));
+    assert.ok(groups.every((group) => !reserved.has(group.id)));
+    if (size === 4) for (const type of ['text-insertion', 'synonym']) {
+      assert.ok(groups.filter((group) => group.questions.some((question) => question.questionType === type)).length >= 3, type);
+    }
+    if (size === 2) assert.ok(groups.filter((group) => group.questions.some((question) => question.questionType === 'chat-intent')).length >= 2);
   }
 });
 
