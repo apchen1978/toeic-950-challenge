@@ -1232,7 +1232,7 @@ function readingFullReport(entry, qs) {
     const secs = entry.partSecs?.[part];
     const used = Number.isFinite(secs) ? formatDuration(secs) : "—";
     const over = Number.isFinite(secs) && secs > PART_PACE[part] * 60;
-    return `<tr><td>Part ${part}</td><td>${right}/${list.length}</td><td>${used}${over ? ' <span class="tag practice">超過參考配速</span>' : ""}</td><td>${PART_PACE[part]} 分</td></tr>`;
+    return `<tr><td>Part ${part}</td><td>${right}/${list.length}</td><td>${used}${over ? ' <span class="tag practice">比參考時間多一些</span>' : ""}</td><td>${PART_PACE[part]} 分</td></tr>`;
   }).join("");
   const byType = new Map();
   for (const q of qs) {

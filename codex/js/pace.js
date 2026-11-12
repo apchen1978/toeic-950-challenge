@@ -9,7 +9,7 @@ export const READING_PACE = [
 export const REVIEW_MINUTES = 5;
 
 export function paceSummary() {
-  return "配速參考：Part 5 約 10 分 → Part 6 約 8 分 → Part 7 約 52 分 → 留約 5 分檢查（個人整理，非官方規定）";
+  return "配速參考：Part 5 約 10 分 → Part 6 約 8 分 → Part 7 約 52 分 → 留約 5 分檢查。這是練習用的參考，不是必須達到的標準（個人整理，非官方）。";
 }
 
 function clock(seconds) {
@@ -28,11 +28,11 @@ export function paceHint(part, remainingSeconds, partSeconds = {}) {
   const checkpoint = plan.leaveBy * 60;
   const behind = remainingSeconds < checkpoint;
   if (part === 7) {
-    if (remainingSeconds <= 60) return { text: `Part 7 已用 ${used}。最後一分鐘：還沒作答的題目每題都先選一個答案（答錯不倒扣）。`, behind: true };
-    if (behind) return { text: `Part 7 已用 ${used}。已進入最後 ${REVIEW_MINUTES} 分鐘：先把沒作答的題目都選完，再回頭檢查有標記的題目。`, behind: true };
-    return { text: `Part 7 已用 ${used}，建議約 ${plan.minutes} 分。目標：倒數剩 ${clock(checkpoint)} 時做完全部，留時間檢查。`, behind: false };
+    if (remainingSeconds <= 60) return { text: `Part 7 已用 ${used}。最後一分鐘，還沒作答的題目可以先各選一個答案（答錯不倒扣）。`, behind: true };
+    if (behind) return { text: `Part 7 已用 ${used}。剩下約 ${REVIEW_MINUTES} 分鐘，照自己的步調把剩下的題目做完就好，有時間再回頭看標記的題目。`, behind: true };
+    return { text: `Part 7 已用 ${used}，參考約 ${plan.minutes} 分；倒數剩 ${clock(checkpoint)} 左右做完，會留一點檢查時間。`, behind: false };
   }
   const next = part + 1;
-  if (behind) return { text: `Part ${part} 已用 ${used}，已落後建議節奏（倒數剩 ${clock(checkpoint)} 前要進入 Part ${next}）。卡住的題目先猜一個答案並標記，馬上往下做。`, behind: true };
-  return { text: `Part ${part} 已用 ${used}，建議約 ${plan.minutes} 分。目標：倒數剩 ${clock(checkpoint)} 前進入 Part ${next}。`, behind: false };
+  if (behind) return { text: `Part ${part} 已用 ${used}，比參考節奏慢一點也沒關係。遇到卡住的題目，可以先選一個答案並標記，之後再回來。`, behind: true };
+  return { text: `Part ${part} 已用 ${used}，參考約 ${plan.minutes} 分；倒數剩 ${clock(checkpoint)} 左右進入 Part ${next} 會比較從容。`, behind: false };
 }
