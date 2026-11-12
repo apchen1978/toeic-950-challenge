@@ -87,6 +87,11 @@ function vocabParts(item) {
   return { word, meaning, example, level, pos, full };
 }
 function vocabName(item) { return `${esc(item.word)}${item.full ? ` <span class="vocab-full">(${esc(item.full)})</span>` : ""}`; }
+function readingFullLast(history, formId) {
+  const last = [...history].reverse().find((h) => h.formId === formId);
+  if (!last) return "還沒做過";
+  return `上次：${last.correct}/${last.total} 題答對 · 用時 ${formatDuration(last.secUsed)}`;
+}
 function vocabLevelLabel(level) {
   return level === 900 ? "900 金色證書" : level === 700 ? "常考單字" : "800 核心";
 }
@@ -262,6 +267,16 @@ function renderHome() {
     </header>
     ${session ? resumeCard() : ''}
 
+    <section class="card reading-full-card" aria-labelledby="reading-full-title">
+      <div class="reading-full-head"><span class="reading-full-badge">75 MIN</span><p class="section-kicker">READING MOCK · 閱讀完整模擬</p></div>
+      <h2 id="reading-full-title">閱讀 100 題 · 75 分鐘（共兩組）</h2>
+      <p>Part 5 30 題 → Part 6 16 題 → Part 7 54 題，依正式順序作答，75 分鐘倒數，可跳題與回頭修改。作答時畫面上方有配速提示：Part 5 約 10 分、Part 6 約 8 分、Part 7 約 52 分，留約 5 分檢查。提示只是參考，不是必須達到的標準。</p>
+      <div class="reading-full-sets">
+        ${[1, 2].map((n) => `<div class="reading-full-set"><h3>閱讀模擬 ${n}</h3><p class="muted">100 題 · 75 分鐘 · 有配速提示</p><p class="muted">${readingFullLast(history, "read-full-" + n)}</p><button class="btn primary" data-action="start-form" data-form="read-full-${n}">開始閱讀模擬 ${n}</button></div>`).join("")}
+      </div>
+      <p class="muted">題目包含推論、NOT、句子插入位置、同義字、簡訊意圖與跨文件整合題，難度由簡單到進階混合。結果頁會顯示每個 Part 的用時與錯題的題型。題目為原創模擬題，不是 ETS 官方試題。</p>
+    </section>
+
     <section class="card quick-card"><p class="section-kicker">PRACTICE TEST</p><h2>快速模考</h2>
       <p>40 題與 60 題都用正式模式。聽力依音檔連續播放，每題只播一次，沒有聽力倒數；完整模考播完才進入閱讀。可選只考閱讀或聽力。<br>${quickExamTimeCopy()}</p>
       ${sectionChoiceControl("mock-section-quick")}
@@ -273,11 +288,7 @@ function renderHome() {
       <p class="muted">音檔是練習用的合成語音，存在這個網站裡，播放時不連到外部語音服務。不是 ETS 官方錄音。</p>
     </section>
 
-    <section class="card reading-full-card"><p class="section-kicker">READING MOCK</p><h2>閱讀完整模擬 · 100 題／75 分鐘</h2>
-      <p>Part 5 30 題、Part 6 16 題、Part 7 54 題（單篇 29 題、雙篇 10 題、三篇 15 題），依正式順序作答，75 分鐘倒數，可跳題與回頭修改。提早做完可直接交卷。結果頁會統計每個 Part 的用時與錯題的題型。</p>
-      <p class="muted">題目包含推論、NOT、句子插入位置、同義字、簡訊意圖與跨文件整合題，著重高分段容易失分的題型。題目為原創模擬題，不是 ETS 官方試題。</p>
-      <div class="row"><button class="btn primary" data-action="start-form" data-form="read-full-1">開始閱讀完整模擬 1</button> <button class="btn primary" data-action="start-form" data-form="read-full-2">開始閱讀完整模擬 2</button></div>
-    </section>
+
 
     <section class="card vocabulary-card" aria-labelledby="vocabulary-title">
       <div class="vocab-hero">
