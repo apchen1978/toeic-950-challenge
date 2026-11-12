@@ -2,7 +2,7 @@ import * as audio from "./audio.js";
 import { VOCABULARY } from "./vocabulary.js";
 import { LESSONS } from "./listening-lessons.js";
 import { migrateFlashcardProgress, rateCard, selectCards } from "./srs.js";
-import { flatten, score, estimateProgress, mergeSkillStats, weakest, groupsForSkill, updateWrongAnswerQueue, queueWrongReview, wrongAnswerDue, answeredWrong, answerLocked, formatDuration, normalizeMockSection, opensReadingAfterListening } from "./scoring.js";
+import { flatten, score, bestSectionAccuracy, estimateProgress, mergeSkillStats, weakest, groupsForSkill, updateWrongAnswerQueue, queueWrongReview, wrongAnswerDue, answeredWrong, answerLocked, formatDuration, normalizeMockSection, opensReadingAfterListening } from "./scoring.js";
 import { sectionChoiceHtml, selectMockSection } from "./mock-section.js";
 import { SKILLS, skillLabel } from "./skills.js";
 import { remainingMs, pauseTimer, resumeTimer, elapsedSeconds, startTimedForm, startReading } from "./timer.js";
@@ -10,6 +10,7 @@ import { assembleQuickForm, avoidedGroupIds, createRng, isActiveGroup, rememberQ
 import { allowsReplay, buildOfficialSequence, isOfficialForm, listenProgressLabel, meanListeningMinutes, playbackRateFor, progressForStep, sequenceSeconds } from "./official-listening.js";
 import { graphicHtml } from "./graphic.js";
 import { paceHint, paceSummary } from "./pace.js";
+import { assembleReadingRotation, isReadingFullForm, originalReadingGroups } from "./reading-rotation.js";
 import { CHOICE_REVISION, migrateChoiceIndexes } from "./choice-legacy.js";
 import { TIP_SECTIONS, TIPS_STORAGE_KEY, tipForPart, tipsEnabled } from "./tips.js";
 import { ABILITIES, abilityStats, scoreBand } from "./abilities.js";
@@ -47,6 +48,7 @@ const KEY_VOCAB_LEVEL = `${STORAGE_PREFIX}.vocab-level.v1`;
 const KEY_FLASHCARDS = `${STORAGE_PREFIX}.flashcards.v1`;
 const KEY_FLASH_OPTIONS = `${STORAGE_PREFIX}.flash-options.v1`;
 const KEY_QUICK_RECENT = `${STORAGE_PREFIX}.quick-recent.v1`;
+const KEY_READING_ROTATION_RECENT = `${STORAGE_PREFIX}.reading-rotation-recent.v1`;
 const KEY_MOCK_SECTION = `${STORAGE_PREFIX}.mock-section.v1`;
 const flashItems = VOCABULARY.flatMap(group => group.words.map(item => ({ ...vocabParts(item), category: group.category })));
 let flashQueue = [];
@@ -87,10 +89,22 @@ function vocabParts(item) {
   return { word, meaning, example, level, pos, full };
 }
 function vocabName(item) { return `${esc(item.word)}${item.full ? ` <span class="vocab-full">(${esc(item.full)})</span>` : ""}`; }
+function readingVariantBadge(entry) {
+  if (!isReadingFullForm(entry.formId)) return "";
+  return `<span class="tag reading-variant">${entry.readingVariant === "rotation" ? "微調版" : "原版"}</span>`;
+}
 function readingFullLast(history, formId) {
-  const last = [...history].reverse().find((h) => h.formId === formId);
-  if (!last) return "還沒做過";
-  return `上次：${last.correct}/${last.total} 題答對 · 用時 ${formatDuration(last.secUsed)}`;
+  const attempts = history.filter((entry) => entry.formId === formId);
+  const originals = attempts.filter((entry) => entry.readingVariant !== "rotation");
+  const rotations = attempts.filter((entry) => entry.readingVariant === "rotation");
+  const last = originals.at(-1);
+  const best = (entries) => {
+    const result = bestSectionAccuracy(entries, "reading");
+    return result ? `${result.correct}/${result.total} 題` : "—";
+  };
+  return `<p class="muted">原版最近成績 ${last ? `${last.correct}/${last.total} 題 · ${formatDuration(last.secUsed)}` : "—"}</p>
+    <p class="muted">微調版已做 ${rotations.length} 次</p>
+    ${attempts.length ? `<p class="muted">最佳成績 · 原版 ${best(originals)} · 微調版 ${best(rotations)}</p>` : ""}`;
 }
 function vocabLevelLabel(level) {
   return level === 900 ? "900 金色證書" : level === 700 ? "常考單字" : "800 核心";
@@ -310,7 +324,7 @@ function renderHome() {
       <h2 id="reading-full-title">閱讀 100 題 · 75 分鐘（共三組）</h2>
       <p>Part 5 30 題 → Part 6 16 題 → Part 7 54 題，依正式順序作答，75 分鐘倒數。</p>
       <div class="reading-full-sets">
-        ${[1, 2, 3].map((n) => `<div class="reading-full-set"><h3>閱讀模擬 ${n}</h3><p class="muted">100 題 · 75 分鐘 · 有配速提示</p><p class="muted">${readingFullLast(history, "read-full-" + n)}</p><button class="btn primary" data-action="start-form" data-form="read-full-${n}">開始閱讀模擬 ${n}</button></div>`).join("")}
+        ${[1, 2, 3].map((n) => `<div class="reading-full-set"><h3>閱讀模擬 ${n}</h3><p class="muted">100 題 · 75 分鐘 · 有配速提示</p>${readingFullLast(history, "read-full-" + n)}<button class="btn primary" data-action="start-form" data-form="read-full-${n}">開始閱讀模擬 ${n}（原版）</button>${history.some((entry) => entry.formId === "read-full-" + n) ? `<button class="btn" data-action="start-reading-rotation" data-form="read-full-${n}">再練一次（微調版，約 3 成換題）</button>` : ""}</div>`).join("")}
       </div>
       <details class="card-more"><summary>配速提示與題目說明</summary>
         <p class="muted">可跳題與回頭修改。作答時畫面上方有配速提示：Part 5 約 10 分、Part 6 約 8 分、Part 7 約 52 分，留約 5 分檢查。提示只是參考，不是必須達到的標準。</p>
@@ -459,7 +473,7 @@ function renderHome() {
       </div></section>` : ""}
 
     ${history.length ? `<section class="card"><h2>作答紀錄</h2><table><thead><tr><th>日期</th><th>類型</th><th>正確率</th><th>耗時</th><th></th></tr></thead><tbody>
-      ${history.slice().reverse().slice(0, 15).map((h) => `<tr><td>${new Date(h.date).toLocaleString("zh-TW", { hour12: false })}</td><td>${h.mode === "diagnostic" ? "完整／混合" : h.mode === "review" ? "錯題複習" : h.mode === "reading" ? "閱讀專練" : h.mode === "listening" ? "聽力專練" : "弱項練習"}${sectionBadge(h.section)}${h.peeked ? ' <span class="tag practice">練習成績</span>' : ''}</td><td>${Math.round((h.correct / h.total) * 100)}%</td><td>${formatDuration(h.secUsed)}</td><td><button class="btn small" data-action="view" data-id="${h.id}">檢視</button></td></tr>`).join("")}
+      ${history.slice().reverse().slice(0, 15).map((h) => `<tr><td>${new Date(h.date).toLocaleString("zh-TW", { hour12: false })}</td><td>${h.mode === "diagnostic" ? "完整／混合" : h.mode === "review" ? "錯題複習" : h.mode === "reading" ? "閱讀專練" : h.mode === "listening" ? "聽力專練" : "弱項練習"}${sectionBadge(h.section)}${readingVariantBadge(h)}${h.peeked ? ' <span class="tag practice">練習成績</span>' : ''}</td><td>${Math.round((h.correct / h.total) * 100)}%</td><td>${formatDuration(h.secUsed)}</td><td><button class="btn small" data-action="view" data-id="${h.id}">檢視</button></td></tr>`).join("")}
       </tbody></table></section>` : ""}
   `;
   document.getElementById('speech-rate').value = String(audio.getRate());
@@ -514,7 +528,7 @@ function resumeCard() {
   const place = officialListening
     ? `${listenProgressLabel(session.officialProgress)} · 正式模式：每題只播一次，依正式考試停頓`
     : `${group?.section === 'listening' ? '聽力' : '閱讀'} · Part ${group?.part ?? ''} · 第 ${session.cur + 1} 組<br>剩餘 ${formatDuration(Math.ceil(remainingMs(session) / 1000))}${Number.isFinite(session.pausedRemainingMs) ? '（已暫停）' : ''}`;
-  return `<section class="card" aria-label="上次未完成的測驗"><h2>接續上次測驗</h2><p><b>${esc(title)}</b> · 已答 ${answered}/${qs.length} 題</p>
+  return `<section class="card" aria-label="上次未完成的測驗"><h2>接續上次測驗</h2><p><b>${esc(title)}</b> ${readingVariantBadge(session)} · 已答 ${answered}/${qs.length} 題</p>
     <p>${place}</p>
     <p class="muted">最後儲存：${new Date(session.savedAt ?? session.startedAt).toLocaleString('zh-TW', { hour12: false })}。同一瀏覽器開啟此網址即可接續；清除網站資料會移除進度。</p>
     <div class="row"><button class="btn primary" data-action="resume">繼續上次測驗</button><button class="btn" data-action="discard">放棄這次進度</button></div></section>`;
@@ -619,14 +633,23 @@ function officialListeningMinutes(groupIds, manifest) {
   return sequenceSeconds(buildOfficialSequence(groups, manifest)) / 60;
 }
 
-const isReadingFullForm = (formId) => /^read-full-\d+$/.test(String(formId));
-
-function startReadingFull(formId) {
+function startReadingFull(formId, rotate = false) {
   const set = bank.meta.sets.find((item) => item.id === formId);
   if (!set) return;
-  const ids = orderedGroupIds(set.groupIds).sort((a, b) => groupById(a).part - groupById(b).part);
+  const originalIds = originalReadingGroups(bank, formId).map((group) => group.id);
   const minutes = set.timing?.reading ?? 75;
-  startSession("diagnostic", ids, minutes, null, set.id, { reading: minutes }, { official: true, section: "reading", partSecs: { 5: 0, 6: 0, 7: 0 } });
+  const extra = { official: true, section: "reading", partSecs: { 5: 0, 6: 0, 7: 0 }, readingVariant: "original" };
+  if (!rotate || !store.get(KEY_HISTORY, []).some((entry) => entry.formId === formId)) {
+    startSession("diagnostic", originalIds, minutes, null, set.id, { reading: minutes }, extra);
+    return;
+  }
+  const recent = store.get(KEY_READING_ROTATION_RECENT, []);
+  const seed = crypto.getRandomValues(new Uint32Array(1))[0];
+  const draw = assembleReadingRotation(bank, formId, seed, recent);
+  if (draw.fallback) extra.readingRotationFallback = true;
+  else Object.assign(extra, { readingVariant: "rotation", rotationSeed: seed });
+  const started = startSession("diagnostic", draw.groupIds, minutes, null, set.id, { reading: minutes }, extra);
+  if (started && !draw.fallback) store.set(KEY_READING_ROTATION_RECENT, rememberQuickDraw(recent, draw.groupIds, formId));
 }
 
 async function startOfficialSet(formId) {
@@ -791,11 +814,12 @@ function renderTest() {
 
   app.innerHTML = `
     <div class="topbar">
-      <div><span class="tag">${session.mode === "review" ? "錯題複習" : g.section === "listening" ? "Listening" : "Reading"}</span><span class="tag">Part ${g.part}</span><span class="muted">${esc(g.title ?? "")}</span>${session.official ? `<span class="tag">正式模式：每題只播一次，依正式考試停頓</span>` : ""}</div>
+      <div><span class="tag">${session.mode === "review" ? "錯題複習" : g.section === "listening" ? "Listening" : "Reading"}</span><span class="tag">Part ${g.part}</span><span class="muted">${esc(g.title ?? "")}</span>${readingVariantBadge(session)}${session.official ? `<span class="tag">正式模式：每題只播一次，依正式考試停頓</span>` : ""}</div>
       <div class="row">${clock}<span class="muted" id="count">${answeredCount}/${qs.length} 已答</span><button class="btn small" data-action="pause-timer">暫停／看估分</button><button class="btn small primary" data-action="submit">提前交卷</button></div>
       ${paceLine(g)}
     </div>
 
+    ${session.readingRotationFallback ? '<p class="notice" role="status">目前無法抽到符合規格的微調版，本次使用原版。</p>' : ""}
     ${paceHintBlock(g)}
     ${partTipBlock(g)}
     <section class="card">
@@ -1220,6 +1244,7 @@ function submit(auto = false) {
     section: normalizeMockSection(session.section),
     secUsed: elapsedSeconds(session),
     partSecs: session.partSecs ?? null,
+    ...(isReadingFullForm(session.formId) ? { readingVariant: session.readingVariant ?? "original", ...(session.readingVariant === "rotation" ? { rotationSeed: session.rotationSeed } : {}) } : {}),
     groupIds: session.groupIds, questionIds: session.questionIds ?? null, answers: session.answers,
     choiceRevision: session.choiceRevision ?? CHOICE_REVISION,
     correct: result.correct, total: result.total, bySkill: answeredResult.bySkill, bySection: answeredResult.bySection
@@ -1253,7 +1278,8 @@ function renderResult(entry, showAll = false) {
     const note = !testedAbilities.has(id) ? "本套未測" : stats.answered < 5 ? `題數少，僅供參考 · ${stats.answered} 題` : `${stats.answered} 題`;
     return `<div class="ability-row"><div class="ability-head"><div><b>${id}</b> ${esc(definition.title)}</div><strong>${percent === null ? "—" : `${percent}%`}</strong></div><div class="muted">${note}</div><div class="bar ${percent !== null && percent < 60 ? "weak" : ""}" role="progressbar" aria-label="${id} ${esc(definition.title)} 正答率" aria-valuemin="0" aria-valuemax="100" ${percent === null ? "aria-valuetext=\"未作答\"" : `aria-valuenow="${percent}"`}><i style="width:${percent ?? 0}%"></i></div></div>`;
   }).join("");
-  const groups = bank.groups.filter((g) => entry.groupIds.includes(g.id)).filter((g) => showAll || g.questions.some((q) => entry.answers[q.id] !== q.answer));
+  const resultGroups = isReadingFullForm(entry.formId) ? entry.groupIds.map(groupById).filter(Boolean) : bank.groups.filter((g) => entry.groupIds.includes(g.id));
+  const groups = resultGroups.filter((g) => showAll || g.questions.some((q) => entry.answers[q.id] !== q.answer));
 
   const single = normalizeMockSection(entry.section);
   const sectionLine = single === "listening"
@@ -1269,7 +1295,7 @@ function renderResult(entry, showAll = false) {
     ["閱讀", R && scoreBand("reading", R.mid)]
   ].filter(([, band]) => band).map(([label, band]) => `<article class="score-band"><h3>${label} ${band.level}</h3><p><b>目前強項：</b>${band.strength}</p><p><b>可加強：</b>${band.gap}</p><p><b>下一步：</b>${band.next}</p></article>`).join("");
   app.innerHTML = `
-    <h1>測驗結果 ${sectionBadge(entry.section)} ${entry.peeked ? '<span class="tag practice">練習成績</span>' : ''}</h1>
+    <h1>測驗結果 ${sectionBadge(entry.section)} ${readingVariantBadge(entry)} ${entry.peeked ? '<span class="tag practice">練習成績</span>' : ''}</h1>
     <section class="card"><div class="grid">
       <div class="stat"><b>${r.answered ? `${Math.round((r.correct / r.answered) * 100)}%` : '—'}</b>已答正確率</div>
       <div class="stat"><b>${r.correct}/${r.answered}</b>已答對／已作答</div>
@@ -1363,6 +1389,7 @@ app.addEventListener("click", (e) => {
   if (!t) return;
   const d = t.dataset;
   switch (d.action) {
+    case "start-reading-rotation": startReadingFull(d.form, true); break;
     case "start-diagnostic": {
       const set = bank.meta.sets.find((s) => s.id === document.getElementById('test-set').value);
       const ids = orderedGroupIds(set.groupIds);

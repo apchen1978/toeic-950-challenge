@@ -327,6 +327,7 @@ details.card-more > summary:hover, details.fold > summary:hover { opacity: .85; 
 @media (max-width: 640px) {
   .topbar { padding: 6px 0; }
   .topbar > div:first-child .muted, .topbar > div:first-child .tag:nth-of-type(n+3) { display: none; }
+  .topbar > div:first-child .tag.reading-variant { display: inline-block; }
   .topbar .pace-inline { font-size: .85rem; }
 }
 
