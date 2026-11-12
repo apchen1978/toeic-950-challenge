@@ -254,6 +254,28 @@ function todayStrip(wrongDue, wordDue, history) {
   return `<section class="today-strip" aria-label="今日待辦"><p class="today-title">今日<span class="muted"> · ${lastText}</span></p><div class="today-items">${item(wordDue, "單字待複習", "vocab-open", "複習單字")}${item(wrongDue, "錯題到期", "review-wrong", "複習錯題")}</div>${empty ? '<p class="muted today-empty">今天沒有到期的複習，可以直接做一組模考，或背幾個新單字。</p>' : ""}</section>`;
 }
 
+const HOME_NAV = [["nav-mock", "模考"], ["nav-vocab", "單字"], ["nav-practice", "練習"], ["nav-review", "複習"]];
+
+// Section shortcuts: sticky bar on wide screens, bottom tab bar on phones. Text only, no icons.
+function homeNav(reviewCount) {
+  return `<nav class="home-nav" aria-label="首頁快速跳轉">${HOME_NAV.map(([id, label], i) => `<button type="button" class="home-nav-item${i === 0 ? " is-active" : ""}" data-action="home-jump" data-target="${id}">${label}${id === "nav-review" && reviewCount ? `<span class="home-nav-count" aria-label="${reviewCount} 項待複習">${reviewCount > 99 ? "99+" : reviewCount}</span>` : ""}</button>`).join("")}</nav>`;
+}
+
+let navFrame = 0;
+function syncHomeNav() {
+  navFrame = 0;
+  const items = document.querySelectorAll(".home-nav-item");
+  if (!items.length) return;
+  const line = window.innerHeight * 0.35;
+  let current = HOME_NAV[0][0];
+  for (const [id] of HOME_NAV) {
+    const el = document.getElementById(id);
+    if (el && el.getBoundingClientRect().top <= line) current = id;
+  }
+  items.forEach((item) => item.classList.toggle("is-active", item.dataset.target === current));
+}
+window.addEventListener("scroll", () => { if (!navFrame) navFrame = requestAnimationFrame(syncHomeNav); }, { passive: true });
+
 function renderHome() {
   stopTimer();
   audio.stop();
@@ -272,16 +294,18 @@ function renderHome() {
   const queueCount = queuedQuestions.length;
   const dueQuestions = queuedQuestions.filter((q) => wrongAnswerDue(wrongQueue[q.id]));
 
+  const wordDue = vocabDueCount();
   app.innerHTML = `
     <header class="home-header">
       <p class="home-eyebrow">LISTENING &amp; READING <span aria-hidden="true">/</span> PRACTICE</p>
       <h1>TOEIC 950+<br><span>Challenge</span></h1>
       <p class="home-intro">上次 955，這次挑戰更高。<br>專注聽力與閱讀的推論、細節與交叉比對。</p>
     </header>
-    ${todayStrip(dueQuestions.length, vocabDueCount(), history)}
+    ${homeNav(dueQuestions.length + wordDue)}
+    ${todayStrip(dueQuestions.length, wordDue, history)}
     ${session ? resumeCard() : ''}
 
-    <section class="card reading-full-card" aria-labelledby="reading-full-title">
+    <section class="card reading-full-card" id="nav-mock" aria-labelledby="reading-full-title">
       <div class="reading-full-head"><span class="reading-full-badge">75 MIN</span><p class="section-kicker">READING MOCK · 閱讀完整模擬</p></div>
       <h2 id="reading-full-title">閱讀 100 題 · 75 分鐘（共兩組）</h2>
       <p>Part 5 30 題 → Part 6 16 題 → Part 7 54 題，依正式順序作答，75 分鐘倒數。</p>
@@ -310,7 +334,7 @@ function renderHome() {
 
 
 
-    <section class="card vocabulary-card" aria-labelledby="vocabulary-title">
+    <section class="card vocabulary-card" id="nav-vocab" aria-labelledby="vocabulary-title">
       <div class="vocab-hero">
         <div class="vocab-hero-copy">
           <p class="vocabulary-eyebrow">WORKPLACE VOCABULARY</p>
@@ -343,7 +367,7 @@ function renderHome() {
       </details>
     </section>
 
-    <section class="card lesson-entry"><p class="section-kicker">LISTENING LESSONS</p><h2>聽力小課程</h2><p>用職場情境練習聽力。先聽錄音，再看中文概要、英文逐字稿和實用片語。</p><button class="btn primary" data-action="lessons">開始聽小課程</button></section>
+    <section class="card lesson-entry" id="nav-practice"><p class="section-kicker">LISTENING LESSONS</p><h2>聽力小課程</h2><p>用職場情境練習聽力。先聽錄音，再看中文概要、英文逐字稿和實用片語。</p><button class="btn primary" data-action="lessons">開始聽小課程</button></section>
     <section class="practice-grid" aria-label="Listening 聽力與 Reading 閱讀練習">
       <article class="card practice-card listening-card">
         <div class="section-label">LISTENING</div>
@@ -406,7 +430,7 @@ function renderHome() {
       <div id="unsupported-message">${audio.supported() ? '' : unsupportedNotice()}</div>
     </section>
 
-    <section class="card">
+    <section class="card" id="nav-review">
       <h2>弱項追蹤與推薦</h2>
       ${weak.length ? weak.map((w) => `
         <div class="skillrow"><div><b>${esc(skillLabel(w.skill))}</b><div class="muted">${esc(SKILLS[w.skill]?.tip ?? "")}</div></div>
@@ -1465,6 +1489,11 @@ app.addEventListener("click", (e) => {
       break;
     }
     case "vocab-filter": store.set(KEY_VOCAB_LEVEL, d.vocabFilter); paintVocab(); break;
+    case "home-jump": {
+      const el = document.getElementById(d.target);
+      if (el) el.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+      break;
+    }
     case "vocab-open": {
       flashSetup();
       break;
