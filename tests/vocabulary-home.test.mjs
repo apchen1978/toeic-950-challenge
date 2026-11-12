@@ -9,7 +9,7 @@ const styles = readFileSync(new URL("../codex/styles.css", import.meta.url), "ut
 test("home vocabulary feature derives its totals from the data and keeps direct study actions", () => {
   const counts = { 700: 0, 800: 0, 900: 0 };
   for (const group of VOCABULARY) for (const word of group.words) counts[word[3]] += 1;
-  assert.deepEqual(counts, { 700: 453, 800: 698, 900: 502 });
+  assert.deepEqual(counts, { 700: 438, 800: 698, 900: 502 });
   assert.match(app, /const vocab = vocabCounts\(\)/);
   assert.match(app, /const vocabTotal = vocab\[700\] \+ vocab\[800\] \+ vocab\[900\]/);
   assert.match(app, /職場字彙 <span>1000\+<\/span>/);

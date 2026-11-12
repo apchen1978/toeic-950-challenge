@@ -55,10 +55,10 @@ test("the new 800-level entries include a part of speech and the original senten
   assert.equal(original.length, 449);
   assert.ok(withPos.filter(({ item }) => item[3] === 800).length >= 250);
   assert.ok(withPos.every(({ item }) => item[4]));
-  assert.equal(entries.length, 1653);
+  assert.equal(entries.length, 1638);
   const levels = { 700: 0, 800: 0, 900: 0 };
   for (const { item } of entries) levels[item[3]] += 1;
-  assert.deepEqual(levels, { 700: 453, 800: 698, 900: 502 });
+  assert.deepEqual(levels, { 700: 438, 800: 698, 900: 502 });
   const byWord = new Map(entries.map(({ item }) => [item[0], item]));
   assert.equal(byWord.get("contingency")[2], "The team prepared a contingency plan for delivery delays.");
   assert.equal(byWord.get("contingency")[3], 900);
@@ -82,12 +82,37 @@ test("every theme mixes 800 and 900, with at least 20 percent advanced among sco
       longest = Math.max(longest, run);
     }
     assert.ok(longest < Math.max(counts[700], counts[800], counts[900]), `${group.category} run ${longest}`);
+    let commonRun = 0;
+    for (const item of group.words) {
+      commonRun = item[3] === 700 ? commonRun + 1 : 0;
+      assert.ok(commonRun <= 3, `${group.category} has more than three common words in a row`);
+    }
+    const common = group.words.filter((item) => item[3] === 700);
+    if (common.length) {
+      const half = Math.floor(group.words.length / 2);
+      const firstHalf = group.words.slice(0, half).filter((item) => item[3] === 700).length;
+      assert.ok(firstHalf >= Math.floor(common.length / 3), `${group.category} common words are bunched at the end`);
+    }
   }
+});
+
+test("common words have no overlap with each other or with existing words, and short examples are gone", () => {
+  const common = entries.filter(({ item }) => item[3] === 700).map(({ item }) => item);
+  for (const item of common) assert.ok(item[2].split(/\s+/).length >= 6, `${item[0]} example is too short`);
+  const banned = ["copy machine", "helmet", "sign up", "responsible for", "one-way", "follow up", "apologize", "hold on", "repairman", "reserve", "inspect", "power", "delayed", "attach", "recycle", "warn", "chair", "window", "door", "wall", "ceiling", "roof", "fence", "garden", "money", "wallet", "dollar", "morning", "afternoon", "hour", "next week", "easy", "difficult", "important", "useful", "try", "fun", "photo", "trash can"];
+  const heads = new Set(entries.map(({ item }) => norm(item[0])));
+  for (const word of banned) assert.equal(heads.has(norm(word)), false, word);
+  const byWord = new Map(entries.map(({ item }) => [item[0], item]));
+  assert.match(byWord.get("welcome")[2], /^Please welcome/);
+  assert.match(byWord.get("busy line")[2], /busy line/);
+  assert.equal(byWord.get("online")[4], "adv.");
+  assert.equal(byWord.get("correct")[4], "v.");
+  assert.ok(byWord.has("repair person"));
 });
 
 test("common words are new headwords with a meaning, part of speech and an example that uses the word", () => {
   const common = entries.filter(({ item }) => item[3] === 700);
-  assert.equal(common.length, 453);
+  assert.equal(common.length, 438);
   const heads = entries.map(({ item }) => norm(item[0]));
   assert.equal(new Set(heads).size, heads.length, "no duplicate headwords");
   for (const { item } of common) {

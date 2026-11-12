@@ -39,7 +39,16 @@ export const FLASHCARD_RENAMES = {
   "in compliance with": "under the terms of",
   "vendor lead time": "delivery estimate",
   "task deadline": "submission deadline",
-  "beneficial ownership": "contingency plan"
+  "beneficial ownership": "contingency plan",
+  "copy machine": "copier",
+  "helmet": "safety helmet",
+  "sign up": "sign up for",
+  "responsible for": "be responsible for",
+  "one-way": "one-way ticket",
+  "follow up": "follow up on",
+  "apologize": "apologize for",
+  "hold on": "hold",
+  "repairman": "repair person"
 };
 
 // Follow a rename chain (minority interest -> beneficial ownership -> contingency plan) to the word that exists now.
