@@ -2,6 +2,7 @@ import * as audio from "./audio.js";
 import { VOCABULARY } from "./vocabulary.js";
 import { GRAMMAR } from "./grammar.js";
 import { PICKS } from "./vocab-picks.js";
+import { PREEXAM_PRINCIPLE, PREEXAM_BLOCKS, PREEXAM_WARMUP, PREEXAM_TRAPS, PREEXAM_PACE, PREEXAM_RESCUE, PREEXAM_SOURCES } from "./preexam.js";
 import { LESSONS } from "./listening-lessons.js";
 import { migrateFlashcardProgress, rateCard, selectCards } from "./srs.js";
 import { flatten, score, bestSectionAccuracy, estimateProgress, mergeSkillStats, weakest, groupsForSkill, updateWrongAnswerQueue, queueWrongReview, wrongAnswerDue, answeredWrong, answerLocked, formatDuration, normalizeMockSection, opensReadingAfterListening } from "./scoring.js";
@@ -46,6 +47,7 @@ function wrongReasonSummary() {
 }
 const KEY_ACCENT = `${STORAGE_PREFIX}.accent-filter.v1`;
 const KEY_TIPS = `${STORAGE_PREFIX}.${TIPS_STORAGE_KEY}`;
+const KEY_PREEXAM = `${STORAGE_PREFIX}.preexam.v1`;
 const KEY_VOCAB_LEVEL = `${STORAGE_PREFIX}.vocab-level.v1`;
 const KEY_FLASHCARDS = `${STORAGE_PREFIX}.flashcards.v1`;
 const KEY_FLASH_OPTIONS = `${STORAGE_PREFIX}.flash-options.v1`;
@@ -302,7 +304,46 @@ function todayStrip(wrongDue, wordDue, history) {
     <div class="today-start"><button type="button" class="btn primary" data-action="flash-quick">背 10 個精選單字</button><button type="button" class="btn" data-action="grammar-drill">練 5 題文法</button></div></section>`;
 }
 
-const HOME_NAV = [["nav-mock", "模考"], ["nav-vocab", "單字"], ["nav-grammar", "文法"], ["nav-practice", "練習"], ["nav-review", "複習"]];
+const HOME_NAV = [["nav-preexam", "考前"], ["nav-mock", "模考"], ["nav-vocab", "單字"], ["nav-grammar", "文法"], ["nav-practice", "練習"], ["nav-review", "複習"]];
+
+function examDaysLeft() {
+  const days = Math.ceil((new Date(`${EXAM_DATE}T00:00:00`) - new Date()) / 86400000);
+  return Number.isFinite(days) ? days : null;
+}
+function preExamCard() {
+  const days = examDaysLeft();
+  const left = days === null || days < 0 ? "" : days === 0 ? "今天就是考試日" : `距離考試還有 ${days} 天`;
+  return `<section class="card preexam-card" id="nav-preexam" aria-labelledby="preexam-title">
+      <p class="vocabulary-eyebrow">BEFORE THE TEST${left ? ` · ${esc(left)}` : ""}</p>
+      <h2 id="preexam-title">考前 30 分鐘：找回題感</h2>
+      <p class="muted">進考場前一小時看這個：該做什麼、不該做什麼、最容易錯的 10 件事，以及 10 分鐘暖身。手機在車上就能滑完。</p>
+      <div class="vocab-actions"><button type="button" class="btn primary" data-action="preexam-open">打開考前黃金流程</button><button type="button" class="btn" data-action="start-warmup">Part 5 暖身 10 題</button></div>
+    </section>`;
+}
+function preExamTicks() { const saved = store.get(KEY_PREEXAM, {}); return saved && typeof saved === "object" ? saved : {}; }
+function renderPreExam() {
+  audio.stop();
+  const ticks = preExamTicks();
+  const total = PREEXAM_BLOCKS.reduce((sum, block) => sum + block.items.length, 0);
+  const done = PREEXAM_BLOCKS.reduce((sum, block) => sum + block.items.filter((item) => ticks[item.id]).length, 0);
+  const days = examDaysLeft();
+  app.innerHTML = `<section class="card preexam-page"><p class="section-kicker">BEFORE THE TEST${days !== null && days >= 0 ? ` · ${days === 0 ? "今天考試" : `還有 ${days} 天`}` : ""}</p><h1>考前黃金 30–60 分鐘</h1>
+    <p class="preexam-principle">${esc(PREEXAM_PRINCIPLE)}</p>
+    <p class="muted">整理自公開的備考建議與考生經驗，不是 ETS 官方規定，也不保證分數；實際規定以你的考試通知為準。已勾選 <b data-preexam-done>${done}</b> / ${total} 項。</p>
+    ${PREEXAM_BLOCKS.map((block) => `<article class="preexam-block"><p class="section-kicker">${esc(block.when)}</p><h2>${esc(block.title)}</h2><p class="muted">${esc(block.intro)}</p>
+      <ul class="preexam-list">${block.items.map((item) => `<li><label><input type="checkbox" data-action="preexam-tick" data-id="${esc(item.id)}"${ticks[item.id] ? " checked" : ""}><span>${esc(item.text)}</span></label></li>`).join("")}</ul>
+      ${block.id === "gate" ? `<h3>題感暖機（約 10 分鐘）</h3><div class="preexam-warmup">${PREEXAM_WARMUP.map((w) => `<button type="button" class="btn" data-action="${esc(w.action)}"><b>${esc(w.label)}</b><small>${esc(w.hint)}</small></button>`).join("")}</div>` : ""}
+    </article>`).join("")}
+    <article class="preexam-block"><p class="section-kicker">THE TEN TRAPS</p><h2>最容易錯的 10 件事</h2><p class="muted">只看，不要背。看完就收手。</p>
+      <ol class="preexam-traps">${PREEXAM_TRAPS.map((t) => `<li><span class="tag">${esc(t.part)}</span> <b>${esc(t.title)}</b><br><span class="muted">${esc(t.body)}</span></li>`).join("")}</ol></article>
+    <article class="preexam-block"><p class="section-kicker">PACE</p><h2>${esc(PREEXAM_PACE.title)}</h2>
+      <ul class="preexam-pace">${PREEXAM_PACE.rows.map((r) => `<li><b>${esc(r.label)}</b>　${esc(r.value)}</li>`).join("")}</ul><p class="muted">${esc(PREEXAM_PACE.note)}</p></article>
+    <article class="preexam-block"><p class="section-kicker">IN THE ROOM</p><h2>考試中急救</h2>
+      ${PREEXAM_RESCUE.map((r) => `<h3>${esc(r.title)}</h3><p>${esc(r.body)}</p>`).join("")}</article>
+    <p class="tips-sources">參考：${PREEXAM_SOURCES.map((source) => `<a href="${esc(source.href)}" target="_blank" rel="noopener noreferrer">${esc(source.name)}</a>`).join(" · ")}。個人整理，非官方，僅供練習參考。</p>
+    <div class="row"><button type="button" class="btn" data-action="tips">各 Part 完整答題技巧</button><button type="button" class="btn" data-action="preexam-reset">清除勾選</button><button type="button" class="btn primary" data-action="home">回首頁</button></div></section>`;
+  window.scrollTo(0, 0);
+}
 
 function grammarSection() {
   const quizCount = GRAMMAR_QUIZ.length;
@@ -376,6 +417,7 @@ function renderHome() {
     ${homeNav(dueQuestions.length + wordDue)}
     ${todayStrip(dueQuestions.length, wordDue, history)}
     ${session ? resumeCard() : ''}
+    ${preExamCard()}
 
     <section class="card reading-full-card" id="nav-mock" aria-labelledby="reading-full-title">
       <div class="reading-full-head"><span class="reading-full-badge">75 MIN</span><p class="section-kicker">READING MOCK · 閱讀完整模擬</p></div>
@@ -1559,6 +1601,17 @@ app.addEventListener("click", (e) => {
     case "view": renderResult(store.get(KEY_HISTORY, []).find((h) => h.id === d.id)); break;
     case "toggle-all": renderResult(store.get(KEY_HISTORY, []).find((h) => h.id === d.id), d.all === "1"); break;
     case "home": renderHome(); break;
+    case "preexam-open": renderPreExam(); break;
+    case "preexam-reset": store.set(KEY_PREEXAM, {}); renderPreExam(); break;
+    case "start-warmup": {
+      const pool = bank.groups.filter((g) => isActiveGroup(g) && g.section === "reading" && g.part === 5);
+      if (!pool.length) break;
+      const picked = pool.map((g) => [Math.random(), g.id]).sort((a, b) => a[0] - b[0]).slice(0, 10).map((pair) => pair[1]);
+      const ids = orderedGroupIds(picked);
+      const count = ids.reduce((sum, id) => sum + groupById(id).questions.length, 0);
+      startSession("practice", ids, Math.max(5, Math.ceil(count * 0.6)));
+      break;
+    }
     case "tips": renderTips(); break;
     case "hide-tips": store.set(KEY_TIPS, false); if (session) renderTest(); else renderHome(); break;
     case "show-tips": store.set(KEY_TIPS, true); if (session) renderTest(); else renderHome(); break;
@@ -1677,6 +1730,14 @@ app.addEventListener("click", (e) => {
 });
 
 app.addEventListener("change", (e) => {
+  if (e.target.dataset?.action === "preexam-tick") {
+    const ticks = preExamTicks();
+    if (e.target.checked) ticks[e.target.dataset.id] = true; else delete ticks[e.target.dataset.id];
+    store.set(KEY_PREEXAM, ticks);
+    const done = PREEXAM_BLOCKS.reduce((sum, block) => sum + block.items.filter((item) => ticks[item.id]).length, 0);
+    app.querySelectorAll("[data-preexam-done]").forEach((el) => { el.textContent = done; });
+    return;
+  }
   if (typeof e.target.name === "string" && e.target.name.startsWith("mock-section")) { store.set(KEY_MOCK_SECTION, selectMockSection(e.target.value)); renderHome(); return; }
   if (e.target.id === "accent-filter") { store.set(KEY_ACCENT, e.target.value); renderHome(); return; }
   if (e.target.dataset.action === "listen-rate") { audio.setListenRate(Number(e.target.value)); return; }

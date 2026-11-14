@@ -201,6 +201,23 @@ a { color: var(--brand); text-underline-offset: .17em; }
 }
 .vocabulary-group p.vocab-adv { opacity: .92; }
 .vocab-pick-tag { border: 1px solid var(--brand); color: var(--brand); background: transparent; }
+.preexam-card { border-left: 3px solid #b08b45; }
+.preexam-card h2 { margin: 4px 0 8px; }
+.preexam-page h1 { margin-bottom: 8px; }
+.preexam-principle { font-size: 1.05rem; font-weight: 650; line-height: 1.6; padding: 10px 12px; border-radius: 8px; background: var(--sel); }
+.preexam-block { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); }
+.preexam-block h2 { margin: 2px 0 6px; font-size: 1.2rem; }
+.preexam-block h3 { margin: 14px 0 4px; font-size: 1rem; }
+.preexam-list, .preexam-pace { list-style: none; padding: 0; margin: 10px 0; }
+.preexam-list li { margin: 0; border-bottom: 1px solid var(--line); }
+.preexam-list label { display: flex; gap: 12px; align-items: flex-start; padding: 12px 2px; line-height: 1.6; cursor: pointer; }
+.preexam-list input[type=checkbox] { flex: 0 0 22px; width: 22px; height: 22px; margin-top: 2px; }
+.preexam-warmup { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin: 8px 0; }
+.preexam-warmup .btn { display: grid; gap: 2px; text-align: left; min-height: 56px; }
+.preexam-warmup .btn small { color: var(--muted); font-weight: 400; font-size: .8125rem; }
+.preexam-traps { padding-left: 22px; margin: 10px 0; }
+.preexam-traps li { margin: 12px 0; line-height: 1.6; }
+.preexam-pace li { padding: 6px 0; border-bottom: 1px dashed var(--line); }
 .today-start-title { margin: 12px 0 8px; font-size: .95rem; }
 .today-start { display: flex; flex-wrap: wrap; gap: 10px; }
 .today-start .btn { flex: 1 1 180px; min-height: 44px; }
