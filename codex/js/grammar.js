@@ -1,6 +1,6 @@
 // TOEIC grammar guide. Original explanations, examples and practice items (not ETS material).
 // Each topic: { id, title, rule, clues, examples: [[en, zh]], trap, quiz: [{ q, options, answer, why }] }.
-// `answer` is the index of the correct option.
+// `answer` is the index of the correct option. Question text must be unique: saved progress is keyed by it.
 export const GRAMMAR = [
   {
     id: "base-vs-pp",
@@ -19,7 +19,9 @@ export const GRAMMAR = [
     trap: "「to」後面不一定是原形：look forward to、be committed to、be used to、contribute to 的 to 是介系詞，後面接 V-ing。",
     quiz: [
       { q: "The supervisor made the new employees ____ the safety video twice.", options: ["watch", "to watch", "watched", "watching"], answer: 0, why: "make ＋ 人 ＋ 原形，所以用 watch。" },
-      { q: "Ms. Cho had her contract ____ by a lawyer before she signed it.", options: ["review", "reviewing", "reviewed", "to review"], answer: 2, why: "have ＋ 物 ＋ 過去分詞，表示請人處理。合約是被審閱的，所以用 reviewed。" }
+      { q: "Ms. Cho had her contract ____ by a lawyer before she signed it.", options: ["review", "reviewing", "reviewed", "to review"], answer: 2, why: "have ＋ 物 ＋ 過去分詞，表示請人處理。合約是被審閱的，所以用 reviewed。" },
+      { q: "The new policy will ____ effect on January 1.", options: ["takes", "taking", "take", "took"], answer: 2, why: "助動詞 will 後面接原形動詞 take。" },
+      { q: "Mr. Reyes is committed to ____ customer satisfaction.", options: ["improve", "improving", "improved", "improves"], answer: 1, why: "be committed to 的 to 是介系詞，後面接 V-ing。" }
     ]
   },
   {
@@ -40,7 +42,33 @@ export const GRAMMAR = [
     quiz: [
       { q: "The board requires that all expense reports ____ submitted by the fifth of each month.", options: ["is", "are", "be", "being"], answer: 2, why: "require ＋ that ＋ 主詞 ＋ 原形；被動用 be submitted。" },
       { q: "Ms. Park recommended that the team ____ the proposal before the meeting.", options: ["review", "reviews", "reviewed", "reviewing"], answer: 0, why: "recommend 後 that 子句用原形，不管主詞是單數還是複數、不管時態。" },
-      { q: "It is important that every visitor ____ a badge at all times.", options: ["wears", "wear", "wore", "wearing"], answer: 1, why: "It is important that ＋ 主詞 ＋ 原形。" }
+      { q: "It is important that every visitor ____ a badge at all times.", options: ["wears", "wear", "wore", "wearing"], answer: 1, why: "It is important that ＋ 主詞 ＋ 原形。" },
+      { q: "The safety officer insisted that every worker ____ a helmet on site.", options: ["wears", "wore", "wearing", "wear"], answer: 3, why: "insist 表示要求時，that 子句用原形 wear，不加 s。" },
+      { q: "The client requested that the invoice ____ sent again.", options: ["be", "is", "was", "being"], answer: 0, why: "request ＋ that ＋ 主詞 ＋ 原形；被動用 be sent。" }
+    ]
+  },
+  {
+    id: "imperative",
+    title: "祈使句：動詞原形開頭（Please ＋ 原形）",
+    rule: "祈使句沒有主詞，直接用原形動詞開頭；否定用 Do not／Never ＋ 原形。公告、說明、email 裡的請求和指示最常用，Please 後面一定是原形。",
+    clues: [
+      "Please ＋ 原形：Please submit ...／Please be seated.／Please do not hesitate to contact us.",
+      "否定：Do not ＋ 原形；Never ＋ 原形（Do not leave your bags unattended.）",
+      "Be ＋ 形容詞／過去分詞：Be careful.／Be sure to lock the door.／Please be advised that ...",
+      "條件或時間子句後面的主句常是祈使句：If you have any questions, please call ...；When you arrive, go to the front desk.",
+      "Make sure (that) ＋ 子句；Remember／Don't forget ＋ to 原形；Let's ＋ 原形"
+    ],
+    examples: [
+      ["Please complete the form and return it by Friday.", "請填好表格並在週五前交回。（Please ＋ 原形）"],
+      ["Do not use the elevator during the fire drill.", "消防演習期間請勿使用電梯。（Do not ＋ 原形）"],
+      ["If you need assistance, contact the help desk.", "需要協助時，請聯絡服務台。（主句是祈使句）"]
+    ],
+    trap: "空格在句首、後面沒有主詞，或前面是 Please，通常選原形，不選 -ing、-s、-ed 或 to ＋ 原形。形容詞前面要補 be：Please be patient，不是 Please patient。",
+    quiz: [
+      { q: "Please ____ the attached form and return it by Friday.", options: ["completing", "complete", "completed", "to complete"], answer: 1, why: "Please 後面接原形動詞 complete。" },
+      { q: "____ sure to lock the storage room before you leave.", options: ["Being", "Been", "Be", "To be"], answer: 2, why: "祈使句用原形開頭；sure 是形容詞，前面用 Be。" },
+      { q: "If you have any questions, ____ our customer service team.", options: ["contact", "contacting", "contacts", "to contact"], answer: 0, why: "if 子句後面的主句是祈使句，用原形 contact。" },
+      { q: "Do not ____ the machine while the warning light is on.", options: ["operates", "operating", "operated", "operate"], answer: 3, why: "否定祈使句：Do not ＋ 原形。" }
     ]
   },
   {
@@ -61,7 +89,33 @@ export const GRAMMAR = [
     trap: "名詞有人與事兩種：applicant（申請人）vs application（申請書）。單數可數名詞前面一定要有冠詞或所有格，所以 your ___ 通常是名詞。",
     quiz: [
       { q: "Please submit your ____ for the position by Friday.", options: ["apply", "applicant", "application", "applying"], answer: 2, why: "your 後面接名詞；submit 的是申請書，所以用 application。" },
-      { q: "The finance team ____ reviewed every invoice before the audit.", options: ["careful", "carefully", "care", "carefulness"], answer: 1, why: "主詞與動詞之間用副詞修飾動詞，所以用 carefully。" }
+      { q: "The finance team ____ reviewed every invoice before the audit.", options: ["careful", "carefully", "care", "carefulness"], answer: 1, why: "主詞與動詞之間用副詞修飾動詞，所以用 carefully。" },
+      { q: "The company reported a ____ increase in sales this year.", options: ["significance", "significantly", "significant", "signify"], answer: 2, why: "冠詞 a 和名詞 increase 之間用形容詞 significant。" },
+      { q: "Ms. Wu handled the customer's complaint ____.", options: ["professional", "professionally", "profession", "professionalism"], answer: 1, why: "句子已經完整，句尾用副詞修飾動詞 handled。" }
+    ]
+  },
+  {
+    id: "pronouns",
+    title: "代名詞：主格、受格、所有格、反身",
+    rule: "看空格在句子裡的角色：當主詞用主格，放動詞或介系詞後用受格，名詞前用所有格，後面沒有名詞用所有代名詞；主詞和受詞是同一人，或表示「親自、獨自」時用反身代名詞。",
+    clues: [
+      "主格 he／she／they ＋ 動詞；受格 him／her／them 放在動詞或介系詞後面",
+      "所有格 his／her／their／its ＋ 名詞；所有代名詞 mine／yours／hers／theirs 後面不接名詞",
+      "反身代名詞：by oneself（獨自）；主詞＝受詞（She introduced herself.）；強調（The CEO himself replied.）",
+      "its（它的）不是 it's（it is）",
+      "those who ＋ 複數動詞（凡是…的人）；anyone who ＋ 單數動詞"
+    ],
+    examples: [
+      ["Ms. Tan completed the report by herself.", "譚小姐獨自完成了報告。（by ＋ 反身代名詞）"],
+      ["Please send the file to me or my assistant.", "請把檔案寄給我或我的助理。（介系詞後用受格）"],
+      ["Those who wish to attend should register by Friday.", "想參加的人請在週五前報名。"]
+    ],
+    trap: "名詞前面一定用所有格（their proposal），不是受格 them，也不是所有代名詞 theirs。by ＋ 反身代名詞是「獨自」；on one's own 則用所有格（on her own）。",
+    quiz: [
+      { q: "Mr. Ito prepared the entire presentation by ____.", options: ["he", "his", "him", "himself"], answer: 3, why: "by ＋ 反身代名詞表示「獨自」，用 himself。" },
+      { q: "The managers submitted ____ budget requests last week.", options: ["their", "they", "them", "theirs"], answer: 0, why: "名詞 budget requests 前面用所有格 their。" },
+      { q: "____ who wish to attend the workshop should sign up by Friday.", options: ["They", "Those", "Them", "These"], answer: 1, why: "Those who ...（凡是…的人）是固定用法。" },
+      { q: "The company is proud of ____ long history of customer service.", options: ["it", "it's", "its", "itself"], answer: 2, why: "名詞片語 long history 前面用所有格 its；it's 是 it is 的縮寫。" }
     ]
   },
   {
@@ -82,7 +136,9 @@ export const GRAMMAR = [
     trap: "及物動詞後面若已經有受詞就不能被動；而不及物動詞（happen／occur／arrive／remain）不能寫成 was happened。",
     quiz: [
       { q: "The annual report ____ by the finance team last week.", options: ["completed", "was completed", "has completing", "completes"], answer: 1, why: "report 是被完成的，後面沒有受詞，用被動 was completed。" },
-      { q: "The shipment ____ at the warehouse yesterday morning.", options: ["was arrived", "arrived", "has been arrived", "was arriving at"], answer: 1, why: "arrive 是不及物動詞，不能用被動。" }
+      { q: "The shipment ____ at the warehouse yesterday morning.", options: ["was arrived", "arrived", "has been arrived", "was arriving at"], answer: 1, why: "arrive 是不及物動詞，不能用被動。" },
+      { q: "All visitors ____ to sign in at the front desk.", options: ["require", "are requiring", "are required", "requiring"], answer: 2, why: "訪客是「被要求」的，用被動 are required to。" },
+      { q: "The marketing team ____ a new campaign next month.", options: ["will launch", "will be launched", "was launched", "launching"], answer: 0, why: "空格後面有受詞 a new campaign，用主動；next month 用未來式。" }
     ]
   },
   {
@@ -103,7 +159,9 @@ export const GRAMMAR = [
     trap: "先問：名詞是做這件事，還是被這件事影響？forms 不會自己 complete，所以是 completed forms。多益常考 an increasing number of、a growing demand、a leading company、a qualified candidate。",
     quiz: [
       { q: "Please send the ____ documents to the legal department.", options: ["sign", "signing", "signed", "signs"], answer: 2, why: "文件是被簽署的，用過去分詞 signed。" },
-      { q: "The ____ news about the merger made the staff nervous.", options: ["surprised", "surprising", "surprise", "surprisingly"], answer: 1, why: "news 是令人驚訝的，用 -ing。" }
+      { q: "The ____ news about the merger made the staff nervous.", options: ["surprised", "surprising", "surprise", "surprisingly"], answer: 1, why: "news 是令人驚訝的，用 -ing。" },
+      { q: "Customers ____ in the new service should call our hotline.", options: ["interest", "interesting", "interested", "interests"], answer: 2, why: "人「感到有興趣」用 -ed：customers interested in ...。" },
+      { q: "The company is facing ____ demand for its products.", options: ["grown", "growing", "grow", "grows"], answer: 1, why: "需求自己在成長，是主動意義，用 growing demand。" }
     ]
   },
   {
@@ -125,7 +183,9 @@ export const GRAMMAR = [
     trap: "since 後面接過去時間點（since 2015／since last year），主句用現在完成式；for 後面接一段時間（for ten years）。時間或條件子句裡不能用 will。",
     quiz: [
       { q: "Ms. Lee ____ with the firm since 2015.", options: ["works", "worked", "has worked", "is working"], answer: 2, why: "since ＋ 過去時間點，主句用現在完成式。" },
-      { q: "We will contact you as soon as the shipment ____.", options: ["will arrive", "arrives", "arrived", "arriving"], answer: 1, why: "as soon as 引導的時間子句，指未來也用現在簡單式。" }
+      { q: "We will contact you as soon as the shipment ____.", options: ["will arrive", "arrives", "arrived", "arriving"], answer: 1, why: "as soon as 引導的時間子句，指未來也用現在簡單式。" },
+      { q: "The company ____ its new office in Taipei last month.", options: ["opens", "has opened", "opened", "will open"], answer: 2, why: "last month 是明確的過去時間，用過去簡單式，不能用現在完成式。" },
+      { q: "By the time the manager arrived, the team ____ the presentation.", options: ["finishes", "has finished", "will finish", "had finished"], answer: 3, why: "By the time ＋ 過去式，較早發生的事用過去完成式 had finished。" }
     ]
   },
   {
@@ -147,7 +207,9 @@ export const GRAMMAR = [
     trap: "常見陷阱是把中間的複數名詞當主詞：The cost of repairs ___ high → 主詞是 cost，用 is。",
     quiz: [
       { q: "The list of new products ____ attached to this email.", options: ["are", "is", "were", "have been"], answer: 1, why: "主詞是 list（單數），of new products 只是修飾語。" },
-      { q: "A number of customers ____ complained about the delay.", options: ["has", "have", "is", "was"], answer: 1, why: "a number of ＋ 複數名詞 → 複數動詞；the number of 才是單數。" }
+      { q: "A number of customers ____ complained about the delay.", options: ["has", "have", "is", "was"], answer: 1, why: "a number of ＋ 複數名詞 → 複數動詞；the number of 才是單數。" },
+      { q: "Each of the new employees ____ required to attend the orientation.", options: ["is", "are", "were", "be"], answer: 0, why: "主詞是 Each（單數），of the new employees 只是修飾語。" },
+      { q: "The manager, along with her assistants, ____ attending the conference.", options: ["are", "is", "were", "have been"], answer: 1, why: "along with 帶出的名詞不算主詞，動詞跟著 The manager 用單數 is。" }
     ]
   },
   {
@@ -168,7 +230,33 @@ export const GRAMMAR = [
     trap: "Despite 後面不能接子句：Despite the weather was bad 是錯的。要接子句就改用 although。",
     quiz: [
       { q: "____ the heavy rain, the outdoor event went on as planned.", options: ["Although", "Despite", "Because", "However"], answer: 1, why: "後面是名詞片語 the heavy rain，用介系詞 Despite。" },
-      { q: "The store closed early ____ the power was out.", options: ["because", "because of", "due to", "despite"], answer: 0, why: "後面是完整子句 the power was out，用連接詞 because。" }
+      { q: "The store closed early ____ the power was out.", options: ["because", "because of", "due to", "despite"], answer: 0, why: "後面是完整子句 the power was out，用連接詞 because。" },
+      { q: "____ the meeting, please keep your phone on silent.", options: ["While", "During", "When", "Although"], answer: 1, why: "後面是名詞 the meeting，用介系詞 During；while 後面要接子句。" },
+      { q: "____ the budget was limited, the team finished the project on time.", options: ["Despite", "Because of", "Although", "In spite of"], answer: 2, why: "後面是完整子句 the budget was limited，用連接詞 Although。" }
+    ]
+  },
+  {
+    id: "time-prep",
+    title: "時間介系詞：by／until／within／during",
+    rule: "介系詞題先看後面是時間點、一段時間還是事件名詞，再看動詞是「一次完成」還是「持續」。",
+    clues: [
+      "at ＋ 時刻（at 3 p.m.）；on ＋ 日期／星期（on Monday）；in ＋ 月／年／多久之後（in June, in two weeks）",
+      "by ＋ 期限：最晚在那之前完成（submit／finish／arrive by Friday）",
+      "until ＋ 時間點：一直持續到（stay／remain／wait／be open until 10 p.m.）",
+      "within ＋ 一段時間：在…之內（within 30 days）；for ＋ 一段時間；since ＋ 起點",
+      "during ＋ 事件名詞（during the meeting）；throughout（整段期間）；prior to ＝ before；as of ＋ 日期（自…起）"
+    ],
+    examples: [
+      ["Please submit the report by Friday.", "請在週五前交報告。（期限）"],
+      ["The store will remain open until 10 p.m.", "商店會營業到晚上十點。（持續）"],
+      ["Refunds are issued within 14 days of purchase.", "購買後 14 天內辦理退款。"]
+    ],
+    trap: "by 和 until 中文都像「到…為止」。分辨方法：動作只做一次、有期限用 by（submit by Friday）；狀態一直持續用 until（open until Friday）。for 接一段時間（for three days），during 接事件名詞（during the conference）。",
+    quiz: [
+      { q: "All applications must be received ____ March 31.", options: ["until", "by", "within", "during"], answer: 1, why: "「最晚在 3 月 31 日前收到」是期限，用 by。" },
+      { q: "The office will remain closed ____ further notice.", options: ["by", "on", "until", "for"], answer: 2, why: "remain closed 是持續的狀態，用 until（until further notice 另行通知前）。" },
+      { q: "Orders are usually delivered ____ three business days.", options: ["within", "since", "at", "until"], answer: 0, why: "three business days 是一段時間，「在…之內」用 within。" },
+      { q: "Please turn off your phones ____ the presentation.", options: ["while", "for", "among", "during"], answer: 3, why: "the presentation 是事件名詞，用 during；while 後面要接子句。" }
     ]
   },
   {
@@ -189,7 +277,9 @@ export const GRAMMAR = [
     trap: "look forward to 的 to 是介系詞，後面不能接原形。想不出來時，試試在 to 後面放名詞，如果通順（look forward to the meeting），那它就是介系詞。",
     quiz: [
       { q: "We look forward to ____ you at the conference next month.", options: ["see", "seeing", "saw", "be seeing"], answer: 1, why: "look forward to 的 to 是介系詞，後面接 V-ing。" },
-      { q: "The board decided ____ the contract for another year.", options: ["renewing", "to renew", "renew", "renewed"], answer: 1, why: "decide ＋ to ＋ 原形。" }
+      { q: "The board decided ____ the contract for another year.", options: ["renewing", "to renew", "renew", "renewed"], answer: 1, why: "decide ＋ to ＋ 原形。" },
+      { q: "Please avoid ____ the elevator during the fire drill.", options: ["use", "to use", "used", "using"], answer: 3, why: "avoid 後面接 V-ing。" },
+      { q: "The supplier agreed ____ the price by five percent.", options: ["to lower", "lowering", "lower", "lowered"], answer: 0, why: "agree 後面接 to ＋ 原形。" }
     ]
   },
   {
@@ -210,7 +300,9 @@ export const GRAMMAR = [
     trap: "whose 後面一定接名詞：whose resume；而 who 後面接動詞：who submitted。",
     quiz: [
       { q: "Applicants ____ resumes are incomplete will not be considered.", options: ["who", "which", "whose", "whom"], answer: 2, why: "空格後面是名詞 resumes，要表示所屬關係，用 whose。" },
-      { q: "The software, ____ was released last month, has several bugs.", options: ["that", "who", "which", "what"], answer: 2, why: "逗號後面補充說明，先行詞是物，用 which，不能用 that。" }
+      { q: "The software, ____ was released last month, has several bugs.", options: ["that", "who", "which", "what"], answer: 2, why: "逗號後面補充說明，先行詞是物，用 which，不能用 that。" },
+      { q: "The manager ____ hired me has moved to the Tokyo office.", options: ["which", "whose", "who", "whom"], answer: 2, why: "先行詞是人，而且在子句裡當主詞（hired 的主詞），用 who。" },
+      { q: "This is the hotel ____ the conference will be held.", options: ["which", "where", "that", "who"], answer: 1, why: "後面子句已經完整，表示地點用 where（＝ in which）。" }
     ]
   },
   {
@@ -231,7 +323,9 @@ export const GRAMMAR = [
     trap: "if 子句裡不用 will；Should you need ... 句中，you 後面的動詞用原形，不加 to。",
     quiz: [
       { q: "If you ____ the form today, we will process it tomorrow.", options: ["submit", "will submit", "submitted", "have submitting"], answer: 0, why: "可能發生的條件句，if 子句用現在簡單式。" },
-      { q: "____ you require further assistance, please contact our help desk.", options: ["Should", "Would", "Do", "Had"], answer: 0, why: "Should you require ... 是 If you should require ... 的倒裝說法。" }
+      { q: "____ you require further assistance, please contact our help desk.", options: ["Should", "Would", "Do", "Had"], answer: 0, why: "Should you require ... 是 If you should require ... 的倒裝說法。" },
+      { q: "If I ____ you, I would accept the offer.", options: ["am", "was being", "were", "be"], answer: 2, why: "與現在事實相反的假設，be 動詞一律用 were。" },
+      { q: "____ we known about the delay, we would have changed the schedule.", options: ["Had", "Have", "Should", "Were"], answer: 0, why: "Had we known ＝ If we had known，與過去事實相反的倒裝。" }
     ]
   },
   {
@@ -252,7 +346,9 @@ export const GRAMMAR = [
     trap: "very 只能修飾原級（very high），不能修飾比較級（very higher 是錯的）；最高級前面不能漏掉 the。",
     quiz: [
       { q: "Sales this quarter were ____ higher than last quarter.", options: ["very", "much", "so", "too"], answer: 1, why: "強調比較級 higher 用 much／far／even；very 不行。" },
-      { q: "This is ____ route to the airport.", options: ["quick", "more quick", "the quickest", "quicker"], answer: 2, why: "三條以上路線中最快的，用最高級，且前面要有 the。" }
+      { q: "This is ____ route to the airport.", options: ["quick", "more quick", "the quickest", "quicker"], answer: 2, why: "三條以上路線中最快的，用最高級，且前面要有 the。" },
+      { q: "The new model is as ____ as the previous one.", options: ["more reliable", "most reliable", "reliably", "reliable"], answer: 3, why: "as ... as 中間用原級；be 動詞後用形容詞 reliable。" },
+      { q: "Of all the candidates, Ms. Kim is the ____ qualified.", options: ["more", "most", "much", "very"], answer: 1, why: "Of all ...（三者以上）加上 the，用最高級 the most qualified。" }
     ]
   },
   {
@@ -273,7 +369,9 @@ export const GRAMMAR = [
     trap: "have ＋ 人 ＋ 原形，但 have ＋ 物 ＋ 過去分詞；get 則是 get ＋ 人 ＋ to ＋ 原形。",
     quiz: [
       { q: "The director had the assistant ____ the revised schedule to all staff.", options: ["send", "sent", "sending", "to send"], answer: 0, why: "have ＋ 人 ＋ 原形。" },
-      { q: "We had the broken printer ____ by a technician.", options: ["repair", "repairing", "repaired", "to repair"], answer: 2, why: "printer 是物，用 have ＋ 物 ＋ 過去分詞。" }
+      { q: "We had the broken printer ____ by a technician.", options: ["repair", "repairing", "repaired", "to repair"], answer: 2, why: "printer 是物，用 have ＋ 物 ＋ 過去分詞。" },
+      { q: "The manager let the staff ____ early on Friday.", options: ["to leave", "leaving", "leave", "left"], answer: 2, why: "let ＋ 人 ＋ 原形。" },
+      { q: "I will get the technician ____ the projector before the meeting.", options: ["check", "to check", "checked", "checking"], answer: 1, why: "get ＋ 人 ＋ to ＋ 原形（和 have ＋ 人 ＋ 原形不同）。" }
     ]
   },
   {
@@ -294,7 +392,9 @@ export const GRAMMAR = [
     trap: "information、advice、equipment 後面不能加 s，也不能用 an：a piece of information、a piece of advice。",
     quiz: [
       { q: "We do not have ____ information about the delay yet.", options: ["many", "much", "several", "a few"], answer: 1, why: "information 是不可數名詞，用 much。" },
-      { q: "____ employees have asked for flexible working hours.", options: ["Much", "Little", "Several", "A great deal of"], answer: 2, why: "employees 是可數複數，用 several。" }
+      { q: "____ employees have asked for flexible working hours.", options: ["Much", "Little", "Several", "A great deal of"], answer: 2, why: "employees 是可數複數，用 several。" },
+      { q: "The hotel offers a ____ of rooms at different prices.", options: ["much", "variety", "little", "deal"], answer: 1, why: "a variety of ＋ 可數複數名詞（各式各樣的）。" },
+      { q: "We received very ____ feedback from the survey.", options: ["few", "many", "little", "several"], answer: 2, why: "feedback 是不可數名詞，用 little；few／many／several 接可數名詞。" }
     ]
   },
   {
@@ -315,7 +415,9 @@ export const GRAMMAR = [
     trap: "but 前面可以用逗號連接兩個子句，however 不行，因為 however 是副詞。對等結構的兩邊必須一樣：both quickly and efficiently（兩個都是副詞）。",
     quiz: [
       { q: "The shipment was delayed; ____, we offered the customer a refund.", options: ["because", "therefore", "but", "although"], answer: 1, why: "分號後面接連接副詞 therefore。because／but／although 是連接詞，不能放在分號後。" },
-      { q: "The new software is both faster ____ more reliable than the old one.", options: ["or", "but", "and", "nor"], answer: 2, why: "固定搭配 both A and B（既…又…）。" }
+      { q: "The new software is both faster ____ more reliable than the old one.", options: ["or", "but", "and", "nor"], answer: 2, why: "固定搭配 both A and B（既…又…）。" },
+      { q: "You can pay ____ by credit card or by bank transfer.", options: ["both", "neither", "either", "not only"], answer: 2, why: "either A or B（兩者擇一），看到 or 選 either。" },
+      { q: "The manager not only approved the plan ____ also increased the budget.", options: ["and", "but", "or", "so"], answer: 1, why: "固定搭配 not only A but also B（不但…而且…）。" }
     ]
   }
 ];

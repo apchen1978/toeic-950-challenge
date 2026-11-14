@@ -200,6 +200,13 @@ a { color: var(--brand); text-underline-offset: .17em; }
   border: 1px solid #D4AF37;
 }
 .vocabulary-group p.vocab-adv { opacity: .92; }
+.vocab-pick-tag { border: 1px solid var(--brand); color: var(--brand); background: transparent; }
+.today-start-title { margin: 12px 0 8px; font-size: .95rem; }
+.today-start { display: flex; flex-wrap: wrap; gap: 10px; }
+.today-start .btn { flex: 1 1 180px; min-height: 44px; }
+.grammar-count { font-weight: 400; font-size: .875rem; margin-left: 6px; }
+.grammar-card progress { width: 100%; margin: 4px 0 12px; }
+.grammar-drill .grammar-quiz .section-kicker { margin: 0 0 4px; }
 .grammar-card h2 { margin: 4px 0 8px; }
 .grammar-list { margin-top: 14px; border-top: 1px solid var(--line); padding-top: 14px; }
 .grammar-list > summary { cursor: pointer; color: var(--brand); font-weight: 700; }

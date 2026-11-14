@@ -97,7 +97,8 @@ export function rateCard(previous, rating, now = Date.now()) {
 
 export function selectCards(items, progress, options = {}, now = Date.now()) {
   const { level = 'all', category = 'all', limit = 20 } = options;
-  const eligible = items.filter(x => (level === 'all' || String(x.level) === String(level)) && (category === 'all' || x.category === category));
+  // level 'pick' means the hand-picked must-learn set (items flagged pick: true), across all levels.
+  const eligible = items.filter(x => (level === 'all' || (level === 'pick' ? x.pick === true : String(x.level) === String(level))) && (category === 'all' || x.category === category));
   const dayStart = new Date(now); dayStart.setHours(0, 0, 0, 0);
   const introduced = Object.values(progress).filter(x => x.introducedAt >= dayStart.getTime() && x.introducedAt <= now).length;
   const due = eligible.filter(x => progress[x.word] && progress[x.word].dueAt <= now);

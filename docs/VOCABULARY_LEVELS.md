@@ -31,3 +31,9 @@ Added 434 common words (after review; first release had 453) (internal level `70
 另外新增 287 個 800／900 詞條（扣掉與既有重複後），補的是原本缺的：Part 1 看圖動作與場景、Part 5/6 常考形容詞與副詞、易混字組（affect/effect、ensure/insure/assure 等）、房產設施、訂閱與出版展覽、保險醫療銀行、IT 系統、人事職稱、環保貿易，以及高分動詞。例句為本站自寫。目前合計 1921 條：常考單字 434、800 核心 918、進階選讀 296、金色證書 900 共 273。
 
 Level `850` (shown as 進階選讀 / advanced reading) holds 296 specialist terms that are rarely tested; they were demoted from 900, not deleted. Gold 900 now keeps only words likely to appear on the test (273). `CEO`, `CFO`, `R&D` and `ROI` moved to 800. 287 new 800/900 entries were added for gaps in Part 1 photo vocabulary, Part 5/6 adjectives and adverbs, commonly confused words, property, subscriptions and exhibitions, insurance, banking, IT, job titles, and trade. The 20-percent-900-per-theme rule no longer applies.
+
+## 必背精選（2026-11-14）
+
+`codex/js/vocab-picks.js` 是一份人工挑選的「必背精選」名單（目前 694 個詞），從全部詞條裡挑出最值得先學的字：800 核心為主，加上常考的 900 與少量常考單字，不含進階選讀。它不是新的等級，而是跨等級的標記；瀏覽時可按「必背精選」篩選，閃卡的程度選單也有這一項，首頁「背 10 個精選單字」一鍵開始。新使用者的閃卡預設就是必背精選。挑選是本站的判斷，不是 ETS 官方字表。新增或移除精選只要改這個檔案；`tests/vocab-picks.test.mjs` 會檢查每個字都存在、且不是進階選讀。
+
+`vocab-picks.js` is a hand-picked must-learn set (694 headwords) that cuts across levels. It is a flag, not a level. Edit that file to change the set; the test checks every pick exists and is not an 850 word.

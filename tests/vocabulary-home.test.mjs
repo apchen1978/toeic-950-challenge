@@ -41,5 +41,5 @@ test("vocabulary cover adapts its actions and gold seal for mobile and dark mode
 });
 
 test("the common-word filter is accepted as a saved level", () => {
-  assert.match(app, /\["all", "700", "800", "850", "900"\]\.includes\(value\)/);
+  assert.match(app, /\["all", "pick", "700", "800", "850", "900"\]\.includes\(value\)/);
 });
