@@ -15,7 +15,7 @@ test("home vocabulary feature derives its totals from the data and keeps direct 
   assert.match(app, /職場字彙 <span>1900\+<\/span>/);
   assert.match(app, /data-vocab-filter="850">進階選讀/);
   assert.match(app, /data-vocab-filter="700">常考單字/);
-  assert.match(app, /class="card vocabulary-card"/);
+  assert.match(app, /class="card vocabulary-card home-extra"/);
   assert.match(app, /data-action="vocab-open"/);
   assert.match(app, /data-action="vocab-gold"/);
   assert.match(app, /case "vocab-gold":\s*\{\s*store\.set\(KEY_VOCAB_LEVEL, "900"\)/);

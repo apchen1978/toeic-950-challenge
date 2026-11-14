@@ -1,7 +1,9 @@
 // 有網路時，程式殼與題庫走網路優先，題庫更新會生效。
 // 安裝只預先快取程式殼與資料。圖片與音檔在第一次成功載入後改為 cache-first，
 // 已看過的圖、已聽過的音檔可離線再使用。手機音檔的 Range 要求會從完整快取切出 206。
-const CACHE = "toeic950-codex-v87";
+const CACHE = "toeic950-codex-v88";
+// 音檔放在獨立快取：網站更新（版本號變動）不會清掉已下載的離線音檔。
+const MEDIA_CACHE = "toeic950-audio-offline";
 const SHELL = [
   "./",
   "index.html",
@@ -26,6 +28,7 @@ const SHELL = [
   "js/pace.js",
   "js/reading-rotation.js",
   "js/abilities.js",
+  "js/offline.js",
   "js/choice-legacy.js",
   "js/choice-order-v3.js",
   "js/choice-order-v4.js",
@@ -90,11 +93,11 @@ async function ranged(response, request) {
 }
 
 async function cacheFirstMedia(request) {
-  const cache = await caches.open(CACHE);
-  let full = await cache.match(request, { ignoreSearch: true });
+  let full = await caches.match(request, { ignoreSearch: true });
   if (!full) {
     const response = await fetch(request.url);
     if (!response.ok || response.status !== 200) return response;
+    const cache = await caches.open(MEDIA_CACHE);
     await cache.put(request.url, response.clone());
     full = response;
   }

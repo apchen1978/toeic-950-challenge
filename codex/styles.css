@@ -385,3 +385,9 @@ details.card-more > summary:hover, details.fold > summary:hover { opacity: .85; 
   body:has(.home-nav) { padding-bottom: 72px; }
   [id^="nav-"] { scroll-margin-top: 12px; }
 }
+
+.home-focus .home-extra { display: none; }
+.focus-bar { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin: 8px 0 4px; }
+.focus-bar p { margin: 0; font-size: .875rem; }
+.offline-card progress { width: 100%; max-width: 420px; }
+.offline-pct { font-variant-numeric: tabular-nums; }
