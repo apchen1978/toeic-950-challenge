@@ -1,7 +1,7 @@
 // 有網路時，程式殼與題庫走網路優先，題庫更新會生效。
 // 安裝只預先快取程式殼與資料。圖片與音檔在第一次成功載入後改為 cache-first，
 // 已看過的圖、已聽過的音檔可離線再使用。手機音檔的 Range 要求會從完整快取切出 206。
-const CACHE = "toeic950-codex-v85";
+const CACHE = "toeic950-codex-v86";
 const SHELL = [
   "./",
   "index.html",
@@ -11,6 +11,7 @@ const SHELL = [
   "js/vocabulary.js",
   "js/grammar.js",
   "js/vocab-picks.js",
+  "js/preexam.js",
   "js/srs.js",
   "js/listening-lessons.js",
   "js/audio.js",

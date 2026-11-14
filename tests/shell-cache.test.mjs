@@ -6,12 +6,12 @@ const worker = readFileSync(new URL("../codex/sw.js", import.meta.url), "utf8");
 const shell = [...worker.match(/const SHELL = \[([\s\S]*?)\];/)[1].matchAll(/"([^"]+)"/g)].map((match) => match[1]);
 
 test("install precache is the app shell and data, not photos or speech files", () => {
-  assert.match(worker, /const CACHE = "toeic950-codex-v85"/);
+  assert.match(worker, /const CACHE = "toeic950-codex-v86"/);
   assert.match(worker, /cache\.addAll\(SHELL\)/);
   assert.doesNotMatch(worker, /manifest\.groups/);
   for (const file of [
     "index.html", "styles.css", "manifest.webmanifest",
-    "js/app.js", "js/vocabulary.js", "js/grammar.js", "js/vocab-picks.js", "js/srs.js", "js/listening-lessons.js", "js/audio.js", "js/scoring.js", "js/skills.js", "js/timer.js", "js/quick-form.js", "js/official-listening.js", "js/mock-section.js", "js/graphic.js", "js/tips.js", "js/pace.js", "js/abilities.js", "js/choice-legacy.js",
+    "js/app.js", "js/vocabulary.js", "js/grammar.js", "js/vocab-picks.js", "js/preexam.js", "js/srs.js", "js/listening-lessons.js", "js/audio.js", "js/scoring.js", "js/skills.js", "js/timer.js", "js/quick-form.js", "js/official-listening.js", "js/mock-section.js", "js/graphic.js", "js/tips.js", "js/pace.js", "js/abilities.js", "js/choice-legacy.js",
     "js/reading-rotation.js", "data/questions.json", "audio/manifest.json"
   ]) assert.ok(shell.includes(file), file);
   assert.equal(shell.some((item) => item.startsWith("images/")), false);
