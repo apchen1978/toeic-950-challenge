@@ -7,7 +7,7 @@
     "sets": [
       {
         "id": "original",
-        "label": "診斷 01 · 原版 30 題",
+        "label": "診斷 01 · 固定版 30 題",
         "groupIds": [
           "g-l01",
           "g-l02",
@@ -968,16 +968,16 @@
           "g-cov-p6-02",
           "g-cov-p6-03",
           "g-cov-p6-04",
-          "g-cov-p7-syn-01",
-          "g-cov-p7-syn-02",
-          "g-cov-p7-syn-03",
-          "g-cov-p7-chat-01",
-          "g-cov-p7-ins-01",
-          "g-cov-p7-ins-02",
           "g-r09",
           "g-f-single-1",
-          "g-rdnew-028",
-          "g-rdnew-025",
+          "g-cov-p7-syn-03",
+          "g-cov-p7-chat-01",
+          "g-r07",
+          "g-r11",
+          "p7f-s02-07",
+          "p7f-s04-06",
+          "p7f-s04-03",
+          "p7f-s04-05",
           "g-rd-pay-01",
           "g-rd-job-01",
           "g-rt-train-01",
@@ -1027,21 +1027,80 @@
           "g-cov-p6-06",
           "xr2-p6-theater",
           "xr2-p6-utilities",
-          "g-cov-p7-syn-04",
+          "xfc-p7-archive",
           "g-cov-p7-syn-05",
           "g-cov-p7-chat-02",
-          "g-cov-p7-chat-03",
           "g-cov-p7-ins-03",
-          "g-cov-p7-ins-04",
-          "xfc-p7-archive",
-          "g-f-single-2",
-          "g-rdnew-026",
-          "g-rdnew-031",
+          "g-r13",
+          "p7f-s02-08",
+          "p7f-s02-04",
+          "xr-p7-single",
+          "g-single-e-campus",
+          "p7f-s04-07",
           "g-rd-ship-01",
           "g-rdnew-033",
           "g-cov-p7-tri-02",
           "g-rdnew-037",
           "g-rdnew-038"
+        ],
+        "durationMin": 75,
+        "timing": {
+          "reading": 75
+        }
+      },
+      {
+        "id": "read-full-3",
+        "label": "閱讀完整模擬 3 · 100 題／75 分鐘",
+        "groupIds": [
+          "xr2-p5-03",
+          "g-xs-r08",
+          "s03-sentence1",
+          "g-a-p5-04",
+          "g-rdnew-012",
+          "s03-sentence6",
+          "g-xs-r04",
+          "g-rdnew-008",
+          "g-rdnew-003",
+          "g-rdnew-002",
+          "s03-sentence0",
+          "g-rdnew-001",
+          "g-new-r6",
+          "g-new-r1",
+          "g-extra-r-04",
+          "xr2-p5-05",
+          "g-vocab-c-10",
+          "xf-p5-27",
+          "g-extra-r-03",
+          "g-r05",
+          "xf-p5-26",
+          "g-new-r7",
+          "g-vocab-c-4",
+          "s03-sentence2",
+          "g-rdnew-019",
+          "xr2-p5-04",
+          "g-xs-r14",
+          "xf-p5-30",
+          "g-rdnew-006",
+          "g-extra-r-09",
+          "xr2-p6-publisher",
+          "g-new-text",
+          "g-rdnew-023",
+          "g-new-part6-a",
+          "p7f-s02-01",
+          "p7f-s02-02",
+          "p7f-s02-03",
+          "p7f-s02-05",
+          "p7f-s03-01",
+          "p7f-s03-02",
+          "p7f-s03-03",
+          "p7f-s04-04",
+          "p7f-s04-01",
+          "p7f-s04-02",
+          "p7f-double-services",
+          "p7f-double-author",
+          "p7f-triple-pilot",
+          "p7f-triple-swatches",
+          "p7f-triple-tickets"
         ],
         "durationMin": 75,
         "timing": {
@@ -25100,6 +25159,2410 @@
           "skill": "r-vocabulary",
           "ability": "R4",
           "questionType": "vocabulary-collocation"
+        }
+      ]
+    },
+    {
+      "id": "p7f-s02-01",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: a delivery while traveling",
+      "passage": {
+        "docs": [
+          {
+            "label": "Text message chain",
+            "text": "11:26 — Mina: The repair shop just delivered the sample case to our main office. Shall I leave it on your desk?\n11:31 — Jules: I’m at the North Quay branch training its staff through the end of the week. My return ticket is in my bag, but the carrier has moved the departure.\n11:34 — Mina: I could send the case to the branch this afternoon.\n11:37 — Jules: Let’s leave it where it is. The branch has already lent me a case for the demonstrations.\n11:41 — Mina: Understood. I’ll lock it in the sample cabinet."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7f-s02-01-1",
+          "prompt": "What is suggested about Jules?",
+          "options": [
+            "Jules is traveling for work.",
+            "Jules repaired the sample case.",
+            "Jules has transferred permanently.",
+            "Jules has finished the demonstrations."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「Jules is traveling for work.」：Jules 暫在分店訓練員工，又提到回程車票，顯示是短期出差。\n【考點】Part 7・推論\n【判斷依據】Jules 暫在分店訓練員工，又提到回程車票，顯示是短期出差。",
+          "skill": "r-inference",
+          "ability": "R1",
+          "questionType": "inference"
+        },
+        {
+          "id": "p7f-s02-01-2",
+          "prompt": "At 11:37, what does Jules mean by “Let’s leave it where it is”?",
+          "options": [
+            "Mina should return the case to the repair shop.",
+            "The branch should keep its loaned case permanently.",
+            "Mina should keep the case at the main office.",
+            "Mina should send the case as soon as the carrier departs."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Mina should keep the case at the main office.」：這是回應 Mina 要寄箱子的提議。Jules 已借到一個，因此請 Mina 把修好的箱子留在總辦公室。\n【考點】Part 7・簡訊意圖\n【判斷依據】這是回應 Mina 要寄箱子的提議。Jules 已借到一個，因此請 Mina 把修好的箱子留在總辦公室。",
+          "skill": "r-intent",
+          "ability": "R1",
+          "questionType": "chat-intent"
+        }
+      ]
+    },
+    {
+      "id": "p7f-s02-02",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: an unconfirmed print run",
+      "passage": {
+        "docs": [
+          {
+            "label": "Online chat",
+            "text": "14:06 — Teo: The printer can start the lobby directories this afternoon. Shall I approve the proof?\n14:09 — Ivana: I’m still waiting for Facilities to confirm the suite number for the new tenant. There’s a chance it will change.\n14:12 — Teo: I can ask the printer to hold the production slot without running the job.\n14:14 — Ivana: That buys us some time. I’ll send you the confirmed number as soon as I have it.\n14:18 — Teo: I’ll ask them to keep the slot."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7f-s02-02-1",
+          "prompt": "What is suggested about the directory proof?",
+          "options": [
+            "The printer has lost it.",
+            "It may still need a change.",
+            "It lists a tenant who has canceled a lease.",
+            "The printer has already started production."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「It may still need a change.」：新租戶房號仍可能變動，導覽牌的校樣因此可能需要改。\n【考點】Part 7・推論\n【判斷依據】新租戶房號仍可能變動，導覽牌的校樣因此可能需要改。",
+          "skill": "r-inference",
+          "ability": "R1",
+          "questionType": "inference"
+        },
+        {
+          "id": "p7f-s02-02-2",
+          "prompt": "At 14:14, what does Ivana mean by “That buys us some time”?",
+          "options": [
+            "Paying a fee will guarantee the number stays the same.",
+            "Teo should move the job to a different printer.",
+            "The printer needs more time to finish the current run.",
+            "Keeping the slot lets them wait for a confirmed number."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Keeping the slot lets them wait for a confirmed number.」：That 指保留排程但先不印，讓團隊有時間等房號確認。\n【考點】Part 7・簡訊意圖\n【判斷依據】That 指保留排程但先不印，讓團隊有時間等房號確認。",
+          "skill": "r-intent",
+          "ability": "R1",
+          "questionType": "chat-intent"
+        }
+      ]
+    },
+    {
+      "id": "p7f-s02-03",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: two courses at a training studio",
+      "passage": {
+        "docs": [
+          {
+            "label": "Course schedule",
+            "text": "CINDER ROW SKILLS STUDIO — WEEKLY CLASSES\n\nCourse / Class | Instructor | Time | Room\nPrint Layout (Cedar) | Anika Venn | Tuesday 09:20 | Rook\nPrint Layout (Birch) | Ivo Maas | Thursday 17:40 | Slate\nDisplay Lettering (Coral) | Anika Venn | Thursday 12:30 | Rook\nDisplay Lettering (Larch) | Deryn Holt | Saturday 11:10 | Slate\n\nEvery class meets once per week. Only the evening class shown above can be reserved by telephone. All other places are booked at the desk."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7f-s02-03-1",
+          "prompt": "Why would someone who can attend only in the evening select Ivo Maas’s class?",
+          "options": [
+            "It meets in Room Rook.",
+            "It is the only class listed in the evening.",
+            "It covers Display Lettering.",
+            "It is the only class that meets on a weekend."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「It is the only class listed in the evening.」：先找到 Ivo Maas 的 Birch 班，再比對四列時間，只有 17:40 的班符合晚間條件。\n【考點】Part 7・推論\n【判斷依據】先找到 Ivo Maas 的 Birch 班，再比對四列時間，只有 17:40 的班符合晚間條件。",
+          "skill": "r-inference",
+          "ability": "R1",
+          "questionType": "inference"
+        },
+        {
+          "id": "p7f-s02-03-2",
+          "prompt": "What is indicated about Anika Venn?",
+          "options": [
+            "She teaches twice per week.",
+            "She uses both classrooms.",
+            "She teaches only Print Layout.",
+            "She teaches the class that can be reserved by phone."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「She teaches twice per week.」：比對 Cedar 和 Coral 兩列，兩班講師都是 Anika Venn，每班一週一次，因此共兩次。\n【考點】Part 7・細節定位\n【判斷依據】比對 Cedar 和 Coral 兩列，兩班講師都是 Anika Venn，每班一週一次，因此共兩次。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        }
+      ]
+    },
+    {
+      "id": "p7f-s02-04",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: a bicycle repair afternoon",
+      "passage": {
+        "docs": [
+          {
+            "label": "Flyer",
+            "text": "BRACKEN WHEEL WORKSHOP — COMMUNITY REPAIR AFTERNOON\n\nBring one bicycle to the courtyard. A volunteer can help you check brakes or repair a puncture. There is no labor charge. Brake cables and other replacement parts are sold at the parts table.\n\nPlease reserve a repair slot at the workshop desk. Walk-ins can watch the short demonstrations for free but will not receive an individual repair slot. Bring your own lock: the rack will not be supervised."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7f-s02-04-1",
+          "prompt": "What should a visitor do to get individual help?",
+          "options": [
+            "Buy a brake cable first.",
+            "Bring a volunteer to the courtyard.",
+            "Watch a demonstration before signing up.",
+            "Reserve a slot at the workshop desk."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Reserve a slot at the workshop desk.」：傳單說想取得個別修理時段，要到工作室櫃檯預約，未預約只能看示範。\n【考點】Part 7・細節定位\n【判斷依據】傳單說想取得個別修理時段，要到工作室櫃檯預約，未預約只能看示範。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "p7f-s02-04-2",
+          "prompt": "What is NOT provided free of charge?",
+          "options": [
+            "Brake checking labor",
+            "Puncture repair labor",
+            "Replacement parts",
+            "Admission to the demonstrations"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Replacement parts」：傳單說不收工資，但更換零件在零件桌另售。\n【考點】Part 7・NOT 題\n【判斷依據】傳單說不收工資，但更換零件在零件桌另售。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "not-question"
+        }
+      ]
+    },
+    {
+      "id": "p7f-s02-05",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: an order with pickup instructions",
+      "passage": {
+        "docs": [
+          {
+            "label": "Order summary",
+            "text": "MOSSVALE DESK GOODS — ORDER SUMMARY\n\nOrder MX-742 · Collection: Reed Lane shop\n\nItem | Quantity | Line total\nGraphite folder set | 3 | $39\nRecycled note block | 2 | $16\nCounter collection | 1 | $0\n\nPayment received: $55\n\nThe note blocks are ready. The folders are coming from the stockroom, so please wait for the collection message before visiting. Bring the order number, or forward the collection message if a colleague is collecting on your behalf."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7f-s02-05-1",
+          "prompt": "Which item is not ready for collection?",
+          "options": [
+            "The folder sets",
+            "The note blocks",
+            "The payment receipt",
+            "The order summary"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「The folder sets」：訂單標明便條紙已就緒，資料夾尚在從庫房調貨。\n【考點】Part 7・細節定位\n【判斷依據】訂單標明便條紙已就緒，資料夾尚在從庫房調貨。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "p7f-s02-05-2",
+          "prompt": "What should the customer do if a colleague will collect the order?",
+          "options": [
+            "Pay the collection charge.",
+            "Remove the folders from the order.",
+            "Forward the collection message.",
+            "Call the stockroom with the colleague’s name."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Forward the collection message.」：取貨說明允許同事代領，做法是轉寄取貨通知。\n【考點】Part 7・細節定位\n【判斷依據】取貨說明允許同事代領，做法是轉寄取貨通知。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        }
+      ]
+    },
+    {
+      "id": "p7f-s02-06",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: a gallery queue experiment",
+      "passage": {
+        "docs": [
+          {
+            "label": "Announcement",
+            "text": "WRENLOCK GALLERY — ENTRY TRIAL\n\nThe gallery is trying a separate line for visitors who booked through the membership desk. These visitors should use the west entrance and have their booking reference ready. Visitors with a ticket from the public sales desk should continue to use the courtyard entrance. The usual closing hour still applies to both entrances.\n\nAt the end of the trial, staff will compare how long each line takes to clear. Visitors will receive a feedback card only if they request one."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7f-s02-06-1",
+          "prompt": "Who should use the west entrance?",
+          "options": [
+            "Visitors holding a public sales desk ticket.",
+            "Visitors who reserved through the membership desk.",
+            "Visitors requesting a feedback card.",
+            "Visitors arriving shortly before closing."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Visitors who reserved through the membership desk.」：西側入口是給經會員櫃檯預約者，不是一般售票櫃檯買票的人。\n【考點】Part 7・細節定位\n【判斷依據】西側入口是給經會員櫃檯預約者，不是一般售票櫃檯買票的人。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "p7f-s02-06-2",
+          "prompt": "What is suggested about the gallery’s reason for the trial?",
+          "options": [
+            "It intends to extend the closing hour.",
+            "It wants to end all ticket sales at the courtyard.",
+            "It plans to require every visitor to submit feedback.",
+            "It wants to evaluate how efficiently visitors can enter."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「It wants to evaluate how efficiently visitors can enter.」：員工會比較兩條隊伍疏散所需時間，顯示試驗是為了評估入場效率。\n【考點】Part 7・推論\n【判斷依據】員工會比較兩條隊伍疏散所需時間，顯示試驗是為了評估入場效率。",
+          "skill": "r-inference",
+          "ability": "R1",
+          "questionType": "inference"
+        }
+      ]
+    },
+    {
+      "id": "p7f-s03-01",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: a bakery acquisition",
+      "passage": {
+        "docs": [
+          {
+            "label": "News article",
+            "text": "VESPER FOLD TO BUY OAT & HINGE BAKERIES\n\nVesper Fold Foods announced that it has signed an agreement to buy Oat & Hinge, a bakery chain with shops in Alder Reach and Copper Vale. The chain will keep its name. Vesper Fold will use its existing distribution trucks to deliver flour, but the bakeries will continue to set their own menus.\n\nOat & Hinge founder Leda Marrick grew up in Ferncross and trained as a pastry cook in Copper Vale. She opened her first bakery in Alder Reach twenty-three years ago. Marrick told staff that she had accepted Vesper Fold’s proposal after it agreed to keep the production team. The bakeries were never put up for auction."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7f-s03-01-1",
+          "prompt": "What is suggested about Ms. Marrick?",
+          "options": [
+            "She insisted on changing the chain’s name.",
+            "She agreed to sell the chain after receiving a staffing assurance.",
+            "She chose the buyer at a public auction.",
+            "She wants the buyer to set a standard menu."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「She agreed to sell the chain after receiving a staffing assurance.」：Marrick 表示買方同意留用生產團隊後，才接受收購提案。\n【考點】Part 7・推論\n【判斷依據】Marrick 表示買方同意留用生產團隊後，才接受收購提案。",
+          "skill": "r-inference",
+          "ability": "R1",
+          "questionType": "inference"
+        },
+        {
+          "id": "p7f-s03-01-2",
+          "prompt": "Where did Ms. Marrick grow up?",
+          "options": [
+            "In Ferncross",
+            "In Copper Vale",
+            "In Alder Reach",
+            "Near the distribution depot"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「In Ferncross」：第二段說 grew up in Ferncross，Copper Vale 是受訓地，Alder Reach 是首店所在地。\n【考點】Part 7・細節定位\n【判斷依據】第二段說 grew up in Ferncross，Copper Vale 是受訓地，Alder Reach 是首店所在地。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "p7f-s03-01-3",
+          "prompt": "What is indicated about the bakery chain?",
+          "options": [
+            "It acquired Vesper Fold’s trucks.",
+            "It was sold at a public auction.",
+            "It will operate under the buyer’s name.",
+            "Its first shop opened twenty-three years ago."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Its first shop opened twenty-three years ago.」：第二段明寫首家麵包店在二十三年前開張，也否定拍賣。第一段說維持原名。\n【考點】Part 7・細節定位\n【判斷依據】第二段明寫首家麵包店在二十三年前開張，也否定拍賣。第一段說維持原名。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        }
+      ]
+    },
+    {
+      "id": "p7f-s03-02",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: repair and hire packages",
+      "passage": {
+        "docs": [
+          {
+            "label": "Advertisement",
+            "text": "CAVEN METER & TOOL — KEEP YOUR PROJECT MOVING\n\nBench check: Bring a measuring tool to our counter for a quick accuracy check. The check does not include repairs.\n\nWorkshop service: Leave your tool with us for a written repair estimate. A workshop technician will contact you before fitting any parts.\n\nLoan kit: Reserve a basic measuring kit while your own equipment is unavailable. Each kit includes instructions and a return checklist. Kits must be returned to the same counter that issued them.\n\nBusiness customers who open an account receive a single statement each month for all workshop jobs. Counter staff can explain the terms in person. Online reservations are available for loan kits only."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7f-s03-02-1",
+          "prompt": "What is the main purpose of the advertisement?",
+          "options": [
+            "To explain how to manufacture a tool.",
+            "To announce the closure of a counter.",
+            "To describe several services for measuring equipment.",
+            "To recruit a workshop technician."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「To describe several services for measuring equipment.」：廣告逐項介紹測量工具的檢查、維修和借用。\n【考點】Part 7・主旨目的\n【判斷依據】廣告逐項介紹測量工具的檢查、維修和借用。",
+          "skill": "r-purpose",
+          "ability": "R1",
+          "questionType": "main-purpose"
+        },
+        {
+          "id": "p7f-s03-02-2",
+          "prompt": "Which service can be reserved online?",
+          "options": [
+            "A loan kit",
+            "A bench check",
+            "A workshop repair estimate",
+            "A business account consultation"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「A loan kit」：末段限定只有借用工具組可線上預約。\n【考點】Part 7・細節定位\n【判斷依據】末段限定只有借用工具組可線上預約。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "p7f-s03-02-3",
+          "prompt": "What will happen before a workshop technician fits a new part?",
+          "options": [
+            "The tool will be exchanged for a loan kit.",
+            "A monthly statement will be issued.",
+            "The customer will be contacted.",
+            "The customer must reserve a bench check."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「The customer will be contacted.」：維修說明寫明技師裝上任何零件前會先聯絡顧客。\n【考點】Part 7・細節定位\n【判斷依據】維修說明寫明技師裝上任何零件前會先聯絡顧客。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        }
+      ]
+    },
+    {
+      "id": "p7f-s03-03",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: a trial neighborhood delivery route",
+      "passage": {
+        "docs": [
+          {
+            "label": "Email",
+            "text": "To: Delivery crew\nFrom: Arden Lo, Routing Office\nSubject: Canal lane route trial\n\nWe will try a shorter delivery route on the north side of the canal. Start from the usual depot, but skip the riverside entrance to Marlow Court while the paving crew works there. Use the rear lane instead. The hotel stop remains unchanged, and reception will continue to accept parcels at the front desk.\n\nDispatch has added a ten-minute buffer to the route. If it takes less time than expected, do not leave the next stop ahead of its published window. Send me your arrival times when you return so I can compare them with the current route."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7f-s03-03-1",
+          "prompt": "Why did Arden Lo send the email?",
+          "options": [
+            "To announce a move to a different depot.",
+            "To give drivers instructions for a trial route.",
+            "To change how the hotel accepts deliveries.",
+            "To ask drivers to cancel parcels for Marlow Court."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「To give drivers instructions for a trial route.」：主旨和內文都在交代新路線試跑，包括入口替代和紀錄時間的要求。\n【考點】Part 7・主旨目的\n【判斷依據】主旨和內文都在交代新路線試跑，包括入口替代和紀錄時間的要求。",
+          "skill": "r-purpose",
+          "ability": "R1",
+          "questionType": "main-purpose"
+        },
+        {
+          "id": "p7f-s03-03-2",
+          "prompt": "What should drivers do at Marlow Court?",
+          "options": [
+            "Leave parcels with the paving crew.",
+            "Wait at the riverside entrance.",
+            "Deliver the parcels to the hotel.",
+            "Approach through the rear lane."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Approach through the rear lane.」：第一段明確說跳過河岸入口，改走後方巷道。\n【考點】Part 7・細節定位\n【判斷依據】第一段明確說跳過河岸入口，改走後方巷道。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "p7f-s03-03-3",
+          "prompt": "The word “buffer” is closest in meaning to",
+          "options": [
+            "printed notice.",
+            "extra allowance.",
+            "fixed departure.",
+            "alternative address."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「extra allowance.」：多加十分鐘是給行車時間預留餘裕，因此 buffer 指額外預留時間。\n【考點】Part 7・語境同義字\n【判斷依據】多加十分鐘是給行車時間預留餘裕，因此 buffer 指額外預留時間。",
+          "skill": "r-vocabulary",
+          "ability": "R4",
+          "questionType": "synonym"
+        }
+      ]
+    },
+    {
+      "id": "p7f-s04-01",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: a refill station rollout",
+      "passage": {
+        "docs": [
+          {
+            "label": "Notice",
+            "text": "LYDROW WORKSPACES — REFILL STATION TRIAL\n\nNext month, the office will install refill stations for two products: hand soap and surface cleaner. [1] On every floor, employees should continue to use the original labeled bottles because those bottles are compatible with the dispensers. If a label is damaged, the facilities desk will issue a replacement bottle at no charge. [2] Staff should not pour one product into the other product’s bottle.\n\nThe stations will be placed next to the service sinks. Facilities will replenish the stations before the building opens each morning. [3] Employees who notice a low supply later in the day should scan the code beside the station to send a refill request. [4]\n\nThe trial will last for seven weeks. Facilities will review whether supply requests and discarded bottles decrease before deciding whether to install stations in the annex. The existing disposal rules will remain in force during the trial."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7f-s04-01-1",
+          "prompt": "What is the purpose of the notice?",
+          "options": [
+            "To explain a trial that changes how office supplies are dispensed.",
+            "To announce the closure of the facilities desk.",
+            "To ask employees to bring cleaning products from home.",
+            "To introduce new disposal rules for the annex."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「To explain a trial that changes how office supplies are dispensed.」：公告說明試辦補充站的用品、使用方式與評估條件。\n【考點】Part 7・主旨目的\n【判斷依據】公告說明試辦補充站的用品、使用方式與評估條件。",
+          "skill": "r-purpose",
+          "ability": "R1",
+          "questionType": "main-purpose"
+        },
+        {
+          "id": "p7f-s04-01-2",
+          "prompt": "In which of the positions marked [1], [2], [3], and [4] does the following sentence best belong?\n\"That timing leaves the dispensers ready for the first shift.\"",
+          "options": [
+            "[1]",
+            "[2]",
+            "[3]",
+            "[4]"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「[3]」：That timing 指前一句每天開門前補貨的安排，放在 [3] 說明早班員工能直接使用。\n【考點】Part 7・句子插入\n【判斷依據】That timing 指前一句每天開門前補貨的安排，放在 [3] 說明早班員工能直接使用。",
+          "skill": "r-inference",
+          "ability": "R1",
+          "questionType": "text-insertion"
+        },
+        {
+          "id": "p7f-s04-01-3",
+          "prompt": "The word “replenish” is closest in meaning to",
+          "options": [
+            "inspect.",
+            "relocate.",
+            "restock.",
+            "replace permanently."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「restock.」：從供應量不足可以請求 refill 的線索可知 replenish 指補足存量。\n【考點】Part 7・語境同義字\n【判斷依據】從供應量不足可以請求 refill 的線索可知 replenish 指補足存量。",
+          "skill": "r-vocabulary",
+          "ability": "R4",
+          "questionType": "synonym"
+        },
+        {
+          "id": "p7f-s04-01-4",
+          "prompt": "What can an employee obtain from the facilities desk?",
+          "options": [
+            "A replacement for a bottle with a damaged label.",
+            "A station for the annex.",
+            "A printed copy of the trial results.",
+            "A container for mixing the two products."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「A replacement for a bottle with a damaged label.」：第一段說標籤損壞時，設施櫃檯會免費提供替換瓶。\n【考點】Part 7・細節定位\n【判斷依據】第一段說標籤損壞時，設施櫃檯會免費提供替換瓶。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        }
+      ]
+    },
+    {
+      "id": "p7f-s04-02",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: an archive digitization request",
+      "passage": {
+        "docs": [
+          {
+            "label": "Letter",
+            "text": "Dear Mr. Renwick,\n\nThank you for offering to lend your photograph collection to the Saltmere Community Archive. We would like to scan the photographs of the former ferry terminal first because we are preparing an online exhibition about the waterfront. [1] Family portraits in the same box are outside the scope of the exhibition, so we will leave those untouched. [2]\n\nOur scanning room will be staffed throughout the next project period. You may deliver the box to the reception desk or arrange for our volunteer driver to collect it at your address. [3] Please reply to this letter to tell us which arrangement suits you.\n\nWe expect to return the box within eighteen days of receiving it. We will also provide a digital copy of each scanned image on a memory card. We will publish only the images you approve on the release form, and we will credit the photographer whenever you can identify one. [4]\n\nSincerely,\nNyra Kendell, Collections Coordinator"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7f-s04-02-1",
+          "prompt": "Why did Ms. Kendell write to Mr. Renwick?",
+          "options": [
+            "To ask him to write a history of the ferry terminal.",
+            "To offer him a permanent job in the scanning room.",
+            "To describe how the archive will handle his collection.",
+            "To report that the photographs have already been published."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「To describe how the archive will handle his collection.」：信件說明檔案館將掃描哪些照片、如何收件、何時歸還和發表授權。\n【考點】Part 7・主旨目的\n【判斷依據】信件說明檔案館將掃描哪些照片、如何收件、何時歸還和發表授權。",
+          "skill": "r-purpose",
+          "ability": "R1",
+          "questionType": "main-purpose"
+        },
+        {
+          "id": "p7f-s04-02-2",
+          "prompt": "In which of the positions marked [1], [2], [3], and [4] does the following sentence best belong?\n\"Either handover option is free of charge.\"",
+          "options": [
+            "[1]",
+            "[2]",
+            "[3]",
+            "[4]"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「[3]」：Either handover option 指前一句的親送櫃檯或志工到府收件，因此放 [3]。[4] 已轉到照片歸還和公開授權，離兩種交接選項較遠。\n【考點】Part 7・句子插入\n【判斷依據】Either handover option 指前一句的親送櫃檯或志工到府收件，因此放 [3]。[4] 已轉到照片歸還和公開授權，離兩種交接選項較遠。",
+          "skill": "r-inference",
+          "ability": "R1",
+          "questionType": "text-insertion"
+        },
+        {
+          "id": "p7f-s04-02-3",
+          "prompt": "Which photos will the archive scan first?",
+          "options": [
+            "Family portraits in the same box.",
+            "Images already published on the archive’s website.",
+            "Photographs that the driver took.",
+            "Photographs of the former ferry terminal."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Photographs of the former ferry terminal.」：第一段說渡輪碼頭照片優先，並表示不動家族肖像。\n【考點】Part 7・細節定位\n【判斷依據】第一段說渡輪碼頭照片優先，並表示不動家族肖像。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "p7f-s04-02-4",
+          "prompt": "What is suggested about the online exhibition?",
+          "options": [
+            "All photographs must be published anonymously.",
+            "Mr. Renwick can limit which images appear in it.",
+            "The archive will keep the box after publishing the images.",
+            "Images must be scanned by the photographer."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Mr. Renwick can limit which images appear in it.」：只有經他在授權表核准的照片才可上網，因此他能決定可公開的範圍。\n【考點】Part 7・推論\n【判斷依據】只有經他在授權表核准的照片才可上網，因此他能決定可公開的範圍。",
+          "skill": "r-inference",
+          "ability": "R1",
+          "questionType": "inference"
+        }
+      ]
+    },
+    {
+      "id": "p7f-s04-03",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: a loading entrance change",
+      "passage": {
+        "docs": [
+          {
+            "label": "Memo",
+            "text": "To: Workshop tenants\nFrom: Eleri Noss, Building Services\nSubject: Loading during the paving project\n\nDuring the paving project, the regular delivery apron will be closed. Drivers may enter the east yard from Willow Lane, or, if they need a level platform, reserve the temporary dock beside Unit F. [1] The east yard can accommodate one vehicle at a time, so drivers waiting to enter should use the marked holding bay outside the gate. [2]\n\nThe temporary dock must be reserved through Building Services. Each booking is limited to twenty-six minutes, and tenants are responsible for meeting drivers at the dock. [3] A delivery booked under the wrong unit number will be held until we can verify the destination. [4]\n\nThe project will not affect pedestrian access from the main entrance. However, any materials left in the main corridor will be removed because the corridor must remain clear as an emergency route."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7f-s04-03-1",
+          "prompt": "In which of the positions marked [1], [2], [3], and [4] does the following sentence best belong?\n\"Both alternatives will be signposted from the entrance to Willow Lane.\"",
+          "options": [
+            "[1]",
+            "[2]",
+            "[3]",
+            "[4]"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「[1]」：Both alternatives 指前一句列出的東側車場與臨時裝卸平台，在 [1] 緊接兩個替代方案。\n【考點】Part 7・句子插入\n【判斷依據】Both alternatives 指前一句列出的東側車場與臨時裝卸平台，在 [1] 緊接兩個替代方案。",
+          "skill": "r-inference",
+          "ability": "R1",
+          "questionType": "text-insertion"
+        },
+        {
+          "id": "p7f-s04-03-2",
+          "prompt": "The word “accommodate” is closest in meaning to",
+          "options": [
+            "charge a fee for.",
+            "give directions to.",
+            "bring forward.",
+            "provide room for."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「provide room for.」：句子在說東側車場同時只能容納一部車，accommodate 在此表示提供空間。\n【考點】Part 7・語境同義字\n【判斷依據】句子在說東側車場同時只能容納一部車，accommodate 在此表示提供空間。",
+          "skill": "r-vocabulary",
+          "ability": "R4",
+          "questionType": "synonym"
+        },
+        {
+          "id": "p7f-s04-03-3",
+          "prompt": "When might Building Services hold a delivery?",
+          "options": [
+            "When it arrives with only one vehicle.",
+            "When the driver uses the marked holding bay.",
+            "When the booking lists an incorrect unit number.",
+            "When the tenant meets the driver at the dock."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「When the booking lists an incorrect unit number.」：第二段說若預約填錯單位號碼，貨物會暫留直到確認目的地。\n【考點】Part 7・細節定位\n【判斷依據】第二段說若預約填錯單位號碼，貨物會暫留直到確認目的地。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "p7f-s04-03-4",
+          "prompt": "What is NOT stated about the paving project?",
+          "options": [
+            "The name of the paving contractor.",
+            "The alternative yard entrance.",
+            "The time limit for dock reservations.",
+            "The effect on pedestrian access."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「The name of the paving contractor.」：信中列出 Willow Lane 入口、每次二十六分鐘及行人入口不受影響，但沒有工程承包商名稱。\n【考點】Part 7・NOT 題\n【判斷依據】信中列出 Willow Lane 入口、每次二十六分鐘及行人入口不受影響，但沒有工程承包商名稱。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "not-question"
+        }
+      ]
+    },
+    {
+      "id": "p7f-s04-04",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: a shared training room",
+      "passage": {
+        "docs": [
+          {
+            "label": "Article",
+            "text": "HOW A SMALL TRAINING ROOM FOUND A SECOND AUDIENCE\n\nUntil recently, East Vire Repair Cooperative used its training room only for apprentice workshops. The room had new workbenches and good lighting, but it was vacant on most afternoons. Cooperative manager Sorin Bellat asked a neighborhood language school if it needed a site for small evening classes. The school agreed to try the space, provided it could store its books there between classes.\n\nThe cooperative fitted a locking cabinet near the entrance and designated the back workbench for the language school’s projector. The school agreed to remove its equipment from the bench after every class, allowing apprentices to use the entire room the next morning. Both organizations kept their existing enrollment systems.\n\nThe pilot has continued for a term. The school plans to add one evening class if enough students sign up. Bellat said the arrangement is especially practical because the partners need the room at different times."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7f-s04-04-1",
+          "prompt": "What is the article mainly about?",
+          "options": [
+            "A cooperative introducing a new enrollment system.",
+            "A school purchasing a training building.",
+            "Two organizations sharing a room on different schedules.",
+            "An apprenticeship course moving to the evening."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Two organizations sharing a room on different schedules.」：報導介紹訓練室如何在不同時段供學徒與語言學校共用。\n【考點】Part 7・主旨目的\n【判斷依據】報導介紹訓練室如何在不同時段供學徒與語言學校共用。",
+          "skill": "r-purpose",
+          "ability": "R1",
+          "questionType": "main-purpose"
+        },
+        {
+          "id": "p7f-s04-04-2",
+          "prompt": "What condition did the language school set?",
+          "options": [
+            "It needed to replace all the workbenches.",
+            "It needed a place to leave books between classes.",
+            "It needed the room every afternoon.",
+            "It needed to share an enrollment system."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「It needed a place to leave books between classes.」：第一段的 provided 引出校方條件：兩堂課之間要有地方放書。\n【考點】Part 7・細節定位\n【判斷依據】第一段的 provided 引出校方條件：兩堂課之間要有地方放書。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "p7f-s04-04-3",
+          "prompt": "The word “designated” is closest in meaning to",
+          "options": [
+            "removed.",
+            "inspected.",
+            "repaired.",
+            "set aside."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「set aside.」：後方工作台被指定用來放投影機，這裡 designated 是劃出作特定用途。\n【考點】Part 7・語境同義字\n【判斷依據】後方工作台被指定用來放投影機，這裡 designated 是劃出作特定用途。",
+          "skill": "r-vocabulary",
+          "ability": "R4",
+          "questionType": "synonym"
+        },
+        {
+          "id": "p7f-s04-04-4",
+          "prompt": "What is suggested about adding an evening class?",
+          "options": [
+            "It requires permission from the apprentices.",
+            "It will depend on the level of enrollment.",
+            "It will replace the pilot’s existing class.",
+            "It will be held in a newly purchased building."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「It will depend on the level of enrollment.」：末段寫 if enough students sign up，表示開班要看報名人數。\n【考點】Part 7・推論\n【判斷依據】末段寫 if enough students sign up，表示開班要看報名人數。",
+          "skill": "r-inference",
+          "ability": "R1",
+          "questionType": "inference"
+        }
+      ]
+    },
+    {
+      "id": "p7f-s04-05",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: a garden supplier trial",
+      "passage": {
+        "docs": [
+          {
+            "label": "Letter",
+            "text": "Dear Ms. Otero,\n\nThe sample shipment of Merrow Basin herb trays arrived intact, and the labeling made it easy for our staff to separate the varieties. We would like to place a small trial order before deciding whether to stock the trays in all our shops.\n\nPlease quote for thirty-six trays delivered to the Lantern Road store. Our receiving team is available each morning, but its unloading space is already booked for part of the afternoon. We can accept an afternoon delivery only if you give us the vehicle registration and the expected arrival time in advance. A signed delivery receipt is required for our stock records.\n\nWe plan to display the trays near the entrance with a short card describing how the herbs were grown. If you have a photograph of the nursery that we may print on the card, please send it with the quote. The trial will tell us whether customers are interested before we make a larger commitment.\n\nBest regards,\nCora Avrin, Plover Reed Garden Shops"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7f-s04-05-1",
+          "prompt": "Why did Ms. Avrin write the letter?",
+          "options": [
+            "To request a quote for a trial order.",
+            "To report damage to a sample shipment.",
+            "To cancel a nursery photograph session.",
+            "To ask for an immediate chain-wide order."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「To request a quote for a trial order.」：Avrin 請供應商報三十六盤香草的價格，以先做小規模試賣。\n【考點】Part 7・主旨目的\n【判斷依據】Avrin 請供應商報三十六盤香草的價格，以先做小規模試賣。",
+          "skill": "r-purpose",
+          "ability": "R1",
+          "questionType": "main-purpose"
+        },
+        {
+          "id": "p7f-s04-05-2",
+          "prompt": "What is required for an afternoon delivery?",
+          "options": [
+            "A change in the number of trays.",
+            "A separate quote for every shop.",
+            "A staff photograph on the delivery receipt.",
+            "Advance notice of the vehicle registration and expected arrival."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Advance notice of the vehicle registration and expected arrival.」：第二段表示下午收貨須先提供車牌及預計抵達時間。\n【考點】Part 7・細節定位\n【判斷依據】第二段表示下午收貨須先提供車牌及預計抵達時間。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "p7f-s04-05-3",
+          "prompt": "What could accompany the quote?",
+          "options": [
+            "A signed receipt from the last shipment.",
+            "A list of customers who bought herbs.",
+            "A photograph of the nursery.",
+            "A schedule for staff training."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「A photograph of the nursery.」：第三段請供應商若有可印的育苗場照片，就與報價一起寄來。\n【考點】Part 7・細節定位\n【判斷依據】第三段請供應商若有可印的育苗場照片，就與報價一起寄來。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "p7f-s04-05-4",
+          "prompt": "What is suggested about the plan to sell trays at all the shops?",
+          "options": [
+            "It depends on what the trial reveals about customer interest.",
+            "It will begin as soon as the supplier sends the quote.",
+            "It was canceled after the sample trays arrived.",
+            "It requires a separate photograph for every shop."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「It depends on what the trial reveals about customer interest.」：信中將試賣定位為評估顧客興趣的方式，結果會影響是否擴大到所有分店。\n【考點】Part 7・推論\n【判斷依據】信中將試賣定位為評估顧客興趣的方式，結果會影響是否擴大到所有分店。",
+          "skill": "r-inference",
+          "ability": "R1",
+          "questionType": "inference"
+        }
+      ]
+    },
+    {
+      "id": "p7f-double-services",
+      "section": "reading",
+      "part": 7,
+      "title": "Event recording services",
+      "passage": {
+        "docs": [
+          {
+            "label": "Advertisement",
+            "text": "REEFGLASS MEDIA · SUPPORT FOR LIVE EVENTS\n\n1. Room Relay — An operator sends the main camera feed to a screen in a second room.\n2. Archive Cut — Our editor turns your existing recordings into short clips. No crew attends the event.\n3. Table Talk — Two microphones and an operator capture separate audio tracks for a panel. No video is included.\n4. Caption Desk — A captioner prepares text for a recording after the event.\n\nTo check crew availability, email bookings@reefglass.example with the venue and the hours you need. For help opening a file from a completed booking, call the support desk. We send an estimate before asking for a deposit."
+          },
+          {
+            "label": "Email",
+            "text": "From: Orla Niven\nTo: Wren Pell\nSubject: Equipment for the Zinnel Trade Forum\n\nThe library's events team will film our panel, but its camera cannot record the two speakers on separate audio tracks. The editor wants separate tracks so she can adjust one voice without changing the other. Could you find an operator to do just that? We do not need editing or captions. The panel will run in the Alder Room at Kestrel Quay Library from 3:20 to 4:35 p.m. The rehearsal is in the Cedar Room from 1:10 to 1:40 p.m. The library can record rehearsal audio, so we do not need outside help for it.\n\nPlease show me the estimate before we pay anything. The library has already reserved the room, so there is no need to contact its events team again."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7f-double-services-01",
+          "prompt": "Why did Ms. Niven write to Mr. Pell?",
+          "options": [
+            "To ask him to arrange help recording a panel",
+            "To reserve a library room",
+            "To request captions for a completed recording",
+            "To have him edit the panel footage"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「To ask him to arrange help recording a panel」\n【考點】Part 7・主旨與目的\n【判斷依據】Email 說明圖書館已負責拍攝，Orla 請 Wren 找人分軌錄音。",
+          "skill": "r-purpose",
+          "ability": "R1",
+          "questionType": "main-purpose"
+        },
+        {
+          "id": "p7f-double-services-02",
+          "prompt": "Which advertised service best meets Ms. Niven's needs?",
+          "options": [
+            "Room Relay",
+            "Table Talk",
+            "Archive Cut",
+            "Caption Desk"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Table Talk」\n【考點】Part 7・跨文件整合\n【判斷依據】Email 的需求是現場分軌錄音，且影片已有安排，只有廣告的第 3 項 Table Talk 提供這種服務。",
+          "skill": "r-crossref",
+          "ability": "R3",
+          "questionType": "cross-document",
+          "crossRef": true
+        },
+        {
+          "id": "p7f-double-services-03",
+          "prompt": "What should Mr. Pell send to bookings@reefglass.example?",
+          "options": [
+            "Kestrel Quay Library, Cedar Room, 3:20 to 4:35 p.m.",
+            "Kestrel Quay Library, Alder Room, 1:10 to 1:40 p.m.",
+            "Kestrel Quay Library, Alder Room, 3:20 to 4:35 p.m.",
+            "Kestrel Quay Library, Cedar Room, 1:10 to 1:40 p.m."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Kestrel Quay Library, Alder Room, 3:20 to 4:35 p.m.」\n【考點】Part 7・跨文件整合\n【判斷依據】廣告要求提供場地與時段。Email 中需要協助的是 Alder Room 的座談，不是 Cedar Room 的彩排。",
+          "skill": "r-crossref",
+          "ability": "R3",
+          "questionType": "cross-document",
+          "crossRef": true
+        },
+        {
+          "id": "p7f-double-services-04",
+          "prompt": "What does Reefglass Media send before requesting payment?",
+          "options": [
+            "A caption file",
+            "A camera feed",
+            "A copy of the panel recording",
+            "An estimate"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「An estimate」\n【考點】Part 7・細節定位\n【判斷依據】廣告最後一句說，要求訂金前會先寄出估價。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "p7f-double-services-05",
+          "prompt": "What has the library already done?",
+          "options": [
+            "Reserved the panel venue",
+            "Hired a separate audio operator",
+            "Sent a deposit to Reefglass Media",
+            "Edited the panel footage"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「Reserved the panel venue」\n【考點】Part 7・細節定位\n【判斷依據】Email 最後一段明說圖書館已預留房間。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        }
+      ]
+    },
+    {
+      "id": "p7f-double-author",
+      "section": "reading",
+      "part": 7,
+      "title": "Publisher letter and order confirmation",
+      "passage": {
+        "docs": [
+          {
+            "label": "Letter",
+            "text": "MOTHFERN EDITIONS\nDear Ms. Farrow,\n\nPlease find your latest royalty statement enclosed. Our previous letter contained the jury's comments on your guide to courtyard gardens. Since that letter went out, the Guild of Field Publishers has presented Mothfern Editions with its small-press design award.\n\nTo thank you for taking part in the autumn catalogue, we are offering you our contributor code, QUILL20. It takes 20 percent off printed books. We send this code only to authors with books in the current catalogue. Orders ship free when the merchandise total after discounts is at least $82.00.\n\nKind regards,\nIona Selk\nMothfern Editions"
+          },
+          {
+            "label": "Order confirmation",
+            "text": "MOTHFERN EDITIONS · ONLINE STORE\nOrder MF-6387\nPurchaser: Mira Farrow\nPrint edition: Sheltered Courtyards, 2 copies at $48.00 each\nCode entered: QUILL20\nCode accepted\nMerchandise before discount: $96.00\nDiscount: $19.20\nMerchandise after discount: $76.80\nStandard delivery: $7.70\nTotal charged: $84.50\n\nWe will send a separate dispatch notice when the parcel leaves our store."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7f-double-author-01",
+          "prompt": "What is the main purpose of the letter?",
+          "options": [
+            "To confirm an online order",
+            "To send the author's latest royalty statement",
+            "To request new jury comments",
+            "To ask the recipient to choose a delivery service"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「To send the author's latest royalty statement」\n【考點】Part 7・主旨與目的\n【判斷依據】信的首段說隨函附上最新的版稅結算單，後續才補充得獎與折扣消息。",
+          "skill": "r-purpose",
+          "ability": "R1",
+          "questionType": "main-purpose"
+        },
+        {
+          "id": "p7f-double-author-02",
+          "prompt": "What was enclosed with the previous letter?",
+          "options": [
+            "The latest royalty statement",
+            "A dispatch notice",
+            "The jury's comments",
+            "A printed copy of the catalogue"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「The jury's comments」\n【考點】Part 7・細節定位\n【判斷依據】信上說上一封信附的是評審對庭院園藝指南的意見。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "p7f-double-author-03",
+          "prompt": "What is stated about Mothfern Editions?",
+          "options": [
+            "It stopped selling printed books",
+            "It presented an award to the guild",
+            "It has already dispatched order MF-6387",
+            "It received a design award"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「It received a design award」\n【考點】Part 7・細節定位\n【判斷依據】信上明說出版同業公會頒發設計獎給 Mothfern Editions。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "p7f-double-author-04",
+          "prompt": "What does the accepted discount code suggest about the purchaser?",
+          "options": [
+            "She has a book in the current catalogue",
+            "She is a member of the design jury",
+            "She works in the shipping department",
+            "She ordered a digital edition"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「She has a book in the current catalogue」\n【考點】Part 7・跨文件整合\n【判斷依據】訂單確認 QUILL20 已使用成功，信上說該碼只發給本期目錄中有作品的作者。",
+          "skill": "r-crossref",
+          "ability": "R3",
+          "questionType": "cross-document",
+          "crossRef": true
+        },
+        {
+          "id": "p7f-double-author-05",
+          "prompt": "Why was a delivery fee charged?",
+          "options": [
+            "The original merchandise total was below the threshold",
+            "The discounted merchandise total was below the free-delivery threshold",
+            "The order used a code that applies only to digital books",
+            "The total charged was below the threshold"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「The discounted merchandise total was below the free-delivery threshold」\n【考點】Part 7・跨文件整合\n【判斷依據】信上規定折後商品須滿 $82.00 才免運。訂單商品折後為 $96.00 − $19.20 = $76.80。$84.50 含運費，不是判定免運的商品金額。",
+          "skill": "r-crossref",
+          "ability": "R3",
+          "questionType": "cross-document",
+          "crossRef": true
+        }
+      ]
+    },
+    {
+      "id": "p7f-triple-pilot",
+      "section": "reading",
+      "part": 7,
+      "title": "Pilot schedule and local reporting",
+      "passage": {
+        "docs": [
+          {
+            "label": "Production schedule",
+            "text": "MIRELARK FIBER WORKS · PILOT SCHEDULE\n\nDate | Job | Area\nAugust 24 | Inspect fiber rolls | Intake\nAugust 25 | Adjust the weighing controls | Bay T\nAugust 26 | Calibrate the seal sensors | Bay R\nAugust 27 | Seal a test batch | Bay R\nAugust 29 | Review the pilot cost | Office\n\nDo not load the test batch until the seal sensors have been calibrated."
+          },
+          {
+            "label": "Email",
+            "text": "From: Tamsin Vey\nTo: Idris Renn\nSubject: Pilot adjustments\n\nThe seal sensors must be adjusted as shown on the schedule before you run the first batch. On the day after that adjustment, please revise the sampling sheet. We need a column that shows how many seals broke during the test. I have arranged for the instrument supplier to send a technician to help if the readings vary. The sampling sheet still needs your signature, even if the technician is present."
+          },
+          {
+            "label": "News report",
+            "text": "MIRELARK TESTS SMALL-BATCH PRODUCTION\n\nMirelark Fiber Works has begun a pilot to make fiber packaging in smaller lots. President Belen Orren said the approach would be viable if the packaging cost stayed within the current budget. She added that several recently expanded training programs nearby already teach the machine skills the site needs. The company plans to recruit locally if it approves regular production. It will announce a decision after the pilot cost review."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7f-triple-pilot-01",
+          "prompt": "Where will the equipment adjustment Ms. Vey requests take place?",
+          "options": [
+            "At Intake",
+            "In Bay T",
+            "In Bay R",
+            "In the office"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「In Bay R」\n【考點】Part 7・跨文件整合\n【判斷依據】Email 要求調整密封感測器。排程同時有秤重控制調整和感測器校準，後者在 Bay R。",
+          "skill": "r-crossref",
+          "ability": "R3",
+          "questionType": "cross-document",
+          "crossRef": true
+        },
+        {
+          "id": "p7f-triple-pilot-02",
+          "prompt": "The word “viable” in the news report is closest in meaning to",
+          "options": [
+            "Temporary",
+            "Unusual",
+            "Automatic",
+            "Practical"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Practical」\n【考點】Part 7・語境詞義\n【判斷依據】新聞說成本維持在預算內時，小批量生產才 viable，在此指方案可行。",
+          "skill": "r-vocabulary",
+          "ability": "R4",
+          "questionType": "synonym"
+        },
+        {
+          "id": "p7f-triple-pilot-03",
+          "prompt": "When should Mr. Renn revise the sampling sheet?",
+          "options": [
+            "August 27",
+            "August 24",
+            "August 26",
+            "August 29"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「August 27」\n【考點】Part 7・跨文件整合\n【判斷依據】Email 要求在感測器調整的隔天改表。排程的感測器校準為 August 26，日期加 1 天得 August 27。",
+          "skill": "r-crossref",
+          "ability": "R3",
+          "questionType": "cross-document",
+          "crossRef": true
+        },
+        {
+          "id": "p7f-triple-pilot-04",
+          "prompt": "What has Ms. Vey arranged?",
+          "options": [
+            "Approval to load the first batch early",
+            "Help from a technician if the readings vary",
+            "A permanent job for Mr. Renn",
+            "A replacement signature for the sampling sheet"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Help from a technician if the readings vary」\n【考點】Part 7・細節定位\n【判斷依據】Email 說已安排供應商在讀數不穩時派技師協助，並未免除簽名要求。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "p7f-triple-pilot-05",
+          "prompt": "What does Ms. Orren imply about hiring locally?",
+          "options": [
+            "Hiring is already under way",
+            "The pilot will replace local training programs",
+            "There should be people nearby with relevant training",
+            "All recruits will need training at a distant site"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「There should be people nearby with relevant training」\n【考點】Part 7・線索推論\n【判斷依據】新聞提到鄰近的訓練課程已教授所需技術，足以推論當地有符合職務需求的受訓人才。",
+          "skill": "r-inference",
+          "ability": "R1",
+          "questionType": "inference"
+        }
+      ]
+    },
+    {
+      "id": "p7f-triple-swatches",
+      "section": "reading",
+      "part": 7,
+      "title": "Supply advertisement and shopping cart",
+      "passage": {
+        "docs": [
+          {
+            "label": "Advertisement",
+            "text": "QUARTZFINCH COATINGS · ORDER ONLINE\n\nTry our color swatches at no charge. The shipping rate applies to the whole parcel, whether or not swatches are included.\nEconomy shipping costs $9.00 per order and takes four business days.\nPriority shipping costs $16.00 per order and takes one business day.\nSales tax applies to merchandise only. Free swatches and shipping are not taxed."
+          },
+          {
+            "label": "Online shopping cart",
+            "text": "CART QF-573\n\nItem | Qty | Unit price | Line total\nFern enamel | 4 | $18.50 | $74.00\nSlate swatch | 1 | $0.00 | $0.00\nCanvas swatch | 1 | $0.00 | $0.00\n\nMerchandise subtotal: $74.00\nSales tax (7%): $5.18\nShipping: Choose at checkout\nNo payment has been taken."
+          },
+          {
+            "label": "Email",
+            "text": "From: Rowan Elmott\nTo: Devra Lin\nSubject: Supplies for the booth\n\nPlease buy the cart items as listed, including the two swatches. We will reimburse up to $94.00 for this order, including tax and delivery. The booth opens in eight business days. Use the fastest delivery option that keeps the full purchase within the limit. Please forward the receipt to me after you place the order."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7f-triple-swatches-01",
+          "prompt": "What does the advertisement offer at no charge?",
+          "options": [
+            "Economy shipping",
+            "Priority shipping",
+            "Fern enamel",
+            "Color swatches"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Color swatches」\n【考點】Part 7・細節定位\n【判斷依據】廣告首句說色卡免費，兩種運費皆另外計收。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "p7f-triple-swatches-02",
+          "prompt": "What does the shopping cart indicate?",
+          "options": [
+            "The shipping option has not been chosen",
+            "Payment has been collected",
+            "The enamel has been removed",
+            "One of the swatches has a nonzero price"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「The shipping option has not been chosen」\n【考點】Part 7・細節定位\n【判斷依據】購物車運送欄顯示結帳時再選，且尚未付款。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "p7f-triple-swatches-03",
+          "prompt": "Which shipping option should Ms. Lin select?",
+          "options": [
+            "Priority shipping",
+            "Economy shipping",
+            "Either option at the same price",
+            "No option because both exceed the limit"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Economy shipping」\n【考點】Part 7・跨文件整合\n【判斷依據】購物車商品與稅合計 $74.00 + $5.18 = $79.18。套用廣告運費，經濟 $88.18、優先 $95.18，只有經濟符合 Email 的 $94.00 上限。",
+          "skill": "r-crossref",
+          "ability": "R3",
+          "questionType": "cross-document",
+          "crossRef": true
+        },
+        {
+          "id": "p7f-triple-swatches-04",
+          "prompt": "How much under the reimbursement limit would the approved purchase be?",
+          "options": [
+            "$1.18",
+            "$7.00",
+            "$5.82",
+            "$14.82"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「$5.82」\n【考點】Part 7・跨文件整合\n【判斷依據】Email 上限 $94.00 減去購物車商品 $74.00、稅 $5.18 與廣告經濟運費 $9.00，差額為 $94.00 − $88.18 = $5.82。",
+          "skill": "r-crossref",
+          "ability": "R3",
+          "questionType": "cross-document",
+          "crossRef": true
+        },
+        {
+          "id": "p7f-triple-swatches-05",
+          "prompt": "What does Mr. Elmott ask Ms. Lin to forward?",
+          "options": [
+            "The advertisement",
+            "The color swatches",
+            "The shipping price list",
+            "The receipt"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「The receipt」\n【考點】Part 7・細節定位\n【判斷依據】Email 最後一句請她下單後轉寄收據。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        }
+      ]
+    },
+    {
+      "id": "p7f-triple-tickets",
+      "section": "reading",
+      "part": 7,
+      "title": "Group outing and match schedule",
+      "passage": {
+        "docs": [
+          {
+            "label": "Email",
+            "text": "From: Veda Noss\nTo: Kiran Tolley\nSubject: Outing for the finance team\n\nI hope your first week with the finance team has gone well. Could you book one ticket for every member of our team to a Brindlewick Rovers home match? Our approved ticket budget is exactly $513, and we will spend it all on the tickets. Please buy in a single group transaction. The outing must be on a weekend, and everyone is available only for matches that start after 4:00 p.m. We will arrange our own transport."
+          },
+          {
+            "label": "Flyer",
+            "text": "BRINDLEWICK ROVERS · GROUP TICKETS\n\nGroup size | Price per person\n8–14 | $31\n15–24 | $27\n25–39 | $23\n\nUse the rate that matches your actual group size. Group purchases have no booking fee and all seats are assigned in one section. Away-match tickets are not sold through this offer."
+          },
+          {
+            "label": "Match schedule",
+            "text": "BRINDLEWICK ROVERS · UPCOMING MATCHES\n\nDate | Day | Location | Start\nSeptember 5 | Saturday | Away | 6:40 p.m.\nSeptember 9 | Wednesday | Home | 7:10 p.m.\nSeptember 13 | Sunday | Home | 2:45 p.m.\nSeptember 19 | Saturday | Home | 5:35 p.m."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7f-triple-tickets-01",
+          "prompt": "Why did Ms. Noss write to Mr. Tolley?",
+          "options": [
+            "To ask him to buy tickets for a team outing",
+            "To invite him to join the team",
+            "To request a new match schedule",
+            "To arrange transport to an away match"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「To ask him to buy tickets for a team outing」\n【考點】Part 7・主旨與目的\n【判斷依據】Email 要求為財務部每一位成員訂主場比賽門票，交通各自安排。",
+          "skill": "r-purpose",
+          "ability": "R1",
+          "questionType": "main-purpose"
+        },
+        {
+          "id": "p7f-triple-tickets-02",
+          "prompt": "What is suggested about Mr. Tolley?",
+          "options": [
+            "He has already purchased the tickets",
+            "He recently joined the finance team",
+            "He plays for the Rovers",
+            "He sets the club's group ticket prices"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「He recently joined the finance team」\n【考點】Part 7・線索推論\n【判斷依據】寄件人提到收件人在財務部的第一週，暗示他剛加入該部門。",
+          "skill": "r-inference",
+          "ability": "R1",
+          "questionType": "inference"
+        },
+        {
+          "id": "p7f-triple-tickets-03",
+          "prompt": "What benefit does the flyer list for group purchases?",
+          "options": [
+            "Travel to the venue is included",
+            "The buyer can pick any away match",
+            "Everyone is seated in the same section",
+            "Every group pays the lowest rate"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Everyone is seated in the same section」\n【考點】Part 7・細節定位\n【判斷依據】傳單明說團體購票安排在同一區，票價則依人數分級。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "p7f-triple-tickets-04",
+          "prompt": "How many people are on the finance team?",
+          "options": [
+            "17",
+            "22",
+            "24",
+            "19"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「19」\n【考點】Part 7・跨文件整合\n【判斷依據】Email 說 $513 全用於門票，每人一張。傳單中 $513 ÷ $27 = 19，落在 15–24 人級距。以 $31 或 $23 除都得不到其適用級距內的整數人數。",
+          "skill": "r-crossref",
+          "ability": "R3",
+          "questionType": "cross-document",
+          "crossRef": true
+        },
+        {
+          "id": "p7f-triple-tickets-05",
+          "prompt": "Which match meets the team's requirements?",
+          "options": [
+            "September 19",
+            "September 5",
+            "September 9",
+            "September 13"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「September 19」\n【考點】Part 7・跨文件整合\n【判斷依據】Email 要週末、主場且開始時間晚於 4:00 p.m.。賽程只有 September 19 同時符合。September 5 是客場，9 日非週末，13 日開始過早。",
+          "skill": "r-crossref",
+          "ability": "R3",
+          "questionType": "cross-document",
+          "crossRef": true
+        }
+      ]
+    },
+    {
+      "id": "p7f-s02-07",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: booking a shared equipment room",
+      "passage": {
+        "docs": [
+          {
+            "label": "Web FAQ",
+            "text": "KESTREL BEND MAKER HUB — EQUIPMENT ROOM FAQ\n\nCan my colleague use the slot I booked?\nYes, if the colleague is a registered member who has completed the equipment orientation. Contact the desk before your slot begins so we can put the booking in that person’s name. The entrance reader checks the name on the booking against the badge presented at the door.\n\nWhat if I need more time?\nAsk the desk while your session is still in progress. The desk can add up to twenty-two minutes if no one is booked immediately after you. We cannot extend a session once you have checked out."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7f-s02-07-1",
+          "prompt": "What is suggested about a colleague who arrives with a valid badge before the booking name is changed?",
+          "options": [
+            "The colleague can enter during any vacant slot.",
+            "The badge alone will not grant access for that booking.",
+            "The colleague can finish orientation at the entrance.",
+            "The badge will be cancelled."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「The badge alone will not grant access for that booking.」\n【考點】Part 7・推論\n【判斷依據】讀卡機比對門禁卡與預約姓名。即使卡片有效，未改名的預約也不會和同事的卡片相符。",
+          "skill": "r-inference",
+          "questionType": "inference",
+          "ability": "R1"
+        },
+        {
+          "id": "p7f-s02-07-2",
+          "prompt": "When can a member ask for an extension?",
+          "options": [
+            "After checking out.",
+            "Only before the original booking begins.",
+            "As soon as the following member arrives.",
+            "During the current session."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「During the current session.」\n【考點】Part 7・細節定位\n【判斷依據】FAQ 明說要在使用時段仍在進行時詢問櫃檯，結束簽退後不能延長。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
+    },
+    {
+      "id": "p7f-s02-08",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: an invoice for a repaired label printer",
+      "passage": {
+        "docs": [
+          {
+            "label": "Invoice",
+            "text": "THISTLE VANE REPAIR — INVOICE TV-6318\nBill to: Rindle Market Cooperative\nWork completed: Replace the feed roller on label printer LP-46.\n\nItem | Amount\nFeed roller | $28.40\nWorkshop labor | $51.60\nReturn delivery | $12.50\nAdvance payment received | −$40.00\nBalance due | $52.50\n\nThe return parcel has not been dispatched. We will email the tracking number after the outstanding balance is paid. If you prefer counter pickup, contact us before paying so we can issue an invoice without the delivery charge."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7f-s02-08-1",
+          "prompt": "What can be inferred about Rindle Market Cooperative?",
+          "options": [
+            "It has already paid part of the bill.",
+            "It has collected the printer.",
+            "It was charged for two replacement rollers.",
+            "It has received a tracking number."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「It has already paid part of the bill.」\n【考點】Part 7・推論\n【判斷依據】發票扣除了已收到的 $40.00 預付款，表示客戶已付部分金額。",
+          "skill": "r-inference",
+          "questionType": "inference",
+          "ability": "R1"
+        },
+        {
+          "id": "p7f-s02-08-2",
+          "prompt": "What should the customer do to collect the printer at the counter?",
+          "options": [
+            "Present the tracking number on arrival.",
+            "Ask for a revised invoice before paying.",
+            "Pay the delivery charge separately.",
+            "Cancel the repair request."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Ask for a revised invoice before paying.」\n【考點】Part 7・細節定位\n【判斷依據】結尾要求選擇自取的客戶在付款前聯絡店家，讓店家先開立不含運費的發票。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
+    },
+    {
+      "id": "p7f-s04-06",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: hiring a conservation technician",
+      "passage": {
+        "docs": [
+          {
+            "label": "Job advertisement",
+            "text": "VELMERE PRINT ARCHIVE — CONSERVATION TECHNICIAN\n\nOur conservation team prepares maps and prints for digitization. The technician will check each item for damage and record its condition before it goes to the imaging studio. [1] The post is based at the Fenwick Lane site. Weekend shifts are assigned on a rotating basis. [2]\n\nApplicants must send a résumé and one sample condition report. A report completed during a training course is acceptable. [3] Please remove any client names or contact details from the sample before uploading it. [4]\n\nShortlisted applicants will be asked to carry out a practical exercise using copies of damaged prints. The exercise is intended to assess observation and record keeping. The archive will supply all tools, and no repair work will be required during the exercise. New staff will receive training on the archive’s imaging workflow during their first week."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7f-s04-06-1",
+          "prompt": "What is the purpose of the advertisement?",
+          "options": [
+            "To recruit someone to examine and document archive items.",
+            "To invite the public to a print repair demonstration.",
+            "To offer an imaging course to other archives.",
+            "To ask clients to update their contact details."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「To recruit someone to examine and document archive items.」\n【考點】Part 7・主旨目的\n【判斷依據】標題與內文列出職缺職責、申請資料和甄選方式，工作重點是檢查並記錄館藏狀況。",
+          "skill": "r-purpose",
+          "questionType": "main-purpose",
+          "ability": "R1"
+        },
+        {
+          "id": "p7f-s04-06-2",
+          "prompt": "In which of the positions marked [1], [2], [3], and [4] does the following sentence best belong?\n\"This means that applicants without paid conservation experience can still meet the sample requirement.\"",
+          "options": [
+            "[1]",
+            "[2]",
+            "[3]",
+            "[4]"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「[3]」\n【考點】Part 7・句子插入\n【判斷依據】This 指上一句接受訓練課程的報告。把句子放在 [3]，先說明為何沒有受僱經驗也能達成要求，再交代上傳前要移除哪些資料。",
+          "skill": "r-inference",
+          "questionType": "text-insertion",
+          "ability": "R1"
+        },
+        {
+          "id": "p7f-s04-06-3",
+          "prompt": "The word “assess” is closest in meaning to",
+          "options": [
+            "record.",
+            "improve.",
+            "require.",
+            "evaluate."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「evaluate.」\n【考點】Part 7・語境同義字\n【判斷依據】實作練習用來判斷應徵者的觀察和記錄能力，因此 assess 在此意為 evaluate。",
+          "skill": "r-vocabulary",
+          "questionType": "synonym",
+          "ability": "R4"
+        },
+        {
+          "id": "p7f-s04-06-4",
+          "prompt": "What is stated about the practical exercise?",
+          "options": [
+            "The archive will provide the tools.",
+            "Applicants must repair an original map.",
+            "It will take place on the first day of employment.",
+            "Applicants must use their own damaged prints."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「The archive will provide the tools.」\n【考點】Part 7・細節定位\n【判斷依據】末段明說檔案館會提供所有工具，並用受損印刷品的複本進行練習。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
+    },
+    {
+      "id": "p7f-s04-07",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: customer survey results after a lobby change",
+      "passage": {
+        "docs": [
+          {
+            "label": "Customer survey results",
+            "text": "MARENLOFT CONFERENCE CENTRE — VISITOR SURVEY SUMMARY\n\nWe surveyed recent guests after moving the registration desk away from the main doors. [1] Guests who had visited before the move reported a shorter wait at busy times. However, several first-time visitors said they walked past the registration desk because the entrance map still showed its former location. [2]\n\nIn the next trial, we will update the map and place a sign beside the doors. We will also add a symbol for the desk on the printed event schedule. [3] The sign and the schedule will both use the same symbol, so guests can recognize it when they arrive.\n\nWe will compare first-time visitors’ responses in the next survey with those from this survey. [4] If fewer new visitors report trouble finding the desk, we will keep the sign and the new symbol. Staff will continue recording wait times to make sure the new arrangement still keeps the entrance clear."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7f-s04-07-1",
+          "prompt": "What is the main purpose of the summary?",
+          "options": [
+            "To announce a new registration fee.",
+            "To report visitor feedback and outline the next trial.",
+            "To compare the printed schedules of two events.",
+            "To explain why a survey was cancelled."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「To report visitor feedback and outline the next trial.」\n【考點】Part 7・主旨目的\n【判斷依據】第一段整理櫃檯搬遷後的回饋，後兩段說明要試行的導引措施與評估方式。",
+          "skill": "r-purpose",
+          "questionType": "main-purpose",
+          "ability": "R1"
+        },
+        {
+          "id": "p7f-s04-07-2",
+          "prompt": "In which of the positions marked [1], [2], [3], and [4] does the following sentence best belong?\n\"It will be a small illustration of a name badge.\"",
+          "options": [
+            "[1]",
+            "[2]",
+            "[3]",
+            "[4]"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「[3]」\n【考點】Part 7・句子插入\n【判斷依據】It 指 [3] 正前方首次提到的指示圖示。插入後先定義圖樣，再說明招牌和印刷議程會使用同一圖示。",
+          "skill": "r-inference",
+          "questionType": "text-insertion",
+          "ability": "R1"
+        },
+        {
+          "id": "p7f-s04-07-3",
+          "prompt": "The word “former” is closest in meaning to",
+          "options": [
+            "nearest.",
+            "temporary.",
+            "previous.",
+            "preferred."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「previous.」\n【考點】Part 7・語境同義字\n【判斷依據】地圖仍標示搬遷前的櫃檯位置，所以 former 指 previous。",
+          "skill": "r-vocabulary",
+          "questionType": "synonym",
+          "ability": "R4"
+        },
+        {
+          "id": "p7f-s04-07-4",
+          "prompt": "What is suggested about the new desk location?",
+          "options": [
+            "It will be moved again before the next event.",
+            "It was chosen because it was shown on the map.",
+            "It made repeat visitors wait longer.",
+            "It improved one aspect of registration while creating a wayfinding problem."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「It improved one aspect of registration while creating a wayfinding problem.」\n【考點】Part 7・推論\n【判斷依據】回訪者等待時間縮短，但部分初訪者因舊地圖走過櫃檯，顯示兩種效果同時存在。",
+          "skill": "r-inference",
+          "questionType": "inference",
+          "ability": "R1"
+        }
+      ]
+    },
+    {
+      "id": "p7r-s02-01",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: deciding whether to print new display cards",
+      "passage": {
+        "docs": [
+          {
+            "label": "Text message chain",
+            "text": "08:42 — Nerys: The gallery moved two sculptures from the west room to the entrance. The printed labels still list the west room.\n08:46 — Bram: Can you replace the room names on the labels we have? There are no other changes.\n08:48 — Nerys: Yes. I can cut narrow paper strips and cover the old room names neatly.\n08:51 — Bram: Let’s save the new card stock for next month’s exhibition.\n08:54 — Nerys: I’ll bring the corrected labels to the entrance before we open."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7r-s02-01-1",
+          "prompt": "What information needs to be corrected?",
+          "options": [
+            "The room names on two labels.",
+            "The opening date of the exhibition.",
+            "The names of the sculptors.",
+            "The number of works in the gallery."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「The room names on two labels.」\n【考點】Part 7・細節定位\n【判斷依據】兩件雕塑已移到入口，原有標籤卻仍寫著西側展間，所以需要更正的是展間名稱。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "p7r-s02-01-2",
+          "prompt": "At 08:51, what does Bram mean by “Let’s save the new card stock for next month’s exhibition”?",
+          "options": [
+            "The gallery should delay moving the sculptures.",
+            "Nerys should update the existing labels rather than print replacements.",
+            "Nerys should change the labels for next month’s exhibition first.",
+            "The gallery should order thicker paper before opening."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Nerys should update the existing labels rather than print replacements.」\n【考點】Part 7・簡訊意圖\n【判斷依據】這句接在 Nerys 提議用紙條覆蓋舊展間名稱之後。Bram 要保留新卡紙，意思是採用修正現有標籤的做法。",
+          "skill": "r-intent",
+          "ability": "R1",
+          "questionType": "chat-intent"
+        }
+      ]
+    },
+    {
+      "id": "p7r-s02-02",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: arranging access for a visiting technician",
+      "passage": {
+        "docs": [
+          {
+            "label": "Online chat",
+            "text": "15:06 — Corin: The lift technician is coming during our staff training. Can someone meet her at the loading entrance?\n15:10 — Zella: I’ll be at the reception desk until the first break. The loading entrance has a bell, but it rings only in the stockroom.\n15:14 — Corin: The stockroom will be empty then. I have the technician’s mobile number.\n15:17 — Zella: In that case, let’s take the bell out of the equation.\n15:21 — Corin: I’ll ask her to text me from the entrance. I can step out of training to let her in."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7r-s02-02-1",
+          "prompt": "Where will Zella be until the first break?",
+          "options": [
+            "At the loading entrance.",
+            "In the stockroom.",
+            "At the reception desk.",
+            "In the lift control room."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「At the reception desk.」\n【考點】Part 7・細節定位\n【判斷依據】Zella 在 15:10 明確說第一次休息前會待在接待櫃檯。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "p7r-s02-02-2",
+          "prompt": "At 15:17, what does Zella mean by “let’s take the bell out of the equation”?",
+          "options": [
+            "Disconnect the bell permanently.",
+            "Have the technician wait until training ends.",
+            "Move the training session to the stockroom.",
+            "Arrange for the technician to contact someone without using the bell."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Arrange for the technician to contact someone without using the bell.」\n【考點】Part 7・簡訊意圖\n【判斷依據】門鈴只在無人的庫房響，Corin 又握有技師手機號碼。Zella 是在提議改用其他聯絡方式，後文也確認改用簡訊。",
+          "skill": "r-intent",
+          "ability": "R1",
+          "questionType": "chat-intent"
+        }
+      ]
+    },
+    {
+      "id": "p7r-s02-03",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: a van schedule for tool collection",
+      "passage": {
+        "docs": [
+          {
+            "label": "Collection schedule",
+            "text": "BRINDLE MARSH TOOL LIBRARY — COLLECTION VAN\n\nStop | Day | Time\nTernfield Pavilion | Tuesday | 12:10–12:55\nAlderfold Market | Thursday | 16:35–17:20\nMirewick Court | Saturday | 09:15–10:00\n\nMembers can collect a previously reserved tool at any listed stop. To switch stops after booking, message the library at least a day before the new collection time. The van accepts returns without a reservation. New loans cannot be arranged at the van."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7r-s02-03-1",
+          "prompt": "Which stop has the latest closing time?",
+          "options": [
+            "Ternfield Pavilion.",
+            "Alderfold Market.",
+            "Mirewick Court.",
+            "All three stops."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Alderfold Market.」\n【考點】Part 7・細節定位\n【判斷依據】比較三個時段的結束時間，Alderfold Market 的 17:20 最晚。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "p7r-s02-03-2",
+          "prompt": "What can a member do without a reservation at the van?",
+          "options": [
+            "Arrange a new loan.",
+            "Collect an unreserved tool.",
+            "Return a tool.",
+            "Change the stop for a collection already due."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Return a tool.」\n【考點】Part 7・細節定位\n【判斷依據】公告明說還工具不用預約。借工具必須事前預約，換站也要至少提前一天聯絡。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        }
+      ]
+    },
+    {
+      "id": "p7r-s02-04",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: paying a deposit for sign panels",
+      "passage": {
+        "docs": [
+          {
+            "label": "Receipt",
+            "text": "TALLOWFIN DISPLAY WORKS — DEPOSIT RECEIPT TF-4827\nCustomer: Oshen Vale Garden Cooperative\nOrder: Five reusable aisle signs with removable lettering\n\nPayment summary | Amount\nOrder total | $187.50\nDeposit received by card | $75.00\nBalance due at collection | $112.50\n\nWe received your deposit and have ordered the blank panels. Production starts after you approve the lettering layout we send. If you want an emailed receipt for the balance, give the cashier your address when you collect the signs."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7r-s02-04-1",
+          "prompt": "When is the remaining $112.50 due?",
+          "options": [
+            "When the deposit receipt is emailed.",
+            "When the blank panels are ordered.",
+            "When the lettering layout is sent.",
+            "When the customer collects the signs."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「When the customer collects the signs.」\n【考點】Part 7・細節定位\n【判斷依據】收據表格將 $112.50 標為取貨時應付的尾款。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "p7r-s02-04-2",
+          "prompt": "What must happen before the signs can go into production?",
+          "options": [
+            "The customer must approve the lettering layout.",
+            "The cashier must refund the card deposit.",
+            "The customer must collect the blank panels.",
+            "The supplier must send a second deposit receipt."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「The customer must approve the lettering layout.」\n【考點】Part 7・細節定位\n【判斷依據】文件最後說，顧客核准字樣配置後才會開始製作，與押金或收據寄送無關。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        }
+      ]
+    },
+    {
+      "id": "p7r-s02-05",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: changing a studio equipment booking",
+      "passage": {
+        "docs": [
+          {
+            "label": "Web FAQ",
+            "text": "GLASSWREN MEDIA STUDIO — BOOKING FAQ\n\nCan I change the microphone kit on my booking? Yes, while your booking status reads “Awaiting preparation.” Open your confirmation page, select another available kit and save the change. We will send a revised confirmation. Your recording-room reservation will stay in place.\n\nWhat if my booking reads “Ready for pickup”? The kit has already been packed. Contact the equipment desk to ask whether a replacement can be prepared. Kits cannot be exchanged at the reception counter."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7r-s02-05-1",
+          "prompt": "What will happen after a customer saves an eligible kit change online?",
+          "options": [
+            "The room reservation will be cancelled.",
+            "The kit will be exchanged at reception.",
+            "A revised confirmation will be sent.",
+            "The equipment desk will pack both kits."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「A revised confirmation will be sent.」\n【考點】Part 7・細節定位\n【判斷依據】第一段明說在線上儲存更換後會寄送更新的確認單，錄音室預約照常保留。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "p7r-s02-05-2",
+          "prompt": "Who should a customer contact if a packed kit needs to be changed?",
+          "options": [
+            "The equipment desk.",
+            "The reception counter.",
+            "The recording-room attendant.",
+            "The website administrator."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「The equipment desk.」\n【考點】Part 7・細節定位\n【判斷依據】第二段說 Ready for pickup 代表已打包，想換套件要詢問器材櫃檯。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        }
+      ]
+    },
+    {
+      "id": "p7r-s02-06",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: a badge-holder discount at a repair event",
+      "passage": {
+        "docs": [
+          {
+            "label": "Event flyer",
+            "text": "ROWANMERE REPAIR EVENING — BRING A LAMP\n\nVolunteers at Coilfen Workshop will show participants how to identify common lamp problems. Bring one unplugged lamp and its existing bulb. The demonstration is free. Replacement switches and cords are sold separately at the parts counter.\n\nShow a Bracken Quay market-stall badge at the parts counter during the event for $3 off your purchase. The discount is applied once per customer and is valid only that evening. The workshop does not accept lamps for overnight storage."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7r-s02-06-1",
+          "prompt": "What should participants bring in addition to a lamp?",
+          "options": [
+            "A replacement switch.",
+            "The bulb already used with the lamp.",
+            "A written repair estimate.",
+            "Proof of purchase for the lamp."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「The bulb already used with the lamp.」\n【考點】Part 7・細節定位\n【判斷依據】傳單要求帶一盞拔掉插頭的燈以及它原有的燈泡。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "p7r-s02-06-2",
+          "prompt": "Who can receive the discount on replacement parts?",
+          "options": [
+            "Customers who leave a lamp overnight.",
+            "Anyone who brings more than one lamp.",
+            "Visitors who pay for the demonstration.",
+            "Customers who show a market-stall badge during the event."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Customers who show a market-stall badge during the event.」\n【考點】Part 7・細節定位\n【判斷依據】零件櫃檯只在活動當晚向出示 Bracken Quay 市集攤位證的人提供 $3 折扣。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        }
+      ]
+    },
+    {
+      "id": "p7r-s02-07",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: temporary visitor parking during repairs",
+      "passage": {
+        "docs": [
+          {
+            "label": "Parking notice",
+            "text": "CRESTFIN TRADE CENTRE — VISITOR PARKING\n\nThe north visitor lot will close for surface repairs starting next week. During the work, visitors arriving by car should use the marked bays behind the annex. Take a ticket from the machine and have it stamped at the reception desk before returning to your car. A stamped ticket opens the exit barrier without a charge.\n\nThe bays in front of the main entrance are for deliveries only. Visitors who need step-free access can use the ramp by the annex parking bays."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7r-s02-07-1",
+          "prompt": "Where should visitors park while the north lot is closed?",
+          "options": [
+            "In the marked bays behind the annex.",
+            "In the delivery bays at the main entrance.",
+            "Beside the north lot ticket machine.",
+            "In the lane next to the ramp."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「In the marked bays behind the annex.」\n【考點】Part 7・細節定位\n【判斷依據】公告將施工期間的訪客停車位置指定在附樓後方有標線的車位。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "p7r-s02-07-2",
+          "prompt": "Why should a visitor stop at reception before returning to the car?",
+          "options": [
+            "To reserve a bay for the next visit.",
+            "To pay for access to the annex.",
+            "To validate the ticket for a free exit.",
+            "To obtain permission to use the ramp."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「To validate the ticket for a free exit.」\n【考點】Part 7・推論\n【判斷依據】櫃檯會在票上蓋章，持蓋章的票才能免費通過出口柵欄。",
+          "skill": "r-inference",
+          "ability": "R1",
+          "questionType": "inference"
+        }
+      ]
+    },
+    {
+      "id": "p7r-s02-08",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: redirecting a shipment to a collection point",
+      "passage": {
+        "docs": [
+          {
+            "label": "Parcel notification",
+            "text": "FERNLOCK COURIER — PARCEL UPDATE FL-7462\n\nWe could not deliver your parcel because the building’s entry system was offline. The parcel is now at Dorran Quay Newsstand, one of our staffed collection points. It will stay there for six calendar days. Bring the pickup code from your tracking page and a photo ID. The shop will not release the parcel without both.\n\nTo arrange another home delivery, select “Return to delivery route” on the tracking page. The parcel must first be collected from the shop by our driver, so choosing this option adds one business day."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7r-s02-08-1",
+          "prompt": "What prevented the original delivery?",
+          "options": [
+            "The parcel exceeded the permitted size.",
+            "The newsstand had closed for the day.",
+            "The driver did not have a pickup code.",
+            "The building’s entry system was not working."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「The building’s entry system was not working.」\n【考點】Part 7・細節定位\n【判斷依據】通知首句直接指出大樓門禁系統離線，導致無法完成原配送。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "p7r-s02-08-2",
+          "prompt": "What happens if the recipient requests another home delivery?",
+          "options": [
+            "The shop waives the pickup-code requirement.",
+            "The delivery takes one additional business day.",
+            "The parcel remains at the shop indefinitely.",
+            "The recipient must first collect the parcel from the shop."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「The delivery takes one additional business day.」\n【考點】Part 7・細節定位\n【判斷依據】改送到家之前需由司機先到店取回包裹，因此會多花一個工作日。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        }
+      ]
+    },
+    {
+      "id": "p7r-s04-01",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: a new fabric sorting hub",
+      "passage": {
+        "docs": [
+          {
+            "label": "News article",
+            "text": "FABRIC COLLECTIVE EXPANDS ITS SORTING SERVICE\n\nLinden Quay Fabric Collective will open a sorting hub in a former stationery warehouse next spring. The group currently receives leftover rolls from local upholstery shops and sells usable fabric at its existing market stall. [1] At busy times, delivery vans and shoppers share the same narrow entrance, delaying both collections and sales. [2]\n\nThe hub will have separate spaces for checking, weighing, and storing fabric. Vans will enter through a side gate that opens directly onto the weighing bay. [3] The group has arranged for a member of staff to meet every driver there during the first month. Shop owners must still reserve a delivery slot in advance.\n\nThe move will leave more room at the market stall for workshops. A course in repairing curtains is planned, but enrollment will open only after the move is complete. [4] Customers who only want to buy fabric should continue visiting the stall."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7r-s04-01-1",
+          "prompt": "What is the article mainly about?",
+          "options": [
+            "A collective’s plans for handling deliveries at a new site.",
+            "A stationery company’s decision to expand its inventory.",
+            "A curtain repair course that is already accepting students.",
+            "A market stall that will stop selling fabric."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「A collective’s plans for handling deliveries at a new site.」\n【考點】Part 7・主旨目的\n【判斷依據】報導交代新分揀中心開設的原因、卸貨動線與市場攤位的後續用途，重點是新址如何接收布料。",
+          "skill": "r-purpose",
+          "ability": "R1",
+          "questionType": "main-purpose"
+        },
+        {
+          "id": "p7r-s04-01-2",
+          "prompt": "In which of the positions marked [1], [2], [3], and [4] does the following sentence best belong?\n\"This gate will keep vans away from the main entrance used by visitors.\"",
+          "options": [
+            "[1]",
+            "[2]",
+            "[3]",
+            "[4]"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「[3]」\n【考點】Part 7・句子插入\n【判斷依據】This gate 指前句首次提到的 side gate。放在 [3]，接著說明司機抵達該入口後由誰接應。",
+          "skill": "r-inference",
+          "ability": "R1",
+          "questionType": "text-insertion"
+        },
+        {
+          "id": "p7r-s04-01-3",
+          "prompt": "The word “reserve” is closest in meaning to",
+          "options": [
+            "return.",
+            "estimate.",
+            "extend.",
+            "book."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「book.」\n【考點】Part 7・語境同義字\n【判斷依據】文中是要求店家事先保留交貨時段，所以 reserve 等於 book。",
+          "skill": "r-vocabulary",
+          "ability": "R4",
+          "questionType": "synonym"
+        },
+        {
+          "id": "p7r-s04-01-4",
+          "prompt": "When will enrollment open for the curtain repair course?",
+          "options": [
+            "As soon as the vans begin using the side gate.",
+            "After the move is complete.",
+            "When upholstery shops first reserve a delivery slot.",
+            "Before the sorting hub opens."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「After the move is complete.」\n【考點】Part 7・細節定位\n【判斷依據】末段明說 enrollment will open only after the move is complete。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        }
+      ]
+    },
+    {
+      "id": "p7r-s04-02",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: an evening dispatch vacancy",
+      "passage": {
+        "docs": [
+          {
+            "label": "Job advertisement",
+            "text": "BRINLEY STAIR COURIERS — EVENING DISPATCH ASSISTANT\n\nOur evening dispatch assistant tracks returned cargo bicycles and checks the route board before the depot closes. [1] Most messages are internal, but the assistant will occasionally call a customer to confirm where a parcel was left.\n\nPlease send a résumé and a sample handover note. [2] The note may describe a work or volunteer shift and should explain which tasks were finished and which needed follow-up. The short-listed candidates will attend a practical session using our training route board. [3] No bicycle riding is involved in the session.\n\nThe position is based at the Alderstrand depot. New hires will spend three evenings observing the outgoing assistant before taking charge of the board. [4] The dispatch supervisor will provide a printed checklist for that first week."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7r-s04-02-1",
+          "prompt": "What task might the assistant occasionally perform?",
+          "options": [
+            "Repair a returned bicycle.",
+            "Train customers to use the route board.",
+            "Print a checklist for the supervisor.",
+            "Call a customer about a parcel’s location."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Call a customer about a parcel’s location.」\n【考點】Part 7・細節定位\n【判斷依據】第一段說助理偶爾會致電客戶，以確認包裹放置地點。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "p7r-s04-02-2",
+          "prompt": "In which of the positions marked [1], [2], [3], and [4] does the following sentence best belong?\n\"These two documents must be attached to the same application message.\"",
+          "options": [
+            "[1]",
+            "[2]",
+            "[3]",
+            "[4]"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「[2]」\n【考點】Part 7・句子插入\n【判斷依據】These two documents 指前一句同時列出的 résumé 與 sample handover note，後一句再說明交接紀錄的內容。",
+          "skill": "r-inference",
+          "ability": "R1",
+          "questionType": "text-insertion"
+        },
+        {
+          "id": "p7r-s04-02-3",
+          "prompt": "The word “outgoing” is closest in meaning to",
+          "options": [
+            "departing.",
+            "talkative.",
+            "visiting.",
+            "untrained."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「departing.」\n【考點】Part 7・語境同義字\n【判斷依據】新員工先跟即將卸任的助理觀察，再接手路線看板，所以 outgoing 指即將離任。",
+          "skill": "r-vocabulary",
+          "ability": "R4",
+          "questionType": "synonym"
+        },
+        {
+          "id": "p7r-s04-02-4",
+          "prompt": "What can be inferred about the training route board?",
+          "options": [
+            "The person hired will need to buy one.",
+            "Applicants must use it while cycling.",
+            "It is used to assess applicants before they are hired.",
+            "Only customers can see it."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「It is used to assess applicants before they are hired.」\n【考點】Part 7・推論\n【判斷依據】文中說入圍應徵者會在實作環節使用訓練看板，而任職後的跟班另有安排。",
+          "skill": "r-inference",
+          "ability": "R1",
+          "questionType": "inference"
+        }
+      ]
+    },
+    {
+      "id": "p7r-s04-03",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: asking about an engraving proof",
+      "passage": {
+        "docs": [
+          {
+            "label": "Customer letter",
+            "text": "Dear Orelmark Engraving Team,\n\nThank you for sending the proof for the wooden signs for our gallery. [1] The room names are all correct, and the layout fits the narrow frames. I noticed, however, that the arrow on the courtyard sign points to the left. Visitors entering through the west door need it to point to the right. [2]\n\nPlease send me an updated proof before you start production. Our gallery opens to members two days before the public opening. [3] If the signs cannot be ready for the members’ event, I can either collect them at your workshop the evening before the public opening or arrange for a courier to collect them on that morning. [4]\n\nWe will install the signs ourselves. If you have already packed the mounting screws, please leave them with the signs. We can pick up any spare screws later.\n\nRegards,\nLio Verran\nFoxglade Gallery"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7r-s04-03-1",
+          "prompt": "Why did Mr. Verran write the letter?",
+          "options": [
+            "To cancel a gallery event.",
+            "To purchase additional mounting screws.",
+            "To request a correction before signs are made.",
+            "To confirm that the signs have already been installed."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「To request a correction before signs are made.」\n【考點】Part 7・主旨目的\n【判斷依據】客戶指出圖稿箭頭方向錯誤，並要求製作前提供更新稿。",
+          "skill": "r-purpose",
+          "ability": "R1",
+          "questionType": "main-purpose"
+        },
+        {
+          "id": "p7r-s04-03-2",
+          "prompt": "In which of the positions marked [1], [2], [3], and [4] does the following sentence best belong?\n\"Please tell me which of these two collection arrangements would suit your workshop better.\"",
+          "options": [
+            "[1]",
+            "[2]",
+            "[3]",
+            "[4]"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「[4]」\n【考點】Part 7・句子插入\n【判斷依據】these two collection arrangements 指前一句的親自取件與安排快遞取件，且 [4] 緊接這兩項。",
+          "skill": "r-inference",
+          "ability": "R1",
+          "questionType": "text-insertion"
+        },
+        {
+          "id": "p7r-s04-03-3",
+          "prompt": "What does the writer say about the room names?",
+          "options": [
+            "They are too wide for the frames.",
+            "They appear correctly on the proof.",
+            "They need to be translated.",
+            "They were omitted from the signs."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「They appear correctly on the proof.」\n【考點】Part 7・細節定位\n【判斷依據】首段明說 room names are all correct，需更正的是庭院指示牌上的箭頭。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "p7r-s04-03-4",
+          "prompt": "What is suggested about the sign order?",
+          "options": [
+            "The gallery can accept the signs after the members’ event.",
+            "The workshop has already installed the signs.",
+            "The room names must be rewritten before printing.",
+            "The gallery is no longer able to collect the signs in person."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「The gallery can accept the signs after the members’ event.」\n【考點】Part 7・推論\n【判斷依據】若趕不上會員活動，客戶仍提出公開開幕前的兩個取件方案，表示可接受會員活動後再取件。",
+          "skill": "r-inference",
+          "ability": "R1",
+          "questionType": "inference"
+        }
+      ]
+    },
+    {
+      "id": "p7r-s04-04",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: temporary handling of supplier invoices",
+      "passage": {
+        "docs": [
+          {
+            "label": "Internal memo",
+            "text": "To: Purchasing and Receiving\nFrom: Selin Tarrow, Accounts Office\nSubject: Temporary invoice routing\n\nStarting next week, invoices for packaging supplies will go to Accounts first. Accounts will log each invoice number, then send an electronic copy to the appropriate buyer. This change applies only to packaging supplies. Invoices for machine parts will follow the existing route, directly to Purchasing.\n\nBuyers should verify the quantities against the receiving record and return the copy with their initials. If the quantities differ, note the discrepancy on the copy. Do not ask the supplier to reissue the invoice until Accounts contacts you. The invoice may be correct if part of the delivery was booked under a separate receiving record.\n\nThe new procedure will run for five weeks. Accounts will then compare the time needed to find supporting records under the two routes. If the pilot reduces that time, the procedure may be extended to additional types of purchases."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7r-s04-04-1",
+          "prompt": "What should buyers do if the invoice quantity does not match the receiving record?",
+          "options": [
+            "Send the invoice directly to the supplier.",
+            "Note the discrepancy on the electronic copy.",
+            "Replace the receiving record with the invoice.",
+            "Create a separate order for the difference."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Note the discrepancy on the electronic copy.」\n【考點】Part 7・細節定位\n【判斷依據】第二段直接要求買方在電子副本註明差異，並先等會計部門聯絡。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "p7r-s04-04-2",
+          "prompt": "The word “log” is closest in meaning to",
+          "options": [
+            "record.",
+            "cancel.",
+            "print.",
+            "verify."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「record.」\n【考點】Part 7・語境同義字\n【判斷依據】會計部門先登錄發票編號，再傳送副本。log 在此指記錄。",
+          "skill": "r-vocabulary",
+          "ability": "R4",
+          "questionType": "synonym"
+        },
+        {
+          "id": "p7r-s04-04-3",
+          "prompt": "Why might Accounts wait before requesting a corrected invoice?",
+          "options": [
+            "The packaging supplier will close for five weeks.",
+            "Buyers are not permitted to check quantities.",
+            "The original invoice number might be unavailable.",
+            "Another receiving record may account for the difference."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Another receiving record may account for the difference.」\n【考點】Part 7・推論\n【判斷依據】第二段指出部分交貨量可能另記在另一份收貨紀錄，單看手上的紀錄不符，不表示發票就有錯。",
+          "skill": "r-inference",
+          "ability": "R1",
+          "questionType": "inference"
+        },
+        {
+          "id": "p7r-s04-04-4",
+          "prompt": "Which invoices will continue going directly to Purchasing?",
+          "options": [
+            "Invoices issued at the end of the trial.",
+            "Invoices for packaging supplies.",
+            "Invoices for machine parts.",
+            "Invoices from new suppliers only."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Invoices for machine parts.」\n【考點】Part 7・細節定位\n【判斷依據】首段明說機械零件發票仍走原流程，直接交採購部門。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        }
+      ]
+    },
+    {
+      "id": "p7r-s04-05",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: warranty terms for a portable lamp",
+      "passage": {
+        "docs": [
+          {
+            "label": "Product warranty",
+            "text": "MORROWGLINT WORKLIGHT — LIMITED WARRANTY\n\nYour worklight is covered for eighteen months from the date shown on the purchase receipt. This warranty applies to the lamp’s switch and charging port if they fail during ordinary use. It does not cover damage from drops or from using a charging cable that does not meet the specifications printed on the box.\n\nTo make a claim, contact the service desk with the serial number and a short description of the fault. Keep your receipt: the technician will ask for a copy after checking the serial number. Do not mail the lamp until we send you a return label. If we confirm a covered fault, we will send a replacement lamp with the same charging connector. The replacement may be a different color if the original color is no longer available.\n\nReplacement lamps carry the remaining warranty period of the original purchase. If a fault is not covered, the service desk can provide an estimate for a repair, which you may accept or decline."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7r-s04-05-1",
+          "prompt": "What does the warranty cover?",
+          "options": [
+            "A broken casing after the lamp is dropped.",
+            "Damage caused by an incompatible charging cable.",
+            "A lamp that is lost during outdoor use.",
+            "A charging port that stops working during ordinary use."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「A charging port that stops working during ordinary use.」\n【考點】Part 7・細節定位\n【判斷依據】首段承保正常使用時故障的充電埠，並排除跌落及不合規格充電線造成的損壞。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "p7r-s04-05-2",
+          "prompt": "What should a customer do before mailing the lamp?",
+          "options": [
+            "Accept a repair estimate.",
+            "Choose a different lamp color.",
+            "Wait to receive a return label.",
+            "Buy a new charging cable."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Wait to receive a return label.」\n【考點】Part 7・細節定位\n【判斷依據】申請保固段落要求收到退貨標籤後才寄出檯燈。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "p7r-s04-05-3",
+          "prompt": "What is suggested about the color of a replacement lamp?",
+          "options": [
+            "The original color is not guaranteed.",
+            "It depends on the charging connector.",
+            "Customers are charged extra for a different color.",
+            "It will always match the packaging."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「The original color is not guaranteed.」\n【考點】Part 7・推論\n【判斷依據】內文表示原色缺貨時可能提供其他顏色，因此不保證顏色相同。",
+          "skill": "r-inference",
+          "ability": "R1",
+          "questionType": "inference"
+        },
+        {
+          "id": "p7r-s04-05-4",
+          "prompt": "How long is the warranty on a replacement lamp?",
+          "options": [
+            "Eighteen months from the replacement date.",
+            "The unexpired portion of the original warranty.",
+            "Until the customer receives a repair estimate.",
+            "Only until the original lamp is inspected."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「The unexpired portion of the original warranty.」\n【考點】Part 7・細節定位\n【判斷依據】末段明說替換品只承接原始保固的剩餘期間。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        }
+      ]
+    },
+    {
+      "id": "p7r-s04-06",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: feedback on a label printing course",
+      "passage": {
+        "docs": [
+          {
+            "label": "Customer review",
+            "text": "REVIEW: FIRST RUN AT CROWSILL PRINT STUDIO\n\nI enrolled in Crowsill’s label printing course because I wanted to produce small batches of gift tags for my shop. The instructor sent a brief preparation guide before class. It suggested bringing a draft design, so I arrived with a sketch rather than a finished file. She helped me turn it into a printable design using the studio computer.\n\nDuring the demonstration, the instructor showed our group how to adjust the rollers when the print came out too light. We then ran our own samples. My first sample was uneven, but the instructions were concise enough for me to spot the setting I had missed and correct it without waiting for help.\n\nI would take the course again if it included a longer practice period. The demonstration ended with enough time for one successful run, but I would have liked to test a heavier card before leaving. The studio did provide a list of card weights to try at home, which I found useful."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "p7r-s04-06-1",
+          "prompt": "What does the review mainly do?",
+          "options": [
+            "Announce a change to a shop’s product range.",
+            "Describe a course experience and suggest one improvement.",
+            "Explain why a studio cancelled a demonstration.",
+            "Compare the prices of different gift tags."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Describe a course experience and suggest one improvement.」\n【考點】Part 7・主旨目的\n【判斷依據】作者回顧課前準備、示範與實作，最後建議增加練習時間。",
+          "skill": "r-purpose",
+          "ability": "R1",
+          "questionType": "main-purpose"
+        },
+        {
+          "id": "p7r-s04-06-2",
+          "prompt": "What did the reviewer bring to class?",
+          "options": [
+            "A completed design file.",
+            "A pack of heavy card.",
+            "A set of replacement rollers.",
+            "A rough design drawing."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「A rough design drawing.」\n【考點】Part 7・細節定位\n【判斷依據】作者看到可帶設計草稿，便帶了 sketch，而不是完成的檔案。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "p7r-s04-06-3",
+          "prompt": "The word “concise” is closest in meaning to",
+          "options": [
+            "costly.",
+            "incomplete.",
+            "brief.",
+            "ambiguous."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「brief.」\n【考點】Part 7・語境同義字\n【判斷依據】作者說明文字足以快速找出漏掉的設定，因此 concise 指簡短扼要。",
+          "skill": "r-vocabulary",
+          "ability": "R4",
+          "questionType": "synonym"
+        },
+        {
+          "id": "p7r-s04-06-4",
+          "prompt": "Why does the reviewer want more practice time?",
+          "options": [
+            "To try printing on thicker card.",
+            "To receive the preparation guide.",
+            "To correct the first sample for the first time.",
+            "To watch the instructor adjust the rollers."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「To try printing on thicker card.」\n【考點】Part 7・細節定位\n【判斷依據】末段說已完成一次成功印製，但離開前還想測試 heavier card，所以希望實作更長。",
+          "skill": "r-detail",
+          "ability": "R2",
+          "questionType": "detail"
         }
       ]
     }
