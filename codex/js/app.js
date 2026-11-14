@@ -17,6 +17,7 @@ import { assembleReadingRotation, isReadingFullForm, originalReadingGroups } fro
 import { CHOICE_REVISION, migrateChoiceIndexes } from "./choice-legacy.js";
 import { TIP_SECTIONS, TIPS_STORAGE_KEY, tipForPart, tipsEnabled } from "./tips.js";
 import { ABILITIES, abilityStats, scoreBand } from "./abilities.js";
+import { audioEntries, countCached, downloadAll, formatMB } from "./offline.js";
 
 const EXAM_DATE = "2026-11-29";
 const MAX_PLAYS = 2;
@@ -55,6 +56,7 @@ const KEY_QUICK_RECENT = `${STORAGE_PREFIX}.quick-recent.v1`;
 const KEY_READING_ROTATION_RECENT = `${STORAGE_PREFIX}.reading-rotation-recent.v1`;
 const KEY_MOCK_SECTION = `${STORAGE_PREFIX}.mock-section.v1`;
 const flashItems = VOCABULARY.flatMap(group => group.words.map(item => ({ ...vocabParts(item), category: group.category, pick: PICKS.has(item[0]) })));
+const KEY_HOME_FOCUS = `${STORAGE_PREFIX}.home-focus.v1`;
 const KEY_GRAMMAR = `${STORAGE_PREFIX}.grammar.v1`;
 const GRAMMAR_QUIZ = GRAMMAR.flatMap((topic) => topic.quiz.map((item, qi) => ({ topic, item, qi })));
 // Saved grammar answers are keyed by question text: true = last answer was right.
@@ -305,6 +307,18 @@ function todayStrip(wrongDue, wordDue, history) {
 }
 
 const HOME_NAV = [["nav-preexam", "考前"], ["nav-mock", "模考"], ["nav-vocab", "單字"], ["nav-grammar", "文法"], ["nav-practice", "練習"], ["nav-review", "複習"]];
+const HOME_NAV_EXTRA = new Set(["nav-vocab", "nav-grammar", "nav-practice"]);
+
+// 考前重點模式：收起單字、文法、聽力小課程與分項練習。沒設定過時，考前 14 天內自動開啟；手動切換後以使用者的選擇為準。
+function homeFocus() {
+  const saved = store.get(KEY_HOME_FOCUS, null);
+  if (typeof saved === "boolean") return saved;
+  const days = examDaysLeft();
+  return days !== null && days >= 0 && days <= 14;
+}
+function focusBar(focus) {
+  return `<div class="focus-bar"><p class="muted">${focus ? "考前重點模式：已收起單字、文法、聽力小課程與分項練習。" : "目前顯示全部內容。"}</p><button type="button" class="btn small" data-action="toggle-focus" aria-pressed="${focus}">${focus ? "顯示全部" : "只看考前重點"}</button></div>`;
+}
 
 function examDaysLeft() {
   const days = Math.ceil((new Date(`${EXAM_DATE}T00:00:00`) - new Date()) / 86400000);
@@ -349,7 +363,7 @@ function grammarSection() {
   const quizCount = GRAMMAR_QUIZ.length;
   const progress = grammarProgress();
   const right = grammarRightTotal(progress);
-  return `<section class="card grammar-card" id="nav-grammar" aria-labelledby="grammar-title">
+  return `<section class="card grammar-card home-extra" id="nav-grammar" aria-labelledby="grammar-title">
       <p class="vocabulary-eyebrow">TOEIC GRAMMAR</p>
       <h2 id="grammar-title">多益常考文法</h2>
       <p class="muted">Part 5、Part 6 最常出現的 ${GRAMMAR.length} 個文法考點：祈使句、建議要求後接原形、過去分詞、詞性、代名詞、時態、主被動等。每個主題有規則、陷阱、例句和小練習（共 ${quizCount} 題）。內容由本站整理與自寫，不是 ETS 官方題目。</p>
@@ -370,8 +384,8 @@ function grammarSection() {
 }
 
 // Section shortcuts: sticky bar on wide screens, bottom tab bar on phones. Text only, no icons.
-function homeNav(reviewCount) {
-  return `<nav class="home-nav" aria-label="首頁快速跳轉">${HOME_NAV.map(([id, label], i) => `<button type="button" class="home-nav-item${i === 0 ? " is-active" : ""}" data-action="home-jump" data-target="${id}">${label}${id === "nav-review" && reviewCount ? `<span class="home-nav-count" aria-label="${reviewCount} 項待複習">${reviewCount > 99 ? "99+" : reviewCount}</span>` : ""}</button>`).join("")}</nav>`;
+function homeNav(reviewCount, focus = false) {
+  return `<nav class="home-nav" aria-label="首頁快速跳轉">${HOME_NAV.filter(([id]) => !(focus && HOME_NAV_EXTRA.has(id))).map(([id, label], i) => `<button type="button" class="home-nav-item${i === 0 ? " is-active" : ""}" data-action="home-jump" data-target="${id}">${label}${id === "nav-review" && reviewCount ? `<span class="home-nav-count" aria-label="${reviewCount} 項待複習">${reviewCount > 99 ? "99+" : reviewCount}</span>` : ""}</button>`).join("")}</nav>`;
 }
 
 let navFrame = 0;
@@ -383,11 +397,71 @@ function syncHomeNav() {
   let current = HOME_NAV[0][0];
   for (const [id] of HOME_NAV) {
     const el = document.getElementById(id);
-    if (el && el.getBoundingClientRect().top <= line) current = id;
+    if (el && el.offsetParent !== null && el.getBoundingClientRect().top <= line) current = id;
   }
   items.forEach((item) => item.classList.toggle("is-active", item.dataset.target === current));
 }
 window.addEventListener("scroll", () => { if (!navFrame) navFrame = requestAnimationFrame(syncHomeNav); }, { passive: true });
+
+// ---- 離線聽力 ----
+const offline = { entries: null, cached: 0, running: false, failed: 0, controller: null, error: "" };
+
+function offlineCardHtml() {
+  const head = `<p class="section-kicker">OFFLINE AUDIO</p><h2 id="offline-title">離線聽力</h2>`;
+  if (typeof caches === "undefined") return head + `<p class="muted">這個瀏覽器目前不支援離線儲存（需要 https 網址）。</p>`;
+  const entries = offline.entries;
+  if (!entries) return head + `<p class="muted">正在確認已下載的音檔…</p>`;
+  const total = entries.length;
+  const bytes = entries.reduce((sum, e) => sum + e.bytes, 0);
+  const complete = total > 0 && offline.cached >= total;
+  const pct = total ? Math.round((offline.cached / total) * 100) : 0;
+  const status = offline.running
+    ? `下載中：${offline.cached} / ${total} 個音檔${offline.failed ? `（${offline.failed} 個沒成功）` : ""}`
+    : complete ? "全部音檔都已存在這台裝置，沒有網路也能做聽力。"
+    : `已下載 ${offline.cached} / ${total} 個音檔。沒下載的音檔需要網路才能播放。`;
+  const button = offline.running
+    ? `<button type="button" class="btn" data-action="offline-cancel">暫停下載</button>`
+    : complete || !total ? "" : `<button type="button" class="btn primary" data-action="offline-download">${offline.cached ? "繼續下載" : "下載聽力音檔"}（約 ${formatMB(bytes)}）</button>`;
+  return head + `
+    <p>${status}</p>
+    <progress aria-label="離線音檔下載進度" value="${offline.cached}" max="${total || 1}"></progress><span class="muted offline-pct"> ${pct}%</span>
+    ${offline.error ? `<p class="muted">${esc(offline.error)}</p>` : ""}
+    <div class="vocab-actions">${button}</div>
+    ${complete || offline.running ? "" : `<p class="muted">建議連 Wi-Fi 時下載一次，只需要做一次；之後網站更新也不會被清掉。</p>`}`;
+}
+function paintOffline() {
+  const el = document.getElementById("offline-card");
+  if (el) el.innerHTML = offlineCardHtml();
+}
+async function refreshOffline() {
+  if (typeof caches === "undefined" || offline.running) return paintOffline();
+  try {
+    const manifest = await loadAudioManifest();
+    offline.entries = audioEntries(manifest, LESSONS);
+    offline.cached = await countCached(offline.entries.map((e) => e.url), caches);
+    offline.error = "";
+  } catch { offline.entries = offline.entries ?? []; offline.error = "讀不到音檔清單，請確認網路後重新整理。"; }
+  paintOffline();
+}
+async function startOfflineDownload() {
+  if (offline.running || !offline.entries) return;
+  offline.running = true; offline.failed = 0; offline.error = "";
+  offline.controller = new AbortController();
+  try { navigator.storage?.persist?.(); } catch { /* optional */ }
+  paintOffline();
+  try {
+    const result = await downloadAll(offline.entries.map((e) => e.url), {
+      cacheStorage: caches,
+      signal: offline.controller.signal,
+      onProgress: ({ done, failed }) => { offline.cached = done; offline.failed = failed; paintOffline(); }
+    });
+    offline.cached = result.done;
+    offline.failed = result.failed;
+    if (result.failed && !result.aborted) offline.error = `有 ${result.failed} 個音檔沒下載成功，請確認網路後按「繼續下載」。`;
+  } catch { offline.error = "下載中斷，已下載的會保留，可按「繼續下載」。"; }
+  offline.running = false; offline.controller = null;
+  paintOffline();
+}
 
 function renderHome() {
   stopTimer();
@@ -408,6 +482,8 @@ function renderHome() {
   const dueQuestions = queuedQuestions.filter((q) => wrongAnswerDue(wrongQueue[q.id]));
 
   const wordDue = vocabDueCount();
+  const focus = homeFocus();
+  app.classList.toggle("home-focus", focus);
   app.innerHTML = `
     <header class="home-header">
       <p class="home-eyebrow">LISTENING &amp; READING <span aria-hidden="true">/</span> PRACTICE</p>
@@ -415,10 +491,12 @@ function renderHome() {
       <p class="home-intro">上次 955，這次挑戰更高。<br>專注聽力與閱讀的推論、細節與交叉比對。</p>
       <p class="home-collab"><b>Paul × AI</b> 一起備考：Paul 決定方向與取捨，AI 一起腦力激盪、協助出題，並整理單字與文法，再由 Paul 實際練習、回饋、調整。</p>
     </header>
-    ${homeNav(dueQuestions.length + wordDue)}
+    ${homeNav(dueQuestions.length + wordDue, focus)}
+    ${focusBar(focus)}
     ${todayStrip(dueQuestions.length, wordDue, history)}
     ${session ? resumeCard() : ''}
     ${preExamCard()}
+    <section class="card offline-card" id="offline-card" aria-labelledby="offline-title">${offlineCardHtml()}</section>
 
     <section class="card reading-full-card" id="nav-mock" aria-labelledby="reading-full-title">
       <div class="reading-full-head"><span class="reading-full-badge">75 MIN</span><p class="section-kicker">READING MOCK · 閱讀完整模擬</p></div>
@@ -450,7 +528,7 @@ function renderHome() {
 
 
 
-    <section class="card vocabulary-card" id="nav-vocab" aria-labelledby="vocabulary-title">
+    <section class="card vocabulary-card home-extra" id="nav-vocab" aria-labelledby="vocabulary-title">
       <div class="vocab-hero">
         <div class="vocab-hero-copy">
           <p class="vocabulary-eyebrow">WORKPLACE VOCABULARY</p>
@@ -491,8 +569,8 @@ function renderHome() {
 
     ${grammarSection()}
 
-    <section class="card lesson-entry" id="nav-practice"><p class="section-kicker">LISTENING LESSONS</p><h2>聽力小課程</h2><p>用職場情境練習聽力。先聽錄音，再看中文概要、英文逐字稿和實用片語。</p><button class="btn primary" data-action="lessons">開始聽小課程</button></section>
-    <section class="practice-grid" aria-label="Listening 聽力與 Reading 閱讀練習">
+    <section class="card lesson-entry home-extra" id="nav-practice"><p class="section-kicker">LISTENING LESSONS</p><h2>聽力小課程</h2><p>用職場情境練習聽力。先聽錄音，再看中文概要、英文逐字稿和實用片語。</p><button class="btn primary" data-action="lessons">開始聽小課程</button></section>
+    <section class="practice-grid home-extra" aria-label="Listening 聽力與 Reading 閱讀練習">
       <article class="card practice-card listening-card">
         <div class="section-label">LISTENING</div>
         <h2>聽力練習</h2>
@@ -589,6 +667,7 @@ function renderHome() {
   document.getElementById('speech-rate').value = String(audio.getRate());
   paintVocab();
   fillVoices();
+  refreshOffline();
 }
 
 function flashSetup() {
@@ -1689,6 +1768,9 @@ app.addEventListener("click", (e) => {
       flashQueue = selectCards(flashItems, progress, { level: "pick", category: "all", limit: introduced + 10 });
       flashRevealed = false; flashRender(); break;
     }
+    case "toggle-focus": { store.set(KEY_HOME_FOCUS, !homeFocus()); renderHome(); break; }
+    case "offline-download": startOfflineDownload(); break;
+    case "offline-cancel": offline.controller?.abort(); break;
     case "home-jump": {
       const el = document.getElementById(d.target);
       if (el) el.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
