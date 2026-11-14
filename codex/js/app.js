@@ -1,5 +1,6 @@
 import * as audio from "./audio.js";
 import { VOCABULARY } from "./vocabulary.js";
+import { GRAMMAR } from "./grammar.js";
 import { LESSONS } from "./listening-lessons.js";
 import { migrateFlashcardProgress, rateCard, selectCards } from "./srs.js";
 import { flatten, score, estimateProgress, mergeSkillStats, weakest, groupsForSkill, updateWrongAnswerQueue, queueWrongReview, wrongAnswerDue, answeredWrong, answerLocked, formatDuration, normalizeMockSection, opensReadingAfterListening } from "./scoring.js";
@@ -80,7 +81,7 @@ function sectionBadge(section) {
 }
 function vocabLevel() {
   const value = store.get(KEY_VOCAB_LEVEL, "all");
-  return ["all", "700", "800", "900"].includes(value) ? value : "all";
+  return ["all", "700", "800", "850", "900"].includes(value) ? value : "all";
 }
 function vocabParts(item) {
   const [word, meaning, example, level, pos = "", full = ""] = item;
@@ -93,10 +94,10 @@ function readingFullLast(history, formId) {
   return `上次：${last.correct}/${last.total} 題答對 · 用時 ${formatDuration(last.secUsed)}`;
 }
 function vocabLevelLabel(level) {
-  return level === 900 ? "900 金色證書" : level === 700 ? "常考單字" : "800 核心";
+  return level === 900 ? "900 金色證書" : level === 850 ? "進階選讀" : level === 700 ? "常考單字" : "800 核心";
 }
 function vocabCounts() {
-  const counts = { 700: 0, 800: 0, 900: 0 };
+  const counts = { 700: 0, 800: 0, 850: 0, 900: 0 };
   for (const group of VOCABULARY) for (const item of group.words) counts[item[3]] += 1;
   return counts;
 }
@@ -254,7 +255,26 @@ function todayStrip(wrongDue, wordDue, history) {
   return `<section class="today-strip" aria-label="今日待辦"><p class="today-title">今日<span class="muted"> · ${lastText}</span></p><div class="today-items">${item(wordDue, "單字待複習", "vocab-open", "複習單字")}${item(wrongDue, "錯題到期", "review-wrong", "複習錯題")}</div>${empty ? '<p class="muted today-empty">今天沒有到期的複習，可以直接做一組模考，或背幾個新單字。</p>' : ""}</section>`;
 }
 
-const HOME_NAV = [["nav-mock", "模考"], ["nav-vocab", "單字"], ["nav-practice", "練習"], ["nav-review", "複習"]];
+const HOME_NAV = [["nav-mock", "模考"], ["nav-vocab", "單字"], ["nav-grammar", "文法"], ["nav-practice", "練習"], ["nav-review", "複習"]];
+
+function grammarSection() {
+  const quizCount = GRAMMAR.reduce((sum, topic) => sum + topic.quiz.length, 0);
+  return `<section class="card grammar-card" id="nav-grammar" aria-labelledby="grammar-title">
+      <p class="vocabulary-eyebrow">TOEIC GRAMMAR</p>
+      <h2 id="grammar-title">多益常考文法</h2>
+      <p class="muted">Part 5、Part 6 最常出現的 ${GRAMMAR.length} 個文法考點：建議要求後接原形、過去分詞、詞性、時態、主被動等。每個主題有規則、陷阱、例句和小練習（共 ${quizCount} 題）。內容由本站整理與自寫，不是 ETS 官方題目。</p>
+      <details class="grammar-list">
+        <summary>展開文法重點與練習</summary>
+        ${GRAMMAR.map((topic) => `<details class="grammar-topic" data-grammar-topic="${esc(topic.id)}"><summary>${esc(topic.title)}</summary>
+          <p>${esc(topic.rule)}</p>
+          <ul class="grammar-clues">${topic.clues.map((c) => `<li>${esc(c)}</li>`).join("")}</ul>
+          <div class="grammar-examples">${topic.examples.map(([en, zh]) => `<p><b>${esc(en)}</b><br><span class="muted">${esc(zh)}</span></p>`).join("")}</div>
+          <p class="grammar-trap"><b>常見陷阱：</b>${esc(topic.trap)}</p>
+          ${topic.quiz.map((item, qi) => `<div class="grammar-quiz" data-grammar-quiz="${qi}"><p class="grammar-q"><b>${qi + 1}.</b> ${esc(item.q)}</p><div class="grammar-options" role="group" aria-label="選項">${item.options.map((opt, oi) => `<button type="button" class="btn small" data-action="grammar-answer" data-topic="${esc(topic.id)}" data-q="${qi}" data-i="${oi}">${String.fromCharCode(65 + oi)}. ${esc(opt)}</button>`).join("")}</div><p class="grammar-feedback" role="status" aria-live="polite"></p></div>`).join("")}
+        </details>`).join("")}
+      </details>
+    </section>`;
+}
 
 // Section shortcuts: sticky bar on wide screens, bottom tab bar on phones. Text only, no icons.
 function homeNav(reviewCount) {
@@ -281,7 +301,7 @@ function renderHome() {
   audio.stop();
   pauseOfficialPlayback();
   const vocab = vocabCounts();
-  const vocabTotal = vocab[700] + vocab[800] + vocab[900];
+  const vocabTotal = vocab[700] + vocab[800] + vocab[850] + vocab[900];
   const history = store.get(KEY_HISTORY, []);
   const days = Math.ceil((new Date(`${EXAM_DATE}T00:00:00`) - new Date()) / 86400000);
   const weak = weakest(mergeSkillStats(history), 3, 2);
@@ -338,8 +358,8 @@ function renderHome() {
       <div class="vocab-hero">
         <div class="vocab-hero-copy">
           <p class="vocabulary-eyebrow">WORKPLACE VOCABULARY</p>
-          <h2 id="vocabulary-title">職場字彙 <span>1000+</span></h2>
-          <p class="vocab-hero-subtitle">常考單字入門 <span aria-hidden="true">·</span> 800 打底 <span aria-hidden="true">·</span> 900 衝金色證書</p>
+          <h2 id="vocabulary-title">職場字彙 <span>1900+</span></h2>
+          <p class="vocab-hero-subtitle">常考單字入門 <span aria-hidden="true">·</span> 800 打底 <span aria-hidden="true">·</span> 900 衝金色證書 <span aria-hidden="true">·</span> 進階選讀</p>
         </div>
         <div class="vocab-seal" aria-hidden="true"><b>900</b><span>GOLD<br>CERTIFICATE</span></div>
       </div>
@@ -347,7 +367,8 @@ function renderHome() {
         <div class="vocab-stat"><b>${vocabTotal}</b><span>總詞條</span></div>
         <div class="vocab-stat"><b>${vocab[700]}</b><span>常考單字</span></div>
         <div class="vocab-stat"><b>${vocab[800]}</b><span>800 核心</span></div>
-        <div class="vocab-stat vocab-stat-gold"><b>${vocab[900]}</b><span>900 進階</span></div>
+        <div class="vocab-stat vocab-stat-gold"><b>${vocab[900]}</b><span>900 金色證書</span></div>
+        <div class="vocab-stat"><b>${vocab[850]}</b><span>進階選讀</span></div>
       </div>
       <div class="vocab-actions">
         <button type="button" class="btn primary" data-action="vocab-open">開始背單字</button>
@@ -355,17 +376,20 @@ function renderHome() {
       </div>
       <details class="vocabulary-list">
         <summary>瀏覽單字與主題</summary>
-        <p class="muted">全部會把常考單字、800 與 900 穿插列出。例句由本站撰寫，並非官方題目或官方字表。</p>
+        <p class="muted">全部會把常考單字、800 與 900 穿插列出。900 金色證書只收多益真的可能考到的字；較冷僻、偏專業的字放在「進階選讀」，想多學再看。例句由本站撰寫，並非官方題目或官方字表。</p>
         <div class="vocab-filters" role="group" aria-label="字彙程度">
           <button type="button" class="btn small" data-action="vocab-filter" data-vocab-filter="700">常考單字</button>
           <button type="button" class="btn small" data-action="vocab-filter" data-vocab-filter="800">800 核心</button>
-          <button type="button" class="btn small" data-action="vocab-filter" data-vocab-filter="900">900 進階</button>
+          <button type="button" class="btn small" data-action="vocab-filter" data-vocab-filter="900">900 金色證書</button>
+          <button type="button" class="btn small" data-action="vocab-filter" data-vocab-filter="850">進階選讀</button>
           <button type="button" class="btn small" data-action="vocab-filter" data-vocab-filter="all">全部</button>
         </div>
-        ${VOCABULARY.map((group) => `<details class="vocabulary-group" data-vocab-group><summary>${esc(group.category)} · <span data-vocab-count>${group.words.length} 個詞條</span></summary>${group.words.map((item) => { const entry = vocabParts(item); const { meaning, example, level, pos } = entry; return `<p class="${level === 900 ? "vocab-gold" : level === 700 ? "vocab-common" : "vocab-core"}" data-vocab-level="${level}"><b>${vocabName(entry)}</b>${pos ? ` <span class="muted">${esc(pos)}</span>` : ""} <span class="tag">${vocabLevelLabel(level)}</span> · ${esc(meaning)}<br><span class="muted">${esc(example)}</span></p>`; }).join("")}</details>`).join("")}
+        ${VOCABULARY.map((group) => `<details class="vocabulary-group" data-vocab-group><summary>${esc(group.category)} · <span data-vocab-count>${group.words.length} 個詞條</span></summary>${group.words.map((item) => { const entry = vocabParts(item); const { meaning, example, level, pos } = entry; return `<p class="${level === 900 ? "vocab-gold" : level === 700 ? "vocab-common" : level === 850 ? "vocab-adv" : "vocab-core"}" data-vocab-level="${level}"><b>${vocabName(entry)}</b>${pos ? ` <span class="muted">${esc(pos)}</span>` : ""} <span class="tag">${vocabLevelLabel(level)}</span> · ${esc(meaning)}<br><span class="muted">${esc(example)}</span></p>`; }).join("")}</details>`).join("")}
         <p><a href="https://www.toeic.com.tw/toeic/listening-reading/about/content/" target="_blank" rel="noopener noreferrer">參考：台灣多益官方測驗內容</a> · <a href="https://dictionary.cambridge.org/dictionary/english/" target="_blank" rel="noopener noreferrer">Cambridge Dictionary</a></p>
       </details>
     </section>
+
+    ${grammarSection()}
 
     <section class="card lesson-entry" id="nav-practice"><p class="section-kicker">LISTENING LESSONS</p><h2>聽力小課程</h2><p>用職場情境練習聽力。先聽錄音，再看中文概要、英文逐字稿和實用片語。</p><button class="btn primary" data-action="lessons">開始聽小課程</button></section>
     <section class="practice-grid" aria-label="Listening 聽力與 Reading 閱讀練習">
@@ -476,8 +500,8 @@ function flashSetup() {
   const started = flashItems.filter(item => progress[item.word]).length;
   const due = selectCards(flashItems, progress, { ...options, limit: 0 }).length;
   app.innerHTML = `<section class="card flash-card"><p class="section-kicker">VOCABULARY PRACTICE</p><h1>單字閃卡</h1><p>先回想意思，再翻面核對。進度保存在這個瀏覽器。</p>
-    <p>已學會 ${learned} · 學習中 ${started - learned} · 未開始 ${flashItems.length - started}<br>900 進階：${goldLearned} / ${flashItems.filter(item => item.level === 900).length} 已學會</p><progress aria-label="900 進階學習進度" value="${goldLearned}" max="${flashItems.filter(item => item.level === 900).length}"></progress><p>目前篩選有 ${due} 個到期複習詞。</p>
-    <div class="flash-settings"><label>程度 <select id="flash-level" class="btn"><option value="all">全部</option><option value="700">常考單字</option><option value="800">800 核心</option><option value="900">900 進階</option></select></label>
+    <p>已學會 ${learned} · 學習中 ${started - learned} · 未開始 ${flashItems.length - started}<br>900 金色證書：${goldLearned} / ${flashItems.filter(item => item.level === 900).length} 已學會</p><progress aria-label="900 進階學習進度" value="${goldLearned}" max="${flashItems.filter(item => item.level === 900).length}"></progress><p>目前篩選有 ${due} 個到期複習詞。</p>
+    <div class="flash-settings"><label>程度 <select id="flash-level" class="btn"><option value="all">全部</option><option value="700">常考單字</option><option value="800">800 核心</option><option value="900">900 金色證書</option><option value="850">進階選讀</option></select></label>
     <label>主題 <select id="flash-category" class="btn"><option value="all">全部主題</option>${VOCABULARY.map(group => `<option value="${esc(group.category)}">${esc(group.category)}</option>`).join('')}</select></label>
     <label>每日新字 <input id="flash-limit" type="number" min="0" max="100" value="${Math.max(0, Math.min(100, Number(options.limit) || 0))}"></label></div>
     <div class="row"><button class="btn primary" data-action="flash-start">開始練習</button><button class="btn" data-action="home">回首頁</button></div></section>`;
@@ -1489,6 +1513,21 @@ app.addEventListener("click", (e) => {
       break;
     }
     case "vocab-filter": store.set(KEY_VOCAB_LEVEL, d.vocabFilter); paintVocab(); break;
+    case "grammar-answer": {
+      const topic = GRAMMAR.find((x) => x.id === d.topic);
+      const item = topic?.quiz[Number(d.q)];
+      const box = t.closest("[data-grammar-quiz]");
+      if (!item || !box) break;
+      const picked = Number(d.i);
+      const right = picked === item.answer;
+      box.querySelectorAll("[data-action='grammar-answer']").forEach((button, index) => {
+        button.classList.toggle("grammar-correct", index === item.answer);
+        button.classList.toggle("grammar-wrong", index === picked && !right);
+      });
+      const feedback = box.querySelector(".grammar-feedback");
+      if (feedback) feedback.textContent = `${right ? "答對了。" : `答錯了，正確答案是 ${String.fromCharCode(65 + item.answer)}。`}${item.why}`;
+      break;
+    }
     case "home-jump": {
       const el = document.getElementById(d.target);
       if (el) el.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });

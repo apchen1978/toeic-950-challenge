@@ -23,3 +23,11 @@ The new 800 entries are original short examples, not text copied from a vocabula
 新增 434 個常考單字（2026-11-13 審查後調整，原為 453），內部等級是 `700`，畫面上只顯示「常考單字」，不標分數。對象是以 600–750 分為目標、或剛開始準備多益的人：辦公室、會議、雇用、訂單、出差、付款、銷售、設施、電話客服、工廠、飯店活動、公告書信、專案營運裡最常見的單字與片語。每個詞條都有中文、詞性與本站自寫的短例句，不抄字書，也和既有的 800、900 詞條不重複（含複數與連字號變體）。常考單字平均穿插在各主題中；800 與 900 的標籤和數量都沒有改。首頁標題改為「職場字彙 1000+」。
 
 Added 434 common words (after review; first release had 453) (internal level `700`, labelled 常考單字 with no score) for learners aiming at roughly 600–750. Examples are original. Existing 800 and 900 entries are unchanged.
+
+## 進階選讀與金色證書重整（2026-11-14）
+
+新增第四個等級 `850`，畫面顯示「進階選讀」。296 個偏專業、多益很少考的詞（例如 `demurrage`、`takt time`、`garden leave`、`lookalike audience`、`without prejudice`）從 900 降到進階選讀，**沒有刪除任何詞條**，仍可瀏覽、篩選與背誦。900 金色證書現在只留多益真的可能考到的字（273 條）。`CEO`、`CFO`、`R&D`、`ROI` 太基本，從 900 改為 800。
+
+另外新增 287 個 800／900 詞條（扣掉與既有重複後），補的是原本缺的：Part 1 看圖動作與場景、Part 5/6 常考形容詞與副詞、易混字組（affect/effect、ensure/insure/assure 等）、房產設施、訂閱與出版展覽、保險醫療銀行、IT 系統、人事職稱、環保貿易，以及高分動詞。例句為本站自寫。目前合計 1921 條：常考單字 434、800 核心 918、進階選讀 296、金色證書 900 共 273。
+
+Level `850` (shown as 進階選讀 / advanced reading) holds 296 specialist terms that are rarely tested; they were demoted from 900, not deleted. Gold 900 now keeps only words likely to appear on the test (273). `CEO`, `CFO`, `R&D` and `ROI` moved to 800. 287 new 800/900 entries were added for gaps in Part 1 photo vocabulary, Part 5/6 adjectives and adverbs, commonly confused words, property, subscriptions and exhibitions, insurance, banking, IT, job titles, and trade. The 20-percent-900-per-theme rule no longer applies.
