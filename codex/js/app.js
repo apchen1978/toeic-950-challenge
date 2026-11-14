@@ -413,7 +413,7 @@ function renderHome() {
       <p class="home-eyebrow">LISTENING &amp; READING <span aria-hidden="true">/</span> PRACTICE</p>
       <h1>TOEIC 950+<br><span>Challenge</span></h1>
       <p class="home-intro">上次 955，這次挑戰更高。<br>專注聽力與閱讀的推論、細節與交叉比對。</p>
-      <p class="home-collab"><b>Paul × AI</b> 一起備考：Paul 決定方向與取捨，AI 協助出題、整理單字與文法，再由 Paul 實際練習、回饋、調整。</p>
+      <p class="home-collab"><b>Paul × AI</b> 一起備考：Paul 決定方向與取捨，AI 一起腦力激盪、協助出題，並整理單字與文法，再由 Paul 實際練習、回饋、調整。</p>
     </header>
     ${homeNav(dueQuestions.length + wordDue)}
     ${todayStrip(dueQuestions.length, wordDue, history)}
