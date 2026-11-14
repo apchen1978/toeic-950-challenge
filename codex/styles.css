@@ -139,6 +139,7 @@ a { color: var(--brand); text-underline-offset: .17em; }
 .home-header h1 { margin: 0; font: 600 clamp(2.35rem, 6vw, 4rem)/1.01 Georgia, 'Times New Roman', serif; letter-spacing: -.045em; color: var(--ink); }
 .home-header h1 span { color: var(--brand); }
 .home-intro { color: var(--muted); margin: 17px 0 0; line-height: 1.7; }
+.home-collab { margin: 10px 0 0; padding: 8px 12px; border-left: 3px solid var(--brand); background: var(--sel); border-radius: 0 8px 8px 0; line-height: 1.65; font-size: .9375rem; }
 .card { border-radius: 6px; padding: 22px; margin: 16px 0; box-shadow: 0 1px 0 rgba(20,45,49,.03); }
 .quick-card { border-top: 3px solid var(--brand); }
 .quick-card .section-kicker { margin-bottom: 9px; }

@@ -56,3 +56,7 @@ test("grammar section is on the home page with a nav pill and a working answer h
   assert.match(app, /store\.set\(KEY_GRAMMAR, saved\)/);
   assert.match(app, /data-action="grammar-drill">練 5 題文法/);
 });
+
+test("home header states the Paul x AI collaboration", () => {
+  assert.match(app, /class="home-collab"><b>Paul × AI<\/b>/);
+});
