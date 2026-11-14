@@ -6,7 +6,10 @@ import { GRAMMAR } from "../codex/js/grammar.js";
 const app = readFileSync(new URL("../codex/js/app.js", import.meta.url), "utf8");
 
 test("every grammar topic has a rule, clues, examples, a trap and valid practice items", () => {
-  assert.ok(GRAMMAR.length >= 14);
+  assert.ok(GRAMMAR.length >= 18);
+  const questions = GRAMMAR.flatMap((topic) => topic.quiz.map((item) => item.q));
+  assert.equal(new Set(questions).size, questions.length, "question text must be unique because saved progress is keyed by it");
+  assert.ok(questions.length >= 70);
   const ids = new Set();
   for (const topic of GRAMMAR) {
     assert.ok(!ids.has(topic.id), `duplicate id ${topic.id}`);
@@ -19,7 +22,7 @@ test("every grammar topic has a rule, clues, examples, a trap and valid practice
       assert.match(en, /[A-Za-z]/, topic.id);
       assert.match(zh, /[一-鿿]/, topic.id);
     }
-    assert.ok(topic.quiz.length >= 2, topic.id);
+    assert.ok(topic.quiz.length >= 4, topic.id);
     for (const item of topic.quiz) {
       assert.match(item.q, /____/, `${topic.id} question needs a blank`);
       assert.equal(item.options.length, 4, topic.id);
@@ -49,4 +52,7 @@ test("grammar section is on the home page with a nav pill and a working answer h
   assert.match(app, /\$\{grammarSection\(\)\}/);
   assert.match(app, /case "grammar-answer":/);
   assert.match(app, /id="nav-grammar"/);
+  assert.match(app, /case "grammar-drill": renderGrammarDrill\(\)/);
+  assert.match(app, /store\.set\(KEY_GRAMMAR, saved\)/);
+  assert.match(app, /data-action="grammar-drill">練 5 題文法/);
 });
