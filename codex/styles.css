@@ -449,3 +449,6 @@ details.card-more > summary:hover, details.fold > summary:hover { opacity: .85; 
 .plan-later summary { cursor: pointer; color: var(--brand); font-weight: 700; }
 .plan-days { margin: 8px 0 0; padding-left: 0; list-style: none; }
 .plan-days li { border-top: 1px solid var(--line); padding: 7px 0; line-height: 1.55; font-size: .9375rem; }
+
+.not-flag { background: #f3d37a; color: #241b00; padding: 0 5px; border-radius: 3px; font-weight: 800; }
+.not-hint { margin: 6px 0; padding: 6px 10px; border-left: 3px solid #d9a21b; background: var(--sel); font-size: .9375rem; line-height: 1.55; }
