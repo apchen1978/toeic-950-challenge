@@ -19,6 +19,30 @@ export const QUICK_BLUEPRINTS = {
       { part: 7, questions: 8, requireMulti: true }
     ]
   },
+  // 題型快練：單看聽力（15 題）或閱讀（12 題），題型混合。
+  "mini-listen-15": {
+    minutes: 8,
+    listening: 15,
+    reading: 0,
+    timing: { listening: 8, reading: 0 },
+    parts: [
+      { part: 1, groups: 1 },
+      { part: 2, groups: 5 },
+      { part: 3, groups: 2, questionsEach: 3 },
+      { part: 4, groups: 1, questionsEach: 3, preferGraphic: 1 }
+    ]
+  },
+  "mini-read-12": {
+    minutes: 9,
+    listening: 0,
+    reading: 12,
+    timing: { listening: 0, reading: 9 },
+    parts: [
+      { part: 5, groups: 5 },
+      { part: 6, groups: 1, questionsEach: 4 },
+      { part: 7, questions: 3 }
+    ]
+  },
   "quick-60": {
     minutes: 36,
     listening: 30,
@@ -172,7 +196,8 @@ function hasType(groups, part, pattern) {
 }
 
 export function quickCoverageIssues(groups, formId, section = "full") {
-  const full = formId === "quick-40" || formId === "quick-60";
+  const mini = String(formId).startsWith("mini-");
+  const full = formId === "quick-40" || formId === "quick-60" || mini;
   const long = formId === "quick-60";
   if (!full) return [];
   const issues = [];
@@ -180,8 +205,8 @@ export function quickCoverageIssues(groups, formId, section = "full") {
   const reading = section !== "listening";
   if (listening) {
     const p2Types = new Set(groups.filter((group) => group.part === 2).flatMap(questionTypes));
-    if (p2Types.size < 4) issues.push("P2 four response types");
-    if (!groups.some((group) => [3, 4].includes(group.part) && questionTypes(group).some((type) => /intent|meaning|implied/i.test(type)))) issues.push("P3/P4 speaker intent");
+    if (p2Types.size < (mini ? 3 : 4)) issues.push(mini ? "P2 three response types" : "P2 four response types");
+    if (!mini && !groups.some((group) => [3, 4].includes(group.part) && questionTypes(group).some((type) => /intent|meaning|implied/i.test(type)))) issues.push("P3/P4 speaker intent");
     if (!groups.some((group) => [3, 4].includes(group.part) && isGraphicGroup(group))) issues.push("P3/P4 graphic");
     if (long && new Set(groups.filter((group) => group.part === 1).flatMap(questionTypes)).size < 2) issues.push("P1 two types");
     const photos = groups.filter((group) => group.part === 1).map((group) => group.image).filter(Boolean);
@@ -198,11 +223,11 @@ export function quickCoverageIssues(groups, formId, section = "full") {
     ].every((pattern) => [...types].some((type) => pattern.test(type)));
     if (!p5Coverage) issues.push("P5 grammar and vocabulary types");
     if (!hasType(groups, 6, /sentence.insertion|insert.sentence/i)) issues.push("P6 sentence insertion");
-    if (!groups.some((group) => group.part === 7 && isVerifiedCrossRef(group))) issues.push("P7 cross-reference");
+    if (!mini && !groups.some((group) => group.part === 7 && isVerifiedCrossRef(group))) issues.push("P7 cross-reference");
     const p7Synonym = hasType(groups, 7, /synonym|closest.in.meaning|vocab.in.context/i);
     const p7Intent = hasType(groups, 7, /intent|purpose.of.message|text.message.intent/i);
     if (long && (!p7Synonym || !p7Intent)) issues.push("P7 synonym and intent");
-    if (!long && !p7Synonym && !p7Intent) issues.push("P7 synonym or intent");
+    if (!long && !mini && !p7Synonym && !p7Intent) issues.push("P7 synonym or intent");
   }
   return issues;
 }

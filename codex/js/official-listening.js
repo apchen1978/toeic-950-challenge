@@ -1,7 +1,7 @@
 // Official mock listening: one pass, with the pauses a real TOEIC recording leaves for answers.
 import { assembleQuickForm } from "./quick-form.js";
 
-export const OFFICIAL_FORMS = ["quick-40", "quick-60", "form-a", "form-b", "form-c", "form-d", "listen-full-1", "listen-full-2"];
+export const OFFICIAL_FORMS = ["quick-40", "quick-60", "form-a", "form-b", "form-c", "form-d", "listen-full-1", "listen-full-2", "mini-listen-15"];
 export const isListeningFullForm = (id) => /^listen-full-[12]$/.test(String(id));
 export const OFFICIAL_PAUSES = { item: 5, question: 8, graphic: 12 };
 export const LISTEN_RATES = [0.9, 1, 1.1];
@@ -109,7 +109,7 @@ export function meanListeningMinutes(bank, manifest, formId, randomFns = [Math.r
   const samples = randomFns.length ? randomFns : [Math.random];
   let total = 0;
   for (const random of samples) {
-    const ids = String(formId).startsWith("quick-")
+    const ids = /^(quick|mini)-/.test(String(formId))
       ? assembleQuickForm(bank, formId, { random, accents }).groupIds
       : bank.meta.sets.find((set) => set.id === formId).groupIds;
     const groups = ids.map((id) => bank.groups.find((group) => group.id === id)).filter(Boolean);

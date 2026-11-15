@@ -1234,6 +1234,44 @@
         "timing": {
           "listening": 42
         }
+      },
+      {
+        "id": "mini-listen-15",
+        "label": "聽力快練 · 15 題（約 6 分鐘）",
+        "groupIds": [
+          "cov-p1-01",
+          "g-l01",
+          "g-xs-l02",
+          "cov-p2-12",
+          "cov-p2-08",
+          "xf-p2-02",
+          "g-gx-p3-02",
+          "g-round12-p3-accent-ca",
+          "g-gx-p4-05"
+        ],
+        "durationMin": 8,
+        "timing": {
+          "listening": 8,
+          "reading": 0
+        }
+      },
+      {
+        "id": "mini-read-12",
+        "label": "閱讀快練 · 12 題（9 分鐘）",
+        "groupIds": [
+          "g-cov-p5-23",
+          "xf-p5-23",
+          "xr2-p5-05",
+          "g-cov-p5-44",
+          "g-vocab-c-5",
+          "xr2-p6-utilities",
+          "g-cov-p7-syn-04"
+        ],
+        "durationMin": 9,
+        "timing": {
+          "listening": 0,
+          "reading": 9
+        }
       }
     ]
   },

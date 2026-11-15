@@ -464,7 +464,7 @@ function todayStrip(wrongDue, wordDue, history) {
     <div class="today-start"><button type="button" class="btn primary" data-action="flash-quick">背 10 個精選單字</button><button type="button" class="btn" data-action="grammar-drill">練 5 題文法</button><button type="button" class="btn" data-action="speed-start">快速反應 10 題</button></div></section>`;
 }
 
-const HOME_NAV = [["nav-review", "複習"], ["nav-preexam", "考前"], ["nav-mock", "模考"], ["nav-vocab", "單字"], ["nav-grammar", "文法"], ["nav-phrases", "快練"], ["nav-practice", "練習"]];
+const HOME_NAV = [["nav-mini", "快練"], ["nav-review", "複習"], ["nav-preexam", "考前"], ["nav-mock", "模考"], ["nav-vocab", "單字"], ["nav-grammar", "文法"], ["nav-phrases", "片語"], ["nav-practice", "練習"]];
 const HOME_NAV_EXTRA = new Set(["nav-vocab", "nav-grammar", "nav-practice"]);
 
 // 考前重點模式：收起單字、文法、聽力小課程與分項練習。沒設定過時，考前 14 天內自動開啟；手動切換後以使用者的選擇為準。
@@ -681,6 +681,19 @@ function renderHome() {
     ${focusBar(focus)}
     ${todayStrip(dueQuestions.length, wordDue, history)}
     <section class="card plan-card" id="plan-card" aria-labelledby="plan-title">${planCardInner()}</section>
+    <section class="card listening-full-card" id="nav-mini" aria-labelledby="mini-title">
+      <div class="reading-full-head"><span class="reading-full-badge">6–9 MIN</span><p class="section-kicker">QUICK SETS · 題型快練</p></div>
+      <h2 id="mini-title">聽力 15 題・閱讀 12 題</h2>
+      <p>想快速摸一下手感，或考前一兩天不想做太久時用。題型混合，每次從題庫重新抽，會避開最近出過的題目。</p>
+      <div class="reading-full-sets">
+        <div class="reading-full-set"><div class="rf-info"><h3>聽力快練 · 15 題</h3><p class="muted">約 ${approxListeningMinutes("mini-listen-15", 5) ?? 6} 分鐘 · Part 1 到 4 · 每題只播一次</p>${listeningFullLast(history, "mini-listen-15")}</div><div class="rf-actions"><button class="btn primary" data-action="start-form" data-form="mini-listen-15">開始聽力快練</button></div></div>
+        <div class="reading-full-set"><div class="rf-info"><h3>閱讀快練 · 12 題</h3><p class="muted">9 分鐘 · Part 5（5 題）、Part 6（4 題）、Part 7（3 題）</p>${listeningFullLast(history, "mini-read-12")}</div><div class="rf-actions"><button class="btn primary" data-action="start-form" data-form="mini-read-12">開始閱讀快練</button></div></div>
+      </div>
+      <details class="card-more"><summary>題型與時間說明</summary>
+        <p class="muted">聽力：照片 1 題、應答 5 題、對話 6 題、獨白 3 題，含圖表題，至少涵蓋三種應答類型。閱讀：Part 5 涵蓋詞性、時態、介系詞或連接詞、字彙四類，Part 6 含句子插入，Part 7 是單篇短題組。</p>
+        <p class="muted">閱讀每題約 45 秒，12 題 9 分鐘；聽力依音檔長度，含正式停頓。想練更多可以連做幾組，也可以搭配上方每日排程。題目為原創模擬題，非 ETS 官方試題。</p>
+      </details>
+    </section>
     ${session ? resumeCard() : ''}
     <section class="card" id="nav-review">
       <h2>弱項追蹤與推薦</h2>
@@ -1042,6 +1055,26 @@ function startReadingFull(formId, rotate = false) {
   else Object.assign(extra, { readingVariant: "rotation", rotationSeed: seed });
   const started = startSession("diagnostic", draw.groupIds, minutes, null, set.id, { reading: minutes }, extra);
   if (started && !draw.fallback) store.set(KEY_READING_ROTATION_RECENT, rememberQuickDraw(recent, draw.groupIds, formId));
+}
+
+async function startMiniForm(formId) {
+  const set = bank.meta.sets.find((item) => item.id === formId);
+  if (!set) return;
+  const listening = formId === "mini-listen-15";
+  const recent = store.get(KEY_QUICK_RECENT, []);
+  let manifest = { groups: {} };
+  try { manifest = await loadAudioManifest(); } catch { manifest = { groups: {} }; }
+  const accents = Object.fromEntries(Object.entries(manifest.groups ?? {}).map(([id, entry]) => [id, entry.accent]));
+  const draw = assembleQuickForm(bank, formId, { avoid: avoidedGroupIds(recent), accents, section: listening ? "listening" : "reading" });
+  let started;
+  if (listening) {
+    const minutes = officialListeningMinutes(draw.groupIds, manifest);
+    started = startSession("diagnostic", draw.groupIds, minutes, null, set.id, { listening: minutes, reading: 0 }, { ...officialExtra(minutes), section: "listening" });
+  } else {
+    const minutes = set.timing?.reading ?? 9;
+    started = startSession("diagnostic", draw.groupIds, minutes, null, set.id, { reading: minutes }, { official: true, section: "reading" });
+  }
+  if (started) store.set(KEY_QUICK_RECENT, rememberQuickDraw(recent, draw.groupIds, formId));
 }
 
 async function startListeningFull(formId) {
@@ -1802,6 +1835,7 @@ app.addEventListener("click", (e) => {
     case "start-form": {
       if (d.form === "quick-40" || d.form === "quick-60") { startQuickForm(d.form); break; }
       if (isReadingFullForm(d.form)) { startReadingFull(d.form); break; }
+      if (d.form === "mini-listen-15" || d.form === "mini-read-12") { startMiniForm(d.form); break; }
       if (isListeningFullForm(d.form)) { startListeningFull(d.form); break; }
       if (isOfficialForm(d.form)) { startOfficialSet(d.form); break; }
       const set = bank.meta.sets.find((s) => s.id === d.form);
