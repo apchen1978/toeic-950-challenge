@@ -220,8 +220,7 @@ function readingFullLast(history, formId) {
     const result = bestSectionAccuracy(entries, "reading");
     return result ? `${result.correct}/${result.total} 題` : "—";
   };
-  return `<p class="muted">固定版最近成績 ${last ? `${last.correct}/${last.total} 題 · ${formatDuration(last.secUsed)}` : "—"}</p>
-    <p class="muted">微調版已做 ${rotations.length} 次</p>
+  return `<p class="muted">固定版最近成績 ${last ? `${last.correct}/${last.total} 題 · ${formatDuration(last.secUsed)}` : "—"} · 微調版已做 ${rotations.length} 次</p>
     ${attempts.length ? `<p class="muted">最佳成績 · 固定版 ${best(originals)} · 微調版 ${best(rotations)}</p>` : ""}`;
 }
 function vocabLevelLabel(level) {
@@ -389,7 +388,7 @@ function todayStrip(wrongDue, wordDue, history) {
     <div class="today-start"><button type="button" class="btn primary" data-action="flash-quick">背 10 個精選單字</button><button type="button" class="btn" data-action="grammar-drill">練 5 題文法</button><button type="button" class="btn" data-action="speed-start">快速反應 10 題</button></div></section>`;
 }
 
-const HOME_NAV = [["nav-preexam", "考前"], ["nav-mock", "模考"], ["nav-vocab", "單字"], ["nav-grammar", "文法"], ["nav-practice", "練習"], ["nav-review", "複習"]];
+const HOME_NAV = [["nav-review", "複習"], ["nav-preexam", "考前"], ["nav-mock", "模考"], ["nav-vocab", "單字"], ["nav-grammar", "文法"], ["nav-phrases", "快練"], ["nav-practice", "練習"]];
 const HOME_NAV_EXTRA = new Set(["nav-vocab", "nav-grammar", "nav-practice"]);
 
 // 考前重點模式：收起單字、文法、聽力小課程與分項練習。沒設定過時，考前 14 天內自動開啟；手動切換後以使用者的選擇為準。
@@ -400,7 +399,7 @@ function homeFocus() {
   return days !== null && days >= 0 && days <= 14;
 }
 function focusBar(focus) {
-  return `<div class="focus-bar"><p class="muted">${focus ? "考前重點模式：已收起單字、文法、聽力小課程與分項練習。" : "目前顯示全部內容。"}</p><button type="button" class="btn small" data-action="toggle-focus" aria-pressed="${focus}">${focus ? "顯示全部" : "只看考前重點"}</button></div>`;
+  return `<div class="focus-bar"><p class="muted">${focus ? '<b>考前重點模式</b><span class="focus-detail">：已收起單字、文法、聽力小課程與分項練習。</span>' : "目前顯示全部內容。"}</p><button type="button" class="btn small" data-action="toggle-focus" aria-pressed="${focus}">${focus ? "顯示全部" : "只看考前重點"}</button></div>`;
 }
 
 function examDaysLeft() {
@@ -518,6 +517,7 @@ function offlineCardHtml() {
   if (typeof caches === "undefined") return head + `<p class="muted">這個瀏覽器目前不支援離線儲存（需要 https 網址）。</p>`;
   const entries = offline.entries;
   if (!entries) return head + `<p class="muted">正在確認已下載的音檔…</p>`;
+  if (entries.length && offline.cached >= entries.length && !offline.running) return `<p class="offline-done"><b>離線聽力</b> · ${entries.length} 個音檔已存在這台裝置，沒有網路也能練聽力。</p>`;
   const total = entries.length;
   const bytes = entries.reduce((sum, e) => sum + e.bytes, 0);
   const complete = total > 0 && offline.cached >= total;
@@ -538,7 +538,9 @@ function offlineCardHtml() {
 }
 function paintOffline() {
   const el = document.getElementById("offline-card");
-  if (el) el.innerHTML = offlineCardHtml();
+  if (!el) return;
+  el.innerHTML = offlineCardHtml();
+  el.classList.toggle("is-done", Boolean(offline.entries?.length) && offline.cached >= offline.entries.length && !offline.running);
 }
 async function refreshOffline() {
   if (typeof caches === "undefined" || offline.running) return paintOffline();
@@ -595,22 +597,39 @@ function renderHome() {
     <header class="home-header">
       <p class="home-eyebrow">LISTENING &amp; READING <span aria-hidden="true">/</span> PRACTICE</p>
       <h1>TOEIC 950+<br><span>Challenge</span></h1>
-      <p class="home-intro">上次 955，這次挑戰更高。<br>專注聽力與閱讀的推論、細節與交叉比對。</p>
-      <p class="home-collab"><b>Paul × AI</b> 一起備考：Paul 決定方向與取捨，AI 一起腦力激盪、協助出題，並整理單字與文法，再由 Paul 實際練習、回饋、調整。</p>
+      <p class="home-intro">上次 955，這次挑戰更高。<span class="home-intro-more">專注聽力與閱讀的推論、細節與交叉比對。</span></p>
+      <p class="home-collab"><b>Paul × AI</b> 一起備考</p>
     </header>
     ${homeNav(dueQuestions.length + wordDue, focus)}
     ${focusBar(focus)}
     ${todayStrip(dueQuestions.length, wordDue, history)}
     ${session ? resumeCard() : ''}
+    <section class="card" id="nav-review">
+      <h2>弱項追蹤與推薦</h2>
+      ${weak.length ? weak.map((w) => `
+        <div class="skillrow"><div><b>${esc(skillLabel(w.skill))}</b><div class="muted">${esc(SKILLS[w.skill]?.tip ?? "")}</div></div>
+        <div>${Math.round(w.acc * 100)}%<br><button class="btn small" data-action="practice" data-skill="${esc(w.skill)}">練習</button></div></div>`).join("")
+        : `<p class="muted">完成第一次診斷後，這裡會列出你最弱的題型與練習建議。</p>`}
+    </section>
+
+    <section class="card">
+      <h2>錯題複習</h2>
+      <p>今天到期 <b>${dueQuestions.length}</b> 題／全部 <b>${queueCount}</b> 題</p>
+      <p class="muted">第一次答對後隔至少 1 天再複習，第二次答對才畢業。提前重做不增加次數；答錯重新開始。聽力複習可看逐字稿、口音及重播。</p>
+      <button class="btn primary" data-action="review-wrong" ${dueQuestions.length ? "" : "disabled"}>${dueQuestions.length ? `複習今天 ${dueQuestions.length} 題` : "目前沒有到期錯題"}</button>
+      <div class="row">${[1,2,3,4,5,6,7].map((part) => { const count = dueQuestions.filter((q) => q.part === part).length; return count ? `<button class="btn small" data-action="review-wrong" data-part="${part}">Part ${part} · ${count} 題</button>` : ''; }).join('')}</div>
+      ${wrongReasonSummary()}
+    </section>
+
     ${preExamCard()}
-    <section class="card offline-card" id="offline-card" aria-labelledby="offline-title">${offlineCardHtml()}</section>
+
 
     <section class="card reading-full-card" id="nav-mock" aria-labelledby="reading-full-title">
       <div class="reading-full-head"><span class="reading-full-badge">75 MIN</span><p class="section-kicker">READING MOCK · 閱讀完整模擬</p></div>
       <h2 id="reading-full-title">閱讀 100 題 · 75 分鐘（共三組）</h2>
-      <p>Part 5 30 題 → Part 6 16 題 → Part 7 54 題，依正式順序作答，75 分鐘倒數。</p>
+      <p>Part 5 30 題 → Part 6 16 題 → Part 7 54 題，依正式順序作答，75 分鐘倒數，有配速提示。</p>
       <div class="reading-full-sets">
-        ${[1, 2, 3].map((n) => `<div class="reading-full-set"><h3>閱讀模擬 ${n}</h3><p class="muted">100 題 · 75 分鐘 · 有配速提示</p>${readingFullLast(history, "read-full-" + n)}<button class="btn primary" data-action="start-form" data-form="read-full-${n}">開始閱讀模擬 ${n}（固定版）</button>${history.some((entry) => entry.formId === "read-full-" + n) ? `<button class="btn" data-action="start-reading-rotation" data-form="read-full-${n}">再練一次（微調版，約 3 成換題）</button>` : ""}</div>`).join("")}
+        ${[1, 2, 3].map((n) => `<div class="reading-full-set"><div class="rf-info"><h3>閱讀模擬 ${n}</h3>${readingFullLast(history, "read-full-" + n)}</div><div class="rf-actions"><button class="btn primary" data-action="start-form" data-form="read-full-${n}">開始閱讀模擬 ${n}（固定版）</button>${history.some((entry) => entry.formId === "read-full-" + n) ? `<button class="btn" data-action="start-reading-rotation" data-form="read-full-${n}">再練一次（微調版，約 3 成換題）</button>` : ""}</div></div>`).join("")}
       </div>
       <p class="muted">固定版每次題目相同，方便比較進步；微調版約換 3 成同類型題目。兩者皆為本站原創模擬題，非 ETS 官方試題。</p>
       <details class="card-more"><summary>配速提示與題目說明</summary>
@@ -699,6 +718,7 @@ function renderHome() {
         <button class="btn primary" data-action="start-section" data-section="reading">開始閱讀練習</button>
       </article>
     </section>
+    <section class="card offline-card" id="offline-card" aria-labelledby="offline-title">${offlineCardHtml()}</section>
     <p class="quiet-link"><button type="button" class="linkish" data-action="tips">考前技巧</button></p>
 
     <details class="card tips-card">
@@ -740,23 +760,7 @@ function renderHome() {
       <div id="unsupported-message">${audio.supported() ? '' : unsupportedNotice()}</div>
     </section>
 
-    <section class="card" id="nav-review">
-      <h2>弱項追蹤與推薦</h2>
-      ${weak.length ? weak.map((w) => `
-        <div class="skillrow"><div><b>${esc(skillLabel(w.skill))}</b><div class="muted">${esc(SKILLS[w.skill]?.tip ?? "")}</div></div>
-        <div>${Math.round(w.acc * 100)}%<br><button class="btn small" data-action="practice" data-skill="${esc(w.skill)}">練習</button></div></div>`).join("")
-        : `<p class="muted">完成第一次診斷後，這裡會列出你最弱的題型與練習建議。</p>`}
-    </section>
-
-    <section class="card">
-      <h2>錯題複習</h2>
-      <p>今天到期 <b>${dueQuestions.length}</b> 題／全部 <b>${queueCount}</b> 題</p>
-      <p class="muted">第一次答對後隔至少 1 天再複習，第二次答對才畢業。提前重做不增加次數；答錯重新開始。聽力複習可看逐字稿、口音及重播。</p>
-      <button class="btn primary" data-action="review-wrong" ${dueQuestions.length ? "" : "disabled"}>${dueQuestions.length ? `複習今天 ${dueQuestions.length} 題` : "目前沒有到期錯題"}</button>
-      <div class="row">${[1,2,3,4,5,6,7].map((part) => { const count = dueQuestions.filter((q) => q.part === part).length; return count ? `<button class="btn small" data-action="review-wrong" data-part="${part}">Part ${part} · ${count} 題</button>` : ''; }).join('')}</div>
-      ${wrongReasonSummary()}
-    </section>
-
+    <p class="home-collab-note muted"><b>Paul × AI</b> 一起備考：Paul 決定方向與取捨，AI 一起腦力激盪、協助出題，並整理單字與文法，再由 Paul 實際練習、回饋、調整。</p>
     <details class="card fold" id="voicecard"><summary><h2>聽力音色</h2><span class="fold-hint">試聽與語速設定</span></summary><p class="muted">先試聽，再開始。音色依此裝置與瀏覽器提供，清單優先排列較自然的候選音色。</p><label for="speech-rate">語速</label> <select class="btn" id="speech-rate"><option value="0.85">0.85× · 精聽</option><option value="1">1× · 正常</option><option value="1.1">1.1× · 挑戰</option></select><div id="voices" class="muted">載入語音中…</div></details>
     <details class="card fold"><summary><h2>官方樣題與練習方式</h2><span class="fold-hint">官方公開樣題連結</span></summary><p>先做一套練習，再從錯題解析找失分原因；閱讀可獨立練習。可選四套 200 題分段計時練習，或使用短題組；照片題目前有 ${photoCount} 題試做。</p><p><a href="https://www.ets.org/pdfs/toeic/toeic-listening-reading-sample-test.pdf" target="_blank" rel="noopener">ETS 官方公開樣題 PDF（含解答與聽力稿）</a> · <a href="https://toeic.com.tw/toeic/listening-reading/about/content/" target="_blank" rel="noopener">台灣官方題型與時間</a></p><p class="muted">官方內容於來源頁開啟；本機題庫與官方樣題分開。正式閱讀為 100 題、75 分鐘。</p></details>
     <details class="card fold"><summary><h2>正式考試與素材庫</h2><span class="fold-hint">正式題數、時間與官方範例</span></summary><p>正式 Listening 100 題／約 45 分鐘；Reading 100 題／75 分鐘。實際作答約 2 小時，連基本資料及問卷約 2.5 小時。</p><details><summary>查看正式題數分配</summary><p>Part 1 照片 6 題 · Part 2 應答 25 題 · Part 3 對話 39 題 · Part 4 獨白 30 題。</p><p>Part 5 句子填空 30 題 · Part 6 段落填空 16 題 · Part 7 單篇 29 題、多篇 25 題。</p></details><p>台灣官方範例（在來源頁練習與核對答案）：</p><ul><li><a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample03.html" target="_blank" rel="noopener">Part 3 聽力對話</a> · <a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample04.html" target="_blank" rel="noopener">Part 4 聽力獨白</a></li><li><a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample05.html" target="_blank" rel="noopener">Part 5 句子填空</a> · <a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample06.html" target="_blank" rel="noopener">Part 6 段落填空</a> · <a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample07_03.html" target="_blank" rel="noopener">Part 7 多篇閱讀</a></li></ul><p class="muted">新增挑戰 03：聽力 20 題＋閱讀 20 題；也可只選閱讀 03。做完可以依錯題與弱項，決定下一回要練聽力、閱讀或照片題。</p></details>
