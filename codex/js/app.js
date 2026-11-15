@@ -17,6 +17,7 @@ import { assembleReadingRotation, isReadingFullForm, originalReadingGroups } fro
 import { CHOICE_REVISION, migrateChoiceIndexes } from "./choice-legacy.js";
 import { TIP_SECTIONS, TIPS_STORAGE_KEY, tipForPart, tipsEnabled } from "./tips.js";
 import { ABILITIES, abilityStats, scoreBand } from "./abilities.js";
+import { buildDrill, summarize, KIND_LABEL } from "./drill.js";
 import { COLLOCATIONS, PARAPHRASES, EMAIL_PHRASES, clozeOf } from "./phrases.js";
 import { audioEntries, countCached, downloadAll, formatMB } from "./offline.js";
 
@@ -58,6 +59,7 @@ const KEY_READING_ROTATION_RECENT = `${STORAGE_PREFIX}.reading-rotation-recent.v
 const KEY_MOCK_SECTION = `${STORAGE_PREFIX}.mock-section.v1`;
 const flashItems = VOCABULARY.flatMap(group => group.words.map(item => ({ ...vocabParts(item), category: group.category, pick: PICKS.has(item[0]) })));
 const KEY_HOME_FOCUS = `${STORAGE_PREFIX}.home-focus.v1`;
+const KEY_SPEED = `${STORAGE_PREFIX}.speed-drill.v1`;
 const KEY_GRAMMAR = `${STORAGE_PREFIX}.grammar.v1`;
 const GRAMMAR_QUIZ = GRAMMAR.flatMap((topic) => topic.quiz.map((item, qi) => ({ topic, item, qi })));
 // Saved grammar answers are keyed by question text: true = last answer was right.
@@ -87,6 +89,85 @@ function renderGrammarDrill() {
     <div class="row"><button class="btn primary" data-action="grammar-drill">再來 5 題</button><button class="btn" data-action="home">回首頁</button></div></section>`;
   window.scrollTo(0, 0);
 }
+// ---- 速度快練 ----
+const speed = { items: [], i: 0, results: [], startedAt: 0, timer: 0, locked: false, next: 0, token: 0 };
+function speedStop() { clearInterval(speed.timer); clearTimeout(speed.next); speed.timer = 0; speed.token += 1; }
+function startSpeedDrill() {
+  audio.stop();
+  speedStop();
+  speed.items = buildDrill();
+  speed.i = 0;
+  speed.results = [];
+  renderSpeedItem();
+}
+function renderSpeedItem() {
+  const item = speed.items[speed.i];
+  speed.locked = false;
+  speed.startedAt = performance.now();
+  app.innerHTML = `<section class="card speed-card"><p class="section-kicker">SPEED DRILL · ${esc(KIND_LABEL[item.kind])} · ${speed.i + 1} / ${speed.items.length}</p>
+    <progress id="speed-bar" aria-label="剩餘時間" value="${item.limit}" max="${item.limit}"></progress> <span id="speed-sec" class="muted">${item.limit} 秒</span>
+    <h1 class="speed-prompt"${item.kind === "collocation" ? "" : ' lang="en"'}>${esc(item.prompt)}</h1>
+    <div class="speed-options">${item.options.map((option, i) => `<button type="button" class="btn speed-opt" data-action="speed-answer" data-i="${i}" lang="en">${esc(option)}</button>`).join("")}</div>
+    <div id="speed-feedback" role="status"></div>
+    <div class="row"><button type="button" class="btn" data-action="speed-quit">結束練習</button></div></section>`;
+  window.scrollTo(0, 0);
+  clearInterval(speed.timer);
+  speed.timer = setInterval(speedTick, 100);
+}
+function speedTick() {
+  const bar = document.getElementById("speed-bar");
+  if (!bar) { speedStop(); return; }
+  if (speed.locked) return;
+  const item = speed.items[speed.i];
+  const left = item.limit - (performance.now() - speed.startedAt) / 1000;
+  bar.value = Math.max(0, left);
+  const label = document.getElementById("speed-sec");
+  if (label) label.textContent = `${Math.max(0, Math.ceil(left))} 秒`;
+  if (left <= 0) speedAnswer(-1);
+}
+function speedAnswer(choice) {
+  if (speed.locked || !document.getElementById("speed-bar")) return;
+  speed.locked = true;
+  clearInterval(speed.timer);
+  const item = speed.items[speed.i];
+  const sec = Math.min(item.limit, (performance.now() - speed.startedAt) / 1000);
+  const correct = choice === item.answer;
+  speed.results.push({ kind: item.kind, prompt: item.prompt, correct, timedOut: choice < 0, sec, answerText: item.options[item.answer], note: item.note });
+  document.querySelectorAll(".speed-opt").forEach((btn, i) => {
+    btn.disabled = true;
+    if (i === item.answer) btn.classList.add("speed-right");
+    else if (i === choice) btn.classList.add("speed-wrong");
+  });
+  const feedback = document.getElementById("speed-feedback");
+  if (correct) {
+    feedback.innerHTML = `<p><b>答對</b> · ${sec.toFixed(1)} 秒</p>`;
+    const token = speed.token;
+    speed.next = setTimeout(() => { if (token === speed.token) speedNext(); }, 700);
+  } else {
+    feedback.innerHTML = `<p><b>${choice < 0 ? "時間到" : "答錯了"}</b> · 正確答案：<span lang="en">${esc(item.options[item.answer])}</span></p><p class="muted">${esc(item.note)}</p><button type="button" class="btn primary" data-action="speed-next">下一題</button>`;
+  }
+}
+function speedNext() {
+  if (!document.getElementById("speed-bar")) return;
+  clearTimeout(speed.next);
+  speed.i += 1;
+  if (speed.i >= speed.items.length) renderSpeedSummary(); else renderSpeedItem();
+}
+function renderSpeedSummary() {
+  speedStop();
+  const sum = summarize(speed.results);
+  const history = store.get(KEY_SPEED, []);
+  const previous = Array.isArray(history) ? history[history.length - 1] : null;
+  store.set(KEY_SPEED, [...(Array.isArray(history) ? history : []), { date: Date.now(), right: sum.right, total: sum.total, avgSec: Math.round(sum.avgSec * 10) / 10 }].slice(-20));
+  app.innerHTML = `<section class="card speed-card"><p class="section-kicker">SPEED DRILL · 結果</p><h1>${sum.right} / ${sum.total} 題答對</h1>
+    <div class="grid"><div class="stat"><b>${sum.avgSec.toFixed(1)} 秒</b>平均每題</div><div class="stat"><b>${sum.timeouts}</b>超時題數</div></div>
+    ${previous ? `<p class="muted">上一次：${previous.right} / ${previous.total} 題，平均 ${Number(previous.avgSec).toFixed(1)} 秒。</p>` : ""}
+    ${sum.missed.length ? `<h2>要再看一眼</h2><ul class="phrase-list">${sum.missed.map((r) => `<li><b lang="en">${esc(r.answerText)}</b><br><span class="muted">${esc(r.note)}</span></li>`).join("")}</ul>` : "<p>全對！下一輪試著再快一點。</p>"}
+    <p class="muted">這是練反應速度用的小練習，秒數只供自己比較，不是考試成績。</p>
+    <div class="row"><button type="button" class="btn primary" data-action="speed-start">再來 10 題</button><button type="button" class="btn" data-action="home">回首頁</button></div></section>`;
+  window.scrollTo(0, 0);
+}
+
 let flashQueue = [];
 let flashRevealed = false;
 const ACCENT_OPTIONS = [["all", "全部口音"], ["US", "美式 US"], ["UK", "英式 UK"], ["CA", "加拿大 CA"], ["AU", "澳洲 AU"]];
@@ -304,7 +385,7 @@ function todayStrip(wrongDue, wordDue, history) {
   const grammarDone = grammarRightTotal();
   return `<section class="today-strip" aria-label="今日待辦"><p class="today-title">今日<span class="muted"> · ${lastText}</span></p><div class="today-items">${item(wordDue, "單字待複習", "vocab-open", "複習單字")}${item(wrongDue, "錯題到期", "review-wrong", "複習錯題")}<div class="today-item"><b>${grammarDone}</b><span>/ ${GRAMMAR_QUIZ.length} 文法題答對</span></div></div>
     <p class="today-start-title">${empty ? "今天沒有到期的複習。花 10 分鐘，從這裡開始：" : "複習完，再花 10 分鐘："}</p>
-    <div class="today-start"><button type="button" class="btn primary" data-action="flash-quick">背 10 個精選單字</button><button type="button" class="btn" data-action="grammar-drill">練 5 題文法</button></div></section>`;
+    <div class="today-start"><button type="button" class="btn primary" data-action="flash-quick">背 10 個精選單字</button><button type="button" class="btn" data-action="grammar-drill">練 5 題文法</button><button type="button" class="btn" data-action="speed-start">快速反應 10 題</button></div></section>`;
 }
 
 const HOME_NAV = [["nav-preexam", "考前"], ["nav-mock", "模考"], ["nav-vocab", "單字"], ["nav-grammar", "文法"], ["nav-practice", "練習"], ["nav-review", "複習"]];
@@ -361,9 +442,11 @@ function renderPreExam() {
 }
 
 function phrasesSection() {
-  return `<section class="card phrases-card home-extra" id="nav-phrases" aria-labelledby="phrases-title">
+  return `<section class="card phrases-card" id="nav-phrases" aria-labelledby="phrases-title">
       <p class="vocabulary-eyebrow">PHRASES &amp; PARAPHRASE</p>
       <h2 id="phrases-title">片語・搭配詞・同義改寫</h2>
+      <div class="vocab-actions"><button type="button" class="btn primary" data-action="speed-start">快速反應 10 題</button></div>
+      <p class="muted">前面的 Part 練得快，時間才留得給 Part 7。快練混合搭配詞、同義改寫和 Part 2 應答，每題限時 8–10 秒，練的是反應速度。</p>
       <p class="muted">Part 5 的字彙題常考「固定搭配」，Part 3、4、7 的選項常把原文換個說法。這裡整理 ${COLLOCATIONS.length} 組搭配、${PARAPHRASES.length} 組同義改寫和 Email 常用句（本站原創整理，非官方字表）。</p>
       <details class="grammar-list"><summary>搭配詞 ${COLLOCATIONS.length} 組（含挖空自測）</summary>
         <p class="muted">把「動詞＋名詞」或「形容詞＋介系詞」當成一個單位記，不要拆開背。</p>
@@ -1792,6 +1875,10 @@ app.addEventListener("click", (e) => {
       flashQueue = selectCards(flashItems, progress, { level: "pick", category: "all", limit: introduced + 10 });
       flashRevealed = false; flashRender(); break;
     }
+    case "speed-start": startSpeedDrill(); break;
+    case "speed-answer": speedAnswer(Number(d.i)); break;
+    case "speed-next": speedNext(); break;
+    case "speed-quit": speedStop(); renderHome(); break;
     case "toggle-focus": { store.set(KEY_HOME_FOCUS, !homeFocus()); renderHome(); break; }
     case "offline-download": startOfflineDownload(); break;
     case "offline-cancel": offline.controller?.abort(); break;
