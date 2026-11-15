@@ -17,6 +17,7 @@ import { assembleReadingRotation, isReadingFullForm, originalReadingGroups } fro
 import { CHOICE_REVISION, migrateChoiceIndexes } from "./choice-legacy.js";
 import { TIP_SECTIONS, TIPS_STORAGE_KEY, tipForPart, tipsEnabled } from "./tips.js";
 import { ABILITIES, abilityStats, scoreBand } from "./abilities.js";
+import { COLLOCATIONS, PARAPHRASES, EMAIL_PHRASES, clozeOf } from "./phrases.js";
 import { audioEntries, countCached, downloadAll, formatMB } from "./offline.js";
 
 const EXAM_DATE = "2026-11-29";
@@ -359,6 +360,28 @@ function renderPreExam() {
   window.scrollTo(0, 0);
 }
 
+function phrasesSection() {
+  return `<section class="card phrases-card home-extra" id="nav-phrases" aria-labelledby="phrases-title">
+      <p class="vocabulary-eyebrow">PHRASES &amp; PARAPHRASE</p>
+      <h2 id="phrases-title">片語・搭配詞・同義改寫</h2>
+      <p class="muted">Part 5 的字彙題常考「固定搭配」，Part 3、4、7 的選項常把原文換個說法。這裡整理 ${COLLOCATIONS.length} 組搭配、${PARAPHRASES.length} 組同義改寫和 Email 常用句（本站原創整理，非官方字表）。</p>
+      <details class="grammar-list"><summary>搭配詞 ${COLLOCATIONS.length} 組（含挖空自測）</summary>
+        <p class="muted">把「動詞＋名詞」或「形容詞＋介系詞」當成一個單位記，不要拆開背。</p>
+        <ul class="phrase-list">${COLLOCATIONS.map((item) => `<li><b lang="en">${esc(item[0])}</b> · ${esc(item[1])}<br><span lang="en">${esc(item[2])}</span> <span class="muted">${esc(item[3])}</span></li>`).join("")}</ul>
+        <h3>自測：先猜空格，再點開看答案</h3>
+        ${COLLOCATIONS.map((item) => `<details class="phrase-quiz"><summary lang="en">${esc(clozeOf(item))}</summary><p><b lang="en">${esc(item[0])}</b> · ${esc(item[1])}</p></details>`).join("")}
+      </details>
+      <details class="grammar-list"><summary>同義改寫 ${PARAPHRASES.length} 組</summary>
+        <p class="muted">原文寫左邊那個字，選項可能換成右邊的說法。看到陌生的選項時，先想它是不是原文的改寫。</p>
+        <table class="phrase-table"><thead><tr><th>原文常見</th><th>選項可能換成</th><th>意思</th></tr></thead><tbody>${PARAPHRASES.map(([a, b, c]) => `<tr><td lang="en">${esc(a)}</td><td lang="en">${esc(b)}</td><td>${esc(c)}</td></tr>`).join("")}</tbody></table>
+      </details>
+      <details class="grammar-list"><summary>Email 常用句 ${EMAIL_PHRASES.length} 句</summary>
+        <p class="muted">Part 7 的信件題先抓寄信目的：第一段通常有。</p>
+        <ul class="phrase-list">${EMAIL_PHRASES.map(([a, b]) => `<li><b lang="en">${esc(a)}</b><br><span class="muted">${esc(b)}</span></li>`).join("")}</ul>
+      </details>
+    </section>`;
+}
+
 function grammarSection() {
   const quizCount = GRAMMAR_QUIZ.length;
   const progress = grammarProgress();
@@ -568,6 +591,7 @@ function renderHome() {
     </section>
 
     ${grammarSection()}
+    ${phrasesSection()}
 
     <section class="card lesson-entry home-extra" id="nav-practice"><p class="section-kicker">LISTENING LESSONS</p><h2>聽力小課程</h2><p>用職場情境練習聽力。先聽錄音，再看中文概要、英文逐字稿和實用片語。</p><button class="btn primary" data-action="lessons">開始聽小課程</button></section>
     <section class="practice-grid home-extra" aria-label="Listening 聽力與 Reading 閱讀練習">
