@@ -10,7 +10,7 @@ import { sectionChoiceHtml, selectMockSection } from "./mock-section.js";
 import { SKILLS, skillLabel } from "./skills.js";
 import { remainingMs, pauseTimer, resumeTimer, elapsedSeconds, startTimedForm, startReading } from "./timer.js";
 import { assembleQuickForm, avoidedGroupIds, createRng, isActiveGroup, rememberQuickDraw } from "./quick-form.js";
-import { allowsReplay, buildOfficialSequence, isOfficialForm, listenProgressLabel, meanListeningMinutes, playbackRateFor, progressForStep, sequenceSeconds } from "./official-listening.js";
+import { allowsReplay, buildOfficialSequence, isListeningFullForm, isOfficialForm, listenProgressLabel, meanListeningMinutes, playbackRateFor, progressForStep, sequenceSeconds } from "./official-listening.js";
 import { graphicHtml } from "./graphic.js";
 import { paceHint, paceSummary } from "./pace.js";
 import { assembleReadingRotation, isReadingFullForm, originalReadingGroups } from "./reading-rotation.js";
@@ -255,6 +255,17 @@ function readingFullLast(history, formId) {
   };
   return `<p class="muted">固定版最近成績 ${last ? `${last.correct}/${last.total} 題 · ${formatDuration(last.secUsed)}` : "—"} · 微調版已做 ${rotations.length} 次</p>
     ${attempts.length ? `<p class="muted">最佳成績 · 固定版 ${best(originals)} · 微調版 ${best(rotations)}</p>` : ""}`;
+}
+function listeningFullLast(history, formId) {
+  const attempts = history.filter((entry) => entry.formId === formId);
+  const last = attempts.at(-1);
+  const best = attempts.reduce((top, entry) => (!top || entry.correct > top.correct ? entry : top), null);
+  if (!last) return `<p class="muted">還沒做過</p>`;
+  return `<p class="muted">最近 ${last.correct}/${last.total} 題 · ${formatDuration(last.secUsed)} · 已做 ${attempts.length} 次${attempts.length > 1 ? ` · 最佳 ${best.correct}/${best.total} 題` : ""}</p>`;
+}
+function listeningFullMinutes(formId) {
+  const set = bank.meta.sets.find((item) => item.id === formId);
+  return approxListeningMinutes(formId) ?? set?.durationMin ?? 42;
 }
 function vocabLevelLabel(level) {
   return level === 900 ? "900 金色證書" : level === 850 ? "進階選讀" : level === 700 ? "常考單字" : "800 核心";
@@ -671,6 +682,19 @@ function renderHome() {
       </details>
     </section>
 
+    <section class="card listening-full-card" id="nav-listening-mock" aria-labelledby="listening-full-title">
+      <div class="reading-full-head"><span class="reading-full-badge">約 ${listeningFullMinutes("listen-full-1")} MIN</span><p class="section-kicker">LISTENING MOCK · 聽力完整模擬</p></div>
+      <h2 id="listening-full-title">聽力 100 題 · 約 ${listeningFullMinutes("listen-full-1")} 分鐘（共兩套）</h2>
+      <p>Part 1 6 題 → Part 2 25 題 → Part 3 39 題 → Part 4 30 題，依正式順序，每題只播一次，播完就結束，沒有倒數。</p>
+      <div class="reading-full-sets">
+        ${[1, 2].map((n) => `<div class="reading-full-set"><div class="rf-info"><h3>聽力模擬 ${n}</h3>${listeningFullLast(history, "listen-full-" + n)}</div><div class="rf-actions"><button class="btn primary" data-action="start-form" data-form="listen-full-${n}">開始聽力模擬 ${n}</button></div></div>`).join("")}
+      </div>
+      <details class="card-more"><summary>精選說明與時間</summary>
+        <p class="muted">兩套各 100 題，彼此沒有重複題組：四種口音（美、英、加、澳）平均分配，每套都有圖表題與推論題。長度是依音檔加上作答停頓計算（Part 1、2 每題約停 5 秒，Part 3、4 每題約停 8 秒，圖表題約停 12 秒），可能和正式考試的約 45 分鐘略有差距。</p>
+        <p class="muted">建議出發前 2–3 天，聽力和閱讀各完整練 1–2 次，找回手感就好，不必追求分數。音檔是練習用合成語音，題目為原創模擬題，非 ETS 官方試題。</p>
+      </details>
+    </section>
+
     <section class="card quick-card"><p class="section-kicker">PRACTICE TEST</p><h2>快速模考</h2>
       <p>40 題或 60 題，正式模式；可選只考閱讀或聽力。<br>${quickExamTimeCopy()}</p>
       ${sectionChoiceControl("mock-section-quick")}
@@ -984,6 +1008,16 @@ function startReadingFull(formId, rotate = false) {
   else Object.assign(extra, { readingVariant: "rotation", rotationSeed: seed });
   const started = startSession("diagnostic", draw.groupIds, minutes, null, set.id, { reading: minutes }, extra);
   if (started && !draw.fallback) store.set(KEY_READING_ROTATION_RECENT, rememberQuickDraw(recent, draw.groupIds, formId));
+}
+
+async function startListeningFull(formId) {
+  const set = bank.meta.sets.find((item) => item.id === formId);
+  if (!set) return;
+  let manifest = { groups: {} };
+  try { manifest = await loadAudioManifest(); } catch { manifest = { groups: {} }; }
+  const ids = idsForSection(set.groupIds, "listening");
+  const listeningMinutes = officialListeningMinutes(ids, manifest);
+  startSession("diagnostic", ids, listeningMinutes, null, set.id, { listening: listeningMinutes, reading: 0 }, { ...officialExtra(listeningMinutes), section: "listening" });
 }
 
 async function startOfficialSet(formId) {
@@ -1734,6 +1768,7 @@ app.addEventListener("click", (e) => {
     case "start-form": {
       if (d.form === "quick-40" || d.form === "quick-60") { startQuickForm(d.form); break; }
       if (isReadingFullForm(d.form)) { startReadingFull(d.form); break; }
+      if (isListeningFullForm(d.form)) { startListeningFull(d.form); break; }
       if (isOfficialForm(d.form)) { startOfficialSet(d.form); break; }
       const set = bank.meta.sets.find((s) => s.id === d.form);
       const ids = orderedGroupIds(set.groupIds).sort((a, b) => groupById(a).part - groupById(b).part);
