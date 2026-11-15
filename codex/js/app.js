@@ -17,6 +17,7 @@ import { assembleReadingRotation, isReadingFullForm, originalReadingGroups } fro
 import { CHOICE_REVISION, migrateChoiceIndexes } from "./choice-legacy.js";
 import { TIP_SECTIONS, TIPS_STORAGE_KEY, tipForPart, tipsEnabled } from "./tips.js";
 import { ABILITIES, abilityStats, scoreBand } from "./abilities.js";
+import { daysBetween, toISO, addDays, dayPlan, fullPlan, toggleDone } from "./plan.js";
 import { buildDrill, summarize, KIND_LABEL } from "./drill.js";
 import { COLLOCATIONS, PARAPHRASES, EMAIL_PHRASES, clozeOf } from "./phrases.js";
 import { audioEntries, countCached, downloadAll, formatMB } from "./offline.js";
@@ -62,6 +63,7 @@ const KEY_HOME_FOCUS = `${STORAGE_PREFIX}.home-focus.v1`;
 const KEY_SPEED = `${STORAGE_PREFIX}.speed-drill.v1`;
 const KEY_SPEED_MISSED = `${STORAGE_PREFIX}.speed-missed.v1`;
 const KEY_SPEED_VOICE = `${STORAGE_PREFIX}.speed-voice.v1`;
+const KEY_PLAN_DONE = `${STORAGE_PREFIX}.plan-done.v1`;
 const KEY_GRAMMAR = `${STORAGE_PREFIX}.grammar.v1`;
 const GRAMMAR_QUIZ = GRAMMAR.flatMap((topic) => topic.quiz.map((item, qi) => ({ topic, item, qi })));
 // Saved grammar answers are keyed by question text: true = last answer was right.
@@ -91,6 +93,36 @@ function renderGrammarDrill() {
     <div class="row"><button class="btn primary" data-action="grammar-drill">再來 5 題</button><button class="btn" data-action="home">回首頁</button></div></section>`;
   window.scrollTo(0, 0);
 }
+// ---- 每日備考排程 ----
+let planWeak = null;
+function planWeekday(iso) {
+  const [y, m, d] = iso.split("-").map(Number);
+  return new Date(y, m - 1, d).toLocaleDateString("zh-TW", { month: "numeric", day: "numeric", weekday: "short" });
+}
+function planTaskHtml(task, done) {
+  const attrs = Object.entries(task.attrs ?? {}).map(([k, v]) => ` data-${k}="${esc(v)}"`).join("");
+  const action = task.action ? `<button type="button" class="btn small" data-action="${esc(task.action)}"${attrs}>${esc(task.button ?? "開始")}</button>` : "";
+  return `<li class="plan-task${done ? " is-done" : ""}"><label><input type="checkbox" data-action="plan-toggle" data-key="${esc(task.key)}"${done ? " checked" : ""}> <span>${esc(task.label)}${task.minutes ? ` <span class="muted">· 約 ${task.minutes} 分</span>` : ""}</span></label>${action}</li>`;
+}
+function planCardInner() {
+  const today = toISO();
+  const left = daysBetween(today, EXAM_DATE);
+  const head = `<p class="section-kicker">STUDY PLAN</p><h2 id="plan-title">每日備考排程</h2>`;
+  if (left < 0) return head + `<p class="muted">考試日已過，辛苦了。</p>`;
+  const plan = dayPlan(left, { weakSkill: planWeak });
+  const doneKeys = new Set((store.get(KEY_PLAN_DONE, {}) ?? {})[today] ?? []);
+  const allDone = plan.tasks.length > 0 && plan.tasks.every((t) => doneKeys.has(t.key));
+  const later = fullPlan(left - 1, { weakSkill: planWeak });
+  return head + `<p><b>今天 ${esc(planWeekday(today))}</b> · 距離考試 ${left} 天<br>${esc(plan.title)}</p>
+    <ul class="plan-list">${plan.tasks.map((task) => planTaskHtml(task, doneKeys.has(task.key))).join("")}</ul>
+    <p class="muted">${allDone ? "今天的都做完了，好好休息。" : `約 ${plan.minutes} 分鐘。這只是參考，做多少都可以，沒做完也沒關係。`}</p>
+    ${later.length ? `<details class="plan-later"><summary>接下來 ${later.length} 天</summary><ol class="plan-days">${later.map((day) => `<li><b>${esc(planWeekday(addDays(today, left - day.left)))}</b> · 倒數 ${day.left} 天 · ${esc(day.title)} <span class="muted">（約 ${day.minutes} 分）</span></li>`).join("")}</ol><p class="muted">排程從考試日往回排；弱項練習會依你目前最弱的題型調整。</p></details>` : ""}`;
+}
+function paintPlan() {
+  const el = document.getElementById("plan-card");
+  if (el) el.innerHTML = planCardInner();
+}
+
 // ---- 速度快練 ----
 const speed = { only: null, items: [], i: 0, results: [], startedAt: null, timer: 0, locked: false, next: 0, token: 0 };
 function speedStop() { clearInterval(speed.timer); clearTimeout(speed.next); speed.timer = 0; speed.token += 1; }
@@ -635,6 +667,7 @@ function renderHome() {
   const dueQuestions = queuedQuestions.filter((q) => wrongAnswerDue(wrongQueue[q.id]));
 
   const wordDue = vocabDueCount();
+  planWeak = weak[0]?.skill ?? null;
   const focus = homeFocus();
   app.classList.toggle("home-focus", focus);
   app.innerHTML = `
@@ -647,6 +680,7 @@ function renderHome() {
     ${homeNav(dueQuestions.length + wordDue, focus)}
     ${focusBar(focus)}
     ${todayStrip(dueQuestions.length, wordDue, history)}
+    <section class="card plan-card" id="plan-card" aria-labelledby="plan-title">${planCardInner()}</section>
     ${session ? resumeCard() : ''}
     <section class="card" id="nav-review">
       <h2>弱項追蹤與推薦</h2>
@@ -1948,6 +1982,7 @@ app.addEventListener("click", (e) => {
       flashQueue = selectCards(flashItems, progress, { level: "pick", category: "all", limit: introduced + 10 });
       flashRevealed = false; flashRender(); break;
     }
+    case "plan-toggle": store.set(KEY_PLAN_DONE, toggleDone(store.get(KEY_PLAN_DONE, {}), toISO(), d.key)); paintPlan(); break;
     case "speed-start": startSpeedDrill(d.mode || null); break;
     case "speed-answer": speedAnswer(Number(d.i)); break;
     case "speed-next": speedNext(); break;
