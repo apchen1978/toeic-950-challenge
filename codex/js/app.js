@@ -90,12 +90,13 @@ function renderGrammarDrill() {
   window.scrollTo(0, 0);
 }
 // ---- 速度快練 ----
-const speed = { items: [], i: 0, results: [], startedAt: 0, timer: 0, locked: false, next: 0, token: 0 };
+const speed = { only: null, items: [], i: 0, results: [], startedAt: 0, timer: 0, locked: false, next: 0, token: 0 };
 function speedStop() { clearInterval(speed.timer); clearTimeout(speed.next); speed.timer = 0; speed.token += 1; }
-function startSpeedDrill() {
+function startSpeedDrill(only = null) {
   audio.stop();
   speedStop();
-  speed.items = buildDrill();
+  speed.only = only;
+  speed.items = buildDrill({ only });
   speed.i = 0;
   speed.results = [];
   renderSpeedItem();
@@ -164,7 +165,7 @@ function renderSpeedSummary() {
     ${previous ? `<p class="muted">上一次：${previous.right} / ${previous.total} 題，平均 ${Number(previous.avgSec).toFixed(1)} 秒。</p>` : ""}
     ${sum.missed.length ? `<h2>要再看一眼</h2><ul class="phrase-list">${sum.missed.map((r) => `<li><b lang="en">${esc(r.answerText)}</b><br><span class="muted">${esc(r.note)}</span></li>`).join("")}</ul>` : "<p>全對！下一輪試著再快一點。</p>"}
     <p class="muted">這是練反應速度用的小練習，秒數只供自己比較，不是考試成績。</p>
-    <div class="row"><button type="button" class="btn primary" data-action="speed-start">再來 10 題</button><button type="button" class="btn" data-action="home">回首頁</button></div></section>`;
+    <div class="row"><button type="button" class="btn primary" data-action="speed-start"${speed.only ? ` data-mode="${speed.only}"` : ""}>再來 10 題</button><button type="button" class="btn" data-action="home">回首頁</button></div></section>`;
   window.scrollTo(0, 0);
 }
 
@@ -445,8 +446,8 @@ function phrasesSection() {
   return `<section class="card phrases-card" id="nav-phrases" aria-labelledby="phrases-title">
       <p class="vocabulary-eyebrow">PHRASES &amp; PARAPHRASE</p>
       <h2 id="phrases-title">片語・搭配詞・同義改寫</h2>
-      <div class="vocab-actions"><button type="button" class="btn primary" data-action="speed-start">快速反應 10 題</button></div>
-      <p class="muted">前面的 Part 練得快，時間才留得給 Part 7。快練混合搭配詞、同義改寫和 Part 2 應答，每題限時 8–10 秒，練的是反應速度。</p>
+      <div class="vocab-actions"><button type="button" class="btn primary" data-action="speed-start">快速反應 10 題</button><button type="button" class="btn" data-action="speed-start" data-mode="response">只練 Part 2 應答</button><button type="button" class="btn" data-action="speed-start" data-mode="pos">只練 Part 5 詞性</button></div>
+      <p class="muted">前面的 Part 練得快，時間才留得給 Part 7。快練混合搭配詞、同義改寫、Part 2 應答和 Part 5 詞性，每題限時 8–10 秒，練的是反應速度。</p>
       <p class="muted">Part 5 的字彙題常考「固定搭配」，Part 3、4、7 的選項常把原文換個說法。這裡整理 ${COLLOCATIONS.length} 組搭配、${PARAPHRASES.length} 組同義改寫和 Email 常用句（本站原創整理，非官方字表）。</p>
       <details class="grammar-list"><summary>搭配詞 ${COLLOCATIONS.length} 組（含挖空自測）</summary>
         <p class="muted">把「動詞＋名詞」或「形容詞＋介系詞」當成一個單位記，不要拆開背。</p>
@@ -1875,7 +1876,7 @@ app.addEventListener("click", (e) => {
       flashQueue = selectCards(flashItems, progress, { level: "pick", category: "all", limit: introduced + 10 });
       flashRevealed = false; flashRender(); break;
     }
-    case "speed-start": startSpeedDrill(); break;
+    case "speed-start": startSpeedDrill(d.mode || null); break;
     case "speed-answer": speedAnswer(Number(d.i)); break;
     case "speed-next": speedNext(); break;
     case "speed-quit": speedStop(); renderHome(); break;

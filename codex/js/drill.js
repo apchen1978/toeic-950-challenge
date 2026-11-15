@@ -1,9 +1,9 @@
 // 速度快練：把 Part 1–6 會用到的反應練快，省時間留給 Part 7。
 // 純邏輯，不碰 DOM。題型：搭配詞（中文→英文片語）、同義改寫、Part 2 應答句型（文字版）。
-import { COLLOCATIONS, PARAPHRASES, RESPONSES } from "./phrases.js";
+import { COLLOCATIONS, PARAPHRASES, RESPONSES, POS_ITEMS } from "./phrases.js";
 
-export const LIMITS = { collocation: 8, paraphrase: 8, response: 10 };
-export const KIND_LABEL = { collocation: "搭配詞", paraphrase: "同義改寫", response: "Part 2 應答" };
+export const LIMITS = { collocation: 8, paraphrase: 8, response: 10, pos: 8 };
+export const KIND_LABEL = { collocation: "搭配詞", paraphrase: "同義改寫", response: "Part 2 應答", pos: "Part 5 詞性" };
 
 function shuffle(list, random) {
   const copy = list.slice();
@@ -31,19 +31,31 @@ function paraphraseItem(row, random) {
   return withOptions("paraphrase", row[0], row[1], wrongs, `${row[0]} ≈ ${row[1]}（${row[2]}）`, random);
 }
 
+function posItem(row, random) {
+  return withOptions("pos", row[0], row[1], [row[2], row[3], row[4]], `${row[1]}：${row[5]}`, random);
+}
+
 function responseItem(row, random) {
   return withOptions("response", row[0], row[1], [row[2], row[3]], row[4], random);
 }
 
-// 預設 10 題：搭配詞 4、同義改寫 3、應答 3，混合後出題。
-export function buildDrill({ count = 10, random = Math.random } = {}) {
-  const plan = { collocation: Math.round(count * 0.4), paraphrase: Math.round(count * 0.3) };
-  plan.response = count - plan.collocation - plan.paraphrase;
-  const items = [
-    ...shuffle(COLLOCATIONS, random).slice(0, plan.collocation).map((c) => collocationItem(c, random)),
-    ...shuffle(PARAPHRASES, random).slice(0, plan.paraphrase).map((p) => paraphraseItem(p, random)),
-    ...shuffle(RESPONSES, random).slice(0, plan.response).map((r) => responseItem(r, random))
-  ];
+// 預設 10 題：搭配詞 3、同義改寫 2、Part 2 應答 3、Part 5 詞性 2，混合後出題。
+// only 指定單一題型時，全部題目都出該題型。
+export function buildDrill({ count = 10, random = Math.random, only = null } = {}) {
+  const pools = {
+    collocation: [COLLOCATIONS, collocationItem],
+    paraphrase: [PARAPHRASES, paraphraseItem],
+    response: [RESPONSES, responseItem],
+    pos: [POS_ITEMS, posItem]
+  };
+  const plan = only && pools[only]
+    ? { [only]: count }
+    : { collocation: Math.round(count * 0.3), paraphrase: Math.round(count * 0.2), pos: Math.round(count * 0.2) };
+  if (!only || !pools[only]) plan.response = count - plan.collocation - plan.paraphrase - plan.pos;
+  const items = Object.entries(plan).flatMap(([kind, n]) => {
+    const [pool, make] = pools[kind];
+    return shuffle(pool, random).slice(0, n).map((row) => make(row, random));
+  });
   return shuffle(items, random);
 }
 
