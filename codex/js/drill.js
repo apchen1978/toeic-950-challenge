@@ -39,9 +39,15 @@ function responseItem(row, random) {
   return withOptions("response", row[0], row[1], [row[2], row[3]], row[4], random);
 }
 
+// 每題的穩定代號（題型＋題幹），用來記住答錯的題目，下一輪優先再出。
+export function itemKey(kind, row) {
+  return `${kind}|${kind === "collocation" ? row[1] : row[0]}`;
+}
+
 // 預設 10 題：搭配詞 3、同義改寫 2、Part 2 應答 3、Part 5 詞性 2，混合後出題。
-// only 指定單一題型時，全部題目都出該題型。
-export function buildDrill({ count = 10, random = Math.random, only = null } = {}) {
+// only 指定單一題型時，全部題目都出該題型。prefer 是之前答錯題目的代號，會排在同題型的最前面。
+export function buildDrill({ count = 10, random = Math.random, only = null, prefer = [] } = {}) {
+  const preferred = new Set(prefer);
   const pools = {
     collocation: [COLLOCATIONS, collocationItem],
     paraphrase: [PARAPHRASES, paraphraseItem],
@@ -54,7 +60,9 @@ export function buildDrill({ count = 10, random = Math.random, only = null } = {
   if (!only || !pools[only]) plan.response = count - plan.collocation - plan.paraphrase - plan.pos;
   const items = Object.entries(plan).flatMap(([kind, n]) => {
     const [pool, make] = pools[kind];
-    return shuffle(pool, random).slice(0, n).map((row) => make(row, random));
+    const mixed = shuffle(pool, random);
+    const ordered = [...mixed.filter((row) => preferred.has(itemKey(kind, row))), ...mixed.filter((row) => !preferred.has(itemKey(kind, row)))];
+    return ordered.slice(0, n).map((row) => ({ ...make(row, random), key: itemKey(kind, row) }));
   });
   return shuffle(items, random);
 }
