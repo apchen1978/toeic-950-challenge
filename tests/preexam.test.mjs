@@ -41,7 +41,7 @@ test("there are ten traps covering listening, grammar and Part 7, plus pacing, r
   for (const source of PREEXAM_SOURCES) assert.match(source.href, /^https:\/\//);
 });
 
-test("the home page shows the pre-exam card second, right after the today strip, with its own nav pill", () => {
+test("the home page shows review, then the pre-exam card, then the mock, each with its own nav pill", () => {
   assert.match(app, /\["nav-preexam", "考前"\], \["nav-mock", "模考"\]/);
   const today = app.indexOf("${todayStrip(");
   const card = app.indexOf("${preExamCard()}");
@@ -49,4 +49,13 @@ test("the home page shows the pre-exam card second, right after the today strip,
   assert.ok(today > 0 && card > today && mock > card, "order must be today, pre-exam, mock");
   for (const action of ["preexam-open", "preexam-reset", "start-warmup", "preexam-tick"]) assert.ok(app.includes(action), action);
   assert.match(app, /import \{[^}]*PREEXAM_BLOCKS[^}]*\} from "\.\/preexam\.js"/);
+});
+
+test("compact home: review sits above the pre-exam card, nav follows page order and includes 快練", () => {
+  const review = app.indexOf('<section class="card" id="nav-review">');
+  const card = app.indexOf("${preExamCard()}");
+  assert.ok(review > 0 && review < card, "review must come before the pre-exam card");
+  assert.match(app, /\["nav-review", "複習"\], \["nav-preexam", "考前"\]/);
+  assert.match(app, /\["nav-phrases", "快練"\]/);
+  assert.ok(app.indexOf('id="offline-card"') > app.indexOf("${phrasesSection()}"), "offline card moves below the study sections");
 });
