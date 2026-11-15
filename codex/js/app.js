@@ -17,6 +17,7 @@ import { assembleReadingRotation, isReadingFullForm, originalReadingGroups } fro
 import { CHOICE_REVISION, migrateChoiceIndexes } from "./choice-legacy.js";
 import { TIP_SECTIONS, TIPS_STORAGE_KEY, tipForPart, tipsEnabled } from "./tips.js";
 import { ABILITIES, abilityStats, scoreBand } from "./abilities.js";
+import { isNegativePrompt, markNot, pickNotQuestions } from "./not-questions.js";
 import { daysBetween, toISO, addDays, dayPlan, fullPlan, toggleDone } from "./plan.js";
 import { buildDrill, summarize, KIND_LABEL } from "./drill.js";
 import { COLLOCATIONS, PARAPHRASES, EMAIL_PHRASES, clozeOf } from "./phrases.js";
@@ -64,6 +65,7 @@ const KEY_SPEED = `${STORAGE_PREFIX}.speed-drill.v1`;
 const KEY_SPEED_MISSED = `${STORAGE_PREFIX}.speed-missed.v1`;
 const KEY_SPEED_VOICE = `${STORAGE_PREFIX}.speed-voice.v1`;
 const KEY_PLAN_DONE = `${STORAGE_PREFIX}.plan-done.v1`;
+const KEY_NOT_RECENT = `${STORAGE_PREFIX}.not-recent.v1`;
 const KEY_GRAMMAR = `${STORAGE_PREFIX}.grammar.v1`;
 const GRAMMAR_QUIZ = GRAMMAR.flatMap((topic) => topic.quiz.map((item, qi) => ({ topic, item, qi })));
 // Saved grammar answers are keyed by question text: true = last answer was right.
@@ -682,12 +684,15 @@ function renderHome() {
     ${todayStrip(dueQuestions.length, wordDue, history)}
     <section class="card plan-card" id="plan-card" aria-labelledby="plan-title">${planCardInner()}</section>
     <section class="card listening-full-card" id="nav-mini" aria-labelledby="mini-title">
-      <div class="reading-full-head"><span class="reading-full-badge">6–9 MIN</span><p class="section-kicker">QUICK SETS · 題型快練</p></div>
-      <h2 id="mini-title">聽力 15 題・閱讀 12 題</h2>
+      <div class="reading-full-head"><span class="reading-full-badge">6–12 MIN</span><p class="section-kicker">QUICK SETS · 題型快練</p></div>
+      <h2 id="mini-title">聽力 15 題・閱讀 12 題・NOT 題</h2>
       <p>想快速摸一下手感，或考前一兩天不想做太久時用。題型混合，每次從題庫重新抽，會避開最近出過的題目。</p>
       <div class="reading-full-sets">
         <div class="reading-full-set"><div class="rf-info"><h3>聽力快練 · 15 題</h3><p class="muted">約 ${approxListeningMinutes("mini-listen-15", 5) ?? 6} 分鐘 · Part 1 到 4 · 每題只播一次</p>${listeningFullLast(history, "mini-listen-15")}</div><div class="rf-actions"><button class="btn primary" data-action="start-form" data-form="mini-listen-15">開始聽力快練</button></div></div>
         <div class="reading-full-set"><div class="rf-info"><h3>閱讀快練 · 12 題</h3><p class="muted">9 分鐘 · Part 5（5 題）、Part 6（4 題）、Part 7（3 題）</p>${listeningFullLast(history, "mini-read-12")}</div><div class="rf-actions"><button class="btn primary" data-action="start-form" data-form="mini-read-12">開始閱讀快練</button></div></div>
+      </div>
+      <div class="reading-full-sets">
+        <div class="reading-full-set"><div class="rf-info"><h3>NOT 題專練 · 10 題</h3><p class="muted">約 12 分鐘 · Part 7 · 「哪一項不是……」要逐項核對，最花時間，先把做法練熟</p></div><div class="rf-actions"><button class="btn primary" data-action="start-not">開始 NOT 題練習</button></div></div>
       </div>
       <details class="card-more"><summary>題型與時間說明</summary>
         <p class="muted">聽力：照片 1 題、應答 5 題、對話 6 題、獨白 3 題，含圖表題，至少涵蓋三種應答類型。閱讀：Part 5 涵蓋詞性、時態、介系詞或連接詞、字彙四類，Part 6 含句子插入，Part 7 是單篇短題組。</p>
@@ -1057,6 +1062,14 @@ function startReadingFull(formId, rotate = false) {
   if (started && !draw.fallback) store.set(KEY_READING_ROTATION_RECENT, rememberQuickDraw(recent, draw.groupIds, formId));
 }
 
+function startNotPractice() {
+  const recent = store.get(KEY_NOT_RECENT, []);
+  const pick = pickNotQuestions(bank, { count: 10, isActive: isActiveGroup, recent: Array.isArray(recent) ? recent : [] });
+  if (!pick.questionIds.length) return;
+  const started = startSession("practice", orderedGroupIds(pick.groupIds), Math.max(5, Math.ceil(pick.questionIds.length * 1.2)), pick.questionIds);
+  if (started) store.set(KEY_NOT_RECENT, [...(Array.isArray(recent) ? recent : []), ...pick.questionIds].slice(-40));
+}
+
 async function startMiniForm(formId) {
   const set = bank.meta.sets.find((item) => item.id === formId);
   if (!set) return;
@@ -1347,8 +1360,9 @@ function questionBlock(q, qs, spoken) {
   const picked = session.answers[q.id];
   const locked = answerLocked(session, q.id);
   return `<div class="q" data-qid="${q.id}">
-    <div class="row" style="justify-content:space-between"><b>${num}. ${esc(q.prompt)}</b>
+    <div class="row" style="justify-content:space-between"><b>${num}. ${markNot(esc(q.prompt))}</b>
     <button class="btn small" data-action="flag" data-q="${q.id}">${session.flags[q.id] ? "取消標記" : "標記"}</button></div>
+    ${isNegativePrompt(q.prompt, qs.find((x) => x.id === q.id)?.part) ? `<p class="not-hint"><b>否定題：</b>四個選項有三個符合文章，要選<b>不符合</b>的那一個。逐項回文章找一次，找到就排除。</p>` : ""}
     ${locked ? `<p class="muted">這題已作答，看過錯題後不能再改。</p>` : ""}
     <div class="opts">${q.options.map((o, i) => `<button class="opt ${spoken ? "letter-only" : ""} ${picked === i ? "selected" : ""}" data-action="pick" data-q="${q.id}" data-i="${i}" aria-label="選項 ${LETTERS[i]}" ${locked ? "disabled" : ""}><span class="letter">${LETTERS[i]}</span>${spoken ? "" : `<span>${esc(o)}</span>`}</button>`).join("")}</div>
   </div>`;
@@ -1810,7 +1824,7 @@ function reviewGroup(g, entry) {
     ${g.questions.filter((q) => !entry.questionIds || entry.questionIds.includes(q.id)).map((q) => {
       const a = entry.answers[q.id];
       const num = qs.findIndex((x) => x.id === q.id) + 1;
-      return `<div class="q"><b>${num}. ${esc(q.prompt)}</b>
+      return `<div class="q"><b>${num}. ${markNot(esc(q.prompt))}</b>
         <div class="opts">${q.options.map((o, i) => `<div class="opt ${i === q.answer ? "correct" : i === a ? "wrong" : ""}"><span class="letter">${LETTERS[i]}</span><span>${esc(o)}${i === q.answer ? " ✓" : ""}${i === a && i !== q.answer ? " （你的答案）" : ""}</span></div>`).join("")}</div>
         ${a === undefined ? `<p class="muted">未作答</p>` : ""}
         <div class="explain">${esc(q.explanation)}</div>${a !== undefined && a !== q.answer ? wrongReasonPicker(q.id) : ''}</div>`;
@@ -2017,6 +2031,7 @@ app.addEventListener("click", (e) => {
       flashRevealed = false; flashRender(); break;
     }
     case "plan-toggle": store.set(KEY_PLAN_DONE, toggleDone(store.get(KEY_PLAN_DONE, {}), toISO(), d.key)); paintPlan(); break;
+    case "start-not": startNotPractice(); break;
     case "speed-start": startSpeedDrill(d.mode || null); break;
     case "speed-answer": speedAnswer(Number(d.i)); break;
     case "speed-next": speedNext(); break;

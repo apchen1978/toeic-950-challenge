@@ -27731,6 +27731,374 @@
           "questionType": "detail"
         }
       ]
+    },
+    {
+      "id": "g-not-p7-01",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: library renovation",
+      "passage": {
+        "docs": [
+          {
+            "label": "Notice",
+            "text": "Harlow Public Library: Renovation Notice\n\nThe main building will close for renovation from March 3 to April 18. During this time, borrowers may return books at the side entrance and use the online catalog and e-book service as usual. Reservations for study rooms will not be accepted until the building reopens. Children's story hour will move to the Eastside Community Center and will continue every Saturday at 10 A.M."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "NOT-P7-01A",
+          "prompt": "What will NOT be available during the renovation?",
+          "options": [
+            "The online catalog",
+            "Study room reservations",
+            "Book returns at the side entrance",
+            "Saturday story hour"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Study room reservations」：通知說明關閉期間不接受自習室預約，所以自習室預約是不提供的服務。線上目錄、側門還書和週六故事時間在文中都說會繼續。\n【考點】Part 7・NOT 題\n【判斷依據】NOT 題要逐項回文章核對：三個選項在文中都有明確的句子，沒有或相反的那一個就是答案。",
+          "skill": "r-detail",
+          "questionType": "not-question",
+          "ability": "R2"
+        },
+        {
+          "id": "NOT-P7-01B",
+          "prompt": "Where will story hour be held during the closure?",
+          "options": [
+            "At the side entrance",
+            "At the main building",
+            "At the Eastside Community Center",
+            "At a local school"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「At the Eastside Community Center」：文中說故事時間會移到 Eastside Community Center 繼續舉行。\n【考點】Part 7・細節題\n【判斷依據】用題目裡的關鍵詞回文章定位，核對那一句話。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
+    },
+    {
+      "id": "g-not-p7-02",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: conference registration",
+      "passage": {
+        "docs": [
+          {
+            "label": "Email",
+            "text": "To: Registered attendees\nFrom: Priya Nair, Event Coordinator\nSubject: Your registration\n\nThank you for registering for the Regional Logistics Forum. Your fee covers access to all sessions, lunch on both days, and a conference bag. Hotel accommodations are not included, but a list of nearby hotels with group rates is attached. Attendees who pay by May 10 receive the early rate; after that date, the standard fee applies."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "NOT-P7-02A",
+          "prompt": "What is NOT included in the registration fee?",
+          "options": [
+            "Lunch on both days",
+            "Access to all sessions",
+            "A conference bag",
+            "Hotel accommodations"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Hotel accommodations」：信中說報名費包含所有場次、兩天午餐和會議提袋，住宿不包含，只附上有團體價的飯店清單。\n【考點】Part 7・NOT 題\n【判斷依據】NOT 題要逐項回文章核對：三個選項在文中都有明確的句子，沒有或相反的那一個就是答案。",
+          "skill": "r-detail",
+          "questionType": "not-question",
+          "ability": "R2"
+        },
+        {
+          "id": "NOT-P7-02B",
+          "prompt": "What must attendees do to receive the early rate?",
+          "options": [
+            "Send a printed form",
+            "Book a hotel by May 10",
+            "Attend both days",
+            "Pay by May 10"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Pay by May 10」：文中說在 5 月 10 日前付款的人可以用早鳥價。\n【考點】Part 7・細節題\n【判斷依據】用題目裡的關鍵詞回文章定位，核對那一句話。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
+    },
+    {
+      "id": "g-not-p7-03",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: warehouse supervisor job ad",
+      "passage": {
+        "docs": [
+          {
+            "label": "Advertisement",
+            "text": "Warehouse Supervisor Wanted\n\nKesler Distribution is looking for a supervisor for its Eastport facility. The supervisor will schedule shifts, inspect incoming shipments, and train new staff. Customer complaints are handled by the service desk and are not part of this position. Applicants should have at least three years of warehouse experience. To apply, send a résumé to jobs@kesler-example.com."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "NOT-P7-03A",
+          "prompt": "Which of the following is NOT a duty of the supervisor?",
+          "options": [
+            "Scheduling shifts",
+            "Inspecting incoming shipments",
+            "Handling customer complaints",
+            "Training new staff"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Handling customer complaints」：廣告說客訴由服務櫃檯處理，不屬於這個職位。排班、檢查進貨和訓練新人都列在職責裡。\n【考點】Part 7・NOT 題\n【判斷依據】NOT 題要逐項回文章核對：三個選項在文中都有明確的句子，沒有或相反的那一個就是答案。",
+          "skill": "r-detail",
+          "questionType": "not-question",
+          "ability": "R2"
+        },
+        {
+          "id": "NOT-P7-03B",
+          "prompt": "What is required of applicants?",
+          "options": [
+            "A degree in business",
+            "Experience at the service desk",
+            "Three years of warehouse experience",
+            "A recent training certificate"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Three years of warehouse experience」：廣告寫明應徵者至少要有三年倉儲經驗。\n【考點】Part 7・細節題\n【判斷依據】用題目裡的關鍵詞回文章定位，核對那一句話。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
+    },
+    {
+      "id": "g-not-p7-04",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: office move memo",
+      "passage": {
+        "docs": [
+          {
+            "label": "Memo",
+            "text": "To: Accounting staff\nFrom: Facilities Office\nDate: June 2\nSubject: Move to the fourth floor\n\nOur department will move to the fourth floor on June 12. Before the move, please pack your personal items, label each box with your name, and empty your desk drawers. The IT team will disconnect and move all computers, so please do not unplug them yourselves. New desks and chairs will already be in place."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "NOT-P7-04A",
+          "prompt": "What are employees NOT asked to do before the move?",
+          "options": [
+            "Pack personal items",
+            "Label their boxes",
+            "Unplug their own computers",
+            "Empty their desk drawers"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Unplug their own computers」：備忘錄要求大家打包私人物品、在箱子上標名字、清空抽屜，電腦由 IT 團隊拆線搬運，請大家不要自己拔線。\n【考點】Part 7・NOT 題\n【判斷依據】NOT 題要逐項回文章核對：三個選項在文中都有明確的句子，沒有或相反的那一個就是答案。",
+          "skill": "r-detail",
+          "questionType": "not-question",
+          "ability": "R2"
+        },
+        {
+          "id": "NOT-P7-04B",
+          "prompt": "Who will move the computers?",
+          "options": [
+            "The IT team",
+            "The accounting staff",
+            "The Facilities Office",
+            "A moving company"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「The IT team」：備忘錄說 IT 團隊會拆線並搬運所有電腦。\n【考點】Part 7・細節題\n【判斷依據】用題目裡的關鍵詞回文章定位，核對那一句話。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
+    },
+    {
+      "id": "g-not-p7-05",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: bistro announcement",
+      "passage": {
+        "docs": [
+          {
+            "label": "Advertisement",
+            "text": "Marlo's Bistro Announces Its New Hours\n\nStarting this month, Marlo's Bistro will be open Tuesday through Sunday, from 11 A.M. to 9 P.M. Weekday lunch specials are served from 11 A.M. to 2 P.M. Live music will be performed every Friday evening. Reservations are recommended on weekends, and groups of more than eight people should call the manager directly."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "NOT-P7-05A",
+          "prompt": "What is NOT mentioned about Marlo's Bistro?",
+          "options": [
+            "The days it is open",
+            "The schedule for live music",
+            "Parking for customers",
+            "Weekday lunch specials"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Parking for customers」：公告提到營業日、週五現場音樂和平日午餐特餐，完全沒有提到停車資訊。\n【考點】Part 7・NOT 題\n【判斷依據】NOT 題要逐項回文章核對：三個選項在文中都有明確的句子，沒有或相反的那一個就是答案。",
+          "skill": "r-detail",
+          "questionType": "not-question",
+          "ability": "R2"
+        },
+        {
+          "id": "NOT-P7-05B",
+          "prompt": "When will live music be performed?",
+          "options": [
+            "On Friday evenings",
+            "Every weekday at lunch",
+            "On Sunday afternoons",
+            "Only on holidays"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「On Friday evenings」：文中說現場音樂每週五晚上演出。\n【考點】Part 7・細節題\n【判斷依據】用題目裡的關鍵詞回文章定位，核對那一句話。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
+    },
+    {
+      "id": "g-not-p7-06",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: password policy email",
+      "passage": {
+        "docs": [
+          {
+            "label": "Email",
+            "text": "To: All employees\nFrom: IT Support\nSubject: New password rules\n\nStarting Monday, every password must be at least twelve characters long and must include at least one number. Passwords must also be changed every ninety days. A special symbol is no longer necessary, which should make passwords easier to remember. Please update your password before Friday to avoid being locked out."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "NOT-P7-06A",
+          "prompt": "What is NOT required in the new passwords?",
+          "options": [
+            "At least twelve characters",
+            "A special symbol",
+            "A number",
+            "A change every ninety days"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「A special symbol」：信中說明新規定要求至少 12 個字元、含數字、每 90 天更換；特殊符號已經不再需要。\n【考點】Part 7・NOT 題\n【判斷依據】NOT 題要逐項回文章核對：三個選項在文中都有明確的句子，沒有或相反的那一個就是答案。",
+          "skill": "r-detail",
+          "questionType": "not-question",
+          "ability": "R2"
+        },
+        {
+          "id": "NOT-P7-06B",
+          "prompt": "What should employees do before Friday?",
+          "options": [
+            "Update their passwords",
+            "Contact IT Support",
+            "Install new software",
+            "Attend a training"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「Update their passwords」：信末請大家在週五前更新密碼，以免被鎖定帳號。\n【考點】Part 7・細節題\n【判斷依據】用題目裡的關鍵詞回文章定位，核對那一句話。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
+    },
+    {
+      "id": "g-not-p7-07",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: shipping notice",
+      "passage": {
+        "docs": [
+          {
+            "label": "Notice",
+            "text": "Your order has shipped\n\nThank you for your purchase from Brightline Gardening. Your package contains two replacement filters, one flexible hose, and an instruction booklet. The carrying case shown on our website is sold separately and is not part of this order. The package should arrive within five business days. If any item is damaged, contact customer service within seven days."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "NOT-P7-07A",
+          "prompt": "What is NOT included in the package?",
+          "options": [
+            "Replacement filters",
+            "A flexible hose",
+            "An instruction booklet",
+            "A carrying case"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「A carrying case」：通知說包裹內有兩個濾芯、一條軟管和說明書；網站上看到的收納箱是另外販售，不在這張訂單裡。\n【考點】Part 7・NOT 題\n【判斷依據】NOT 題要逐項回文章核對：三個選項在文中都有明確的句子，沒有或相反的那一個就是答案。",
+          "skill": "r-detail",
+          "questionType": "not-question",
+          "ability": "R2"
+        },
+        {
+          "id": "NOT-P7-07B",
+          "prompt": "What should customers do if an item is damaged?",
+          "options": [
+            "Return the package at once",
+            "Wait five business days",
+            "Contact customer service within seven days",
+            "Order a replacement online"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Contact customer service within seven days」：文中說商品若有損壞，要在七天內聯絡客服。\n【考點】Part 7・細節題\n【判斷依據】用題目裡的關鍵詞回文章定位，核對那一句話。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
+    },
+    {
+      "id": "g-not-p7-08",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: safety training announcement",
+      "passage": {
+        "docs": [
+          {
+            "label": "Announcement",
+            "text": "Safety Training for New Hires\n\nAll new employees must attend a half-day safety training on Monday at 9 A.M. in Room 204. Please bring a photo ID, a printed copy of your confirmation email, and closed-toe shoes. Helmets and gloves will be supplied on site, and lunch will be provided afterward. Employees who cannot attend should notify their supervisors by Friday."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "NOT-P7-08A",
+          "prompt": "What do participants NOT need to bring?",
+          "options": [
+            "A safety helmet",
+            "A photo ID",
+            "A printed confirmation email",
+            "Closed-toe shoes"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「A safety helmet」：公告要求帶照片身分證、列印的確認信和包趾鞋；安全帽和手套由現場提供。\n【考點】Part 7・NOT 題\n【判斷依據】NOT 題要逐項回文章核對：三個選項在文中都有明確的句子，沒有或相反的那一個就是答案。",
+          "skill": "r-detail",
+          "questionType": "not-question",
+          "ability": "R2"
+        },
+        {
+          "id": "NOT-P7-08B",
+          "prompt": "What will happen after the training?",
+          "options": [
+            "Employees will take a test",
+            "Helmets will be collected",
+            "Supervisors will give tours",
+            "Lunch will be provided"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Lunch will be provided」：文中說訓練結束後會提供午餐。\n【考點】Part 7・細節題\n【判斷依據】用題目裡的關鍵詞回文章定位，核對那一句話。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
     }
   ]
 }

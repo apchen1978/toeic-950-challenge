@@ -17,6 +17,7 @@ export const TASKS = {
   read3: { label: "閱讀完整模擬 3", minutes: 75, action: "start-form", attrs: { form: "read-full-3" }, button: "開始" },
   miniListen: { label: "聽力快練 15 題", minutes: 6, action: "start-form", attrs: { form: "mini-listen-15" }, button: "開始" },
   miniRead: { label: "閱讀快練 12 題", minutes: 9, action: "start-form", attrs: { form: "mini-read-12" }, button: "開始" },
+  notPractice: { label: "NOT 題專練 10 題", minutes: 12, action: "start-not", button: "開始" },
   checkMock: { label: "檢討剛做完的模擬：只看錯題和用時，找出最常失分的題型", minutes: 20 },
   preexam: { label: "看一遍「考前黃金流程」", minutes: 10, action: "preexam-open", button: "打開" },
   prepare: { label: "備好證件、交通和早點休息", minutes: 5 },
@@ -26,9 +27,9 @@ export const TASKS = {
 // 依「距考試剩幾天」排。13 天以前用 generic；每天最多 2 件大事，其餘是小練習。
 export const BY_DAYS_LEFT = {
   13: ["listen1", "review", "speed"],
-  12: ["weak", "vocab", "speedP2"],
+  12: ["weak", "notPractice", "speedP2"],
   11: ["read1", "review"],
-  10: ["checkMock", "miniRead", "speedPos"],
+  10: ["checkMock", "miniRead", "notPractice"],
   9: ["weak", "vocab", "miniListen"],
   8: ["listen2", "review"],
   7: ["checkMock", "miniListen", "vocab", "grammar"],
