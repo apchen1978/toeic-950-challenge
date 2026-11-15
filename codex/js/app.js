@@ -60,6 +60,8 @@ const KEY_MOCK_SECTION = `${STORAGE_PREFIX}.mock-section.v1`;
 const flashItems = VOCABULARY.flatMap(group => group.words.map(item => ({ ...vocabParts(item), category: group.category, pick: PICKS.has(item[0]) })));
 const KEY_HOME_FOCUS = `${STORAGE_PREFIX}.home-focus.v1`;
 const KEY_SPEED = `${STORAGE_PREFIX}.speed-drill.v1`;
+const KEY_SPEED_MISSED = `${STORAGE_PREFIX}.speed-missed.v1`;
+const KEY_SPEED_VOICE = `${STORAGE_PREFIX}.speed-voice.v1`;
 const KEY_GRAMMAR = `${STORAGE_PREFIX}.grammar.v1`;
 const GRAMMAR_QUIZ = GRAMMAR.flatMap((topic) => topic.quiz.map((item, qi) => ({ topic, item, qi })));
 // Saved grammar answers are keyed by question text: true = last answer was right.
@@ -90,35 +92,63 @@ function renderGrammarDrill() {
   window.scrollTo(0, 0);
 }
 // ---- 速度快練 ----
-const speed = { only: null, items: [], i: 0, results: [], startedAt: 0, timer: 0, locked: false, next: 0, token: 0 };
+const speed = { only: null, items: [], i: 0, results: [], startedAt: null, timer: 0, locked: false, next: 0, token: 0 };
 function speedStop() { clearInterval(speed.timer); clearTimeout(speed.next); speed.timer = 0; speed.token += 1; }
+// 答錯或超時的題目代號，下一輪優先再出；之後答對就移除。
+function speedMissed() { const list = store.get(KEY_SPEED_MISSED, []); return Array.isArray(list) ? list : []; }
+function rememberSpeedResult(key, correct) {
+  if (!key) return;
+  const rest = speedMissed().filter((k) => k !== key);
+  store.set(KEY_SPEED_MISSED, correct ? rest : [...rest, key].slice(-60));
+}
+// Part 2 用聽的：先唸問句，播完才開始倒數。可切換成看文字。
+function speedVoiceOn() { return store.get(KEY_SPEED_VOICE, true) !== false && audio.supported(); }
 function startSpeedDrill(only = null) {
   audio.stop();
   speedStop();
   speed.only = only;
-  speed.items = buildDrill({ only });
+  speed.items = buildDrill({ only, prefer: speedMissed() });
   speed.i = 0;
   speed.results = [];
   renderSpeedItem();
 }
+function speakSpeedPrompt() {
+  const item = speed.items[speed.i];
+  const token = speed.token;
+  const index = speed.i;
+  const status = document.getElementById("speed-voice-status");
+  if (status) status.textContent = "正在播放問句…";
+  audio.playScript([{ speaker: "W", text: item.prompt, gap: 0 }]).then(() => {
+    if (token !== speed.token || index !== speed.i || !document.getElementById("speed-bar")) return;
+    if (status) status.textContent = "播完了，請選回答。";
+    if (speed.startedAt === null) speed.startedAt = performance.now();
+  });
+}
 function renderSpeedItem() {
   const item = speed.items[speed.i];
+  const listen = item.kind === "response" && speedVoiceOn();
   speed.locked = false;
-  speed.startedAt = performance.now();
+  speed.startedAt = listen ? null : performance.now();
+  const promptHtml = listen
+    ? `<p class="speed-listen"><span id="speed-voice-status" role="status">正在播放問句…</span></p>
+    <details class="speed-text"><summary>聽不清楚？看問句文字</summary><p class="speed-prompt" lang="en">${esc(item.prompt)}</p></details>
+    <div class="row"><button type="button" class="btn small" data-action="speed-replay">再聽一次</button><button type="button" class="btn small" data-action="speed-voice" data-on="0">改成看文字</button></div>`
+    : `<h1 class="speed-prompt"${item.kind === "collocation" ? "" : ' lang="en"'}>${esc(item.prompt)}</h1>${item.kind === "response" && audio.supported() ? `<div class="row"><button type="button" class="btn small" data-action="speed-voice" data-on="1">改成用聽的</button></div>` : ""}`;
   app.innerHTML = `<section class="card speed-card"><p class="section-kicker">SPEED DRILL · ${esc(KIND_LABEL[item.kind])} · ${speed.i + 1} / ${speed.items.length}</p>
-    <progress id="speed-bar" aria-label="剩餘時間" value="${item.limit}" max="${item.limit}"></progress> <span id="speed-sec" class="muted">${item.limit} 秒</span>
-    <h1 class="speed-prompt"${item.kind === "collocation" ? "" : ' lang="en"'}>${esc(item.prompt)}</h1>
+    <progress id="speed-bar" aria-label="剩餘時間" value="${item.limit}" max="${item.limit}"></progress> <span id="speed-sec" class="muted">${listen ? "播完後開始計時" : `${item.limit} 秒`}</span>
+    ${promptHtml}
     <div class="speed-options">${item.options.map((option, i) => `<button type="button" class="btn speed-opt" data-action="speed-answer" data-i="${i}" lang="en">${esc(option)}</button>`).join("")}</div>
     <div id="speed-feedback" role="status"></div>
     <div class="row"><button type="button" class="btn" data-action="speed-quit">結束練習</button></div></section>`;
   window.scrollTo(0, 0);
   clearInterval(speed.timer);
   speed.timer = setInterval(speedTick, 100);
+  if (listen) speakSpeedPrompt();
 }
 function speedTick() {
   const bar = document.getElementById("speed-bar");
   if (!bar) { speedStop(); return; }
-  if (speed.locked) return;
+  if (speed.locked || speed.startedAt === null) return;
   const item = speed.items[speed.i];
   const left = item.limit - (performance.now() - speed.startedAt) / 1000;
   bar.value = Math.max(0, left);
@@ -130,9 +160,11 @@ function speedAnswer(choice) {
   if (speed.locked || !document.getElementById("speed-bar")) return;
   speed.locked = true;
   clearInterval(speed.timer);
+  audio.stop();
   const item = speed.items[speed.i];
-  const sec = Math.min(item.limit, (performance.now() - speed.startedAt) / 1000);
+  const sec = speed.startedAt === null ? 0 : Math.min(item.limit, (performance.now() - speed.startedAt) / 1000);
   const correct = choice === item.answer;
+  rememberSpeedResult(item.key, correct);
   speed.results.push({ kind: item.kind, prompt: item.prompt, correct, timedOut: choice < 0, sec, answerText: item.options[item.answer], note: item.note });
   document.querySelectorAll(".speed-opt").forEach((btn, i) => {
     btn.disabled = true;
@@ -164,6 +196,7 @@ function renderSpeedSummary() {
     <div class="grid"><div class="stat"><b>${sum.avgSec.toFixed(1)} 秒</b>平均每題</div><div class="stat"><b>${sum.timeouts}</b>超時題數</div></div>
     ${previous ? `<p class="muted">上一次：${previous.right} / ${previous.total} 題，平均 ${Number(previous.avgSec).toFixed(1)} 秒。</p>` : ""}
     ${sum.missed.length ? `<h2>要再看一眼</h2><ul class="phrase-list">${sum.missed.map((r) => `<li><b lang="en">${esc(r.answerText)}</b><br><span class="muted">${esc(r.note)}</span></li>`).join("")}</ul>` : "<p>全對！下一輪試著再快一點。</p>"}
+    ${sum.missed.length ? `<p class="muted">答錯或超時的題目已記下，下一輪會優先再出；答對後就移除。目前待複習 ${speedMissed().length} 題。</p>` : ""}
     <p class="muted">這是練反應速度用的小練習，秒數只供自己比較，不是考試成績。</p>
     <div class="row"><button type="button" class="btn primary" data-action="speed-start"${speed.only ? ` data-mode="${speed.only}"` : ""}>再來 10 題</button><button type="button" class="btn" data-action="home">回首頁</button></div></section>`;
   window.scrollTo(0, 0);
@@ -1883,6 +1916,8 @@ app.addEventListener("click", (e) => {
     case "speed-start": startSpeedDrill(d.mode || null); break;
     case "speed-answer": speedAnswer(Number(d.i)); break;
     case "speed-next": speedNext(); break;
+    case "speed-replay": if (!speed.locked) speakSpeedPrompt(); break;
+    case "speed-voice": if (!speed.locked) { store.set(KEY_SPEED_VOICE, d.on === "1"); audio.stop(); speed.token += 1; clearInterval(speed.timer); renderSpeedItem(); } break;
     case "speed-quit": speedStop(); renderHome(); break;
     case "toggle-focus": { store.set(KEY_HOME_FOCUS, !homeFocus()); renderHome(); break; }
     case "offline-download": startOfflineDownload(); break;

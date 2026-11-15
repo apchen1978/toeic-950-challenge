@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { buildDrill, summarize, LIMITS } from "../codex/js/drill.js";
+import { readFileSync } from "node:fs";
+import { buildDrill, summarize, LIMITS, itemKey } from "../codex/js/drill.js";
 import { COLLOCATIONS, PARAPHRASES, RESPONSES, POS_ITEMS } from "../codex/js/phrases.js";
 
 function seeded(seed) { let s = seed; return () => { s = (s * 1664525 + 1013904223) % 4294967296; return s / 4294967296; }; }
@@ -50,4 +51,26 @@ test("single-kind drill uses only that kind", () => {
     assert.equal(items.length, 10);
     assert.ok(items.every((i) => i.kind === only));
   }
+});
+
+test("missed items come back first in the next round", () => {
+  const prefer = [itemKey("response", RESPONSES[5]), itemKey("pos", POS_ITEMS[3]), itemKey("collocation", COLLOCATIONS[10])];
+  for (let seed = 1; seed <= 20; seed += 1) {
+    const keys = buildDrill({ random: seeded(seed), prefer }).map((i) => i.key);
+    for (const key of prefer) assert.ok(keys.includes(key), key);
+  }
+  const only = buildDrill({ only: "response", random: seeded(3), prefer: [itemKey("response", RESPONSES[40])] });
+  assert.ok(only.some((i) => i.key === itemKey("response", RESPONSES[40])));
+  assert.ok(buildDrill({ random: seeded(9) }).every((i) => typeof i.key === "string" && i.key.startsWith(i.kind + "|")));
+});
+
+test("app remembers missed drill items and speaks Part 2 prompts before the timer starts", () => {
+  const app = readFileSync(new URL("../codex/js/app.js", import.meta.url), "utf8");
+  for (const snippet of [
+    "buildDrill({ only, prefer: speedMissed() })",
+    "rememberSpeedResult(item.key, correct)",
+    "speed.startedAt = listen ? null : performance.now()",
+    'audio.playScript([{ speaker: "W", text: item.prompt'
+  ]) assert.ok(app.includes(snippet), snippet);
+  for (const action of ["speed-replay", "speed-voice"]) assert.ok(app.includes(`case "${action}"`), action);
 });
