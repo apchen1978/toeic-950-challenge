@@ -16,7 +16,8 @@ test("every collocation has a blankable keyword that appears once in its example
     assert.equal(seen.has(item[0]), false, `duplicate ${item[0]}`);
     seen.add(item[0]);
   }
-  assert.ok(COLLOCATIONS.length >= 30);
+  assert.ok(COLLOCATIONS.length >= 60);
+  assert.equal(new Set(COLLOCATIONS.map((c) => c[1])).size, COLLOCATIONS.length, "duplicate Chinese meaning would make the drill ambiguous");
 });
 
 test("paraphrase and email lists are complete pairs", () => {
@@ -24,8 +25,8 @@ test("paraphrase and email lists are complete pairs", () => {
   for (const row of EMAIL_PHRASES) assert.ok(row.length === 2 && row.every((x) => x.trim()), row[0]);
 });
 
-test("phrases card is on the home page as an extra section and cached by the service worker", () => {
-  assert.match(app, /class="card phrases-card home-extra" id="nav-phrases"/);
+test("phrases card stays visible in focus mode and is cached by the service worker", () => {
+  assert.match(app, /class="card phrases-card" id="nav-phrases"/);
   assert.match(app, /\$\{phrasesSection\(\)\}/);
   assert.match(worker, /"js\/phrases\.js"/);
 });
