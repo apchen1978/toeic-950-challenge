@@ -55,7 +55,7 @@ test("compact home: review sits above the pre-exam card, nav follows page order 
   const review = app.indexOf('<section class="card" id="nav-review">');
   const card = app.indexOf("${preExamCard()}");
   assert.ok(review > 0 && review < card, "review must come before the pre-exam card");
-  assert.match(app, /\["nav-review", "複習"\], \["nav-preexam", "考前"\]/);
-  assert.match(app, /\["nav-phrases", "快練"\]/);
+  assert.match(app, /\["nav-mini", "快練"\], \["nav-review", "複習"\], \["nav-preexam", "考前"\]/);
+  assert.match(app, /\["nav-phrases", "片語"\]/);
   assert.ok(app.indexOf('id="offline-card"') > app.indexOf("${phrasesSection()}"), "offline card moves below the study sections");
 });
