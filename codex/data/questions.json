@@ -28099,6 +28099,926 @@
           "ability": "R2"
         }
       ]
+    },
+    {
+      "id": "g-not-p7-09",
+      "section": "reading",
+      "part": 7,
+      "title": "Notice: equipment pickup",
+      "passage": {
+        "docs": [
+          {
+            "label": "Notice",
+            "text": "Equipment pickup for the studio move is on Tuesday, 7 April, from 9 A.M. to noon at the west loading door. Staff must bring a pickup slip and a photo ID. The team will provide packing tape. Personal vehicles may not enter the loading lane."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "NOT-P7-09A",
+          "prompt": "Which of the following is NOT required for equipment pickup?",
+          "options": [
+            "A printed parking permit",
+            "A pickup slip",
+            "A photo ID",
+            "Arrival at the west loading door"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「A printed parking permit」：文章沒有支持這項說法，或明確說明相反情況。其餘三項可分別由 「must bring a pickup slip」; 「and a photo ID」; 「at the west loading door」 核對。\n【考點】Part 7・NOT 題\n【判斷依據】逐項核對原文的條件、時間與否定語氣；三項有直接根據，剩下一項才是答案。",
+          "skill": "r-detail",
+          "questionType": "not-question",
+          "ability": "R2"
+        },
+        {
+          "id": "NOT-P7-09B",
+          "prompt": "When does equipment pickup end?",
+          "options": [
+            "At 9 A.M.",
+            "At noon",
+            "At 11 A.M.",
+            "At 2 P.M."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「At noon」：原文寫「from 9 A.M. to noon」。其餘選項的時間、地點或要求與這句不符。\n【考點】Part 7・細節題\n【判斷依據】先定位題目所問的資訊，再核對原句與選項。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
+    },
+    {
+      "id": "g-not-p7-10",
+      "section": "reading",
+      "part": 7,
+      "title": "Schedule: visitor orientation",
+      "passage": {
+        "docs": [
+          {
+            "label": "Schedule",
+            "text": "Visitor orientation, Friday 12 June\n9:00 Welcome and safety briefing\n9:30 Product demonstration\n10:15 Coffee break\n10:30 Guided showroom tour\n11:30 Closing remarks\nThe optional warehouse walk has been canceled."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "NOT-P7-10A",
+          "prompt": "Which activity is NOT on the Friday orientation schedule?",
+          "options": [
+            "A safety briefing",
+            "A warehouse walk",
+            "A product demonstration",
+            "A showroom tour"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「A warehouse walk」：文章沒有支持這項說法，或明確說明相反情況。其餘三項可分別由 「Welcome and safety briefing」; 「Product demonstration」; 「Guided showroom tour」 核對。\n【考點】Part 7・NOT 題\n【判斷依據】逐項核對原文的條件、時間與否定語氣；三項有直接根據，剩下一項才是答案。",
+          "skill": "r-detail",
+          "questionType": "not-question",
+          "ability": "R2"
+        },
+        {
+          "id": "NOT-P7-10B",
+          "prompt": "When does the showroom tour begin?",
+          "options": [
+            "At 9:00",
+            "At 9:30",
+            "At 10:30",
+            "At 11:30"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「At 10:30」：原文寫「10:30 Guided showroom tour」。其餘選項的時間、地點或要求與這句不符。\n【考點】Part 7・細節題\n【判斷依據】先定位題目所問的資訊，再核對原句與選項。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
+    },
+    {
+      "id": "g-not-p7-11",
+      "section": "reading",
+      "part": 7,
+      "title": "Memo: printing room",
+      "passage": {
+        "docs": [
+          {
+            "label": "Memo",
+            "text": "The third-floor printing room will reopen on Monday. Employees may use the color printer and document scanner without booking. Reserve the large-format printer through the intranet at least one day ahead. The laminator remains out of service until replacement parts arrive."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "NOT-P7-11A",
+          "prompt": "Which service is NOT available when the room reopens?",
+          "options": [
+            "Color printing",
+            "Document scanning",
+            "Lamination",
+            "Large-format printing by reservation"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Lamination」：文章沒有支持這項說法，或明確說明相反情況。其餘三項可分別由 「use the color printer」; 「and document scanner」; 「Reserve the large-format printer」 核對。\n【考點】Part 7・NOT 題\n【判斷依據】逐項核對原文的條件、時間與否定語氣；三項有直接根據，剩下一項才是答案。",
+          "skill": "r-detail",
+          "questionType": "not-question",
+          "ability": "R2"
+        },
+        {
+          "id": "NOT-P7-11B",
+          "prompt": "How far ahead must the large-format printer be reserved?",
+          "options": [
+            "At least one hour",
+            "At least one week",
+            "At least two weeks",
+            "At least one day"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「At least one day」：原文寫「at least one day ahead」。其餘選項的時間、地點或要求與這句不符。\n【考點】Part 7・細節題\n【判斷依據】先定位題目所問的資訊，再核對原句與選項。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
+    },
+    {
+      "id": "g-not-p7-12",
+      "section": "reading",
+      "part": 7,
+      "title": "Email: training materials",
+      "passage": {
+        "docs": [
+          {
+            "label": "Email",
+            "text": "To: New analysts\nSubject: Monday workshop\n\nPlease download the workbook before Monday. Bring your laptop and employee badge to the 2 P.M. workshop in Room 4. Pens and printed reference sheets will be supplied at the door. There is no need to print the workbook."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "NOT-P7-12A",
+          "prompt": "Which preparation is NOT requested for the workshop?",
+          "options": [
+            "Bringing a laptop",
+            "Bringing an employee badge",
+            "Downloading the workbook",
+            "Printing the workbook"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Printing the workbook」：原文明說不需要列印工作手冊。其餘三項分別由「Bring your laptop」「and employee badge」「download the workbook」支持。\n【考點】Part 7・NOT 題\n【判斷依據】逐項核對原文的準備要求，留意 no need 的否定句。",
+          "skill": "r-detail",
+          "questionType": "not-question",
+          "ability": "R2"
+        },
+        {
+          "id": "NOT-P7-12B",
+          "prompt": "Where will the workshop take place?",
+          "options": [
+            "Room 4",
+            "Room 2",
+            "The lobby",
+            "The library"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「Room 4」：原文寫「in Room 4」。其餘選項的時間、地點或要求與這句不符。\n【考點】Part 7・細節題\n【判斷依據】先定位題目所問的資訊，再核對原句與選項。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
+    },
+    {
+      "id": "g-not-p7-13",
+      "section": "reading",
+      "part": 7,
+      "title": "Announcement: ferry services",
+      "passage": {
+        "docs": [
+          {
+            "label": "Announcement",
+            "text": "The Harbor Loop ferry runs every half hour between Bay Pier and East Pier from 8 A.M. to 6 P.M. on weekends. Bicycles are allowed at no extra charge. Tickets are sold at both piers. The onboard snack counter is closed for maintenance this month."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "NOT-P7-13A",
+          "prompt": "Which service is NOT offered on the Harbor Loop this month?",
+          "options": [
+            "An onboard snack counter",
+            "Weekend ferry rides",
+            "Bicycle transport",
+            "Ticket sales at both piers"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「An onboard snack counter」：文章沒有支持這項說法，或明確說明相反情況。其餘三項可分別由 「on weekends」; 「Bicycles are allowed」; 「Tickets are sold at both piers」 核對。\n【考點】Part 7・NOT 題\n【判斷依據】逐項核對原文的條件、時間與否定語氣；三項有直接根據，剩下一項才是答案。",
+          "skill": "r-detail",
+          "questionType": "not-question",
+          "ability": "R2"
+        },
+        {
+          "id": "NOT-P7-13B",
+          "prompt": "How often does the ferry depart?",
+          "options": [
+            "Every 15 minutes",
+            "Every half hour",
+            "Every hour",
+            "Every two hours"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Every half hour」：原文寫「every half hour」。其餘選項的時間、地點或要求與這句不符。\n【考點】Part 7・細節題\n【判斷依據】先定位題目所問的資訊，再核對原句與選項。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
+    },
+    {
+      "id": "g-not-p7-14",
+      "section": "reading",
+      "part": 7,
+      "title": "Notice: community lecture",
+      "passage": {
+        "docs": [
+          {
+            "label": "Notice",
+            "text": "The Greenfield Museum lecture begins at 6:30 P.M. on Thursday. Admission is free, but seats must be reserved online by Wednesday. The museum will open the courtyard entrance at 6 P.M. A recording will be posted on the museum site the next day. The gift shop will close at its usual time of 5 P.M."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "NOT-P7-14A",
+          "prompt": "Which statement about the lecture is NOT correct?",
+          "options": [
+            "Admission is free.",
+            "The gift shop will remain open for lecture guests.",
+            "Guests must reserve seats online.",
+            "A recording will be posted afterward."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「The gift shop will remain open for lecture guests.」：文章沒有支持這項說法，或明確說明相反情況。其餘三項可分別由 「Admission is free」; 「seats must be reserved online」; 「A recording will be posted」 核對。\n【考點】Part 7・NOT 題\n【判斷依據】逐項核對原文的條件、時間與否定語氣；三項有直接根據，剩下一項才是答案。",
+          "skill": "r-detail",
+          "questionType": "not-question",
+          "ability": "R2"
+        },
+        {
+          "id": "NOT-P7-14B",
+          "prompt": "Which entrance opens at 6 P.M.?",
+          "options": [
+            "The north gate",
+            "The loading entrance",
+            "The courtyard entrance",
+            "The gallery entrance"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「The courtyard entrance」：原文寫「courtyard entrance at 6 P.M.」。其餘選項的時間、地點或要求與這句不符。\n【考點】Part 7・細節題\n【判斷依據】先定位題目所問的資訊，再核對原句與選項。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
+    },
+    {
+      "id": "g-not-p7-15",
+      "section": "reading",
+      "part": 7,
+      "title": "Email: sample shipment",
+      "passage": {
+        "docs": [
+          {
+            "label": "Email",
+            "text": "To: Lena Ortiz\nFrom: Arun Mehta\nSubject: Sample shipment\n\nThe fabric samples left our facility this morning. The blue and charcoal swatches are in the first box; the green swatches will follow on Friday after the dye test. The invoice covers all three colors, but payment is due only after the second box arrives. Please confirm the quantity of blue swatches by tomorrow so we can correct the packing list if needed."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "NOT-P7-15A",
+          "prompt": "Which statement is NOT supported by the email?",
+          "options": [
+            "Blue swatches are in the first box.",
+            "Green swatches will follow after a dye test.",
+            "Payment is due before the green swatches are shipped.",
+            "The invoice includes three colors."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Payment is due before the green swatches are shipped.」：文章沒有支持這項說法，或明確說明相反情況。其餘三項可分別由 「blue and charcoal swatches are in the first box」; 「green swatches will follow on Friday after the dye test」; 「invoice covers all three colors」 核對。\n【考點】Part 7・NOT 題\n【判斷依據】逐項核對原文的條件、時間與否定語氣；三項有直接根據，剩下一項才是答案。",
+          "skill": "r-detail",
+          "questionType": "not-question",
+          "ability": "R2"
+        },
+        {
+          "id": "NOT-P7-15B",
+          "prompt": "What should Lena confirm by tomorrow?",
+          "options": [
+            "The freight charge",
+            "The dye formula",
+            "The delivery address",
+            "The quantity of blue swatches"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「The quantity of blue swatches」：原文寫「confirm the quantity of blue swatches by tomorrow」。其餘選項的時間、地點或要求與這句不符。\n【考點】Part 7・細節題\n【判斷依據】先定位題目所問的資訊，再核對原句與選項。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
+    },
+    {
+      "id": "g-not-p7-16",
+      "section": "reading",
+      "part": 7,
+      "title": "Notice: café hours",
+      "passage": {
+        "docs": [
+          {
+            "label": "Notice",
+            "text": "For the next two weeks, the Atrium Café will serve breakfast from 7 to 10 A.M. and lunch from 11 A.M. to 2 P.M. The espresso bar stays open until 4 P.M., but hot meals will not be served after 2 P.M. Employees with prepaid meal cards can use them for food and drinks; the cards cannot be used at the neighboring bakery."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "NOT-P7-16A",
+          "prompt": "Which statement about the café is NOT true?",
+          "options": [
+            "Breakfast begins at 7 A.M.",
+            "The espresso bar closes at 4 P.M.",
+            "Prepaid cards may be used for drinks.",
+            "Hot meals can be purchased at 3 P.M."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Hot meals can be purchased at 3 P.M.」：文章沒有支持這項說法，或明確說明相反情況。其餘三項可分別由 「breakfast from 7 to 10 A.M.」; 「espresso bar stays open until 4 P.M.」; 「use them for food and drinks」 核對。\n【考點】Part 7・NOT 題\n【判斷依據】逐項核對原文的條件、時間與否定語氣；三項有直接根據，剩下一項才是答案。",
+          "skill": "r-detail",
+          "questionType": "not-question",
+          "ability": "R2"
+        },
+        {
+          "id": "NOT-P7-16B",
+          "prompt": "Where are prepaid meal cards not accepted?",
+          "options": [
+            "At the neighboring bakery",
+            "At the espresso bar",
+            "At the café lunch counter",
+            "At the café breakfast counter"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「At the neighboring bakery」：原文寫「cannot be used at the neighboring bakery」。其餘選項的時間、地點或要求與這句不符。\n【考點】Part 7・細節題\n【判斷依據】先定位題目所問的資訊，再核對原句與選項。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
+    },
+    {
+      "id": "g-not-p7-17",
+      "section": "reading",
+      "part": 7,
+      "title": "Policy: remote equipment",
+      "passage": {
+        "docs": [
+          {
+            "label": "Policy excerpt",
+            "text": "Employees assigned to remote projects may borrow a monitor for up to six weeks. Requests must be approved by a team lead before collection. A carrying case is provided with each monitor, while keyboard loans require a separate request. Borrowers must return the equipment to the service desk; home pickup is not available."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "NOT-P7-17A",
+          "prompt": "Which statement about borrowing a monitor is NOT true?",
+          "options": [
+            "A keyboard comes with every monitor.",
+            "A carrying case comes with every monitor.",
+            "The loan may last up to six weeks.",
+            "A team lead must approve the request."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「A keyboard comes with every monitor.」：原文說鍵盤借用需要另外申請。其餘三項分別有「A carrying case is provided」「for up to six weeks」及「approved by a team lead before collection」作為直接依據。\n【考點】Part 7・NOT 題\n【判斷依據】逐項核對提供內容、期限與核准條件。",
+          "skill": "r-detail",
+          "questionType": "not-question",
+          "ability": "R2"
+        },
+        {
+          "id": "NOT-P7-17B",
+          "prompt": "Where must borrowers return equipment?",
+          "options": [
+            "The mailroom",
+            "The service desk",
+            "Their team lead’s office",
+            "The reception lobby"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「The service desk」：原文寫「return the equipment to the service desk」。其餘選項的時間、地點或要求與這句不符。\n【考點】Part 7・細節題\n【判斷依據】先定位題目所問的資訊，再核對原句與選項。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
+    },
+    {
+      "id": "g-not-p7-18",
+      "section": "reading",
+      "part": 7,
+      "title": "Message: gallery delivery",
+      "passage": {
+        "docs": [
+          {
+            "label": "Message",
+            "text": "Hi Niko, the framed prints, mounting hooks, and inventory sheet can be delivered to Gallery Two on Wednesday, provided the humidity check is complete by Tuesday evening. If the check is delayed, use the climate-controlled storage room and deliver those items on Thursday instead. The wall labels are already at the gallery. Please do not send the display lights; the gallery has its own set. — Mara"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "NOT-P7-18A",
+          "prompt": "Which item does Mara explicitly ask Niko NOT to send?",
+          "options": [
+            "Framed prints",
+            "Display lights",
+            "Mounting hooks",
+            "An inventory sheet"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Display lights」：Mara 明說「Please do not send the display lights」。裱框印刷品、安裝掛鉤和物品清單都在「can be delivered」的寄送清單中。\n【考點】Part 7・NOT 題\n【判斷依據】區分明確禁止寄送與原本就已在展館的物品。",
+          "skill": "r-detail",
+          "questionType": "not-question",
+          "ability": "R2"
+        },
+        {
+          "id": "NOT-P7-18B",
+          "prompt": "When should the prints be delivered if the check is delayed?",
+          "options": [
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Thursday」：原文說檢查延遲時，改在週四寄送這些物品，包含裱框印刷品。其餘日期與條件不符。\n【考點】Part 7・細節題\n【判斷依據】先定位題目所問的資訊，再核對原句與選項。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
+    },
+    {
+      "id": "g-not-p7-19",
+      "section": "reading",
+      "part": 7,
+      "title": "Report: pilot survey",
+      "passage": {
+        "docs": [
+          {
+            "label": "Pilot report",
+            "text": "A survey of 84 trial users found that 52 preferred the revised search screen and 21 preferred the previous screen; the rest had no preference. The trial ran for three weeks in two branches. Respondents praised the clearer filters but asked for larger text on the results page. The final rollout date has not been set."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "NOT-P7-19A",
+          "prompt": "Which conclusion is NOT supported by the report?",
+          "options": [
+            "Most respondents preferred the revised screen.",
+            "The trial involved two branches.",
+            "The revised screen has a confirmed rollout date.",
+            "Some users requested larger results-page text."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「The revised screen has a confirmed rollout date.」：文章沒有支持這項說法，或明確說明相反情況。其餘三項可分別由 「52 preferred the revised search screen」; 「in two branches」; 「asked for larger text on the results page」 核對。\n【考點】Part 7・NOT 題\n【判斷依據】逐項核對原文的條件、時間與否定語氣；三項有直接根據，剩下一項才是答案。",
+          "skill": "r-detail",
+          "questionType": "not-question",
+          "ability": "R2"
+        },
+        {
+          "id": "NOT-P7-19B",
+          "prompt": "How long did the trial run?",
+          "options": [
+            "One week",
+            "Two weeks",
+            "Four weeks",
+            "Three weeks"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Three weeks」：原文寫「ran for three weeks」。其餘選項的時間、地點或要求與這句不符。\n【考點】Part 7・細節題\n【判斷依據】先定位題目所問的資訊，再核對原句與選項。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
+    },
+    {
+      "id": "g-not-p7-20",
+      "section": "reading",
+      "part": 7,
+      "title": "Chat: client visit",
+      "passage": {
+        "docs": [
+          {
+            "label": "Team chat",
+            "text": "Mina: The client arrives at 10:20, so I moved the product review to 10:45.\nOwen: I can meet them in the lobby. Is the prototype ready?\nMina: The software is ready, but the printed handouts arrive after lunch. We can use the shared screen for the morning review.\nOwen: I will bring the adapter. The catering order is for 12:30."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "NOT-P7-20A",
+          "prompt": "Which preparation is NOT complete before the morning review?",
+          "options": [
+            "Preparation of the software",
+            "A plan to meet the client in the lobby",
+            "A shared-screen alternative",
+            "Delivery of printed handouts"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Delivery of printed handouts」：文章沒有支持這項說法，或明確說明相反情況。其餘三項可分別由 「software is ready」; 「I can meet them in the lobby」; 「use the shared screen for the morning review」 核對。\n【考點】Part 7・NOT 題\n【判斷依據】逐項核對原文的條件、時間與否定語氣；三項有直接根據，剩下一項才是答案。",
+          "skill": "r-detail",
+          "questionType": "not-question",
+          "ability": "R2"
+        },
+        {
+          "id": "NOT-P7-20B",
+          "prompt": "What will Owen bring?",
+          "options": [
+            "An adapter",
+            "A prototype case",
+            "Printed handouts",
+            "A catering invoice"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「An adapter」：原文寫「I will bring the adapter」。其餘選項的時間、地點或要求與這句不符。\n【考點】Part 7・細節題\n【判斷依據】先定位題目所問的資訊，再核對原句與選項。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
+    },
+    {
+      "id": "g-not-p7-21",
+      "section": "reading",
+      "part": 7,
+      "title": "Notice: expense claims",
+      "passage": {
+        "docs": [
+          {
+            "label": "Notice",
+            "text": "Submit travel claims through the portal within ten working days of a trip. Receipts for fares and lodging are required; meals under $15 may be entered without a receipt. A supervisor approves the claim before Finance reviews it. Claims submitted by email will be returned without processing."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "NOT-P7-21A",
+          "prompt": "Which statement about travel claims is NOT accurate?",
+          "options": [
+            "All meal claims require a receipt.",
+            "Claims must go through the portal.",
+            "Fare receipts are required.",
+            "Supervisors review claims before Finance."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「All meal claims require a receipt.」：文章沒有支持這項說法，或明確說明相反情況。其餘三項可分別由 「through the portal」; 「Receipts for fares」; 「A supervisor approves the claim before Finance」 核對。\n【考點】Part 7・NOT 題\n【判斷依據】逐項核對原文的條件、時間與否定語氣；三項有直接根據，剩下一項才是答案。",
+          "skill": "r-detail",
+          "questionType": "not-question",
+          "ability": "R2"
+        },
+        {
+          "id": "NOT-P7-21B",
+          "prompt": "What happens to claims submitted by email?",
+          "options": [
+            "They are approved automatically.",
+            "They are returned without processing.",
+            "They are sent to a supervisor.",
+            "They are held for ten days."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「They are returned without processing.」：原文寫「returned without processing」。其餘選項的時間、地點或要求與這句不符。\n【考點】Part 7・細節題\n【判斷依據】先定位題目所問的資訊，再核對原句與選項。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
+    },
+    {
+      "id": "g-not-p7-22",
+      "section": "reading",
+      "part": 7,
+      "title": "Email: venue booking",
+      "passage": {
+        "docs": [
+          {
+            "label": "Email",
+            "text": "Dear Ms. Wu,\n\nWe have reserved the smaller hall for your rehearsal on 18 August from 3 to 5 P.M. The larger hall is unavailable that afternoon. A technician will check the sound system at 2:30, but your group is responsible for arranging chairs. Please send the final attendee count by 14 August. The deposit can be paid after the rehearsal.\n\nRegards,\nVenue Office"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "NOT-P7-22A",
+          "prompt": "Which arrangement is NOT included in the venue booking?",
+          "options": [
+            "Use of the smaller hall",
+            "Chair arrangement by venue staff",
+            "A sound-system check",
+            "Payment of the deposit after rehearsal"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Chair arrangement by venue staff」：文章沒有支持這項說法，或明確說明相反情況。其餘三項可分別由 「reserved the smaller hall」; 「A technician will check the sound system」; 「deposit can be paid after the rehearsal」 核對。\n【考點】Part 7・NOT 題\n【判斷依據】逐項核對原文的條件、時間與否定語氣；三項有直接根據，剩下一項才是答案。",
+          "skill": "r-detail",
+          "questionType": "not-question",
+          "ability": "R2"
+        },
+        {
+          "id": "NOT-P7-22B",
+          "prompt": "By when should the attendee count be sent?",
+          "options": [
+            "18 August",
+            "2:30 P.M. on 18 August",
+            "14 August",
+            "One week after rehearsal"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「14 August」：原文寫「send the final attendee count by 14 August」。其餘選項的時間、地點或要求與這句不符。\n【考點】Part 7・細節題\n【判斷依據】先定位題目所問的資訊，再核對原句與選項。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
+    },
+    {
+      "id": "g-not-p7-23",
+      "section": "reading",
+      "part": 7,
+      "title": "Table: package options",
+      "passage": {
+        "docs": [
+          {
+            "label": "Service table",
+            "text": "Plan | Monthly fee | Support | Archive\nBasic | $24 | Email, weekdays | 30 days\nTeam | $48 | Phone and email, weekdays | 90 days\nStudio | $76 | Phone and email, every day | 180 days\n\nAll plans allow two account administrators. Only Studio includes quarterly training."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "NOT-P7-23A",
+          "prompt": "Which feature is NOT included in the Team plan?",
+          "options": [
+            "Weekday phone support",
+            "A 90-day archive",
+            "Quarterly training",
+            "Two account administrators"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Quarterly training」：文章沒有支持這項說法，或明確說明相反情況。其餘三項可分別由 「Team | $48 | Phone and email, weekdays」; 「Team | $48 | Phone and email, weekdays | 90 days」; 「All plans allow two account administrators」 核對。\n【考點】Part 7・NOT 題\n【判斷依據】逐項核對原文的條件、時間與否定語氣；三項有直接根據，剩下一項才是答案。",
+          "skill": "r-detail",
+          "questionType": "not-question",
+          "ability": "R2"
+        },
+        {
+          "id": "NOT-P7-23B",
+          "prompt": "What is the monthly fee for the Team plan?",
+          "options": [
+            "$24",
+            "$76",
+            "$90",
+            "$48"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「$48」：原文寫「Team | $48」。其餘選項的時間、地點或要求與這句不符。\n【考點】Part 7・細節題\n【判斷依據】先定位題目所問的資訊，再核對原句與選項。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
+    },
+    {
+      "id": "g-not-p7-24",
+      "section": "reading",
+      "part": 7,
+      "title": "Memo: garden maintenance",
+      "passage": {
+        "docs": [
+          {
+            "label": "Memo",
+            "text": "The rooftop garden will be closed to visitors on 22 September for irrigation repairs. Staff may enter to water the indoor planters, but the eastern path will be blocked. On 22 September, the contractor will repair the irrigation system, remove old tubing, and clear leaves from the drainage channel; the facilities team will inspect the new valves on 23 September. The garden is expected to reopen on 24 September, subject to inspection."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "NOT-P7-24A",
+          "prompt": "Which task is NOT assigned to the contractor?",
+          "options": [
+            "Removing old tubing",
+            "Clearing leaves from the drainage channel",
+            "Repairing the irrigation system",
+            "Inspecting the new valves"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Inspecting the new valves」：檢查新閥門是 facilities team 的工作。原文將修理灌溉系統、拆除舊管和清理排水道落葉三項都明確交給 contractor。\n【考點】Part 7・NOT 題\n【判斷依據】逐項核對工作與負責單位，不能只看任務是否出現在文章裡。",
+          "skill": "r-detail",
+          "questionType": "not-question",
+          "ability": "R2"
+        },
+        {
+          "id": "NOT-P7-24B",
+          "prompt": "What must happen before the garden reopens?",
+          "options": [
+            "An inspection of the new valves",
+            "A visitor survey",
+            "Replacement of indoor planters",
+            "A new path installation"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「An inspection of the new valves」：原文寫「subject to inspection」。其餘選項的時間、地點或要求與這句不符。\n【考點】Part 7・細節題\n【判斷依據】先定位題目所問的資訊，再核對原句與選項。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
+    },
+    {
+      "id": "g-not-p7-25",
+      "section": "reading",
+      "part": 7,
+      "title": "Reading file: workshop and access",
+      "passage": {
+        "docs": [
+          {
+            "label": "Reading file",
+            "text": "Workshop invitation\nThe data-mapping workshop starts at 9 A.M. on 6 October in Lab C. Participants should bring a charged laptop. The organizer will email sample files on 5 October. Guests may attend only if their host registers them by 2 October.\n\nAccess note\nLab C opens to registered guests at 8:30 A.M. Hosts must collect visitor badges from Reception before entering. The sample files are accessible on the guest network; printed copies will not be distributed. Laptops cannot be borrowed from the lab."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "NOT-P7-25A",
+          "prompt": "Which of the following is NOT available to registered guests?",
+          "options": [
+            "A loan laptop",
+            "Access to sample files",
+            "A visitor badge collected by a host",
+            "Entry to Lab C before 9 A.M."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「A loan laptop」：文章沒有支持這項說法，或明確說明相反情況。其餘三項可分別由 「organizer will email sample files; sample files are accessible on the guest network」; 「Hosts must collect visitor badges from Reception」; 「Lab C opens to registered guests at 8:30 A.M.」 核對。\n【考點】Part 7・NOT 題\n【判斷依據】逐項核對原文的條件、時間與否定語氣；三項有直接根據，剩下一項才是答案。",
+          "skill": "r-detail",
+          "questionType": "not-question",
+          "ability": "R2"
+        },
+        {
+          "id": "NOT-P7-25B",
+          "prompt": "By when must a host register a guest?",
+          "options": [
+            "5 October",
+            "2 October",
+            "6 October at 8:30 A.M.",
+            "6 October at 9 A.M."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「2 October」：原文寫「registers them by 2 October」。其餘選項的時間、地點或要求與這句不符。\n【考點】Part 7・細節題\n【判斷依據】先定位題目所問的資訊，再核對原句與選項。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
+    },
+    {
+      "id": "g-not-p7-26",
+      "section": "reading",
+      "part": 7,
+      "title": "Reading file: repair and pickup",
+      "passage": {
+        "docs": [
+          {
+            "label": "Reading file",
+            "text": "Repair confirmation\nThe tablet screen replacement is complete. Your device passed the display test but still needs a battery check on Thursday morning. Collection can begin after we send a completion message; do not travel to the service desk before then.\n\nPickup instructions\nThe service desk closes at 5 P.M. on weekdays. Bring your repair receipt and an ID to collect a device. A colleague may collect it with written authorization. Same-day courier delivery is offered only for devices that passed all checks before noon."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "NOT-P7-26A",
+          "prompt": "Which statement is NOT supported by the reading file?",
+          "options": [
+            "A battery check is still required.",
+            "The tablet can be collected immediately after the display test.",
+            "The customer needs a completion message before collection.",
+            "An authorized colleague may collect the tablet."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「The tablet can be collected immediately after the display test.」：文章沒有支持這項說法，或明確說明相反情況。其餘三項可分別由 「still needs a battery check」; 「Collection can begin after we send a completion message」; 「A colleague may collect it with written authorization」 核對。\n【考點】Part 7・NOT 題\n【判斷依據】逐項核對原文的條件、時間與否定語氣；三項有直接根據，剩下一項才是答案。",
+          "skill": "r-detail",
+          "questionType": "not-question",
+          "ability": "R2"
+        },
+        {
+          "id": "NOT-P7-26B",
+          "prompt": "What must a customer bring to the service desk?",
+          "options": [
+            "The original packaging",
+            "A battery report",
+            "A repair receipt and an ID",
+            "A courier label"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「A repair receipt and an ID」：原文寫「Bring your repair receipt and an ID」。其餘選項的時間、地點或要求與這句不符。\n【考點】Part 7・細節題\n【判斷依據】先定位題目所問的資訊，再核對原句與選項。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
+    },
+    {
+      "id": "g-not-p7-27",
+      "section": "reading",
+      "part": 7,
+      "title": "Reading file: catering order",
+      "passage": {
+        "docs": [
+          {
+            "label": "Reading file",
+            "text": "Order summary\nOrder 418: 24 vegetarian lunches and 12 chicken lunches for the Tuesday seminar. Delivery is scheduled for 11:45 A.M. to the south entrance. Reusable trays are included. Drinks are not included in this order.\n\nSeminar update\nThe seminar now starts at noon rather than 11:30 A.M. The venue will provide water dispensers. The facilities team will collect the reusable trays after the event. Please keep the south entrance clear until the caterer has unloaded."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "NOT-P7-27A",
+          "prompt": "Which item is NOT being provided for the seminar?",
+          "options": [
+            "Vegetarian lunches",
+            "Reusable trays",
+            "Bottled drinks from the caterer",
+            "Water dispensers at the venue"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Bottled drinks from the caterer」：文章沒有支持這項說法，或明確說明相反情況。其餘三項可分別由 「24 vegetarian lunches」; 「Reusable trays are included」; 「venue will provide water dispensers」 核對。\n【考點】Part 7・NOT 題\n【判斷依據】逐項核對原文的條件、時間與否定語氣；三項有直接根據，剩下一項才是答案。",
+          "skill": "r-detail",
+          "questionType": "not-question",
+          "ability": "R2"
+        },
+        {
+          "id": "NOT-P7-27B",
+          "prompt": "Where should the caterer unload?",
+          "options": [
+            "At the north entrance",
+            "At the kitchen door",
+            "At the reception desk",
+            "At the south entrance"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「At the south entrance」：原文寫「to the south entrance」。其餘選項的時間、地點或要求與這句不符。\n【考點】Part 7・細節題\n【判斷依據】先定位題目所問的資訊，再核對原句與選項。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
+    },
+    {
+      "id": "g-not-p7-28",
+      "section": "reading",
+      "part": 7,
+      "title": "Reading file: conference shuttle",
+      "passage": {
+        "docs": [
+          {
+            "label": "Reading file",
+            "text": "Travel note\nConference guests can use the morning shuttle from Oak Station to the venue at 8:10 or 8:40 A.M. The return shuttle leaves at 5:20 P.M. Guests must show the event pass when boarding. No shuttle runs from the airport.\n\nSpeaker update\nSpeakers should arrive by 8:50 A.M. for a microphone check at 9:05. Event passes will be sent by email on Monday. Anyone arriving after the second shuttle should take a taxi from Oak Station; the organizer will reimburse the fare with a receipt."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "NOT-P7-28A",
+          "prompt": "Which transportation claim is NOT correct?",
+          "options": [
+            "There are two morning departures from Oak Station.",
+            "Passengers must show an event pass.",
+            "A receipted taxi fare from Oak Station may be reimbursed.",
+            "The organizer provides a shuttle from the airport."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「The organizer provides a shuttle from the airport.」：文章沒有支持這項說法，或明確說明相反情況。其餘三項可分別由 「at 8:10 or 8:40 A.M.」; 「must show the event pass when boarding」; 「reimburse the fare with a receipt」 核對。\n【考點】Part 7・NOT 題\n【判斷依據】逐項核對原文的條件、時間與否定語氣；三項有直接根據，剩下一項才是答案。",
+          "skill": "r-detail",
+          "questionType": "not-question",
+          "ability": "R2"
+        },
+        {
+          "id": "NOT-P7-28B",
+          "prompt": "When is the microphone check scheduled?",
+          "options": [
+            "At 9:05 A.M.",
+            "At 8:10 A.M.",
+            "At 8:40 A.M.",
+            "At 8:50 A.M."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「At 9:05 A.M.」：原文寫「microphone check at 9:05」。其餘選項的時間、地點或要求與這句不符。\n【考點】Part 7・細節題\n【判斷依據】先定位題目所問的資訊，再核對原句與選項。",
+          "skill": "r-detail",
+          "questionType": "detail",
+          "ability": "R2"
+        }
+      ]
     }
   ]
 }
