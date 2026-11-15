@@ -29,7 +29,7 @@ test("markNot highlights only the capitalised words and keeps escaped text intac
 
 test("bank has enough Part 7 NOT questions and the picker returns distinct, recent-avoiding picks", () => {
   const pool = notQuestionPool(bank);
-  assert.ok(pool.length >= 15, `pool ${pool.length}`);
+  assert.ok(pool.length >= 35, `pool ${pool.length}`);
   assert.equal(new Set(pool.map((p) => p.questionId)).size, pool.length);
   const groups = new Map(bank.groups.map((g) => [g.id, g]));
   for (const item of pool) assert.equal(groups.get(item.groupId).part, 7);
@@ -40,6 +40,22 @@ test("bank has enough Part 7 NOT questions and the picker returns distinct, rece
   const second = pickNotQuestions(bank, { count: 5, random: seeded(2), recent: first.questionIds });
   assert.ok(second.questionIds.filter((id) => first.questionIds.includes(id)).length <= Math.max(0, 5 - (pool.length - 10)), "unseen questions come first");
   assert.equal(pickNotQuestions(bank, { count: 999, random: seeded(3) }).questionIds.length, pool.length);
+});
+
+test("20 new original NOT groups have balanced keys and complete rationales", () => {
+  const groups = bank.groups.filter((group) => /^g-not-p7-(?:0[9]|1\d|2[0-8])$/.test(group.id));
+  assert.equal(groups.length, 20);
+  const counts = [0, 0, 0, 0];
+  for (const group of groups) {
+    assert.equal(group.part, 7);
+    assert.equal(group.questions.length, 2);
+    const [negative] = group.questions;
+    assert.equal(negative.questionType, "not-question");
+    assert.ok(/\b(?:NOT|EXCEPT)\b/.test(negative.prompt), negative.id);
+    assert.match(negative.explanation, /【考點】.*【判斷依據】/s);
+    counts[negative.answer]++;
+  }
+  assert.deepEqual(counts, [5, 5, 5, 5]);
 });
 
 test("Part 7 tips include the NOT strategy, labelled as a personal summary", () => {
