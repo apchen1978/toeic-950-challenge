@@ -1272,6 +1272,133 @@
           "listening": 0,
           "reading": 9
         }
+      },
+      {
+        "id": "part5-15",
+        "label": "Part 5 專練 · 15 題（5 分鐘）",
+        "groupIds": [
+          "g-r02",
+          "g-new-r4",
+          "g-cov-p5-43",
+          "g-rdnew-019",
+          "g-xs-r07",
+          "xr2-p5-05",
+          "xr-p5-06",
+          "g-vocab-c-1",
+          "g-xs-r13",
+          "g-cov-p5-06",
+          "g-vocab-c-4",
+          "g-a-p5-03",
+          "g-cov-p5-12",
+          "g-xs-r08",
+          "g-extra-r-04"
+        ],
+        "durationMin": 5,
+        "timing": {
+          "listening": 0,
+          "reading": 5
+        }
+      },
+      {
+        "id": "part5-30",
+        "label": "Part 5 整段 · 30 題（10 分鐘）",
+        "groupIds": [
+          "g-r02",
+          "g-new-r4",
+          "g-cov-p5-43",
+          "g-rdnew-019",
+          "g-xs-r07",
+          "xr2-p5-05",
+          "xr-p5-06",
+          "g-vocab-c-1",
+          "g-xs-r13",
+          "g-cov-p5-06",
+          "g-vocab-c-4",
+          "g-a-p5-03",
+          "g-cov-p5-12",
+          "g-xs-r08",
+          "g-extra-r-04",
+          "xf-p5-31",
+          "xf-p5-21",
+          "g-xs-r12",
+          "g-vocab-c-10",
+          "g-cov-p5-42",
+          "g-vocab-c-2",
+          "g-cov-p5-28",
+          "g-extra-r-02",
+          "s03-sentence7",
+          "g-a-p5-02",
+          "xf-p5-24",
+          "g-rdnew-002",
+          "g-cov-p5-13",
+          "g-new-r5",
+          "g-cov-p5-33"
+        ],
+        "durationMin": 10,
+        "timing": {
+          "listening": 0,
+          "reading": 10
+        }
+      },
+      {
+        "id": "part6-8",
+        "label": "Part 6 專練 · 8 題（4 分鐘）",
+        "groupIds": [
+          "g-new-text",
+          "g-new-part6-a"
+        ],
+        "durationMin": 4,
+        "timing": {
+          "listening": 0,
+          "reading": 4
+        }
+      },
+      {
+        "id": "part6-16",
+        "label": "Part 6 整段 · 16 題（8 分鐘）",
+        "groupIds": [
+          "g-new-text",
+          "g-new-part6-a",
+          "g-cov-p6-06",
+          "g-rdnew-024"
+        ],
+        "durationMin": 8,
+        "timing": {
+          "listening": 0,
+          "reading": 8
+        }
+      },
+      {
+        "id": "part7-12",
+        "label": "Part 7 專練 · 12 題（12 分鐘）",
+        "groupIds": [
+          "p7f-s04-02",
+          "p7f-triple-pilot",
+          "g-cov-p7-ins-03"
+        ],
+        "durationMin": 12,
+        "timing": {
+          "listening": 0,
+          "reading": 12
+        }
+      },
+      {
+        "id": "part7-25",
+        "label": "Part 7 整段 · 25 題（24 分鐘）",
+        "groupIds": [
+          "g-rt-train-01",
+          "g-not-p7-12",
+          "g-airport-reading-d",
+          "p7f-s02-01",
+          "g-r13",
+          "g-x7s-05",
+          "g-deep-reading-hotel-01"
+        ],
+        "durationMin": 24,
+        "timing": {
+          "listening": 0,
+          "reading": 24
+        }
       }
     ]
   },

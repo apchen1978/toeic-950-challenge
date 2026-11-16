@@ -68,6 +68,6 @@ test("Part 7 tips include the NOT strategy, labelled as a personal summary", () 
 test("app highlights NOT in questions, shows the hint, offers practice and the plan schedules it", () => {
   for (const needle of ["markNot(esc(q.prompt))", "isNegativePrompt(q.prompt", 'class="not-hint test-type-line"', 'data-action="start-not"', 'case "start-not"', "startNotPractice()"]) assert.ok(app.includes(needle), needle);
   assert.ok(TASKS.notPractice.action === "start-not");
-  assert.ok(BY_DAYS_LEFT[12].includes("notPractice") && BY_DAYS_LEFT[10].includes("notPractice"));
+  assert.ok(BY_DAYS_LEFT[12].includes("notPractice") && BY_DAYS_LEFT[9].includes("notPractice"));
   assert.match(worker, /"js\/not-questions\.js"/);
 });

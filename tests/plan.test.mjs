@@ -15,16 +15,18 @@ test("every day from 13 days out to exam day has a plan with known tasks and a t
   for (const key of GENERIC_DAY) assert.ok(TASKS[key], key);
 });
 
-test("plan follows Paul's request: listening and reading each practised 1-2 times, both in the last 3 days", () => {
+test("plan is reading-first: reading mocks start today, listening only maintained, both practised in the last 3 days", () => {
   const keysFor = (from, to) => { const out = []; for (let l = from; l >= to; l -= 1) out.push(...BY_DAYS_LEFT[l]); return out; };
   const all = keysFor(13, 0);
   const listening = all.filter((k) => /^listen/.test(k));
-  const reading = all.filter((k) => /^read\d/.test(k));
+  const reading = all.filter((k) => /^read/.test(k));
   assert.ok(listening.length >= 2 && listening.length <= 3, `listening ${listening}`);
-  assert.ok(reading.length >= 2 && reading.length <= 3, `reading ${reading}`);
+  assert.ok(reading.length >= 3 && reading.length <= 4, `reading ${reading}`);
+  assert.ok(reading.length > listening.length, "more full reading mocks than listening mocks");
+  assert.deepEqual(BY_DAYS_LEFT[13].filter((k) => /^read/.test(k)), ["read1"], "the first full reading mock is today (13 days out)");
   const last3 = keysFor(3, 1);
-  assert.ok(last3.some((k) => /^listen/.test(k)) && last3.some((k) => /^read\d/.test(k)));
-  assert.deepEqual(BY_DAYS_LEFT[1].filter((k) => /^(listen|read\d)/.test(k)), [], "the day before the exam has no full mock");
+  assert.ok(last3.some((k) => /^listen/.test(k)) && last3.some((k) => /^read/.test(k)));
+  assert.deepEqual(BY_DAYS_LEFT[1].filter((k) => /^(listen|read)/.test(k)), [], "the day before the exam has no full mock");
   assert.ok(BY_DAYS_LEFT[0].includes("preexam"));
 });
 

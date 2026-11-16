@@ -740,6 +740,19 @@ function renderHome() {
       <p class="tips-sources">參考：<a href="https://www.dcard.tw/f/english_tests/p/261823171" target="_blank" rel="noopener">Dcard 945 備考心得（2025）</a> · <a href="https://www.ptt.cc/bbs/TOEIC/M.1746338764.A.880.html" target="_blank" rel="noopener">PTT 990 考生心得（2025）</a> · <a href="https://www.toeic.com.tw/quick-links/faq/toeic-listening-reading/test-regulations/skip-section-prohibited" target="_blank" rel="noopener">台灣多益官方作答規定</a></p>
     </details>
 
+    <section class="card parts-card" id="nav-parts" aria-labelledby="parts-title">
+      <div class="reading-full-head"><span class="reading-full-badge">5–24 MIN</span><p class="section-kicker">READING BY PART · 閱讀分 Part 專練</p></div>
+      <h2 id="parts-title">Part 5、6、7 分開練</h2>
+      <p>閱讀還沒完整做過也可以從這裡開始：一次只練一個 Part，每組都有短的和整段兩種長度。時間約照正式配速，題目每次重新抽，會避開最近出過的。</p>
+      <div class="reading-full-sets">
+        ${PART_SETS.map(([part, title, note, short, block]) => `<div class="reading-full-set"><div class="rf-info"><h3>${esc(title)}</h3><p class="muted">${esc(note)}</p>${listeningFullLast(history, short.id)}</div><div class="rf-actions"><button class="btn primary" data-action="start-form" data-form="${short.id}">${esc(short.label)}</button><button class="btn" data-action="start-form" data-form="${block.id}">${esc(block.label)}</button></div></div>`).join("")}
+      </div>
+      <details class="card-more"><summary>配速與題型說明</summary>
+        <p class="muted">正式配速參考：Part 5 約 10 分鐘 30 題、Part 6 約 8 分鐘 16 題、Part 7 約 52 分鐘 54 題。這只是參考，不是必須達到的標準。</p>
+        <p class="muted">Part 5 會涵蓋詞性、時態、介系詞或連接詞、字彙四類；Part 6 每組四題、含句子插入；Part 7 整段含多篇文件的題組。作答時有題型標籤和提醒（可在「題型提示」關閉）。題目為原創模擬題，非 ETS 官方試題。</p>
+      </details>
+    </section>
+
     <section class="card listening-full-card" id="nav-mini" aria-labelledby="mini-title">
       <div class="reading-full-head"><span class="reading-full-badge">6–12 MIN</span><p class="section-kicker">QUICK SETS · 題型快練</p></div>
       <h2 id="mini-title">聽力 15 題・閱讀 12 題・NOT 題</h2>
@@ -1078,6 +1091,16 @@ function startNotPractice() {
   if (!pick.questionIds.length) return;
   const started = startSession("practice", orderedGroupIds(pick.groupIds), Math.max(5, Math.ceil(pick.questionIds.length * 1.2)), pick.questionIds);
   if (started) store.set(KEY_NOT_RECENT, [...(Array.isArray(recent) ? recent : []), ...pick.questionIds].slice(-40));
+}
+
+function startPartSet(formId) {
+  const set = bank.meta.sets.find((item) => item.id === formId);
+  if (!set) return;
+  const recent = store.get(KEY_QUICK_RECENT, []);
+  const draw = assembleQuickForm(bank, formId, { avoid: avoidedGroupIds(recent), section: "reading" });
+  const minutes = set.timing?.reading ?? draw.minutes;
+  const started = startSession("diagnostic", draw.groupIds, minutes, null, set.id, { reading: minutes }, { section: "reading" });
+  if (started) store.set(KEY_QUICK_RECENT, rememberQuickDraw(recent, draw.groupIds, formId));
 }
 
 async function startMiniForm(formId) {
@@ -1796,6 +1819,11 @@ const TYPE_LABELS = {
   synonym: "同義字", "text-insertion": "插入位置", "chat-intent": "簡訊／聊天意圖", "cross-document": "跨文件整合"
 };
 const PART_PACE = { 5: 10, 6: 8, 7: 52 };
+const PART_SETS = [
+  [5, "Part 5 · 句子填空", "一題一題的文法與字彙，最適合練反應速度", { id: "part5-15", label: "15 題 · 5 分" }, { id: "part5-30", label: "30 題 · 10 分" }],
+  [6, "Part 6 · 段落填空", "每組四題，含句子插入；要看前後文", { id: "part6-8", label: "8 題 · 4 分" }, { id: "part6-16", label: "16 題 · 8 分" }],
+  [7, "Part 7 · 閱讀理解", "單篇與多篇文件，含 NOT、推論、同義字", { id: "part7-12", label: "12 題 · 12 分" }, { id: "part7-25", label: "25 題 · 24 分" }]
+];
 function typeMode() { return normalizeTypeMode(store.get(KEY_TYPE_MODE, "practice")); }
 // 題型提示用 CSS 開關：切換時不重畫畫面，聽力播放不會被打斷。
 function applyTypeMode() {
@@ -1878,6 +1906,7 @@ app.addEventListener("click", (e) => {
       if (d.form === "quick-40" || d.form === "quick-60") { startQuickForm(d.form); break; }
       if (isReadingFullForm(d.form)) { startReadingFull(d.form); break; }
       if (d.form === "mini-listen-15" || d.form === "mini-read-12") { startMiniForm(d.form); break; }
+      if (/^part[567]-\d+$/.test(d.form)) { startPartSet(d.form); break; }
       if (isListeningFullForm(d.form)) { startListeningFull(d.form); break; }
       if (isOfficialForm(d.form)) { startOfficialSet(d.form); break; }
       const set = bank.meta.sets.find((s) => s.id === d.form);
