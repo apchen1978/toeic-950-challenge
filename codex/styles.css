@@ -455,3 +455,8 @@ details.card-more > summary:hover, details.fold > summary:hover { opacity: .85; 
 
 .type-line { margin: 4px 0 6px; font-size: .9375rem; line-height: 1.6; }
 .type-chip { display: inline-block; padding: 1px 10px; border-radius: 999px; background: var(--sel); border: 1px solid var(--line); font-weight: 700; font-size: .8125rem; color: var(--ink); }
+
+.type-switch { margin: 6px 0; font-size: .875rem; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.type-switch label { color: var(--muted); }
+#app[data-type-mode="off"] .type-line, #app[data-type-mode="off"] .not-hint { display: none; }
+#app[data-type-show-test="0"] .test-type-line { display: none; }
