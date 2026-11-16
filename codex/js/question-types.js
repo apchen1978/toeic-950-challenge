@@ -50,7 +50,19 @@ export function questionTypeInfo(type, part) {
   return entry;
 }
 
-// 練習和複習才顯示；正式模擬（official）維持沒有提示的考試狀態。
-export function showTypeHint(session) {
-  return !session?.official;
+// 題型提示的三種模式：練習時顯示（預設）、全部顯示（含正式模擬）、關閉。
+export const TYPE_MODES = [
+  ["practice", "練習時顯示（預設）"],
+  ["all", "全部顯示（含正式模擬）"],
+  ["off", "關閉"]
+];
+export function normalizeTypeMode(value) {
+  return TYPE_MODES.some(([id]) => id === value) ? value : "practice";
+}
+// 作答畫面要不要顯示題型提示。official 是正式模擬（快速模考、完整模擬、快練、200 題）。
+export function typeHintVisible(mode, official) {
+  const m = normalizeTypeMode(mode);
+  if (m === "off") return false;
+  if (m === "all") return true;
+  return !official;
 }

@@ -17,7 +17,7 @@ import { assembleReadingRotation, isReadingFullForm, originalReadingGroups } fro
 import { CHOICE_REVISION, migrateChoiceIndexes } from "./choice-legacy.js";
 import { TIP_SECTIONS, TIPS_STORAGE_KEY, tipForPart, tipsEnabled } from "./tips.js";
 import { ABILITIES, abilityStats, scoreBand } from "./abilities.js";
-import { questionTypeInfo, showTypeHint } from "./question-types.js";
+import { questionTypeInfo, typeHintVisible, normalizeTypeMode, TYPE_MODES } from "./question-types.js";
 import { isNegativePrompt, markNot, pickNotQuestions } from "./not-questions.js";
 import { daysBetween, toISO, addDays, dayPlan, fullPlan, toggleDone } from "./plan.js";
 import { buildDrill, summarize, KIND_LABEL } from "./drill.js";
@@ -66,6 +66,7 @@ const KEY_SPEED = `${STORAGE_PREFIX}.speed-drill.v1`;
 const KEY_SPEED_MISSED = `${STORAGE_PREFIX}.speed-missed.v1`;
 const KEY_SPEED_VOICE = `${STORAGE_PREFIX}.speed-voice.v1`;
 const KEY_PLAN_DONE = `${STORAGE_PREFIX}.plan-done.v1`;
+const KEY_TYPE_MODE = `${STORAGE_PREFIX}.type-mode.v1`;
 const KEY_NOT_RECENT = `${STORAGE_PREFIX}.not-recent.v1`;
 const KEY_GRAMMAR = `${STORAGE_PREFIX}.grammar.v1`;
 const GRAMMAR_QUIZ = GRAMMAR.flatMap((topic) => topic.quiz.map((item, qi) => ({ topic, item, qi })));
@@ -672,6 +673,7 @@ function renderHome() {
 
   const wordDue = vocabDueCount();
   planWeak = weak[0]?.skill ?? null;
+  applyTypeMode();
   const focus = homeFocus();
   app.classList.toggle("home-focus", focus);
   app.innerHTML = `
@@ -719,6 +721,7 @@ function renderHome() {
     <details class="card tips-card">
       <summary><span>答題技巧 · Tips</span><small>聽力、閱讀與考前複習</small></summary>
       <p class="muted">整理自近年考生心得；先用練習測試哪些方法適合自己。</p>
+      ${typeModeControlHtml()}
       <h3>聽力 Listening</h3>
       <ul>
         <li><b>照片題：</b>先看人物動作、物品位置，再聽完整句子；留意主詞和動作是否都符合照片。</li>
@@ -1267,6 +1270,7 @@ function renderTest() {
     ? `<b id="listen-progress">${listenProgressLabel(session.officialProgress)}</b>`
     : `${session.phase ? `<b>${session.phase === 'listening' ? '聽力' : '閱讀'} ${minutesLabel(session.phaseMinutes)}</b>` : ''}<span class="timer" id="timer">--:--</span>`;
 
+  applyTypeMode();
   app.innerHTML = `
     <div class="topbar">
       <div><span class="tag">${session.mode === "review" ? "錯題複習" : g.section === "listening" ? "Listening" : "Reading"}</span><span class="tag">Part ${g.part}</span><span class="muted">${esc(g.title ?? "")}</span>${readingVariantBadge(session)}${session.official ? `<span class="tag">正式模式：每題只播一次，依正式考試停頓</span>` : ""}</div>
@@ -1277,6 +1281,7 @@ function renderTest() {
     ${session.readingRotationFallback ? '<p class="notice" role="status">目前無法抽到符合規格的微調版，本次改用固定版題目。</p>' : ""}
     ${paceHintBlock(g)}
     ${partTipBlock(g)}
+    ${typeModeControlHtml()}
     <section class="card">
       ${g.image ? `<img class="question-image" src="${esc(g.image)}" alt="${g.part === 1 ? "照片題圖片" : "聽力題組附圖"}；若圖片載入失敗，請連網重新開啟。">` : ""}
       ${graphicHtml(g.graphicView)}
@@ -1369,7 +1374,7 @@ function questionBlock(q, qs, spoken) {
   return `<div class="q" data-qid="${q.id}">
     <div class="row" style="justify-content:space-between"><b>${num}. ${markNot(esc(q.prompt))}</b>
     <button class="btn small" data-action="flag" data-q="${q.id}">${session.flags[q.id] ? "取消標記" : "標記"}</button></div>
-    ${isNegativePrompt(q.prompt, qs.find((x) => x.id === q.id)?.part) ? `<p class="not-hint"><b>否定題：</b>四個選項有三個符合文章，要選<b>不符合</b>的那一個。逐項回文章找一次，找到就排除。</p>` : (showTypeHint(session) ? typeChipHtml(q, qs.find((x) => x.id === q.id)?.part, true) : "")}
+    ${isNegativePrompt(q.prompt, qs.find((x) => x.id === q.id)?.part) ? `<p class="not-hint test-type-line"><b>否定題：</b>四個選項有三個符合文章，要選<b>不符合</b>的那一個。逐項回文章找一次，找到就排除。</p>` : typeChipHtml(q, qs.find((x) => x.id === q.id)?.part, true, true)}
     ${locked ? `<p class="muted">這題已作答，看過錯題後不能再改。</p>` : ""}
     <div class="opts">${q.options.map((o, i) => `<button class="opt ${spoken ? "letter-only" : ""} ${picked === i ? "selected" : ""}" data-action="pick" data-q="${q.id}" data-i="${i}" aria-label="選項 ${LETTERS[i]}" ${locked ? "disabled" : ""}><span class="letter">${LETTERS[i]}</span>${spoken ? "" : `<span>${esc(o)}</span>`}</button>`).join("")}</div>
   </div>`;
@@ -1791,10 +1796,20 @@ const TYPE_LABELS = {
   synonym: "同義字", "text-insertion": "插入位置", "chat-intent": "簡訊／聊天意圖", "cross-document": "跨文件整合"
 };
 const PART_PACE = { 5: 10, 6: 8, 7: 52 };
-function typeChipHtml(q, part, withHint) {
+function typeMode() { return normalizeTypeMode(store.get(KEY_TYPE_MODE, "practice")); }
+// 題型提示用 CSS 開關：切換時不重畫畫面，聽力播放不會被打斷。
+function applyTypeMode() {
+  app.dataset.typeMode = typeMode();
+  app.dataset.typeShowTest = typeHintVisible(typeMode(), session?.official) ? "1" : "0";
+}
+function typeModeControlHtml() {
+  const mode = typeMode();
+  return `<p class="type-switch"><label for="type-mode">題型提示</label> <select id="type-mode" class="btn small" aria-label="題型提示">${TYPE_MODES.map(([id, label]) => `<option value="${id}"${id === mode ? " selected" : ""}>${esc(label)}</option>`).join("")}</select></p>`;
+}
+function typeChipHtml(q, part, withHint, inTest = false) {
   const info = questionTypeInfo(q.questionType, part);
   if (!info) return "";
-  return `<p class="type-line"><span class="type-chip">題型：${esc(info.label)}</span>${withHint ? ` <span class="muted">${esc(info.hint)}</span>` : ""}</p>`;
+  return `<p class="type-line${inTest ? " test-type-line" : ""}"><span class="type-chip">題型：${esc(info.label)}</span>${withHint ? ` <span class="muted">${esc(info.hint)}</span>` : ""}</p>`;
 }
 
 function readingFullReport(entry, qs) {
@@ -2105,6 +2120,7 @@ app.addEventListener("change", (e) => {
     return;
   }
   if (typeof e.target.name === "string" && e.target.name.startsWith("mock-section")) { store.set(KEY_MOCK_SECTION, selectMockSection(e.target.value)); renderHome(); return; }
+  if (e.target.id === "type-mode") { store.set(KEY_TYPE_MODE, normalizeTypeMode(e.target.value)); applyTypeMode(); return; }
   if (e.target.id === "accent-filter") { store.set(KEY_ACCENT, e.target.value); renderHome(); return; }
   if (e.target.dataset.action === "listen-rate") { audio.setListenRate(Number(e.target.value)); return; }
   if (e.target.id === 'speech-rate') audio.setRate(Number(e.target.value));
