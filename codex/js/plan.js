@@ -22,6 +22,7 @@ export const TASKS = {
   part6Block: { label: "Part 6 整段 16 題", minutes: 8, action: "start-form", attrs: { form: "part6-16" }, button: "開始" },
   part7Short: { label: "Part 7 專練 12 題", minutes: 12, action: "start-form", attrs: { form: "part7-12" }, button: "開始" },
   part7Block: { label: "Part 7 整段 25 題", minutes: 24, action: "start-form", attrs: { form: "part7-25" }, button: "開始" },
+  partGuide: { label: "看一遍「7 個 Part 速查」", minutes: 15, action: "part-guide", button: "打開" },
   miniListen: { label: "聽力快練 15 題", minutes: 6, action: "start-form", attrs: { form: "mini-listen-15" }, button: "開始" },
   miniRead: { label: "閱讀快練 12 題", minutes: 9, action: "start-form", attrs: { form: "mini-read-12" }, button: "開始" },
   notPractice: { label: "NOT 題專練 10 題", minutes: 12, action: "start-not", button: "開始" },
@@ -45,8 +46,8 @@ export const BY_DAYS_LEFT = {
   4: ["part5Short", "notPractice", "miniListen", "vocab"],
   3: ["listen2", "review"],
   2: ["readAgain", "miniListen"],
-  1: ["rest", "miniListen", "miniRead", "preexam", "prepare"],
-  0: ["preexam", "prepare"]
+  1: ["rest", "partGuide", "miniListen", "miniRead", "preexam", "prepare"],
+  0: ["partGuide", "preexam", "prepare"]
 };
 export const GENERIC_DAY = ["review", "speed", "vocab", "grammar", "weak"];
 

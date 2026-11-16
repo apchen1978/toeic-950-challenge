@@ -17,6 +17,7 @@ import { assembleReadingRotation, isReadingFullForm, originalReadingGroups } fro
 import { CHOICE_REVISION, migrateChoiceIndexes } from "./choice-legacy.js";
 import { TIP_SECTIONS, TIPS_STORAGE_KEY, tipForPart, tipsEnabled } from "./tips.js";
 import { ABILITIES, abilityStats, scoreBand } from "./abilities.js";
+import { PART_GUIDE, PART_GUIDE_NOTE } from "./part-guide.js";
 import { questionTypeInfo, typeHintVisible, normalizeTypeMode, TYPE_MODES } from "./question-types.js";
 import { isNegativePrompt, markNot, pickNotQuestions } from "./not-questions.js";
 import { daysBetween, toISO, addDays, dayPlan, fullPlan, toggleDone } from "./plan.js";
@@ -66,6 +67,7 @@ const KEY_SPEED = `${STORAGE_PREFIX}.speed-drill.v1`;
 const KEY_SPEED_MISSED = `${STORAGE_PREFIX}.speed-missed.v1`;
 const KEY_SPEED_VOICE = `${STORAGE_PREFIX}.speed-voice.v1`;
 const KEY_PLAN_DONE = `${STORAGE_PREFIX}.plan-done.v1`;
+const KEY_PART_GUIDE = `${STORAGE_PREFIX}.part-guide-seen.v1`;
 const KEY_TYPE_MODE = `${STORAGE_PREFIX}.type-mode.v1`;
 const KEY_NOT_RECENT = `${STORAGE_PREFIX}.not-recent.v1`;
 const KEY_GRAMMAR = `${STORAGE_PREFIX}.grammar.v1`;
@@ -494,8 +496,27 @@ function preExamCard() {
       <p class="vocabulary-eyebrow">BEFORE THE TEST${left ? ` · ${esc(left)}` : ""}</p>
       <h2 id="preexam-title">考前 30 分鐘：找回題感</h2>
       <p class="muted">進考場前一小時看這個：該做什麼、不該做什麼、最容易錯的 10 件事，以及 10 分鐘暖身。手機在車上就能滑完。</p>
-      <div class="vocab-actions"><button type="button" class="btn primary" data-action="preexam-open">打開考前黃金流程</button><button type="button" class="btn" data-action="start-warmup">Part 5 暖身 10 題</button></div>
+      <div class="vocab-actions"><button type="button" class="btn primary" data-action="preexam-open">打開考前黃金流程</button><button type="button" class="btn" data-action="part-guide">7 個 Part 速查</button><button type="button" class="btn" data-action="start-warmup">Part 5 暖身 10 題</button></div>
     </section>`;
+}
+function partGuideSeen() { const saved = store.get(KEY_PART_GUIDE, {}); return saved && typeof saved === "object" ? saved : {}; }
+function partGuideBlock(p, seen) {
+  return `<article class="preexam-block pg-part" id="pg-${p.part}"><p class="section-kicker">${esc(p.section)}・${esc(p.count)}</p><h2>Part ${p.part} ${esc(p.name)}</h2><p class="pg-glance">${esc(p.glance)}</p>
+    ${p.types.map((t, i) => `<div class="pg-type"><h3><span class="type-chip">題型 ${i + 1}</span> ${esc(t.name)}</h3><dl><dt>怎麼認</dt><dd>${esc(t.spot)}</dd><dt>怎麼做</dt><dd>${esc(t.how)}</dd><dt>常見陷阱</dt><dd>${esc(t.trap)}</dd></dl></div>`).join("")}
+    <h3>最後提醒</h3><ul class="pg-remember">${p.remember.map((r) => `<li>${esc(r)}</li>`).join("")}</ul>
+    <label class="pg-seen"><input type="checkbox" data-action="guide-tick" data-part="${p.part}"${seen[p.part] ? " checked" : ""}> 這個 Part 看過了</label></article>`;
+}
+function renderPartGuide() {
+  audio.stop();
+  const seen = partGuideSeen();
+  const done = PART_GUIDE.filter((p) => seen[p.part]).length;
+  app.innerHTML = `<section class="card part-guide"><p class="section-kicker">BEFORE THE TEST · 7 PARTS</p><h1>7 個 Part 考前速查</h1>
+    <p class="muted">考前 30 分鐘看下面的「一頁總覽」；有 1 小時再往下看每個 Part 的 3 個經典題型。${esc(PART_GUIDE_NOTE)} 已看 <b data-guide-done>${done}</b> / ${PART_GUIDE.length}。</p>
+    <div class="pg-jump" role="navigation" aria-label="跳到 Part">${PART_GUIDE.map((p) => `<button type="button" class="btn small" data-action="guide-jump" data-target="pg-${p.part}">Part ${p.part}</button>`).join("")}</div>
+    <article class="preexam-block"><p class="section-kicker">30 MIN</p><h2>一頁總覽</h2><ol class="pg-overview">${PART_GUIDE.map((p) => `<li><b>Part ${p.part} ${esc(p.name)}</b> <span class="muted">${esc(p.section)}・${esc(p.count)}</span><br>${esc(p.glance)}</li>`).join("")}</ol></article>
+    ${PART_GUIDE.map((p) => partGuideBlock(p, seen)).join("")}
+    <div class="row"><button type="button" class="btn" data-action="preexam-open">考前黃金流程</button><button type="button" class="btn" data-action="tips">各 Part 完整答題技巧</button><button type="button" class="btn primary" data-action="home">回首頁</button></div></section>`;
+  window.scrollTo(0, 0);
 }
 function preExamTicks() { const saved = store.get(KEY_PREEXAM, {}); return saved && typeof saved === "object" ? saved : {}; }
 function renderPreExam() {
@@ -518,7 +539,7 @@ function renderPreExam() {
     <article class="preexam-block"><p class="section-kicker">IN THE ROOM</p><h2>考試中急救</h2>
       ${PREEXAM_RESCUE.map((r) => `<h3>${esc(r.title)}</h3><p>${esc(r.body)}</p>`).join("")}</article>
     <p class="tips-sources">參考：${PREEXAM_SOURCES.map((source) => `<a href="${esc(source.href)}" target="_blank" rel="noopener noreferrer">${esc(source.name)}</a>`).join(" · ")}。個人整理，非官方，僅供練習參考。</p>
-    <div class="row"><button type="button" class="btn" data-action="tips">各 Part 完整答題技巧</button><button type="button" class="btn" data-action="preexam-reset">清除勾選</button><button type="button" class="btn primary" data-action="home">回首頁</button></div></section>`;
+    <div class="row"><button type="button" class="btn" data-action="part-guide">7 個 Part 速查</button><button type="button" class="btn" data-action="tips">各 Part 完整答題技巧</button><button type="button" class="btn" data-action="preexam-reset">清除勾選</button><button type="button" class="btn primary" data-action="home">回首頁</button></div></section>`;
   window.scrollTo(0, 0);
 }
 
@@ -2088,6 +2109,15 @@ app.addEventListener("click", (e) => {
       flashRevealed = false; flashRender(); break;
     }
     case "plan-toggle": store.set(KEY_PLAN_DONE, toggleDone(store.get(KEY_PLAN_DONE, {}), toISO(), d.key)); paintPlan(); break;
+    case "part-guide": renderPartGuide(); break;
+    case "guide-jump": document.getElementById(d.target)?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" }); break;
+    case "guide-tick": {
+      const seen = partGuideSeen();
+      if (t.checked) seen[d.part] = true; else delete seen[d.part];
+      store.set(KEY_PART_GUIDE, seen);
+      app.querySelectorAll("[data-guide-done]").forEach((el) => { el.textContent = PART_GUIDE.filter((p) => seen[p.part]).length; });
+      break;
+    }
     case "start-not": startNotPractice(); break;
     case "speed-start": startSpeedDrill(d.mode || null); break;
     case "speed-answer": speedAnswer(Number(d.i)); break;

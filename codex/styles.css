@@ -460,3 +460,17 @@ details.card-more > summary:hover, details.fold > summary:hover { opacity: .85; 
 .type-switch label { color: var(--muted); }
 #app[data-type-mode="off"] .type-line, #app[data-type-mode="off"] .not-hint { display: none; }
 #app[data-type-show-test="0"] .test-type-line { display: none; }
+
+.pg-jump { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 14px; }
+.pg-overview { margin: 8px 0 0; padding-left: 1.3em; }
+.pg-overview li { padding: 6px 0; line-height: 1.6; }
+.pg-glance { margin: 6px 0 12px; padding: 8px 12px; border-left: 3px solid var(--brand); background: var(--sel); border-radius: 0 8px 8px 0; font-weight: 600; line-height: 1.6; }
+.pg-type { border-top: 1px solid var(--line); padding: 10px 0; }
+.pg-type h3 { margin: 0 0 6px; font-size: 1.05rem; }
+.pg-type dl { margin: 0; display: grid; grid-template-columns: 5.5em 1fr; gap: 4px 10px; line-height: 1.6; }
+.pg-type dt { font-weight: 700; color: var(--muted); }
+.pg-type dd { margin: 0; }
+.pg-remember { margin: 4px 0 8px; padding-left: 1.2em; line-height: 1.7; }
+.pg-seen { display: flex; align-items: center; gap: 8px; margin-top: 8px; cursor: pointer; }
+.pg-seen input { width: 18px; height: 18px; }
+@media (max-width: 640px) { .pg-type dl { grid-template-columns: 1fr; } .pg-type dt { margin-top: 4px; } }
