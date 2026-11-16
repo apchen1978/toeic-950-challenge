@@ -42,7 +42,8 @@ test("there are ten traps covering listening, grammar and Part 7, plus pacing, r
 });
 
 test("the home page shows review, then the pre-exam card, then the mock, each with its own nav pill", () => {
-  assert.match(app, /\["nav-preexam", "考前"\], \["nav-mock", "模考"\]/);
+  assert.match(app, /\["nav-preexam", "考前"\]/);
+  assert.match(app, /\["nav-mock", "模考"\]/);
   const today = app.indexOf("${todayStrip(");
   const card = app.indexOf("${preExamCard()}");
   const mock = app.indexOf('id="nav-mock"');
@@ -55,7 +56,19 @@ test("compact home: review sits above the pre-exam card, nav follows page order 
   const review = app.indexOf('<section class="card" id="nav-review">');
   const card = app.indexOf("${preExamCard()}");
   assert.ok(review > 0 && review < card, "review must come before the pre-exam card");
-  assert.match(app, /\["nav-mini", "快練"\], \["nav-review", "複習"\], \["nav-preexam", "考前"\]/);
-  assert.match(app, /\["nav-phrases", "片語"\]/);
+  assert.match(app, /\["nav-review", "複習"\], \["nav-preexam", "考前"\], \["nav-mini", "快練"\], \["nav-phrases", "片語"\]/);
+  assert.match(app, /\["nav-practice", "練習"\], \["nav-mock", "模考"\]\];/);
   assert.ok(app.indexOf('id="offline-card"') > app.indexOf("${phrasesSection()}"), "offline card moves below the study sections");
+});
+
+test("home page runs from light to heavy: last result, wrong-answer analysis, tips, quick practice, mocks, then the 200-question forms", () => {
+  const markers = [
+    "${todayStrip(", 'id="plan-card"', "<h2>最近成績</h2>", 'id="nav-review"', "<h2>錯題複習</h2>", "${preExamCard()}", 'class="card tips-card"',
+    'id="nav-mini"', "${phrasesSection()}", 'id="nav-vocab"', "${grammarSection()}", 'class="card quick-card"',
+    'class="card reading-full-card"', 'id="nav-listening-mock"', 'id="offline-card"', "<h2>四套 200 題計時練習</h2>", "<h2>題庫說明與其他練習</h2>", "<h2>作答紀錄</h2>"
+  ];
+  const at = markers.map((m) => [m, app.indexOf(m)]);
+  for (const [m, i] of at) assert.ok(i > 0, "missing " + m);
+  for (let i = 1; i < at.length; i += 1) assert.ok(at[i][1] > at[i - 1][1], at[i][0] + " must come after " + at[i - 1][0]);
+  assert.ok(app.indexOf("${session ? resumeCard()") < app.indexOf('id="plan-card"'), "resume card comes right after the today strip");
 });
