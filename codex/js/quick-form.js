@@ -43,6 +43,49 @@ export const QUICK_BLUEPRINTS = {
       { part: 7, questions: 3 }
     ]
   },
+  // 閱讀分 Part 專練：Part 5 一題一組、Part 6 一組四題、Part 7 依題數抽。時間約照正式配速（Part 5 約 20 秒、Part 6 約 30 秒、Part 7 約 1 分鐘一題）。
+  "part5-15": {
+    minutes: 5,
+    listening: 0,
+    reading: 15,
+    timing: { listening: 0, reading: 5 },
+    parts: [{ part: 5, groups: 15 }]
+  },
+  "part5-30": {
+    minutes: 10,
+    listening: 0,
+    reading: 30,
+    timing: { listening: 0, reading: 10 },
+    parts: [{ part: 5, groups: 30 }]
+  },
+  "part6-8": {
+    minutes: 4,
+    listening: 0,
+    reading: 8,
+    timing: { listening: 0, reading: 4 },
+    parts: [{ part: 6, groups: 2, questionsEach: 4 }]
+  },
+  "part6-16": {
+    minutes: 8,
+    listening: 0,
+    reading: 16,
+    timing: { listening: 0, reading: 8 },
+    parts: [{ part: 6, groups: 4, questionsEach: 4 }]
+  },
+  "part7-12": {
+    minutes: 12,
+    listening: 0,
+    reading: 12,
+    timing: { listening: 0, reading: 12 },
+    parts: [{ part: 7, questions: 12 }]
+  },
+  "part7-25": {
+    minutes: 24,
+    listening: 0,
+    reading: 25,
+    timing: { listening: 0, reading: 24 },
+    parts: [{ part: 7, questions: 25, requireMulti: true }]
+  },
   "quick-60": {
     minutes: 36,
     listening: 30,
@@ -197,7 +240,9 @@ function hasType(groups, part, pattern) {
 
 export function quickCoverageIssues(groups, formId, section = "full") {
   const mini = String(formId).startsWith("mini-");
-  const full = formId === "quick-40" || formId === "quick-60" || mini;
+  const partSet = /^part[567]-\d+$/.test(String(formId));
+  const full = formId === "quick-40" || formId === "quick-60" || mini || partSet;
+  const has = (part) => groups.some((group) => group.part === part);
   const long = formId === "quick-60";
   if (!full) return [];
   const issues = [];
@@ -221,13 +266,13 @@ export function quickCoverageIssues(groups, formId, section = "full") {
       /preposition|conjunction|connector/i,
       /vocab|collocation|word.choice/i
     ].every((pattern) => [...types].some((type) => pattern.test(type)));
-    if (!p5Coverage) issues.push("P5 grammar and vocabulary types");
-    if (!hasType(groups, 6, /sentence.insertion|insert.sentence/i)) issues.push("P6 sentence insertion");
-    if (!mini && !groups.some((group) => group.part === 7 && isVerifiedCrossRef(group))) issues.push("P7 cross-reference");
+    if (!p5Coverage && (!partSet || has(5))) issues.push("P5 grammar and vocabulary types");
+    if (!hasType(groups, 6, /sentence.insertion|insert.sentence/i) && (!partSet || has(6))) issues.push("P6 sentence insertion");
+    if (!mini && !(partSet && formId !== "part7-25") && (!partSet || has(7)) && !groups.some((group) => group.part === 7 && isVerifiedCrossRef(group))) issues.push("P7 cross-reference");
     const p7Synonym = hasType(groups, 7, /synonym|closest.in.meaning|vocab.in.context/i);
     const p7Intent = hasType(groups, 7, /intent|purpose.of.message|text.message.intent/i);
     if (long && (!p7Synonym || !p7Intent)) issues.push("P7 synonym and intent");
-    if (!long && !mini && !p7Synonym && !p7Intent) issues.push("P7 synonym or intent");
+    if (!long && !mini && !partSet && !p7Synonym && !p7Intent) issues.push("P7 synonym or intent");
   }
   return issues;
 }
