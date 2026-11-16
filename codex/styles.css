@@ -452,3 +452,6 @@ details.card-more > summary:hover, details.fold > summary:hover { opacity: .85; 
 
 .not-flag { background: #f3d37a; color: #241b00; padding: 0 5px; border-radius: 3px; font-weight: 800; }
 .not-hint { margin: 6px 0; padding: 6px 10px; border-left: 3px solid #d9a21b; background: var(--sel); font-size: .9375rem; line-height: 1.55; }
+
+.type-line { margin: 4px 0 6px; font-size: .9375rem; line-height: 1.6; }
+.type-chip { display: inline-block; padding: 1px 10px; border-radius: 999px; background: var(--sel); border: 1px solid var(--line); font-weight: 700; font-size: .8125rem; color: var(--ink); }
