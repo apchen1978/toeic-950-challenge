@@ -17,6 +17,7 @@ import { assembleReadingRotation, isReadingFullForm, originalReadingGroups } fro
 import { CHOICE_REVISION, migrateChoiceIndexes } from "./choice-legacy.js";
 import { TIP_SECTIONS, TIPS_STORAGE_KEY, tipForPart, tipsEnabled } from "./tips.js";
 import { ABILITIES, abilityStats, scoreBand } from "./abilities.js";
+import { questionTypeInfo, showTypeHint } from "./question-types.js";
 import { isNegativePrompt, markNot, pickNotQuestions } from "./not-questions.js";
 import { daysBetween, toISO, addDays, dayPlan, fullPlan, toggleDone } from "./plan.js";
 import { buildDrill, summarize, KIND_LABEL } from "./drill.js";
@@ -1368,7 +1369,7 @@ function questionBlock(q, qs, spoken) {
   return `<div class="q" data-qid="${q.id}">
     <div class="row" style="justify-content:space-between"><b>${num}. ${markNot(esc(q.prompt))}</b>
     <button class="btn small" data-action="flag" data-q="${q.id}">${session.flags[q.id] ? "取消標記" : "標記"}</button></div>
-    ${isNegativePrompt(q.prompt, qs.find((x) => x.id === q.id)?.part) ? `<p class="not-hint"><b>否定題：</b>四個選項有三個符合文章，要選<b>不符合</b>的那一個。逐項回文章找一次，找到就排除。</p>` : ""}
+    ${isNegativePrompt(q.prompt, qs.find((x) => x.id === q.id)?.part) ? `<p class="not-hint"><b>否定題：</b>四個選項有三個符合文章，要選<b>不符合</b>的那一個。逐項回文章找一次，找到就排除。</p>` : (showTypeHint(session) ? typeChipHtml(q, qs.find((x) => x.id === q.id)?.part, true) : "")}
     ${locked ? `<p class="muted">這題已作答，看過錯題後不能再改。</p>` : ""}
     <div class="opts">${q.options.map((o, i) => `<button class="opt ${spoken ? "letter-only" : ""} ${picked === i ? "selected" : ""}" data-action="pick" data-q="${q.id}" data-i="${i}" aria-label="選項 ${LETTERS[i]}" ${locked ? "disabled" : ""}><span class="letter">${LETTERS[i]}</span>${spoken ? "" : `<span>${esc(o)}</span>`}</button>`).join("")}</div>
   </div>`;
@@ -1790,6 +1791,11 @@ const TYPE_LABELS = {
   synonym: "同義字", "text-insertion": "插入位置", "chat-intent": "簡訊／聊天意圖", "cross-document": "跨文件整合"
 };
 const PART_PACE = { 5: 10, 6: 8, 7: 52 };
+function typeChipHtml(q, part, withHint) {
+  const info = questionTypeInfo(q.questionType, part);
+  if (!info) return "";
+  return `<p class="type-line"><span class="type-chip">題型：${esc(info.label)}</span>${withHint ? ` <span class="muted">${esc(info.hint)}</span>` : ""}</p>`;
+}
 
 function readingFullReport(entry, qs) {
   if (!isReadingFullForm(entry.formId)) return "";
@@ -1831,6 +1837,7 @@ function reviewGroup(g, entry) {
       const a = entry.answers[q.id];
       const num = qs.findIndex((x) => x.id === q.id) + 1;
       return `<div class="q"><b>${num}. ${markNot(esc(q.prompt))}</b>
+        ${typeChipHtml(q, g.part, false)}
         <div class="opts">${q.options.map((o, i) => `<div class="opt ${i === q.answer ? "correct" : i === a ? "wrong" : ""}"><span class="letter">${LETTERS[i]}</span><span>${esc(o)}${i === q.answer ? " ✓" : ""}${i === a && i !== q.answer ? " （你的答案）" : ""}</span></div>`).join("")}</div>
         ${a === undefined ? `<p class="muted">未作答</p>` : ""}
         <div class="explain">${esc(q.explanation)}</div>${a !== undefined && a !== q.answer ? wrongReasonPicker(q.id) : ''}</div>`;
