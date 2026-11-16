@@ -118,6 +118,7 @@ function planCardInner() {
   return head + `<p><b>今天 ${esc(planWeekday(today))}</b> · 距離考試 ${left} 天<br>${esc(plan.title)}</p>
     <ul class="plan-list">${plan.tasks.map((task) => planTaskHtml(task, doneKeys.has(task.key))).join("")}</ul>
     <p class="muted">${allDone ? "今天的都做完了，好好休息。" : `約 ${plan.minutes} 分鐘。這只是參考，做多少都可以，沒做完也沒關係。`}</p>
+    ${left >= 1 && left <= 7 ? `<p class="muted">最後一週：不再追新內容，把學過的複習熟、把節奏練順就好。</p>` : ""}
     ${later.length ? `<details class="plan-later"><summary>接下來 ${later.length} 天</summary><ol class="plan-days">${later.map((day) => `<li><b>${esc(planWeekday(addDays(today, left - day.left)))}</b> · 倒數 ${day.left} 天 · ${esc(day.title)} <span class="muted">（約 ${day.minutes} 分）</span></li>`).join("")}</ol><p class="muted">排程從考試日往回排；弱項練習會依你目前最弱的題型調整。</p></details>` : ""}`;
 }
 function paintPlan() {
@@ -466,7 +467,7 @@ function todayStrip(wrongDue, wordDue, history) {
     <div class="today-start"><button type="button" class="btn primary" data-action="flash-quick">背 10 個精選單字</button><button type="button" class="btn" data-action="grammar-drill">練 5 題文法</button><button type="button" class="btn" data-action="speed-start">快速反應 10 題</button></div></section>`;
 }
 
-const HOME_NAV = [["nav-mini", "快練"], ["nav-review", "複習"], ["nav-preexam", "考前"], ["nav-mock", "模考"], ["nav-vocab", "單字"], ["nav-grammar", "文法"], ["nav-phrases", "片語"], ["nav-practice", "練習"]];
+const HOME_NAV = [["nav-review", "複習"], ["nav-preexam", "考前"], ["nav-mini", "快練"], ["nav-phrases", "片語"], ["nav-vocab", "單字"], ["nav-grammar", "文法"], ["nav-practice", "練習"], ["nav-mock", "模考"]];
 const HOME_NAV_EXTRA = new Set(["nav-vocab", "nav-grammar", "nav-practice"]);
 
 // 考前重點模式：收起單字、文法、聽力小課程與分項練習。沒設定過時，考前 14 天內自動開啟；手動切換後以使用者的選擇為準。
@@ -682,24 +683,17 @@ function renderHome() {
     ${homeNav(dueQuestions.length + wordDue, focus)}
     ${focusBar(focus)}
     ${todayStrip(dueQuestions.length, wordDue, history)}
-    <section class="card plan-card" id="plan-card" aria-labelledby="plan-title">${planCardInner()}</section>
-    <section class="card listening-full-card" id="nav-mini" aria-labelledby="mini-title">
-      <div class="reading-full-head"><span class="reading-full-badge">6–12 MIN</span><p class="section-kicker">QUICK SETS · 題型快練</p></div>
-      <h2 id="mini-title">聽力 15 題・閱讀 12 題・NOT 題</h2>
-      <p>想快速摸一下手感，或考前一兩天不想做太久時用。題型混合，每次從題庫重新抽，會避開最近出過的題目。</p>
-      <div class="reading-full-sets">
-        <div class="reading-full-set"><div class="rf-info"><h3>聽力快練 · 15 題</h3><p class="muted">約 ${approxListeningMinutes("mini-listen-15", 5) ?? 6} 分鐘 · Part 1 到 4 · 每題只播一次</p>${listeningFullLast(history, "mini-listen-15")}</div><div class="rf-actions"><button class="btn primary" data-action="start-form" data-form="mini-listen-15">開始聽力快練</button></div></div>
-        <div class="reading-full-set"><div class="rf-info"><h3>閱讀快練 · 12 題</h3><p class="muted">9 分鐘 · Part 5（5 題）、Part 6（4 題）、Part 7（3 題）</p>${listeningFullLast(history, "mini-read-12")}</div><div class="rf-actions"><button class="btn primary" data-action="start-form" data-form="mini-read-12">開始閱讀快練</button></div></div>
-      </div>
-      <div class="reading-full-sets">
-        <div class="reading-full-set"><div class="rf-info"><h3>NOT 題專練 · 10 題</h3><p class="muted">約 12 分鐘 · Part 7 · 「哪一項不是……」要逐項核對，最花時間，先把做法練熟</p></div><div class="rf-actions"><button class="btn primary" data-action="start-not">開始 NOT 題練習</button></div></div>
-      </div>
-      <details class="card-more"><summary>題型與時間說明</summary>
-        <p class="muted">聽力：照片 1 題、應答 5 題、對話 6 題、獨白 3 題，含圖表題，至少涵蓋三種應答類型。閱讀：Part 5 涵蓋詞性、時態、介系詞或連接詞、字彙四類，Part 6 含句子插入，Part 7 是單篇短題組。</p>
-        <p class="muted">閱讀每題約 45 秒，12 題 9 分鐘；聽力依音檔長度，含正式停頓。想練更多可以連做幾組，也可以搭配上方每日排程。題目為原創模擬題，非 ETS 官方試題。</p>
-      </details>
-    </section>
     ${session ? resumeCard() : ''}
+
+    <section class="card plan-card" id="plan-card" aria-labelledby="plan-title">${planCardInner()}</section>
+
+    ${last ? `<section class="card"><h2>最近成績</h2>
+      <div class="grid">
+        <div class="stat"><b>${Math.round((last.correct / last.total) * 100)}%</b>正確率${last.peeked ? " · 練習成績" : ""}</div>
+        <div class="stat"><b>${last.correct}/${last.total}</b>答對題數</div>
+        <div class="stat"><b>${formatDuration(last.secUsed)}</b>耗時</div>
+      </div></section>` : ""}
+
     <section class="card" id="nav-review">
       <h2>弱項追蹤與推薦</h2>
       ${weak.length ? weak.map((w) => `
@@ -719,49 +713,47 @@ function renderHome() {
 
     ${preExamCard()}
 
+    <p class="quiet-link"><button type="button" class="linkish" data-action="tips">考前技巧</button></p>
 
-    <section class="card reading-full-card" id="nav-mock" aria-labelledby="reading-full-title">
-      <div class="reading-full-head"><span class="reading-full-badge">75 MIN</span><p class="section-kicker">READING MOCK · 閱讀完整模擬</p></div>
-      <h2 id="reading-full-title">閱讀 100 題 · 75 分鐘（共三組）</h2>
-      <p>Part 5 30 題 → Part 6 16 題 → Part 7 54 題，依正式順序作答，75 分鐘倒數，有配速提示。</p>
+    <details class="card tips-card">
+      <summary><span>答題技巧 · Tips</span><small>聽力、閱讀與考前複習</small></summary>
+      <p class="muted">整理自近年考生心得；先用練習測試哪些方法適合自己。</p>
+      <h3>聽力 Listening</h3>
+      <ul>
+        <li><b>照片題：</b>先看人物動作、物品位置，再聽完整句子；留意主詞和動作是否都符合照片。</li>
+        <li><b>應答題：</b>抓住開頭是在問時間、地點、人物還是原因；間接回答也可能正確。不要只因選項出現相同單字就選或排除。</li>
+        <li><b>對話與短講：</b>有時間時先看題目及圖表，聽時留意時間變更、轉折和最後決定；錯過一題就先跟上下一題。</li>
+      </ul>
+      <h3>閱讀 Reading</h3>
+      <ul>
+        <li><b>掌握時間：</b>練習時記下 Part 5、6 完成時間，保留足夠時間處理 Part 7；每次依正確率調整，不必套用固定配速。</li>
+        <li><b>多篇閱讀：</b>先確認每份文件的日期、人物與目的，再交叉核對數字、限制條件和後續更新。</li>
+        <li><b>卡題時：</b>先選較有把握的答案並記住題號；若還有時間，在同一測驗區內回頭檢查。</li>
+      </ul>
+      <h3>練完怎麼複習</h3>
+      <p>聽力錯題先重聽，再對照逐字稿，分辨是沒聽清、字彙不熟還是誤解；閱讀錯題回原文找證據，再看解析。把重複錯誤留在錯題清單。</p>
+      <p class="notice"><b>正式考試規則：</b>聽力和閱讀各有規定作答時間；不能在其中一區作答或修改另一區的答案。</p>
+      <p class="tips-sources">參考：<a href="https://www.dcard.tw/f/english_tests/p/261823171" target="_blank" rel="noopener">Dcard 945 備考心得（2025）</a> · <a href="https://www.ptt.cc/bbs/TOEIC/M.1746338764.A.880.html" target="_blank" rel="noopener">PTT 990 考生心得（2025）</a> · <a href="https://www.toeic.com.tw/quick-links/faq/toeic-listening-reading/test-regulations/skip-section-prohibited" target="_blank" rel="noopener">台灣多益官方作答規定</a></p>
+    </details>
+
+    <section class="card listening-full-card" id="nav-mini" aria-labelledby="mini-title">
+      <div class="reading-full-head"><span class="reading-full-badge">6–12 MIN</span><p class="section-kicker">QUICK SETS · 題型快練</p></div>
+      <h2 id="mini-title">聽力 15 題・閱讀 12 題・NOT 題</h2>
+      <p>想快速摸一下手感，或考前一兩天不想做太久時用。題型混合，每次從題庫重新抽，會避開最近出過的題目。</p>
       <div class="reading-full-sets">
-        ${[1, 2, 3].map((n) => `<div class="reading-full-set"><div class="rf-info"><h3>閱讀模擬 ${n}</h3>${readingFullLast(history, "read-full-" + n)}</div><div class="rf-actions"><button class="btn primary" data-action="start-form" data-form="read-full-${n}">開始閱讀模擬 ${n}（固定版）</button>${history.some((entry) => entry.formId === "read-full-" + n) ? `<button class="btn" data-action="start-reading-rotation" data-form="read-full-${n}">再練一次（微調版，約 3 成換題）</button>` : ""}</div></div>`).join("")}
+        <div class="reading-full-set"><div class="rf-info"><h3>聽力快練 · 15 題</h3><p class="muted">約 ${approxListeningMinutes("mini-listen-15", 5) ?? 6} 分鐘 · Part 1 到 4 · 每題只播一次</p>${listeningFullLast(history, "mini-listen-15")}</div><div class="rf-actions"><button class="btn primary" data-action="start-form" data-form="mini-listen-15">開始聽力快練</button></div></div>
+        <div class="reading-full-set"><div class="rf-info"><h3>閱讀快練 · 12 題</h3><p class="muted">9 分鐘 · Part 5（5 題）、Part 6（4 題）、Part 7（3 題）</p>${listeningFullLast(history, "mini-read-12")}</div><div class="rf-actions"><button class="btn primary" data-action="start-form" data-form="mini-read-12">開始閱讀快練</button></div></div>
       </div>
-      <p class="muted">固定版每次題目相同，方便比較進步；微調版約換 3 成同類型題目。兩者皆為本站原創模擬題，非 ETS 官方試題。</p>
-      <details class="card-more"><summary>配速提示與題目說明</summary>
-        <p class="muted">可跳題與回頭修改。作答時畫面上方有配速提示：Part 5 約 10 分、Part 6 約 8 分、Part 7 約 52 分，留約 5 分檢查。提示只是參考，不是必須達到的標準。</p>
-        <p class="muted">題目包含推論、NOT、句子插入位置、同義字、簡訊意圖與跨文件整合題，難度由簡單到進階混合。結果頁會顯示每個 Part 的用時與錯題的題型。題目為原創模擬題，不是 ETS 官方試題。</p>
-      </details>
-    </section>
-
-    <section class="card listening-full-card" id="nav-listening-mock" aria-labelledby="listening-full-title">
-      <div class="reading-full-head"><span class="reading-full-badge">約 ${listeningFullMinutes("listen-full-1")} MIN</span><p class="section-kicker">LISTENING MOCK · 聽力完整模擬</p></div>
-      <h2 id="listening-full-title">聽力 100 題 · 約 ${listeningFullMinutes("listen-full-1")} 分鐘（共兩套）</h2>
-      <p>Part 1 6 題 → Part 2 25 題 → Part 3 39 題 → Part 4 30 題，依正式順序，每題只播一次，播完就結束，沒有倒數。</p>
       <div class="reading-full-sets">
-        ${[1, 2].map((n) => `<div class="reading-full-set"><div class="rf-info"><h3>聽力模擬 ${n}</h3>${listeningFullLast(history, "listen-full-" + n)}</div><div class="rf-actions"><button class="btn primary" data-action="start-form" data-form="listen-full-${n}">開始聽力模擬 ${n}</button></div></div>`).join("")}
+        <div class="reading-full-set"><div class="rf-info"><h3>NOT 題專練 · 10 題</h3><p class="muted">約 12 分鐘 · Part 7 · 「哪一項不是……」要逐項核對，最花時間，先把做法練熟</p></div><div class="rf-actions"><button class="btn primary" data-action="start-not">開始 NOT 題練習</button></div></div>
       </div>
-      <details class="card-more"><summary>精選說明與時間</summary>
-        <p class="muted">兩套各 100 題，彼此沒有重複題組：四種口音（美、英、加、澳）平均分配，每套都有圖表題與推論題。長度是依音檔加上作答停頓計算（Part 1、2 每題約停 5 秒，Part 3、4 每題約停 8 秒，圖表題約停 12 秒），可能和正式考試的約 45 分鐘略有差距。</p>
-        <p class="muted">建議出發前 2–3 天，聽力和閱讀各完整練 1–2 次，找回手感就好，不必追求分數。音檔是練習用合成語音，題目為原創模擬題，非 ETS 官方試題。</p>
+      <details class="card-more"><summary>題型與時間說明</summary>
+        <p class="muted">聽力：照片 1 題、應答 5 題、對話 6 題、獨白 3 題，含圖表題，至少涵蓋三種應答類型。閱讀：Part 5 涵蓋詞性、時態、介系詞或連接詞、字彙四類，Part 6 含句子插入，Part 7 是單篇短題組。</p>
+        <p class="muted">閱讀每題約 45 秒，12 題 9 分鐘；聽力依音檔長度，含正式停頓。想練更多可以連做幾組，也可以搭配上方每日排程。題目為原創模擬題，非 ETS 官方試題。</p>
       </details>
     </section>
 
-    <section class="card quick-card"><p class="section-kicker">PRACTICE TEST</p><h2>快速模考</h2>
-      <p>40 題或 60 題，正式模式；可選只考閱讀或聽力。<br>${quickExamTimeCopy()}</p>
-      ${sectionChoiceControl("mock-section-quick")}
-      <button class="btn primary" data-action="start-form" data-form="quick-40">開始 40 題快速模考</button>
-      <button class="btn primary" data-action="start-form" data-form="quick-60">開始 60 題快速模考</button>
-      <details class="card-more"><summary>正式模式與音檔說明</summary>
-      <p class="muted">聽力依音檔連續播放，每題只播一次，沒有聽力倒數；完整模考播完才進入閱讀。</p>
-      <p class="muted">聽力音檔輪流使用美式、英式、加拿大與澳洲口音。作答後才看得到該題口音。</p>
-      <p class="muted">正式模式：每題只播一次，依正式考試停頓。Part 1、Part 2 每題後約停 5 秒；Part 3、Part 4 會唸出題目，每題後約停 8 秒，有圖表的題目約停 12 秒。</p>
-      <p class="muted">依正式題型與時間近似縮小；對話和文章題組保留完整，因此各 Part 題數不是精確比例。每次從全部題庫隨機組題，依正式題型比例縮小；聽力四種口音平均，最近考過的題目會盡量避開。完成後可查看解析與非官方粗估。</p>
-      <p class="muted">音檔是練習用的合成語音，存在這個網站裡，播放時不連到外部語音服務。不是 ETS 官方錄音。</p>
-      </details>
-    </section>
-
-
+    ${phrasesSection()}
 
     <section class="card vocabulary-card home-extra" id="nav-vocab" aria-labelledby="vocabulary-title">
       <div class="vocab-hero">
@@ -803,7 +795,6 @@ function renderHome() {
     </section>
 
     ${grammarSection()}
-    ${phrasesSection()}
 
     <section class="card lesson-entry home-extra" id="nav-practice"><p class="section-kicker">LISTENING LESSONS</p><h2>聽力小課程</h2><p>用職場情境練習聽力。先聽錄音，再看中文概要、英文逐字稿和實用片語。</p><button class="btn primary" data-action="lessons">開始聽小課程</button></section>
     <section class="practice-grid home-extra" aria-label="Listening 聽力與 Reading 閱讀練習">
@@ -827,29 +818,49 @@ function renderHome() {
         <button class="btn primary" data-action="start-section" data-section="reading">開始閱讀練習</button>
       </article>
     </section>
-    <section class="card offline-card" id="offline-card" aria-labelledby="offline-title">${offlineCardHtml()}</section>
-    <p class="quiet-link"><button type="button" class="linkish" data-action="tips">考前技巧</button></p>
 
-    <details class="card tips-card">
-      <summary><span>答題技巧 · Tips</span><small>聽力、閱讀與考前複習</small></summary>
-      <p class="muted">整理自近年考生心得；先用練習測試哪些方法適合自己。</p>
-      <h3>聽力 Listening</h3>
-      <ul>
-        <li><b>照片題：</b>先看人物動作、物品位置，再聽完整句子；留意主詞和動作是否都符合照片。</li>
-        <li><b>應答題：</b>抓住開頭是在問時間、地點、人物還是原因；間接回答也可能正確。不要只因選項出現相同單字就選或排除。</li>
-        <li><b>對話與短講：</b>有時間時先看題目及圖表，聽時留意時間變更、轉折和最後決定；錯過一題就先跟上下一題。</li>
-      </ul>
-      <h3>閱讀 Reading</h3>
-      <ul>
-        <li><b>掌握時間：</b>練習時記下 Part 5、6 完成時間，保留足夠時間處理 Part 7；每次依正確率調整，不必套用固定配速。</li>
-        <li><b>多篇閱讀：</b>先確認每份文件的日期、人物與目的，再交叉核對數字、限制條件和後續更新。</li>
-        <li><b>卡題時：</b>先選較有把握的答案並記住題號；若還有時間，在同一測驗區內回頭檢查。</li>
-      </ul>
-      <h3>練完怎麼複習</h3>
-      <p>聽力錯題先重聽，再對照逐字稿，分辨是沒聽清、字彙不熟還是誤解；閱讀錯題回原文找證據，再看解析。把重複錯誤留在錯題清單。</p>
-      <p class="notice"><b>正式考試規則：</b>聽力和閱讀各有規定作答時間；不能在其中一區作答或修改另一區的答案。</p>
-      <p class="tips-sources">參考：<a href="https://www.dcard.tw/f/english_tests/p/261823171" target="_blank" rel="noopener">Dcard 945 備考心得（2025）</a> · <a href="https://www.ptt.cc/bbs/TOEIC/M.1746338764.A.880.html" target="_blank" rel="noopener">PTT 990 考生心得（2025）</a> · <a href="https://www.toeic.com.tw/quick-links/faq/toeic-listening-reading/test-regulations/skip-section-prohibited" target="_blank" rel="noopener">台灣多益官方作答規定</a></p>
-    </details>
+    <section class="card quick-card" id="nav-mock"><p class="section-kicker">PRACTICE TEST</p><h2>快速模考</h2>
+      <p>40 題或 60 題，正式模式；可選只考閱讀或聽力。<br>${quickExamTimeCopy()}</p>
+      ${sectionChoiceControl("mock-section-quick")}
+      <button class="btn primary" data-action="start-form" data-form="quick-40">開始 40 題快速模考</button>
+      <button class="btn primary" data-action="start-form" data-form="quick-60">開始 60 題快速模考</button>
+      <details class="card-more"><summary>正式模式與音檔說明</summary>
+      <p class="muted">聽力依音檔連續播放，每題只播一次，沒有聽力倒數；完整模考播完才進入閱讀。</p>
+      <p class="muted">聽力音檔輪流使用美式、英式、加拿大與澳洲口音。作答後才看得到該題口音。</p>
+      <p class="muted">正式模式：每題只播一次，依正式考試停頓。Part 1、Part 2 每題後約停 5 秒；Part 3、Part 4 會唸出題目，每題後約停 8 秒，有圖表的題目約停 12 秒。</p>
+      <p class="muted">依正式題型與時間近似縮小；對話和文章題組保留完整，因此各 Part 題數不是精確比例。每次從全部題庫隨機組題，依正式題型比例縮小；聽力四種口音平均，最近考過的題目會盡量避開。完成後可查看解析與非官方粗估。</p>
+      <p class="muted">音檔是練習用的合成語音，存在這個網站裡，播放時不連到外部語音服務。不是 ETS 官方錄音。</p>
+      </details>
+    </section>
+
+    <section class="card reading-full-card" aria-labelledby="reading-full-title">
+      <div class="reading-full-head"><span class="reading-full-badge">75 MIN</span><p class="section-kicker">READING MOCK · 閱讀完整模擬</p></div>
+      <h2 id="reading-full-title">閱讀 100 題 · 75 分鐘（共三組）</h2>
+      <p>Part 5 30 題 → Part 6 16 題 → Part 7 54 題，依正式順序作答，75 分鐘倒數，有配速提示。</p>
+      <div class="reading-full-sets">
+        ${[1, 2, 3].map((n) => `<div class="reading-full-set"><div class="rf-info"><h3>閱讀模擬 ${n}</h3>${readingFullLast(history, "read-full-" + n)}</div><div class="rf-actions"><button class="btn primary" data-action="start-form" data-form="read-full-${n}">開始閱讀模擬 ${n}（固定版）</button>${history.some((entry) => entry.formId === "read-full-" + n) ? `<button class="btn" data-action="start-reading-rotation" data-form="read-full-${n}">再練一次（微調版，約 3 成換題）</button>` : ""}</div></div>`).join("")}
+      </div>
+      <p class="muted">固定版每次題目相同，方便比較進步；微調版約換 3 成同類型題目。兩者皆為本站原創模擬題，非 ETS 官方試題。</p>
+      <details class="card-more"><summary>配速提示與題目說明</summary>
+        <p class="muted">可跳題與回頭修改。作答時畫面上方有配速提示：Part 5 約 10 分、Part 6 約 8 分、Part 7 約 52 分，留約 5 分檢查。提示只是參考，不是必須達到的標準。</p>
+        <p class="muted">題目包含推論、NOT、句子插入位置、同義字、簡訊意圖與跨文件整合題，難度由簡單到進階混合。結果頁會顯示每個 Part 的用時與錯題的題型。題目為原創模擬題，不是 ETS 官方試題。</p>
+      </details>
+    </section>
+
+    <section class="card listening-full-card" id="nav-listening-mock" aria-labelledby="listening-full-title">
+      <div class="reading-full-head"><span class="reading-full-badge">約 ${listeningFullMinutes("listen-full-1")} MIN</span><p class="section-kicker">LISTENING MOCK · 聽力完整模擬</p></div>
+      <h2 id="listening-full-title">聽力 100 題 · 約 ${listeningFullMinutes("listen-full-1")} 分鐘（共兩套）</h2>
+      <p>Part 1 6 題 → Part 2 25 題 → Part 3 39 題 → Part 4 30 題，依正式順序，每題只播一次，播完就結束，沒有倒數。</p>
+      <div class="reading-full-sets">
+        ${[1, 2].map((n) => `<div class="reading-full-set"><div class="rf-info"><h3>聽力模擬 ${n}</h3>${listeningFullLast(history, "listen-full-" + n)}</div><div class="rf-actions"><button class="btn primary" data-action="start-form" data-form="listen-full-${n}">開始聽力模擬 ${n}</button></div></div>`).join("")}
+      </div>
+      <details class="card-more"><summary>精選說明與時間</summary>
+        <p class="muted">兩套各 100 題，彼此沒有重複題組：四種口音（美、英、加、澳）平均分配，每套都有圖表題與推論題。長度是依音檔加上作答停頓計算（Part 1、2 每題約停 5 秒，Part 3、4 每題約停 8 秒，圖表題約停 12 秒），可能和正式考試的約 45 分鐘略有差距。</p>
+        <p class="muted">建議出發前 2–3 天，聽力和閱讀各完整練 1–2 次，找回手感就好，不必追求分數。音檔是練習用合成語音，題目為原創模擬題，非 ETS 官方試題。</p>
+      </details>
+    </section>
+
+    <section class="card offline-card" id="offline-card" aria-labelledby="offline-title">${offlineCardHtml()}</section>
 
     <section class="card">
       <h2>四套 200 題計時練習</h2>
@@ -858,6 +869,7 @@ function renderHome() {
       <div class="row">${['a', 'b', 'c', 'd'].map((id) => `<button class="btn primary" data-action="start-form" data-form="form-${id}">開始第 ${id.toUpperCase()} 套</button>`).join('')}</div>
       <p class="muted">正式模式：每題只播一次，依正式考試停頓。</p>
     </section>
+
     <section class="card">
       <h2>題庫說明與其他練習</h2>
       <p>題庫共 ${n} 題原創模擬練習，依多益題型自行編寫，並非 ETS 官方試題。 All questions are original simulations based on TOEIC question types, not ETS official test questions. 題目附答案與解析；聽力文字稿預設收合，可自行展開，每段最多播放 ${MAX_PLAYS} 次。</p>
@@ -874,16 +886,10 @@ function renderHome() {
     <details class="card fold"><summary><h2>官方樣題與練習方式</h2><span class="fold-hint">官方公開樣題連結</span></summary><p>先做一套練習，再從錯題解析找失分原因；閱讀可獨立練習。可選四套 200 題分段計時練習，或使用短題組；照片題目前有 ${photoCount} 題試做。</p><p><a href="https://www.ets.org/pdfs/toeic/toeic-listening-reading-sample-test.pdf" target="_blank" rel="noopener">ETS 官方公開樣題 PDF（含解答與聽力稿）</a> · <a href="https://toeic.com.tw/toeic/listening-reading/about/content/" target="_blank" rel="noopener">台灣官方題型與時間</a></p><p class="muted">官方內容於來源頁開啟；本機題庫與官方樣題分開。正式閱讀為 100 題、75 分鐘。</p></details>
     <details class="card fold"><summary><h2>正式考試與素材庫</h2><span class="fold-hint">正式題數、時間與官方範例</span></summary><p>正式 Listening 100 題／約 45 分鐘；Reading 100 題／75 分鐘。實際作答約 2 小時，連基本資料及問卷約 2.5 小時。</p><details><summary>查看正式題數分配</summary><p>Part 1 照片 6 題 · Part 2 應答 25 題 · Part 3 對話 39 題 · Part 4 獨白 30 題。</p><p>Part 5 句子填空 30 題 · Part 6 段落填空 16 題 · Part 7 單篇 29 題、多篇 25 題。</p></details><p>台灣官方範例（在來源頁練習與核對答案）：</p><ul><li><a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample03.html" target="_blank" rel="noopener">Part 3 聽力對話</a> · <a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample04.html" target="_blank" rel="noopener">Part 4 聽力獨白</a></li><li><a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample05.html" target="_blank" rel="noopener">Part 5 句子填空</a> · <a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample06.html" target="_blank" rel="noopener">Part 6 段落填空</a> · <a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample07_03.html" target="_blank" rel="noopener">Part 7 多篇閱讀</a></li></ul><p class="muted">新增挑戰 03：聽力 20 題＋閱讀 20 題；也可只選閱讀 03。做完可以依錯題與弱項，決定下一回要練聽力、閱讀或照片題。</p></details>
 
-    ${last ? `<section class="card"><h2>最近成績</h2>
-      <div class="grid">
-        <div class="stat"><b>${Math.round((last.correct / last.total) * 100)}%</b>正確率${last.peeked ? " · 練習成績" : ""}</div>
-        <div class="stat"><b>${last.correct}/${last.total}</b>答對題數</div>
-        <div class="stat"><b>${formatDuration(last.secUsed)}</b>耗時</div>
-      </div></section>` : ""}
-
     ${history.length ? `<section class="card"><h2>作答紀錄</h2><table><thead><tr><th>日期</th><th>類型</th><th>正確率</th><th>耗時</th><th></th></tr></thead><tbody>
       ${history.slice().reverse().slice(0, 15).map((h) => `<tr><td>${new Date(h.date).toLocaleString("zh-TW", { hour12: false })}</td><td>${h.mode === "diagnostic" ? "完整／混合" : h.mode === "review" ? "錯題複習" : h.mode === "reading" ? "閱讀專練" : h.mode === "listening" ? "聽力專練" : "弱項練習"}${sectionBadge(h.section)}${readingVariantBadge(h)}${h.peeked ? ' <span class="tag practice">練習成績</span>' : ''}</td><td>${Math.round((h.correct / h.total) * 100)}%</td><td>${formatDuration(h.secUsed)}</td><td><button class="btn small" data-action="view" data-id="${h.id}">檢視</button></td></tr>`).join("")}
       </tbody></table></section>` : ""}
+
   `;
   document.getElementById('speech-rate').value = String(audio.getRate());
   paintVocab();

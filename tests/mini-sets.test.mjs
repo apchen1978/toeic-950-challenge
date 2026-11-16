@@ -58,7 +58,7 @@ test("quick sets stay recent-avoiding and the home page offers both, near the to
   const b = assembleQuickForm(bank, "mini-read-12", { random: createRng(3), accents, section: "reading", avoid: a.groupIds });
   assert.ok(b.groupIds.filter((id) => a.groupIds.includes(id)).length < a.groupIds.length);
   for (const needle of ['id="nav-mini"', 'data-form="mini-listen-15"', 'data-form="mini-read-12"', "startMiniForm(d.form)"]) assert.ok(app.includes(needle), needle);
-  assert.ok(app.indexOf('id="nav-mini"') > app.indexOf('id="plan-card"') && app.indexOf('id="nav-mini"') < app.indexOf('id="nav-review"'), "mini card sits between the plan and the review cards");
+  assert.ok(app.indexOf('id="nav-mini"') > app.indexOf("${preExamCard()}") && app.indexOf('id="nav-mini"') < app.indexOf('class="card quick-card"'), "quick sets come after the tips and before the heavier mocks");
 });
 
 test("study plan uses the quick sets in the last days", () => {

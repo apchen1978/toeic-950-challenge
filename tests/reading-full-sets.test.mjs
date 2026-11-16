@@ -86,7 +86,7 @@ test('the app wires the reading-full start button, per-part timing and the per-t
   assert.match(app, /data-form="read-full-\$\{n\}"/);
   assert.match(app, /\[1, 2, 3\]\.map\(\(n\)/);
   assert.match(app, /閱讀 100 題 · 75 分鐘（共三組）/);
-  assert.ok(app.indexOf('reading-full-card') < app.indexOf('class="card quick-card"'), 'the reading card sits above the quick mock card');
+  assert.ok(app.indexOf('class="card quick-card"') < app.indexOf('class="card reading-full-card"'), 'the lighter quick mock sits above the 75-minute reading card');
   assert.match(app, /readingFullLast/);
   assert.match(app, /partSecs/);
   assert.match(app, /readingFullReport/);
