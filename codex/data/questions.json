@@ -29543,6 +29543,1209 @@
           "questionType": "not-question"
         }
       ]
+    },
+    {
+      "id": "g-long-p7-01",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: regional product clinic",
+      "passage": {
+        "docs": [
+          {
+            "label": "Email",
+            "text": "To: Regional sales coordinators\nFrom: Ilana Mercer, Training Office\nDate: 4 March\nSubject: Product clinic registration\n\nDear colleagues,\n\nOur spring product clinic will take place at the Alder Training Center on 22 April. The morning demonstration begins at 9:15, followed by two hands-on sessions. To keep the sessions useful, each instructor will work with no more than 12 participants. We have booked three instructors, so please register only colleagues who can attend the entire morning.\n\nRegistration closes on 14 April. A place costs $80 per person and includes printed reference cards, an instructor-led practice session, and lunch. Teams that register at least five people by 10 April receive a 15 percent reduction on the registration fee. This reduction does not apply to optional parking, which costs $9 per vehicle. Please enter a separate parking request in the registration form; the center cannot issue passes at the door.\n\nWe will email each coordinator a participant list on 16 April. Please check names and dietary requirements that day. If a colleague must withdraw, tell us by 18 April so the waiting list can be used. After that date, substitutions are welcome, but refunds are unavailable.\n\nBest regards,\nIlana Mercer"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "LONG-P7-01A",
+          "skill": "r-detail",
+          "prompt": "How many participants can attend the hands-on sessions at most?",
+          "options": [
+            "36",
+            "24",
+            "45",
+            "60"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「36」：每位講師最多帶 12 人，共有 3 位講師，12 × 3 = 36。其餘數字不符合文中人數上限。\n【考點】Part 7・細節與數量計算\n【判斷依據】把每位講師的上限乘以講師人數。",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "LONG-P7-01B",
+          "skill": "r-inference",
+          "prompt": "What will a team pay in registration fees if it registers five people on 9 April?",
+          "options": [
+            "$400",
+            "$340",
+            "$349",
+            "$385"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「$340」：5 人在 10 April 前登記可享 15% 折扣；$80 × 5 = $400，$400 × 0.85 = $340。$400 沒折扣，$349 誤加一輛車停車費，$385 誤把 15% 當作減 $15。\n【考點】Part 7・推論與金額計算\n【判斷依據】先判斷是否符合五人及日期條件，再只對報名費折扣。",
+          "ability": "R1",
+          "questionType": "inference"
+        },
+        {
+          "id": "LONG-P7-01C",
+          "skill": "r-detail",
+          "prompt": "When will coordinators receive the participant list?",
+          "options": [
+            "On 10 April",
+            "On 14 April",
+            "On 16 April",
+            "On 18 April"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「On 16 April」：信中說將在 16 April 寄送名單。10 日是折扣期限，14 日為報名截止，18 日是退出通知期限。\n【考點】Part 7・細節題\n【判斷依據】在多個日期中定位 participant list 的寄送日。",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "LONG-P7-01D",
+          "skill": "r-inference",
+          "prompt": "Why does the Training Office ask coordinators to report withdrawals by 18 April?",
+          "options": [
+            "To issue parking passes at the door",
+            "To extend the group discount deadline",
+            "To add a fourth instructor to the clinic",
+            "To offer the vacant place to someone on the waiting list"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「To offer the vacant place to someone on the waiting list」：郵件要求 18 日前通報退出，緊接著說 so the waiting list can be used，可推知名額會提供候補者。A 與不能在門口發停車證相反；B 的團報期限是 10 日；C 沒有增聘講師的安排。\n【考點】Part 7・推論題\n【判斷依據】將退出期限與候補名單的用途連起來，排除與其他規定衝突的選項。",
+          "ability": "R1",
+          "questionType": "inference"
+        }
+      ]
+    },
+    {
+      "id": "g-long-p7-02",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: archive service notice and rate table",
+      "passage": {
+        "docs": [
+          {
+            "label": "Service notice and rate table",
+            "text": "North Quay Records — Storage Update\nEffective 1 September\n\nWe are expanding the retrieval desk in response to requests from small offices that need documents returned before the end of the business day. The standard retrieval window will remain two working days for all plans. Priority retrieval, submitted before 11 A.M., will now be completed by 5 P.M. on the same day. Requests made after 11 A.M. are treated as next-day requests. Priority retrieval is unavailable on public holidays.\n\nPlan | Monthly storage | Priority retrieval | Included boxes\nStarter | $42 | $18 per request | 10\nOffice | $78 | $12 per request | 25\nArchive | $120 | No charge | 50\n\nAn additional box costs $3 per month under every plan. Each account may name two authorized requesters without charge; adding another requester costs $5 per month. Existing customers may change plans at the start of any month, provided the request reaches us at least five working days beforehand. Boxes already in storage need not be relabeled when a plan changes.\n\nTo protect confidential records, the desk will release a retrieved box only to an authorized requester who shows a company badge. A courier can collect a box on that person's behalf only if the requester submits the courier's name in the portal before collection."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "LONG-P7-02A",
+          "skill": "r-vocabulary",
+          "prompt": "In the notice, the word “release” is closest in meaning to",
+          "options": [
+            "publish",
+            "hand over",
+            "cancel",
+            "unlock"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「hand over」：此處說櫃台只會把調出的箱子交給授權請求人；release 指交付，不是公開出版、取消或開鎖。\n【考點】Part 7・同義字題\n【判斷依據】回到 release a retrieved box 的句子判斷動作對象與情境。",
+          "ability": "R4",
+          "questionType": "synonym"
+        },
+        {
+          "id": "LONG-P7-02B",
+          "skill": "r-inference",
+          "prompt": "What is the monthly cost for an Office account with 28 boxes and one priority retrieval?",
+          "options": [
+            "$78",
+            "$87",
+            "$99",
+            "$108"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「$99」：Office 月費 $78 含 25 箱；多 3 箱每箱 $3，為 $9；一次 priority retrieval $12。$78 + $9 + $12 = $99。其他數字少算了額外箱或服務費。\n【考點】Part 7・推論與費用計算\n【判斷依據】逐項加上超額箱數與單次取件費，不把其他方案的價格混入。",
+          "ability": "R1",
+          "questionType": "inference"
+        },
+        {
+          "id": "LONG-P7-02C",
+          "skill": "r-detail",
+          "prompt": "What happens to a priority request submitted after 11 A.M.?",
+          "options": [
+            "It is rejected.",
+            "It is completed by 5 P.M. the same day.",
+            "It incurs a holiday charge.",
+            "It is treated as a next-day request."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「It is treated as a next-day request.」：通知直接說 11 A.M. 後的申請視為次日申請。其餘說法都與規則不符。\n【考點】Part 7・細節題\n【判斷依據】定位 submitted after 11 A.M. 的處理規則。",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "LONG-P7-02D",
+          "skill": "r-inference",
+          "prompt": "Why might a customer submit a plan-change request well before the end of a month?",
+          "options": [
+            "The company requires five working days' notice before a new-month change.",
+            "Boxes must be relabeled before a new plan begins.",
+            "Priority retrieval is available only after a change.",
+            "Authorized requesters must be named again each month."
+          ],
+          "answer": 0,
+          "explanation": "正解 A：換方案只能在月初生效，且請求須提前至少五個工作天送達，因此月底前要預留時間。原文說舊箱不必重貼標籤，也沒有每月重填授權人的規定。\n【考點】Part 7・推論題\n【判斷依據】結合月初生效與提前五個工作天兩個條件。",
+          "ability": "R1",
+          "questionType": "inference"
+        }
+      ]
+    },
+    {
+      "id": "g-long-p7-03",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: three-person project chat",
+      "passage": {
+        "docs": [
+          {
+            "label": "Team chat",
+            "text": "Project channel: Riverside kiosk pilot\nTuesday, 10 June\n\n08:12 — Maya: The station manager has approved a two-day trial, but only at the east entrance. The south entrance will be closed for floor repairs until Friday. I will send the revised map to the installers before noon.\n\n08:18 — Theo: The screens arrived, though one has a cracked stand. I can use the spare stand from our workshop. The replacement supplier says a new stand would take four working days, so waiting for it would miss Thursday's setup.\n\n08:24 — Lin: Please confirm the power outlet location. The drawing still shows the old kiosk position. Our electrician can visit tomorrow morning, but she needs the manager to let her through the service gate.\n\n09:05 — Maya: I spoke with the manager. The outlet is beside the ticket machine, and he will meet the electrician at the service gate at 9 A.M. Wednesday. I'll update the drawing tonight.\n\n09:11 — Theo: Then I can assemble both units on Wednesday afternoon. Lin, can you check the brightness settings after installation? The trial opens Thursday at 8 A.M., when the concourse gets direct sunlight.\n\n09:14 — Lin: Yes. I will test them at opening and send the readings by 10 A.M. If the east-facing screen is difficult to read, we can adjust its angle without moving the power connection."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "LONG-P7-03A",
+          "skill": "r-intent",
+          "prompt": "What does Theo mean when he says that waiting for a new stand would miss Thursday's setup?",
+          "options": [
+            "The stand delivery would occur too late for the planned installation.",
+            "The station manager has canceled Thursday's trial.",
+            "The screen cannot be assembled with a spare stand.",
+            "The electrician will not visit until Friday."
+          ],
+          "answer": 0,
+          "explanation": "正解 A：新支架要四個工作天，會趕不上週四設置；Theo 因此改用工作室備用支架。其餘選項都與對話直接相反或沒有根據。\n【考點】Part 7・聊天意圖題\n【判斷依據】把 Theo 的時間判斷與他提出的替代做法連起來。",
+          "ability": "R1",
+          "questionType": "chat-intent"
+        },
+        {
+          "id": "LONG-P7-03B",
+          "skill": "r-detail",
+          "prompt": "Where is the power outlet for the kiosks?",
+          "options": [
+            "At the south entrance",
+            "Beside the ticket machine",
+            "Inside the workshop",
+            "Near the service gate"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Beside the ticket machine」：Maya 09:05 的訊息說插座在售票機旁。service gate 是電工進出的地方，不是插座位置。\n【考點】Part 7・細節題\n【判斷依據】以 outlet 定位最新回覆，避免把入口與電源位置混淆。",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "LONG-P7-03C",
+          "skill": "r-inference",
+          "prompt": "Why will Lin test the screens at 8 A.M. rather than later in the day?",
+          "options": [
+            "The supplier will collect them at 10 A.M.",
+            "The station closes after the morning rush.",
+            "Direct sunlight at opening may affect readability.",
+            "The electrician is available only before 9 A.M."
+          ],
+          "answer": 2,
+          "explanation": "正解 C：週四 8 A.M. 開放試用時大廳會有直射陽光，Lin 要檢查亮度；推得測試時段是為了判斷在陽光下能否閱讀。\n【考點】Part 7・推論題\n【判斷依據】連結開放時間、直射陽光與亮度測試的目的。",
+          "ability": "R1",
+          "questionType": "inference"
+        },
+        {
+          "id": "LONG-P7-03D",
+          "skill": "r-detail",
+          "prompt": "Which action is NOT planned before the trial opens?",
+          "options": [
+            "Updating the drawing",
+            "Assembling both units",
+            "Using a spare stand",
+            "Replacing the station floor at the east entrance"
+          ],
+          "answer": 3,
+          "explanation": "正解 D：Maya 會更新圖、Theo 會裝兩台並用備用支架；地板維修的是南側入口，並沒有東側入口換地板的計畫。\n【考點】Part 7・NOT 題\n【判斷依據】核對每項行動及地點，注意 south 與 east 的差異。",
+          "ability": "R2",
+          "questionType": "not-question"
+        }
+      ]
+    },
+    {
+      "id": "g-long-p7-04",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: municipal market report",
+      "passage": {
+        "docs": [
+          {
+            "label": "Local business report",
+            "text": "Cedar Market Tests Earlier Deliveries\nBy Staff Reporter, 27 August\n\nCedar Market, a cooperative of 18 neighborhood vendors, has finished a six-week trial of an earlier delivery window. Until July, most suppliers unloaded from 8 to 10 A.M., when shoppers were already arriving. Under the trial, the loading area opened at 6:30 A.M. and closed to trucks at 8 A.M. Vendors could still receive small parcels at the front counter later in the day.\n\nThe cooperative recorded 14 fewer truck movements near the main entrance during the busiest shopping hour each week. It also received fewer complaints about blocked sidewalks. However, three vendors said the new window made it difficult for their refrigerated-goods suppliers, whose first routes begin after 7 A.M. Those vendors used a shared cold-storage room on four mornings rather than leaving goods at the entrance.\n\nThe board will decide in September whether to keep the earlier window. Before voting, it has asked the three affected vendors to provide delivery logs and asked the cold-storage operator for an estimate of regular operating costs. The board has not announced a permanent schedule. It will also seek comments from nearby residents, although the trial measurements came from the market's own staff rather than an outside traffic study.\n\nSeveral vendors said the change made morning setup calmer, but they want a plan for peak holiday weeks, when more trucks arrive than in August."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "LONG-P7-04A",
+          "skill": "r-purpose",
+          "prompt": "What is the main purpose of the article?",
+          "options": [
+            "To advertise storage space to new vendors",
+            "To announce a permanent ban on morning deliveries",
+            "To compare two markets' traffic studies",
+            "To describe the results and unresolved issues of a delivery trial"
+          ],
+          "answer": 3,
+          "explanation": "正解 D：報導先說明提早送貨試行的成效，再列出冷藏貨供應商的困難與董事會尚待決定的事項；並非宣布永久政策。\n【考點】Part 7・主旨題\n【判斷依據】綜合開頭、試行結果與結尾的未決事項，而非抓單一句話。",
+          "ability": "R1",
+          "questionType": "main-purpose"
+        },
+        {
+          "id": "LONG-P7-04B",
+          "skill": "r-inference",
+          "prompt": "Why did the board request an estimate from the cold-storage operator?",
+          "options": [
+            "It needs to assess a recurring cost before deciding on the schedule.",
+            "It has already agreed to expand the market by 18 stalls.",
+            "It wants to stop vendors from receiving parcels at the front counter.",
+            "It plans to replace an external traffic survey with storage data."
+          ],
+          "answer": 0,
+          "explanation": "正解 A：三個受影響攤商在四個早晨用了共用冷藏室；董事會決定是否保留時段前詢問常態營運費用，可推得要評估長期成本。其餘計畫文中沒有。\n【考點】Part 7・推論題\n【判斷依據】把試行期間的替代方案與董事會要求成本估價連起來。",
+          "ability": "R1",
+          "questionType": "inference"
+        },
+        {
+          "id": "LONG-P7-04C",
+          "skill": "r-detail",
+          "prompt": "Who collected the trial's traffic measurements?",
+          "options": [
+            "Nearby residents",
+            "An outside traffic consultant",
+            "The market's own staff",
+            "The cold-storage operator"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「The market's own staff」：報導明說 measurements came from the market's own staff rather than an outside traffic study。\n【考點】Part 7・細節題\n【判斷依據】定位 measurements 的來源，留意 rather than 排除外部研究。",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "LONG-P7-04D",
+          "skill": "r-inference",
+          "prompt": "What concern may become more important if the early window is retained?",
+          "options": [
+            "How to increase the number of neighborhood vendors immediately",
+            "How to handle holiday weeks with heavier truck traffic",
+            "How to close the front counter to small parcels",
+            "How to conduct the trial again in July"
+          ],
+          "answer": 1,
+          "explanation": "正解 B：最後一句說攤商希望有旺季計畫，因節慶週貨車多於八月；若保留新時段，旺季運量是仍需處理的問題。\n【考點】Part 7・推論題\n【判斷依據】把結尾的比較條件 holiday weeks 與未來營運連起來。",
+          "ability": "R1",
+          "questionType": "inference"
+        }
+      ]
+    },
+    {
+      "id": "g-long-p7-05",
+      "section": "reading",
+      "part": 7,
+      "title": "Double passage: regional workshop room booking",
+      "passage": {
+        "docs": [
+          {
+            "label": "Venue rate sheet",
+            "text": "Morrow Conference Center — June room rentals\n\nOur half-day rate covers any reservation beginning at or after 1:00 P.M. and ending no later than 5:00 P.M. The Cedar Room costs $180 per half day and seats 30 in a classroom arrangement. The smaller Maple Room costs $140 and seats 18 around tables. Both rooms are available on Friday, June 19, from 1:00 to 5:00 P.M.; Cedar is already booked on Saturday, June 20. Members receive 10 percent off room charges. The discount does not apply to equipment or food. A projector costs $45 per room, and the center provides a whiteboard and wireless access with every rental. Catering must be arranged separately with the center's approved supplier.\n\nRoom access begins 30 minutes before a reservation. The center's staff will place tables and chairs according to a layout submitted by June 11, but will not arrange the organizer's printed materials. A reservation is held only after the organizer confirms the room list and equipment request by email. We can accommodate changes to seating after June 11, but staff may not be able to provide a new layout on short notice."
+          },
+          {
+            "label": "Booking email",
+            "text": "To: Bookings, Morrow Conference Center\nFrom: Lena Park, Eastern Design Forum\nSent: June 8\nSubject: June 19 workshop rooms\n\nDear booking team,\n\nPlease hold the Cedar and Maple Rooms on Friday, June 19, from 1:30 to 4:30 P.M. We are a current member and expect 26 participants, including four trainers. Cedar will be used for the main presentation; Maple will be used for smaller exercises. Please add one projector to Cedar only. We will use our own laptop and bring printed worksheets, so we will not need a second projector or a print service. Our volunteers would like to enter at 1:15 P.M. to lay out those worksheets before participants arrive.\n\nWe are not ordering food from the center because attendees will eat before the session. Could you send the amount due for the rooms and projector? I can confirm the classroom layout for Cedar and the table layout for Maple by June 11. If the smaller room becomes unavailable, please tell me before issuing the invoice; we would rather change the date than ask participants to share one room.\n\nRegards,\nLena Park\nProgram Coordinator"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "LONG-P7-05A",
+          "skill": "r-crossref",
+          "prompt": "What amount should the center quote for the rooms and projector?",
+          "options": [
+            "$333",
+            "$288",
+            "$365",
+            "$405"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「$333」：價目表列 Cedar $180、Maple $140、會員房費九折、投影機 $45；信中要求兩房及一台投影機。算式 ($180 + $140) × 0.90 + $45 = $333。其餘金額分別漏算設備、漏算折扣或把折扣用錯範圍。 Cross-reference: Venue rate sheet and Booking email.\n【考點】Part 7・跨文件整合\n【判斷依據】先由郵件決定訂購項目與會員身分，再把價目表的折扣只套在房費。",
+          "ability": "R3",
+          "questionType": "cross-document",
+          "crossRef": true
+        },
+        {
+          "id": "LONG-P7-05B",
+          "skill": "r-crossref",
+          "prompt": "Which reservation can the center fulfill exactly as Ms. Park requests?",
+          "options": [
+            "Cedar and Maple on June 20, 1:30–4:30 P.M.",
+            "Cedar and Maple on June 19, 1:30–4:30 P.M.",
+            "Cedar alone on June 19, 1:30–4:30 P.M.",
+            "Cedar and Maple on June 19, 12:30–4:30 P.M."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Cedar and Maple on June 19, 1:30–4:30 P.M.」：場地表寫兩房在 6 月 19 日下午 1–5 點有空；郵件要求 6 月 19 日 1:30–4:30，時間完全落在可預約時段。20 日 Cedar 已被訂，另外兩項不是郵件要求的房間或時段。 Cross-reference: Venue rate sheet and Booking email.\n【考點】Part 7・跨文件整合\n【判斷依據】把郵件的日期、房間及時段與場地表逐一比對，缺任一文件都無法判定。",
+          "ability": "R3",
+          "questionType": "cross-document",
+          "crossRef": true
+        },
+        {
+          "id": "LONG-P7-05C",
+          "skill": "r-inference",
+          "prompt": "Why would Ms. Park prefer a different date if Maple became unavailable?",
+          "options": [
+            "To gain a longer rental period",
+            "To avoid submitting a seating layout",
+            "To keep presentations and smaller exercises in separate rooms",
+            "To obtain a discount on catering"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「To keep presentations and smaller exercises in separate rooms」：郵件說 Cedar 用於主要簡報、Maple 用於小組練習，並表示若 Maple 無法使用，寧願改日期也不讓學員共用一室。由此可推知她要保留兩種活動的獨立空間；其他動機沒有根據。\n【考點】Part 7・推論題\n【判斷依據】把兩個房間的用途與「寧可改期」連在一起，不用場地表之外的常識。",
+          "ability": "R1",
+          "questionType": "inference"
+        },
+        {
+          "id": "LONG-P7-05D",
+          "skill": "r-detail",
+          "prompt": "What will Ms. Park supply herself?",
+          "options": [
+            "A whiteboard",
+            "Wireless access",
+            "Tables and chairs",
+            "Printed worksheets"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Printed worksheets」：郵件明寫「bring printed worksheets」。白板與無線網路由場地提供，桌椅由場地人員依座位圖擺放。\n【考點】Part 7・細節題\n【判斷依據】區分主辦方自備與場地提供的物品。",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "LONG-P7-05E",
+          "skill": "r-detail",
+          "prompt": "Which service is NOT included with a standard room rental?",
+          "options": [
+            "Catering",
+            "A whiteboard",
+            "Wireless access",
+            "Staff placement of tables and chairs"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「Catering」：價目表明說餐飲須另向指定供應商安排；白板、無線網路隨房間附上，桌椅由工作人員依提交的配置圖擺放。\n【考點】Part 7・NOT 題\n【判斷依據】逐項定位服務條款，留意「separately」代表不包含。",
+          "ability": "R2",
+          "questionType": "not-question"
+        }
+      ]
+    },
+    {
+      "id": "g-long-p7-06",
+      "section": "reading",
+      "part": 7,
+      "title": "Double passage: client visit travel plan",
+      "passage": {
+        "docs": [
+          {
+            "label": "Rail timetable and fares",
+            "text": "Oak Junction to East Hub — weekday service\n\nStandard service 214 leaves Oak Junction at 8:05 A.M. and arrives at East Hub at 8:50 A.M. Standard service 218 leaves at 9:10 A.M. and arrives at 9:55 A.M. The express leaves at 8:30 A.M. and arrives at 9:00 A.M. Standard tickets cost $18 each way; express tickets cost $30 each way. A return ticket is simply two one-way fares and does not carry a discount. All departures listed here also operate in the reverse direction after 4:00 P.M. Tickets may be purchased at the station or through the rail app; digital tickets count as receipts if they show the fare paid.\n\nThe shuttle from East Hub to the Innovation Building takes about twelve minutes and leaves the station at 9:00 and 9:15 A.M. It is free for passengers holding a rail ticket. Visitors walking from the station should allow about thirty minutes. We recommend reaching the shuttle stop five minutes before departure. The timetable is subject to small platform changes, but the listed arrival times have not changed this month."
+          },
+          {
+            "label": "Manager’s travel memo",
+            "text": "To: Maya Chen and Luis Romero\nFrom: Selin Brooks, Account Manager\nSubject: Tuesday client visit at East Hub\n\nThe two of you will meet the client at the Innovation Building at 9:30 A.M. on Tuesday. Please be in the reception area at least fifteen minutes beforehand so that security can issue visitor badges. The product demonstration ends at 3:45 P.M.; you may take any train home after that. Use standard rail service whenever it can get you to the reception area on time. The department will reimburse the fare for each person's round trip when a receipt is attached. The express is reimbursable only if no standard train can meet the arrival requirement. A taxi requires my approval before booking, and there is no approved taxi request for this visit.\n\nPlease carry the sample case between you rather than checking it with the station's parcel service. It contains a fragile prototype that we need during the demonstration. I will send the final slide deck on Monday evening. Do not print it: the client's room has a shared display. When you return, put the rail receipts and any approved incidentals in one claim per person by Friday."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "LONG-P7-06A",
+          "skill": "r-crossref",
+          "prompt": "Which outbound train should the employees take under the manager’s policy?",
+          "options": [
+            "Standard service 218",
+            "Standard service 214",
+            "The 8:30 A.M. express",
+            "A taxi from Oak Junction"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Standard service 214」：備忘錄要求 9:15 前到接待處，且可行時須搭普通車。時刻表顯示 214 班次 8:50 到站，接 9:00 免費接駁車約 9:12 到大樓；218 到站 9:55 太晚。快車雖可行，但因普通車可準時到，政策不報銷快車；計程車未獲批准。 Cross-reference: Rail timetable and fares and Manager’s travel memo.\n【考點】Part 7・跨文件整合\n【判斷依據】把備忘錄的到達期限和交通政策，與火車及接駁車時刻合併。",
+          "ability": "R3",
+          "questionType": "cross-document",
+          "crossRef": true
+        },
+        {
+          "id": "LONG-P7-06B",
+          "skill": "r-crossref",
+          "prompt": "What is the total reimbursable rail fare for both employees if they each make a standard-service round trip?",
+          "options": [
+            "$36",
+            "$54",
+            "$72",
+            "$120"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「$72」：時刻表普通車單程 $18，來回沒有折扣；備忘錄指名兩位員工且每人搭來回。算式 $18 × 2 趟 × 2 人 = $72。$36 只算一人，$54 混入快車，$120 是兩人的快車來回。 Cross-reference: Rail timetable and fares and Manager’s travel memo.\n【考點】Part 7・跨文件整合\n【判斷依據】用備忘錄決定人數與行程，再以票價表計算每一人的來回票價。",
+          "ability": "R3",
+          "questionType": "cross-document",
+          "crossRef": true
+        },
+        {
+          "id": "LONG-P7-06C",
+          "skill": "r-inference",
+          "prompt": "Why should the employees avoid walking from East Hub after taking service 214?",
+          "options": [
+            "Walking is prohibited for rail passengers.",
+            "The sample case cannot be carried outdoors.",
+            "A taxi is cheaper than the shuttle.",
+            "A thirty-minute walk would miss the 9:15 A.M. reception target."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「A thirty-minute walk would miss the 9:15 A.M. reception target.」：214 班次 8:50 到站，步行約 30 分鐘，要到 9:20 才抵達大樓；接駁車約 9:12 抵達，較符合 9:15 前到接待處的要求。其他三項都沒有根據。\n【考點】Part 7・推論題\n【判斷依據】用到站時間加上步行所需時間，並考慮接待處報到。",
+          "ability": "R1",
+          "questionType": "inference"
+        },
+        {
+          "id": "LONG-P7-06D",
+          "skill": "r-detail",
+          "prompt": "When will the product demonstration end?",
+          "options": [
+            "At 3:45 P.M.",
+            "At 4:00 P.M.",
+            "At 4:15 P.M.",
+            "At 9:30 A.M."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「At 3:45 P.M.」：備忘錄直接寫「The product demonstration ends at 3:45 P.M.」。其他時間來自會面或回程交通，並非示範結束時間。\n【考點】Part 7・細節題\n【判斷依據】定位備忘錄中的活動結束時間。",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "LONG-P7-06E",
+          "skill": "r-detail",
+          "prompt": "Which instruction is NOT given in the manager’s memo?",
+          "options": [
+            "Keep the sample case with them.",
+            "Print the final slide deck.",
+            "Submit a separate claim for each person.",
+            "Attach rail receipts to the claims."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Print the final slide deck.」：經理明說「Do not print it」，所以列印簡報不是指示；樣品箱要隨身帶、每人分開報帳，且須附車票收據，三項都寫在備忘錄中。\n【考點】Part 7・NOT 題\n【判斷依據】留意指令中的否定詞，不要只因文中出現 print 就選錯。",
+          "ability": "R2",
+          "questionType": "not-question"
+        }
+      ]
+    },
+    {
+      "id": "g-long-p7-07",
+      "section": "reading",
+      "part": 7,
+      "title": "Double passage: exhibition supply order",
+      "passage": {
+        "docs": [
+          {
+            "label": "Supplier terms",
+            "text": "Mosaic Display Supply — November order guide\n\nBrushed-metal name labels are $2.40 each and are sold in quantities of at least 100. An order of 200 or more labels receives a 15 percent discount on the labels only. Clear acrylic stands cost $8 each; there is no quantity discount on stands. Standard delivery within the city is included in orders above $500 after discounts. Orders below that amount incur a $25 delivery fee. An order confirmed by 3:00 P.M. Monday ships on Wednesday and normally reaches a city address two business days after shipment. Orders confirmed later ship the following Monday. A Saturday delivery request adds $40, even when standard delivery is free.\n\nAll items currently shown in the catalog are in stock. The stands are packed in cartons of ten, so please order in multiples of ten. If your event requires a color proof of the labels, allow another three business days before shipping; the proof does not change the item price. We send a final invoice with the confirmed quantity, discounts, and shipping charge when the order leaves the warehouse."
+          },
+          {
+            "label": "Planning email",
+            "text": "To: orders@mosaic-display-example.com\nFrom: Priya Voss, Harbor Arts Cooperative\nSent: Monday, 2:20 P.M.\nSubject: Lobby exhibition labels and stands\n\nDear order team,\n\nPlease confirm an order for 240 brushed-metal name labels and 30 clear acrylic stands. The labels will identify individual exhibits, while the stands will hold thirty larger description cards near the lobby entrance. We can use the standard metal finish shown in your catalog; no color proof is needed. The exhibition installation begins next Monday morning, so a delivery by Friday would give our volunteers the weekend to sort and check the pieces. Our receiving desk is staffed on weekdays until 5:30 P.M., but nobody can accept a Saturday delivery.\n\nPlease ship everything together to the cooperative's city address on our account. We would like the item charges and any delivery fee shown separately on the invoice, because our grant covers materials but not premium shipping. I approve the quantities and standard terms in this email; please treat it as confirmation before 3:00 P.M. today. If the standard timetable cannot meet Friday, tell me immediately so I can adjust the volunteer schedule.\n\nBest,\nPriya Voss\nExhibition Coordinator"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "LONG-P7-07A",
+          "skill": "r-crossref",
+          "prompt": "What should the item charges total before any delivery fee?",
+          "options": [
+            "$816.00",
+            "$704.40",
+            "$729.60",
+            "$576.00"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「$729.60」：供應條款：標籤每個 $2.40，達 200 個只對標籤打 85 折；支架每個 $8。郵件訂 240 個標籤與 30 個支架。算式 240 × $2.40 × 0.85 + 30 × $8 = $489.60 + $240 = $729.60。$816 未打折，$576 只算標籤，其他值算錯折扣範圍。 Cross-reference: Supplier terms and Planning email.\n【考點】Part 7・跨文件整合\n【判斷依據】先從郵件取數量，再把供應商折扣套在標籤而非全部品項。",
+          "ability": "R3",
+          "questionType": "cross-document",
+          "crossRef": true
+        },
+        {
+          "id": "LONG-P7-07B",
+          "skill": "r-crossref",
+          "prompt": "When should the standard shipment normally reach the cooperative?",
+          "options": [
+            "Wednesday",
+            "Thursday",
+            "Saturday",
+            "Friday"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Friday」：郵件於週一 2:20 寄出，並明說這封信就是確認，早於條款的週一 3:00 截止；供應商週三寄出，兩個工作天後為週五。週六加價且收貨處沒人，其他日期不符條款。 Cross-reference: Supplier terms and Planning email.\n【考點】Part 7・跨文件整合\n【判斷依據】把郵件寄送／確認時點與供應條款的出貨和運送天數合起來推算。",
+          "ability": "R3",
+          "questionType": "cross-document",
+          "crossRef": true
+        },
+        {
+          "id": "LONG-P7-07C",
+          "skill": "r-inference",
+          "prompt": "Why does Ms. Voss decline a color proof?",
+          "options": [
+            "It would delay shipment beyond the standard timetable.",
+            "It would increase the price of each label.",
+            "It is available only for acrylic stands.",
+            "It would require a Saturday delivery."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「It would delay shipment beyond the standard timetable.」：供應條款說色樣會在寄送前多花三個工作天，郵件則需要週五收貨，並明說可用標準金屬表面，因此不做色樣能維持時程。條款說色樣不改商品單價，其他兩項沒有根據。\n【考點】Part 7・推論題\n【判斷依據】把客戶的交期需求與供應商的額外製作時間連起來。",
+          "ability": "R1",
+          "questionType": "inference"
+        },
+        {
+          "id": "LONG-P7-07D",
+          "skill": "r-detail",
+          "prompt": "How many clear acrylic stands does Ms. Voss request?",
+          "options": [
+            "Ten",
+            "Thirty",
+            "Two hundred",
+            "Two hundred forty"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Thirty」：郵件明說「30 clear acrylic stands」；240 是金屬標籤數量，其他數字不是訂購支架數。\n【考點】Part 7・細節題\n【判斷依據】區分兩種商品的數量。",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "LONG-P7-07E",
+          "skill": "r-detail",
+          "prompt": "Which statement about the order is NOT correct?",
+          "options": [
+            "The stands are ordered in an acceptable multiple.",
+            "The order qualifies for a label discount.",
+            "The cooperative has requested Saturday delivery.",
+            "The supplier will send a final invoice when the order ships."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「The cooperative has requested Saturday delivery.」：郵件說週六無人收貨、要求標準配送，並未要求週六送貨。支架 30 個符合每箱十個，240 個標籤超過 200 個折扣門檻，條款說出貨時會寄最終發票。\n【考點】Part 7・NOT 題\n【判斷依據】核對郵件的要求與供應條款，辨別文中提到但未選擇的加價服務。",
+          "ability": "R2",
+          "questionType": "not-question"
+        }
+      ]
+    },
+    {
+      "id": "g-long-p7-08",
+      "section": "reading",
+      "part": 7,
+      "title": "Triple passage: regional workshop reservation",
+      "passage": {
+        "docs": [
+          {
+            "label": "Email: event request",
+            "text": "To: Booking Desk, Alderfield Conference Centre\nFrom: Helena Park, Northbank Merchandising\nDate: April 2\nSubject: Regional workshop on April 24\n\nDear Booking Team,\n\nWe are arranging a one-day workshop for 46 employees who have already registered. Our regional partners may send another eight people, but they will confirm by April 6. We would prefer a room that holds everyone in one seating area rather than splitting the discussion between two rooms. The morning program will include a product demonstration, so we need a projector and a table near the front for sample materials. We plan to begin at 9:30 A.M., serve lunch at noon, and finish before 4 P.M. Please quote the room and any charge that depends on the final head count separately. We will bring our own coffee service and do not need catering from the centre. A small delivery of display samples should reach the venue the afternoon before the workshop.\n\nKind regards,\nHelena Park"
+          },
+          {
+            "label": "Venue rate sheet",
+            "text": "Alderfield Conference Centre: April weekday rates\n\nMaple Suite: maximum 45 people, $540 per day; projector available for $45.\nCedar Hall: maximum 60 people, $700 per day; projector included.\nRiver Auditorium: maximum 90 people, $980 per day; projector included.\n\nThe Cedar Hall and River Auditorium rates include seating for the first 50 attendees. For each attendee above 50, the venue adds $12 to the room charge. This is a seating charge, not a catering charge. Deliveries may be accepted from 2 to 5 P.M. on the previous business day if the booking code appears on the package. Guests cannot store personal luggage in the delivery room. A 10 percent discount applies to the base room rate when a booking is confirmed at least 18 calendar days before the event; the discount does not apply to extra seating or equipment. The venue opens at 8 A.M. and closes at 6 P.M. on weekdays."
+          },
+          {
+            "label": "Email: booking response",
+            "text": "To: Helena Park\nFrom: Imani Bell, Alderfield Conference Centre\nDate: April 7\nSubject: RE: Regional workshop on April 24\n\nDear Ms. Park,\n\nYour regional partners confirmed eight additional attendees this morning, bringing the workshop to its final size. Cedar Hall is available on April 24, and I have placed a provisional hold on it until 5 P.M. tomorrow. Maple Suite cannot accommodate the full group; River Auditorium is available but costs more. Your requested demonstration table is included in the Cedar Hall setup, and the built-in projector will be ready for testing at 8:45 A.M. Because the hold has not yet become a confirmed booking, the early-confirmation discount cannot be applied. Once you approve the quote, I will send the booking code for the sample delivery. Please keep the boxes under 20 kilograms each so our receiving staff can move them safely. Lunch arrangements remain your responsibility, as requested.\n\nSincerely,\nImani Bell"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "LONG-P7-08A",
+          "skill": "r-crossref",
+          "prompt": "How much will the extra seating charge be for the workshop?",
+          "options": [
+            "$36",
+            "$48",
+            "$60",
+            "$96"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「$48」：申請信有 46 位已報名者，回信確認另加 8 位，共 46 + 8 = 54 位；價目表說前 50 位已含在 Cedar Hall 場租內，超出 54 - 50 = 4 位，每位 $12，故 4 × $12 = $48。$96 是把全部 8 位伙伴都當額外收費。\n【考點】Part 7・跨文件整合\n【判斷依據】合併申請信、回信的人數與價目表的門檻，才能算出超額費。Cross-reference: request + response + rate sheet.",
+          "crossRef": true,
+          "ability": "R3",
+          "questionType": "cross-document"
+        },
+        {
+          "id": "LONG-P7-08B",
+          "skill": "r-crossref",
+          "prompt": "Why is Cedar Hall a suitable choice for Ms. Park's group?",
+          "options": [
+            "It has a separate room for partners.",
+            "It includes a free lunch service.",
+            "It holds the final group and has a projector.",
+            "It offers the lowest listed room rate."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「It holds the final group and has a projector.」：申請信與回信合計 54 人且需要投影機；價目表顯示 Cedar Hall 可容 60 人並含投影機。Maple 最多 45 人，River 雖可容納但較貴；午餐與額外房間均未包含。\n【考點】Part 7・跨文件整合\n【判斷依據】把需求、確定人數和價目表的容量及設備一起核對。Cross-reference: request + response + rate sheet.",
+          "crossRef": true,
+          "ability": "R3",
+          "questionType": "cross-document"
+        },
+        {
+          "id": "LONG-P7-08C",
+          "skill": "r-inference",
+          "prompt": "What can be inferred about the early-confirmation discount?",
+          "options": [
+            "It will be applied after the sample boxes arrive.",
+            "It is available for the seating charge only.",
+            "It applies to every booking made on a weekday.",
+            "It cannot be used for this provisional hold."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「It cannot be used for this provisional hold.」：回信明說暫時保留還不是已確認訂位，所以早確認折扣不能套用。價目表也把折扣限定於提前確認的基本場租，與送貨、座位附加費或平日無關。\n【考點】Part 7・推論題\n【判斷依據】注意 provisional hold 與 confirmed booking 的差異，不把可保留誤讀成已享折扣。",
+          "ability": "R1",
+          "questionType": "inference"
+        },
+        {
+          "id": "LONG-P7-08D",
+          "skill": "r-detail",
+          "prompt": "When can the projector be tested?",
+          "options": [
+            "At 8:45 A.M.",
+            "At 9:30 A.M.",
+            "At noon",
+            "At 5 P.M."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「At 8:45 A.M.」：回信寫明內建投影機會在上午 8:45 準備好供測試。9:30 是活動開始時間；中午是午餐時間；5 P.M. 是暫時保留截止時間。\n【考點】Part 7・細節題\n【判斷依據】區分設備測試、活動與訂位時限各自的時間。",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "LONG-P7-08E",
+          "skill": "r-inference",
+          "prompt": "What will most likely happen after Ms. Park approves the venue quote?",
+          "options": [
+            "The early-confirmation discount will be applied to the booking.",
+            "Maple Suite will be reserved for the entire group.",
+            "The centre will order lunch for the participants.",
+            "The centre will send a code for the sample delivery."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「The centre will send a code for the sample delivery.」：回信寫 Once you approve the quote, I will send the booking code；因此核准後會收到樣品寄送用的代碼。A 與折扣不能用的說明矛盾；Maple 容量不足；午餐由主辦方負責。\n【考點】Part 7・推論題\n【判斷依據】依回信中的條件句推知下一步，並對照其餘排除條件。",
+          "ability": "R1",
+          "questionType": "inference"
+        }
+      ]
+    },
+    {
+      "id": "g-long-p7-09",
+      "section": "reading",
+      "part": 7,
+      "title": "Triple passage: display equipment delivery",
+      "passage": {
+        "docs": [
+          {
+            "label": "Purchase order",
+            "text": "Purchase order 5728\nBuyer: Wrenfield Exhibitions\nSupplier: Cobalt Fixtures\nRequired for: lobby installation on Friday, September 18\n\nCarton 1 contains six display monitors and their power cables. Carton 2 contains six more monitors and six tabletop stands. Carton 3 contains six wall mounts, two spare cables, and the mounting instructions. The buyer will provide the remaining six stands from its own stock. All three cartons are needed before installers can complete the layout; the wall-mounted units cannot be substituted with tabletop units because the lobby counter is too narrow. The supplier will label each carton with the order number and a contents list. The buyer has approved delivery to the north loading door, where a security officer will sign for the goods. The installation team needs an inventory check by 4 P.M. on Thursday, September 17, to proceed with the Friday booking. If the check cannot be completed, the next installation slot is Monday, September 21."
+          },
+          {
+            "label": "Carrier service guide",
+            "text": "Bridgeway Freight — Business delivery service\n\nThe standard route takes three business days after pickup; the pickup day itself is not counted. For example, a carton collected on a Monday is scheduled for Thursday delivery. Deliveries reach business addresses between 9 A.M. and 5 P.M. A carton may be traced separately even when several cartons share a purchase order. The carrier gives a projected arrival date when each carton is scanned at pickup, but a projected date is not a guaranteed arrival time. An express service takes one business day after pickup and costs $45 per carton. A change to express must be requested before the carton is collected. Customers should contact the supplier, not the driver, to change service levels. Goods requiring an arrival before a specific hour should be booked on the timed service, which is quoted separately and is not part of standard or express delivery."
+          },
+          {
+            "label": "Supplier update",
+            "text": "To: Elise Ward, Wrenfield Exhibitions\nFrom: Tomas Lin, Cobalt Fixtures\nDate: Monday, September 14\nSubject: Dispatch update for order 5728\n\nDear Ms. Ward,\n\nCartons 1 and 2 were collected by Bridgeway Freight this afternoon on the standard service. During our final check, we found that one wall mount in carton 3 had the wrong bracket. We replaced the bracket, but the carrier had already left, so carton 3 will be collected tomorrow, Tuesday, on the same standard service. We have not requested express delivery because we need your written approval for the additional charge before collection. The courier will issue a separate tracking number for carton 3. The contents list and order number will appear on its label as planned. I understand that your installers have reserved Friday. I will email you as soon as the remaining carton is scanned, and I can ask about express service if you reply before tomorrow's pickup.\n\nRegards,\nTomas Lin"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "LONG-P7-09A",
+          "skill": "r-crossref",
+          "prompt": "On the standard service, when is carton 3 scheduled to arrive?",
+          "options": [
+            "Thursday, September 17",
+            "Friday, September 18",
+            "Monday, September 21",
+            "Tuesday, September 22"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Friday, September 18」：供應商通知第 3 箱在週二 9 月 15 日取件；運送指南說取件日不計，標準服務其後三個工作日，週三 16 日為第 1 天、週四 17 日第 2 天、週五 18 日第 3 天。這只是預計到貨日，不保證具體時間。\n【考點】Part 7・跨文件整合\n【判斷依據】要把更新信的取件日與指南的工作日算法結合。Cross-reference: supplier update + carrier guide.",
+          "crossRef": true,
+          "ability": "R3",
+          "questionType": "cross-document"
+        },
+        {
+          "id": "LONG-P7-09B",
+          "skill": "r-crossref",
+          "prompt": "Why might the installation team need the Monday slot instead of Friday?",
+          "options": [
+            "The purchase order requires no wall mounts.",
+            "The installation team is booked only for Monday.",
+            "The wall mounts may arrive after Thursday's inventory deadline.",
+            "The supplier removed carton 3 from the order."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「The wall mounts may arrive after Thursday's inventory deadline.」：訂單說第 3 箱有壁掛架，三箱都需在週四下午 4 點前清點，否則轉到週一；更新信說第 3 箱延至週二取件，依運送指南標準服務預計週五到。其它三項都與訂單或更新信相反。\n【考點】Part 7・跨文件整合\n【判斷依據】結合訂單的清點門檻、更新信的延後取件和指南的標準運期。Cross-reference: purchase order + supplier update + carrier guide.",
+          "crossRef": true,
+          "ability": "R3",
+          "questionType": "cross-document"
+        },
+        {
+          "id": "LONG-P7-09C",
+          "skill": "r-detail",
+          "prompt": "What is packed in carton 3?",
+          "options": [
+            "Six tabletop stands",
+            "Twelve display monitors",
+            "The buyer's spare stock",
+            "Six wall mounts and two spare cables"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Six wall mounts and two spare cables」：訂單明列第 3 箱有六個壁掛架、兩條備用電線及安裝說明。桌上型支架在第 2 箱；十二台螢幕分裝第 1、2 箱。\n【考點】Part 7・細節題\n【判斷依據】依箱號定位訂單，不把其他箱或買方自備品混入。",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "LONG-P7-09D",
+          "skill": "r-crossref",
+          "prompt": "What is suggested about changing carton 3 to express service?",
+          "options": [
+            "The buyer must respond before Tuesday's pickup.",
+            "The driver can approve the change at delivery.",
+            "It would guarantee arrival before 4 P.M.",
+            "It is included in the original shipping price."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「The buyer must respond before Tuesday's pickup.」：供應商要求取件前的書面核准；運送指南說改為快遞必須在取件前提出。快遞加收 $45，並不保證某個時點到貨；司機不能改服務。\n【考點】Part 7・跨文件整合\n【判斷依據】將兩份文件的程序條件連起來，注意 before pickup 的時限。Cross-reference: supplier update + carrier guide.",
+          "crossRef": true,
+          "ability": "R3",
+          "questionType": "cross-document"
+        },
+        {
+          "id": "LONG-P7-09E",
+          "skill": "r-detail",
+          "prompt": "Where will a security officer sign for the goods?",
+          "options": [
+            "At the installation desk",
+            "At the north loading door",
+            "At the carrier's depot",
+            "At the lobby counter"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「At the north loading door」：訂單說明貨物送至 north loading door，由保全簽收。其他地點分別是工作區、運送商設施或展示區，沒有作為簽收地點。\n【考點】Part 7・細節題\n【判斷依據】回到訂單的交貨說明找簽收地點。",
+          "ability": "R2",
+          "questionType": "detail"
+        }
+      ]
+    },
+    {
+      "id": "g-long-p7-10",
+      "section": "reading",
+      "part": 7,
+      "title": "Triple passage: supplier training enrollment",
+      "passage": {
+        "docs": [
+          {
+            "label": "Program notice",
+            "text": "Linden Procurement Institute — Supplier Records Workshop\nOctober 6–9\n\nThis workshop is for teams that maintain vendor records, review invoices, or approve purchase requests. Completion requires attendance at the opening session, one practical lab, and the Friday assessment. Participants must score at least 70 percent on the assessment; attendance alone does not earn the completion certificate. Two seats are included for each department with an active partner agreement. Additional seats cost $180 each, payable after the final attendance list is submitted. Seats are assigned to individuals and cannot be shared across sessions. Participants should bring a laptop that can open a spreadsheet file; sample data will be supplied through the training portal. The institute will email access instructions on Monday, October 5. A participant who misses a lab may take the other lab if a place remains, but the institute cannot promise a replacement seat after registration closes on October 2. Cancellations received by that date are free of charge."
+          },
+          {
+            "label": "Workshop timetable",
+            "text": "Tuesday, October 6 — Opening session, 9:00–11:00 A.M., Room Fern. A short demonstration of the vendor-review workflow follows the introduction. All registered participants attend this session.\n\nWednesday, October 7 — Practical Lab A, 9:00 A.M.–noon, Room Pine. Participants examine sample invoices and correct duplicate vendor entries. Capacity: 16.\n\nThursday, October 8 — Practical Lab B, 1:00–4:00 P.M., Room Pine. The exercises and assessment preparation are the same as Lab A; this is an alternative date, not a second required lab. Capacity: 16.\n\nFriday, October 9 — Assessment, 9:00–10:00 A.M., Room Fern. Results will be emailed by the following Tuesday. A certificate will be available in the portal after a passing score is recorded. The rooms open 20 minutes before each session. There is no online attendance option for the lab or assessment."
+          },
+          {
+            "label": "Manager's email",
+            "text": "To: Course Registration, Linden Procurement Institute\nFrom: Soraya Chen, Operations Manager, Bellrose Supply\nDate: September 30\nSubject: Seats for supplier records workshop\n\nHello,\n\nOur department's partner agreement remains active through the end of the year. Please register Priya Das, Nico Vale, and Amara Soto for the workshop. All three can attend Tuesday's opening and Friday's assessment. Priya and Nico prefer Wednesday's lab because they will be preparing a quarterly report on Thursday afternoon. Amara must visit a field site on Wednesday, but she is free on Thursday afternoon and would like Lab B. They will bring laptops; I have already checked that each can open spreadsheet files. Please send the final attendance list to me before it is sent to Finance. I understand that our agreement covers two seats and that we will be billed for any seat beyond that allowance. If a lab reaches capacity, let me know before moving anyone to the other date, because their project schedules are fixed.\n\nThank you,\nSoraya Chen"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "LONG-P7-10A",
+          "skill": "r-crossref",
+          "prompt": "How much will Bellrose Supply be billed for the three registrations?",
+          "options": [
+            "$180",
+            "$360",
+            "$540",
+            "$0"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「$180」：經理信說部門有有效協議並報名 3 人；計畫通知說每個有效協議部門含 2 席，額外每席 $180，所以 (3 - 2) × $180 = $180。$540 忽略兩個免費席位。\n【考點】Part 7・跨文件整合\n【判斷依據】先確定報名人數和協議狀態，再套用包含席位與加購費。Cross-reference: manager email + program notice.",
+          "crossRef": true,
+          "ability": "R3",
+          "questionType": "cross-document"
+        },
+        {
+          "id": "LONG-P7-10B",
+          "skill": "r-crossref",
+          "prompt": "Which lab should Amara attend to meet the completion requirement?",
+          "options": [
+            "Lab A on Wednesday morning",
+            "Lab B on Thursday afternoon",
+            "Both labs",
+            "Neither lab"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Lab B on Thursday afternoon」：經理信說 Amara 週三需去外勤、週四下午有空；時間表顯示 Lab B 在週四下午，而且與 Lab A 為二選一；計畫通知要求上過一個實作 lab 才能完成課程。兩個 lab 都上不是必需，完全不上也不符合要求。\n【考點】Part 7・跨文件整合\n【判斷依據】把個人行程、課表和完訓要求一起比對。Cross-reference: manager email + timetable + program notice.",
+          "crossRef": true,
+          "ability": "R3",
+          "questionType": "cross-document"
+        },
+        {
+          "id": "LONG-P7-10C",
+          "skill": "r-inference",
+          "prompt": "What is suggested about Priya and Nico's lab preference?",
+          "options": [
+            "It is based on a computer compatibility problem.",
+            "It means they will skip the assessment.",
+            "It avoids a conflict with their Thursday work.",
+            "It was assigned by the institute after registration closed."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「It avoids a conflict with their Thursday work.」：經理信說兩人週四下午要準備季度報告，因此偏好週三的 Lab A。信中也說三人都能參加週五測驗且筆電可開試算表，沒有電腦問題或臨時指派的資訊。\n【考點】Part 7・推論題\n【判斷依據】用工作安排推知偏好原因，不把其他時程或設備條件混進來。",
+          "ability": "R1",
+          "questionType": "inference"
+        },
+        {
+          "id": "LONG-P7-10D",
+          "skill": "r-detail",
+          "prompt": "When will participants receive access instructions?",
+          "options": [
+            "On October 2",
+            "On October 6",
+            "By the following Tuesday",
+            "On October 5"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「On October 5」：計畫通知寫明學院會在 10 月 5 日星期一寄送入口說明。10 月 2 日是報名截止日；下一個星期二寄的是測驗成績。\n【考點】Part 7・細節題\n【判斷依據】區分報名截止、入口說明、課程與成績通知的日期。",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "LONG-P7-10E",
+          "skill": "r-detail",
+          "prompt": "Which activity is NOT required to earn a completion certificate?",
+          "options": [
+            "Attending both practical labs",
+            "Attending the opening session",
+            "Taking the Friday assessment",
+            "Receiving at least 70 percent on the assessment"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「Attending both practical labs」：計畫通知只要求參加一個實作 lab，時間表也說 Lab B 是替代日期，不是第二堂必修。開幕場次、週五測驗與至少 70% 的成績都是完訓要求。\n【考點】Part 7・NOT 題\n【判斷依據】核對完訓條件與課表的 alternative date，避免把替代場次當成額外要求。",
+          "ability": "R2",
+          "questionType": "not-question"
+        }
+      ]
+    },
+    {
+      "id": "g-long-p6-01",
+      "section": "reading",
+      "part": 6,
+      "title": "Email: revised equipment induction",
+      "passage": {
+        "docs": [
+          {
+            "label": "Email",
+            "text": "To: Workshop supervisors\nFrom: Talia Chen, Safety Coordinator\nSubject: Equipment induction on 14 May\n\nThank you for helping with next month's induction for newly hired technicians. The session has been [1] from the north workshop to Training Room 3 because the lifting equipment will be inspected that morning. The start time remains 8:45 A.M. Please tell your teams about the room change before Friday, when the welcome packets go to print.\n\nParticipants should bring their employee badges and closed-toe shoes. Protective glasses will be provided at the entrance. [2] Once everyone has signed in, I will demonstrate the emergency stop procedure and then assign pairs for the practice exercise.\n\nThe inspection is expected to finish at noon. [3], no one attending the induction should enter the north workshop before the facilities team confirms that the barriers have been removed. The reminder matters even for employees who have worked with similar equipment elsewhere.\n\nIf a technician cannot attend on 14 May, please [4] me by Tuesday so that I can reserve a place in the next session. I will send the updated attendance list to Reception on Wednesday afternoon.\n\nTalia"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "LONG-P6-01A",
+          "prompt": "Select the best word for [1].",
+          "options": [
+            "relocated",
+            "reimbursed",
+            "renewed",
+            "recruited"
+          ],
+          "answer": 0,
+          "skill": "r-vocabulary",
+          "questionType": "vocabulary",
+          "ability": "R4",
+          "explanation": "正解 A「relocated」：因北側工坊當天要檢查，課程改到 Training Room 3，故為移地。reimbursed 是報銷、renewed 是續約、recruited 是招募，都不表示地點變更。\n【考點】Part 6・字彙\n【判斷依據】以 from ... to ... 和 room change 判定動詞語意。"
+        },
+        {
+          "id": "LONG-P6-01B",
+          "prompt": "Select the best sentence for [2].",
+          "options": [
+            "The workshop barriers will be removed before the inspection starts.",
+            "A member of Reception will check each badge against the attendance list.",
+            "Technicians may begin the practice exercise without supervision.",
+            "The north workshop will be available to visitors throughout the morning."
+          ],
+          "answer": 1,
+          "skill": "r-purpose",
+          "questionType": "sentence-insertion",
+          "ability": "R3",
+          "explanation": "正解 B：前句列參加者須帶識別證，後句說 everyone has signed in，因此由 Reception 核對識別證與名單最能銜接。A、D 與上午封閉檢查衝突；C 與之後才分組練習的順序衝突。\n【考點】Part 6・句子插入\n【判斷依據】核對前後句的識別證、簽到及練習時間順序。"
+        },
+        {
+          "id": "LONG-P6-01C",
+          "prompt": "Select the best word for [3].",
+          "options": [
+            "For example",
+            "Meanwhile",
+            "Nevertheless",
+            "Similarly"
+          ],
+          "answer": 2,
+          "skill": "r-grammar",
+          "questionType": "grammar",
+          "ability": "R5",
+          "explanation": "正解 C「Nevertheless」：雖然檢查預計中午結束，參訓者仍不得在設施組確認前進入，前後為讓步轉折。For example 是舉例、Meanwhile 是同時、Similarly 是類比，皆不符。\n【考點】Part 6・連接副詞\n【判斷依據】先判斷前後兩句的邏輯關係，再選轉折詞。"
+        },
+        {
+          "id": "LONG-P6-01D",
+          "prompt": "Select the best word for [4].",
+          "options": [
+            "notification",
+            "notified",
+            "notifying",
+            "notify"
+          ],
+          "answer": 3,
+          "skill": "r-grammar",
+          "questionType": "grammar",
+          "ability": "R5",
+          "explanation": "正解 D「notify」：please 後接原形動詞，且 notify me by Tuesday 語意完整。notification 為名詞，notified 為過去式／分詞，notifying 為動名詞。\n【考點】Part 6・詞性與句型\n【判斷依據】檢查祈使句 please 後的位置。"
+        }
+      ]
+    },
+    {
+      "id": "g-long-p6-02",
+      "section": "reading",
+      "part": 6,
+      "title": "Report: packaging trial results",
+      "passage": {
+        "docs": [
+          {
+            "label": "Internal report",
+            "text": "To: Product Operations\nFrom: Omar Bell, Packaging Lead\nSubject: Trial of reusable shipping inserts\n\nDuring the four-week trial, our team sent 600 small appliances using a reusable molded insert instead of the usual foam. Returns caused by transit damage fell from 18 in the previous four weeks to 11 in the trial period. These figures are encouraging, but the two periods included different product mixes, so the result should not yet be treated as proof of a permanent improvement.\n\nThe new insert takes slightly longer to [1] into a carton. However, staff reported that it was easier to remove without damaging the product label. [2] This advantage was most noticeable when a customer had opened a carton for inspection and later needed to reseal it.\n\nWe have requested a second trial with the same product mix as the earlier period. [3] we receive approval, the warehouse will begin that trial in early June. We will also record packing time for each shipment rather than relying only on staff comments.\n\nPlease send any concerns about storage space to me by 28 May. I will [4] them in the trial plan before it goes to the operations director.\n\nOmar"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "LONG-P6-02A",
+          "prompt": "Select the best word for [1].",
+          "options": [
+            "inspect",
+            "fit",
+            "delay",
+            "purchase"
+          ],
+          "answer": 1,
+          "skill": "r-vocabulary",
+          "questionType": "vocabulary",
+          "ability": "R4",
+          "explanation": "正解 B「fit」：包材放入箱子需要稍長時間，fit into a carton 搭配自然。inspect 是檢查、delay 是延誤、purchase 是購買，均不能表示裝入。\n【考點】Part 6・字彙\n【判斷依據】以 into a carton 和包裝流程判斷動詞。"
+        },
+        {
+          "id": "LONG-P6-02B",
+          "prompt": "Select the best sentence for [2].",
+          "options": [
+            "The warehouse therefore stopped recording any damaged returns.",
+            "The insert must be replaced after every customer inspection.",
+            "Unlike foam, the insert can be placed back around the appliance after removal.",
+            "The old foam was delivered to the operations director that day."
+          ],
+          "answer": 2,
+          "skill": "r-purpose",
+          "questionType": "sentence-insertion",
+          "ability": "R3",
+          "explanation": "正解 C：前句說新內襯較容易取出，後句說檢視後重新封箱時此優點最明顯；可重新包覆產品正好連起兩句。A 與仍在記錄損壞退貨不符，B 與可重用矛盾，D 與主題無關。\n【考點】Part 6・句子插入\n【判斷依據】找出前文的 this advantage 所指，核對後文 reseal it。"
+        },
+        {
+          "id": "LONG-P6-02C",
+          "prompt": "Select the best word for [3].",
+          "options": [
+            "Despite",
+            "Unless",
+            "Although",
+            "Once"
+          ],
+          "answer": 3,
+          "skill": "r-grammar",
+          "questionType": "grammar",
+          "ability": "R5",
+          "explanation": "正解 D「Once」：收到核准後才開始第二次試驗，Once 表示條件達成後。Despite 後不能直接接完整子句；Unless 表除非，與預期流程相反；Although 表讓步，不合此條件關係。\n【考點】Part 6・連接詞\n【判斷依據】核對「收到核准」與「開始試驗」的先後條件。"
+        },
+        {
+          "id": "LONG-P6-02D",
+          "prompt": "Select the best word for [4].",
+          "options": [
+            "address",
+            "addressed",
+            "addressing",
+            "addresses"
+          ],
+          "answer": 0,
+          "skill": "r-grammar",
+          "questionType": "grammar",
+          "ability": "R5",
+          "explanation": "正解 A「address」：will 後接原形動詞，address concerns 表示處理疑慮。其餘三項為不同屈折形式，均不能接在 will 後。\n【考點】Part 6・動詞形式\n【判斷依據】先定位助動詞 will，再選原形。"
+        }
+      ]
+    },
+    {
+      "id": "g-long-p6-03",
+      "section": "reading",
+      "part": 6,
+      "title": "Notice: neighborhood grant applications",
+      "passage": {
+        "docs": [
+          {
+            "label": "Public notice",
+            "text": "Harbor District Small Projects Grant\nApplications close at 5 P.M. on 30 July. Neighborhood associations may request up to $4,000 for projects that improve shared public spaces. A project must be completed by the end of November and must remain open to residents without an admission fee. Private gardens and projects that require membership are not [1].\n\nThe application form asks for a project schedule, an itemized budget, and the name of the person who will manage the work. Applicants may attach sketches, but these are optional. [2] The review panel will use the budget to decide whether the proposed costs are reasonable.\n\nOrganizations may submit more than one proposal, [3] only one project per organization can receive funding in this round. The panel will announce its decisions by 20 August. Successful applicants will then have ten working days to accept the award conditions.\n\nAn information session will be held online on 16 July. Attendance is not required, and a recording will be posted afterward. For accessibility questions, contact the grant office before the session so that suitable arrangements can be made. All applications must be [4] through the online portal; emailed copies will not be reviewed."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "LONG-P6-03A",
+          "prompt": "Select the best word for [1].",
+          "options": [
+            "credible",
+            "temporary",
+            "eligible",
+            "visible"
+          ],
+          "answer": 2,
+          "skill": "r-vocabulary",
+          "questionType": "vocabulary",
+          "ability": "R4",
+          "explanation": "正解 C「eligible」：只補助對居民開放且免門票的公共空間項目，私人或需會員資格者不符合申請資格。credible 為可信、temporary 為暫時、visible 為可見，都不指資格。\n【考點】Part 6・字彙\n【判斷依據】從補助條件與排除項目判斷形容詞。"
+        },
+        {
+          "id": "LONG-P6-03B",
+          "prompt": "Select the best sentence for [2].",
+          "options": [
+            "The information session was canceled last year.",
+            "Membership fees must be included in every proposal.",
+            "A successful project may begin before the decision date.",
+            "Each cost should therefore be listed separately rather than as a single total."
+          ],
+          "answer": 3,
+          "skill": "r-purpose",
+          "questionType": "sentence-insertion",
+          "ability": "R3",
+          "explanation": "正解 D：前句提到 itemized budget，後句說評審用預算評估成本；逐項列出費用承接最順。A 是不相關的舊事，B 與免會員資格的項目要求衝突，C 與尚未公布決定的程序不符。\n【考點】Part 6・句子插入\n【判斷依據】抓 itemized budget 與 proposed costs 的連貫關係。"
+        },
+        {
+          "id": "LONG-P6-03C",
+          "prompt": "Select the best word for [3].",
+          "options": [
+            "but",
+            "so",
+            "because",
+            "unless"
+          ],
+          "answer": 0,
+          "skill": "r-grammar",
+          "questionType": "grammar",
+          "ability": "R5",
+          "explanation": "正解 A「but」：可提交多份，但每個組織最多只會獲補助一案，前後是對比限制。so 為結果、because 為原因、unless 為除非，均不符。\n【考點】Part 6・連接詞\n【判斷依據】比較 submit more than one 與 only one can receive funding。"
+        },
+        {
+          "id": "LONG-P6-03D",
+          "prompt": "Select the best word for [4].",
+          "options": [
+            "submit",
+            "submitted",
+            "submitting",
+            "submission"
+          ],
+          "answer": 1,
+          "skill": "r-grammar",
+          "questionType": "grammar",
+          "ability": "R5",
+          "explanation": "正解 B「submitted」：applications must be submitted 是被動語態，申請書被送出。submit 為原形，submitting 為現在分詞，submission 為名詞。\n【考點】Part 6・被動語態\n【判斷依據】主詞 applications 與 must be 後的動詞形式。"
+        }
+      ]
+    },
+    {
+      "id": "g-long-p6-04",
+      "section": "reading",
+      "part": 6,
+      "title": "Email: traveling exhibit delivery",
+      "passage": {
+        "docs": [
+          {
+            "label": "Email",
+            "text": "To: Gallery coordinators\nFrom: Imani Reed, Touring Exhibits\nSubject: Delivery for the autumn exhibit\n\nThe display cases for the autumn exhibit are scheduled to arrive on 8 September, two days before the framed prints. Please keep the receiving area clear from 9 A.M. until noon on both dates.\n\nEach case has a numbered label that [1] the installation diagram sent last week. Please check the numbers before moving anything to the exhibition floor. If a label is missing or partly damaged, photograph the unopened case and contact me before the driver leaves. [2] This will help us identify the shipment without disturbing the protective wrapping.\n\nThe gallery is responsible for securing the cases once the driver has unloaded them. [3], our team will bring the lighting equipment and complete the final placement during its visit on 12 September. Please do not connect any lights before then; their settings must be checked on site.\n\nI will send a short checklist on Monday. Please [4] that the two receiving dates are on your team calendar, and tell me by Friday if the loading door will be unavailable on either morning.\n\nImani"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "LONG-P6-04A",
+          "prompt": "Select the best word for [1].",
+          "options": [
+            "opposes",
+            "postpones",
+            "replaces",
+            "matches"
+          ],
+          "answer": 3,
+          "skill": "r-vocabulary",
+          "questionType": "vocabulary",
+          "ability": "R4",
+          "explanation": "正解 D「matches」：箱上的編號對應安裝圖，才能核對位置。opposes 為反對、postpones 為延後、replaces 為取代，均不合編號用途。\n【考點】Part 6・字彙\n【判斷依據】以 numbered label、installation diagram 與 check the numbers 判斷。"
+        },
+        {
+          "id": "LONG-P6-04B",
+          "prompt": "Select the best sentence for [2].",
+          "options": [
+            "Include the delivery date and any visible markings in your message.",
+            "The framed prints will not be shipped until the exhibit opens.",
+            "The driver will assemble every display case in the receiving area.",
+            "Protective wrapping should be removed before the driver arrives."
+          ],
+          "answer": 0,
+          "skill": "r-purpose",
+          "questionType": "sentence-insertion",
+          "ability": "R3",
+          "explanation": "正解 A：前句要求標籤缺失或損壞時拍未開箱的箱體並聯絡，後句說這有助於不拆包材也能識別；補充日期與可見標記能協助辨識。B 與印刷品已排到貨日衝突；C 沒有組裝安排；D 與 unopened case 和 protective wrapping 矛盾。\n【考點】Part 6・句子插入\n【判斷依據】核對 this 所指的識別動作，以及未拆包材的限制。"
+        },
+        {
+          "id": "LONG-P6-04C",
+          "prompt": "Select the best word for [3].",
+          "options": [
+            "Consequently",
+            "In addition",
+            "Similarly",
+            "For instance"
+          ],
+          "answer": 1,
+          "skill": "r-grammar",
+          "questionType": "grammar",
+          "ability": "R5",
+          "explanation": "正解 B「In addition」：前句交代展館保管展示櫃，後句補充巡展團隊負責燈具與最後配置，屬於新增的工作分工。Consequently 表結果，Similarly 表相似，For instance 表舉例，都不符合這裡的補充關係。\n【考點】Part 6・連接副詞\n【判斷依據】比較兩句的執行主體與工作分配，再選表示補充的連接語。"
+        },
+        {
+          "id": "LONG-P6-04D",
+          "prompt": "Select the best word for [4].",
+          "options": [
+            "confirmed",
+            "confirmation",
+            "confirm",
+            "confirming"
+          ],
+          "answer": 2,
+          "skill": "r-grammar",
+          "questionType": "grammar",
+          "ability": "R5",
+          "explanation": "正解 C「confirm」：please 後要接原形動詞，confirm that... 是確認事項。confirmed 為過去式／分詞、confirmation 為名詞、confirming 為現在分詞。\n【考點】Part 6・動詞形式\n【判斷依據】定位祈使句 please 後所需的詞性和形式。"
+        }
+      ]
     }
   ]
 }
