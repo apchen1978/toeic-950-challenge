@@ -1220,3 +1220,23 @@ NOT-P7-27A,7,OK,,Which item is NOT being provided for the seminar?
 NOT-P7-27B,7,OK,,Where should the caterer unload?
 NOT-P7-28A,7,OK,,Which transportation claim is NOT correct?
 NOT-P7-28B,7,OK,,When is the microphone check scheduled?
+ETS-P7-01A,7,"OK","","Which room does Mr. Cho recommend for the workshop?"
+ETS-P7-01B,7,"OK","","What will the room fees total if Ms. Reyes confirms by February 20?"
+ETS-P7-01C,7,"OK","","What is suggested about the $330 coffee estimate?"
+ETS-P7-01D,7,"OK","","Which statement about Ms. Reyes's preferred schedule is true?"
+ETS-P7-01undefined,7,"OK","","Which of the following did Ms. Reyes NOT request?"
+ETS-P7-02A,7,"OK","","What is the purpose of Mr. Weber's email?"
+ETS-P7-02B,7,"OK","","Which requirement in the job posting does Mr. Weber not meet as written?"
+ETS-P7-02C,7,"OK","","What is suggested about Mr. Weber's pesticide license at the time of the interviews?"
+ETS-P7-02D,7,"OK","","What is NOT listed as a duty of the supervisor?"
+ETS-P7-02undefined,7,"OK","","When can Mr. Weber attend an interview?"
+ETS-P7-03A,7,"OK","","According to the article, why did the council approve the new pay stations?"
+ETS-P7-03B,7,"OK","","How much would Mr. Park pay for permits for his three employees?"
+ETS-P7-03C,7,"OK","","Why does Mr. Park ask whether permits are valid in any zone?"
+ETS-P7-03D,7,"OK","","What will happen from May 25 to May 31?"
+ETS-P7-03undefined,7,"OK","","Which statement about Pine Street is supported by the documents?"
+ETS-P7-04A,7,"OK","","Why did Ms. Anand write the email?"
+ETS-P7-04B,7,"OK","","Why would Ms. Anand's standing desk not qualify?"
+ETS-P7-04C,7,"OK","","From whom should Ms. Anand request approval?"
+ETS-P7-04D,7,"OK","","By what date must Ms. Anand submit a claim for her monitor?"
+ETS-P7-04undefined,7,"OK","","Which of the following is NOT eligible under the allowance?"

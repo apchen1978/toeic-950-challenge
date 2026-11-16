@@ -1023,8 +1023,8 @@
           "g-cov-p5-38",
           "g-cov-p5-08",
           "g-vocab-c-5",
-          "g-cov-p6-05",
-          "g-cov-p6-06",
+          "xr-p6-consulting",
+          "xf-p6-training",
           "xr2-p6-theater",
           "xr2-p6-utilities",
           "xfc-p7-archive",
@@ -1033,15 +1033,15 @@
           "g-cov-p7-ins-03",
           "g-r13",
           "p7f-s02-08",
-          "p7f-s02-04",
+          "p7f-s02-06",
           "xr-p7-single",
           "g-single-e-campus",
           "p7f-s04-07",
-          "g-rd-ship-01",
-          "g-rdnew-033",
+          "g-ets-p7-02",
+          "g-chat-policy-04",
           "g-cov-p7-tri-02",
-          "g-rdnew-037",
-          "g-rdnew-038"
+          "xr-p7-transit",
+          "g-ets-p7-01"
         ],
         "durationMin": 75,
         "timing": {
@@ -1083,23 +1083,23 @@
           "g-rdnew-006",
           "g-extra-r-09",
           "xr2-p6-publisher",
-          "g-new-text",
-          "g-rdnew-023",
+          "xf-p6-recycling",
+          "xr2-p6-harbor",
           "g-new-part6-a",
           "p7f-s02-01",
           "p7f-s02-02",
           "p7f-s02-03",
-          "p7f-s02-05",
-          "p7f-s03-01",
-          "p7f-s03-02",
+          "g-not-p7-28",
+          "g-f-single-3",
+          "g-rdnew-028",
           "p7f-s03-03",
           "p7f-s04-04",
           "p7f-s04-01",
           "p7f-s04-02",
-          "p7f-double-services",
+          "g-ets-p7-04",
           "p7f-double-author",
-          "p7f-triple-pilot",
-          "p7f-triple-swatches",
+          "g-ets-p7-03",
+          "g-notice-parking-01",
           "p7f-triple-tickets"
         ],
         "durationMin": 75,
@@ -29144,6 +29144,403 @@
           "skill": "r-detail",
           "questionType": "detail",
           "ability": "R2"
+        }
+      ]
+    },
+    {
+      "id": "g-ets-p7-01",
+      "section": "reading",
+      "part": 7,
+      "title": "Triple passage: workshop booking",
+      "passage": {
+        "docs": [
+          {
+            "label": "Email",
+            "text": "To: Caldwell Conference Center, Bookings\nFrom: Marisol Reyes, Brightwater Design\nSubject: Workshop on March 12\n\nHello,\n\nWe would like to hold a one-day workshop on March 12 for about 45 people, and we may add up to 10 more if our regional office joins. We will need a room with a projector, a separate space for lunch, and coffee service in the morning. Because several guests are traveling, we hope the day can start no earlier than 9:30 A.M. and end by 4:00 P.M. Please tell us which rooms would work and what the total cost would be.\n\nThank you,\nMarisol Reyes"
+          },
+          {
+            "label": "Rate sheet",
+            "text": "Caldwell Conference Center — Room Rates (per day)\n\nHarbor Room: seats up to 40; $400; projector included.\nLakeside Hall: seats up to 60; $650; projector included.\nGarden Terrace: seats up to 80; $900; projector $75 extra.\nLunch space: Atrium, $150 per day (seats up to 70).\nCoffee service: $6 per person, morning only.\n\nRooms are available from 8:00 A.M. to 6:00 P.M. Cancellations within 14 days of the event are charged 50 percent of the room fee."
+          },
+          {
+            "label": "Email",
+            "text": "To: Marisol Reyes\nFrom: Dennis Cho, Caldwell Conference Center\nSubject: RE: Workshop on March 12\n\nDear Ms. Reyes,\n\nThank you for your inquiry. Because you may have as many as 55 guests, I recommend Lakeside Hall rather than Harbor Room. Harbor Room is already reserved on March 12 and, in any case, is too small. The Atrium is free that day for lunch. If you confirm by February 20, I can hold both rooms and apply a 10 percent discount to the room fees only. Based on 55 people, the coffee service would be $330. Please let me know whether your regional office will definitely join, as I would need to finalize the count by March 5.\n\nBest regards,\nDennis Cho"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "ETS-P7-01A",
+          "skill": "r-detail",
+          "prompt": "Which room does Mr. Cho recommend for the workshop?",
+          "options": [
+            "Harbor Room",
+            "Lakeside Hall",
+            "Garden Terrace",
+            "The Atrium"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Lakeside Hall」：回信第一段：因為可能多達 55 位賓客，建議 Lakeside Hall（可容納 60 人），不建議 Harbor Room（已被訂走，而且太小）。\n【考點】Part 7・細節題\n【判斷依據】用題目裡的關鍵詞回文件定位，核對那一句。",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "ETS-P7-01B",
+          "skill": "r-crossref",
+          "prompt": "What will the room fees total if Ms. Reyes confirms by February 20?",
+          "options": [
+            "$585",
+            "$720",
+            "$800",
+            "$1,130"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「$720」：報價表：Lakeside Hall $650，Atrium $150，合計 $800。回信說確認後兩個空間的場地費打九折，$800 × 0.9 = $720。$800 是沒折扣、$1,130 還加了咖啡 $330，$585 只算了 Lakeside 打折。\n【考點】Part 7・跨文件整合\n【判斷依據】把兩份（或三份）文件的資訊合起來才知道答案，只看一份常少一個條件。",
+          "crossRef": true,
+          "ability": "R3",
+          "questionType": "cross-document"
+        },
+        {
+          "id": "ETS-P7-01C",
+          "skill": "r-inference",
+          "prompt": "What is suggested about the $330 coffee estimate?",
+          "options": [
+            "It includes the cost of lunch.",
+            "It is charged only if the regional office joins.",
+            "It may change if fewer guests attend.",
+            "It is covered by the 10 percent discount."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「It may change if fewer guests attend.」：$330 是以 55 人（每人 $6）估的；Reyes 說原本約 45 人、區域辦公室可能再加 10 人，回信要求在 3 月 5 日前確定人數，所以人數變動金額就會變。折扣只適用場地費，不包含咖啡。\n【考點】Part 7・推論題\n【判斷依據】答案不會原句出現，要用文中的數字、日期或條件推出來。",
+          "ability": "R1",
+          "questionType": "inference"
+        },
+        {
+          "id": "ETS-P7-01D",
+          "skill": "r-crossref",
+          "prompt": "Which statement about Ms. Reyes's preferred schedule is true?",
+          "options": [
+            "It starts before the rooms open.",
+            "It falls within the hours the rooms are available.",
+            "It ends after the cancellation deadline.",
+            "It requires the Atrium all morning."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「It falls within the hours the rooms are available.」：Reyes 希望 9:30 開始、4:00 結束；報價表說明場地每天 8:00 到 6:00 可使用，所以時間在可用範圍內。\n【考點】Part 7・跨文件整合\n【判斷依據】把兩份（或三份）文件的資訊合起來才知道答案，只看一份常少一個條件。",
+          "crossRef": true,
+          "ability": "R3",
+          "questionType": "cross-document"
+        },
+        {
+          "id": "ETS-P7-01undefined",
+          "skill": "r-detail",
+          "prompt": "Which of the following did Ms. Reyes NOT request?",
+          "options": [
+            "Coffee service",
+            "A room with a projector",
+            "A separate space for lunch",
+            "Parking for guests"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Parking for guests」：Reyes 的信裡要了投影機、午餐的獨立空間和早上的咖啡服務；沒有提到停車。NOT 題要逐項回信件找證據。\n【考點】Part 7・NOT 題\n【判斷依據】NOT 題逐項回文件找證據：三個有、一個沒有的就是答案。",
+          "ability": "R2",
+          "questionType": "not-question"
+        }
+      ]
+    },
+    {
+      "id": "g-ets-p7-02",
+      "section": "reading",
+      "part": 7,
+      "title": "Double passage: seasonal supervisor application",
+      "passage": {
+        "docs": [
+          {
+            "label": "Job posting",
+            "text": "Greenfield Landscaping — Seasonal Crew Supervisor\n\nDuties include leading a crew of up to six workers, inspecting finished sites, and reporting weekly to the operations manager. Requirements: at least two years of landscaping experience; a valid driver's license; and availability from April 6 through October 30. Preference will be given to candidates who hold a pesticide license. Applications must arrive by March 15, and interviews will be held during the week of March 23. Pay is $24 per hour."
+          },
+          {
+            "label": "Email",
+            "text": "To: Greenfield Landscaping\nFrom: Tomas Weber\nSubject: Crew supervisor application\n\nDear hiring team,\n\nI am applying for the seasonal crew supervisor position. For the past three summers I managed a four-person crew at Hillside Parks, where I also trained new workers. I hold a driver's license, but I do not yet have a pesticide license; I am scheduled to take the exam on March 28. My university term ends on April 10, so I am available from April 13 and can stay through October 30. I would be glad to come in for an interview on any weekday afternoon.\n\nSincerely,\nTomas Weber"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "ETS-P7-02A",
+          "skill": "r-purpose",
+          "prompt": "What is the purpose of Mr. Weber's email?",
+          "options": [
+            "To ask about a pay increase",
+            "To report a landscaping problem",
+            "To apply for a seasonal position",
+            "To reschedule an interview"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「To apply for a seasonal position」：信的開頭就說明他是來應徵 seasonal crew supervisor。\n【考點】Part 7・主旨／目的\n【判斷依據】用題目裡的關鍵詞回文件定位，核對那一句。",
+          "ability": "R1",
+          "questionType": "main-purpose"
+        },
+        {
+          "id": "ETS-P7-02B",
+          "skill": "r-crossref",
+          "prompt": "Which requirement in the job posting does Mr. Weber not meet as written?",
+          "options": [
+            "At least two years of landscaping experience",
+            "A valid driver's license",
+            "Availability until October 30",
+            "Availability from April 6"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Availability from April 6」：徵人啟事要求 4 月 6 日起可上班；Weber 4 月 13 日才有空。他有三個夏天的經驗、有駕照、可做到 10 月 30 日。農藥證照只是「優先」，不是必要條件。\n【考點】Part 7・跨文件整合\n【判斷依據】把兩份（或三份）文件的資訊合起來才知道答案，只看一份常少一個條件。",
+          "crossRef": true,
+          "ability": "R3",
+          "questionType": "cross-document"
+        },
+        {
+          "id": "ETS-P7-02C",
+          "skill": "r-inference",
+          "prompt": "What is suggested about Mr. Weber's pesticide license at the time of the interviews?",
+          "options": [
+            "He will already hold the license.",
+            "He will have applied for a waiver.",
+            "He will not have taken the exam yet.",
+            "He will have failed the exam."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「He will not have taken the exam yet.」：面試在 3 月 23 日那一週，他的考試排在 3 月 28 日，所以面試時還沒考。\n【考點】Part 7・推論題\n【判斷依據】答案不會原句出現，要用文中的數字、日期或條件推出來。",
+          "ability": "R1",
+          "questionType": "inference"
+        },
+        {
+          "id": "ETS-P7-02D",
+          "skill": "r-detail",
+          "prompt": "What is NOT listed as a duty of the supervisor?",
+          "options": [
+            "Leading a crew of workers",
+            "Inspecting finished sites",
+            "Ordering supplies from vendors",
+            "Reporting weekly to the operations manager"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Ordering supplies from vendors」：徵人啟事的職責只列了帶領工班、檢查完工場地、每週向營運經理報告；沒有訂購材料。\n【考點】Part 7・NOT 題\n【判斷依據】NOT 題逐項回文件找證據：三個有、一個沒有的就是答案。",
+          "ability": "R2",
+          "questionType": "not-question"
+        },
+        {
+          "id": "ETS-P7-02undefined",
+          "skill": "r-crossref",
+          "prompt": "When can Mr. Weber attend an interview?",
+          "options": [
+            "Only on March 28",
+            "Only after April 10",
+            "On any weekday afternoon during the week of March 23",
+            "On any evening in April"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「On any weekday afternoon during the week of March 23」：徵人啟事說面試在 3 月 23 日那一週；Weber 說任何平日下午都可以，兩份文件合起來才是答案。\n【考點】Part 7・跨文件整合\n【判斷依據】把兩份（或三份）文件的資訊合起來才知道答案，只看一份常少一個條件。",
+          "crossRef": true,
+          "ability": "R3",
+          "questionType": "cross-document"
+        }
+      ]
+    },
+    {
+      "id": "g-ets-p7-03",
+      "section": "reading",
+      "part": 7,
+      "title": "Triple passage: downtown parking change",
+      "passage": {
+        "docs": [
+          {
+            "label": "Article",
+            "text": "RIVERTON — The city council voted Tuesday to replace the downtown parking meters with pay stations that accept cards and phone payments. The change, expected to begin on June 1, follows complaints from shop owners that visitors often leave when they cannot find coins. Under the plan, the first hour will remain free, and rates after that will depend on the zone. Council member Aisha Rahman said the revenue will pay for improved lighting on Pine Street. Some business owners worry about the transition. \"Customers who are used to the old system may park elsewhere for a few weeks,\" said Leon Park, who owns a bakery on Pine Street."
+          },
+          {
+            "label": "City notice",
+            "text": "Downtown Parking Zones and Rates (effective June 1)\n\nZone A (Main Street, Pine Street): $2 per hour after the first free hour; maximum $12 per day.\nZone B (Harbor Avenue): $1 per hour after the first free hour; maximum $6 per day.\nMonthly permits for employees: $60 (Zone A), $35 (Zone B). Permit applications are accepted at City Hall starting May 5.\n\nPay stations will be installed from May 25 to May 31. During that week, parking is free in all zones."
+          },
+          {
+            "label": "Email",
+            "text": "To: Parking Office\nFrom: Leon Park, Park's Bakery\nSubject: Employee permits\n\nDear Sir or Madam,\n\nI read that permits will be available beginning May 5. My bakery on Pine Street has three employees who work early shifts, and I would like to buy permits for all of them. Could you tell me whether the permits are valid in any zone? Two of my staff sometimes deliver orders to shops on Harbor Avenue. I would also like to know whether a permit holder still receives the first free hour when parking in a zone different from the one on the permit.\n\nThank you for your help.\nLeon Park"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "ETS-P7-03A",
+          "skill": "r-detail",
+          "prompt": "According to the article, why did the council approve the new pay stations?",
+          "options": [
+            "To reduce downtown traffic",
+            "To replace the lighting on Pine Street at once",
+            "To end the free first hour",
+            "To respond to complaints from shop owners"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「To respond to complaints from shop owners」：文章說這項改變是因為店家抱怨訪客找不到零錢就離開。燈光是收入的用途，不是原因。\n【考點】Part 7・細節題\n【判斷依據】用題目裡的關鍵詞回文件定位，核對那一句。",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "ETS-P7-03B",
+          "skill": "r-crossref",
+          "prompt": "How much would Mr. Park pay for permits for his three employees?",
+          "options": [
+            "$105",
+            "$180",
+            "$120",
+            "$360"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「$180」：他的麵包店在 Pine Street，屬於 Zone A（公告）；月票 Zone A 每張 $60，三張 $180。$105 是 Zone B 三張，$120 是兩張。\n【考點】Part 7・跨文件整合\n【判斷依據】把兩份（或三份）文件的資訊合起來才知道答案，只看一份常少一個條件。",
+          "crossRef": true,
+          "ability": "R3",
+          "questionType": "cross-document"
+        },
+        {
+          "id": "ETS-P7-03C",
+          "skill": "r-inference",
+          "prompt": "Why does Mr. Park ask whether permits are valid in any zone?",
+          "options": [
+            "He wants a discount for all zones.",
+            "He plans to move his bakery.",
+            "The article said permits expire quickly.",
+            "Some of his staff drive to a different zone for deliveries."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Some of his staff drive to a different zone for deliveries.」：他在信裡說兩位員工有時要送貨到 Harbor Avenue（Zone B），而他們的月票會是 Zone A，所以才問是否各區通用。\n【考點】Part 7・推論題\n【判斷依據】答案不會原句出現，要用文中的數字、日期或條件推出來。",
+          "ability": "R1",
+          "questionType": "inference"
+        },
+        {
+          "id": "ETS-P7-03D",
+          "skill": "r-detail",
+          "prompt": "What will happen from May 25 to May 31?",
+          "options": [
+            "Parking will be free in all zones.",
+            "Employees can buy permits at the pay stations.",
+            "Pine Street will be closed.",
+            "The parking rates will double."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「Parking will be free in all zones.」：公告：5 月 25 日到 31 日安裝收費機，這一週所有區域免費。月票是在市政廳申請。\n【考點】Part 7・細節題\n【判斷依據】用題目裡的關鍵詞回文件定位，核對那一句。",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "ETS-P7-03undefined",
+          "skill": "r-crossref",
+          "prompt": "Which statement about Pine Street is supported by the documents?",
+          "options": [
+            "It is in the cheaper parking zone.",
+            "It will have free parking all day.",
+            "It is in Zone A and will receive improved lighting.",
+            "Its permits are sold at the pay stations."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「It is in Zone A and will receive improved lighting.」：公告把 Pine Street 列在 Zone A（較貴的一區）；文章說收入會用於 Pine Street 的照明。\n【考點】Part 7・跨文件整合\n【判斷依據】把兩份（或三份）文件的資訊合起來才知道答案，只看一份常少一個條件。",
+          "crossRef": true,
+          "ability": "R3",
+          "questionType": "cross-document"
+        }
+      ]
+    },
+    {
+      "id": "g-ets-p7-04",
+      "section": "reading",
+      "part": 7,
+      "title": "Double passage: home-office allowance",
+      "passage": {
+        "docs": [
+          {
+            "label": "Memo",
+            "text": "To: All staff\nFrom: Finance Department\nSubject: Home-office allowance\n\nEffective July 1, employees who work from home at least two days a week may claim a one-time allowance of up to $300 for home-office equipment. Eligible items include desks, chairs, monitors, and lighting. Software, internet fees, and items purchased before July 1 are not eligible. Claims must be submitted with itemized receipts within 60 days of purchase. Employees who work from home fewer than two days a week may request approval from their department head."
+          },
+          {
+            "label": "Email",
+            "text": "To: Finance Department\nFrom: Priya Anand, Marketing\nSubject: Allowance question\n\nHello,\n\nI work from home one day a week. I recently moved to a larger apartment and bought a standing desk on June 28 for $210 and a monitor on July 9 for $180. I understand that I might not qualify automatically. Could the monitor be considered, and who should approve my request? I have the receipts for both items.\n\nThank you,\nPriya Anand"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "ETS-P7-04A",
+          "skill": "r-purpose",
+          "prompt": "Why did Ms. Anand write the email?",
+          "options": [
+            "To ask whether her purchases might qualify",
+            "To submit a completed claim",
+            "To report a missing receipt",
+            "To request a larger apartment"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「To ask whether her purchases might qualify」：她問顯示器能不能算、該找誰核准，是在詢問自己的購買是否可能符合資格。\n【考點】Part 7・主旨／目的\n【判斷依據】用題目裡的關鍵詞回文件定位，核對那一句。",
+          "ability": "R1",
+          "questionType": "main-purpose"
+        },
+        {
+          "id": "ETS-P7-04B",
+          "skill": "r-crossref",
+          "prompt": "Why would Ms. Anand's standing desk not qualify?",
+          "options": [
+            "It costs more than $300.",
+            "It is not on the list of eligible items.",
+            "She does not have a receipt for it.",
+            "It was bought before the allowance began."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「It was bought before the allowance began.」：備忘錄說 7 月 1 日以前買的品項不符合；她的桌子 6 月 28 日買的。桌子是列在可申請的項目，她也有收據。\n【考點】Part 7・跨文件整合\n【判斷依據】把兩份（或三份）文件的資訊合起來才知道答案，只看一份常少一個條件。",
+          "crossRef": true,
+          "ability": "R3",
+          "questionType": "cross-document"
+        },
+        {
+          "id": "ETS-P7-04C",
+          "skill": "r-crossref",
+          "prompt": "From whom should Ms. Anand request approval?",
+          "options": [
+            "Her department head",
+            "The Finance Department",
+            "The human resources office",
+            "The vendor of the monitor"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「Her department head」：她每週只在家工作一天，少於兩天，備忘錄說這種情況要向部門主管申請核准。\n【考點】Part 7・跨文件整合\n【判斷依據】把兩份（或三份）文件的資訊合起來才知道答案，只看一份常少一個條件。",
+          "crossRef": true,
+          "ability": "R3",
+          "questionType": "cross-document"
+        },
+        {
+          "id": "ETS-P7-04D",
+          "skill": "r-crossref",
+          "prompt": "By what date must Ms. Anand submit a claim for her monitor?",
+          "options": [
+            "August 8",
+            "September 9",
+            "September 7",
+            "October 9"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「September 7」：顯示器 7 月 9 日購買，備忘錄要求購買後 60 天內送出：7 月 9 日之後 22 天到 7 月 31 日，再加 8 月 31 天共 53 天，再加 7 天，就是 9 月 7 日。\n【考點】Part 7・跨文件整合\n【判斷依據】把兩份（或三份）文件的資訊合起來才知道答案，只看一份常少一個條件。",
+          "crossRef": true,
+          "ability": "R3",
+          "questionType": "cross-document"
+        },
+        {
+          "id": "ETS-P7-04undefined",
+          "skill": "r-detail",
+          "prompt": "Which of the following is NOT eligible under the allowance?",
+          "options": [
+            "A desk bought on July 15",
+            "A monitor",
+            "Internet service fees",
+            "A desk lamp"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Internet service fees」：備忘錄明說軟體、網路費用和 7 月 1 日以前買的品項不符合；7 月 15 日買的桌子、顯示器和檯燈都可以。\n【考點】Part 7・NOT 題\n【判斷依據】NOT 題逐項回文件找證據：三個有、一個沒有的就是答案。",
+          "ability": "R2",
+          "questionType": "not-question"
         }
       ]
     }
