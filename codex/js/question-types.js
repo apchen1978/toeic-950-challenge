@@ -24,7 +24,7 @@ export const QUESTION_TYPES = {
   "speaker-intent": SAME("說話者意圖", "回到那句話的前後句，想他為什麼這樣說，不要照字面翻。"),
   "next-action": SAME("接下來做什麼", "聽最後兩三句的 I'll、Let's、Could you 這類句型。"),
   graphic: SAME("圖表題", "聽到的數字或時間，要對到圖上沒被念出來的名稱。"),
-  "cross-document": SAME("跨文件整合", "答案要把兩份文件的資訊合起來才知道，只看一份常少一個條件。"),
+  "cross-document": SAME("跨文件整合", "資訊要合起來；遇到 unless、少於幾週的條件，用日期算一次。"),
   "not-question": SAME("NOT 題", "三個選項符合文章，選不符合的那個；逐項回文章找一次。"),
   synonym: SAME("同義字", "把選項放回原句替換，看語意通不通，不要只憑字典意思。"),
   "chat-intent": SAME("簡訊／聊天意圖", "把那句話放回前後句，看它在回應什麼、想要對方做什麼。"),
