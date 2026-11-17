@@ -1026,21 +1026,21 @@
           "xr-p6-consulting",
           "xf-p6-training",
           "xr2-p6-theater",
-          "xr2-p6-utilities",
+          "g-form-p6-01",
           "xfc-p7-archive",
           "g-cov-p7-syn-05",
           "g-cov-p7-chat-02",
           "g-cov-p7-ins-03",
           "g-r13",
-          "p7f-s02-08",
-          "p7f-s02-06",
+          "g-form-p7-07",
+          "g-form-p7-08",
           "xr-p7-single",
           "g-single-e-campus",
           "p7f-s04-07",
           "g-ets-p7-02",
-          "g-chat-policy-04",
-          "g-cov-p7-tri-02",
-          "xr-p7-transit",
+          "g-form-p7-05",
+          "g-form-p7-01",
+          "g-form-p7-03",
           "g-ets-p7-01"
         ],
         "durationMin": 75,
@@ -1085,11 +1085,11 @@
           "xr2-p6-publisher",
           "xf-p6-recycling",
           "xr2-p6-harbor",
-          "g-new-part6-a",
+          "g-form-p6-02",
           "p7f-s02-01",
           "p7f-s02-02",
-          "p7f-s02-03",
-          "g-not-p7-28",
+          "g-form-p7-09",
+          "g-form-p7-10",
           "g-f-single-3",
           "g-rdnew-028",
           "p7f-s03-03",
@@ -1097,10 +1097,10 @@
           "p7f-s04-01",
           "p7f-s04-02",
           "g-ets-p7-04",
-          "p7f-double-author",
+          "g-form-p7-06",
           "g-ets-p7-03",
-          "g-notice-parking-01",
-          "p7f-triple-tickets"
+          "g-form-p7-02",
+          "g-form-p7-04"
         ],
         "durationMin": 75,
         "timing": {
@@ -30744,6 +30744,941 @@
           "questionType": "grammar",
           "ability": "R5",
           "explanation": "正解 C「confirm」：please 後要接原形動詞，confirm that... 是確認事項。confirmed 為過去式／分詞、confirmation 為名詞、confirming 為現在分詞。\n【考點】Part 6・動詞形式\n【判斷依據】定位祈使句 please 後所需的詞性和形式。"
+        }
+      ]
+    },
+    {
+      "id": "g-form-p7-01",
+      "section": "reading",
+      "part": 7,
+      "title": "Triple passage: event tent and table rental",
+      "passage": {
+        "docs": [
+          {
+            "label": "Web page",
+            "text": "Brightfield Event Rentals\nTents, Tables & Chairs\n\nPlanning an outdoor celebration, company picnic, or market day? Brightfield supplies frame tents from 3 x 3 meters up to 12 x 24 meters, along with folding tables, padded chairs, side walls, and portable lighting. Our crew handles delivery, setup, and pickup anywhere within 60 kilometers of our warehouse.\n\nPlease note: Delivery and setup are included in every quote unless the order is placed fewer than 14 days before the event date. Such rush orders carry a 15% surcharge.\n\nTo prepare an accurate quote, we will need:\n• The event address and the type of ground surface (grass, gravel, or pavement)\n• Your event date and expected number of guests\n• Your preferred setup and pickup times\n• The name and phone number of an on-site contact\n\nCall us at 555-0142 or request a free online quote today. Most quotes are sent within one business day, and deposits are fully refundable up to seven days before your event."
+          },
+          {
+            "label": "Online form",
+            "text": "Brightfield Event Rentals — Online Quote Request\n\nName: Daniel Okafor\nAddress: 48 Linden Avenue, Port Hallam\nE-mail: d.okafor@orchardlane-example.com\nDate submitted: May 6\n\nRequest details: Our accounting firm is holding a family day for employees to celebrate the firm's 20th anniversary. The event will take place at Castell Park, near the north playground, on Saturday, May 17, from 11:00 A.M. to 4:00 P.M. We expect about 90 guests and need one large tent, 12 tables, and 90 chairs. Lunch will be served from food trucks, and there will be games for children. We would like setup on Friday afternoon and pickup on Sunday morning. On-site contact: Mia Ferraz, 555-0187."
+          },
+          {
+            "label": "Email",
+            "text": "To: d.okafor@orchardlane-example.com\nFrom: h.lindqvist@brightfield-example.com\nDate: May 7\nSubject: Your estimate for May 17\n\nDear Mr. Okafor,\n\nThank you for choosing Brightfield. Attached is an estimate for one 10 x 20-meter frame tent, 12 tables, and 90 chairs, including Friday setup and Sunday pickup.\n\nPlease note that this figure is not final. We still need one more detail from our checklist before we can confirm the price. For example, if the tent will stand on pavement, it must be held down with water-filled weights instead of stakes, which adds $80. Please call me at 555-0142.\n\nFinally, because your event runs well into the afternoon, I recommend adding our side walls. They can be lowered on any side to block strong sun or wind and keep your guests comfortable all day. They cost $25 each, and our crew installs them during setup.\n\nBest regards,\nHannah Lindqvist\nCustomer Coordinator, Brightfield Event Rentals"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "FORM-P7-01A",
+          "skill": "r-detail",
+          "prompt": "According to the Web page, when does Brightfield charge a surcharge?",
+          "options": [
+            "When a tent larger than 12 x 24 meters is requested",
+            "When an order is placed fewer than 14 days before the event",
+            "When the event site is more than 60 kilometers away",
+            "When setup takes place on a weekend"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「When an order is placed fewer than 14 days before the event」：網頁 Please note 一句：Delivery and setup are included ... unless the order is placed fewer than 14 days before the event date. Such rush orders carry a 15% surcharge。A 帳篷最大就是 12 x 24 公尺，網頁沒說超過要加價；C 60 公里是服務範圍，不是加價條件；D 週末安裝文中沒提。\n【考點】Part 7・細節題\n【判斷依據】加價條件只有一條：活動前不足 14 天下單。",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "FORM-P7-01B",
+          "skill": "r-detail",
+          "prompt": "Why does Mr. Okafor need the rental items?",
+          "options": [
+            "To host a market day for local vendors",
+            "To celebrate a client's anniversary",
+            "To hold an outdoor training session",
+            "To hold a family day for his firm's employees"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「To hold a family day for his firm's employees」：表單 Request details：Our accounting firm is holding a family day for employees to celebrate the firm's 20th anniversary。B 錯在 client's，週年是自己事務所的；A market day 只是網頁舉的例子；C training 文中沒提。\n【考點】Part 7・細節題\n【判斷依據】表單第一句直接寫用途：為員工辦家庭日。",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "FORM-P7-01C",
+          "skill": "r-crossref",
+          "prompt": "What information from Brightfield's checklist did Mr. Okafor leave out?",
+          "options": [
+            "The type of ground surface",
+            "The expected number of guests",
+            "The name of an on-site contact",
+            "The preferred pickup time"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「The type of ground surface」：網頁清單四項逐一對照表單：①地址與地面種類：表單只寫 Castell Park 北側遊樂場附近，沒寫是草地、碎石還是鋪面，缺；②日期與人數：May 17、about 90 guests，有；③安裝與收回時間：Friday afternoon／Sunday morning，有；④現場聯絡人：Mia Ferraz, 555-0187，有。回信也說若是 pavement 要改用水袋，印證缺的是地面種類。\n【考點】Part 7・跨文件整合\n【判斷依據】拿網頁清單和表單逐項比對，只有地面種類沒填。",
+          "crossRef": true,
+          "ability": "R3",
+          "questionType": "cross-document"
+        },
+        {
+          "id": "FORM-P7-01D",
+          "skill": "r-crossref",
+          "prompt": "What can be concluded about Mr. Okafor's order?",
+          "options": [
+            "Its delivery and setup will be included at no extra cost.",
+            "Its setup will take place on the day of the event.",
+            "It will be charged a rush surcharge.",
+            "It falls outside Brightfield's delivery area."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「It will be charged a rush surcharge.」：例外條件字：unless ... fewer than 14 days。算式：填表日 May 6（表單）→ 活動日 May 17（表單）＝17−6＝11 天；11 < 14 → 觸發 unless 的例外 → 屬於 rush order → 加收 15%。A 是只讀前半句「included in every quote」、漏看 unless 的陷阱；B 錯，安裝在活動前一天週五；D 文中沒有根據。\n【考點】Part 7・跨文件整合\n【判斷依據】網頁的 unless 例外加上表單的日期，合起來算才知道「免費」不適用、要加收急件費。",
+          "crossRef": true,
+          "ability": "R3",
+          "questionType": "cross-document"
+        },
+        {
+          "id": "FORM-P7-01E",
+          "skill": "r-detail",
+          "prompt": "Why does Ms. Lindqvist recommend the side walls?",
+          "options": [
+            "To protect guests from sun or wind",
+            "To keep the equipment secure overnight",
+            "To replace the water-filled weights",
+            "To make room for additional guests"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「To protect guests from sun or wind」：回信最後一段：They can be lowered on any side to block strong sun or wind and keep your guests comfortable all day。B 過夜保管、C 取代水袋、D 增加座位，文中都沒有。\n【考點】Part 7・細節題\n【判斷依據】推薦理由寫在回信最後一句：擋陽光或風。",
+          "ability": "R2",
+          "questionType": "detail"
+        }
+      ]
+    },
+    {
+      "id": "g-form-p7-02",
+      "section": "reading",
+      "part": 7,
+      "title": "Triple passage: conference interpreting services",
+      "passage": {
+        "docs": [
+          {
+            "label": "Web page",
+            "text": "Lexa Language Partners\nInterpreting for Meetings and Training\n\nLexa provides professional interpreters for business meetings, trade shows, and training programs in more than 30 languages. All of our interpreters are certified and have at least five years of experience in their fields.\n\nBooking rules\n• Standard rates apply unless a request arrives fewer than 21 days before the first day of the event. Late requests are accepted only if an interpreter is available and are billed at a 20% rush rate.\n• A team of two interpreters is required only if interpreting exceeds six hours per day; the two take turns to maintain accuracy.\n\nTo prepare your estimate, please tell us:\n• The language pair needed\n• The event dates and daily schedule\n• The venue address\n• Whether slides, manuals, or glossaries can be shared in advance\n\nRequest an estimate online or call our bookings desk at 555-0163, Monday to Friday, 8:00 A.M. to 6:00 P.M."
+          },
+          {
+            "label": "Online form",
+            "text": "Lexa Language Partners — Estimate Request\n\nName: Priya Natarajan\nAddress: Unit 5, 210 Harbor Road, Westmere\nE-mail: p.natarajan@kelvanmedical-example.com\nDate submitted: March 18\n\nRequest details: Our company will host a group of distributors from Brazil for training on our new line of diagnostic equipment. We need Portuguese–English interpreting on April 7 and 8. Sessions run from 9:00 A.M. to 4:30 P.M. each day, with a one-hour lunch break. They will be held at a hotel near Westmere Airport, which we expect to choose next week. About 25 people will attend, including two of our engineers, who will give live demonstrations. Our product manuals can be sent to you by March 31."
+          },
+          {
+            "label": "Email",
+            "text": "To: p.natarajan@kelvanmedical-example.com\nFrom: t.herrera@lexa-example.com\nDate: March 19\nSubject: Estimate for April interpreting\n\nDear Ms. Natarajan,\n\nThank you for contacting Lexa. Based on the schedule in your form, I have attached an estimate for Portuguese–English interpreting on April 7 and 8. Our rates depend on both timing and staffing, as explained on our Web site, and the attached figures reflect both rules.\n\nThis estimate is not final, as we still need one item from our checklist. Please call me at 555-0163 when you can. Also note that if any session runs past 5:00 P.M., overtime will be billed in 30-minute units.\n\nFinally, I recommend our pre-event briefing call. For a small fee, one of your product specialists can spend 45 minutes taking our interpreters through the key technical terms they will hear, which helps ensure accuracy from the very first session.\n\nKind regards,\nTomás Herrera\nBookings Manager"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "FORM-P7-02A",
+          "skill": "r-detail",
+          "prompt": "According to the Web page, when is a team of two interpreters required?",
+          "options": [
+            "When more than 25 people attend",
+            "When an event lasts more than one day",
+            "When an assignment exceeds six hours a day",
+            "When a request arrives fewer than 21 days ahead"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「When an assignment exceeds six hours a day」：網頁 Booking rules 第二條：A team of two interpreters is required only if interpreting exceeds six hours per day。A 25 人是表單的人數；B 天數不是條件；D 是第一條急件規則，套錯條件。\n【考點】Part 7・細節題\n【判斷依據】兩人一組的條件是每天口譯超過六小時。",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "FORM-P7-02B",
+          "skill": "r-detail",
+          "prompt": "Why does Ms. Natarajan's company need interpreters?",
+          "options": [
+            "To exhibit at a trade show in Brazil",
+            "To train visiting distributors on new products",
+            "To translate product manuals into Portuguese",
+            "To negotiate a contract with a supplier"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「To train visiting distributors on new products」：表單：Our company will host a group of distributors from Brazil for training on our new line of diagnostic equipment。A 地點不在巴西；C 手冊只是要提前寄給口譯員參考，不是要翻譯；D 談合約文中沒有。\n【考點】Part 7・細節題\n【判斷依據】表單第一句說明用途：替來訪經銷商上新產品訓練。",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "FORM-P7-02C",
+          "skill": "r-detail",
+          "prompt": "Which of the following did Ms. Natarajan NOT provide in her form?",
+          "options": [
+            "The language pair",
+            "The daily schedule",
+            "Information about advance materials",
+            "The venue address"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「The venue address」：網頁要的四項對照表單：語言組合 Portuguese–English 有；每日時程 9:00–4:30 有；預先資料：手冊 March 31 可寄 有；場地地址：只說 a hotel near Westmere Airport, which we expect to choose next week，飯店還沒選，沒有地址。表單 Address 欄 210 Harbor Road 是公司地址，不是場地。\n【考點】Part 7・NOT 題\n【判斷依據】題幹有大寫 NOT，要找表單沒給的那一項；公司地址不等於場地地址。",
+          "ability": "R2",
+          "questionType": "not-question"
+        },
+        {
+          "id": "FORM-P7-02D",
+          "skill": "r-crossref",
+          "prompt": "What can be concluded about Ms. Natarajan's request?",
+          "options": [
+            "It will need two interpreters and be billed at the rush rate.",
+            "It will need two interpreters but avoid the rush rate.",
+            "It will be billed at the rush rate but need only one interpreter.",
+            "It meets the notice period and needs only one interpreter."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「It will need two interpreters and be billed at the rush rate.」：例外條件字：unless ... fewer than 21 days 與 only if ... exceeds six hours。規則一（網頁）：March 18 → April 7：3 月剩 31−18＝13 天，再加 4 月 7 天＝20 天；20 < 21 → 觸發 unless 例外，標準價不適用 → 20% rush rate。規則二（網頁）：9:00–4:30＝7.5 小時，扣午餐 1 小時＝6.5 小時；6.5 > 6 → only if 條件成立 → 需兩名口譯員。兩條都成立，所以選 A。若算成 21 天會誤選 B，忘了扣午餐或沒算時數則可能誤選 C。回信說 the attached figures reflect both rules 也吻合。\n【考點】Part 7・跨文件整合\n【判斷依據】要把網頁兩條規則套到表單的日期與時數上，跨月份算天數，兩條都要判斷。",
+          "crossRef": true,
+          "ability": "R3",
+          "questionType": "cross-document"
+        },
+        {
+          "id": "FORM-P7-02E",
+          "skill": "r-crossref",
+          "prompt": "Why does Mr. Herrera recommend the briefing call?",
+          "options": [
+            "To confirm which hotel will be used",
+            "To explain the overtime policy",
+            "To reduce the cost of the rush rate",
+            "To prepare interpreters for terms related to diagnostic equipment"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「To prepare interpreters for terms related to diagnostic equipment」：回信：one of your product specialists can spend 45 minutes taking our interpreters through the key technical terms they will hear；表單說明訓練內容是 our new line of diagnostic equipment。兩者合起來，簡報是為了讓口譯員熟悉診斷設備的專業術語。A 飯店、B 加班、C 降價都不是推薦理由。\n【考點】Part 7・跨文件整合\n【判斷依據】回信說熟悉專業術語，表單說是哪種設備，合起來才得到完整答案。",
+          "crossRef": true,
+          "ability": "R3",
+          "questionType": "cross-document"
+        }
+      ]
+    },
+    {
+      "id": "g-form-p7-03",
+      "section": "reading",
+      "part": 7,
+      "title": "Triple passage: new executive chef at a catering company",
+      "passage": {
+        "docs": [
+          {
+            "label": "Press release",
+            "text": "FOR IMMEDIATE RELEASE\n\nSaltmarsh Catering Names Rosa Delacroix Executive Chef\n\nGLENHAVEN, September 2 — Saltmarsh Catering, which serves corporate events, private parties, and weddings across the Glenhaven region, announced today that Rosa Delacroix will become its executive chef on October 1.\n\nMs. Delacroix joins Saltmarsh from the Ardent Hotel Group, where she spent eleven years, most recently as head of banquet kitchens for its three Glenhaven properties. There, she rebuilt the banquet menu around seasonal produce from local farms and cut food waste by nearly a third. Earlier in her career, she trained as a pastry cook in Lyon.\n\n\"Rosa knows how to serve restaurant-quality food to five hundred guests at once,\" said owner Felix Amari. \"She is exactly the leader our growing kitchen needs.\"\n\nMs. Delacroix succeeds Martin Kowal, who is retiring after eighteen years with the company. Mr. Kowal will remain available as an adviser through the end of the year."
+          },
+          {
+            "label": "Email",
+            "text": "To: All Saltmarsh Catering staff\nFrom: Felix Amari\nDate: September 3\nSubject: Our new executive chef\n\nDear team,\n\nAs many of you saw in yesterday's announcement, Rosa Delacroix will lead our kitchen starting October 1. I'd like to answer a few questions now.\n\nFirst, we do not expect any changes to kitchen shifts or staffing levels this year. Menus for events that are already booked will also stay as they are; clients who have chosen their dishes will be served exactly what they ordered.\n\nSecond, we plan to hold a welcome lunch for Rosa on Friday, October 4, on the garden terrace at our Glenhaven office. However, we will use the terrace only if at least 25 people sign up by September 30; otherwise, we will move to the smaller tasting room. So far, 18 of you have signed up.\n\nFinally, please join me in thanking Martin for eighteen remarkable years. His farewell dinner is on September 27.\n\nFelix"
+          },
+          {
+            "label": "Letter",
+            "text": "Dear Rosa,\n\nI was so pleased to read the news about Saltmarsh! Those of us still here in the banquet kitchens are going to miss you, especially on busy Saturdays, when nobody plans a wedding menu the way you do. I'll never forget how you persuaded our purchasing team to buy from Hollis Farm; guests still ask about those tomatoes.\n\nI hope your welcome lunch on the 4th goes well, wherever it ends up being held. Let's meet for coffee before you start, and tell me all about your plans for the new menu.\n\nWarmly,\nJi-woo"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "FORM-P7-03A",
+          "skill": "r-detail",
+          "prompt": "What does the press release state about Ms. Delacroix?",
+          "options": [
+            "She reduced food waste at her previous employer.",
+            "She worked at Saltmarsh Catering for eleven years.",
+            "She will become executive chef on September 2.",
+            "She trained as a pastry cook in Glenhaven."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「She reduced food waste at her previous employer.」：新聞稿第二段：she rebuilt the banquet menu ... and cut food waste by nearly a third（在 Ardent Hotel Group）。B 十一年是在 Ardent，不是 Saltmarsh；C September 2 是發稿日，就任日是 October 1；D 學甜點的地點是 Lyon。\n【考點】Part 7・細節題\n【判斷依據】新聞稿列出她在前公司的成就：減少約三分之一的食物浪費。",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "FORM-P7-03B",
+          "skill": "r-crossref",
+          "prompt": "Where does Ji-woo most likely work?",
+          "options": [
+            "At Saltmarsh Catering",
+            "At Hollis Farm",
+            "At the Ardent Hotel Group",
+            "At a restaurant in Lyon"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「At the Ardent Hotel Group」：私人信：Those of us still here in the banquet kitchens are going to miss you，還提到 our purchasing team 向 Hollis Farm 採購；新聞稿說她在 Ardent Hotel Group 擔任 head of banquet kitchens。「仍在宴會廚房」＋她過去的職位，表示 Ji-woo 是 Ardent 的同事。A 錯，Ji-woo 是在恭喜她轉去 Saltmarsh；B Hollis Farm 是供應商。\n【考點】Part 7・跨文件整合\n【判斷依據】信中 still here in the banquet kitchens 要對照新聞稿她前公司的職位才推得出來。",
+          "crossRef": true,
+          "ability": "R3",
+          "questionType": "cross-document"
+        },
+        {
+          "id": "FORM-P7-03C",
+          "skill": "r-purpose",
+          "prompt": "Why did Ji-woo write the letter?",
+          "options": [
+            "To invite Ms. Delacroix to a farewell dinner",
+            "To ask about a job at Saltmarsh Catering",
+            "To recommend a new supplier",
+            "To congratulate Ms. Delacroix on her new position"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「To congratulate Ms. Delacroix on her new position」：私人信開頭 I was so pleased to read the news about Saltmarsh!，接著說會想念她、祝午餐順利、約喝咖啡，整封信是祝賀她的新職位。A 歡送晚宴是 Martin 的；B 沒有求職；C Hollis Farm 是回憶過去，不是推薦。\n【考點】Part 7・主旨目的題\n【判斷依據】開頭一句表明來意：為她的新職感到高興。",
+          "ability": "R1",
+          "questionType": "main-purpose"
+        },
+        {
+          "id": "FORM-P7-03D",
+          "skill": "r-crossref",
+          "prompt": "What is suggested about the event Ji-woo mentions?",
+          "options": [
+            "It will be held in the tasting room.",
+            "Its location could still change.",
+            "It will be held on the terrace because enough staff have signed up.",
+            "It requires staff to sign up by October 4."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Its location could still change.」：例外條件字：only if at least 25 people sign up by September 30。私人信的 your welcome lunch on the 4th 對到內部信的 welcome lunch on Friday, October 4。推算：內部信日期 September 3，目前 18 人；18 < 25，但截止日 September 30 還沒到（還有 27 天）→ 人數可能補足，也可能不足 → 地點還不能確定，所以 Ji-woo 才寫 wherever it ends up being held。A 把目前人數當成最後結果；C 18 < 25，人數還不夠；D 報名截止是 9/30，10/4 是午餐當天。\n【考點】Part 7・跨文件整合\n【判斷依據】把信中的「4 號」對到內部信，再用 only if 的人數門檻和還沒到的截止日推出地點未定。",
+          "crossRef": true,
+          "ability": "R3",
+          "questionType": "cross-document"
+        },
+        {
+          "id": "FORM-P7-03E",
+          "skill": "r-detail",
+          "prompt": "What does Mr. Amari NOT mention as something expected to stay the same?",
+          "options": [
+            "Kitchen shifts",
+            "Prices for future events",
+            "Staffing levels",
+            "Menus for booked events"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Prices for future events」：內部信：we do not expect any changes to kitchen shifts or staffing levels（A、C）；Menus for weddings and events that are already booked will also stay as they are（D）。未來活動的價格完全沒提，所以選 B。\n【考點】Part 7・NOT 題\n【判斷依據】題幹有大寫 NOT，把信中列出的不變項目逐一刪去，剩下沒提到的就是答案。",
+          "ability": "R2",
+          "questionType": "not-question"
+        }
+      ]
+    },
+    {
+      "id": "g-form-p7-04",
+      "section": "reading",
+      "part": 7,
+      "title": "Triple passage: new director of operations at a print company",
+      "passage": {
+        "docs": [
+          {
+            "label": "Press release",
+            "text": "NEWS RELEASE\n\nInkwell Print & Display Appoints Director of Operations\n\nBRAMLEY, January 12 — Inkwell Print & Display, a provider of banners, trade show graphics, vehicle wraps, and store signage for retailers across the region, has named Owen Pradhan, an experienced production manager, its director of operations, effective February 3.\n\nMr. Pradhan spent nine years at Corvane Packaging, where he managed production at its Eastfield plant and led the installation of the company's first fully digital printing line. Under his leadership, the plant cut its average order turnaround from ten days to six. He began his career as a press operator and later trained new staff in color matching.\n\n\"Owen knows printing from the shop floor up,\" said Inkwell president Lena Sorvik. \"His experience will help us take on more large-format orders without sacrificing quality.\"\n\nIn his new role, Mr. Pradhan will oversee Inkwell's production sites in Bramley and Kestrel Bay, which together employ about 140 people."
+          },
+          {
+            "label": "Email",
+            "text": "To: All Inkwell employees\nFrom: Lena Sorvik, President\nDate: January 13\nSubject: Welcoming Owen Pradhan\n\nHello everyone,\n\nI'm delighted to confirm that Owen Pradhan will join us as director of operations on February 3. Here is what you can expect over the coming weeks.\n\nAt this point, we do not anticipate any changes to job titles, reporting lines, or shift schedules at either site. Customer account managers will also remain the same, so please reassure any clients who ask.\n\nDuring his first two weeks, Owen will tour both production floors and meet each team. We have scheduled an all-staff introduction session for February 10 at 4:00 P.M. The Bramley break room seats 60, so we will hold it there only if no more than 60 people plan to attend in person; otherwise, it will move online. Managers report that 38 Bramley staff and 29 Kestrel Bay staff hope to attend in person.\n\nThank you,\nLena"
+          },
+          {
+            "label": "Letter",
+            "text": "Hi Owen,\n\nCongratulations on the move to Inkwell! Eastfield won't be the same without you. Our crew still talks about the night you stayed until 2 A.M. to get the new digital line running before the holiday rush. Nobody has managed to fix the old cutter as quickly as you did, either.\n\nOn the phone last week, you mentioned that your new colleagues are planning an introduction session for you on the 10th. I hope it goes smoothly, whatever form it takes. Good luck, and keep in touch.\n\nBest,\nMarisol"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "FORM-P7-04A",
+          "skill": "r-detail",
+          "prompt": "According to the news release, what did Mr. Pradhan achieve at Corvane Packaging?",
+          "options": [
+            "He opened a production site in Kestrel Bay.",
+            "He reduced turnaround from six days to four.",
+            "He was promoted to company president.",
+            "He helped shorten order turnaround times."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「He helped shorten order turnaround times.」：新聞稿第二段：Under his leadership, the plant cut its average order turnaround from ten days to six。B 數字錯（是 10 天降到 6 天）；A Kestrel Bay 是 Inkwell 的廠區；C president 是 Lena Sorvik。\n【考點】Part 7・細節題\n【判斷依據】新聞稿寫明他讓平均交期從 10 天縮短到 6 天。",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "FORM-P7-04B",
+          "skill": "r-crossref",
+          "prompt": "Where does Marisol most likely work?",
+          "options": [
+            "At Corvane Packaging's Eastfield plant",
+            "At Inkwell's Bramley site",
+            "At Inkwell's Kestrel Bay site",
+            "At a trade show graphics company"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「At Corvane Packaging's Eastfield plant」：私人信：Eastfield won't be the same without you，還提到 Our crew ... the new digital line；新聞稿：他在 Corvane Packaging 管理 Eastfield plant，並導入第一條數位印刷線。合起來，Marisol 是 Corvane Eastfield 廠的同事。B、C 是他的新公司；D 是 Inkwell 的業務內容。\n【考點】Part 7・跨文件整合\n【判斷依據】信中只寫 Eastfield 和數位產線，要對照新聞稿才知道是哪家公司的哪個廠。",
+          "crossRef": true,
+          "ability": "R3",
+          "questionType": "cross-document"
+        },
+        {
+          "id": "FORM-P7-04C",
+          "skill": "r-purpose",
+          "prompt": "Why did Marisol write to Mr. Pradhan?",
+          "options": [
+            "To ask him for a job reference",
+            "To wish him well in his new position",
+            "To invite him to a holiday party",
+            "To report a problem with the digital line"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「To wish him well in his new position」：私人信開頭 Congratulations on the move to Inkwell!，最後 Good luck, and keep in touch，目的是祝福他的新工作。C holiday rush 是回憶往事，不是邀請；D 產線是當年的事，沒有問題要回報。\n【考點】Part 7・主旨目的題\n【判斷依據】開頭的 Congratulations 與結尾的 Good luck 表明寫信目的。",
+          "ability": "R1",
+          "questionType": "main-purpose"
+        },
+        {
+          "id": "FORM-P7-04D",
+          "skill": "r-crossref",
+          "prompt": "What is implied about the event Marisol mentions?",
+          "options": [
+            "It will be held in the Bramley break room.",
+            "It will take place at the Kestrel Bay site.",
+            "It will most likely be held online.",
+            "It will be postponed until fewer people sign up."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「It will most likely be held online.」：例外條件字：only if no more than 60 people ... otherwise。私人信的 an introduction session for you on the 10th 對到內部信 February 10 的全員介紹會。算式：38（Bramley）＋29（Kestrel Bay）＝67 人想到場；67 > 60 → only if 條件不成立 → otherwise, it will move online。A 是漏看 only if 的陷阱；B 文中沒有這個選項；D 延期文中沒提。\n【考點】Part 7・跨文件整合\n【判斷依據】信中的「10 號」要對到內部信，再把兩地人數相加，套上 only if 的人數上限。",
+          "crossRef": true,
+          "ability": "R3",
+          "questionType": "cross-document"
+        },
+        {
+          "id": "FORM-P7-04E",
+          "skill": "r-detail",
+          "prompt": "What does Ms. Sorvik NOT mention as something expected to stay the same?",
+          "options": [
+            "Job titles",
+            "Shift schedules",
+            "Production equipment",
+            "Customer account managers"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Production equipment」：內部信：we do not anticipate any changes to job titles, reporting lines, or shift schedules（A、B）；Customer account managers will also remain the same（D）。生產設備沒有提到，所以選 C。\n【考點】Part 7・NOT 題\n【判斷依據】題幹有大寫 NOT，刪掉信中列出的不變項目，剩下的就是答案。",
+          "ability": "R2",
+          "questionType": "not-question"
+        }
+      ]
+    },
+    {
+      "id": "g-form-p7-05",
+      "section": "reading",
+      "part": 7,
+      "title": "Double passage: off-site photography shoot schedule",
+      "passage": {
+        "docs": [
+          {
+            "label": "Email",
+            "text": "To: All photographers and assistants\nFrom: Grace Holloway, Studio Manager\nDate: June 2\nSubject: June off-site shoots\n\nHello all,\n\nAs our summer bookings grow, I'd like to remind everyone how off-site assignments are scheduled. Any off-site shoot lasting more than two days must be approved by our operations director before it is booked. Only approved assignments appear on the shared schedule below, so if you do not see a job you discussed with a client, it has not been confirmed yet.\n\nFor example, Theo Banerjee's three-day product shoot for a furniture catalog is still waiting for approval. The client's samples arrive on the first day of Ana Ruiz's resort shoot, and Theo cannot start until the next day unless they are delivered early, which the client says is not possible. If it goes ahead, we may need a freelance assistant while both are away.\n\nPlease check the schedule every Monday, as it is updated over the weekend. Please report any mistakes to me right away.\n\nThank you,\nGrace"
+          },
+          {
+            "label": "Schedule",
+            "text": "Confirmed Off-Site Shoots — June\n\nDate | Photographer | Assignment | Location\nJune 6 | Ana Ruiz | Corporate headshots | Marlow Business Park\nJune 11–12 | Kenji Morel | Wedding | Fernhill Gardens\nJune 18–20 | Ana Ruiz | Resort brochure | Coral Point Resort\nJune 24 | Kenji Morel | Restaurant menu | Bistro Alder\nJune 27 | Ana Ruiz | Family portraits | Lakeview Park\n\nReminders:\n• Shoots longer than two days: submit requests to Victor Lam.\n• Equipment checkout: see Dev Patel at the front desk before 9:00 A.M.\n• Vacation and sick days: register with Grace Holloway.\n• Changes to a confirmed shoot: tell Grace at least 48 hours ahead."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "FORM-P7-05A",
+          "skill": "r-purpose",
+          "prompt": "What is the purpose of the e-mail?",
+          "options": [
+            "To announce the hiring of a freelance assistant",
+            "To explain how off-site shoots are scheduled",
+            "To ask staff to contact a furniture client",
+            "To introduce a new operations director"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「To explain how off-site shoots are scheduled」：信的第一段：I'd like to remind everyone how off-site assignments are scheduled，接著說明核准規則與排程表。A 只說可能需要外包助理，還沒聘；C、D 沒有根據。\n【考點】Part 7・主旨目的題\n【判斷依據】開頭一句說明寫信目的：提醒大家外拍怎麼排程。",
+          "ability": "R1",
+          "questionType": "main-purpose"
+        },
+        {
+          "id": "FORM-P7-05B",
+          "skill": "r-crossref",
+          "prompt": "Why is Mr. Banerjee's shoot not on the schedule?",
+          "options": [
+            "It has not been approved yet.",
+            "It will take place in July.",
+            "It lasts only two days.",
+            "It was canceled by the client."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「It has not been approved yet.」：信：Only approved assignments appear on the shared schedule；Theo's three-day product shoot ... is still waiting for approval。排程表標題 Confirmed Off-Site Shoots，確實沒有 Theo。C 錯，他的拍攝是三天，正因超過兩天才需核准；B、D 沒有根據。\n【考點】Part 7・跨文件整合\n【判斷依據】信說只列已核准的，表上沒有 Theo，兩份合起來就知道原因。",
+          "crossRef": true,
+          "ability": "R3",
+          "questionType": "cross-document"
+        },
+        {
+          "id": "FORM-P7-05C",
+          "skill": "r-detail",
+          "prompt": "According to the schedule, whom should an employee see to borrow a camera?",
+          "options": [
+            "Grace Holloway",
+            "Victor Lam",
+            "Ana Ruiz",
+            "Dev Patel"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Dev Patel」：排程表提醒第二條：Equipment checkout: see Dev Patel at the front desk。A 負責登記休假與病假；B 負責超過兩天的外拍申請；C 是攝影師。\n【考點】Part 7・細節題\n【判斷依據】借器材找誰，寫在排程表的提醒裡。",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "FORM-P7-05D",
+          "skill": "r-crossref",
+          "prompt": "If Mr. Banerjee's shoot is approved, when will he most likely be working on it?",
+          "options": [
+            "June 18–20",
+            "June 20–22",
+            "June 19–21",
+            "June 11–13"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「June 19–21」：例外條件字：unless they are delivered early（客戶說不可能，所以例外不成立）。算式：排程表 Ana Ruiz 的 Resort brochure 是 June 18–20 → 樣品在第一天 June 18 送到 → Theo 要等隔天 June 19 才能開始 → 三天＝June 19、20、21。A 是忘了「隔天才開始」、直接照抄 Ana 的日期；B 多推了一天；D 是 Kenji 婚禮的日期往後延。\n【考點】Part 7・跨文件整合\n【判斷依據】信給規則和例外，表給 Ana 的日期，合起來才算得出 Theo 的三天。",
+          "crossRef": true,
+          "ability": "R3",
+          "questionType": "cross-document"
+        },
+        {
+          "id": "FORM-P7-05E",
+          "skill": "r-crossref",
+          "prompt": "What is most likely Victor Lam's job title?",
+          "options": [
+            "Operations director",
+            "Studio manager",
+            "Freelance assistant",
+            "Front desk coordinator"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「Operations director」：信：Any off-site shoot lasting more than two days must be approved by our operations director（沒寫名字）；排程表：Shoots longer than two days: submit requests to Victor Lam。兩者描述同一件事，所以 Victor Lam 是營運總監。B studio manager 是 Grace Holloway；D 櫃台是 Dev Patel；C 外包助理只是可能會請的人。\n【考點】Part 7・跨文件整合\n【判斷依據】信只寫職稱，表只寫人名，同一條規則把兩者連起來。",
+          "crossRef": true,
+          "ability": "R3",
+          "questionType": "cross-document"
+        }
+      ]
+    },
+    {
+      "id": "g-form-p7-06",
+      "section": "reading",
+      "part": 7,
+      "title": "Double passage: author talk room assignment at a community learning center",
+      "passage": {
+        "docs": [
+          {
+            "label": "Web page",
+            "text": "Northgate Community Learning Center\nRoom Guide\n\nLocated next to Northgate Library, our center hosts evening classes, author talks, and workshops throughout the year. All rooms offer free Wi-Fi and adjustable lighting. Please review the room features below when planning your event.\n\nRoom | Seats | Features\nWillow Room | 20 | Whiteboard, sink for art classes\nBirch Room | 35 | Projector and screen\nCedar Room | 50 | Projector, screen, microphone\nOak Hall | 80 | Projector, screen, microphone, small stage\n\nOak Hall can be reserved only if the request is made no later than seven days before the event.\n\nPlease note that the center does not provide laptops, adapters, or catering. Speakers should bring their own computer and any cables they need. Free parking is available in the east lot after 5:00 P.M., and the main entrance is wheelchair accessible."
+          },
+          {
+            "label": "Email",
+            "text": "From: Helen Brandt\nTo: Nadia Kerr\nDate: October 14\nSubject: FW: Room change for your October 23 talk\n\nNadia,\nSee the note below. We're in the big hall now, not the Cedar Room. Thanks again for helping me hand out the samples. I'll still bring my laptop, since the center won't have one.\nHelen\n\n---------- Forwarded message ----------\nFrom: Samuel Ortiz, Program Coordinator\nTo: Helen Brandt\nDate: October 14\n\nDear Ms. Brandt,\n\nThank you again for returning to Northgate for our Writers at Work series. Your talk last spring on your first cookbook drew such a crowd that some people had to stand at the back, and interest this year looks even stronger.\n\nWhen we booked your talk, we placed you in the Cedar Room. However, registration closed yesterday with 64 people signed up, which is more than that room can hold. We have therefore moved your talk to the largest room we could still reserve. The time is unchanged: 7:00 to 8:30 P.M.\n\nSince you mentioned that a colleague will help you hand out recipe samples, could you please pass this update on to her? She should check in at the front desk when she arrives.\n\nBest regards,\nSamuel Ortiz"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "FORM-P7-06A",
+          "skill": "r-detail",
+          "prompt": "What is NOT mentioned on the Web page as being available at the center?",
+          "options": [
+            "Free Wi-Fi",
+            "A small stage",
+            "Laptop computers",
+            "Evening parking"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Laptop computers」：網頁：All rooms offer free Wi-Fi（A）；Oak Hall 有 small stage（B）；Free parking ... after 5:00 P.M.（D）；the center does not provide laptops（C 不提供）。\n【考點】Part 7・NOT 題\n【判斷依據】題幹有大寫 NOT，網頁明說不提供筆電。",
+          "ability": "R2",
+          "questionType": "not-question"
+        },
+        {
+          "id": "FORM-P7-06B",
+          "skill": "r-inference",
+          "prompt": "What is suggested about Ms. Brandt?",
+          "options": [
+            "She will give the talk with Mr. Ortiz.",
+            "She teaches cooking classes at Northgate.",
+            "She has never given a public talk before.",
+            "She has spoken at the center before."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「She has spoken at the center before.」：Ortiz 的信：Thank you again for returning to Northgate ... Your talk last spring on your first cookbook drew such a crowd。returning 和 last spring 表示她以前來演講過，C 正好相反。A Ortiz 是協調人；B 文中沒說她在此教課。\n【考點】Part 7・推論題\n【判斷依據】returning 與 last spring 兩個線索推出她曾在此演講。",
+          "ability": "R1",
+          "questionType": "inference"
+        },
+        {
+          "id": "FORM-P7-06C",
+          "skill": "r-detail",
+          "prompt": "What does Mr. Ortiz ask Ms. Brandt to do?",
+          "options": [
+            "Share the room change with a colleague",
+            "Register more attendees",
+            "Bring her own microphone",
+            "Arrive before 7:00 P.M."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「Share the room change with a colleague」：Ortiz 的信最後一段：could you please pass this update on to her?（her 指幫忙發試吃品的同事）。B 報名已截止；C Oak Hall 有麥克風；D 時間不變，但沒有要求提早到。\n【考點】Part 7・細節題\n【判斷依據】請求句 could you please pass this update on to her 直接給出答案。",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "FORM-P7-06D",
+          "skill": "r-crossref",
+          "prompt": "Where will Ms. Brandt's talk most likely take place?",
+          "options": [
+            "In the Cedar Room",
+            "In Oak Hall",
+            "In the Birch Room",
+            "In the Willow Room"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「In Oak Hall」：例外條件字：only if ... no later than seven days。算式：①信 October 14 通知、演講 October 23 → 23−14＝9 天；9 ≥ 7 → Oak Hall 仍可預訂；②報名 64 人 > Cedar 50 席 → 要換房；網頁容量表最大的是 Oak Hall 80 席（80 ≥ 64）→ the largest room we could still reserve＝Oak Hall。A Cedar 只有 50 席，就是被換掉的房間；C 35、D 20 更小。\n【考點】Part 7・跨文件整合\n【判斷依據】網頁的 only if 預訂期限加上信的日期與人數，才確定還能換到 Oak Hall。",
+          "crossRef": true,
+          "ability": "R3",
+          "questionType": "cross-document"
+        },
+        {
+          "id": "FORM-P7-06E",
+          "skill": "r-crossref",
+          "prompt": "Who most likely is Ms. Kerr?",
+          "options": [
+            "A program coordinator at Northgate",
+            "An attendee who registered late",
+            "A front desk employee",
+            "The colleague who will help hand out samples"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「The colleague who will help hand out samples」：Ortiz 的信：a colleague will help you hand out recipe samples, could you please pass this update on to her?；Brandt 把信轉寄給 Nadia Kerr，並寫 Thanks again for helping me hand out the samples。所以 Ms. Kerr 就是那位幫忙發試吃品的同事。A 協調人是 Ortiz；B 報名已截止；C 她是被提醒要到櫃台報到的人。\n【考點】Part 7・跨文件整合\n【判斷依據】Ortiz 請她轉告同事，她轉寄給 Nadia 並感謝幫忙發試吃品，兩段合起來確認身分。",
+          "crossRef": true,
+          "ability": "R3",
+          "questionType": "cross-document"
+        }
+      ]
+    },
+    {
+      "id": "g-form-p7-07",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: visiting director's itinerary",
+      "passage": {
+        "docs": [
+          {
+            "label": "Itinerary",
+            "text": "Itinerary: Visit of Carla Mendes, Regional Sales Director\nWestfield Branch — Thursday, March 12\n\n9:00 A.M. | Status meeting with the accounts team, Room 2\n10:30 A.M. | Proposal session: Daniel Wu presents ideas for a customer loyalty program\n12:30 P.M. | Lunch with branch managers, Riverside Café\n2:00 P.M. | Progress update on the warehouse upgrade from Leah Marsh\n4:00 P.M. | Tour of the new showroom\n7:00 P.M. | Welcome banquet hosted by branch staff, Grand Lake Hotel\n\nMs. Mendes will stay overnight at the Grand Lake Hotel and leave for the airport at 8:00 A.M. on Friday."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "FORM-P7-07A",
+          "skill": "r-detail",
+          "prompt": "What will Ms. Mendes do at the Grand Lake Hotel on Thursday evening?",
+          "options": [
+            "Meet with a new client",
+            "Lead a training session",
+            "Attend a formal dinner",
+            "Present a sales report"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Attend a formal dinner」：行程表 7:00 P.M.：Welcome banquet hosted by branch staff, Grand Lake Hotel。banquet＝正式宴會、正式晚餐，換句話說就是 formal dinner。A 行程裡沒有見新客戶；B 沒有訓練；D 簡報不在飯店。飯店雖然也是她過夜的地方，但選項裡沒有「過夜」，不要被同一行其他資訊帶走。\n【考點】Part 7・細節題\n【判斷依據】把 banquet 換成白話 formal dinner。",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "FORM-P7-07B",
+          "skill": "r-inference",
+          "prompt": "Who will most likely suggest a new idea to Ms. Mendes?",
+          "options": [
+            "Leah Marsh",
+            "The accounts team",
+            "The branch managers",
+            "Daniel Wu"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Daniel Wu」：看每一行的性質字：Proposal session: Daniel Wu presents ideas → proposal＝提出新構想。A Leah Marsh 是 Progress update，回報倉庫升級的既有進度；B accounts team 是 Status meeting，也是報告現況；C 經理們只是一起吃午餐。Leah 的倉庫「升級」聽起來像新東西，但 update 表示是已在進行的事。\n【考點】Part 7・推論題\n【判斷依據】proposal 是新想法，status／update 是回報既有進度。",
+          "ability": "R1",
+          "questionType": "inference"
+        }
+      ]
+    },
+    {
+      "id": "g-form-p7-08",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: leadership retreat agenda",
+      "passage": {
+        "docs": [
+          {
+            "label": "Agenda",
+            "text": "Leadership Retreat — Pine Ridge Lodge\n\nDay 1 (Tuesday)\n8:30 | Opening keynote: Hana Sato, \"Planning for 2027\"\n10:00 | Final budget review (figures approved last week)\n1:30 | Workshop: coaching new supervisors\n6:30 | Reception on the lodge terrace\n\nDay 2 (Wednesday)\n7:00 | Optional sunrise hike from the main entrance\n9:00 | Tentative: visit to the Millbrook warehouse (depends on road conditions)\n11:00 | Panel: customer service leaders share lessons\n1:00 | Buses depart for the office"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "FORM-P7-08A",
+          "skill": "r-detail",
+          "prompt": "What will participants do on the lodge terrace?",
+          "options": [
+            "Attend a training session",
+            "Gather socially with refreshments",
+            "Go on an early hike",
+            "Listen to a speech about planning"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Gather socially with refreshments」：議程 Day 1 6:30：Reception on the lodge terrace。reception＝招待會、酒會，白話就是邊吃喝邊交流的社交聚會。A 是 1:30 的 workshop；C 健行是第二天從 main entrance 出發；D 是早上的 keynote。\n【考點】Part 7・細節題\n【判斷依據】把 reception 換成白話：有餐點飲料的社交聚會。",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "FORM-P7-08B",
+          "skill": "r-inference",
+          "prompt": "Which activity is most likely still undecided?",
+          "options": [
+            "The budget review",
+            "The sunrise hike",
+            "The coaching workshop",
+            "The warehouse visit"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「The warehouse visit」：性質字：Tentative: visit to the Millbrook warehouse (depends on road conditions) → tentative＝暫定，還沒確定。A 是 Final budget review，數字上週已核准；B 是 Optional，意思是自由參加，活動本身照常舉行，不是還沒定；C 沒有任何不確定的字。\n【考點】Part 7・推論題\n【判斷依據】tentative 才是未定案；optional 只是自由參加，final 是已確定。",
+          "ability": "R1",
+          "questionType": "inference"
+        }
+      ]
+    },
+    {
+      "id": "g-form-p7-09",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: product team weekly calendar",
+      "passage": {
+        "docs": [
+          {
+            "label": "Calendar",
+            "text": "Product Design Team — Calendar, Week of June 15\n\nMonday 10:00 | Weekly status check-in (all designers)\nTuesday 2:00 | Brainstorm: packaging concepts for the new travel line (everyone welcome)\nWednesday 11:00 | Client walkthrough of final mock-ups with Koval Foods\nThursday 3:00 | Supplier update on shipping delays, from Erin Cho (Purchasing)\nFriday 12:00 | Team luncheon at Olive Street Bistro to mark the spring launch\n\nReminder: Mock-ups for Wednesday must be printed by Tuesday at noon."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "FORM-P7-09A",
+          "skill": "r-detail",
+          "prompt": "What will the team do on Friday?",
+          "options": [
+            "Meet with a client",
+            "Visit a supplier",
+            "Share a meal to celebrate",
+            "Review printed mock-ups"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Share a meal to celebrate」：行事曆 Fri 12:00：Team luncheon at Olive Street Bistro to mark the spring launch。luncheon＝正式一點的午餐會，to mark＝慶祝。A 見客戶是週三；B 週四只是聽供應商狀況報告，不是拜訪；D 樣稿是週二印、週三看。\n【考點】Part 7・細節題\n【判斷依據】luncheon … to mark the launch＝一起吃飯慶祝。",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "FORM-P7-09B",
+          "skill": "r-inference",
+          "prompt": "When will team members most likely suggest new ideas?",
+          "options": [
+            "On Monday",
+            "On Tuesday",
+            "On Wednesday",
+            "On Thursday"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「On Tuesday」：性質字：Tue 2:00 Brainstorm: packaging concepts for the new travel line → brainstorm＝腦力激盪、提出新點子。A Monday 是 status check-in，回報進度；C Wednesday 是 final mock-ups，已經定稿要給客戶看；D Thursday 是 Supplier update，回報運送延誤。\n【考點】Part 7・推論題\n【判斷依據】brainstorm 是新想法；status、update 是回報，final 是已定案。",
+          "ability": "R1",
+          "questionType": "inference"
+        }
+      ]
+    },
+    {
+      "id": "g-form-p7-10",
+      "section": "reading",
+      "part": 7,
+      "title": "Single passage: trade show booth staff schedule",
+      "passage": {
+        "docs": [
+          {
+            "label": "Schedule",
+            "text": "Booth Staff Schedule — Harbor Expo, Day 2\n\n8:00 | Booth setup check (Imani, Paolo)\n9:30 | Product demonstrations for walk-in visitors (Paolo)\n11:00 | Pitch meeting: Imani presents our new subscription plan to Norcrest Retail buyers\n1:00 | Sales report: Paolo reviews yesterday's leads with the team\n3:00 | Panel: Imani joins \"Smarter Inventory\" discussion, Hall C\n6:30 | Gala at the Expo Pavilion (business attire)\n\nPlease collect name badges at the registration desk before 8:00."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "FORM-P7-10A",
+          "skill": "r-detail",
+          "prompt": "What will the staff attend at the Expo Pavilion?",
+          "options": [
+            "A formal evening party",
+            "A product demonstration",
+            "A meeting with buyers",
+            "A group discussion"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「A formal evening party」：時程表 6:30：Gala at the Expo Pavilion (business attire)。gala＝盛大的正式晚會，白話就是 formal evening party；business attire 也表示要穿正式服裝。B 是 9:30 在攤位；C 是 11:00 的 pitch meeting；D 是 3:00 在 Hall C 的 panel。\n【考點】Part 7・細節題\n【判斷依據】把 gala 換成白話：正式的晚間派對。",
+          "ability": "R2",
+          "questionType": "detail"
+        },
+        {
+          "id": "FORM-P7-10B",
+          "skill": "r-inference",
+          "prompt": "At which time will results that have already happened most likely be discussed?",
+          "options": [
+            "At 9:30",
+            "At 11:00",
+            "At 1:00",
+            "At 3:00"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「At 1:00」：性質字：1:00 Sales report: Paolo reviews yesterday's leads → report＋yesterday＝回顧已發生的成果。B 11:00 是 Pitch meeting，推銷新的訂閱方案，是新提案；A 是現場示範；D panel 談的是一般主題，不是自己昨天的成果。\n【考點】Part 7・推論題\n【判斷依據】report、review yesterday 是回顧既有結果；pitch 是提出新東西。",
+          "ability": "R1",
+          "questionType": "inference"
+        }
+      ]
+    },
+    {
+      "id": "g-form-p6-01",
+      "section": "reading",
+      "part": 6,
+      "title": "Email: roof coating project",
+      "passage": {
+        "docs": [
+          {
+            "label": "Email",
+            "text": "To: All tenants, Harlow Court\nFrom: Building Management\nDate: April 3\nSubject: Roof coating project\n\nDear Tenants,\n\nStarting on April 20, contractors will apply a reflective coating to the roof of Harlow Court. The work is expected to take about two weeks. Because the coating reflects most of the sun's heat, it will help [1] the upper floors from overheating during the summer months. As a result, tenants on those floors should notice lower cooling costs. [2]\n\nDuring the project, the roof access door will remain locked, and some noise [3] between 8:00 A.M. and 4:00 P.M. on weekdays. No work will take place on weekends. [4], the north parking area will be partly closed so that equipment can be stored safely.\n\nIf you have any questions or concerns about the schedule, please contact the management office at 555-0129 between 9:00 A.M. and 5:00 P.M.\n\nSincerely,\nRita Saunders\nProperty Manager"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "FORM-P6-01A",
+          "skill": "r-vocabulary",
+          "prompt": "Select the best word for [1].",
+          "options": [
+            "prevent",
+            "detect",
+            "inspect",
+            "record"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「prevent」：這一句的功能是「好處」：前一句 because the coating reflects most of the sun's heat，後一句 As a result … lower cooling costs，前後都在說塗層帶來的好處。prevent … from overheating＝防止過熱，正是好處。detect（偵測）、inspect（檢查）、record（記錄）都和建築維護有關，但塗層不會偵測或記錄過熱，而且 help detect the upper floors from overheating 文法也不通。\n【考點】Part 6・字彙題\n【判斷依據】這句是好處，證據是前句「反射熱」和後句「冷氣費降低」，所以選「防止」。",
+          "ability": "R4",
+          "questionType": "vocabulary"
+        },
+        {
+          "id": "FORM-P6-01B",
+          "skill": "r-purpose",
+          "prompt": "Select the best sentence for [2].",
+          "options": [
+            "Several tenants have already signed new leases.",
+            "Over time, the coating will also help the roof last longer.",
+            "Please let us know which parking space you prefer.",
+            "The coating was removed after the first test failed."
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Over time, the coating will also help the roof last longer.」：空格所在的段落一路在講塗層的好處（防過熱→冷氣費降低），B 用 also 再補一個好處（屋頂更耐用），接得最順。A 租約和工程無關；C 停車位要到下一段才談，而且大樓並沒有讓房客挑車位；D 和「四月要開始施工」互相矛盾。\n【考點】Part 6・句子插入\n【判斷依據】also 接續前面的好處，是唯一連得起來的句子。",
+          "ability": "R3",
+          "questionType": "sentence-insertion"
+        },
+        {
+          "id": "FORM-P6-01C",
+          "skill": "r-grammar",
+          "prompt": "Select the best word for [3].",
+          "options": [
+            "is expecting",
+            "expected",
+            "should be expected",
+            "to expect"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「should be expected」：主詞 some noise 是「被預期」的一方，要用被動；句子前半是 will remain locked（未來），後半用 should be expected（預計會有）。A 主動進行式，噪音不會去預期；B 單用過去分詞缺少動詞；D 不定詞不能當主要動詞。\n【考點】Part 6・文法題\n【判斷依據】噪音是被預期的，用助動詞＋被動 should be expected。",
+          "ability": "R5",
+          "questionType": "grammar"
+        },
+        {
+          "id": "FORM-P6-01D",
+          "skill": "r-grammar",
+          "prompt": "Select the best word for [4].",
+          "options": [
+            "Instead",
+            "Otherwise",
+            "Even so",
+            "In addition"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「In addition」：前一句說屋頂門會上鎖、平日有噪音，這一句再加一個影響（北側停車場部分封閉），是「補充同類資訊」，用 In addition。A Instead 表示取代；B Otherwise 表示否則；C Even so 表示讓步轉折，都和前後句的關係不符。\n【考點】Part 6・文法題\n【判斷依據】前後句都在列施工期間的影響，是並列補充。",
+          "ability": "R5",
+          "questionType": "grammar"
+        }
+      ]
+    },
+    {
+      "id": "g-form-p6-02",
+      "section": "reading",
+      "part": 6,
+      "title": "Notice: new mentoring program",
+      "passage": {
+        "docs": [
+          {
+            "label": "Notice",
+            "text": "Notice to All Store Staff\n\nBeginning next month, Corran Home Goods will launch a mentoring program for new sales associates. Each new hire will be paired with an experienced colleague from the same department for his or her first eight weeks. Mentors will [1] new associates by showing them how to handle returns, answer product questions, and use the inventory system. [2] Managers believe this hands-on approach will help new staff feel confident on the sales floor much sooner.\n\nEmployees who have worked at Corran for at least two years [3] to apply as mentors. Mentors will receive a monthly bonus and a reduced sales target while the program runs. [4] interested, please complete the application form at the service desk by May 15.\n\nTraining for mentors will take place on May 22, and lunch will be provided for all participants.\n\nHuman Resources Department"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "FORM-P6-02A",
+          "skill": "r-vocabulary",
+          "prompt": "Select the best word for [1].",
+          "options": [
+            "evaluate",
+            "recruit",
+            "reward",
+            "guide"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「guide」：這一句的功能是「方法」：by showing them how to handle returns, answer product questions, and use the inventory system，說明導師怎麼帶新人。guide（指導、帶領）和「示範怎麼做」最吻合，後句的 hands-on approach 也是證據。evaluate（評估）是考核，不是示範；recruit（招募）是入職前的事，這時新人已經進來了；reward（獎勵）的對象在第二段是導師，不是新人。\n【考點】Part 6・字彙題\n【判斷依據】這句講方法，證據是 by showing them how to 和後句 hands-on approach，所以選「指導」。",
+          "ability": "R4",
+          "questionType": "vocabulary"
+        },
+        {
+          "id": "FORM-P6-02B",
+          "skill": "r-purpose",
+          "prompt": "Select the best sentence for [2].",
+          "options": [
+            "Sales rose sharply during the holiday season.",
+            "The inventory system will be replaced next year.",
+            "New associates will also be able to watch their mentors serve customers.",
+            "Mentors must have worked here for at least two years."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「New associates will also be able to watch their mentors serve customers.」：前一句講導師示範怎麼做，後一句說 this hands-on approach，C 用 also 補充「看導師實際接待客人」，正好是 hands-on（實地做中學）的內容，承上啟下。A 節慶業績和計畫無關；B 換系統和這段無關，還會讓人以為白教了；D 資格條件第二段才談，放在這裡會打斷「方法」的敘述，也和第二段重複。\n【考點】Part 6・句子插入\n【判斷依據】後句 this hands-on approach 需要前面有一個具體的實地做法。",
+          "ability": "R3",
+          "questionType": "sentence-insertion"
+        },
+        {
+          "id": "FORM-P6-02C",
+          "skill": "r-grammar",
+          "prompt": "Select the best word for [3].",
+          "options": [
+            "encourage",
+            "are encouraged",
+            "encouraging",
+            "have encouraged"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「are encouraged」：主詞是 Employees（who have worked … two years 是修飾的子句），員工是「被鼓勵」去申請，用被動 are encouraged to apply。A、D 主動語態，意思變成員工去鼓勵別人；C 現在分詞不能當主要動詞。\n【考點】Part 6・文法題\n【判斷依據】主詞員工是被鼓勵的一方，用被動。",
+          "ability": "R5",
+          "questionType": "grammar"
+        },
+        {
+          "id": "FORM-P6-02D",
+          "skill": "r-grammar",
+          "prompt": "Select the best word for [4].",
+          "options": [
+            "If",
+            "Unless",
+            "Although",
+            "Because"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「If」：If interested＝If you are interested 的省略句，接著是 please complete the form，是條件句。B Unless 意思相反（除非有興趣才不要填）；C Although 表讓步；D Because interested 不能這樣省略，語意也不對。\n【考點】Part 6・文法題\n【判斷依據】有興趣的話就填表，是條件關係。",
+          "ability": "R5",
+          "questionType": "grammar"
         }
       ]
     }

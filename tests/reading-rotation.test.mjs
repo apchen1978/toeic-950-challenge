@@ -20,8 +20,8 @@ const key = (group) => shape(group).join('/');
 // at Paul's request before he had taken them. read-full-1 stays frozen.
 const originalDigests = {
   'read-full-1': '8fbb2dbb315267f4a0c0ff1195b350878bc0a052719f6477fae78a1b2caf351e',
-  'read-full-2': 'b78b41203cc29292f924d68d35e9dcb303ec30d02a0f74feb9f6bb45dbf30895',
-  'read-full-3': '25d372c8e5e68264fd412e436e70ab4fa6c5fb06562ca81977bc1a4ef38f05dc'
+  'read-full-2': '84b5b044adc3f27f281522da61ef66d856dda16d6f002f70d8b532156db5a9cf',
+  'read-full-3': '54358e6e8258e5aaf968c2b585f6012d55b5fbc5f793fcec998752193f4e4dff'
 };
 
 test('50 seeds per reading mock preserve structure, answer keys and group exclusions', () => {
