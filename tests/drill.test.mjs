@@ -74,3 +74,10 @@ test("app remembers missed drill items and speaks Part 2 prompts before the time
   ]) assert.ok(app.includes(snippet), snippet);
   for (const action of ["speed-replay", "speed-voice"]) assert.ok(app.includes(`case "${action}"`), action);
 });
+
+test("meeting and schedule vocabulary pairs (banquet, proposal, status update, tentative ...) are in the paraphrase drill", () => {
+  const left = new Set(PARAPHRASES.map((p) => p[0]));
+  for (const word of ["banquet", "proposal", "status update", "tentative", "itinerary", "agenda", "finalize", "overlap", "keynote", "rush order", "estimate", "venue"]) assert.ok(left.has(word), word);
+  assert.ok(PARAPHRASES.length >= 48);
+  assert.equal(new Set(PARAPHRASES.map((p) => p[1])).size, PARAPHRASES.length, "no duplicate answers");
+});
