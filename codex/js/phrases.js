@@ -103,7 +103,19 @@ export const PARAPHRASES = [
   ["competent", "capable／skilled", "有能力的"],
   ["deadline", "due date／time limit", "期限"],
   ["colleague", "coworker／associate", "同事"],
-  ["seek", "look for／search for", "尋找"]
+  ["seek", "look for／search for", "尋找"],
+  ["banquet", "formal dinner／large meal", "宴會、正式的餐會"],
+  ["proposal", "suggested plan／new idea", "提案"],
+  ["status update", "progress report", "進度回報"],
+  ["tentative", "not final／provisional", "暫定的"],
+  ["itinerary", "travel plan／route and dates", "行程"],
+  ["agenda", "list of topics／discussion points", "議程"],
+  ["finalize", "complete／settle on", "定案"],
+  ["overlap", "happen at the same time／conflict", "撞期、重疊"],
+  ["keynote", "main speech／featured address", "主題演講"],
+  ["rush order", "urgent order／expedited order", "急件"],
+  ["estimate", "rough quote／approximate cost", "概估"],
+  ["venue", "place where an event is held／location", "場地"]
 ];
 
 // Email 常用句：讀信先抓寄信目的。每筆 [句型, 意思／目的]。
