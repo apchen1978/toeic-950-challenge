@@ -31726,6 +31726,766 @@
           "questionType": "grammar"
         }
       ]
+    },
+    {
+      "id": "g-form-p6-03",
+      "section": "reading",
+      "part": 6,
+      "title": "Email: Your stay at the Harborview Inn",
+      "passage": {
+        "docs": [
+          {
+            "label": "Email",
+            "text": "To: Grace Okafor <gokafor@lumen-studio-example.com>\nFrom: Daniel Reyes <reservations@harborview-example.com>\nDate: 7 May\nSubject: Your stay at the Harborview Inn\n\nDear Ms. Okafor,\n\nThank you for booking three nights with us for the Coastal Design Forum, 14–16 May. Your room has been [1] for early check-in at 11:00 A.M., as you requested. [2] Simply show it at the front desk to receive your welcome packet and parking pass.\n\nPlease note that our main entrance on Pier Street will be closed for repairs during your visit. [3], guests should use the side entrance on Mill Lane, which is clearly marked. Our staff will be stationed there to help with luggage.\n\nIf you plan to attend the forum's evening reception, a shuttle will leave the hotel lobby at 6:15 P.M. each evening. Seats are limited, so we recommend [4] one at least a day in advance by calling 555-0143.\n\nWe look forward to welcoming you.\n\nWarm regards,\nDaniel Reyes\nGuest Services, Harborview Inn"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "FORM-P6-03A",
+          "skill": "r-grammar",
+          "prompt": "Select the best word for [1].",
+          "options": [
+            "reserved",
+            "reserving",
+            "reserves",
+            "to reserve"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「reserved」：「has been ___」是現在完成式被動，主詞 room 是被保留的對象，要用過去分詞 reserved。reserving 是主動進行，reserves 是動詞現在式，to reserve 是不定詞，都不能接在 has been 後面。\n【考點】Part 6・文法／連接詞\n【判斷依據】has been 後接過去分詞形成被動，房間是「被保留」。",
+          "ability": "R5",
+          "questionType": "grammar"
+        },
+        {
+          "id": "FORM-P6-03B",
+          "skill": "r-purpose",
+          "prompt": "Select the best sentence for [2].",
+          "options": [
+            "The forum will feature more than forty speakers.",
+            "Our restaurant serves breakfast from 6:30 A.M.",
+            "A confirmation code is included at the bottom of this e-mail.",
+            "You may cancel up to 48 hours before arrival."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「A confirmation code is included at the bottom of this e-mail.」：下一句「Simply show it at the front desk」的 it 必須指一個可以出示的東西，只有 confirmation code 接得上。講者人數、早餐時間、取消規定都和報到有關或無關，但都沒有可以「出示」的單數名詞讓 it 指回去。\n【考點】Part 6・句子插入\n【判斷依據】後一句的代名詞 it 要指「可以在櫃檯出示的東西」，也就是確認碼。",
+          "ability": "R3",
+          "questionType": "sentence-insertion"
+        },
+        {
+          "id": "FORM-P6-03C",
+          "skill": "r-grammar",
+          "prompt": "Select the best word for [3].",
+          "options": [
+            "Otherwise",
+            "Instead",
+            "Nevertheless",
+            "For example"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Instead」：前一句說正門關閉，這一句說改走側門，是「替代方案」，用 Instead。Otherwise 是「否則」，Nevertheless 是「儘管如此」表讓步，For example 是舉例，都不符合「改走另一個門」的關係。\n【考點】Part 6・文法／連接詞\n【判斷依據】前句正門關閉、本句改走側門，是替代關係。",
+          "ability": "R5",
+          "questionType": "grammar"
+        },
+        {
+          "id": "FORM-P6-03D",
+          "skill": "r-vocabulary",
+          "prompt": "Select the best word for [4].",
+          "options": [
+            "boarding",
+            "sharing",
+            "returning",
+            "booking"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「booking」：這一句的功能是「方法」：座位有限，所以建議提前一天打電話「預訂」。boarding 是上車，不可能提前一天打電話上車；sharing 和 returning 都和「座位有限、提前打電話」的證據接不上。\n【考點】Part 6・字彙題\n【判斷依據】Seats are limited 加上 in advance by calling，說明要做的是事先預訂。",
+          "ability": "R4",
+          "questionType": "vocabulary"
+        }
+      ]
+    },
+    {
+      "id": "g-form-p6-04",
+      "section": "reading",
+      "part": 6,
+      "title": "Notice: Changes to the Brightleaf Rewards Program",
+      "passage": {
+        "docs": [
+          {
+            "label": "Notice",
+            "text": "Notice to All Members: Changes to the Brightleaf Rewards Program\n\nBeginning 1 March, Brightleaf Home Stores will update its rewards program. Points already in members' accounts will be carried over automatically. Members will continue to earn one point for every dollar spent. [1], points will now remain valid for 24 months instead of 12, giving members more time to use them.\n\nWe are also introducing a new way to redeem points. Until now, points could be [2] only for store gift cards. From March, members will be able to apply them directly at checkout, either in store or online. [3]\n\nMembers who have not yet registered an e-mail address with us should do so before 28 February. Those [4] register by that date will receive a 200-point bonus and early notice of our seasonal sales.\n\nFor questions, please visit any customer service counter or write to rewards@brightleaf-example.com.\n\nBrightleaf Home Stores\nCustomer Relations Department"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "FORM-P6-04A",
+          "skill": "r-grammar",
+          "prompt": "Select the best word for [1].",
+          "options": [
+            "However",
+            "As a result",
+            "In addition",
+            "Instead"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「In addition」：前一句說累積方式不變，這一句再加上一項好處（點數效期延長），是「追加」關係，用 In addition。However 表轉折，但兩句都是對會員有利的訊息，沒有對比；As a result 表因果，效期延長不是「一元一點」造成的；Instead 表取代，但累積方式並沒有被取代。\n【考點】Part 6・文法／連接詞\n【判斷依據】前後兩句都是會員好處，屬於並列追加。",
+          "ability": "R5",
+          "questionType": "grammar"
+        },
+        {
+          "id": "FORM-P6-04B",
+          "skill": "r-vocabulary",
+          "prompt": "Select the best word for [2].",
+          "options": [
+            "exchanged",
+            "earned",
+            "spent",
+            "printed"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「exchanged」：這一句的功能是說明「以前的兌換方式」：段落開頭說 a new way to redeem points，所以這句講舊的兌換方法，「點數只能換禮券」用 exchanged for。earned 是賺取，不是兌換；spent 要接 on；printed 和兌換無關。\n【考點】Part 6・字彙題\n【判斷依據】段首 a new way to redeem points 表示本句在講舊的兌換方法。",
+          "ability": "R4",
+          "questionType": "vocabulary"
+        },
+        {
+          "id": "FORM-P6-04C",
+          "skill": "r-purpose",
+          "prompt": "Select the best sentence for [3].",
+          "options": [
+            "The store's spring catalog will be mailed in April.",
+            "Points earned before March will therefore expire next week.",
+            "These members must first visit a customer service counter.",
+            "This means a purchase can be paid for partly in points and partly in cash."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「This means a purchase can be paid for partly in points and partly in cash.」：前一句說點數可在結帳時直接使用，這句進一步說明「可以部分點數、部分現金」，接得上。春季型錄離題；「三月前的點數下週到期」和效期延長到 24 個月矛盾；These members 前面沒有可指的特定會員群。\n【考點】Part 6・句子插入\n【判斷依據】前句講結帳時可用點數，本句補充它的實際意思。",
+          "ability": "R3",
+          "questionType": "sentence-insertion"
+        },
+        {
+          "id": "FORM-P6-04D",
+          "skill": "r-grammar",
+          "prompt": "Select the best word for [4].",
+          "options": [
+            "which",
+            "who",
+            "whose",
+            "whom"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「who」：Those ___ register 中，關係代名詞要當 register 的主詞，而且先行詞 Those 指人，所以用 who。which 指事物，whose 後面要接名詞，whom 是受格不能當主詞。\n【考點】Part 6・文法／連接詞\n【判斷依據】先行詞是人，且關代在子句中當主詞。",
+          "ability": "R5",
+          "questionType": "grammar"
+        }
+      ]
+    },
+    {
+      "id": "g-form-p6-05",
+      "section": "reading",
+      "part": 6,
+      "title": "Memo: Software update this Friday",
+      "passage": {
+        "docs": [
+          {
+            "label": "Memo",
+            "text": "MEMO\nTo: All Accounting Staff\nFrom: Priya Nandakumar, IT Support\nDate: 9 October\nSubject: Software update this Friday\n\nThe accounting software on all office computers will be updated this Friday after 6:00 P.M. The update [1] about three hours, so please save your work and log out of the system before you leave for the weekend.\n\nThe new version includes an automatic backup feature. Every file you open will be copied to the company server every ten minutes. This will [2] the risk of losing data if your computer suddenly shuts down or the power goes out.\n\n[3] you return on Monday, you will be asked to create a new password. [4] Please choose one that you have not used before and do not share it with anyone.\n\nIf you experience any problems after the update, contact the help desk at extension 4471. Thank you for your cooperation."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "FORM-P6-05A",
+          "skill": "r-grammar",
+          "prompt": "Select the best word for [1].",
+          "options": [
+            "took",
+            "will take",
+            "has taken",
+            "taking"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「will take」：更新是在「這週五」，屬於未來的事，所以用 will take。took 是過去式、has taken 是現在完成式，時間都不對；taking 不是完整動詞，句子缺動詞。\n【考點】Part 6・文法／連接詞\n【判斷依據】更新還沒發生（this Friday），要用未來式。",
+          "ability": "R5",
+          "questionType": "grammar"
+        },
+        {
+          "id": "FORM-P6-05B",
+          "skill": "r-vocabulary",
+          "prompt": "Select the best word for [2].",
+          "options": [
+            "increase",
+            "measure",
+            "report",
+            "reduce"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「reduce」：這一句的功能是說明自動備份的「好處」：每十分鐘存一次，所以電腦突然關機時遺失資料的風險會「降低」。increase 方向相反；measure 和 report 和風險有關，但備份本身不會測量或回報風險，只會減少損失。\n【考點】Part 6・字彙題\n【判斷依據】前一句說每十分鐘自動備份，本句是它帶來的好處。",
+          "ability": "R4",
+          "questionType": "vocabulary"
+        },
+        {
+          "id": "FORM-P6-05C",
+          "skill": "r-grammar",
+          "prompt": "Select the best word for [3].",
+          "options": [
+            "When",
+            "During",
+            "Until",
+            "Although"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「When」：後面接完整子句 you return on Monday，要用連接詞，「當你週一回來時」用 When。During 是介系詞，不能接子句；Until 表「直到…才」，意思變成週一前一直被要求，不合理；Although 表讓步，前後沒有對比。\n【考點】Part 6・文法／連接詞\n【判斷依據】空格後是完整子句，且語意是「回來的那個時候」。",
+          "ability": "R5",
+          "questionType": "grammar"
+        },
+        {
+          "id": "FORM-P6-05D",
+          "skill": "r-purpose",
+          "prompt": "Select the best sentence for [4].",
+          "options": [
+            "The help desk will be closed on Monday morning.",
+            "The backup feature can be turned off at any time.",
+            "It must contain at least ten characters, including one number.",
+            "Your old files will be deleted during the update."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「It must contain at least ten characters, including one number.」：前一句提到要設定新密碼，這一句的 It 指 password，說明密碼規則，後一句再說不要用舊的，前後連貫。服務台週一早上關閉和最後一段「有問題聯絡服務台」衝突；備份可關閉離題；舊檔案會被刪除和自動備份的說明矛盾。\n【考點】Part 6・句子插入\n【判斷依據】It 要指前一句的 new password，並接著講設定規則。",
+          "ability": "R3",
+          "questionType": "sentence-insertion"
+        }
+      ]
+    },
+    {
+      "id": "g-form-p6-06",
+      "section": "reading",
+      "part": 6,
+      "title": "Article: Bayline Ferries adds early crossing",
+      "passage": {
+        "docs": [
+          {
+            "label": "Article",
+            "text": "PORT ELLIS (12 April) — Bayline Ferries will add an early-morning crossing between Port Ellis and Carrow Island starting 1 June, the company announced on Tuesday. The new 6:50 A.M. departure is intended to [1] demand from island residents who work on the mainland. A survey carried out last autumn found that more than 300 residents would use an earlier ferry if one were available.\n\nUntil now, commuters [2] to take the 9:30 A.M. boat, which arrives well after most offices open. [3] Others have simply turned down jobs in the city.\n\nThe added crossing will be operated by the Sea Lark, a smaller vessel that carries 120 passengers but no cars. [4], drivers will still need to book one of the later sailings. Bayline spokesperson Mara Feld said the company would consider adding vehicle space next year if the service proves popular.\n\nTickets for the new departure go on sale on 15 May at bayline-example.com."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "FORM-P6-06A",
+          "skill": "r-vocabulary",
+          "prompt": "Select the best word for [1].",
+          "options": [
+            "create",
+            "survey",
+            "limit",
+            "meet"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「meet」：這一句的功能是說明新航班的「目的」。後一句是證據：調查發現已經有三百多位居民想搭更早的船，代表需求「已經存在」，所以是「滿足」需求 meet。create 只對一半：看前一句好像也能說「創造需求」，但後一句證明需求本來就有，不需要被創造；survey 是調查，那是去年秋天已經做過的事；limit 方向相反。\n【考點】Part 6・字彙題\n【判斷依據】後一句的調查顯示需求早已存在，所以新航班是去滿足它。",
+          "ability": "R4",
+          "questionType": "vocabulary"
+        },
+        {
+          "id": "FORM-P6-06B",
+          "skill": "r-grammar",
+          "prompt": "Select the best word for [2].",
+          "options": [
+            "have had",
+            "will have",
+            "are having",
+            "to have"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「have had」：Until now 表示「從過去到現在為止」，要用現在完成式 have had。will have 是未來；are having 現在進行式不能表達持續到現在的狀態，而且 have to 很少用進行式；to have 不是完整動詞。\n【考點】Part 6・文法／連接詞\n【判斷依據】Until now 是現在完成式的典型時間詞。",
+          "ability": "R5",
+          "questionType": "grammar"
+        },
+        {
+          "id": "FORM-P6-06C",
+          "skill": "r-purpose",
+          "prompt": "Select the best sentence for [3].",
+          "options": [
+            "The 9:30 A.M. boat will no longer run after June.",
+            "Most passengers on that crossing are tourists.",
+            "As a result, some have rented rooms in Port Ellis during the working week.",
+            "The Sea Lark was built in 2019."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「As a result, some have rented rooms in Port Ellis during the working week.」：後一句「Others have simply turned down jobs」的 Others 要和前面的 some 配對，而且兩句都是通勤者因船班太晚而採取的做法，所以選「有些人只好在港口租房」。九點半的船停駛沒有根據，而且後文說開車的人還要搭較晚的船，等於還有晚班；「大多數乘客是觀光客」雖然也有一群人，但觀光客不會「拒絕城市的工作」；船的建造年份離題。\n【考點】Part 6・句子插入\n【判斷依據】後句 Others 需要前句 some 對應，且同樣是在講通勤者的應對方式。",
+          "ability": "R3",
+          "questionType": "sentence-insertion"
+        },
+        {
+          "id": "FORM-P6-06D",
+          "skill": "r-grammar",
+          "prompt": "Select the best word for [4].",
+          "options": [
+            "However",
+            "Therefore",
+            "Even so",
+            "Similarly"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Therefore」：前一句說新船不載車，所以開車的人「因此」還是要訂較晚的船，是因果關係，用 Therefore。However 和 Even so 表轉折、讓步，但前後沒有對比；Similarly 表相似，也不對。\n【考點】Part 6・文法／連接詞\n【判斷依據】「不載車」是原因，「開車的人要搭晚班」是結果。",
+          "ability": "R5",
+          "questionType": "grammar"
+        }
+      ]
+    },
+    {
+      "id": "g-form-p6-07",
+      "section": "reading",
+      "part": 6,
+      "title": "Advertisement: Greenfork Office Catering",
+      "passage": {
+        "docs": [
+          {
+            "label": "Advertisement",
+            "text": "Lunch Made Simple with Greenfork Office Catering\n\nTired of the same sandwiches every week? Greenfork delivers freshly prepared lunches to offices of ten people or more anywhere in the Riverside business district. Our menu changes every Monday and [1] at least three vegetarian dishes. Every dish is labeled with a full list of ingredients.\n\nOrdering is easy. Simply choose your meals on our Web site by 4:00 P.M., and they will arrive the next day at the time you select. [2] Each meal is packed in a container made from recycled paper, which can be [3] along with your office's regular paper waste.\n\nFor a limited time, new business customers will receive 15 percent off their first three orders. This offer is available [4] 31 March. Just enter the code NEWDESK when you check out.\n\nVisit greenfork-example.com or call 555-0178 to see this week's menu and our full price list."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "FORM-P6-07A",
+          "skill": "r-grammar",
+          "prompt": "Select the best word for [1].",
+          "options": [
+            "includes",
+            "including",
+            "include",
+            "inclusion"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「includes」：Our menu changes ... and ___ 是兩個動詞用 and 並列，主詞是單數 menu，所以用 includes。including 不是動詞；include 主詞動詞不一致；inclusion 是名詞。\n【考點】Part 6・文法／連接詞\n【判斷依據】and 前後是同一主詞 menu 的兩個動詞，要用第三人稱單數。",
+          "ability": "R5",
+          "questionType": "grammar"
+        },
+        {
+          "id": "FORM-P6-07B",
+          "skill": "r-purpose",
+          "prompt": "Select the best sentence for [2].",
+          "options": [
+            "Our chefs trained at top restaurants in the city.",
+            "This offer cannot be combined with other discounts.",
+            "It is then sent to our main kitchen in the suburbs.",
+            "Changes can be made up to two hours before delivery."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「Changes can be made up to two hours before delivery.」：這一段在講訂餐流程，前一句說下午四點前訂、隔天送達，接著補充「送達前兩小時都能修改」，最順。廚師背景和流程無關；This offer 在這裡還沒出現（優惠在下一段）；It 是單數，但前面的 meals 是複數，對不上。\n【考點】Part 6・句子插入\n【判斷依據】前句講訂餐與送達時間，本句補充訂單可修改，延續同一流程。",
+          "ability": "R3",
+          "questionType": "sentence-insertion"
+        },
+        {
+          "id": "FORM-P6-07C",
+          "skill": "r-vocabulary",
+          "prompt": "Select the best word for [3].",
+          "options": [
+            "stored",
+            "recycled",
+            "heated",
+            "returned"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「recycled」：這一句的功能是說明餐盒的「處理方式」，證據是「along with your office's regular paper waste」，跟一般廢紙一起處理，就是回收 recycled。heated 只和用餐有關，不能「跟廢紙一起」；stored 和 returned 也和廢紙處理接不上。\n【考點】Part 6・字彙題\n【判斷依據】along with ... paper waste 指出這裡講的是用完後怎麼處理。",
+          "ability": "R4",
+          "questionType": "vocabulary"
+        },
+        {
+          "id": "FORM-P6-07D",
+          "skill": "r-grammar",
+          "prompt": "Select the best word for [4].",
+          "options": [
+            "by",
+            "during",
+            "until",
+            "since"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「until」：「優惠一直到 3 月 31 日都有效」表示持續到某個時間點，用 until。by 表「在…之前完成」，用在一次性的動作，不用在持續的狀態；during 後面要接一段期間，不接日期；since 表從過去某時開始，方向相反。\n【考點】Part 6・文法／連接詞\n【判斷依據】available 是持續狀態，要用表示「持續到」的 until。",
+          "ability": "R5",
+          "questionType": "grammar"
+        }
+      ]
+    },
+    {
+      "id": "g-form-p6-08",
+      "section": "reading",
+      "part": 6,
+      "title": "Email: Paper pricing from 1 October",
+      "passage": {
+        "docs": [
+          {
+            "label": "Email",
+            "text": "To: Lena Marsh <lmarsh@cobaltprint-example.com>\nFrom: Tomas Varga <tvarga@hillsidepaper-example.com>\nDate: 3 September\nSubject: Paper pricing from 1 October\n\nDear Ms. Marsh,\n\nI am writing to let you know that the price of our recycled copy paper will rise by 6 percent on 1 October. The increase is due to higher transport costs, which have gone up three times this year. [1]\n\nWe value our long relationship with Cobalt Print, so we would like to help you [2] the effect of this change. Any order placed before 30 September will be charged at the current rate, and we can store the paper in our warehouse at no cost until you need it. [3], customers who order 200 cartons or more at a time will receive free delivery.\n\n[4] you would like to discuss a larger advance order, please call me directly at 555-0126.\n\nBest regards,\nTomas Varga\nAccount Manager, Hillside Paper Supply"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "FORM-P6-08A",
+          "skill": "r-purpose",
+          "prompt": "Select the best sentence for [1].",
+          "options": [
+            "Our new warehouse will open next spring.",
+            "As a result, our delivery times have become shorter.",
+            "Unfortunately, we are no longer able to absorb these costs ourselves.",
+            "We have therefore lowered the price of our premium paper."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Unfortunately, we are no longer able to absorb these costs ourselves.」：前一句說運費一年漲了三次，這句說「我們無法再自己吸收」，自然解釋為何要漲價。新倉庫開幕離題；運費上漲「所以」送貨更快，因果不合理；「因此降價」和整封信的漲價矛盾。\n【考點】Part 6・句子插入\n【判斷依據】前句講成本上升，本句說明為什麼要轉嫁給客戶。",
+          "ability": "R3",
+          "questionType": "sentence-insertion"
+        },
+        {
+          "id": "FORM-P6-08B",
+          "skill": "r-vocabulary",
+          "prompt": "Select the best word for [2].",
+          "options": [
+            "calculate",
+            "limit",
+            "explain",
+            "report"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「limit」：這一句的功能是「目的」：我們想幫你「減輕」漲價的影響。證據在後面兩句，用舊價格、免費倉儲、大量免運，都是降低衝擊的具體方法。calculate 和 explain 看起來也和「影響」有關，但後文並沒有計算或說明影響，而是給優惠；report 也不符合。\n【考點】Part 6・字彙題\n【判斷依據】後面列出的舊價、免費倉儲、免運都是在降低漲價的衝擊。",
+          "ability": "R4",
+          "questionType": "vocabulary"
+        },
+        {
+          "id": "FORM-P6-08C",
+          "skill": "r-grammar",
+          "prompt": "Select the best word for [3].",
+          "options": [
+            "In addition",
+            "Instead",
+            "Otherwise",
+            "Even so"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「In addition」：前面已經列出兩項優惠，這一句再加一項免運，是追加關係，用 In addition。Instead 表取代，但免運不是取代前面的優惠；Otherwise 是「否則」；Even so 表讓步，前後沒有對比。\n【考點】Part 6・文法／連接詞\n【判斷依據】前後都是給客戶的優惠，是並列追加。",
+          "ability": "R5",
+          "questionType": "grammar"
+        },
+        {
+          "id": "FORM-P6-08D",
+          "skill": "r-grammar",
+          "prompt": "Select the best word for [4].",
+          "options": [
+            "Unless",
+            "Whether",
+            "Although",
+            "If"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「If」：「如果你想討論更大量的預訂，請直接打給我」是條件句，用 If。Unless 意思相反，變成「除非你想討論才打」，不合理；Whether 引導名詞子句或「無論」，不接 please 祈使句這種條件；Although 表讓步，沒有對比。\n【考點】Part 6・文法／連接詞\n【判斷依據】後半是祈使句 please call me，前半是它的條件。",
+          "ability": "R5",
+          "questionType": "grammar"
+        }
+      ]
+    },
+    {
+      "id": "g-form-p6-09",
+      "section": "reading",
+      "part": 6,
+      "title": "Notice: Eastfield Public Library second-floor closure",
+      "passage": {
+        "docs": [
+          {
+            "label": "Notice",
+            "text": "Notice to Library Users\n\nThe Eastfield Public Library's second floor will be closed from 6 to 27 January while new lighting and shelving [1]. During this period, the reference collection and the study rooms will be unavailable.\n\nThe ground floor will remain open as usual. [2], we will extend our weekday hours until 9:00 P.M. so that students preparing for winter exams have more time to study there.\n\nItems from the second floor may still be requested. Please fill out a request form at the front desk, and staff will retrieve the books for you within 24 hours. [3]\n\nWe expect the work to make the second floor brighter and more comfortable. The new shelving will also [4] space for 2,000 additional books, allowing us to expand our business and technology sections.\n\nWe apologize for any inconvenience. For updates, visit eastfield-library-example.org or call 555-0157.\n\nEastfield Public Library"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "FORM-P6-09A",
+          "skill": "r-grammar",
+          "prompt": "Select the best word for [1].",
+          "options": [
+            "are installing",
+            "are being installed",
+            "have installed",
+            "to install"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「are being installed」：燈具和書架是「被安裝」的，而且是在關閉期間正在進行，所以用現在進行式被動 are being installed。are installing 和 have installed 都是主動，變成燈具自己在安裝東西；to install 不是完整動詞，while 子句缺動詞。\n【考點】Part 6・文法／連接詞\n【判斷依據】主詞 lighting and shelving 是被安裝的對象，要用被動。",
+          "ability": "R5",
+          "questionType": "grammar"
+        },
+        {
+          "id": "FORM-P6-09B",
+          "skill": "r-grammar",
+          "prompt": "Select the best word for [2].",
+          "options": [
+            "In addition",
+            "Otherwise",
+            "In contrast",
+            "For instance"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「In addition」：前句說一樓照常開放，這句再加一項安排（延長開放時間），是追加，用 In addition。Otherwise 是「否則」；In contrast 表對比，但兩句都是對讀者有利的安排；For instance 是舉例，延長時間不是「照常開放」的例子。\n【考點】Part 6・文法／連接詞\n【判斷依據】兩句都是關閉期間給讀者的補救安排，屬於追加。",
+          "ability": "R5",
+          "questionType": "grammar"
+        },
+        {
+          "id": "FORM-P6-09C",
+          "skill": "r-purpose",
+          "prompt": "Select the best sentence for [3].",
+          "options": [
+            "The second floor will reopen in early December.",
+            "Study rooms can be booked online up to a week ahead.",
+            "The reference librarian has worked here for twenty years.",
+            "You will be notified by text message when they are ready to collect."
+          ],
+          "answer": 3,
+          "explanation": "正解 D「You will be notified by text message when they are ready to collect.」：前句說工作人員會在 24 小時內幫你取書，這句的 they 指那些書，說明書準備好會通知你，前後連貫。十二月初重新開放和公告的 1 月 6 日到 27 日矛盾；自修室在這期間無法使用，不能線上預約；館員年資離題。\n【考點】Part 6・句子插入\n【判斷依據】they 要指前句 the books，並接著講取書流程。",
+          "ability": "R3",
+          "questionType": "sentence-insertion"
+        },
+        {
+          "id": "FORM-P6-09D",
+          "skill": "r-vocabulary",
+          "prompt": "Select the best word for [4].",
+          "options": [
+            "require",
+            "remove",
+            "provide",
+            "measure"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「provide」：這一句的功能是說明新書架的「好處」，證據是後半句「allowing us to expand our business and technology sections」，能擴充館藏，代表書架「提供」更多空間。require 看似合理（書架需要空間），但後面講的是因此能擴充，是好處不是需求；remove 方向相反；measure 和好處無關。\n【考點】Part 6・字彙題\n【判斷依據】allowing us to expand 表示這句在講新書架帶來的好處。",
+          "ability": "R4",
+          "questionType": "vocabulary"
+        }
+      ]
+    },
+    {
+      "id": "g-form-p6-10",
+      "section": "reading",
+      "part": 6,
+      "title": "Article: Local bakery goes solar",
+      "passage": {
+        "docs": [
+          {
+            "label": "Article",
+            "text": "Local Bakery Goes Solar\n\nCASTLETON (8 July) — Rosie's Bakehouse, a family-owned bakery on Market Street, has installed 40 solar panels on its roof. The bakery employs twelve people and has operated at the same location since 1987. Owner Rosa Lindqvist said the panels [1] about half of the electricity used by the bakery's ovens and refrigerators.\n\n\"Our energy bills had nearly doubled over the past two years,\" Ms. Lindqvist explained. \"We needed a way to keep our prices low [2] cutting the quality of our bread. [3]\"\n\nThe project cost about $28,000. [4], the bakery received a grant from the city's Green Business Fund that covered a third of that amount.\n\nMs. Lindqvist expects the panels to pay for themselves within six years. She hopes other shops on Market Street will follow her example. The bakery will host an open day on 20 July for business owners who want to learn more about the project."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "FORM-P6-10A",
+          "skill": "r-vocabulary",
+          "prompt": "Select the best word for [1].",
+          "options": [
+            "consume",
+            "waste",
+            "measure",
+            "supply"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「supply」：這一句的功能是說明太陽能板的「好處」：提供烤箱和冰箱一半的電力。下一段「電費兩年幾乎翻倍」是證據，說明為什麼需要自己發電。consume 和 waste 都是用電或浪費，方向相反；measure 只是測量，不能解決電費問題。\n【考點】Part 6・字彙題\n【判斷依據】下一段的電費翻倍說明太陽能板的作用是供電、省錢。",
+          "ability": "R4",
+          "questionType": "vocabulary"
+        },
+        {
+          "id": "FORM-P6-10B",
+          "skill": "r-grammar",
+          "prompt": "Select the best word for [2].",
+          "options": [
+            "unless",
+            "despite",
+            "without",
+            "instead"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「without」：「維持低價，同時不降低麵包品質」，後面接動名詞 cutting，用介系詞 without。unless 是連接詞，後面要接子句；despite 意思變成「儘管降低品質」，不合理；instead 是副詞，要用 instead of 才能接動名詞。\n【考點】Part 6・文法／連接詞\n【判斷依據】空格後是動名詞，語意是「不必降低品質」。",
+          "ability": "R5",
+          "questionType": "grammar"
+        },
+        {
+          "id": "FORM-P6-10C",
+          "skill": "r-purpose",
+          "prompt": "Select the best sentence for [3].",
+          "options": [
+            "Solar power turned out to be the answer.",
+            "Most of our customers live nearby.",
+            "We will close the shop for good next month.",
+            "Those prices have already been raised twice."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「Solar power turned out to be the answer.」：前句說需要一個方法維持低價，這句說太陽能就是答案，正好回答前句。顧客住附近離題；下個月永久關店和後文「希望其他店跟進」矛盾；「價格已經漲兩次」和「維持低價」矛盾。\n【考點】Part 6・句子插入\n【判斷依據】前句提出需求（a way to keep prices low），本句給出解法。",
+          "ability": "R3",
+          "questionType": "sentence-insertion"
+        },
+        {
+          "id": "FORM-P6-10D",
+          "skill": "r-grammar",
+          "prompt": "Select the best word for [4].",
+          "options": [
+            "Otherwise",
+            "Fortunately",
+            "Similarly",
+            "For example"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Fortunately」：前句說花費兩萬八千元，這句說拿到補助支付三分之一，是好消息，用 Fortunately。Otherwise 是「否則」；Similarly 表相似，但補助和花費不是相似的事；For example 是舉例，補助不是費用的例子。\n【考點】Part 6・文法／連接詞\n【判斷依據】高成本之後接到補助，語氣是「幸好」。",
+          "ability": "R5",
+          "questionType": "grammar"
+        }
+      ]
+    },
+    {
+      "id": "g-form-p6-11",
+      "section": "reading",
+      "part": 6,
+      "title": "Memo: Handheld scanner rollout",
+      "passage": {
+        "docs": [
+          {
+            "label": "Memo",
+            "text": "MEMO\nTo: Shift Supervisors, Dunmore Distribution Center\nFrom: Kwame Asante, Operations Manager\nDate: 22 February\nRe: Handheld scanner rollout\n\nStarting 4 March, all pickers will use new handheld scanners in place of printed order lists. The devices read shelf labels and confirm that the correct item has been picked before it is packed. [1], packing errors should fall sharply. During a two-week trial in Zone C, they dropped from 41 to 6.\n\nThe scanners will also [2] stock levels in real time. Each time an item is scanned, the inventory system is updated automatically, so purchasing staff will know immediately when a product is running low.\n\nTraining sessions will be held on 28 February and 1 March. Every picker must attend one session [3] the new system goes live. [4] Please submit your team's preferred session by 26 February.\n\nPrinted lists will remain available as a backup for the first week only."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "FORM-P6-11A",
+          "skill": "r-grammar",
+          "prompt": "Select the best word for [1].",
+          "options": [
+            "As a result",
+            "In contrast",
+            "Nevertheless",
+            "Until then"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「As a result」：前句說掃描器會在包裝前確認品項正確，這句說包裝錯誤會大幅下降，是因果關係，用 As a result。In contrast 和 Nevertheless 表對比、讓步，但前後方向一致；Until then 表「在那之前」，和這兩句的邏輯無關。\n【考點】Part 6・文法／連接詞\n【判斷依據】前句是機制，本句是它造成的結果。",
+          "ability": "R5",
+          "questionType": "grammar"
+        },
+        {
+          "id": "FORM-P6-11B",
+          "skill": "r-vocabulary",
+          "prompt": "Select the best word for [2].",
+          "options": [
+            "predict",
+            "track",
+            "restore",
+            "lower"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「track」：這一句的功能是說明掃描器的第二個「功能」。後一句是證據：每掃一次，庫存系統就自動更新，採購馬上知道哪個快沒貨，這是即時「追蹤」庫存。predict 只對一半：看前半句「庫存」好像可以預測，但後一句講的是即時記錄現況，不是推估未來；restore 是補回，lower 是降低，掃描器都做不到。\n【考點】Part 6・字彙題\n【判斷依據】後一句講即時更新庫存現況，所以是追蹤，不是預測。",
+          "ability": "R4",
+          "questionType": "vocabulary"
+        },
+        {
+          "id": "FORM-P6-11C",
+          "skill": "r-grammar",
+          "prompt": "Select the best word for [3].",
+          "options": [
+            "by",
+            "until",
+            "prior",
+            "before"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「before」：後面接完整子句 the new system goes live，要用連接詞，「在新系統上線前參加」用 before。by 和 prior 是介系詞或形容詞（prior to），不能直接接子句；until 意思是「一直參加到上線」，不合理。\n【考點】Part 6・文法／連接詞\n【判斷依據】空格後是子句，語意是上線之前完成訓練。",
+          "ability": "R5",
+          "questionType": "grammar"
+        },
+        {
+          "id": "FORM-P6-11D",
+          "skill": "r-purpose",
+          "prompt": "Select the best sentence for [4].",
+          "options": [
+            "Zone C will be closed for the trial next month.",
+            "Each scanner costs about $350 to replace.",
+            "Each session lasts about 90 minutes, so supervisors should arrange cover for their teams.",
+            "These sessions were held last month in Zone C."
+          ],
+          "answer": 2,
+          "explanation": "正解 C「Each session lasts about 90 minutes, so supervisors should arrange cover for their teams.」：前後都在講訓練場次的安排，這句補充每場時間和主管要安排代班，接著請主管提交場次，最連貫。「試用區下個月封閉做試用」和前文「試用已經完成」矛盾；掃描器價格離題；「這些場次上個月已經舉辦」和 2 月 28 日、3 月 1 日的日期矛盾。\n【考點】Part 6・句子插入\n【判斷依據】前後句都在講訓練場次，本句提供主管安排所需的資訊。",
+          "ability": "R3",
+          "questionType": "sentence-insertion"
+        }
+      ]
+    },
+    {
+      "id": "g-form-p6-12",
+      "section": "reading",
+      "part": 6,
+      "title": "Advertisement: Linden Hub workspaces",
+      "passage": {
+        "docs": [
+          {
+            "label": "Advertisement",
+            "text": "Workspace When You Need It: Linden Hub\n\nLinden Hub offers bright, quiet workspaces just two minutes' walk from Central Station. Whether you need a desk for a day or a private office for a year, we have a plan that [1] your schedule. The building is open every day of the year, and members may bring up to two guests per visit for a small fee.\n\nOur Flex membership, at $180 per month, gives you access to any open desk from 7:00 A.M. to 10:00 P.M. [2], members on the $320 Resident plan have their own reserved desk and a personal storage locker. All members can use our meeting rooms, which are [3] by the hour through the Linden Hub app.\n\n[4] High-speed Wi-Fi, printing, and unlimited coffee are included in every plan at no extra charge.\n\nBook a free tour at lindenhub-example.com or call 555-0192 before 30 November and receive your first week free."
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "FORM-P6-12A",
+          "skill": "r-vocabulary",
+          "prompt": "Select the best word for [1].",
+          "options": [
+            "changes",
+            "delays",
+            "fits",
+            "replaces"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「fits」：這一句的功能是說明產品的「好處」：不論一天或一年，都有方案「配合」你的時間安排。前半句 Whether ... a day or ... a year 是證據，強調彈性。changes、delays、replaces 都會變成方案去改變、延誤或取代你的行程，方向不對。\n【考點】Part 6・字彙題\n【判斷依據】前半句強調各種需求都有方案，所以是方案配合你的行程。",
+          "ability": "R4",
+          "questionType": "vocabulary"
+        },
+        {
+          "id": "FORM-P6-12B",
+          "skill": "r-grammar",
+          "prompt": "Select the best word for [2].",
+          "options": [
+            "As a result",
+            "For example",
+            "Therefore",
+            "By contrast"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「By contrast」：前句是 Flex 方案只能用空位，這句是 Resident 方案有固定座位，是兩個方案的對比，用 By contrast。As a result 和 Therefore 表因果，但 Resident 方案不是 Flex 造成的；For example 是舉例，但 Resident 不是 Flex 的例子。\n【考點】Part 6・文法／連接詞\n【判斷依據】兩句分別描述兩個不同方案，是對比關係。",
+          "ability": "R5",
+          "questionType": "grammar"
+        },
+        {
+          "id": "FORM-P6-12C",
+          "skill": "r-grammar",
+          "prompt": "Select the best word for [3].",
+          "options": [
+            "booking",
+            "booked",
+            "book",
+            "to book"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「booked」：meeting rooms 是「被預約」的，which are ___ 要用被動 are booked。booking 是主動進行，變成會議室在預約東西；book 原形不能接在 are 後面；are to book 意思不通。\n【考點】Part 6・文法／連接詞\n【判斷依據】先行詞 meeting rooms 是被預約的對象，要用被動。",
+          "ability": "R5",
+          "questionType": "grammar"
+        },
+        {
+          "id": "FORM-P6-12D",
+          "skill": "r-purpose",
+          "prompt": "Select the best sentence for [4].",
+          "options": [
+            "There are no hidden fees.",
+            "Meeting rooms are not available to Flex members.",
+            "Our second location opened last year in Tokyo.",
+            "These services cost an additional $15 per day."
+          ],
+          "answer": 0,
+          "explanation": "正解 A「There are no hidden fees.」：後一句說網路、列印、咖啡全部不另收費，這句「沒有隱藏費用」正好當開頭，後句是具體說明。會議室不開放給 Flex 會員和前句 All members 矛盾；東京分店離題；「這些服務每天另收 15 元」和後句 at no extra charge 矛盾。\n【考點】Part 6・句子插入\n【判斷依據】後句的 at no extra charge 是本句「沒有隱藏費用」的具體說明。",
+          "ability": "R3",
+          "questionType": "sentence-insertion"
+        }
+      ]
     }
   ]
 }
