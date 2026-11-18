@@ -1399,6 +1399,51 @@
           "listening": 0,
           "reading": 24
         }
+      },
+      {
+        "id": "part56-46",
+        "label": "Part 5＋6 限時衝刺 · 46 題（18 分鐘）",
+        "groupIds": [
+          "g-xs-r05",
+          "g-xs-r09",
+          "g-rdnew-006",
+          "g-rdnew-003",
+          "g-cov-p5-24",
+          "g-xs-r08",
+          "g-new-r6",
+          "g-xs-r07",
+          "g-rdnew-007",
+          "xr-p5-01",
+          "xr-p5-06",
+          "g-cov-p5-23",
+          "xr2-p5-03",
+          "g-rdnew-017",
+          "g-rdnew-019",
+          "g-a-p5-02",
+          "g-a-p5-05",
+          "g-vocab-c-5",
+          "xf-p5-32",
+          "xf-p5-29",
+          "g-rdnew-004",
+          "s03-sentence4",
+          "g-rdnew-009",
+          "g-rdnew-001",
+          "xr2-p5-05",
+          "g-cov-p5-26",
+          "g-cov-p5-18",
+          "g-cov-p5-13",
+          "g-vocab-c-9",
+          "g-rdnew-012",
+          "xr2-p6-publisher",
+          "s03-text",
+          "g-cov-p6-06",
+          "g-form-p6-02"
+        ],
+        "durationMin": 18,
+        "timing": {
+          "listening": 0,
+          "reading": 18
+        }
       }
     ]
   },

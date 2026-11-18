@@ -61,10 +61,21 @@ test("update skips another branch, a dirty tree, and a failed pull", () => {
   assert.match(offline.message, /Could not resolve host/);
 });
 
-test("this checkout is not fast-forwarded while it is away from a clean main", () => {
-  const result = applyUpdate();
-  assert.equal(result.action, "skip");
-  assert.match(result.message, /不是 main|未提交|不是 git/);
+test("update is skipped away from a clean main (simulated git, never touches the real checkout)", () => {
+  const runner = (branch, dirty) => (args) => {
+    if (args[0] === "rev-parse") return { code: 0, stdout: branch + "\n", stderr: "" };
+    if (args[0] === "status") return { code: 0, stdout: dirty ? " M codex/js/app.js\n" : "", stderr: "" };
+    throw new Error("must not pull: " + args.join(" "));
+  };
+  const onFeature = applyUpdate(runner("feat/example", false));
+  assert.equal(onFeature.action, "skip");
+  assert.match(onFeature.message, /不是 main/);
+  const dirtyMain = applyUpdate(runner("main", true));
+  assert.equal(dirtyMain.action, "skip");
+  assert.match(dirtyMain.message, /未提交/);
+  const notGit = applyUpdate(() => ({ code: 128, stdout: "", stderr: "fatal" }));
+  assert.equal(notGit.action, "skip");
+  assert.match(notGit.message, /不是 git/);
 });
 
 test("LAN address list keeps public IPv4 addresses only", () => {
