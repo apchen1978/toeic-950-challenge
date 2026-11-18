@@ -44,6 +44,14 @@ export const QUICK_BLUEPRINTS = {
     ]
   },
   // 閱讀分 Part 專練：Part 5 一題一組、Part 6 一組四題、Part 7 依題數抽。時間約照正式配速（Part 5 約 20 秒、Part 6 約 30 秒、Part 7 約 1 分鐘一題）。
+  // Part 5＋6 限時衝刺：官方配速 Part 5 約 10 分、Part 6 約 8 分，合計 18 分。練把前面壓快，留時間給 Part 7。
+  "part56-46": {
+    minutes: 18,
+    listening: 0,
+    reading: 46,
+    timing: { listening: 0, reading: 18 },
+    parts: [{ part: 5, groups: 30 }, { part: 6, groups: 4, questionsEach: 4 }]
+  },
   "part5-15": {
     minutes: 5,
     listening: 0,
@@ -240,7 +248,7 @@ function hasType(groups, part, pattern) {
 
 export function quickCoverageIssues(groups, formId, section = "full") {
   const mini = String(formId).startsWith("mini-");
-  const partSet = /^part[567]-\d+$/.test(String(formId));
+  const partSet = /^part(?:[567]|56)-\d+$/.test(String(formId));
   const full = formId === "quick-40" || formId === "quick-60" || mini || partSet;
   const has = (part) => groups.some((group) => group.part === part);
   const long = formId === "quick-60";

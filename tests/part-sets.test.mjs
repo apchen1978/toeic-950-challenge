@@ -59,3 +59,29 @@ test("home page offers all six sets, and the plan uses them without stacking big
   for (const key of ["part5Block", "part6Block", "part7Short", "part7Block"]) assert.ok(used.has(key), `${key} scheduled`);
   for (const [day, keys] of Object.entries(BY_DAYS_LEFT)) assert.ok(keys.filter((k) => TASKS[k].minutes >= 40).length <= 1, `day ${day}`);
 });
+
+test("Part 5+6 sprint: 46 questions (30 + 16) in 18 minutes, covers the key types, avoids recent groups, and is scheduled", () => {
+  const set = bank.meta.sets.find((s) => s.id === "part56-46");
+  assert.ok(set && set.timing.reading === 18 && count(set.groupIds) === 46);
+  const warnings = [];
+  const original = console.warn; console.warn = (m) => warnings.push(m);
+  try {
+    for (let seed = 1; seed <= 40; seed += 1) {
+      const draw = assembleQuickForm(bank, "part56-46", { random: createRng(seed), section: "reading" });
+      assert.equal(count(draw.groupIds), 46);
+      assert.equal(draw.timing.reading, 18);
+      const parts = draw.groupIds.map((g) => groups.get(g).part);
+      assert.equal(parts.filter((p) => p === 5).length, 30);
+      assert.equal(parts.filter((p) => p === 6).length, 4);
+      const t = types(draw.groupIds).join(" ");
+      for (const re of [/part-of-speech/, /verb-tense|tense/, /preposition|conjunction/, /vocabulary/, /sentence-insertion/]) assert.match(t, re, `seed ${seed}`);
+    }
+  } finally { console.warn = original; }
+  assert.deepEqual(warnings, []);
+  const a = assembleQuickForm(bank, "part56-46", { random: createRng(4), section: "reading" });
+  const b = assembleQuickForm(bank, "part56-46", { random: createRng(4), section: "reading", avoid: a.groupIds });
+  assert.ok(b.groupIds.filter((g) => a.groupIds.includes(g)).length < a.groupIds.length / 2, "recent groups are mostly avoided");
+  assert.ok(app.includes('data-form="part56-46"') && app.includes("part(?:[567]|56)"));
+  assert.equal(TASKS.sprint56.attrs.form, "part56-46");
+  assert.ok(BY_DAYS_LEFT[7].includes("sprint56") && BY_DAYS_LEFT[4].includes("sprint56"));
+});

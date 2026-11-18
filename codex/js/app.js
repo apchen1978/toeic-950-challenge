@@ -768,6 +768,9 @@ function renderHome() {
       <div class="reading-full-sets">
         ${PART_SETS.map(([part, title, note, short, block]) => `<div class="reading-full-set"><div class="rf-info"><h3>${esc(title)}</h3><p class="muted">${esc(note)}</p>${listeningFullLast(history, short.id)}</div><div class="rf-actions"><button class="btn primary" data-action="start-form" data-form="${short.id}">${esc(short.label)}</button><button class="btn" data-action="start-form" data-form="${block.id}">${esc(block.label)}</button></div></div>`).join("")}
       </div>
+      <div class="reading-full-sets">
+        <div class="reading-full-set"><div class="rf-info"><h3>Part 5＋6 限時衝刺 · 46 題</h3><p class="muted">18 分鐘 · 官方配速（Part 5 約 10 分、Part 6 約 8 分）· 把前面練快，留時間給 Part 7</p>${listeningFullLast(history, "part56-46")}</div><div class="rf-actions"><button class="btn primary" data-action="start-form" data-form="part56-46">開始限時衝刺</button></div></div>
+      </div>
       <details class="card-more"><summary>配速與題型說明</summary>
         <p class="muted">正式配速參考：Part 5 約 10 分鐘 30 題、Part 6 約 8 分鐘 16 題、Part 7 約 52 分鐘 54 題。這只是參考，不是必須達到的標準。</p>
         <p class="muted">Part 5 會涵蓋詞性、時態、介系詞或連接詞、字彙四類；Part 6 每組四題、含句子插入；Part 7 整段含多篇文件的題組。作答時有題型標籤和提醒（可在「題型提示」關閉）。題目為原創模擬題，非 ETS 官方試題。</p>
@@ -1943,7 +1946,7 @@ app.addEventListener("click", (e) => {
       if (d.form === "quick-40" || d.form === "quick-60") { startQuickForm(d.form); break; }
       if (isReadingFullForm(d.form)) { startReadingFull(d.form); break; }
       if (d.form === "mini-listen-15" || d.form === "mini-read-12") { startMiniForm(d.form); break; }
-      if (/^part[567]-\d+$/.test(d.form)) { startPartSet(d.form); break; }
+      if (/^part(?:[567]|56)-\d+$/.test(d.form)) { startPartSet(d.form); break; }
       if (isListeningFullForm(d.form)) { startListeningFull(d.form); break; }
       if (isOfficialForm(d.form)) { startOfficialSet(d.form); break; }
       const set = bank.meta.sets.find((s) => s.id === d.form);
