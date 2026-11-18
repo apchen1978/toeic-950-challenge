@@ -774,13 +774,29 @@ function renderHome() {
       </details>
     </section>
 
-    <section class="card listening-full-card" id="nav-mini" aria-labelledby="mini-title">
-      <div class="reading-full-head"><span class="reading-full-badge">6–12 MIN</span><p class="section-kicker">QUICK SETS · 題型快練</p></div>
-      <h2 id="mini-title">聽力 15 題・閱讀 12 題・NOT 題</h2>
-      <p>想快速摸一下手感，或考前一兩天不想做太久時用。題型混合，每次從題庫重新抽，會避開最近出過的題目。</p>
-      <div class="reading-full-sets">
-        <div class="reading-full-set"><div class="rf-info"><h3>聽力快練 · 15 題</h3><p class="muted">約 ${approxListeningMinutes("mini-listen-15", 5) ?? 6} 分鐘 · Part 1 到 4 · 每題只播一次</p>${listeningFullLast(history, "mini-listen-15")}</div><div class="rf-actions"><button class="btn primary" data-action="start-form" data-form="mini-listen-15">開始聽力快練</button></div></div>
-        <div class="reading-full-set"><div class="rf-info"><h3>閱讀快練 · 12 題</h3><p class="muted">9 分鐘 · Part 5（5 題）、Part 6（4 題）、Part 7（3 題）</p>${listeningFullLast(history, "mini-read-12")}</div><div class="rf-actions"><button class="btn primary" data-action="start-form" data-form="mini-read-12">開始閱讀快練</button></div></div>
+    <section class="card listening-full-card mini-practice" id="nav-mini" aria-labelledby="mini-title">
+      <p class="section-kicker">QUICK PRACTICE · 題型快練</p>
+      <h2 id="mini-title">留一點時間，練一個重點。</h2>
+      <p class="mini-intro">先選聽力或閱讀。每次重新抽題，優先避開最近練過的題組。</p>
+      <div class="mini-options">
+        <article class="mini-option" aria-labelledby="mini-listen-title">
+          <p class="mini-label">LISTENING <span>Part 1–4</span></p>
+          <h3 id="mini-listen-title">快速聽力</h3>
+          <p class="mini-measure"><strong>15<span>題</span></strong><span>約 ${approxListeningMinutes("mini-listen-15", 5) ?? 6} 分鐘</span></p>
+          <p class="mini-focus">練抓關鍵資訊與即時理解</p>
+          <p class="mini-detail">照片 1 · 應答 5 · 對話 6 · 獨白 3<br>每題只播一次，包含圖表理解。</p>
+          <div class="mini-last">${listeningFullLast(history, "mini-listen-15")}</div>
+          <button class="btn primary" data-action="start-form" data-form="mini-listen-15">開始聽力快練</button>
+        </article>
+        <article class="mini-option" aria-labelledby="mini-read-title">
+          <p class="mini-label">READING <span>Part 5–7</span></p>
+          <h3 id="mini-read-title">快速閱讀</h3>
+          <p class="mini-measure"><strong>12<span>題</span></strong><span>9 分鐘</span></p>
+          <p class="mini-focus">練句型判斷與文章定位</p>
+          <p class="mini-detail">文法字彙 5 · 段落填空 4 · 閱讀 3<br>包含句子插入，維持限時閱讀節奏。</p>
+          <div class="mini-last">${listeningFullLast(history, "mini-read-12")}</div>
+          <button class="btn primary" data-action="start-form" data-form="mini-read-12">開始閱讀快練</button>
+        </article>
       </div>
       <div class="reading-full-sets">
         <div class="reading-full-set"><div class="rf-info"><h3>NOT 題專練 · 10 題</h3><p class="muted">約 12 分鐘 · Part 7 · 「哪一項不是……」要逐項核對，最花時間，先把做法練熟</p></div><div class="rf-actions"><button class="btn primary" data-action="start-not">開始 NOT 題練習</button></div></div>
