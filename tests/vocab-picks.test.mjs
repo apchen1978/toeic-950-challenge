@@ -32,10 +32,6 @@ test("flashcards can be limited to picks, and due cards still come first", () =>
   assert.deepEqual(selectCards(items, {}, { level: "all", category: "all", limit: 10 }, now).length, 3);
 });
 
-test("home page offers the picks filter and a one-tap start", () => {
-  assert.match(app, /import \{ PICKS \} from "\.\/vocab-picks\.js"/);
-  assert.match(app, /data-vocab-filter="pick">必背精選/);
-  assert.match(app, /<option value="pick">必背精選<\/option>/);
-  assert.match(app, /data-action="flash-quick">背 10 個精選單字/);
-  assert.match(app, /case "flash-quick":/);
+test("the home page no longer offers flashcards or the vocabulary card (Paul, 2026-11-19), while the data module stays valid", () => {
+  for (const gone of ['data-action="flash-quick">背 10 個精選單字', 'class="card vocabulary-card', 'id="nav-vocab"', 'data-vocab-filter="pick"']) assert.ok(!app.includes(gone), gone);
 });

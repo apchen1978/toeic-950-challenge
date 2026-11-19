@@ -58,7 +58,7 @@ test("service worker keeps audio in a version-independent cache", () => {
 test("home focus mode hides extras, filters nav and auto-enables near the exam", () => {
   assert.match(app, /function homeFocus\(\)/);
   assert.match(app, /days <= 14/);
-  for (const id of ["nav-vocab", "nav-grammar", "nav-practice"]) assert.match(app, new RegExp(`class="[^"]*home-extra[^"]*"[^>]*id="${id}"`));
+  for (const id of ["nav-grammar", "nav-practice"]) assert.match(app, new RegExp(`class="[^"]*home-extra[^"]*"[^>]*id="${id}"`));
   assert.match(app, /case "toggle-focus"/);
   assert.match(app, /offsetParent !== null/);
   const css = readFileSync(new URL("../codex/styles.css", import.meta.url), "utf8");
