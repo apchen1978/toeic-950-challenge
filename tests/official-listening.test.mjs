@@ -75,9 +75,9 @@ test("official sequence uses 5s, 8s, and 12s pauses and does not split groups", 
     ["pause", OFFICIAL_PAUSES.graphic, "map"]
   ]);
   assert.equal(OFFICIAL_PAUSES.item, 5);
-  assert.equal(OFFICIAL_PAUSES.question, 8);
-  assert.equal(OFFICIAL_PAUSES.graphic, 12);
-  assert.equal(sequenceSeconds(steps), 12 + 5 + 8 + 5 + 30 + 3 + 8 + 4 + 8 + 20 + 3 + 12);
+  assert.equal(OFFICIAL_PAUSES.question, 12);
+  assert.equal(OFFICIAL_PAUSES.graphic, 18);
+  assert.equal(sequenceSeconds(steps), 12 + 5 + 8 + 5 + 30 + 3 + 12 + 4 + 12 + 20 + 3 + 18);
   assert.equal(remainingSeconds(steps, 4, 10), sequenceSeconds(steps) - (12 + 5 + 8 + 5) - 10);
   assert.equal(steps.filter((step) => step.groupId === "talk" && step.type === "question").length, 2);
 });

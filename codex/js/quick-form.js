@@ -32,6 +32,17 @@ export const QUICK_BLUEPRINTS = {
       { part: 4, groups: 1, questionsEach: 3, preferGraphic: 1 }
     ]
   },
+  // 圖表聽力專練：Part 3 四組＋Part 4 四組，全部是「看圖（地圖、平面圖、表格、圖表）＋聽」的題組。
+  "mini-graphic-24": {
+    minutes: 10,
+    listening: 24,
+    reading: 0,
+    timing: { listening: 10, reading: 0 },
+    parts: [
+      { part: 3, groups: 4, questionsEach: 3, preferGraphic: 4 },
+      { part: 4, groups: 4, questionsEach: 3, preferGraphic: 4 }
+    ]
+  },
   "mini-read-12": {
     minutes: 9,
     listening: 0,
@@ -258,7 +269,8 @@ export function quickCoverageIssues(groups, formId, section = "full") {
   const reading = section !== "listening";
   if (listening) {
     const p2Types = new Set(groups.filter((group) => group.part === 2).flatMap(questionTypes));
-    if (p2Types.size < (mini ? 3 : 4)) issues.push(mini ? "P2 three response types" : "P2 four response types");
+    const needsP2 = !(QUICK_BLUEPRINTS[formId] && !QUICK_BLUEPRINTS[formId].parts.some((spec) => spec.part === 2));
+    if (needsP2 && p2Types.size < (mini ? 3 : 4)) issues.push(mini ? "P2 three response types" : "P2 four response types");
     if (!mini && !groups.some((group) => [3, 4].includes(group.part) && questionTypes(group).some((type) => /intent|meaning|implied/i.test(type)))) issues.push("P3/P4 speaker intent");
     if (!groups.some((group) => [3, 4].includes(group.part) && isGraphicGroup(group))) issues.push("P3/P4 graphic");
     if (long && new Set(groups.filter((group) => group.part === 1).flatMap(questionTypes)).size < 2) issues.push("P1 two types");

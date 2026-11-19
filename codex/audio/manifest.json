@@ -11527,6 +11527,566 @@
       "durationSec": 25.74,
       "bytes": 155036,
       "questionClips": []
+    },
+    "g-gl-p3-01": {
+      "file": "audio/g-gl-p3-01.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "a61b40682d880c840f290009f0b794486d1fd4ed7985d23195a7bbc7751c4cea",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "W",
+        "M",
+        "W",
+        "M",
+        "W",
+        "M"
+      ],
+      "durationSec": 38.57,
+      "bytes": 231408,
+      "questionClips": [
+        {
+          "id": "GLP301A",
+          "file": "audio/q-GLP301A.mp3",
+          "durationSec": 3.26,
+          "bytes": 19584,
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "GLP301B",
+          "file": "audio/q-GLP301B.mp3",
+          "durationSec": 4.56,
+          "bytes": 27360,
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US",
+          "role": "N",
+          "graphic": true
+        },
+        {
+          "id": "GLP301C",
+          "file": "audio/q-GLP301C.mp3",
+          "durationSec": 3.53,
+          "bytes": 21168,
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "g-gl-p3-02": {
+      "file": "audio/g-gl-p3-02.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "d4f654a3417bc6b8d8962ce195b20a0699e68e34db8b43f4834407f68476ede3",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        },
+        {
+          "role": "M",
+          "voice": "en-GB-RyanNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "W",
+        "M",
+        "W",
+        "M",
+        "W",
+        "M"
+      ],
+      "durationSec": 44.78,
+      "bytes": 268704,
+      "questionClips": [
+        {
+          "id": "GLP302A",
+          "file": "audio/q-GLP302A.mp3",
+          "durationSec": 2.21,
+          "bytes": 13248,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "GLP302B",
+          "file": "audio/q-GLP302B.mp3",
+          "durationSec": 3.62,
+          "bytes": 21744,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": true
+        },
+        {
+          "id": "GLP302C",
+          "file": "audio/q-GLP302C.mp3",
+          "durationSec": 3.29,
+          "bytes": 19728,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "g-gl-p3-03": {
+      "file": "audio/g-gl-p3-03.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "26e6e56d774e8176472f6ae362eff0c9cfd72899f92e644ccaee4a5fad863588",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        },
+        {
+          "role": "M",
+          "voice": "en-CA-LiamNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "W",
+        "M",
+        "W",
+        "M",
+        "W",
+        "M"
+      ],
+      "durationSec": 37.63,
+      "bytes": 225792,
+      "questionClips": [
+        {
+          "id": "GLP303A",
+          "file": "audio/q-GLP303A.mp3",
+          "durationSec": 2.52,
+          "bytes": 15120,
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "GLP303B",
+          "file": "audio/q-GLP303B.mp3",
+          "durationSec": 5.09,
+          "bytes": 30528,
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA",
+          "role": "N",
+          "graphic": true
+        },
+        {
+          "id": "GLP303C",
+          "file": "audio/q-GLP303C.mp3",
+          "durationSec": 2.86,
+          "bytes": 17136,
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "g-gl-p3-04": {
+      "file": "audio/g-gl-p3-04.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "cb9281ab98119708a0f2c1ab9b4399bfc396d31cebd7b26078808006d54b763b",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        },
+        {
+          "role": "M",
+          "voice": "en-AU-WilliamNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "W",
+        "M",
+        "W",
+        "M",
+        "W"
+      ],
+      "durationSec": 32.81,
+      "bytes": 196848,
+      "questionClips": [
+        {
+          "id": "GLP304A",
+          "file": "audio/q-GLP304A.mp3",
+          "durationSec": 2.9,
+          "bytes": 17424,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "GLP304B",
+          "file": "audio/q-GLP304B.mp3",
+          "durationSec": 5.33,
+          "bytes": 31968,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": true
+        },
+        {
+          "id": "GLP304C",
+          "file": "audio/q-GLP304C.mp3",
+          "durationSec": 2.66,
+          "bytes": 15984,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "g-gl-p3-05": {
+      "file": "audio/g-gl-p3-05.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "83bcf5bcbadd5d2a1bbb04b685cc8de05a1c822736ef2a51f99a24a9e6f2b13c",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "M",
+          "voice": "en-US-GuyNeural",
+          "locale": "en-US"
+        },
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "M",
+        "W",
+        "M",
+        "W",
+        "M",
+        "W",
+        "M"
+      ],
+      "durationSec": 42.48,
+      "bytes": 254880,
+      "questionClips": [
+        {
+          "id": "GLP305A",
+          "file": "audio/q-GLP305A.mp3",
+          "durationSec": 2.52,
+          "bytes": 15120,
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "GLP305B",
+          "file": "audio/q-GLP305B.mp3",
+          "durationSec": 5.3,
+          "bytes": 31824,
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US",
+          "role": "N",
+          "graphic": true
+        },
+        {
+          "id": "GLP305C",
+          "file": "audio/q-GLP305C.mp3",
+          "durationSec": 2.66,
+          "bytes": 15984,
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "g-gl-p4-01": {
+      "file": "audio/g-gl-p4-01.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "f90bb5c4081d57a774a848c96f67d5cfed02170330dac5ba08ef1a4235fc27d4",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 33.19,
+      "bytes": 199152,
+      "questionClips": [
+        {
+          "id": "GLP401A",
+          "file": "audio/q-GLP401A.mp3",
+          "durationSec": 3.17,
+          "bytes": 19008,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "GLP401B",
+          "file": "audio/q-GLP401B.mp3",
+          "durationSec": 6.62,
+          "bytes": 39744,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": true
+        },
+        {
+          "id": "GLP401C",
+          "file": "audio/q-GLP401C.mp3",
+          "durationSec": 3.77,
+          "bytes": 22608,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "g-gl-p4-02": {
+      "file": "audio/g-gl-p4-02.mp3",
+      "accent": "UK",
+      "locale": "en-GB",
+      "scriptSha256": "5a0c4af0b0c72debb8cdbefc93d1d32762ba8cb27208a8b30bb9d6412de6797f",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 23.62,
+      "bytes": 141696,
+      "questionClips": [
+        {
+          "id": "GLP402A",
+          "file": "audio/q-GLP402A.mp3",
+          "durationSec": 2.3,
+          "bytes": 13824,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "GLP402B",
+          "file": "audio/q-GLP402B.mp3",
+          "durationSec": 4.68,
+          "bytes": 28080,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": true
+        },
+        {
+          "id": "GLP402C",
+          "file": "audio/q-GLP402C.mp3",
+          "durationSec": 2.81,
+          "bytes": 16848,
+          "voice": "en-GB-SoniaNeural",
+          "locale": "en-GB",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "g-gl-p4-03": {
+      "file": "audio/g-gl-p4-03.mp3",
+      "accent": "CA",
+      "locale": "en-CA",
+      "scriptSha256": "9f349c0e4589221bb74011559658289a26f4f7c29d7e56c1a928583416688383",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 24.46,
+      "bytes": 146736,
+      "questionClips": [
+        {
+          "id": "GLP403A",
+          "file": "audio/q-GLP403A.mp3",
+          "durationSec": 2.16,
+          "bytes": 12960,
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "GLP403B",
+          "file": "audio/q-GLP403B.mp3",
+          "durationSec": 4.68,
+          "bytes": 28080,
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA",
+          "role": "N",
+          "graphic": true
+        },
+        {
+          "id": "GLP403C",
+          "file": "audio/q-GLP403C.mp3",
+          "durationSec": 3.36,
+          "bytes": 20160,
+          "voice": "en-CA-ClaraNeural",
+          "locale": "en-CA",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "g-gl-p4-04": {
+      "file": "audio/g-gl-p4-04.mp3",
+      "accent": "US",
+      "locale": "en-US",
+      "scriptSha256": "0750fb3cef379b30a23c6ca04cc0167993af580511a92f6a251f2c37306a178b",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US"
+        }
+      ],
+      "roles": [
+        "W"
+      ],
+      "durationSec": 25.08,
+      "bytes": 150480,
+      "questionClips": [
+        {
+          "id": "GLP404A",
+          "file": "audio/q-GLP404A.mp3",
+          "durationSec": 3.6,
+          "bytes": 21600,
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "GLP404B",
+          "file": "audio/q-GLP404B.mp3",
+          "durationSec": 5.93,
+          "bytes": 35568,
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US",
+          "role": "N",
+          "graphic": true
+        },
+        {
+          "id": "GLP404C",
+          "file": "audio/q-GLP404C.mp3",
+          "durationSec": 2.93,
+          "bytes": 17568,
+          "voice": "en-US-AriaNeural",
+          "locale": "en-US",
+          "role": "N",
+          "graphic": false
+        }
+      ]
+    },
+    "g-gl-p4-05": {
+      "file": "audio/g-gl-p4-05.mp3",
+      "accent": "AU",
+      "locale": "en-AU",
+      "scriptSha256": "17c335d81d62060adea700671da9a47b0b81f30b1d5358eb4300126eaccd8fcf",
+      "spokenChoices": [],
+      "voices": [
+        {
+          "role": "W",
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU"
+        }
+      ],
+      "roles": [
+        "M"
+      ],
+      "durationSec": 31.44,
+      "bytes": 188640,
+      "questionClips": [
+        {
+          "id": "GLP405A",
+          "file": "audio/q-GLP405A.mp3",
+          "durationSec": 2.86,
+          "bytes": 17136,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        },
+        {
+          "id": "GLP405B",
+          "file": "audio/q-GLP405B.mp3",
+          "durationSec": 5.9,
+          "bytes": 35424,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": true
+        },
+        {
+          "id": "GLP405C",
+          "file": "audio/q-GLP405C.mp3",
+          "durationSec": 3.1,
+          "bytes": 18576,
+          "voice": "en-AU-NatashaNeural",
+          "locale": "en-AU",
+          "role": "N",
+          "graphic": false
+        }
+      ]
     }
   }
 }
