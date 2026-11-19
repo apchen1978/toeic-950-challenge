@@ -1109,7 +1109,7 @@
       },
       {
         "id": "listen-full-1",
-        "label": "聽力完整模擬 1 · 100 題／約 42 分鐘",
+        "label": "聽力完整模擬 1 · 100 題／約 45 分鐘",
         "groupIds": [
           "g-photo-01",
           "g-photo-11",
@@ -1143,19 +1143,19 @@
           "xf-p2-13",
           "xf-p2-17",
           "g-map-campus-01",
-          "g-xl-p3-04",
+          "g-gx-p3-05",
           "g-xl3-11",
           "cov-p3-05",
-          "xfc-p3-inspection",
+          "g-gx-p3-06",
           "g-xl2-p3-03",
           "cov-p3-06",
           "g-gx-p3-01",
           "g-xl-p3-02",
           "g-xl2-p3-04",
-          "cov-p3-04",
+          "g-gx-p3-02",
           "cov-p3-11",
           "s03-conversation3",
-          "cov-p4-03",
+          "g-gx-p4-03",
           "g-x4f-05",
           "g-l09",
           "g-xl2-p4-04",
@@ -1163,17 +1163,17 @@
           "g-x4f-06",
           "g-gx-p4-01",
           "g-x4f-11",
-          "audit-p4-04",
+          "g-gx-p4-02",
           "g-xl-p4-02"
         ],
-        "durationMin": 42,
+        "durationMin": 45,
         "timing": {
           "listening": 42
         }
       },
       {
         "id": "listen-full-2",
-        "label": "聽力完整模擬 2 · 100 題／約 42 分鐘",
+        "label": "聽力完整模擬 2 · 100 題／約 45 分鐘",
         "groupIds": [
           "g-photo-05",
           "cov-p1-07",
@@ -1214,23 +1214,23 @@
           "g-xl-p3-05",
           "cov-p3-10",
           "g-round12-p3-accent-ca",
-          "xfc-p3-hotel",
+          "g-gx-p3-03",
           "cov-p3-08",
-          "g-xl2-p3-01",
+          "g-gx-p3-04",
           "cov-p3-07",
           "cov-p3-01",
           "g-xl2-p4-03",
           "cov-p4-13",
           "g-x4f-09",
-          "g-x4f-14",
+          "g-gx-p4-04",
           "cov-p4-15",
           "cov-p4-01",
-          "g-xl-p4-01",
+          "g-gx-p4-05",
           "g-xl2-p4-01",
-          "cov-p4-05",
+          "g-round12-p4-schedule",
           "g-xl2-p4-02"
         ],
-        "durationMin": 42,
+        "durationMin": 45,
         "timing": {
           "listening": 42
         }
@@ -1252,6 +1252,49 @@
         "durationMin": 8,
         "timing": {
           "listening": 8,
+          "reading": 0
+        }
+      },
+      {
+        "id": "mini-graphic-24",
+        "label": "圖表聽力專練 · 24 題（約 10 分鐘）",
+        "groupIds": [
+          "g-map-campus-01",
+          "g-gx-p3-01",
+          "g-gx-p3-02",
+          "g-gx-p3-03",
+          "g-gx-p3-04",
+          "g-gx-p3-05",
+          "g-gx-p3-06",
+          "g-gx-p4-01",
+          "g-gx-p4-02",
+          "g-gx-p4-03",
+          "g-gx-p4-04",
+          "g-gx-p4-05",
+          "g-round12-p3-three",
+          "g-round12-p4-schedule",
+          "g-round12-p3-accent-ca",
+          "g-round12-p4-accent-uk",
+          "cov-p3-09",
+          "cov-p3-10",
+          "cov-p3-11",
+          "cov-p4-13",
+          "cov-p4-14",
+          "cov-p4-15",
+          "g-gl-p3-01",
+          "g-gl-p3-02",
+          "g-gl-p3-03",
+          "g-gl-p3-04",
+          "g-gl-p3-05",
+          "g-gl-p4-01",
+          "g-gl-p4-02",
+          "g-gl-p4-03",
+          "g-gl-p4-04",
+          "g-gl-p4-05"
+        ],
+        "durationMin": 14,
+        "timing": {
+          "listening": 14,
           "reading": 0
         }
       },
@@ -32486,6 +32529,900 @@
           "questionType": "sentence-insertion"
         }
       ]
+    },
+    {
+      "id": "g-gl-p3-01",
+      "part": 3,
+      "accent": "US",
+      "title": "Community center delivery",
+      "graphicView": {
+        "kind": "svg",
+        "caption": "Community center layout",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 240\" role=\"img\" aria-hidden=\"true\"><rect x=\"70\" y=\"30\" width=\"260\" height=\"170\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"160\" y1=\"30\" x2=\"160\" y2=\"110\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"250\" y1=\"30\" x2=\"250\" y2=\"110\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"70\" y1=\"110\" x2=\"330\" y2=\"110\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"220\" y1=\"110\" x2=\"220\" y2=\"200\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"115\" y=\"75\" fill=\"currentColor\" font-size=\"13\" text-anchor=\"middle\">Library</text><text x=\"205\" y=\"75\" fill=\"currentColor\" font-size=\"13\" text-anchor=\"middle\">Studio</text><text x=\"290\" y=\"75\" fill=\"currentColor\" font-size=\"13\" text-anchor=\"middle\">Kitchen</text><text x=\"145\" y=\"160\" fill=\"currentColor\" font-size=\"13\" text-anchor=\"middle\">Gym</text><text x=\"275\" y=\"160\" fill=\"currentColor\" font-size=\"13\" text-anchor=\"middle\">Front desk</text><line x1=\"175\" y1=\"30\" x2=\"235\" y2=\"30\" stroke=\"currentColor\" stroke-width=\"6\"/><text x=\"205\" y=\"20\" fill=\"currentColor\" font-size=\"13\" text-anchor=\"middle\" font-weight=\"700\">North door</text><line x1=\"330\" y1=\"50\" x2=\"330\" y2=\"95\" stroke=\"currentColor\" stroke-width=\"6\"/><text x=\"338\" y=\"74\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\">East door</text><line x1=\"250\" y1=\"200\" x2=\"300\" y2=\"200\" stroke=\"currentColor\" stroke-width=\"6\"/><text x=\"275\" y=\"218\" fill=\"currentColor\" font-size=\"13\" text-anchor=\"middle\" font-weight=\"700\">South door</text><line x1=\"70\" y1=\"130\" x2=\"70\" y2=\"180\" stroke=\"currentColor\" stroke-width=\"6\"/><text x=\"62\" y=\"158\" fill=\"currentColor\" font-size=\"13\" text-anchor=\"end\" font-weight=\"700\">West door</text></svg>"
+      },
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Hi, I'm here to drop off the folding tables for Saturday's craft fair."
+        },
+        {
+          "speaker": "M",
+          "text": "Great, thanks for coming early. We're setting up everything today."
+        },
+        {
+          "speaker": "W",
+          "text": "Which room do they go in? And is the main door by the front desk okay?"
+        },
+        {
+          "speaker": "M",
+          "text": "Not today. The front desk side is closed while they polish the floor. The tables go in the room beside the kitchen."
+        },
+        {
+          "speaker": "W",
+          "text": "Then I'll carry them in through the door that opens straight into that room."
+        },
+        {
+          "speaker": "M",
+          "text": "Perfect. That way you won't have to walk through any other rooms."
+        }
+      ],
+      "questions": [
+        {
+          "id": "GLP301A",
+          "skill": "l-conversation",
+          "prompt": "Why is the woman visiting the community center?",
+          "options": [
+            "To register for a class",
+            "To fix a floor",
+            "To deliver some tables",
+            "To pick up a key"
+          ],
+          "answer": 2,
+          "explanation": "She says she is dropping off folding tables for a craft fair.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "detail"
+        },
+        {
+          "id": "GLP301B",
+          "skill": "l-conversation",
+          "prompt": "Look at the graphic. Which door will the woman use?",
+          "options": [
+            "North door",
+            "East door",
+            "South door",
+            "West door"
+          ],
+          "answer": 0,
+          "explanation": "The tables go in the room beside the kitchen, which is the studio. The door that opens straight into the studio is on the north wall. Nobody says north.",
+          "graphic": true,
+          "ability": "L4",
+          "questionType": "graphic"
+        },
+        {
+          "id": "GLP301C",
+          "skill": "l-conversation",
+          "prompt": "What does the man say about the front desk area?",
+          "options": [
+            "It is closed today",
+            "It has moved upstairs",
+            "It needs more staff",
+            "It opens early"
+          ],
+          "answer": 0,
+          "explanation": "He says the front desk side is closed while they polish the floor.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "detail"
+        }
+      ],
+      "section": "listening",
+      "graphic": true
+    },
+    {
+      "id": "g-gl-p3-02",
+      "part": 3,
+      "accent": "UK",
+      "title": "Moving to a quieter suite",
+      "graphicView": {
+        "kind": "svg",
+        "caption": "Third floor: office suites",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 220\" role=\"img\" aria-hidden=\"true\"><rect x=\"20\" y=\"20\" width=\"320\" height=\"180\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"110\" y1=\"20\" x2=\"110\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"200\" y1=\"20\" x2=\"200\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"270\" y1=\"20\" x2=\"270\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"20\" y1=\"100\" x2=\"340\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"65\" y=\"68\" fill=\"currentColor\" font-size=\"18\" text-anchor=\"middle\" font-weight=\"700\">301</text><text x=\"155\" y=\"68\" fill=\"currentColor\" font-size=\"18\" text-anchor=\"middle\" font-weight=\"700\">302</text><text x=\"235\" y=\"68\" fill=\"currentColor\" font-size=\"18\" text-anchor=\"middle\" font-weight=\"700\">303</text><text x=\"305\" y=\"68\" fill=\"currentColor\" font-size=\"18\" text-anchor=\"middle\" font-weight=\"700\">304</text><rect x=\"30\" y=\"150\" width=\"60\" height=\"40\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"60\" y=\"175\" fill=\"currentColor\" font-size=\"12\" text-anchor=\"middle\">Elevator</text><rect x=\"140\" y=\"150\" width=\"90\" height=\"40\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"185\" y=\"175\" fill=\"currentColor\" font-size=\"12\" text-anchor=\"middle\">Copy room</text><rect x=\"270\" y=\"150\" width=\"60\" height=\"40\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"300\" y=\"175\" fill=\"currentColor\" font-size=\"12\" text-anchor=\"middle\">Stairs</text><text x=\"180\" y=\"128\" fill=\"currentColor\" font-size=\"11\" text-anchor=\"middle\">Corridor</text></svg>"
+      },
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Good morning, Mr. Dale. This is Nina from Harlow Properties. You asked about moving to a quieter suite."
+        },
+        {
+          "speaker": "M",
+          "text": "That's right. I'm in 301, right next to the elevator, and the doors banging all day are distracting my team."
+        },
+        {
+          "speaker": "W",
+          "text": "I understand. A suite has just become free on the same floor. It's the corner suite closest to the stairs."
+        },
+        {
+          "speaker": "M",
+          "text": "That sounds much better. Is it noisy at that end?"
+        },
+        {
+          "speaker": "W",
+          "text": "Not at all. The copy room is in the middle, so the corridor is quiet there. I can show it to you at two o'clock if you're free."
+        },
+        {
+          "speaker": "M",
+          "text": "Two is fine. I'll come down then."
+        }
+      ],
+      "questions": [
+        {
+          "id": "GLP302A",
+          "skill": "l-conversation",
+          "prompt": "Why does the man want to move?",
+          "options": [
+            "The rent is too high",
+            "He needs a copy room",
+            "His office is too small",
+            "The elevator noise bothers his team"
+          ],
+          "answer": 3,
+          "explanation": "He says the doors banging next to the elevator distract his team.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "detail"
+        },
+        {
+          "id": "GLP302B",
+          "skill": "l-conversation",
+          "prompt": "Look at the graphic. Which suite is available?",
+          "options": [
+            "Suite 301",
+            "Suite 302",
+            "Suite 303",
+            "Suite 304"
+          ],
+          "answer": 3,
+          "explanation": "The free suite is the corner suite closest to the stairs. On the plan, the stairs are under suite 304. The number is never said.",
+          "graphic": true,
+          "ability": "L4",
+          "questionType": "graphic"
+        },
+        {
+          "id": "GLP302C",
+          "skill": "l-conversation",
+          "prompt": "What will the man most likely do at two o'clock?",
+          "options": [
+            "Call the elevator company",
+            "Visit the available suite",
+            "Sign a new lease",
+            "Move his furniture"
+          ],
+          "answer": 1,
+          "explanation": "The woman offers to show the suite at two and he agrees to come down.",
+          "graphic": false,
+          "ability": "L5",
+          "questionType": "next-action"
+        }
+      ],
+      "section": "listening",
+      "graphic": true
+    },
+    {
+      "id": "g-gl-p3-03",
+      "part": 3,
+      "accent": "CA",
+      "title": "Bike pickup",
+      "graphicView": {
+        "kind": "table",
+        "caption": "Locations and hours",
+        "headers": [
+          "Branch",
+          "Hours"
+        ],
+        "rows": [
+          [
+            "Harbor Street",
+            "9 A.M.–6 P.M."
+          ],
+          [
+            "Pine Avenue",
+            "9 A.M.–7 P.M."
+          ],
+          [
+            "Mill Road",
+            "10 A.M.–4 P.M."
+          ],
+          [
+            "Station Plaza",
+            "9 A.M.–8 P.M."
+          ]
+        ]
+      },
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Hi, I dropped off my bike yesterday for a new tire. Is it ready?"
+        },
+        {
+          "speaker": "M",
+          "text": "It is. But this shop closes early today, at four."
+        },
+        {
+          "speaker": "W",
+          "text": "Oh no. I can't get here before seven tonight because I'm working late."
+        },
+        {
+          "speaker": "M",
+          "text": "No problem. We can send it to another branch. Our latest one is inside the train station, and it stays open until eight."
+        },
+        {
+          "speaker": "W",
+          "text": "That's perfect. I'll pick it up there."
+        },
+        {
+          "speaker": "M",
+          "text": "Great. I'll have a courier take it over this afternoon."
+        }
+      ],
+      "questions": [
+        {
+          "id": "GLP303A",
+          "skill": "l-conversation",
+          "prompt": "What does the woman want to do?",
+          "options": [
+            "Buy a new bike",
+            "Return a helmet",
+            "Book a lesson",
+            "Pick up a repaired bike"
+          ],
+          "answer": 3,
+          "explanation": "She asks whether the bike she dropped off for a new tire is ready.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "detail"
+        },
+        {
+          "id": "GLP303B",
+          "skill": "l-conversation",
+          "prompt": "Look at the graphic. Which branch will the woman go to tonight?",
+          "options": [
+            "Harbor Street",
+            "Pine Avenue",
+            "Mill Road",
+            "Station Plaza"
+          ],
+          "answer": 3,
+          "explanation": "She cannot arrive before seven, and the latest branch, inside the train station, is open until eight. The table lists that branch as Station Plaza.",
+          "graphic": true,
+          "ability": "L4",
+          "questionType": "graphic"
+        },
+        {
+          "id": "GLP303C",
+          "skill": "l-conversation",
+          "prompt": "What will the man do this afternoon?",
+          "options": [
+            "Close the shop early",
+            "Order a new tire",
+            "Send the bike to another branch",
+            "Call the woman"
+          ],
+          "answer": 2,
+          "explanation": "He says a courier will take the bike over this afternoon.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "next-action"
+        }
+      ],
+      "section": "listening",
+      "graphic": true
+    },
+    {
+      "id": "g-gl-p3-04",
+      "part": 3,
+      "accent": "AU",
+      "title": "Museum cafe promotion",
+      "graphicView": {
+        "kind": "svg",
+        "caption": "Visitors per month (hundreds)",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 215\" role=\"img\" aria-hidden=\"true\"><line x1=\"50\" y1=\"20\" x2=\"50\" y2=\"180\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"50\" y1=\"180\" x2=\"330\" y2=\"180\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"44\" y=\"184\" fill=\"currentColor\" font-size=\"11\" text-anchor=\"end\">0</text><text x=\"44\" y=\"116\" fill=\"currentColor\" font-size=\"11\" text-anchor=\"end\">200</text><text x=\"44\" y=\"48\" fill=\"currentColor\" font-size=\"11\" text-anchor=\"end\">400</text><rect x=\"70\" y=\"37.19999999999999\" width=\"34\" height=\"142.8\" fill=\"currentColor\" fill-opacity=\"0.55\" stroke=\"currentColor\"/><text x=\"87\" y=\"198\" fill=\"currentColor\" font-size=\"12\" text-anchor=\"middle\">Jan</text><rect x=\"122\" y=\"50.79999999999998\" width=\"34\" height=\"129.20000000000002\" fill=\"currentColor\" fill-opacity=\"0.55\" stroke=\"currentColor\"/><text x=\"139\" y=\"198\" fill=\"currentColor\" font-size=\"12\" text-anchor=\"middle\">Feb</text><rect x=\"174\" y=\"81.39999999999999\" width=\"34\" height=\"98.60000000000001\" fill=\"currentColor\" fill-opacity=\"0.55\" stroke=\"currentColor\"/><text x=\"191\" y=\"198\" fill=\"currentColor\" font-size=\"12\" text-anchor=\"middle\">Mar</text><rect x=\"226\" y=\"60.999999999999986\" width=\"34\" height=\"119.00000000000001\" fill=\"currentColor\" fill-opacity=\"0.55\" stroke=\"currentColor\"/><text x=\"243\" y=\"198\" fill=\"currentColor\" font-size=\"12\" text-anchor=\"middle\">Apr</text><rect x=\"278\" y=\"23.599999999999994\" width=\"34\" height=\"156.4\" fill=\"currentColor\" fill-opacity=\"0.55\" stroke=\"currentColor\"/><text x=\"295\" y=\"198\" fill=\"currentColor\" font-size=\"12\" text-anchor=\"middle\">May</text></svg>"
+      },
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Have you looked at the visitor numbers for the first five months of the year?"
+        },
+        {
+          "speaker": "M",
+          "text": "I have. Some months were much slower than others. We should do something to attract more people."
+        },
+        {
+          "speaker": "W",
+          "text": "I was thinking of a free cup of tea with every ticket. We could run it in the slowest month so far."
+        },
+        {
+          "speaker": "M",
+          "text": "Good idea. It won't cost much, and it might bring people in. Should I design some posters?"
+        },
+        {
+          "speaker": "W",
+          "text": "Yes, please. Send me a draft by Friday."
+        }
+      ],
+      "questions": [
+        {
+          "id": "GLP304A",
+          "skill": "l-conversation",
+          "prompt": "What are the speakers mainly discussing?",
+          "options": [
+            "A building repair",
+            "A way to increase visitors",
+            "A new exhibit",
+            "A staff schedule"
+          ],
+          "answer": 1,
+          "explanation": "They plan a free-tea offer to attract more people.",
+          "graphic": false,
+          "ability": "L1",
+          "questionType": "main-purpose"
+        },
+        {
+          "id": "GLP304B",
+          "skill": "l-conversation",
+          "prompt": "Look at the graphic. In which month will the free tea offer be held?",
+          "options": [
+            "February",
+            "March",
+            "April",
+            "May"
+          ],
+          "answer": 1,
+          "explanation": "The offer is for the slowest month so far. The chart shows the lowest bar in March. The month is never named.",
+          "graphic": true,
+          "ability": "L4",
+          "questionType": "graphic"
+        },
+        {
+          "id": "GLP304C",
+          "skill": "l-conversation",
+          "prompt": "What does the man offer to do?",
+          "options": [
+            "Design some posters",
+            "Buy more tea",
+            "Count the tickets",
+            "Call the newspaper"
+          ],
+          "answer": 0,
+          "explanation": "He asks, \"Should I design some posters?\"",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "next-action"
+        }
+      ],
+      "section": "listening",
+      "graphic": true
+    },
+    {
+      "id": "g-gl-p3-05",
+      "part": 3,
+      "accent": "US",
+      "title": "Required safety courses",
+      "graphicView": {
+        "kind": "table",
+        "caption": "Required courses by job",
+        "headers": [
+          "Job",
+          "Fire drill",
+          "First aid",
+          "Forklift",
+          "Chemicals"
+        ],
+        "rows": [
+          [
+            "Office staff",
+            "✓",
+            "✓",
+            "—",
+            "—"
+          ],
+          [
+            "Picker",
+            "✓",
+            "✓",
+            "✓",
+            "—"
+          ],
+          [
+            "Driver",
+            "✓",
+            "—",
+            "✓",
+            "✓"
+          ],
+          [
+            "Cleaner",
+            "✓",
+            "—",
+            "—",
+            "✓"
+          ]
+        ]
+      },
+      "script": [
+        {
+          "speaker": "M",
+          "text": "Welcome to the team, Dana. I'm the safety supervisor. I checked your training file this morning."
+        },
+        {
+          "speaker": "W",
+          "text": "Thanks. I finished the fire drill session and the course on the machines that lift pallets."
+        },
+        {
+          "speaker": "M",
+          "text": "Good. Which job are you starting in?"
+        },
+        {
+          "speaker": "W",
+          "text": "I'm a picker in the east warehouse."
+        },
+        {
+          "speaker": "M",
+          "text": "Then there's one more required course for you. It teaches how to treat injuries at work. The chemicals course isn't needed for pickers."
+        },
+        {
+          "speaker": "W",
+          "text": "Understood. When does it have to be done?"
+        },
+        {
+          "speaker": "M",
+          "text": "By the end of the month."
+        }
+      ],
+      "questions": [
+        {
+          "id": "GLP305A",
+          "skill": "l-conversation",
+          "prompt": "Who most likely is the man?",
+          "options": [
+            "A delivery driver",
+            "A new employee",
+            "A cleaner",
+            "A safety supervisor"
+          ],
+          "answer": 3,
+          "explanation": "He introduces himself as the safety supervisor.",
+          "graphic": false,
+          "ability": "L5",
+          "questionType": "detail"
+        },
+        {
+          "id": "GLP305B",
+          "skill": "l-conversation",
+          "prompt": "Look at the graphic. Which course does the woman still need to take?",
+          "options": [
+            "Fire drill",
+            "First aid",
+            "Forklift",
+            "Chemicals"
+          ],
+          "answer": 1,
+          "explanation": "She is a picker and has done the fire drill and forklift courses. The picker row also requires first aid, which he describes as treating injuries. He never says first aid.",
+          "graphic": true,
+          "ability": "L4",
+          "questionType": "graphic"
+        },
+        {
+          "id": "GLP305C",
+          "skill": "l-conversation",
+          "prompt": "When must the course be completed?",
+          "options": [
+            "By tomorrow",
+            "By Friday",
+            "By the end of the month",
+            "By next year"
+          ],
+          "answer": 2,
+          "explanation": "The man says it must be done by the end of the month.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "detail"
+        }
+      ],
+      "section": "listening",
+      "graphic": true
+    },
+    {
+      "id": "g-gl-p4-01",
+      "part": 4,
+      "accent": "AU",
+      "title": "Festival stage change",
+      "graphicView": {
+        "kind": "table",
+        "caption": "Festival schedule",
+        "headers": [
+          "Time",
+          "Main Stage",
+          "Garden Stage"
+        ],
+        "rows": [
+          [
+            "11:00",
+            "Choir",
+            "Puppet show"
+          ],
+          [
+            "1:00",
+            "Jazz trio",
+            "Magic show"
+          ],
+          [
+            "3:00",
+            "Folk duo",
+            "Poetry reading"
+          ],
+          [
+            "5:00",
+            "Brass band",
+            "Dance troupe"
+          ]
+        ]
+      },
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Good morning, festival guests. A quick update on today's program. The group booked on the Main Stage at one o'clock had to cancel because of a travel delay. To keep the program full, the act that was planned for the Garden Stage at the same hour will move to the Main Stage, since more people can fit there. The Garden Stage will stay quiet until three. And remember, tickets for the evening shows are available at the booth near the fountain."
+        }
+      ],
+      "questions": [
+        {
+          "id": "GLP401A",
+          "skill": "l-talk",
+          "prompt": "Why was one performance canceled?",
+          "options": [
+            "Bad weather",
+            "A travel delay",
+            "A power failure",
+            "Low ticket sales"
+          ],
+          "answer": 1,
+          "explanation": "The speaker says the group had to cancel because of a travel delay.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "detail"
+        },
+        {
+          "id": "GLP401B",
+          "skill": "l-talk",
+          "prompt": "Look at the graphic. Which act will now perform on the Main Stage at one o'clock?",
+          "options": [
+            "Jazz trio",
+            "Choir",
+            "Magic show",
+            "Folk duo"
+          ],
+          "answer": 2,
+          "explanation": "The Garden Stage act planned for one moves to the Main Stage. The schedule lists the magic show at that hour. The act is not named.",
+          "graphic": true,
+          "ability": "L4",
+          "questionType": "graphic"
+        },
+        {
+          "id": "GLP401C",
+          "skill": "l-talk",
+          "prompt": "What can listeners do at the booth near the fountain?",
+          "options": [
+            "Buy evening tickets",
+            "Borrow umbrellas",
+            "Meet the performers",
+            "Get a map"
+          ],
+          "answer": 0,
+          "explanation": "She says tickets for the evening shows are available there.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "detail"
+        }
+      ],
+      "section": "listening",
+      "graphic": true
+    },
+    {
+      "id": "g-gl-p4-02",
+      "part": 4,
+      "accent": "UK",
+      "title": "Shipping fee voicemail",
+      "graphicView": {
+        "kind": "table",
+        "caption": "Shipping fees",
+        "headers": [
+          "Package weight",
+          "Standard",
+          "Next day"
+        ],
+        "rows": [
+          [
+            "Up to 2 kg",
+            "£6",
+            "£12"
+          ],
+          [
+            "2–5 kg",
+            "£9",
+            "£16"
+          ],
+          [
+            "5–10 kg",
+            "£14",
+            "£25"
+          ]
+        ]
+      },
+      "script": [
+        {
+          "speaker": "M",
+          "text": "Hello, this is Tom from Cedar Home, calling about your order of the oak bookshelf. Once it is packed, it weighs about four kilograms, and you chose delivery for tomorrow morning. Before I send it, I'd like to confirm that the shipping fee will be added to your card. If you would prefer a slower service, please call us back before noon today."
+        }
+      ],
+      "questions": [
+        {
+          "id": "GLP402A",
+          "skill": "l-talk",
+          "prompt": "Why is the speaker calling?",
+          "options": [
+            "To confirm a shipping charge",
+            "To offer a discount",
+            "To report a delay",
+            "To ask for a review"
+          ],
+          "answer": 0,
+          "explanation": "He wants to confirm the shipping fee will be added to her card.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "main-purpose"
+        },
+        {
+          "id": "GLP402B",
+          "skill": "l-talk",
+          "prompt": "Look at the graphic. How much will the listener pay for shipping?",
+          "options": [
+            "£9",
+            "£12",
+            "£14",
+            "£16"
+          ],
+          "answer": 3,
+          "explanation": "The parcel weighs about four kilograms and goes next day. On the table, 2–5 kg with next-day delivery is £16. The price is not said.",
+          "graphic": true,
+          "ability": "L4",
+          "questionType": "graphic"
+        },
+        {
+          "id": "GLP402C",
+          "skill": "l-talk",
+          "prompt": "What can the listener do before noon?",
+          "options": [
+            "Cancel the card",
+            "Pick up the parcel",
+            "Choose a slower service",
+            "Change the address"
+          ],
+          "answer": 2,
+          "explanation": "He asks her to call back before noon if she prefers a slower service.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "detail"
+        }
+      ],
+      "section": "listening",
+      "graphic": true
+    },
+    {
+      "id": "g-gl-p4-03",
+      "part": 4,
+      "accent": "CA",
+      "title": "Museum tour",
+      "graphicView": {
+        "kind": "svg",
+        "caption": "Museum floor plan",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 240\" role=\"img\" aria-hidden=\"true\"><rect x=\"30\" y=\"20\" width=\"300\" height=\"180\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"130\" y1=\"20\" x2=\"130\" y2=\"200\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"230\" y1=\"20\" x2=\"230\" y2=\"200\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"30\" y1=\"110\" x2=\"330\" y2=\"110\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"80\" y=\"70\" fill=\"currentColor\" font-size=\"12\" text-anchor=\"middle\">Dinosaur hall</text><text x=\"180\" y=\"70\" fill=\"currentColor\" font-size=\"12\" text-anchor=\"middle\">Space gallery</text><text x=\"280\" y=\"70\" fill=\"currentColor\" font-size=\"12\" text-anchor=\"middle\">Ocean room</text><text x=\"80\" y=\"160\" fill=\"currentColor\" font-size=\"12\" text-anchor=\"middle\">Gift shop</text><text x=\"180\" y=\"160\" fill=\"currentColor\" font-size=\"12\" text-anchor=\"middle\">Main entrance</text><text x=\"280\" y=\"160\" fill=\"currentColor\" font-size=\"12\" text-anchor=\"middle\">Cafe</text><line x1=\"150\" y1=\"200\" x2=\"210\" y2=\"200\" stroke=\"currentColor\" stroke-width=\"6\"/><text x=\"180\" y=\"220\" fill=\"currentColor\" font-size=\"11\" text-anchor=\"middle\">Street</text></svg>"
+      },
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Welcome to the Riverside Science Museum. I'm your guide for today's tour. We will begin in the hall directly above the gift shop, where you will meet our largest skeleton. After that, we'll walk across to the gallery on the opposite side of the building from the cafe. The tour ends with a short film, and then you are welcome to have lunch."
+        }
+      ],
+      "questions": [
+        {
+          "id": "GLP403A",
+          "skill": "l-talk",
+          "prompt": "Who is the speaker?",
+          "options": [
+            "A museum guide",
+            "A gift shop clerk",
+            "A cafe owner",
+            "A bus driver"
+          ],
+          "answer": 0,
+          "explanation": "She says she is the guide for the tour.",
+          "graphic": false,
+          "ability": "L2",
+          "questionType": "detail"
+        },
+        {
+          "id": "GLP403B",
+          "skill": "l-talk",
+          "prompt": "Look at the graphic. Where will the tour begin?",
+          "options": [
+            "Dinosaur hall",
+            "Space gallery",
+            "Ocean room",
+            "Cafe"
+          ],
+          "answer": 0,
+          "explanation": "The tour starts in the hall directly above the gift shop. On the plan, that room is the Dinosaur hall, which is never named.",
+          "graphic": true,
+          "ability": "L4",
+          "questionType": "graphic"
+        },
+        {
+          "id": "GLP403C",
+          "skill": "l-talk",
+          "prompt": "What will the group do at the end of the tour?",
+          "options": [
+            "Visit the gift shop",
+            "Watch a short film",
+            "Meet the director",
+            "Buy tickets"
+          ],
+          "answer": 1,
+          "explanation": "She says the tour ends with a short film.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "detail"
+        }
+      ],
+      "section": "listening",
+      "graphic": true
+    },
+    {
+      "id": "g-gl-p4-04",
+      "part": 4,
+      "accent": "US",
+      "title": "Train stop closure",
+      "graphicView": {
+        "kind": "svg",
+        "caption": "Route 9",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 170\" role=\"img\" aria-hidden=\"true\"><line x1=\"40\" y1=\"90\" x2=\"330\" y2=\"90\" stroke=\"currentColor\" stroke-width=\"4\"/><circle cx=\"50\" cy=\"90\" r=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\"/><text x=\"50\" y=\"125\" fill=\"currentColor\" font-size=\"12\" text-anchor=\"middle\">City Hall</text><circle cx=\"115\" cy=\"90\" r=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\"/><text x=\"115\" y=\"143\" fill=\"currentColor\" font-size=\"12\" text-anchor=\"middle\">Oak Park</text><circle cx=\"180\" cy=\"90\" r=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\"/><text x=\"180\" y=\"125\" fill=\"currentColor\" font-size=\"12\" text-anchor=\"middle\">Library</text><circle cx=\"245\" cy=\"90\" r=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\"/><text x=\"245\" y=\"143\" fill=\"currentColor\" font-size=\"12\" text-anchor=\"middle\">Market</text><circle cx=\"310\" cy=\"90\" r=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\"/><text x=\"310\" y=\"125\" fill=\"currentColor\" font-size=\"12\" text-anchor=\"middle\">Stadium</text><text x=\"185\" y=\"40\" fill=\"currentColor\" font-size=\"13\" text-anchor=\"middle\" font-weight=\"700\">Route 9 · toward Stadium →</text></svg>"
+      },
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Attention, Route 9 riders. This weekend, the Library stop is closed for track repairs, and trains will not stop there. If you are going to the library, please get off at the stop after the closed one and walk back two blocks. Free shuttle buses will run between all stops every ten minutes. Thank you for your patience."
+        }
+      ],
+      "questions": [
+        {
+          "id": "GLP404A",
+          "skill": "l-talk",
+          "prompt": "Where would the announcement most likely be heard?",
+          "options": [
+            "In a library",
+            "On a train",
+            "At a bus depot",
+            "In a stadium"
+          ],
+          "answer": 1,
+          "explanation": "It addresses Route 9 riders about train stops.",
+          "graphic": false,
+          "ability": "L5",
+          "questionType": "detail"
+        },
+        {
+          "id": "GLP404B",
+          "skill": "l-talk",
+          "prompt": "Look at the graphic. Where should riders get off to reach the library?",
+          "options": [
+            "City Hall",
+            "Oak Park",
+            "Market",
+            "Stadium"
+          ],
+          "answer": 2,
+          "explanation": "Trains head toward Stadium. The stop after the closed Library stop is Market, and riders walk back from there.",
+          "graphic": true,
+          "ability": "L4",
+          "questionType": "graphic"
+        },
+        {
+          "id": "GLP404C",
+          "skill": "l-talk",
+          "prompt": "What will run every ten minutes?",
+          "options": [
+            "Express trains",
+            "Repair crews",
+            "Library tours",
+            "Shuttle buses"
+          ],
+          "answer": 3,
+          "explanation": "Free shuttle buses will run every ten minutes.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "detail"
+        }
+      ],
+      "section": "listening",
+      "graphic": true
+    },
+    {
+      "id": "g-gl-p4-05",
+      "part": 4,
+      "accent": "AU",
+      "title": "Quarterly sales meeting",
+      "graphicView": {
+        "kind": "svg",
+        "caption": "Sales by quarter",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 215\" role=\"img\" aria-hidden=\"true\"><line x1=\"50\" y1=\"20\" x2=\"50\" y2=\"180\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"50\" y1=\"180\" x2=\"330\" y2=\"180\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"44\" y=\"184\" fill=\"currentColor\" font-size=\"11\" text-anchor=\"end\">0</text><text x=\"44\" y=\"136\" fill=\"currentColor\" font-size=\"11\" text-anchor=\"end\">20</text><text x=\"44\" y=\"88\" fill=\"currentColor\" font-size=\"11\" text-anchor=\"end\">40</text><text x=\"44\" y=\"40\" fill=\"currentColor\" font-size=\"11\" text-anchor=\"end\">60</text><rect x=\"75\" y=\"55.2\" width=\"38\" height=\"124.8\" fill=\"currentColor\" fill-opacity=\"0.55\" stroke=\"currentColor\"/><text x=\"94\" y=\"198\" fill=\"currentColor\" font-size=\"12\" text-anchor=\"middle\">Q1</text><rect x=\"137\" y=\"105.60000000000001\" width=\"38\" height=\"74.39999999999999\" fill=\"currentColor\" fill-opacity=\"0.55\" stroke=\"currentColor\"/><text x=\"156\" y=\"198\" fill=\"currentColor\" font-size=\"12\" text-anchor=\"middle\">Q2</text><rect x=\"199\" y=\"67.2\" width=\"38\" height=\"112.8\" fill=\"currentColor\" fill-opacity=\"0.55\" stroke=\"currentColor\"/><text x=\"218\" y=\"198\" fill=\"currentColor\" font-size=\"12\" text-anchor=\"middle\">Q3</text><rect x=\"261\" y=\"36\" width=\"38\" height=\"144\" fill=\"currentColor\" fill-opacity=\"0.55\" stroke=\"currentColor\"/><text x=\"280\" y=\"198\" fill=\"currentColor\" font-size=\"12\" text-anchor=\"middle\">Q4</text><text x=\"185\" y=\"12\" fill=\"currentColor\" font-size=\"11\" text-anchor=\"middle\">Sales (thousands of units)</text></svg>"
+      },
+      "script": [
+        {
+          "speaker": "M",
+          "text": "Thanks, everyone, for joining the quarterly sales meeting. I want to start with our new Harbor series of travel mugs. As you can see, it was released in what turned out to be our slowest period of the year, mostly because customers did not know the line yet. Since then, sales have recovered strongly, and our most recent quarter was the best. Next, I'll go over the advertising plan for the new year."
+        }
+      ],
+      "questions": [
+        {
+          "id": "GLP405A",
+          "skill": "l-talk",
+          "prompt": "What is the meeting mainly about?",
+          "options": [
+            "Sales results",
+            "A new factory",
+            "Hiring plans",
+            "A store opening"
+          ],
+          "answer": 0,
+          "explanation": "The speaker reviews quarterly sales and the new product line.",
+          "graphic": false,
+          "ability": "L2",
+          "questionType": "main-purpose"
+        },
+        {
+          "id": "GLP405B",
+          "skill": "l-talk",
+          "prompt": "Look at the graphic. In which quarter was the Harbor series released?",
+          "options": [
+            "Q1",
+            "Q2",
+            "Q3",
+            "Q4"
+          ],
+          "answer": 1,
+          "explanation": "It was released in the slowest period of the year. The lowest bar on the chart is Q2.",
+          "graphic": true,
+          "ability": "L4",
+          "questionType": "graphic"
+        },
+        {
+          "id": "GLP405C",
+          "skill": "l-talk",
+          "prompt": "What will the speaker discuss next?",
+          "options": [
+            "Prices",
+            "Shipping times",
+            "An advertising plan",
+            "Customer complaints"
+          ],
+          "answer": 2,
+          "explanation": "He says he will go over the advertising plan next.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "next-action"
+        }
+      ],
+      "section": "listening",
+      "graphic": true
     }
   ]
 }
