@@ -32,7 +32,7 @@ export const PART_GUIDE = [
       { name: "說話者意圖", spot: "What does the man mean when he says「…」？", how: "回到那句話的前後句，想他為什麼這樣說。", trap: "照字面翻譯，沒有放回上下文。" },
       { name: "圖表題與下一步", spot: "Look at the graphic；或問接下來會做什麼", how: "圖表：聽到的資訊對到圖上沒被念出來的欄位。下一步：聽最後兩三句的 I'll、Let's、Could you。", trap: "只看圖不聽；聽到第一個答案就選，後面其實改了。" }
     ],
-    remember: ["三個人的對話要分清誰說了什麼。", "聽到 but、actually、instead 之後，才是最後的決定。"]
+    remember: ["三個人的對話要分清誰說了什麼。", "聽到 but、actually、instead 之後，才是最後的決定。", "聽到答案就立刻劃卡，劃完馬上看下一題的題目。"]
   },
   {
     part: 4, section: "聽力", name: "簡短獨白", count: "30 題（10 段）",
@@ -42,7 +42,7 @@ export const PART_GUIDE = [
       { name: "圖表題", spot: "Look at the graphic；表格、地圖、行程表", how: "聽到的時間或價格，對到圖上對應的名稱。", trap: "答案是圖上沒有被念出來的那一欄。" },
       { name: "結尾的請求與下一步", spot: "What are listeners asked to do？What will happen next？", how: "回想最後兩三句（Please、Remember to、Don't forget）。", trap: "拿前面的背景當成行動。" }
     ],
-    remember: ["獨白只念一次，抓大意，不需要每個字都聽懂。", "公告類：改了什麼、何時改、為什麼改。"]
+    remember: ["獨白只念一次，抓大意，不需要每個字都聽懂。", "公告類：改了什麼、何時改、為什麼改。", "聽到答案就立刻劃卡，劃完馬上看下一題的題目。"]
   },
   {
     part: 5, section: "閱讀", name: "句子填空", count: "30 題（約 10 分）",

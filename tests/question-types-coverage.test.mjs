@@ -90,7 +90,7 @@ test('the reading-the-questions card is marked personal and non-official, with n
   const { TIP_SECTIONS } = await import('../codex/js/tips.js');
   const card = TIP_SECTIONS.find((section) => section.id === 'reading-the-questions');
   assert.ok(card && card.personal === true);
-  assert.equal(card.tips.length, 4);
+  assert.equal(card.tips.length, 6);
   for (const tip of card.tips) {
     assert.match(tip.title, /個人整理，非官方/);
     assert.doesNotMatch(`${tip.title}${tip.body}${tip.why}`, /秒殺|萬能|80%/);
