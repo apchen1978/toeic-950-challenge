@@ -460,21 +460,21 @@ function vocabDueCount() {
 }
 
 // Compact "today" row: what is waiting for review, one tap to start. Calm wording, no pressure.
-function todayStrip(wrongDue, wordDue, history) {
+function todayStrip(wrongDue, history) {
   const lastEntry = history[history.length - 1];
   const lastText = lastEntry ? `上次練習 ${Math.round((lastEntry.correct / lastEntry.total) * 100)}%` : "還沒有練習紀錄";
   const item = (count, label, action, button, extra = "") => `<div class="today-item"><b>${count}</b><span>${label}</span>${count ? `<button type="button" class="btn small" data-action="${action}"${extra}>${button}</button>` : ""}</div>`;
-  const empty = !wrongDue && !wordDue;
   const grammarDone = grammarRightTotal();
-  return `<section class="today-strip" aria-label="今日待辦"><p class="today-title">今日<span class="muted"> · ${lastText}</span></p><div class="today-items">${item(wordDue, "單字待複習", "vocab-open", "複習單字")}${item(wrongDue, "錯題到期", "review-wrong", "複習錯題")}<div class="today-item"><b>${grammarDone}</b><span>/ ${GRAMMAR_QUIZ.length} 文法題答對</span></div></div>
-    <p class="today-start-title">${empty ? "今天沒有到期的複習。花 10 分鐘，從這裡開始：" : "複習完，再花 10 分鐘："}</p>
-    <div class="today-start"><button type="button" class="btn primary" data-action="flash-quick">背 10 個精選單字</button><button type="button" class="btn" data-action="grammar-drill">練 5 題文法</button><button type="button" class="btn" data-action="speed-start">快速反應 10 題</button></div></section>`;
+  const go = (form, label, primary = false) => `<button type="button" class="btn${primary ? " primary" : ""}" data-action="start-form" data-form="${form}">${label}</button>`;
+  return `<section class="today-strip" aria-label="今日待辦"><p class="today-title">今日<span class="muted"> · ${lastText}</span></p><div class="today-items">${item(wrongDue, "錯題到期", "review-wrong", "複習錯題")}<div class="today-item"><b>${grammarDone}</b><span>/ ${GRAMMAR_QUIZ.length} 文法題答對</span></div></div>
+    <p class="today-start-title">${wrongDue ? "複習完，再花 10 分鐘：" : "今天沒有到期的複習。花 10 分鐘，選一個開始："}</p>
+    <div class="today-start">${go("part5-15", "Part 5 專練 15 題", true)}<button type="button" class="btn" data-action="grammar-drill">練 5 題文法</button>${go("part6-8", "Part 6 專練 8 題")}<button type="button" class="btn" data-action="speed-start">快速反應 10 題</button>${go("part7-12", "Part 7 專練 12 題")}${go("mini-listen-15", "聽力快練 15 題")}</div></section>`;
 }
 
-const HOME_NAV = [["nav-review", "複習"], ["nav-preexam", "考前"], ["nav-mini", "快練"], ["nav-phrases", "片語"], ["nav-vocab", "單字"], ["nav-grammar", "文法"], ["nav-practice", "練習"], ["nav-mock", "模考"]];
-const HOME_NAV_EXTRA = new Set(["nav-vocab", "nav-grammar", "nav-practice"]);
+const HOME_NAV = [["nav-review", "複習"], ["nav-preexam", "考前"], ["nav-mini", "快練"], ["nav-phrases", "片語"], ["nav-grammar", "文法"], ["nav-practice", "練習"], ["nav-mock", "模考"]];
+const HOME_NAV_EXTRA = new Set(["nav-grammar", "nav-practice"]);
 
-// 考前重點模式：收起單字、文法、聽力小課程與分項練習。沒設定過時，考前 14 天內自動開啟；手動切換後以使用者的選擇為準。
+// 考前重點模式：收起文法、聽力小課程與分項練習。沒設定過時，考前 14 天內自動開啟；手動切換後以使用者的選擇為準。
 function homeFocus() {
   const saved = store.get(KEY_HOME_FOCUS, null);
   if (typeof saved === "boolean") return saved;
@@ -692,7 +692,6 @@ function renderHome() {
   const queueCount = queuedQuestions.length;
   const dueQuestions = queuedQuestions.filter((q) => wrongAnswerDue(wrongQueue[q.id]));
 
-  const wordDue = vocabDueCount();
   planWeak = weak[0]?.skill ?? null;
   applyTypeMode();
   const focus = homeFocus();
@@ -704,9 +703,9 @@ function renderHome() {
       <p class="home-intro">上次 955，這次挑戰更高。<span class="home-intro-more">專注聽力與閱讀的推論、細節與交叉比對。</span></p>
       <p class="home-collab"><b>Paul × AI</b> 一起備考</p>
     </header>
-    ${homeNav(dueQuestions.length + wordDue, focus)}
+    ${homeNav(dueQuestions.length, focus)}
     ${focusBar(focus)}
-    ${todayStrip(dueQuestions.length, wordDue, history)}
+    ${todayStrip(dueQuestions.length, history)}
     ${session ? resumeCard() : ''}
 
     <section class="card plan-card" id="plan-card" aria-labelledby="plan-title">${planCardInner()}</section>
@@ -812,45 +811,6 @@ function renderHome() {
 
     ${phrasesSection()}
 
-    <section class="card vocabulary-card home-extra" id="nav-vocab" aria-labelledby="vocabulary-title">
-      <div class="vocab-hero">
-        <div class="vocab-hero-copy">
-          <p class="vocabulary-eyebrow">WORKPLACE VOCABULARY</p>
-          <h2 id="vocabulary-title">職場字彙 <span>1900+</span></h2>
-          <p class="vocab-hero-subtitle">常考單字入門 <span aria-hidden="true">·</span> 800 打底 <span aria-hidden="true">·</span> 900 衝金色證書 <span aria-hidden="true">·</span> 進階選讀</p>
-        </div>
-        <div class="vocab-seal" aria-hidden="true"><b>900</b><span>GOLD<br>CERTIFICATE</span></div>
-      </div>
-      <div class="vocab-stats" aria-label="字彙庫統計">
-        <div class="vocab-stat"><b>${vocabTotal}</b><span>總詞條</span></div>
-        <div class="vocab-stat"><b>${vocab[700]}</b><span>常考單字</span></div>
-        <div class="vocab-stat"><b>${vocab[800]}</b><span>800 核心</span></div>
-        <div class="vocab-stat vocab-stat-gold"><b>${vocab[900]}</b><span>900 金色證書</span></div>
-        <div class="vocab-stat"><b>${vocab[850]}</b><span>進階選讀</span></div>
-        <div class="vocab-stat"><b>${PICKS.size}</b><span>必背精選</span></div>
-      </div>
-      <p class="muted">不知道從哪開始？先背「必背精選」：從全部單字裡挑出最值得先學的 ${PICKS.size} 個。</p>
-      <div class="vocab-actions">
-        <button type="button" class="btn primary" data-action="flash-quick">背 10 個精選單字</button>
-        <button type="button" class="btn" data-action="vocab-open">自訂背單字</button>
-        <button type="button" class="btn vocab-gold-action" data-action="vocab-gold">只看 900 金色證書</button>
-      </div>
-      <details class="vocabulary-list">
-        <summary>瀏覽單字與主題</summary>
-        <p class="muted">全部會把常考單字、800 與 900 穿插列出。900 金色證書只收多益真的可能考到的字；較冷僻、偏專業的字放在「進階選讀」，想多學再看。例句由本站撰寫，並非官方題目或官方字表。</p>
-        <div class="vocab-filters" role="group" aria-label="字彙程度">
-          <button type="button" class="btn small" data-action="vocab-filter" data-vocab-filter="pick">必背精選</button>
-          <button type="button" class="btn small" data-action="vocab-filter" data-vocab-filter="700">常考單字</button>
-          <button type="button" class="btn small" data-action="vocab-filter" data-vocab-filter="800">800 核心</button>
-          <button type="button" class="btn small" data-action="vocab-filter" data-vocab-filter="900">900 金色證書</button>
-          <button type="button" class="btn small" data-action="vocab-filter" data-vocab-filter="850">進階選讀</button>
-          <button type="button" class="btn small" data-action="vocab-filter" data-vocab-filter="all">全部</button>
-        </div>
-        ${VOCABULARY.map((group) => `<details class="vocabulary-group" data-vocab-group><summary>${esc(group.category)} · <span data-vocab-count>${group.words.length} 個詞條</span></summary>${group.words.map((item) => { const entry = vocabParts(item); const { meaning, example, level, pos } = entry; return `<p class="${level === 900 ? "vocab-gold" : level === 700 ? "vocab-common" : level === 850 ? "vocab-adv" : "vocab-core"}" data-vocab-level="${level}"${PICKS.has(entry.word) ? ' data-vocab-pick="1"' : ""}><b>${vocabName(entry)}</b>${pos ? ` <span class="muted">${esc(pos)}</span>` : ""} <span class="tag">${vocabLevelLabel(level)}</span>${PICKS.has(entry.word) ? ' <span class="tag vocab-pick-tag">精選</span>' : ""} · ${esc(meaning)}<br><span class="muted">${esc(example)}</span></p>`; }).join("")}</details>`).join("")}
-        <p><a href="https://www.toeic.com.tw/toeic/listening-reading/about/content/" target="_blank" rel="noopener noreferrer">參考：台灣多益官方測驗內容</a> · <a href="https://dictionary.cambridge.org/dictionary/english/" target="_blank" rel="noopener noreferrer">Cambridge Dictionary</a></p>
-      </details>
-    </section>
-
     ${grammarSection()}
 
     <section class="card lesson-entry home-extra" id="nav-practice"><p class="section-kicker">LISTENING LESSONS</p><h2>聽力小課程</h2><p>用職場情境練習聽力。先聽錄音，再看中文概要、英文逐字稿和實用片語。</p><button class="btn primary" data-action="lessons">開始聽小課程</button></section>
@@ -938,7 +898,7 @@ function renderHome() {
       <div id="unsupported-message">${audio.supported() ? '' : unsupportedNotice()}</div>
     </section>
 
-    <p class="home-collab-note muted"><b>Paul × AI</b> 一起備考：Paul 決定方向與取捨，AI 一起腦力激盪、協助出題，並整理單字與文法，再由 Paul 實際練習、回饋、調整。</p>
+    <p class="home-collab-note muted"><b>Paul × AI</b> 一起備考：Paul 決定方向與取捨，AI 一起腦力激盪、協助出題，並整理文法與題型，再由 Paul 實際練習、回饋、調整。</p>
     <details class="card fold" id="voicecard"><summary><h2>聽力音色</h2><span class="fold-hint">試聽與語速設定</span></summary><p class="muted">先試聽，再開始。音色依此裝置與瀏覽器提供，清單優先排列較自然的候選音色。</p><label for="speech-rate">語速</label> <select class="btn" id="speech-rate"><option value="0.85">0.85× · 精聽</option><option value="1">1× · 正常</option><option value="1.1">1.1× · 挑戰</option></select><div id="voices" class="muted">載入語音中…</div></details>
     <details class="card fold"><summary><h2>官方樣題與練習方式</h2><span class="fold-hint">官方公開樣題連結</span></summary><p>先做一套練習，再從錯題解析找失分原因；閱讀可獨立練習。可選四套 200 題分段計時練習，或使用短題組；照片題目前有 ${photoCount} 題試做。</p><p><a href="https://www.ets.org/pdfs/toeic/toeic-listening-reading-sample-test.pdf" target="_blank" rel="noopener">ETS 官方公開樣題 PDF（含解答與聽力稿）</a> · <a href="https://toeic.com.tw/toeic/listening-reading/about/content/" target="_blank" rel="noopener">台灣官方題型與時間</a></p><p class="muted">官方內容於來源頁開啟；本機題庫與官方樣題分開。正式閱讀為 100 題、75 分鐘。</p></details>
     <details class="card fold"><summary><h2>正式考試與素材庫</h2><span class="fold-hint">正式題數、時間與官方範例</span></summary><p>正式 Listening 100 題／約 45 分鐘；Reading 100 題／75 分鐘。實際作答約 2 小時，連基本資料及問卷約 2.5 小時。</p><details><summary>查看正式題數分配</summary><p>Part 1 照片 6 題 · Part 2 應答 25 題 · Part 3 對話 39 題 · Part 4 獨白 30 題。</p><p>Part 5 句子填空 30 題 · Part 6 段落填空 16 題 · Part 7 單篇 29 題、多篇 25 題。</p></details><p>台灣官方範例（在來源頁練習與核對答案）：</p><ul><li><a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample03.html" target="_blank" rel="noopener">Part 3 聽力對話</a> · <a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample04.html" target="_blank" rel="noopener">Part 4 聽力獨白</a></li><li><a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample05.html" target="_blank" rel="noopener">Part 5 句子填空</a> · <a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample06.html" target="_blank" rel="noopener">Part 6 段落填空</a> · <a href="https://www.toeic.com.tw/sample-test/toeic-listening-reading/sample07_03.html" target="_blank" rel="noopener">Part 7 多篇閱讀</a></li></ul><p class="muted">新增挑戰 03：聽力 20 題＋閱讀 20 題；也可只選閱讀 03。做完可以依錯題與弱項，決定下一回要練聽力、閱讀或照片題。</p></details>
@@ -1337,7 +1297,7 @@ function renderTest() {
   app.innerHTML = `
     <div class="topbar">
       <div><span class="tag">${session.mode === "review" ? "錯題複習" : g.section === "listening" ? "Listening" : "Reading"}</span><span class="tag">Part ${g.part}</span><span class="muted">${esc(g.title ?? "")}</span>${readingVariantBadge(session)}${session.official ? `<span class="tag">正式模式：每題只播一次，依正式考試停頓</span>` : ""}</div>
-      <div class="row">${clock}<span class="muted" id="count">${answeredCount}/${qs.length} 已答</span><button class="btn small" data-action="pause-timer">暫停／看估分</button><button class="btn small primary" data-action="submit">提前交卷</button></div>
+      <div class="row">${clock}<span class="muted" id="count">${answeredCount}/${qs.length} 已答</span><button class="btn small" data-action="pause-timer">暫停／看估分</button><button class="btn small" data-action="leave-test">回首頁</button><button class="btn small primary" data-action="submit">提前交卷</button></div>
       ${paceLine(g)}
     </div>
 
@@ -1994,6 +1954,16 @@ app.addEventListener("click", (e) => {
       }
       if (pauseTimer(session)) { saveSession(); renderTest(); } else if (remainingMs(session) <= 0) { if (session.phase) renderTest(); else submit(true); }
       break;
+    case "leave-test": {
+      if (session?.official && session.phase === "listening") {
+        pauseOfficialPlayback();
+        markOfficialHold();
+        if (!Number.isFinite(session.pausedRemainingMs)) session.pausedRemainingMs = 1;
+        saveSession();
+      } else if (session && pauseTimer(session)) saveSession();
+      renderHome();
+      break;
+    }
     case "official-resume-audio": officialAudioRetry?.(); break;
     case "resume-timer": resumePausedExam(); break;
     case "open-peek":

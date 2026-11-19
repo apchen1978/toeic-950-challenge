@@ -155,3 +155,13 @@ for(const dir of ['js','codex/js']){
     assert.match(audio.errorMessage(),/逾時/);
   });
 }
+
+test('novelty and robotic iOS voices are never offered or picked; a normal voice is used instead', async () => {
+  const { isNoveltyVoice } = await import('../codex/js/audio.js');
+  for (const n of ['Fred', 'Whisper', 'Zarvox', 'Bad News', 'Albert', 'Bubbles', 'Trinoids']) assert.equal(isNoveltyVoice(n), true, n);
+  for (const n of ['Samantha', 'Daniel', 'Samantha (Enhanced)', 'Ava (Premium)', 'Microsoft Aria Online (Natural) - English (United States)', 'Google US English']) assert.equal(isNoveltyVoice(n), false, n);
+  const source = (await import('node:fs')).readFileSync(new URL('../codex/js/audio.js', import.meta.url), 'utf8');
+  assert.ok(source.includes('!isNoveltyVoice(v.name)'), 'availableVoices filters novelty voices');
+  const maleLine = source.split('\n').find((line) => line.startsWith('const MALE'));
+  assert.ok(maleLine && !maleLine.includes('fred'), 'Fred is no longer treated as a preferred male voice');
+});

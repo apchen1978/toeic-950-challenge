@@ -495,3 +495,6 @@ details.card-more > summary:hover, details.fold > summary:hover { opacity: .85; 
 .pg-seen { display: flex; align-items: center; gap: 8px; margin-top: 8px; cursor: pointer; }
 .pg-seen input { width: 18px; height: 18px; }
 @media (max-width: 640px) { .pg-type dl { grid-template-columns: 1fr; } .pg-type dt { margin-top: 4px; } }
+
+.today-start { display: flex; flex-wrap: wrap; gap: 8px; }
+.today-start .btn { flex: 1 1 calc(50% - 8px); }

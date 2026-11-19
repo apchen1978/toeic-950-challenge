@@ -64,7 +64,7 @@ test("compact home: review sits above the pre-exam card, nav follows page order 
 test("home page runs from light to heavy: last result, wrong-answer analysis, tips, quick practice, mocks, then the 200-question forms", () => {
   const markers = [
     "${todayStrip(", 'id="plan-card"', "<h2>最近成績</h2>", 'id="nav-review"', "<h2>錯題複習</h2>", "${preExamCard()}", 'class="card tips-card"',
-    'id="nav-mini"', "${phrasesSection()}", 'id="nav-vocab"', "${grammarSection()}", 'class="card quick-card"',
+    'id="nav-mini"', "${phrasesSection()}", "${grammarSection()}", 'class="card quick-card"',
     'class="card reading-full-card"', 'id="nav-listening-mock"', 'id="offline-card"', "<h2>四套 200 題計時練習</h2>", "<h2>題庫說明與其他練習</h2>", "<h2>作答紀錄</h2>"
   ];
   const at = markers.map((m) => [m, app.indexOf(m)]);

@@ -2,8 +2,11 @@
 // Voice quality depends on the device: Edge "Natural" voices and iOS/macOS enhanced voices sound best.
 // Transcript visibility is controlled by the UI's collapsed transcript panels.
 
-const MALE = /\b(guy|davis|andrew|brian|christopher|eric|roger|steffan|ryan|david|mark|george|james|daniel|alex|fred|thomas|aaron|tom|male)\b/i;
+const MALE = /\b(guy|davis|andrew|brian|christopher|eric|roger|steffan|ryan|david|mark|george|james|daniel|alex|thomas|aaron|tom|male)\b/i;
 const FEMALE = /(aria|jenny|michelle|emma|ava|sonia|libby|zira|samantha|susan|hazel|karen|victoria|allison|joanna|jessica|nancy|female)/i;
+// iOS／macOS 內建的「趣味音色」和舊式機器聲（機器人、耳語、風琴、鬼聲、Fred 等）不適合當題目語音，排除掉。
+const NOVELTY = /\b(albert|bad news|bahh|bells|boing|bubbles|cellos|deranged|fred|good news|hysterical|jester|junior|kathy|organ|pipe organ|princess|ralph|superstar|trinoids|whisper|wobble|zarvox)\b/i;
+export function isNoveltyVoice(name) { return NOVELTY.test(String(name ?? "")); }
 const PREF_KEY = (globalThis.location?.pathname ?? '').includes('/codex/') ? 'toeic950.codex.voice.v1' : 'toeic950.voice.v1';
 
 let token = 0;
@@ -45,7 +48,11 @@ function rank(v) {
 
 export function availableVoices() {
   if (!supported()) return [];
-  try { return speechSynthesis.getVoices().filter(v => /^en(?:[-_]|$)/i.test(v.lang)).sort((a,b)=>rank(b)-rank(a)); }
+  try {
+    const english = speechSynthesis.getVoices().filter(v => /^en(?:[-_]|$)/i.test(v.lang));
+    const normal = english.filter(v => !isNoveltyVoice(v.name));
+    return (normal.length ? normal : english).sort((a,b)=>rank(b)-rank(a));
+  }
   catch { return []; }
 }
 

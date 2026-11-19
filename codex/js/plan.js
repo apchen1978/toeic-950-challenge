@@ -37,20 +37,20 @@ export const TASKS = {
 export const BY_DAYS_LEFT = {
   13: ["read1", "review"],
   12: ["checkMock", "weak", "notPractice"],
-  11: ["part5Block", "part6Block", "vocab"],
+  11: ["part5Block", "part6Block", "grammar"],
   10: ["read2", "review"],
   9: ["checkMock", "part7Short", "notPractice"],
   8: ["listen1", "miniRead"],
   7: ["checkMock", "sprint56", "part7Short"],
   6: ["read3", "review"],
   5: ["checkMock", "part7Block", "part6Short"],
-  4: ["sprint56", "notPractice", "miniListen", "vocab"],
+  4: ["sprint56", "notPractice", "miniListen", "grammar"],
   3: ["listen2", "review"],
   2: ["readAgain", "miniListen"],
   1: ["rest", "partGuide", "miniListen", "miniRead", "preexam", "prepare"],
   0: ["partGuide", "preexam", "prepare"]
 };
-export const GENERIC_DAY = ["review", "speed", "vocab", "grammar", "weak"];
+export const GENERIC_DAY = ["review", "speed", "part5Short", "grammar", "weak"];
 
 export const DAY_TITLES = {
   13: "第一次完整閱讀模擬，先看真實狀態",
