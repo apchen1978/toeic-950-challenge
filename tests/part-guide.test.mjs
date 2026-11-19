@@ -46,3 +46,13 @@ test("guide view is wired: entry buttons, handlers, tick state, plan tasks and s
   assert.equal(TASKS.partGuide.action, "part-guide");
   assert.ok(BY_DAYS_LEFT[1].includes("partGuide") && BY_DAYS_LEFT[0].includes("partGuide"));
 });
+
+test("listening marking habit (mark right away, then preview the next question) is in the tips and the Part 3/4 reminders", async () => {
+  const { TIP_SECTIONS } = await import("../codex/js/tips.js");
+  const card = TIP_SECTIONS.find((s) => s.id === "reading-the-questions");
+  const titles = card.tips.map((t) => t.title).join("|");
+  assert.match(titles, /立刻劃在答案卡/);
+  assert.match(titles, /劃完立刻看下一題/);
+  assert.ok(card.tips.every((t) => /個人/.test(t.title)), "personal summaries stay labelled");
+  for (const part of [3, 4]) assert.ok(PART_GUIDE.find((p) => p.part === part).remember.some((r) => /立刻劃卡/.test(r) && /下一題/.test(r)), `part ${part}`);
+});
