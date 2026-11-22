@@ -467,8 +467,8 @@ function todayStrip(wrongDue, history) {
   const grammarDone = grammarRightTotal();
   const go = (form, label, primary = false) => `<button type="button" class="btn${primary ? " primary" : ""}" data-action="start-form" data-form="${form}">${label}</button>`;
   return `<section class="today-strip" aria-label="今日待辦"><p class="today-title">今日<span class="muted"> · ${lastText}</span></p><div class="today-items">${item(wrongDue, "錯題到期", "review-wrong", "複習錯題")}<div class="today-item"><b>${grammarDone}</b><span>/ ${GRAMMAR_QUIZ.length} 文法題答對</span></div></div>
-    <p class="today-start-title">${wrongDue ? "複習完，再花 10 分鐘：" : "今天沒有到期的複習。花 10 分鐘，選一個開始："}</p>
-    <div class="today-start">${go("part5-15", "Part 5 專練 15 題", true)}<button type="button" class="btn" data-action="grammar-drill">練 5 題文法</button>${go("part6-8", "Part 6 專練 8 題")}<button type="button" class="btn" data-action="speed-start">快速反應 10 題</button>${go("part7-12", "Part 7 專練 12 題")}${go("mini-listen-15", "聽力快練 15 題")}</div></section>`;
+    <p class="today-start-title">${wrongDue ? "複習完，再練一個（濃縮練習約 17 分鐘）：" : "今天沒有到期的複習。選一個開始（濃縮練習約 17 分鐘）："}</p>
+    <div class="today-start">${go("mini-ult-1", "終極濃縮練習 ①（27 題）", true)}${go("mini-ult-2", "終極濃縮練習 ②（27 題）", true)}${go("part5-15", "Part 5 專練 15 題")}<button type="button" class="btn" data-action="grammar-drill">練 5 題文法</button>${go("part6-8", "Part 6 專練 8 題")}<button type="button" class="btn" data-action="speed-start">快速反應 10 題</button>${go("part7-12", "Part 7 專練 12 題")}${go("mini-listen-15", "聽力快練 15 題")}</div></section>`;
 }
 
 const HOME_NAV = [["nav-review", "複習"], ["nav-preexam", "考前"], ["nav-mini", "快練"], ["nav-phrases", "片語"], ["nav-grammar", "文法"], ["nav-practice", "練習"], ["nav-mock", "模考"]];
