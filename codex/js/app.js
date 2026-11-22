@@ -467,8 +467,8 @@ function todayStrip(wrongDue, history) {
   const grammarDone = grammarRightTotal();
   const go = (form, label, primary = false) => `<button type="button" class="btn${primary ? " primary" : ""}" data-action="start-form" data-form="${form}">${label}</button>`;
   return `<section class="today-strip" aria-label="今日待辦"><p class="today-title">今日<span class="muted"> · ${lastText}</span></p><div class="today-items">${item(wrongDue, "錯題到期", "review-wrong", "複習錯題")}<div class="today-item"><b>${grammarDone}</b><span>/ ${GRAMMAR_QUIZ.length} 文法題答對</span></div></div>
-    <p class="today-start-title">${wrongDue ? "複習完，再花 10 分鐘：" : "今天沒有到期的複習。花 10 分鐘，選一個開始："}</p>
-    <div class="today-start">${go("part5-15", "Part 5 專練 15 題", true)}<button type="button" class="btn" data-action="grammar-drill">練 5 題文法</button>${go("part6-8", "Part 6 專練 8 題")}<button type="button" class="btn" data-action="speed-start">快速反應 10 題</button>${go("part7-12", "Part 7 專練 12 題")}${go("mini-listen-15", "聽力快練 15 題")}</div></section>`;
+    <p class="today-start-title">${wrongDue ? "複習完，再練一個（濃縮練習約 17 分鐘）：" : "今天沒有到期的複習。選一個開始（濃縮練習約 17 分鐘）："}</p>
+    <div class="today-start">${go("mini-ult-1", "終極濃縮練習 ①（27 題）", true)}${go("mini-ult-2", "終極濃縮練習 ②（27 題）", true)}${go("part5-15", "Part 5 專練 15 題")}<button type="button" class="btn" data-action="grammar-drill">練 5 題文法</button>${go("part6-8", "Part 6 專練 8 題")}<button type="button" class="btn" data-action="speed-start">快速反應 10 題</button>${go("part7-12", "Part 7 專練 12 題")}${go("mini-listen-15", "聽力快練 15 題")}</div></section>`;
 }
 
 const HOME_NAV = [["nav-review", "複習"], ["nav-preexam", "考前"], ["nav-mini", "快練"], ["nav-phrases", "片語"], ["nav-grammar", "文法"], ["nav-practice", "練習"], ["nav-mock", "模考"]];
@@ -850,10 +850,13 @@ function renderHome() {
       ${sectionChoiceControl("mock-section-quick")}
       <button class="btn primary" data-action="start-form" data-form="quick-40">開始 40 題快速模考</button>
       <button class="btn primary" data-action="start-form" data-form="quick-60">開始 60 題快速模考</button>
+      <p class="muted" style="margin-top:14px"><b>終極濃縮練習</b>：聽力 Part 1–4＋閱讀 Part 5–7，每個 Part 3–5 題（含圖表題、多文件題），約 17 分鐘，兩套。</p>
+      <button class="btn primary" data-action="start-form" data-form="mini-ult-1">濃縮練習 ①（27 題）</button>
+      <button class="btn primary" data-action="start-form" data-form="mini-ult-2">濃縮練習 ②（27 題）</button>
       <details class="card-more"><summary>正式模式與音檔說明</summary>
       <p class="muted">聽力依音檔連續播放，每題只播一次，沒有聽力倒數；完整模考播完才進入閱讀。</p>
       <p class="muted">聽力音檔輪流使用美式、英式、加拿大與澳洲口音。作答後才看得到該題口音。</p>
-      <p class="muted">正式模式：每題只播一次，依正式考試停頓。Part 1、Part 2 每題後約停 5 秒；Part 3、Part 4 會唸出題目，每題後約停 8 秒，有圖表的題目約停 12 秒。</p>
+      <p class="muted">正式模式：每題只播一次，依正式考試停頓。Part 1、Part 2 每題後約停 5 秒；Part 3、Part 4 會唸出題目，每題後約停 12 秒，有圖表的題目約停 18 秒。</p>
       <p class="muted">依正式題型與時間近似縮小；對話和文章題組保留完整，因此各 Part 題數不是精確比例。每次從全部題庫隨機組題，依正式題型比例縮小；聽力四種口音平均，最近考過的題目會盡量避開。完成後可查看解析與非官方粗估。</p>
       <p class="muted">音檔是練習用的合成語音，存在這個網站裡，播放時不連到外部語音服務。不是 ETS 官方錄音。</p>
       </details>
@@ -1912,7 +1915,7 @@ app.addEventListener("click", (e) => {
       break;
     }
     case "start-form": {
-      if (d.form === "quick-40" || d.form === "quick-60") { startQuickForm(d.form); break; }
+      if (d.form === "quick-40" || d.form === "quick-60" || d.form === "mini-ult-1" || d.form === "mini-ult-2") { startQuickForm(d.form); break; }
       if (isReadingFullForm(d.form)) { startReadingFull(d.form); break; }
       if (d.form === "mini-listen-15" || d.form === "mini-graphic-24" || d.form === "mini-read-12") { startMiniForm(d.form); break; }
       if (/^part(?:[567]|56)-\d+$/.test(d.form)) { startPartSet(d.form); break; }

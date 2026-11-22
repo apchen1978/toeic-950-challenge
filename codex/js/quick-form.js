@@ -43,6 +43,37 @@ export const QUICK_BLUEPRINTS = {
       { part: 4, groups: 4, questionsEach: 3, preferGraphic: 4 }
     ]
   },
+  // 終極濃縮練習：聽力＋閱讀每個 Part 各 3–5 題（Part 3/4 各一組含圖表、Part 6 一組、Part 7 五題含多文件）。兩套題數略有不同。
+  "mini-ult-1": {
+    minutes: 18,
+    listening: 13,
+    reading: 14,
+    timing: { listening: 7, reading: 10 },
+    parts: [
+      { part: 1, groups: 3 },
+      { part: 2, groups: 4 },
+      { part: 3, groups: 1, questionsEach: 3, preferGraphic: 1 },
+      { part: 4, groups: 1, questionsEach: 3, preferGraphic: 1 },
+      { part: 5, groups: 5 },
+      { part: 6, groups: 1, questionsEach: 4 },
+      { part: 7, questions: 5, requireMulti: true }
+    ]
+  },
+  "mini-ult-2": {
+    minutes: 18,
+    listening: 14,
+    reading: 13,
+    timing: { listening: 7, reading: 10 },
+    parts: [
+      { part: 1, groups: 3 },
+      { part: 2, groups: 5 },
+      { part: 3, groups: 1, questionsEach: 3, preferGraphic: 1 },
+      { part: 4, groups: 1, questionsEach: 3, preferGraphic: 1 },
+      { part: 5, groups: 4 },
+      { part: 6, groups: 1, questionsEach: 4 },
+      { part: 7, questions: 5, requireMulti: true }
+    ]
+  },
   "mini-read-12": {
     minutes: 9,
     listening: 0,
