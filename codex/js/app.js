@@ -850,10 +850,13 @@ function renderHome() {
       ${sectionChoiceControl("mock-section-quick")}
       <button class="btn primary" data-action="start-form" data-form="quick-40">開始 40 題快速模考</button>
       <button class="btn primary" data-action="start-form" data-form="quick-60">開始 60 題快速模考</button>
+      <p class="muted" style="margin-top:14px"><b>終極濃縮練習</b>：聽力 Part 1–4＋閱讀 Part 5–7，每個 Part 3–5 題（含圖表題、多文件題），約 17 分鐘，兩套。</p>
+      <button class="btn primary" data-action="start-form" data-form="mini-ult-1">濃縮練習 ①（27 題）</button>
+      <button class="btn primary" data-action="start-form" data-form="mini-ult-2">濃縮練習 ②（27 題）</button>
       <details class="card-more"><summary>正式模式與音檔說明</summary>
       <p class="muted">聽力依音檔連續播放，每題只播一次，沒有聽力倒數；完整模考播完才進入閱讀。</p>
       <p class="muted">聽力音檔輪流使用美式、英式、加拿大與澳洲口音。作答後才看得到該題口音。</p>
-      <p class="muted">正式模式：每題只播一次，依正式考試停頓。Part 1、Part 2 每題後約停 5 秒；Part 3、Part 4 會唸出題目，每題後約停 8 秒，有圖表的題目約停 12 秒。</p>
+      <p class="muted">正式模式：每題只播一次，依正式考試停頓。Part 1、Part 2 每題後約停 5 秒；Part 3、Part 4 會唸出題目，每題後約停 12 秒，有圖表的題目約停 18 秒。</p>
       <p class="muted">依正式題型與時間近似縮小；對話和文章題組保留完整，因此各 Part 題數不是精確比例。每次從全部題庫隨機組題，依正式題型比例縮小；聽力四種口音平均，最近考過的題目會盡量避開。完成後可查看解析與非官方粗估。</p>
       <p class="muted">音檔是練習用的合成語音，存在這個網站裡，播放時不連到外部語音服務。不是 ETS 官方錄音。</p>
       </details>
@@ -1912,7 +1915,7 @@ app.addEventListener("click", (e) => {
       break;
     }
     case "start-form": {
-      if (d.form === "quick-40" || d.form === "quick-60") { startQuickForm(d.form); break; }
+      if (d.form === "quick-40" || d.form === "quick-60" || d.form === "mini-ult-1" || d.form === "mini-ult-2") { startQuickForm(d.form); break; }
       if (isReadingFullForm(d.form)) { startReadingFull(d.form); break; }
       if (d.form === "mini-listen-15" || d.form === "mini-graphic-24" || d.form === "mini-read-12") { startMiniForm(d.form); break; }
       if (/^part(?:[567]|56)-\d+$/.test(d.form)) { startPartSet(d.form); break; }

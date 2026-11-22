@@ -1256,6 +1256,60 @@
         }
       },
       {
+        "id": "mini-ult-1",
+        "label": "終極濃縮練習 ① · 聽力＋閱讀 27 題（約 17 分鐘）",
+        "groupIds": [
+          "cov-p1-12",
+          "cov-p1-11",
+          "g-photo-08",
+          "g-xs-l11",
+          "g-gx-p2-08",
+          "xf-p2-18",
+          "cov-p2-11",
+          "cov-p3-10",
+          "cov-p4-13",
+          "s03-sentence7",
+          "xr2-p5-05",
+          "g-vocab-c-3",
+          "g-a-p5-03",
+          "g-xs-r04",
+          "g-new-part6-a",
+          "g-rdnew-033"
+        ],
+        "durationMin": 17,
+        "timing": {
+          "listening": 7,
+          "reading": 10
+        }
+      },
+      {
+        "id": "mini-ult-2",
+        "label": "終極濃縮練習 ② · 聽力＋閱讀 27 題（約 17 分鐘）",
+        "groupIds": [
+          "cov-p1-05",
+          "g-photo-12",
+          "g-photo-07",
+          "g-xs-l01",
+          "g-round12-p2-10",
+          "g-xs-l12",
+          "g-xl-p2-04",
+          "xf-p2-06",
+          "g-gl-p3-02",
+          "g-gx-p4-02",
+          "g-cov-p5-04",
+          "g-cov-p5-28",
+          "xr2-p5-02",
+          "g-rdnew-013",
+          "g-rdnew-021",
+          "g-rd-ship-01"
+        ],
+        "durationMin": 17,
+        "timing": {
+          "listening": 7,
+          "reading": 10
+        }
+      },
+      {
         "id": "mini-graphic-24",
         "label": "圖表聽力專練 · 24 題（約 10 分鐘）",
         "groupIds": [
