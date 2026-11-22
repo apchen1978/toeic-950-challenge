@@ -1371,6 +1371,73 @@
         }
       },
       {
+        "id": "part5-fast-15",
+        "label": "Part 5 加速 · 15 題（4.5 分鐘）",
+        "groupIds": [
+          "g-rdnew-019",
+          "g-cov-p5-14",
+          "g-cov-p5-34",
+          "g-cov-p5-12",
+          "g-extra-r-08",
+          "g-sp-p5-38",
+          "g-sp-p5-13",
+          "xr-p5-02",
+          "g-r03",
+          "xr2-p5-01",
+          "g-rdnew-003",
+          "g-sp-p5-36",
+          "xr-p5-07",
+          "g-cov-p5-31",
+          "xf-p5-32"
+        ],
+        "durationMin": 4.5,
+        "timing": {
+          "listening": 0,
+          "reading": 4.5
+        }
+      },
+      {
+        "id": "part5-fast-30",
+        "label": "Part 5 加速 · 30 題（9 分鐘）",
+        "groupIds": [
+          "g-sp-p5-10",
+          "g-r02",
+          "g-cov-p5-42",
+          "g-sp-p5-28",
+          "g-cov-p5-33",
+          "g-vocab-c-3",
+          "xf-p5-26",
+          "xr-p5-07",
+          "g-cov-p5-01",
+          "g-cov-p5-27",
+          "g-sp-p5-31",
+          "g-rdnew-002",
+          "g-extra-r-02",
+          "s03-sentence7",
+          "g-new-r0",
+          "g-sp-p5-21",
+          "xr2-p5-02",
+          "s03-sentence6",
+          "s03-sentence4",
+          "g-new-r5",
+          "g-sp-p5-05",
+          "g-xs-r15",
+          "g-sp-p5-13",
+          "g-xs-r04",
+          "g-cov-p5-07",
+          "g-extra-r-08",
+          "xr2-p5-01",
+          "g-vocab-c-1",
+          "g-cov-p5-41",
+          "g-cov-p5-30"
+        ],
+        "durationMin": 9,
+        "timing": {
+          "listening": 0,
+          "reading": 9
+        }
+      },
+      {
         "id": "part5-15",
         "label": "Part 5 專練 · 15 題（5 分鐘）",
         "groupIds": [

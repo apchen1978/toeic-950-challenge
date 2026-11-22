@@ -94,6 +94,21 @@ export const QUICK_BLUEPRINTS = {
     timing: { listening: 0, reading: 18 },
     parts: [{ part: 5, groups: 30 }, { part: 6, groups: 4, questionsEach: 4 }]
   },
+  // Part 5 加速：字彙（換字）與動詞形式、詞性占大宗，每題約 18 秒（官方配速約 20 秒）。題型比例固定，不是純隨機。
+  "part5-fast-15": {
+    minutes: 4.5,
+    listening: 0,
+    reading: 15,
+    timing: { listening: 0, reading: 4.5 },
+    parts: [{ part: 5, groups: 15, typeMix: { "vocabulary-collocation": 6, "verb-tense-voice": 4, "part-of-speech": 2, "preposition-conjunction": 2, "pronoun|relative-pronoun": 1 } }]
+  },
+  "part5-fast-30": {
+    minutes: 9,
+    listening: 0,
+    reading: 30,
+    timing: { listening: 0, reading: 9 },
+    parts: [{ part: 5, groups: 30, typeMix: { "vocabulary-collocation": 12, "verb-tense-voice": 8, "part-of-speech": 4, "preposition-conjunction": 4, "pronoun|relative-pronoun": 2 } }]
+  },
   "part5-15": {
     minutes: 5,
     listening: 0,
@@ -235,7 +250,9 @@ export function assembleQuickForm(bank, formId, options = {}) {
           const counts = spec.part <= 4 ? accentCounts : null;
           const picked = spec.questions
             ? pickByQuestionTotal(pool, spec.questions, random, skip, spec.requireMulti === true)
-            : pickWithGraphicPreference(pool, spec, random, skip, accentOf, counts);
+            : spec.typeMix
+              ? pickByTypeMix(pool, spec, random, skip)
+              : pickWithGraphicPreference(pool, spec, random, skip, accentOf, counts);
           drawn.push(...mixByLevel(picked));
         }
         const unitIssues = quickCoverageIssues(chosen.concat(drawn), formId, section).filter((issue) => scope.some((part) => issueScope(issue).includes(part)));
@@ -290,7 +307,7 @@ function hasType(groups, part, pattern) {
 
 export function quickCoverageIssues(groups, formId, section = "full") {
   const mini = String(formId).startsWith("mini-");
-  const partSet = /^part(?:[567]|56)-\d+$/.test(String(formId));
+  const partSet = /^part(?:[567]|56)-(?:fast-)?\d+$/.test(String(formId));
   const full = formId === "quick-40" || formId === "quick-60" || mini || partSet;
   const has = (part) => groups.some((group) => group.part === part);
   const long = formId === "quick-60";
@@ -378,6 +395,30 @@ function sampleGroups(pool, count, random, avoid, accentOf, accentCounts) {
 export function drawQuestionGroups(groups, target, random, avoid = new Set(), requireMulti = false) {
   const skipped = avoid instanceof Set ? avoid : new Set(avoid);
   return pickByQuestionTotal(groups, target, random, skipped, requireMulti);
+}
+
+function pickByTypeMix(pool, spec, random, avoid) {
+  const typeOf = (group) => String(group.questions?.[0]?.questionType ?? "");
+  const picked = [];
+  const used = new Set();
+  for (const [pattern, count] of Object.entries(spec.typeMix)) {
+    const re = new RegExp("^(?:" + pattern + ")$");
+    const candidates = pool.filter((group) => re.test(typeOf(group)) && !used.has(group.id));
+    const fresh = candidates.filter((group) => !avoid.has(group.id));
+    const take = sampleGroups(fresh.length >= count ? fresh : candidates, count, random, avoid, () => "", null);
+    take.forEach((group) => used.add(group.id));
+    picked.push(...take);
+  }
+  if (picked.length < spec.groups) {
+    const rest = pool.filter((group) => !used.has(group.id));
+    picked.push(...sampleGroups(rest, spec.groups - picked.length, random, avoid, () => "", null));
+  }
+  // interleave the types so the same kind does not come in a long run
+  for (let i = picked.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(random() * (i + 1));
+    [picked[i], picked[j]] = [picked[j], picked[i]];
+  }
+  return picked;
 }
 
 function pickByQuestionTotal(groups, target, random, avoid, requireMulti) {
