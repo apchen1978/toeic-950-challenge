@@ -468,7 +468,7 @@ function todayStrip(wrongDue, history) {
   const go = (form, label, primary = false) => `<button type="button" class="btn${primary ? " primary" : ""}" data-action="start-form" data-form="${form}">${label}</button>`;
   return `<section class="today-strip" aria-label="今日待辦"><p class="today-title">今日<span class="muted"> · ${lastText}</span></p><div class="today-items">${item(wrongDue, "錯題到期", "review-wrong", "複習錯題")}<div class="today-item"><b>${grammarDone}</b><span>/ ${GRAMMAR_QUIZ.length} 文法題答對</span></div></div>
     <p class="today-start-title">${wrongDue ? "複習完，再練一個（濃縮練習約 17 分鐘）：" : "今天沒有到期的複習。選一個開始（濃縮練習約 17 分鐘）："}</p>
-    <div class="today-start">${go("mini-ult-1", "終極濃縮練習 ①（27 題）", true)}${go("mini-ult-2", "終極濃縮練習 ②（27 題）", true)}${go("part5-15", "Part 5 專練 15 題")}<button type="button" class="btn" data-action="grammar-drill">練 5 題文法</button>${go("part6-8", "Part 6 專練 8 題")}<button type="button" class="btn" data-action="speed-start">快速反應 10 題</button>${go("part7-12", "Part 7 專練 12 題")}${go("mini-listen-15", "聽力快練 15 題")}</div></section>`;
+    <div class="today-start">${go("mini-ult-1", "終極濃縮練習 ①（27 題）", true)}${go("mini-ult-2", "終極濃縮練習 ②（27 題）", true)}${go("part5-fast-15", "Part 5 加速 15 題（字彙＋文法）")}<button type="button" class="btn" data-action="grammar-drill">練 5 題文法</button>${go("part6-8", "Part 6 專練 8 題")}<button type="button" class="btn" data-action="speed-start">快速反應 10 題</button>${go("part7-12", "Part 7 專練 12 題")}${go("mini-listen-15", "聽力快練 15 題")}</div></section>`;
 }
 
 const HOME_NAV = [["nav-review", "複習"], ["nav-preexam", "考前"], ["nav-mini", "快練"], ["nav-phrases", "片語"], ["nav-grammar", "文法"], ["nav-practice", "練習"], ["nav-mock", "模考"]];
@@ -1832,7 +1832,7 @@ const TYPE_LABELS = {
 };
 const PART_PACE = { 5: 10, 6: 8, 7: 52 };
 const PART_SETS = [
-  [5, "Part 5 · 句子填空", "一題一題的文法與字彙，最適合練反應速度", { id: "part5-15", label: "15 題 · 5 分" }, { id: "part5-30", label: "30 題 · 10 分" }],
+  [5, "Part 5 · 句子填空", "一題一題的文法與字彙，最適合練反應速度", { id: "part5-15", label: "15 題 · 5 分" }, { id: "part5-30", label: "30 題 · 10 分" }, { id: "part5-fast-15", label: "加速 15 題 · 4.5 分（字彙＋動詞形式）" }, { id: "part5-fast-30", label: "加速 30 題 · 9 分" }],
   [6, "Part 6 · 段落填空", "每組四題，含句子插入；要看前後文", { id: "part6-8", label: "8 題 · 4 分" }, { id: "part6-16", label: "16 題 · 8 分" }],
   [7, "Part 7 · 閱讀理解", "單篇與多篇文件，含 NOT、推論、同義字", { id: "part7-12", label: "12 題 · 12 分" }, { id: "part7-25", label: "25 題 · 24 分" }]
 ];
@@ -1918,7 +1918,7 @@ app.addEventListener("click", (e) => {
       if (d.form === "quick-40" || d.form === "quick-60" || d.form === "mini-ult-1" || d.form === "mini-ult-2") { startQuickForm(d.form); break; }
       if (isReadingFullForm(d.form)) { startReadingFull(d.form); break; }
       if (d.form === "mini-listen-15" || d.form === "mini-graphic-24" || d.form === "mini-read-12") { startMiniForm(d.form); break; }
-      if (/^part(?:[567]|56)-\d+$/.test(d.form)) { startPartSet(d.form); break; }
+      if (/^part(?:[567]|56)-(?:fast-)?\d+$/.test(d.form)) { startPartSet(d.form); break; }
       if (isListeningFullForm(d.form)) { startListeningFull(d.form); break; }
       if (isOfficialForm(d.form)) { startOfficialSet(d.form); break; }
       const set = bank.meta.sets.find((s) => s.id === d.form);
