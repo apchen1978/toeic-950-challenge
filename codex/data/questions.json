@@ -33477,6 +33477,864 @@
       ],
       "section": "listening",
       "graphic": true
+    },
+    {
+      "id": "g-sp-p5-01",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-01",
+          "prompt": "The committee will make a ------- on the budget proposal by Friday.",
+          "options": [
+            "decision",
+            "decide",
+            "decisive",
+            "decisively"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「decision」：冠詞 a 後面要接名詞，decision 是名詞。\n【考點】Part 5・詞性\n【判斷依據】看空格前的冠詞 a，要名詞；decide 是動詞、decisive 是形容詞、decisively 是副詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "part-of-speech"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-02",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-02",
+          "prompt": "Ms. Okafor was praised for her ------- in resolving customer complaints.",
+          "options": [
+            "efficient",
+            "efficiency",
+            "efficiently",
+            "more efficient"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「efficiency」：所有格 her 後面接名詞，efficiency 是名詞。\n【考點】Part 5・詞性\n【判斷依據】所有格後面要名詞；其他三個是形容詞或副詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "part-of-speech"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-03",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-03",
+          "prompt": "The new software allows managers to track expenses more -------.",
+          "options": [
+            "accurate",
+            "accuracy",
+            "accurately",
+            "accuracies"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「accurately」：修飾動詞 track 要用副詞，accurately 是副詞。\n【考點】Part 5・詞性\n【判斷依據】句子已完整，空格補充動詞的方式，用副詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "part-of-speech"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-04",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-04",
+          "prompt": "Several ------- candidates were interviewed for the marketing position.",
+          "options": [
+            "qualify",
+            "qualifies",
+            "qualification",
+            "qualified"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「qualified」：名詞 candidates 前面要形容詞，qualified 表示「合格的」。\n【考點】Part 5・詞性\n【判斷依據】名詞前的空格要形容詞；其他選項是動詞或名詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "part-of-speech"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-05",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-05",
+          "prompt": "The restaurant's ------- of local ingredients has attracted many food critics.",
+          "options": [
+            "use",
+            "usable",
+            "used",
+            "using"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「use」：所有格 restaurant's 後面接名詞，use of 是「使用……」。\n【考點】Part 5・詞性\n【判斷依據】所有格後接名詞，後面又有 of；usable 是形容詞，used 和 using 是分詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "part-of-speech"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-06",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-06",
+          "prompt": "Mr. Tanaka is ------- responsible for training all new technicians.",
+          "options": [
+            "direct",
+            "directly",
+            "directing",
+            "direction"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「directly」：修飾形容詞 responsible 要用副詞，directly responsible 是「直接負責」。\n【考點】Part 5・詞性\n【判斷依據】修飾形容詞的位置要副詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "part-of-speech"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-07",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-07",
+          "prompt": "A ------- increase in demand forced the factory to add a second shift.",
+          "options": [
+            "suddenly",
+            "suddenness",
+            "sudden",
+            "suddens"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「sudden」：冠詞 A 與名詞 increase 之間要形容詞，sudden 是形容詞。\n【考點】Part 5・詞性\n【判斷依據】名詞前要形容詞；suddenly 是副詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "part-of-speech"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-08",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-08",
+          "prompt": "Employees are encouraged to submit their travel receipts ------- after returning.",
+          "options": [
+            "prompt",
+            "prompted",
+            "promptness",
+            "promptly"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「promptly」：修飾動詞 submit 要用副詞，promptly 是「立刻、迅速地」。\n【考點】Part 5・詞性\n【判斷依據】句子成分完整，補充說明動詞的副詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "part-of-speech"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-09",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-09",
+          "prompt": "The new product line ------- at the trade show next month.",
+          "options": [
+            "will be introduced",
+            "introduced",
+            "was introducing",
+            "has introduced"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「will be introduced」：next month 是未來，產品是被介紹，要用未來式被動。\n【考點】Part 5・時態與語態\n【判斷依據】看時間 next month（未來）與主詞 product line（被介紹）。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "verb-tense-voice"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-10",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-10",
+          "prompt": "By the time the inspector arrived, the staff ------- the entire warehouse.",
+          "options": [
+            "have cleaned",
+            "had cleaned",
+            "will clean",
+            "cleans"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「had cleaned」：By the time 後面是過去的 arrived，主要子句要用過去完成式表示更早完成。\n【考點】Part 5・時態與語態\n【判斷依據】by the time 接過去式時，主要子句常用 had + 過去分詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "verb-tense-voice"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-11",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-11",
+          "prompt": "Ticket sales ------- by 15 percent since the festival moved to the park.",
+          "options": [
+            "rose",
+            "will rise",
+            "have risen",
+            "rising"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「have risen」：since 表示從過去到現在，要用現在完成式。\n【考點】Part 5・時態與語態\n【判斷依據】看時間詞 since。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "verb-tense-voice"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-12",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-12",
+          "prompt": "Any package ------- after 5 P.M. will be delivered the following morning.",
+          "options": [
+            "receiving",
+            "receives",
+            "to receive",
+            "received"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「received」：package 是「被收到」，用過去分詞 received 修飾名詞。\n【考點】Part 5・時態與語態\n【判斷依據】名詞與動詞是被動關係，用過去分詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "verb-tense-voice"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-13",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-13",
+          "prompt": "The board of directors ------- the merger proposal yesterday afternoon.",
+          "options": [
+            "approved",
+            "approves",
+            "will approve",
+            "has approved"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「approved」：yesterday afternoon 是過去的明確時間，用過去式。\n【考點】Part 5・時態與語態\n【判斷依據】明確的過去時間不用現在完成式。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "verb-tense-voice"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-14",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-14",
+          "prompt": "Dr. Lee asked the interns to introduce ------- to the department staff.",
+          "options": [
+            "them",
+            "themselves",
+            "their",
+            "theirs"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「themselves」：介紹的對象是實習生自己，要用反身代名詞 themselves。\n【考點】Part 5・代名詞\n【判斷依據】動作的對象與主詞（interns）相同，用反身代名詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "pronoun"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-15",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-15",
+          "prompt": "The manager and ------- will attend the conference in Osaka.",
+          "options": [
+            "me",
+            "myself",
+            "I",
+            "mine"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「I」：空格是主詞的一部分，用主格 I。\n【考點】Part 5・代名詞\n【判斷依據】主詞位置用主格。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "pronoun"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-16",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-16",
+          "prompt": "The two companies announced that ------- will merge next year.",
+          "options": [
+            "them",
+            "their",
+            "themselves",
+            "they"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「they」：空格是 that 子句的主詞，用主格 they。\n【考點】Part 5・代名詞\n【判斷依據】子句缺主詞，用主格。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "pronoun"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-17",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-17",
+          "prompt": "The report was written by Ms. Ruiz -------.",
+          "options": [
+            "herself",
+            "her",
+            "she",
+            "hers"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「herself」：強調「親自」寫，用反身代名詞 herself 放在句尾。\n【考點】Part 5・代名詞\n【判斷依據】反身代名詞可以強調主詞本人。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "pronoun"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-18",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-18",
+          "prompt": "Only employees ------- have completed the safety course may enter the laboratory.",
+          "options": [
+            "whom",
+            "who",
+            "whose",
+            "which"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「who」：先行詞是人（employees），在子句中當主詞，用 who。\n【考點】Part 5・關係代名詞\n【判斷依據】先行詞是人、空格後面直接接動詞，用 who。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "relative-pronoun"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-19",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-19",
+          "prompt": "The presentation, ------- lasted nearly two hours, covered next year's goals.",
+          "options": [
+            "what",
+            "who",
+            "which",
+            "whom"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「which」：先行詞 presentation 是事物，逗號後的補充說明用 which。\n【考點】Part 5・關係代名詞\n【判斷依據】前面有逗號、先行詞是事物，用 which。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "relative-pronoun"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-20",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-20",
+          "prompt": "Ms. Pena, ------- office is on the fourth floor, will lead the training.",
+          "options": [
+            "who",
+            "whom",
+            "which",
+            "whose"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「whose」：空格後接名詞 office，表示「她的辦公室」，用所有格 whose。\n【考點】Part 5・關係代名詞\n【判斷依據】關係代名詞後面接名詞，要用 whose。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "relative-pronoun"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-21",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-21",
+          "prompt": "The software ------- the team selected includes a free trial.",
+          "options": [
+            "that",
+            "what",
+            "who",
+            "whose"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「that」：先行詞是 software，在子句中當 selected 的受詞，用 that。\n【考點】Part 5・關係代名詞\n【判斷依據】what 不能接在先行詞後面；who 用於人。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "relative-pronoun"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-22",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-22",
+          "prompt": "------- the heavy rain, the outdoor concert went ahead as planned.",
+          "options": [
+            "Although",
+            "Despite",
+            "Because",
+            "However"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「Despite」：the heavy rain 是名詞片語，要用介系詞 Despite。\n【考點】Part 5・介系詞與連接詞\n【判斷依據】空格後是名詞片語，不是子句，選介系詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "preposition-conjunction"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-23",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-23",
+          "prompt": "Please submit your application ------- Friday at noon.",
+          "options": [
+            "during",
+            "since",
+            "by",
+            "among"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「by」：by 表示「在……之前」的截止時間。\n【考點】Part 5・介系詞與連接詞\n【判斷依據】截止時間用 by。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "preposition-conjunction"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-24",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-24",
+          "prompt": "The shipment will be delayed ------- the customs office is closed for the holiday.",
+          "options": [
+            "because of",
+            "despite",
+            "during",
+            "because"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「because」：空格後是完整子句，要用連接詞 because。\n【考點】Part 5・介系詞與連接詞\n【判斷依據】because of 和 despite 後面要接名詞。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "preposition-conjunction"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-25",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-25",
+          "prompt": "------- you have any questions about your invoice, please contact our billing department.",
+          "options": [
+            "If",
+            "Then",
+            "Both",
+            "Either"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「If」：條件句的開頭用 If。\n【考點】Part 5・介系詞與連接詞\n【判斷依據】句子後半是請求，前面是條件。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "preposition-conjunction"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-26",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-26",
+          "prompt": "The museum is open daily ------- Mondays, when it is closed for cleaning.",
+          "options": [
+            "besides",
+            "except",
+            "unless",
+            "among"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「except」：except 表示「除了……」，排除星期一。\n【考點】Part 5・介系詞與連接詞\n【判斷依據】besides 是「除了……還有」，意思不同；unless 後面接子句。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "preposition-conjunction"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-27",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-27",
+          "prompt": "The new policy takes effect ------- the first day of next month.",
+          "options": [
+            "at",
+            "in",
+            "on",
+            "for"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「on」：特定某一天用介系詞 on。\n【考點】Part 5・介系詞與連接詞\n【判斷依據】the first day 是特定日子，用 on。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "preposition-conjunction"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-28",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-28",
+          "prompt": "Neither the manager ------- the assistant knew about the schedule change.",
+          "options": [
+            "or",
+            "and",
+            "but",
+            "nor"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「nor」：Neither 要搭配 nor。\n【考點】Part 5・介系詞與連接詞\n【判斷依據】固定搭配 neither ... nor ...。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "preposition-conjunction"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-29",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-29",
+          "prompt": "We will begin the meeting ------- everyone has arrived.",
+          "options": [
+            "as soon as",
+            "as well as",
+            "so that",
+            "rather than"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「as soon as」：as soon as 表示「一……就」，連接兩個子句。\n【考點】Part 5・介系詞與連接詞\n【判斷依據】其他選項意思或用法不符。",
+          "skill": "r-grammar",
+          "ability": "R5",
+          "questionType": "preposition-conjunction"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-30",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-30",
+          "prompt": "The airline apologized for the ------- caused by the late departure.",
+          "options": [
+            "unavailability",
+            "inconvenience",
+            "reduction",
+            "inspection"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「inconvenience」：apologized for the inconvenience 是常見搭配，指造成的不便。\n【考點】Part 5・字彙與搭配詞\n【判斷依據】看 apologize for 後面常接的名詞。",
+          "skill": "r-vocabulary",
+          "ability": "R4",
+          "questionType": "vocabulary-collocation"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-31",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-31",
+          "prompt": "Applicants must ------- two letters of recommendation with their résumés.",
+          "options": [
+            "admit",
+            "permit",
+            "submit",
+            "commit"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「submit」：submit 表示「提交」文件。\n【考點】Part 5・字彙與搭配詞\n【判斷依據】字形相近的選項要看語意：提交文件。",
+          "skill": "r-vocabulary",
+          "ability": "R4",
+          "questionType": "vocabulary-collocation"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-32",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-32",
+          "prompt": "The company's profits ------- rose last quarter, surprising many analysts.",
+          "options": [
+            "carefully",
+            "eagerly",
+            "closely",
+            "significantly"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「significantly」：significantly rose 是「大幅上升」，符合 surprising many analysts。\n【考點】Part 5・字彙與搭配詞\n【判斷依據】看哪個副詞適合修飾 rose。",
+          "skill": "r-vocabulary",
+          "ability": "R4",
+          "questionType": "vocabulary-collocation"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-33",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-33",
+          "prompt": "Ms. Chen was ------- to the position of regional director after five years.",
+          "options": [
+            "promoted",
+            "produced",
+            "promised",
+            "protected"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「promoted」：be promoted to 是「晉升為」。\n【考點】Part 5・字彙與搭配詞\n【判斷依據】to the position of 是線索，晉升用 promoted。",
+          "skill": "r-vocabulary",
+          "ability": "R4",
+          "questionType": "vocabulary-collocation"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-34",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-34",
+          "prompt": "The warranty ------- repairs made by unauthorized technicians.",
+          "options": [
+            "extends",
+            "excludes",
+            "expects",
+            "exceeds"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「excludes」：保固「不包含」未經授權人員的維修，excludes 是「排除」。\n【考點】Part 5・字彙與搭配詞\n【判斷依據】看保固條款的常見語意：排除。",
+          "skill": "r-vocabulary",
+          "ability": "R4",
+          "questionType": "vocabulary-collocation"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-35",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-35",
+          "prompt": "Because of a ------- in the supply chain, the new phones will arrive a week late.",
+          "options": [
+            "disposal",
+            "distinction",
+            "disruption",
+            "discussion"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「disruption」：disruption in the supply chain 是「供應鏈中斷」。\n【考點】Part 5・字彙與搭配詞\n【判斷依據】搭配 in the supply chain，原因是中斷。",
+          "skill": "r-vocabulary",
+          "ability": "R4",
+          "questionType": "vocabulary-collocation"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-36",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-36",
+          "prompt": "The two firms plan to ------- their operations in Asia next year.",
+          "options": [
+            "expend",
+            "expose",
+            "explode",
+            "expand"
+          ],
+          "answer": 3,
+          "explanation": "正解 D「expand」：expand operations 是「擴大營運」。\n【考點】Part 5・字彙與搭配詞\n【判斷依據】expend 是「花費」，字形相近的誘答。",
+          "skill": "r-vocabulary",
+          "ability": "R4",
+          "questionType": "vocabulary-collocation"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-37",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-37",
+          "prompt": "Several employees were ------- to accept the new schedule.",
+          "options": [
+            "reluctant",
+            "reliable",
+            "relevant",
+            "relative"
+          ],
+          "answer": 0,
+          "explanation": "正解 A「reluctant」：be reluctant to 是「不願意……」。\n【考點】Part 5・字彙與搭配詞\n【判斷依據】固定搭配 reluctant to + 原形動詞。",
+          "skill": "r-vocabulary",
+          "ability": "R4",
+          "questionType": "vocabulary-collocation"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-38",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-38",
+          "prompt": "The city plans to ------- the old bridge with a wider, safer one.",
+          "options": [
+            "reply",
+            "replace",
+            "repeat",
+            "restore"
+          ],
+          "answer": 1,
+          "explanation": "正解 B「replace」：replace A with B 是「用 B 取代 A」。\n【考點】Part 5・字彙與搭配詞\n【判斷依據】看 with 後面的新橋，用 replace。",
+          "skill": "r-vocabulary",
+          "ability": "R4",
+          "questionType": "vocabulary-collocation"
+        }
+      ]
+    },
+    {
+      "id": "g-sp-p5-39",
+      "section": "reading",
+      "part": 5,
+      "questions": [
+        {
+          "id": "SP-P5-39",
+          "prompt": "Please keep a copy of the receipt as ------- of purchase.",
+          "options": [
+            "probe",
+            "profit",
+            "proof",
+            "process"
+          ],
+          "answer": 2,
+          "explanation": "正解 C「proof」：proof of purchase 是「購買證明」。\n【考點】Part 5・字彙與搭配詞\n【判斷依據】固定搭配 proof of purchase。",
+          "skill": "r-vocabulary",
+          "ability": "R4",
+          "questionType": "vocabulary-collocation"
+        }
+      ]
     }
   ]
 }
