@@ -498,3 +498,7 @@ details.card-more > summary:hover, details.fold > summary:hover { opacity: .85; 
 
 .today-start { display: flex; flex-wrap: wrap; gap: 8px; }
 .today-start .btn { flex: 1 1 calc(50% - 8px); }
+
+.preview-card { opacity: 0.92; border-style: dashed; }
+.preview-options { margin: 4px 0 10px 22px; padding: 0; }
+.paper-preview-toggle { display: inline-flex; gap: 6px; align-items: center; }
