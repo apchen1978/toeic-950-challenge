@@ -74,6 +74,31 @@ export const QUICK_BLUEPRINTS = {
       { part: 7, questions: 5, requireMulti: true }
     ]
   },
+  // 聽力濃縮 40 題（約 100 題的 40%，Part 比例照正式考試）：Part 3 有 2 組、Part 4 有 2 組圖表題。做兩次，每次重抽。
+  "mini-core-1": {
+    minutes: 18,
+    listening: 40,
+    reading: 0,
+    timing: { listening: 18, reading: 0 },
+    parts: [
+      { part: 1, groups: 3 },
+      { part: 2, groups: 10 },
+      { part: 3, groups: 5, questionsEach: 3, preferGraphic: 2 },
+      { part: 4, groups: 4, questionsEach: 3, preferGraphic: 2 }
+    ]
+  },
+  "mini-core-2": {
+    minutes: 18,
+    listening: 40,
+    reading: 0,
+    timing: { listening: 18, reading: 0 },
+    parts: [
+      { part: 1, groups: 3 },
+      { part: 2, groups: 10 },
+      { part: 3, groups: 5, questionsEach: 3, preferGraphic: 2 },
+      { part: 4, groups: 4, questionsEach: 3, preferGraphic: 2 }
+    ]
+  },
   "mini-read-12": {
     minutes: 9,
     listening: 0,

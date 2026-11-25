@@ -1310,6 +1310,72 @@
         }
       },
       {
+        "id": "mini-core-1",
+        "label": "聽力濃縮 ① · 40 題（約 18 分鐘）",
+        "groupIds": [
+          "g-photo-18",
+          "g-photo-17",
+          "g-photo-10",
+          "g-xs-l05",
+          "g-round12-p2-08",
+          "g-xs-l01",
+          "g-new-l4",
+          "g-xl-p2-08",
+          "g-xs-l11",
+          "xf-p2-19",
+          "g-xl-p2-01",
+          "g-round12-p2-01",
+          "xf-p2-15",
+          "cov-p3-11",
+          "g-gl-p3-01",
+          "g-f-dialogue-2",
+          "g-f-dialogue-3",
+          "g-xl2-p3-04",
+          "g-round12-p4-accent-uk",
+          "cov-p4-13",
+          "audit-p4-01",
+          "g-f-talk-2"
+        ],
+        "durationMin": 18,
+        "timing": {
+          "listening": 18,
+          "reading": 0
+        }
+      },
+      {
+        "id": "mini-core-2",
+        "label": "聽力濃縮 ② · 40 題（約 18 分鐘）",
+        "groupIds": [
+          "g-photo-11",
+          "g-photo-03",
+          "cov-p1-01",
+          "cov-p2-08",
+          "g-a-p2-02",
+          "g-l03",
+          "g-gx-p2-05",
+          "g-xs-l09",
+          "g-xs-l03",
+          "g-gx-p2-10",
+          "g-l04",
+          "cov-p2-01",
+          "xf-p2-07",
+          "g-round12-p3-accent-ca",
+          "g-gl-p3-01",
+          "audit-p3-04",
+          "g-xl3-09",
+          "cov-p3-02",
+          "g-gl-p4-05",
+          "g-gx-p4-03",
+          "g-x4f-03",
+          "cov-p4-13"
+        ],
+        "durationMin": 18,
+        "timing": {
+          "listening": 18,
+          "reading": 0
+        }
+      },
+      {
         "id": "mini-graphic-24",
         "label": "圖表聽力專練 · 24 題（約 10 分鐘）",
         "groupIds": [
