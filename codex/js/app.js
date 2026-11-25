@@ -472,7 +472,7 @@ function todayStrip(wrongDue, history) {
     <div class="today-start">${go("mini-ult-1", "終極濃縮練習 ①（27 題）", true)}${go("mini-ult-2", "終極濃縮練習 ②（27 題）", true)}${go("part5-fast-15", "Part 5 加速 15 題（字彙＋文法）")}<button type="button" class="btn" data-action="grammar-drill">練 5 題文法</button>${go("part6-8", "Part 6 專練 8 題")}<button type="button" class="btn" data-action="speed-start">快速反應 10 題</button>${go("part7-12", "Part 7 專練 12 題")}${go("mini-listen-15", "聽力快練 15 題")}</div></section>`;
 }
 
-const HOME_NAV = [["nav-review", "複習"], ["nav-preexam", "考前"], ["nav-mini", "快練"], ["nav-phrases", "片語"], ["nav-grammar", "文法"], ["nav-practice", "練習"], ["nav-mock", "模考"]];
+const HOME_NAV = [["nav-listen-top", "聽力"], ["nav-parts", "567"], ["nav-preexam", "考前"], ["nav-review", "複習"], ["nav-mini", "快練"], ["nav-phrases", "片語"], ["nav-grammar", "文法"], ["nav-practice", "練習"], ["nav-mock", "模考"]];
 const HOME_NAV_EXTRA = new Set(["nav-grammar", "nav-practice"]);
 
 // 考前重點模式：收起文法、聽力小課程與分項練習。沒設定過時，考前 14 天內自動開啟；手動切換後以使用者的選擇為準。
@@ -706,8 +706,62 @@ function renderHome() {
     </header>
     ${homeNav(dueQuestions.length, focus)}
     ${focusBar(focus)}
-    ${todayStrip(dueQuestions.length, history)}
     ${session ? resumeCard() : ''}
+    <section class="card listening-full-card mini-practice" id="nav-listen-top" aria-labelledby="listen-top-title">
+      <p class="section-kicker">LISTENING · 最新聽力練習</p>
+      <h2 id="listen-top-title">聽力：濃縮 40 題、圖表題、快練</h2>
+      <p class="mini-intro">先練聽力。每次重新抽題，優先避開最近練過的題組；正式模式每題只播一次。</p>
+      <div class="mini-options">
+        <article class="mini-option mini-core" style="grid-column: 1 / -1" aria-labelledby="mini-core-title">
+          <p class="mini-label">LISTENING · CORE 40 <span>Part 1–4</span></p>
+          <h3 id="mini-core-title">聽力濃縮 40 題（做兩次）</h3>
+          <p class="mini-measure"><strong>40<span>題</span></strong><span>約 ${approxListeningMinutes("mini-core-1", 3) ?? 18} 分鐘</span></p>
+          <p class="mini-focus">照片 3 · 應答 10 · 對話 15 · 獨白 12，其中 4 組是圖表題</p>
+          <p class="mini-detail">約為整份聽力的 40%，Part 比例照正式考試。每次重新抽題、避開最近做過的；建議先做 ①，隔一天再做 ②。每題只播一次，作答間隔與完整聽力模擬相同。</p>
+          <div class="mini-last">${listeningFullLast(history, "mini-core-1")}</div>
+          <button class="btn primary" data-action="start-form" data-form="mini-core-1">聽力濃縮 ① </button>
+          <button class="btn primary" data-action="start-form" data-form="mini-core-2">聽力濃縮 ②</button>
+        </article>
+        <article class="mini-option mini-graphic" style="grid-column: 1 / -1" aria-labelledby="mini-graphic-title">
+          <p class="mini-label">LISTENING · LOOK AT THE GRAPHIC <span>Part 3–4</span></p>
+          <h3 id="mini-graphic-title">圖表聽力專練</h3>
+          <p class="mini-measure"><strong>24<span>題</span></strong><span>約 ${approxListeningMinutes("mini-graphic-24", 3) ?? 10} 分鐘</span></p>
+          <p class="mini-focus">一邊看地圖、平面圖、表格或圖表，一邊聽對話與獨白</p>
+          <p class="mini-detail">對話 4 組 · 獨白 4 組，每組一題要對照圖表。<br>答案常是圖上有、但話裡沒念出來的那個詞，先掃一眼圖上的標籤再聽。每題只播一次。</p>
+          <div class="mini-last">${listeningFullLast(history, "mini-graphic-24")}</div>
+          <button class="btn primary" data-action="start-form" data-form="mini-graphic-24">開始圖表聽力專練</button>
+        </article>
+        <article class="mini-option" style="grid-column: 1 / -1" aria-labelledby="mini-listen-title">
+          <p class="mini-label">LISTENING <span>Part 1–4</span></p>
+          <h3 id="mini-listen-title">快速聽力</h3>
+          <p class="mini-measure"><strong>15<span>題</span></strong><span>約 ${approxListeningMinutes("mini-listen-15", 5) ?? 6} 分鐘</span></p>
+          <p class="mini-focus">練抓關鍵資訊與即時理解</p>
+          <p class="mini-detail">照片 1 · 應答 5 · 對話 6 · 獨白 3<br>每題只播一次，包含圖表理解。</p>
+          <div class="mini-last">${listeningFullLast(history, "mini-listen-15")}</div>
+          <button class="btn primary" data-action="start-form" data-form="mini-listen-15">開始聽力快練</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="card parts-card" id="nav-parts" aria-labelledby="parts-title">
+      <div class="reading-full-head"><span class="reading-full-badge">5–24 MIN</span><p class="section-kicker">READING BY PART · 閱讀分 Part 專練</p></div>
+      <h2 id="parts-title">Part 5、6、7 分開練</h2>
+      <p>閱讀還沒完整做過也可以從這裡開始：一次只練一個 Part，每組都有短的和整段兩種長度。時間約照正式配速，題目每次重新抽，會避開最近出過的。</p>
+      <div class="reading-full-sets">
+        ${PART_SETS.map(([part, title, note, short, block]) => `<div class="reading-full-set"><div class="rf-info"><h3>${esc(title)}</h3><p class="muted">${esc(note)}</p>${listeningFullLast(history, short.id)}</div><div class="rf-actions"><button class="btn primary" data-action="start-form" data-form="${short.id}">${esc(short.label)}</button><button class="btn" data-action="start-form" data-form="${block.id}">${esc(block.label)}</button></div></div>`).join("")}
+      </div>
+      <div class="reading-full-sets">
+        <div class="reading-full-set"><div class="rf-info"><h3>Part 5＋6 限時衝刺 · 46 題</h3><p class="muted">18 分鐘 · 官方配速（Part 5 約 10 分、Part 6 約 8 分）· 把前面練快，留時間給 Part 7</p>${listeningFullLast(history, "part56-46")}</div><div class="rf-actions"><button class="btn primary" data-action="start-form" data-form="part56-46">開始限時衝刺</button></div></div>
+      </div>
+      <details class="card-more"><summary>配速與題型說明</summary>
+        <p class="muted">正式配速參考：Part 5 約 10 分鐘 30 題、Part 6 約 8 分鐘 16 題、Part 7 約 52 分鐘 54 題。這只是參考，不是必須達到的標準。</p>
+        <p class="muted">Part 5 會涵蓋詞性、時態、介系詞或連接詞、字彙四類；Part 6 每組四題、含句子插入；Part 7 整段含多篇文件的題組。作答時有題型標籤和提醒（可在「題型提示」關閉）。題目為原創模擬題，非 ETS 官方試題。</p>
+      </details>
+    </section>
+
+    ${preExamCard()}
+
+    ${todayStrip(dueQuestions.length, history)}
 
     <section class="card plan-card" id="plan-card" aria-labelledby="plan-title">${planCardInner()}</section>
 
@@ -735,8 +789,6 @@ function renderHome() {
       ${wrongReasonSummary()}
     </section>
 
-    ${preExamCard()}
-
     <p class="quiet-link"><button type="button" class="linkish" data-action="tips">考前技巧</button></p>
 
     <details class="card tips-card">
@@ -761,56 +813,12 @@ function renderHome() {
       <p class="tips-sources">參考：<a href="https://www.dcard.tw/f/english_tests/p/261823171" target="_blank" rel="noopener">Dcard 945 備考心得（2025）</a> · <a href="https://www.ptt.cc/bbs/TOEIC/M.1746338764.A.880.html" target="_blank" rel="noopener">PTT 990 考生心得（2025）</a> · <a href="https://www.toeic.com.tw/quick-links/faq/toeic-listening-reading/test-regulations/skip-section-prohibited" target="_blank" rel="noopener">台灣多益官方作答規定</a></p>
     </details>
 
-    <section class="card parts-card" id="nav-parts" aria-labelledby="parts-title">
-      <div class="reading-full-head"><span class="reading-full-badge">5–24 MIN</span><p class="section-kicker">READING BY PART · 閱讀分 Part 專練</p></div>
-      <h2 id="parts-title">Part 5、6、7 分開練</h2>
-      <p>閱讀還沒完整做過也可以從這裡開始：一次只練一個 Part，每組都有短的和整段兩種長度。時間約照正式配速，題目每次重新抽，會避開最近出過的。</p>
-      <div class="reading-full-sets">
-        ${PART_SETS.map(([part, title, note, short, block]) => `<div class="reading-full-set"><div class="rf-info"><h3>${esc(title)}</h3><p class="muted">${esc(note)}</p>${listeningFullLast(history, short.id)}</div><div class="rf-actions"><button class="btn primary" data-action="start-form" data-form="${short.id}">${esc(short.label)}</button><button class="btn" data-action="start-form" data-form="${block.id}">${esc(block.label)}</button></div></div>`).join("")}
-      </div>
-      <div class="reading-full-sets">
-        <div class="reading-full-set"><div class="rf-info"><h3>Part 5＋6 限時衝刺 · 46 題</h3><p class="muted">18 分鐘 · 官方配速（Part 5 約 10 分、Part 6 約 8 分）· 把前面練快，留時間給 Part 7</p>${listeningFullLast(history, "part56-46")}</div><div class="rf-actions"><button class="btn primary" data-action="start-form" data-form="part56-46">開始限時衝刺</button></div></div>
-      </div>
-      <details class="card-more"><summary>配速與題型說明</summary>
-        <p class="muted">正式配速參考：Part 5 約 10 分鐘 30 題、Part 6 約 8 分鐘 16 題、Part 7 約 52 分鐘 54 題。這只是參考，不是必須達到的標準。</p>
-        <p class="muted">Part 5 會涵蓋詞性、時態、介系詞或連接詞、字彙四類；Part 6 每組四題、含句子插入；Part 7 整段含多篇文件的題組。作答時有題型標籤和提醒（可在「題型提示」關閉）。題目為原創模擬題，非 ETS 官方試題。</p>
-      </details>
-    </section>
-
     <section class="card listening-full-card mini-practice" id="nav-mini" aria-labelledby="mini-title">
       <p class="section-kicker">QUICK PRACTICE · 題型快練</p>
       <h2 id="mini-title">留一點時間，練一個重點。</h2>
-      <p class="mini-intro">先選聽力或閱讀。每次重新抽題，優先避開最近練過的題組。</p>
+      <p class="mini-intro">閱讀快練。每次重新抽題，優先避開最近練過的題組。聽力練習在頁面最上面。</p>
       <div class="mini-options">
-        <article class="mini-option" aria-labelledby="mini-listen-title">
-          <p class="mini-label">LISTENING <span>Part 1–4</span></p>
-          <h3 id="mini-listen-title">快速聽力</h3>
-          <p class="mini-measure"><strong>15<span>題</span></strong><span>約 ${approxListeningMinutes("mini-listen-15", 5) ?? 6} 分鐘</span></p>
-          <p class="mini-focus">練抓關鍵資訊與即時理解</p>
-          <p class="mini-detail">照片 1 · 應答 5 · 對話 6 · 獨白 3<br>每題只播一次，包含圖表理解。</p>
-          <div class="mini-last">${listeningFullLast(history, "mini-listen-15")}</div>
-          <button class="btn primary" data-action="start-form" data-form="mini-listen-15">開始聽力快練</button>
-        </article>
-        <article class="mini-option mini-core" style="grid-column: 1 / -1" aria-labelledby="mini-core-title">
-          <p class="mini-label">LISTENING · CORE 40 <span>Part 1–4</span></p>
-          <h3 id="mini-core-title">聽力濃縮 40 題（做兩次）</h3>
-          <p class="mini-measure"><strong>40<span>題</span></strong><span>約 ${approxListeningMinutes("mini-core-1", 3) ?? 18} 分鐘</span></p>
-          <p class="mini-focus">照片 3 · 應答 10 · 對話 15 · 獨白 12，其中 4 組是圖表題</p>
-          <p class="mini-detail">約為整份聽力的 40%，Part 比例照正式考試。每次重新抽題、避開最近做過的；建議先做 ①，隔一天再做 ②。每題只播一次，作答間隔與完整聽力模擬相同。</p>
-          <div class="mini-last">${listeningFullLast(history, "mini-core-1")}</div>
-          <button class="btn primary" data-action="start-form" data-form="mini-core-1">聽力濃縮 ① </button>
-          <button class="btn primary" data-action="start-form" data-form="mini-core-2">聽力濃縮 ②</button>
-        </article>
-        <article class="mini-option mini-graphic" style="grid-column: 1 / -1" aria-labelledby="mini-graphic-title">
-          <p class="mini-label">LISTENING · LOOK AT THE GRAPHIC <span>Part 3–4</span></p>
-          <h3 id="mini-graphic-title">圖表聽力專練</h3>
-          <p class="mini-measure"><strong>24<span>題</span></strong><span>約 ${approxListeningMinutes("mini-graphic-24", 3) ?? 10} 分鐘</span></p>
-          <p class="mini-focus">一邊看地圖、平面圖、表格或圖表，一邊聽對話與獨白</p>
-          <p class="mini-detail">對話 4 組 · 獨白 4 組，每組一題要對照圖表。<br>答案常是圖上有、但話裡沒念出來的那個詞，先掃一眼圖上的標籤再聽。每題只播一次。</p>
-          <div class="mini-last">${listeningFullLast(history, "mini-graphic-24")}</div>
-          <button class="btn primary" data-action="start-form" data-form="mini-graphic-24">開始圖表聽力專練</button>
-        </article>
-        <article class="mini-option" aria-labelledby="mini-read-title">
+        <article class="mini-option" style="grid-column: 1 / -1" aria-labelledby="mini-read-title">
           <p class="mini-label">READING <span>Part 5–7</span></p>
           <h3 id="mini-read-title">快速閱讀</h3>
           <p class="mini-measure"><strong>12<span>題</span></strong><span>9 分鐘</span></p>
