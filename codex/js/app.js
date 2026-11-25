@@ -790,6 +790,16 @@ function renderHome() {
           <div class="mini-last">${listeningFullLast(history, "mini-listen-15")}</div>
           <button class="btn primary" data-action="start-form" data-form="mini-listen-15">開始聽力快練</button>
         </article>
+        <article class="mini-option mini-core" style="grid-column: 1 / -1" aria-labelledby="mini-core-title">
+          <p class="mini-label">LISTENING · CORE 40 <span>Part 1–4</span></p>
+          <h3 id="mini-core-title">聽力濃縮 40 題（做兩次）</h3>
+          <p class="mini-measure"><strong>40<span>題</span></strong><span>約 ${approxListeningMinutes("mini-core-1", 3) ?? 18} 分鐘</span></p>
+          <p class="mini-focus">照片 3 · 應答 10 · 對話 15 · 獨白 12，其中 4 組是圖表題</p>
+          <p class="mini-detail">約為整份聽力的 40%，Part 比例照正式考試。每次重新抽題、避開最近做過的；建議先做 ①，隔一天再做 ②。每題只播一次，作答間隔與完整聽力模擬相同。</p>
+          <div class="mini-last">${listeningFullLast(history, "mini-core-1")}</div>
+          <button class="btn primary" data-action="start-form" data-form="mini-core-1">聽力濃縮 ① </button>
+          <button class="btn primary" data-action="start-form" data-form="mini-core-2">聽力濃縮 ②</button>
+        </article>
         <article class="mini-option mini-graphic" style="grid-column: 1 / -1" aria-labelledby="mini-graphic-title">
           <p class="mini-label">LISTENING · LOOK AT THE GRAPHIC <span>Part 3–4</span></p>
           <h3 id="mini-graphic-title">圖表聽力專練</h3>
@@ -1118,7 +1128,7 @@ function startPartSet(formId) {
 async function startMiniForm(formId) {
   const set = bank.meta.sets.find((item) => item.id === formId);
   if (!set) return;
-  const listening = formId === "mini-listen-15" || formId === "mini-graphic-24";
+  const listening = formId === "mini-listen-15" || formId === "mini-graphic-24" || formId === "mini-core-1" || formId === "mini-core-2";
   const recent = store.get(KEY_QUICK_RECENT, []);
   let manifest = { groups: {} };
   try { manifest = await loadAudioManifest(); } catch { manifest = { groups: {} }; }
@@ -1917,7 +1927,7 @@ app.addEventListener("click", (e) => {
     case "start-form": {
       if (d.form === "quick-40" || d.form === "quick-60" || d.form === "mini-ult-1" || d.form === "mini-ult-2") { startQuickForm(d.form); break; }
       if (isReadingFullForm(d.form)) { startReadingFull(d.form); break; }
-      if (d.form === "mini-listen-15" || d.form === "mini-graphic-24" || d.form === "mini-read-12") { startMiniForm(d.form); break; }
+      if (d.form === "mini-listen-15" || d.form === "mini-graphic-24" || d.form === "mini-core-1" || d.form === "mini-core-2" || d.form === "mini-read-12") { startMiniForm(d.form); break; }
       if (/^part(?:[567]|56)-(?:fast-)?\d+$/.test(d.form)) { startPartSet(d.form); break; }
       if (isListeningFullForm(d.form)) { startListeningFull(d.form); break; }
       if (isOfficialForm(d.form)) { startOfficialSet(d.form); break; }
