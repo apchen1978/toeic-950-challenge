@@ -1,5 +1,5 @@
 """Record the g-gl-* graphic listening groups (edge-tts, no ffmpeg: MP3 pieces are appended, silences come from lameenc).
-Usage: python scripts/generate-graphic-audio.py <repo root> <unused dir>. Needs edge-tts and lameenc under ~/.codex/tools."""
+Usage: python scripts/generate-graphic-audio.py <repo root> <unused dir> [group id prefix, default g-gl-]. Needs edge-tts and lameenc under ~/.codex/tools."""
 import asyncio, json, hashlib, os, sys
 from pathlib import Path
 T = Path(os.environ['USERPROFILE']) / '.codex' / 'tools'
@@ -21,7 +21,8 @@ async def tts(text, voice, rate):
     return out
 def dur(b): return round(len(b) * 8 / 48000, 2)
 async def main():
-    groups = json.loads((ROOT / 'codex/data/questions.json').read_text(encoding='utf-8'))['groups']; groups = [g for g in groups if g['id'].startswith('g-gl-')]
+    groups = json.loads((ROOT / 'codex/data/questions.json').read_text(encoding='utf-8'))['groups']; prefix = sys.argv[3] if len(sys.argv) > 3 else 'g-gl-'
+    groups = [g for g in groups if g['id'].startswith(prefix)]
     manifest = json.loads((AUD / 'manifest.json').read_text(encoding='utf-8'))
     for g in groups:
         loc, male, female = VOICES[g['accent']]
