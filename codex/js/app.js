@@ -69,6 +69,7 @@ const KEY_SPEED_VOICE = `${STORAGE_PREFIX}.speed-voice.v1`;
 const KEY_PLAN_DONE = `${STORAGE_PREFIX}.plan-done.v1`;
 const KEY_PART_GUIDE = `${STORAGE_PREFIX}.part-guide-seen.v1`;
 const KEY_TYPE_MODE = `${STORAGE_PREFIX}.type-mode.v1`;
+const KEY_PAPER_PREVIEW = `${STORAGE_PREFIX}.paper-preview.v1`;
 const KEY_NOT_RECENT = `${STORAGE_PREFIX}.not-recent.v1`;
 const KEY_GRAMMAR = `${STORAGE_PREFIX}.grammar.v1`;
 const GRAMMAR_QUIZ = GRAMMAR.flatMap((topic) => topic.quiz.map((item, qi) => ({ topic, item, qi })));
@@ -1335,6 +1336,7 @@ function renderTest() {
       ${g.questions.filter((q) => !session.questionIds || session.questionIds.includes(q.id)).map((q) => questionBlock(q, qs, spoken)).join("")}
       ${g.script ? `${session.mode === 'review' ? accentTag(g) : ''}${transcriptBlock(g, session.mode !== 'review')}` : ''}
     </section>
+    ${paperPreviewBlock()}
 
     <div class="row nav-bar">
       <button class="btn" data-action="prev" ${session.cur === allowed[0].i ? "disabled" : ""}>← 上一組</button>
@@ -1852,6 +1854,18 @@ function applyTypeMode() {
   app.dataset.typeMode = typeMode();
   app.dataset.typeShowTest = typeHintVisible(typeMode(), session?.official) ? "1" : "0";
 }
+// 紙本考試可以在播音時預讀下一組題目；聽力正式模式預設顯示「下一組預讀」，可關閉來練螢幕版的做法。
+function paperPreviewOn() { return store.get(KEY_PAPER_PREVIEW, true) !== false; }
+function paperPreviewBlock() {
+  if (!(session?.official && session.phase === "listening")) return "";
+  const next = groupById(session.groupIds[session.cur + 1]);
+  const current = groupById(session.groupIds[session.cur]);
+  const target = next && next.part >= 3 ? next : null;
+  const toggle = `<label class="muted paper-preview-toggle"><input type="checkbox" id="paper-preview"${paperPreviewOn() ? " checked" : ""}> 紙本預讀：顯示下一組題目（正式考試是紙本，看得到下一組）</label>`;
+  if (!target || current?.part < 3 && target.part < 3) return `<p class="type-switch">${toggle}</p>`;
+  const qsHtml = target.questions.map((q) => `<div class="preview-q"><p><b>${esc(q.prompt)}</b></p><ol type="A" class="preview-options">${q.options.map((o) => `<li>${esc(o)}</li>`).join("")}</ol></div>`).join("");
+  return `<p class="type-switch">${toggle}</p><section class="card preview-card"${paperPreviewOn() ? "" : " hidden"} aria-label="下一組預讀"><p class="section-kicker">NEXT · 預讀下一組 Part ${target.part}</p>${target.image ? `<img class="question-image" src="${esc(target.image)}" alt="下一組附圖">` : ""}${graphicHtml(target.graphicView)}${qsHtml}</section>`;
+}
 function typeModeControlHtml() {
   const mode = typeMode();
   return `<p class="type-switch"><label for="type-mode">題型提示</label> <select id="type-mode" class="btn small" aria-label="題型提示">${TYPE_MODES.map(([id, label]) => `<option value="${id}"${id === mode ? " selected" : ""}>${esc(label)}</option>`).join("")}</select></p>`;
@@ -2190,6 +2204,7 @@ app.addEventListener("change", (e) => {
     return;
   }
   if (typeof e.target.name === "string" && e.target.name.startsWith("mock-section")) { store.set(KEY_MOCK_SECTION, selectMockSection(e.target.value)); renderHome(); return; }
+  if (e.target.id === "paper-preview") { store.set(KEY_PAPER_PREVIEW, e.target.checked); const card = document.querySelector(".preview-card"); if (card) card.hidden = !e.target.checked; return; }
   if (e.target.id === "type-mode") { store.set(KEY_TYPE_MODE, normalizeTypeMode(e.target.value)); applyTypeMode(); return; }
   if (e.target.id === "accent-filter") { store.set(KEY_ACCENT, e.target.value); renderHome(); return; }
   if (e.target.dataset.action === "listen-rate") { audio.setListenRate(Number(e.target.value)); return; }
