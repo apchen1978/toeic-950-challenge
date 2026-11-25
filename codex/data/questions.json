@@ -34402,6 +34402,1048 @@
           "questionType": "vocabulary-collocation"
         }
       ]
+    },
+    {
+      "id": "g-gm-p3-02",
+      "section": "listening",
+      "part": 3,
+      "accent": "UK",
+      "title": "Order packing process",
+      "graphic": true,
+      "graphicView": {
+        "kind": "svg",
+        "caption": "Custom order process",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 390 112\" role=\"img\" aria-hidden=\"true\"><text x=\"195\" y=\"18\" fill=\"currentColor\" font-size=\"13\" text-anchor=\"middle\" font-weight=\"700\">Custom order process</text><rect x=\"12\" y=\"40\" width=\"62\" height=\"56\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"43\" y=\"58\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\" font-weight=\"700\">Step 1</text><text x=\"43\" y=\"74\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">Confirm</text><text x=\"43\" y=\"86\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">order</text><line x1=\"74\" y1=\"68\" x2=\"85\" y2=\"68\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"87,68 81,64 81,72\" fill=\"currentColor\"/><rect x=\"88\" y=\"40\" width=\"62\" height=\"56\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"119\" y=\"58\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\" font-weight=\"700\">Step 2</text><text x=\"119\" y=\"74\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">Check</text><text x=\"119\" y=\"86\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">stock</text><line x1=\"150\" y1=\"68\" x2=\"161\" y2=\"68\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"163,68 157,64 157,72\" fill=\"currentColor\"/><rect x=\"164\" y=\"40\" width=\"62\" height=\"56\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"195\" y=\"58\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\" font-weight=\"700\">Step 3</text><text x=\"195\" y=\"74\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">Prepare</text><text x=\"195\" y=\"86\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">package</text><line x1=\"226\" y1=\"68\" x2=\"237\" y2=\"68\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"239,68 233,64 233,72\" fill=\"currentColor\"/><rect x=\"240\" y=\"40\" width=\"62\" height=\"56\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"271\" y=\"58\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\" font-weight=\"700\">Step 4</text><text x=\"271\" y=\"74\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">Arrange</text><text x=\"271\" y=\"86\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">pickup</text><line x1=\"302\" y1=\"68\" x2=\"313\" y2=\"68\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"315,68 309,64 309,72\" fill=\"currentColor\"/><rect x=\"316\" y=\"40\" width=\"62\" height=\"56\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"347\" y=\"58\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\" font-weight=\"700\">Step 5</text><text x=\"347\" y=\"74\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">Send</text><text x=\"347\" y=\"86\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">receipt</text></svg>"
+      },
+      "script": [
+        {
+          "speaker": "M",
+          "text": "The customer has approved the color and quantity."
+        },
+        {
+          "speaker": "W",
+          "text": "Good. I checked the shelves this morning, and all the items are available."
+        },
+        {
+          "speaker": "M",
+          "text": "Please wrap the glass pieces carefully before the driver arrives."
+        },
+        {
+          "speaker": "W",
+          "text": "I'll finish that now. Then I can book the collection and send the paperwork."
+        }
+      ],
+      "questions": [
+        {
+          "id": "GMP302A",
+          "skill": "l-conversation",
+          "prompt": "What will the woman do after wrapping the items?",
+          "options": [
+            "Book a collection",
+            "Check the stock",
+            "Call the customer",
+            "Change the order"
+          ],
+          "answer": 0,
+          "explanation": "She says she will book the collection after finishing the careful wrapping.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "detail"
+        },
+        {
+          "id": "GMP302B",
+          "skill": "l-conversation",
+          "prompt": "What has the customer already done?",
+          "options": [
+            "Paid for delivery",
+            "Collected the order",
+            "Signed the receipt",
+            "Approved the color and quantity"
+          ],
+          "answer": 3,
+          "explanation": "The man says the customer approved both details.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "detail"
+        },
+        {
+          "id": "GMP302C",
+          "skill": "l-conversation",
+          "prompt": "Look at the graphic. Which step is the woman working on now?",
+          "options": [
+            "Confirm order",
+            "Check stock",
+            "Prepare package",
+            "Arrange pickup"
+          ],
+          "answer": 2,
+          "explanation": "She is wrapping the glass pieces now. On the chart that is the Prepare package step; stock was already checked and the pickup is booked next.",
+          "graphic": true,
+          "ability": "L4",
+          "questionType": "graphic"
+        }
+      ]
+    },
+    {
+      "id": "g-gm-p3-03",
+      "section": "listening",
+      "part": 3,
+      "accent": "CA",
+      "title": "Community center room bookings",
+      "graphic": true,
+      "graphicView": {
+        "kind": "table",
+        "caption": "Room bookings",
+        "headers": [
+          "Room",
+          "Capacity",
+          "Available"
+        ],
+        "rows": [
+          [
+            "Birch",
+            "18",
+            "9:00–10:00"
+          ],
+          [
+            "Maple",
+            "24",
+            "10:00–11:00"
+          ],
+          [
+            "Willow",
+            "30",
+            "11:00–12:00"
+          ],
+          [
+            "Pine",
+            "16",
+            "12:00–1:00"
+          ]
+        ]
+      },
+      "script": [
+        {
+          "speaker": "W",
+          "text": "The language class has twenty-two people now, so Birch won't be large enough."
+        },
+        {
+          "speaker": "M",
+          "text": "Could we use Willow? I know it seats more than we need."
+        },
+        {
+          "speaker": "W",
+          "text": "Not at our time. The room that fits twenty-two people and opens at ten is the one we want, and the instructor can start then."
+        },
+        {
+          "speaker": "M",
+          "text": "That works. I'll tell the class about the new start time."
+        }
+      ],
+      "questions": [
+        {
+          "id": "GMP303A",
+          "skill": "l-conversation",
+          "prompt": "Why can't the class use Birch?",
+          "options": [
+            "It is being repaired",
+            "It is unavailable at ten",
+            "It has no chairs",
+            "It is too small"
+          ],
+          "answer": 3,
+          "explanation": "Birch seats 18, fewer than the 22 participants.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "detail"
+        },
+        {
+          "id": "GMP303B",
+          "skill": "l-conversation",
+          "prompt": "Look at the graphic. Which room will the class use?",
+          "options": [
+            "Birch",
+            "Maple",
+            "Willow",
+            "Pine"
+          ],
+          "answer": 1,
+          "explanation": "Willow is not free at ten, Birch and Pine are too small, and Maple seats 24 and is available at 10:00. The room name is never said.",
+          "graphic": true,
+          "ability": "L4",
+          "questionType": "graphic"
+        },
+        {
+          "id": "GMP303C",
+          "skill": "l-conversation",
+          "prompt": "What will the man do?",
+          "options": [
+            "Contact the instructor",
+            "Move the chairs",
+            "Inform the class",
+            "Reserve Willow"
+          ],
+          "answer": 2,
+          "explanation": "He says he will tell the class about the new start time.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "detail"
+        }
+      ]
+    },
+    {
+      "id": "g-gm-p3-04",
+      "section": "listening",
+      "part": 3,
+      "accent": "AU",
+      "title": "Service desk workflow",
+      "graphic": true,
+      "graphicView": {
+        "kind": "svg",
+        "caption": "Equipment service workflow",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 390 112\" role=\"img\" aria-hidden=\"true\"><text x=\"195\" y=\"18\" fill=\"currentColor\" font-size=\"13\" text-anchor=\"middle\" font-weight=\"700\">Equipment service workflow</text><rect x=\"12\" y=\"40\" width=\"62\" height=\"56\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"43\" y=\"58\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\" font-weight=\"700\">Step 1</text><text x=\"43\" y=\"74\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">Log</text><text x=\"43\" y=\"86\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">request</text><line x1=\"74\" y1=\"68\" x2=\"85\" y2=\"68\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"87,68 81,64 81,72\" fill=\"currentColor\"/><rect x=\"88\" y=\"40\" width=\"62\" height=\"56\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"119\" y=\"58\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\" font-weight=\"700\">Step 2</text><text x=\"119\" y=\"74\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">Inspect</text><text x=\"119\" y=\"86\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">device</text><line x1=\"150\" y1=\"68\" x2=\"161\" y2=\"68\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"163,68 157,64 157,72\" fill=\"currentColor\"/><rect x=\"164\" y=\"40\" width=\"62\" height=\"56\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"195\" y=\"58\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\" font-weight=\"700\">Step 3</text><text x=\"195\" y=\"74\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">Order</text><text x=\"195\" y=\"86\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">part</text><line x1=\"226\" y1=\"68\" x2=\"237\" y2=\"68\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"239,68 233,64 233,72\" fill=\"currentColor\"/><rect x=\"240\" y=\"40\" width=\"62\" height=\"56\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"271\" y=\"58\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\" font-weight=\"700\">Step 4</text><text x=\"271\" y=\"74\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">Test</text><text x=\"271\" y=\"86\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">repair</text><line x1=\"302\" y1=\"68\" x2=\"313\" y2=\"68\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"315,68 309,64 309,72\" fill=\"currentColor\"/><rect x=\"316\" y=\"40\" width=\"62\" height=\"56\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"347\" y=\"58\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\" font-weight=\"700\">Step 5</text><text x=\"347\" y=\"74\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">Notify</text><text x=\"347\" y=\"86\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">owner</text></svg>"
+      },
+      "script": [
+        {
+          "speaker": "W",
+          "text": "The label printer isn't feeding paper properly, and we've already logged a service request."
+        },
+        {
+          "speaker": "M",
+          "text": "Has the technician checked the rollers yet?"
+        },
+        {
+          "speaker": "W",
+          "text": "Not yet. He'll inspect the unit first thing tomorrow."
+        },
+        {
+          "speaker": "M",
+          "text": "Once he identifies the worn piece, I can order a replacement. Then we'll test it before returning it to the desk."
+        }
+      ],
+      "questions": [
+        {
+          "id": "GMP304A",
+          "skill": "l-conversation",
+          "prompt": "What problem are the speakers discussing?",
+          "options": [
+            "A printer is jamming",
+            "A screen is cracked",
+            "A scanner is offline",
+            "A cable is missing"
+          ],
+          "answer": 0,
+          "explanation": "The label printer is not feeding paper correctly.",
+          "graphic": false,
+          "ability": "L1",
+          "questionType": "detail"
+        },
+        {
+          "id": "GMP304B",
+          "skill": "l-conversation",
+          "prompt": "What will the technician do tomorrow?",
+          "options": [
+            "Notify the owner",
+            "Order a replacement",
+            "Inspect the printer",
+            "Test the repair"
+          ],
+          "answer": 2,
+          "explanation": "The woman says the technician will inspect the unit first.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "detail"
+        },
+        {
+          "id": "GMP304C",
+          "skill": "l-conversation",
+          "prompt": "Look at the graphic. Which step has already been completed?",
+          "options": [
+            "Log request",
+            "Inspect device",
+            "Order part",
+            "Test repair"
+          ],
+          "answer": 0,
+          "explanation": "The woman says a service request has already been logged, which is the first step on the workflow.",
+          "graphic": true,
+          "ability": "L4",
+          "questionType": "graphic"
+        }
+      ]
+    },
+    {
+      "id": "g-gm-p3-05",
+      "section": "listening",
+      "part": 3,
+      "accent": "US",
+      "title": "Workshop registration fees",
+      "graphic": true,
+      "graphicView": {
+        "kind": "table",
+        "caption": "Workshop fees",
+        "headers": [
+          "Session",
+          "Standard",
+          "Member"
+        ],
+        "rows": [
+          [
+            "Design basics",
+            "$48",
+            "$40"
+          ],
+          [
+            "Data skills",
+            "$60",
+            "$50"
+          ],
+          [
+            "Team planning",
+            "$72",
+            "$60"
+          ],
+          [
+            "Project review",
+            "$84",
+            "$70"
+          ]
+        ]
+      },
+      "script": [
+        {
+          "speaker": "M",
+          "text": "I'd like to register for Team Planning. I'm a member, and I can attend the afternoon session."
+        },
+        {
+          "speaker": "W",
+          "text": "The member rate is lower. Would you like me to add the printed workbook?"
+        },
+        {
+          "speaker": "M",
+          "text": "No, I'll use the digital copy. Please charge the member price."
+        }
+      ],
+      "questions": [
+        {
+          "id": "GMP305A",
+          "skill": "l-conversation",
+          "prompt": "Which session does the man want to attend?",
+          "options": [
+            "Design basics",
+            "Data skills",
+            "Team planning",
+            "Project review"
+          ],
+          "answer": 2,
+          "explanation": "He says he wants to register for Team Planning.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "detail"
+        },
+        {
+          "id": "GMP305B",
+          "skill": "l-conversation",
+          "prompt": "Look at the graphic. How much will he pay?",
+          "options": [
+            "$72",
+            "$70",
+            "$60",
+            "$50"
+          ],
+          "answer": 2,
+          "explanation": "Team planning costs $72 at the standard rate; the graphic lists the member rate as $60, which applies because the speaker says he is a member.",
+          "graphic": true,
+          "ability": "L4",
+          "questionType": "graphic"
+        },
+        {
+          "id": "GMP305C",
+          "skill": "l-conversation",
+          "prompt": "What does the man decide about the workbook?",
+          "options": [
+            "He will use the digital version",
+            "He will buy two copies",
+            "He wants it mailed",
+            "He will borrow one"
+          ],
+          "answer": 0,
+          "explanation": "He declines the printed workbook and says he will use the digital copy.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "detail"
+        }
+      ]
+    },
+    {
+      "id": "g-gm-p3-06",
+      "section": "listening",
+      "part": 3,
+      "accent": "UK",
+      "title": "Gallery visitor counts",
+      "graphic": true,
+      "graphicView": {
+        "kind": "svg",
+        "caption": "Visitors by month",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 215\" role=\"img\" aria-hidden=\"true\"><text x=\"190\" y=\"14\" fill=\"currentColor\" font-size=\"12\" text-anchor=\"middle\" font-weight=\"700\">Visitors by month</text><line x1=\"50\" y1=\"28\" x2=\"50\" y2=\"178\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"50\" y1=\"178\" x2=\"340\" y2=\"178\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"44\" y=\"182\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"end\">0</text><text x=\"44\" y=\"157\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"end\">100</text><text x=\"44\" y=\"132\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"end\">200</text><text x=\"44\" y=\"107\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"end\">300</text><text x=\"44\" y=\"82\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"end\">400</text><text x=\"44\" y=\"57\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"end\">500</text><text x=\"44\" y=\"32\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"end\">600</text><rect x=\"65\" y=\"98\" width=\"40\" height=\"80\" fill=\"currentColor\" fill-opacity=\"0.55\" stroke=\"currentColor\"/><text x=\"85\" y=\"94\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">320</text><text x=\"85\" y=\"192\" fill=\"currentColor\" font-size=\"11\" text-anchor=\"middle\">May</text><rect x=\"135\" y=\"63\" width=\"40\" height=\"115\" fill=\"currentColor\" fill-opacity=\"0.55\" stroke=\"currentColor\"/><text x=\"155\" y=\"59\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">460</text><text x=\"155\" y=\"192\" fill=\"currentColor\" font-size=\"11\" text-anchor=\"middle\">Jun</text><rect x=\"205\" y=\"80.5\" width=\"40\" height=\"97.5\" fill=\"currentColor\" fill-opacity=\"0.55\" stroke=\"currentColor\"/><text x=\"225\" y=\"76.5\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">390</text><text x=\"225\" y=\"192\" fill=\"currentColor\" font-size=\"11\" text-anchor=\"middle\">Jul</text><rect x=\"275\" y=\"48\" width=\"40\" height=\"130\" fill=\"currentColor\" fill-opacity=\"0.55\" stroke=\"currentColor\"/><text x=\"295\" y=\"44\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">520</text><text x=\"295\" y=\"192\" fill=\"currentColor\" font-size=\"11\" text-anchor=\"middle\">Aug</text></svg>"
+      },
+      "script": [
+        {
+          "speaker": "W",
+          "text": "The summer display drew more people than our spring event."
+        },
+        {
+          "speaker": "M",
+          "text": "Was July the busiest month?"
+        },
+        {
+          "speaker": "W",
+          "text": "No, attendance dipped after June and then reached its highest point later in the summer."
+        },
+        {
+          "speaker": "M",
+          "text": "Let's use the figures from that busiest month in the annual report."
+        }
+      ],
+      "questions": [
+        {
+          "id": "GMP306A",
+          "skill": "l-conversation",
+          "prompt": "What will the man include in the annual report?",
+          "options": [
+            "Figures from the busiest month",
+            "The spring event schedule",
+            "The July budget",
+            "The June survey"
+          ],
+          "answer": 0,
+          "explanation": "He says they will use the figures from the busiest month.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "detail"
+        },
+        {
+          "id": "GMP306B",
+          "skill": "l-conversation",
+          "prompt": "What happened to attendance after June?",
+          "options": [
+            "It stayed the same",
+            "It fell before rising again",
+            "It rose every month",
+            "It fell and stayed lower"
+          ],
+          "answer": 1,
+          "explanation": "The woman says it dipped after June and later reached a high in August.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "detail"
+        },
+        {
+          "id": "GMP306C",
+          "skill": "l-conversation",
+          "prompt": "Look at the graphic. About how many visitors will be reported for that month?",
+          "options": [
+            "320",
+            "390",
+            "460",
+            "520"
+          ],
+          "answer": 3,
+          "explanation": "The busiest month is the one after the dip, August, with 520 visitors. The month and the number are never said.",
+          "graphic": true,
+          "ability": "L4",
+          "questionType": "graphic"
+        }
+      ]
+    },
+    {
+      "id": "g-gm-p3-01",
+      "section": "listening",
+      "part": 3,
+      "accent": "US",
+      "title": "Harbor shuttle schedule",
+      "graphic": true,
+      "graphicView": {
+        "kind": "table",
+        "caption": "Harbor shuttle schedule",
+        "headers": [
+          "Route",
+          "Pier",
+          "Departure"
+        ],
+        "rows": [
+          [
+            "Cedar Point",
+            "4",
+            "8:20"
+          ],
+          [
+            "Morrow Key",
+            "7",
+            "8:35"
+          ],
+          [
+            "Linden Bay",
+            "2",
+            "8:50"
+          ],
+          [
+            "West Haven",
+            "5",
+            "9:05"
+          ]
+        ]
+      },
+      "script": [
+        {
+          "speaker": "W",
+          "text": "The client workshop materials are packed, but the courier says the road to Cedar Point is closed."
+        },
+        {
+          "speaker": "M",
+          "text": "Then let's take the harbor shuttle to Morrow Key and deliver them there first."
+        },
+        {
+          "speaker": "W",
+          "text": "We need to be at the pier before nine."
+        },
+        {
+          "speaker": "M",
+          "text": "The 8:20 boat is too early for our pickup. The next one should work."
+        }
+      ],
+      "questions": [
+        {
+          "id": "GMP301A",
+          "skill": "l-conversation",
+          "prompt": "Why are the speakers changing their delivery plan?",
+          "options": [
+            "A package is missing",
+            "The workshop was postponed",
+            "The courier is ill",
+            "A road is closed"
+          ],
+          "answer": 3,
+          "explanation": "The road to Cedar Point is closed, so they switch to a harbor route.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "detail"
+        },
+        {
+          "id": "GMP301B",
+          "skill": "l-conversation",
+          "prompt": "Look at the graphic. Which pier should they go to?",
+          "options": [
+            "Pier 4",
+            "Pier 7",
+            "Pier 2",
+            "Pier 5"
+          ],
+          "answer": 1,
+          "explanation": "They choose the next departure after 8:20, which is Morrow Key at 8:35 from Pier 7.",
+          "graphic": true,
+          "ability": "L4",
+          "questionType": "graphic"
+        },
+        {
+          "id": "GMP301C",
+          "skill": "l-conversation",
+          "prompt": "What are the speakers planning to deliver?",
+          "options": [
+            "A repair kit",
+            "A set of keys",
+            "Lunch orders",
+            "Workshop materials"
+          ],
+          "answer": 3,
+          "explanation": "The woman says the client workshop materials are packed.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "detail"
+        }
+      ]
+    },
+    {
+      "id": "g-gm-p4-01",
+      "section": "listening",
+      "part": 4,
+      "accent": "CA",
+      "title": "Neighborhood delivery route",
+      "graphic": true,
+      "graphicView": {
+        "kind": "table",
+        "caption": "Courier zones",
+        "headers": [
+          "Route",
+          "Cargo"
+        ],
+        "rows": [
+          [
+            "North loop",
+            "Medical supplies"
+          ],
+          [
+            "Market route",
+            "Bakery orders"
+          ],
+          [
+            "River district",
+            "Library returns"
+          ],
+          [
+            "Hill route",
+            "Garden materials"
+          ]
+        ]
+      },
+      "script": [
+        {
+          "speaker": "M",
+          "text": "Good morning, drivers. Today's first stops are listed on the dispatch board. Medical supplies and bakery orders go out first. The route carrying garden materials is delayed until the afternoon because of a road inspection. Please load the library returns last. Check your vehicle number with the desk before leaving."
+        }
+      ],
+      "questions": [
+        {
+          "id": "GMP401A",
+          "skill": "l-talk",
+          "prompt": "What should drivers check before leaving?",
+          "options": [
+            "Their vehicle number",
+            "The weather report",
+            "The fuel receipt",
+            "The road map"
+          ],
+          "answer": 0,
+          "explanation": "The speaker asks drivers to check their vehicle number with the desk.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "detail"
+        },
+        {
+          "id": "GMP401B",
+          "skill": "l-talk",
+          "prompt": "Look at the graphic. Which route is delayed until the afternoon?",
+          "options": [
+            "North loop",
+            "Market route",
+            "River district",
+            "Hill route"
+          ],
+          "answer": 3,
+          "explanation": "The route carrying garden materials is delayed. The list shows garden materials on the Hill route, which is never named.",
+          "graphic": true,
+          "ability": "L4",
+          "questionType": "graphic"
+        },
+        {
+          "id": "GMP401C",
+          "skill": "l-talk",
+          "prompt": "Why is the Hill route delayed?",
+          "options": [
+            "A vehicle needs repair",
+            "A road is being inspected",
+            "The supplies arrived late",
+            "The driver is absent"
+          ],
+          "answer": 1,
+          "explanation": "The route is delayed because of a road inspection.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "detail"
+        }
+      ]
+    },
+    {
+      "id": "g-gm-p4-02",
+      "section": "listening",
+      "part": 4,
+      "accent": "AU",
+      "title": "Order desk process",
+      "graphic": true,
+      "graphicView": {
+        "kind": "svg",
+        "caption": "Online order handling",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 390 112\" role=\"img\" aria-hidden=\"true\"><text x=\"195\" y=\"18\" fill=\"currentColor\" font-size=\"13\" text-anchor=\"middle\" font-weight=\"700\">Online order handling</text><rect x=\"12\" y=\"40\" width=\"62\" height=\"56\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"43\" y=\"58\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\" font-weight=\"700\">Step 1</text><text x=\"43\" y=\"74\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">Verify</text><text x=\"43\" y=\"86\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">payment</text><line x1=\"74\" y1=\"68\" x2=\"85\" y2=\"68\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"87,68 81,64 81,72\" fill=\"currentColor\"/><rect x=\"88\" y=\"40\" width=\"62\" height=\"56\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"119\" y=\"58\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\" font-weight=\"700\">Step 2</text><text x=\"119\" y=\"74\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">Confirm</text><text x=\"119\" y=\"86\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">address</text><line x1=\"150\" y1=\"68\" x2=\"161\" y2=\"68\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"163,68 157,64 157,72\" fill=\"currentColor\"/><rect x=\"164\" y=\"40\" width=\"62\" height=\"56\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"195\" y=\"58\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\" font-weight=\"700\">Step 3</text><text x=\"195\" y=\"74\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">Pick</text><text x=\"195\" y=\"86\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">items</text><line x1=\"226\" y1=\"68\" x2=\"237\" y2=\"68\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"239,68 233,64 233,72\" fill=\"currentColor\"/><rect x=\"240\" y=\"40\" width=\"62\" height=\"56\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"271\" y=\"58\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\" font-weight=\"700\">Step 4</text><text x=\"271\" y=\"74\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">Pack</text><text x=\"271\" y=\"86\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">order</text><line x1=\"302\" y1=\"68\" x2=\"313\" y2=\"68\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"315,68 309,64 309,72\" fill=\"currentColor\"/><rect x=\"316\" y=\"40\" width=\"62\" height=\"56\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"347\" y=\"58\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\" font-weight=\"700\">Step 5</text><text x=\"347\" y=\"74\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">Send</text><text x=\"347\" y=\"86\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">tracking</text></svg>"
+      },
+      "script": [
+        {
+          "speaker": "W",
+          "text": "A quick update on online orders. When a customer places an order, the payment is checked first. Staff then confirm the delivery address before selecting products from the shelves. After the items are packed, the system sends a tracking message. If an address is incomplete, contact the customer before picking any items, as this prevents packages from being sent to the wrong location."
+        }
+      ],
+      "questions": [
+        {
+          "id": "GMP402A",
+          "skill": "l-talk",
+          "prompt": "What should staff do when an address is incomplete?",
+          "options": [
+            "Contact the customer",
+            "Pack the order",
+            "Cancel the payment",
+            "Send tracking details"
+          ],
+          "answer": 0,
+          "explanation": "The speaker says to contact the customer before picking items.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "detail"
+        },
+        {
+          "id": "GMP402B",
+          "skill": "l-talk",
+          "prompt": "According to the speaker, what happens first?",
+          "options": [
+            "Items are selected",
+            "The address is confirmed",
+            "Payment is verified",
+            "A tracking message is sent"
+          ],
+          "answer": 2,
+          "explanation": "Payment is checked first in the order process.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "detail"
+        },
+        {
+          "id": "GMP402C",
+          "skill": "l-talk",
+          "prompt": "Look at the graphic. Which step should wait until an incomplete address is fixed?",
+          "options": [
+            "Verify payment",
+            "Confirm address",
+            "Pick items",
+            "Pack order"
+          ],
+          "answer": 2,
+          "explanation": "The speaker says to contact the customer before picking any items, so the Pick items step waits.",
+          "graphic": true,
+          "ability": "L4",
+          "questionType": "graphic"
+        }
+      ]
+    },
+    {
+      "id": "g-gm-p4-03",
+      "section": "listening",
+      "part": 4,
+      "accent": "US",
+      "title": "Community class registrations",
+      "graphic": true,
+      "graphicView": {
+        "kind": "table",
+        "caption": "Class fees",
+        "headers": [
+          "Class",
+          "Length",
+          "Fee"
+        ],
+        "rows": [
+          [
+            "Watercolor",
+            "2 hours",
+            "$26"
+          ],
+          [
+            "Wood carving",
+            "3 hours",
+            "$38"
+          ],
+          [
+            "Repair basics",
+            "2 hours",
+            "$30"
+          ],
+          [
+            "Seed starting",
+            "1 hour",
+            "$18"
+          ]
+        ]
+      },
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Registration is open for next month's community classes. The wood carving course now has two additional seats, and the supply list will be sent after enrollment. The evening class on fixing household items begins at six on Thursdays. Please note that fees must be paid online before the first session. Call the center if you need an accessible entrance or wish to change your registration."
+        }
+      ],
+      "questions": [
+        {
+          "id": "GMP403A",
+          "skill": "l-talk",
+          "prompt": "What must participants do before the first session?",
+          "options": [
+            "Pay online",
+            "Buy supplies",
+            "Call the center",
+            "Send a photo"
+          ],
+          "answer": 0,
+          "explanation": "The speaker says fees must be paid online before the first session.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "detail"
+        },
+        {
+          "id": "GMP403B",
+          "skill": "l-talk",
+          "prompt": "What will be sent after enrollment?",
+          "options": [
+            "A parking pass",
+            "A supply list",
+            "A refund form",
+            "A class certificate"
+          ],
+          "answer": 1,
+          "explanation": "The speaker says the supply list will be sent after enrollment.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "detail"
+        },
+        {
+          "id": "GMP403C",
+          "skill": "l-talk",
+          "prompt": "Look at the graphic. How much is the class that begins at six on Thursdays?",
+          "options": [
+            "$26",
+            "$38",
+            "$30",
+            "$18"
+          ],
+          "answer": 2,
+          "explanation": "The Thursday evening class on fixing household items is Repair basics, which costs $30. The class name and price are not said.",
+          "graphic": true,
+          "ability": "L4",
+          "questionType": "graphic"
+        }
+      ]
+    },
+    {
+      "id": "g-gm-p4-04",
+      "section": "listening",
+      "part": 4,
+      "accent": "UK",
+      "title": "Museum visitor growth",
+      "graphic": true,
+      "graphicView": {
+        "kind": "svg",
+        "caption": "Monthly visitors",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 215\" role=\"img\" aria-hidden=\"true\"><text x=\"190\" y=\"14\" fill=\"currentColor\" font-size=\"12\" text-anchor=\"middle\" font-weight=\"700\">Monthly visitors</text><line x1=\"50\" y1=\"28\" x2=\"50\" y2=\"178\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"50\" y1=\"178\" x2=\"340\" y2=\"178\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"44\" y=\"182\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"end\">0</text><text x=\"44\" y=\"160.57142857142858\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"end\">100</text><text x=\"44\" y=\"139.14285714285714\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"end\">200</text><text x=\"44\" y=\"117.71428571428571\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"end\">300</text><text x=\"44\" y=\"96.28571428571429\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"end\">400</text><text x=\"44\" y=\"74.85714285714286\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"end\">500</text><text x=\"44\" y=\"53.428571428571416\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"end\">600</text><text x=\"44\" y=\"32\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"end\">700</text><rect x=\"58\" y=\"90.14285714285714\" width=\"40\" height=\"87.85714285714286\" fill=\"currentColor\" fill-opacity=\"0.55\" stroke=\"currentColor\"/><text x=\"78\" y=\"86.14285714285714\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">410</text><text x=\"78\" y=\"192\" fill=\"currentColor\" font-size=\"11\" text-anchor=\"middle\">Sep</text><rect x=\"114\" y=\"66.57142857142857\" width=\"40\" height=\"111.42857142857143\" fill=\"currentColor\" fill-opacity=\"0.55\" stroke=\"currentColor\"/><text x=\"134\" y=\"62.57142857142857\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">520</text><text x=\"134\" y=\"192\" fill=\"currentColor\" font-size=\"11\" text-anchor=\"middle\">Oct</text><rect x=\"170\" y=\"75.14285714285714\" width=\"40\" height=\"102.85714285714286\" fill=\"currentColor\" fill-opacity=\"0.55\" stroke=\"currentColor\"/><text x=\"190\" y=\"71.14285714285714\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">480</text><text x=\"190\" y=\"192\" fill=\"currentColor\" font-size=\"11\" text-anchor=\"middle\">Nov</text><rect x=\"226\" y=\"47.28571428571428\" width=\"40\" height=\"130.71428571428572\" fill=\"currentColor\" fill-opacity=\"0.55\" stroke=\"currentColor\"/><text x=\"246\" y=\"43.28571428571428\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">610</text><text x=\"246\" y=\"192\" fill=\"currentColor\" font-size=\"11\" text-anchor=\"middle\">Dec</text><rect x=\"282\" y=\"55.85714285714286\" width=\"40\" height=\"122.14285714285714\" fill=\"currentColor\" fill-opacity=\"0.55\" stroke=\"currentColor\"/><text x=\"302\" y=\"51.85714285714286\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">570</text><text x=\"302\" y=\"192\" fill=\"currentColor\" font-size=\"11\" text-anchor=\"middle\">Jan</text></svg>"
+      },
+      "script": [
+        {
+          "speaker": "M",
+          "text": "The museum's late-year program attracted strong attendance. October exceeded September, but the following month was a little quieter. Attendance then reached its peak, helped by the evening exhibit. The last month on the chart stayed above the September level, although it did not match the peak. We will keep the exhibit open one extra week next year and compare the results."
+        }
+      ],
+      "questions": [
+        {
+          "id": "GMP404A",
+          "skill": "l-talk",
+          "prompt": "What will the museum do next year?",
+          "options": [
+            "Close the evening exhibit",
+            "Extend the exhibit by a week",
+            "Reduce January hours",
+            "Move the program outdoors"
+          ],
+          "answer": 1,
+          "explanation": "The speaker says the exhibit will remain open one extra week.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "detail"
+        },
+        {
+          "id": "GMP404B",
+          "skill": "l-talk",
+          "prompt": "How does the speaker describe the last month's attendance?",
+          "options": [
+            "The highest of the program",
+            "Above September but below the peak",
+            "Lower than September",
+            "The same as October"
+          ],
+          "answer": 1,
+          "explanation": "The last month stayed above the September level but did not match the peak.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "detail"
+        },
+        {
+          "id": "GMP404C",
+          "skill": "l-talk",
+          "prompt": "Look at the graphic. Which month had the highest attendance?",
+          "options": [
+            "October",
+            "November",
+            "January",
+            "December"
+          ],
+          "answer": 3,
+          "explanation": "The month after the quieter one reached the peak. On the chart that is December, the tallest bar at 610. The month is never named.",
+          "graphic": true,
+          "ability": "L4",
+          "questionType": "graphic"
+        }
+      ]
+    },
+    {
+      "id": "g-gm-p4-05",
+      "section": "listening",
+      "part": 4,
+      "accent": "AU",
+      "title": "Exhibition booth assignments",
+      "graphic": true,
+      "graphicView": {
+        "kind": "table",
+        "caption": "Community expo booths",
+        "headers": [
+          "Booth",
+          "Group"
+        ],
+        "rows": [
+          [
+            "Booth A",
+            "Repair café"
+          ],
+          [
+            "Booth B",
+            "Seed exchange"
+          ],
+          [
+            "Booth C",
+            "Local history"
+          ],
+          [
+            "Booth D",
+            "Bike safety"
+          ]
+        ]
+      },
+      "script": [
+        {
+          "speaker": "W",
+          "text": "Welcome to the community expo. Volunteers, please use the assignment list near the entrance. The repair café will demonstrate small appliance fixes, and the seed exchange has moved beside the east doors. Our history team will give a short presentation at eleven. The bike safety group should keep its helmets behind the counter until the demonstration begins. Please check with your coordinator if you need extra chairs."
+        }
+      ],
+      "questions": [
+        {
+          "id": "GMP405A",
+          "skill": "l-talk",
+          "prompt": "Where can visitors find the seed exchange?",
+          "options": [
+            "Near the east doors",
+            "By the main stage",
+            "Outside the west gate",
+            "Beside the reception desk"
+          ],
+          "answer": 0,
+          "explanation": "The seed exchange has moved beside the east doors.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "detail"
+        },
+        {
+          "id": "GMP405B",
+          "skill": "l-talk",
+          "prompt": "When will the history team present?",
+          "options": [
+            "At ten",
+            "At eleven",
+            "At noon",
+            "At one"
+          ],
+          "answer": 1,
+          "explanation": "The presentation is scheduled for eleven.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "detail"
+        },
+        {
+          "id": "GMP405C",
+          "skill": "l-talk",
+          "prompt": "Look at the graphic. Which booth hosts the bike safety group?",
+          "options": [
+            "Booth A",
+            "Booth B",
+            "Booth C",
+            "Booth D"
+          ],
+          "answer": 3,
+          "explanation": "The list assigns Bike safety to Booth D; the announcement mentions the group but not the booth letter.",
+          "graphic": true,
+          "ability": "L4",
+          "questionType": "graphic"
+        }
+      ]
+    },
+    {
+      "id": "g-gm-p4-06",
+      "section": "listening",
+      "part": 4,
+      "accent": "CA",
+      "title": "Facilities maintenance steps",
+      "graphic": true,
+      "graphicView": {
+        "kind": "svg",
+        "caption": "Room maintenance request",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 390 112\" role=\"img\" aria-hidden=\"true\"><text x=\"195\" y=\"18\" fill=\"currentColor\" font-size=\"13\" text-anchor=\"middle\" font-weight=\"700\">Room maintenance request</text><rect x=\"12\" y=\"40\" width=\"62\" height=\"56\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"43\" y=\"58\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\" font-weight=\"700\">Step 1</text><text x=\"43\" y=\"74\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">Submit</text><text x=\"43\" y=\"86\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">request</text><line x1=\"74\" y1=\"68\" x2=\"85\" y2=\"68\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"87,68 81,64 81,72\" fill=\"currentColor\"/><rect x=\"88\" y=\"40\" width=\"62\" height=\"56\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"119\" y=\"58\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\" font-weight=\"700\">Step 2</text><text x=\"119\" y=\"74\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">Review</text><text x=\"119\" y=\"86\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">schedule</text><line x1=\"150\" y1=\"68\" x2=\"161\" y2=\"68\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"163,68 157,64 157,72\" fill=\"currentColor\"/><rect x=\"164\" y=\"40\" width=\"62\" height=\"56\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"195\" y=\"58\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\" font-weight=\"700\">Step 3</text><text x=\"195\" y=\"74\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">Prepare</text><text x=\"195\" y=\"86\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">room</text><line x1=\"226\" y1=\"68\" x2=\"237\" y2=\"68\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"239,68 233,64 233,72\" fill=\"currentColor\"/><rect x=\"240\" y=\"40\" width=\"62\" height=\"56\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"271\" y=\"58\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\" font-weight=\"700\">Step 4</text><text x=\"271\" y=\"74\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">Complete</text><text x=\"271\" y=\"86\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">work</text><line x1=\"302\" y1=\"68\" x2=\"313\" y2=\"68\" stroke=\"currentColor\" stroke-width=\"2\"/><polygon points=\"315,68 309,64 309,72\" fill=\"currentColor\"/><rect x=\"316\" y=\"40\" width=\"62\" height=\"56\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"347\" y=\"58\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\" font-weight=\"700\">Step 5</text><text x=\"347\" y=\"74\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">Close</text><text x=\"347\" y=\"86\" fill=\"currentColor\" font-size=\"10\" text-anchor=\"middle\">ticket</text></svg>"
+      },
+      "script": [
+        {
+          "speaker": "M",
+          "text": "This is a reminder about room maintenance requests. Please submit them through the staff portal rather than by email. The facilities team reviews the schedule each morning and contacts the requester if a room will be unavailable. Before technicians begin, the room must be prepared by removing personal materials from the work area. After the repair is complete, the team checks the space and records any follow-up needs. The requester will receive a notice when the ticket is closed."
+        }
+      ],
+      "questions": [
+        {
+          "id": "GMP406A",
+          "skill": "l-talk",
+          "prompt": "How should employees submit maintenance requests?",
+          "options": [
+            "Through the staff portal",
+            "By leaving a note",
+            "By calling the technician",
+            "By emailing reception"
+          ],
+          "answer": 0,
+          "explanation": "Requests should be submitted through the staff portal.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "detail"
+        },
+        {
+          "id": "GMP406B",
+          "skill": "l-talk",
+          "prompt": "What must happen before technicians begin?",
+          "options": [
+            "The ticket is closed",
+            "The room is prepared",
+            "A new schedule is printed",
+            "The requester leaves the building"
+          ],
+          "answer": 1,
+          "explanation": "The work area must be cleared of personal materials before work begins.",
+          "graphic": false,
+          "ability": "L4",
+          "questionType": "detail"
+        },
+        {
+          "id": "GMP406C",
+          "skill": "l-talk",
+          "prompt": "Look at the graphic. At which step does the facilities team contact the requester about an unavailable room?",
+          "options": [
+            "Submit request",
+            "Review schedule",
+            "Prepare room",
+            "Complete work"
+          ],
+          "answer": 1,
+          "explanation": "The team reviews the schedule each morning and contacts the requester if a room will be unavailable. That is the Review schedule step.",
+          "graphic": true,
+          "ability": "L4",
+          "questionType": "graphic"
+        }
+      ]
     }
   ]
 }
