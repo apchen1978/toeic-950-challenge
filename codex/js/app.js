@@ -472,7 +472,7 @@ function todayStrip(wrongDue, history) {
     <div class="today-start">${go("mini-ult-1", "終極濃縮練習 ①（27 題）", true)}${go("mini-ult-2", "終極濃縮練習 ②（27 題）", true)}${go("part5-fast-15", "Part 5 加速 15 題（字彙＋文法）")}<button type="button" class="btn" data-action="grammar-drill">練 5 題文法</button>${go("part6-8", "Part 6 專練 8 題")}<button type="button" class="btn" data-action="speed-start">快速反應 10 題</button>${go("part7-12", "Part 7 專練 12 題")}${go("mini-listen-15", "聽力快練 15 題")}</div></section>`;
 }
 
-const HOME_NAV = [["nav-listen-top", "聽力"], ["nav-parts", "567"], ["nav-preexam", "考前"], ["nav-review", "複習"], ["nav-mini", "快練"], ["nav-phrases", "片語"], ["nav-grammar", "文法"], ["nav-practice", "練習"], ["nav-mock", "模考"]];
+const HOME_NAV = [["nav-eve", "考前一天"], ["nav-listen-top", "聽力"], ["nav-parts", "567"], ["nav-preexam", "考前"], ["nav-review", "複習"], ["nav-mini", "快練"], ["nav-phrases", "片語"], ["nav-grammar", "文法"], ["nav-practice", "練習"], ["nav-mock", "模考"]];
 const HOME_NAV_EXTRA = new Set(["nav-grammar", "nav-practice"]);
 
 // 考前重點模式：收起文法、聽力小課程與分項練習。沒設定過時，考前 14 天內自動開啟；手動切換後以使用者的選擇為準。
@@ -707,6 +707,14 @@ function renderHome() {
     ${homeNav(dueQuestions.length, focus)}
     ${focusBar(focus)}
     ${session ? resumeCard() : ''}
+    <section class="card eve-card" id="nav-eve" aria-labelledby="eve-title">
+      <p class="section-kicker">THE DAY BEFORE · 考前一天 Ultimate</p>
+      <h2 id="eve-title">Part 1–7 最容易出錯的題型，一次過一遍</h2>
+      <p class="muted">聽力 40 題＋閱讀 52 題，約 55 分鐘。照片、應答、對話與獨白（含圖表題）、Part 5 字彙與動詞形式、Part 6 句子插入、Part 7 的 NOT、跨文件、簡訊意圖與同義字。每次重新抽題，避開最近練過的。可用下面的切換只做聽力或只做閱讀。</p>
+      ${sectionChoiceControl("mock-section-eve")}
+      <button class="btn primary" data-action="start-form" data-form="mini-eve">開始考前一天 Ultimate（約 55 分鐘）</button>
+      <div class="mini-last">${listeningFullLast(history, "mini-eve")}</div>
+    </section>
     <section class="card listening-full-card mini-practice" id="nav-listen-top" aria-labelledby="listen-top-title">
       <p class="section-kicker">LISTENING · 最新聽力練習</p>
       <h2 id="listen-top-title">聽力：濃縮 40 題、圖表題、快練</h2>
@@ -1947,7 +1955,7 @@ app.addEventListener("click", (e) => {
       break;
     }
     case "start-form": {
-      if (d.form === "quick-40" || d.form === "quick-60" || d.form === "mini-ult-1" || d.form === "mini-ult-2") { startQuickForm(d.form); break; }
+      if (d.form === "quick-40" || d.form === "quick-60" || d.form === "mini-ult-1" || d.form === "mini-ult-2" || d.form === "mini-eve") { startQuickForm(d.form); break; }
       if (isReadingFullForm(d.form)) { startReadingFull(d.form); break; }
       if (d.form === "mini-listen-15" || d.form === "mini-graphic-24" || d.form === "mini-core-1" || d.form === "mini-core-2" || d.form === "mini-read-12") { startMiniForm(d.form); break; }
       if (/^part(?:[567]|56)-(?:fast-)?\d+$/.test(d.form)) { startPartSet(d.form); break; }
