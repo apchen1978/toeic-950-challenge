@@ -99,6 +99,23 @@ export const QUICK_BLUEPRINTS = {
       { part: 4, groups: 4, questionsEach: 3, preferGraphic: 2 }
     ]
   },
+  // 考前一天 Ultimate：Part 1–7 都練到最容易出錯的題型。聽力 40 題（約 18 分）＋閱讀 52 題（約 36 分），合計約 55 分鐘。
+  // Part 5 的題型比例偏字彙與動詞形式；Part 7 要有 NOT、跨文件、簡訊意圖或插入句、同義字。
+  "mini-eve": {
+    minutes: 55,
+    listening: 40,
+    reading: 52,
+    timing: { listening: 19, reading: 36 },
+    parts: [
+      { part: 1, groups: 3 },
+      { part: 2, groups: 10 },
+      { part: 3, groups: 5, questionsEach: 3, preferGraphic: 2 },
+      { part: 4, groups: 4, questionsEach: 3, preferGraphic: 2 },
+      { part: 5, groups: 15, typeMix: { "vocabulary-collocation": 6, "verb-tense-voice": 4, "part-of-speech": 2, "preposition-conjunction": 2, "pronoun|relative-pronoun": 1 } },
+      { part: 6, groups: 3, questionsEach: 4 },
+      { part: 7, questions: 25, requireMulti: true }
+    ]
+  },
   "mini-read-12": {
     minutes: 9,
     listening: 0,
@@ -366,6 +383,18 @@ export function quickCoverageIssues(groups, formId, section = "full") {
     const p7Intent = hasType(groups, 7, /intent|purpose.of.message|text.message.intent/i);
     if (long && (!p7Synonym || !p7Intent)) issues.push("P7 synonym and intent");
     if (!long && !mini && !partSet && !p7Synonym && !p7Intent) issues.push("P7 synonym or intent");
+  }
+  if (formId === "mini-eve") {
+    if (listening) {
+      if (!groups.some((group) => [3, 4].includes(group.part) && questionTypes(group).some((type) => /intent|meaning|implied/i.test(type)))) issues.push("P3/P4 speaker intent");
+      if (new Set(groups.filter((group) => group.part === 1).flatMap(questionTypes)).size < 2) issues.push("P1 two types");
+    }
+    if (reading) {
+      if (!hasType(groups, 7, /not-question/i)) issues.push("P7 NOT question");
+      if (!hasType(groups, 7, /intent|text-insertion/i)) issues.push("P7 intent or insertion");
+      if (!hasType(groups, 7, /synonym/i)) issues.push("P7 synonym");
+      if (!groups.some((group) => group.part === 7 && isVerifiedCrossRef(group))) issues.push("P7 cross-reference");
+    }
   }
   return issues;
 }
