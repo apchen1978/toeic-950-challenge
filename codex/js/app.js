@@ -708,15 +708,28 @@ function renderHome() {
     ${focusBar(focus)}
     ${session ? resumeCard() : ''}
     <section class="card eve-card" id="nav-eve" aria-labelledby="eve-title">
-      <p class="section-kicker">THE DAY BEFORE · 考前一天 Ultimate</p>
-      <h2 id="eve-title">Part 1–7 最容易出錯的題型，一次過一遍</h2>
-      <p class="muted">聽力 40 題＋閱讀 52 題，約 55 分鐘。照片、應答、對話與獨白（含圖表題）、Part 5 字彙與動詞形式、Part 6 句子插入、Part 7 的 NOT、跨文件、簡訊意圖與同義字。每次重新抽題，避開最近練過的。可用下面的切換只做聽力或只做閱讀。</p>
-      ${sectionChoiceControl("mock-section-eve")}
-      <button class="btn primary" data-action="start-form" data-form="mini-eve">開始考前一天 Ultimate（約 55 分鐘）</button>
-      <div class="mini-last">${listeningFullLast(history, "mini-eve")}</div>
-      <p class="muted" style="margin-top:14px"><b>最後輕量版</b>：聽力 20 題＋閱讀 22 題（Part 5 偏字彙與動詞形式、Part 6 兩組、Part 7 四題含 NOT），約 25 分鐘。累的時候、或考前最後一晚用。</p>
-      <button class="btn primary" data-action="start-form" data-form="mini-last">開始最後輕量版（約 25 分鐘）</button>
-      <div class="mini-last">${listeningFullLast(history, "mini-last")}</div>
+      <p class="section-kicker">THE DAY BEFORE · 考前一天</p>
+      <h2 id="eve-title">今天以休息為主，不用再刷題</h2>
+      <p class="muted">考前一天累了，就是身體在提醒你把精神存起來。常見的建議是：實力已經練好，最後一天再刷題，容易累積疲勞，明天反而不夠清醒。這是一般建議，不是規定。</p>
+      <ul class="eve-list">
+        <li>下午放空：散步、聽喜歡的音樂，或小睡 20–30 分鐘，不要睡太沉。</li>
+        <li>傍晚把明天的東西放進袋子：證件、2B 鉛筆 2–3 支（削好）、橡皮擦、手錶。實際規定以你的考試通知為準。</li>
+        <li>確認出發時間與路線，設好出門提醒；早餐吃平常習慣的。</li>
+        <li>今晚提早躺平。睡不著也沒關係，閉眼平躺一樣能休息。</li>
+        <li>只有一種情況可以翻書：腦中一直惦記某個文法或單字，就查 1 分鐘，立刻合上，不延伸做題。</li>
+      </ul>
+      <p class="muted">想維持耳感，可以在傍晚或睡前聽 10 分鐘內的英文，不看題目、不對答案。</p>
+      <button class="btn" data-action="lessons">聽力小課程（不計分，約 10 分鐘內）</button>
+      <details class="card-more"><summary>還是想練一份？（累的話請跳過）</summary>
+        <p class="muted">這幾份是最後的選擇，不是今天的功課。做完就停，不要檢討太久。</p>
+        ${sectionChoiceControl("mock-section-eve")}
+        <p class="muted"><b>最後輕量版</b>：聽力 20 題＋閱讀 22 題，約 25 分鐘。</p>
+        <button class="btn" data-action="start-form" data-form="mini-last">開始最後輕量版（約 25 分鐘）</button>
+        <div class="mini-last">${listeningFullLast(history, "mini-last")}</div>
+        <p class="muted" style="margin-top:14px"><b>考前一天 Ultimate</b>：聽力 40 題＋閱讀 52 題，約 55 分鐘，Part 1–7 最容易出錯的題型。</p>
+        <button class="btn" data-action="start-form" data-form="mini-eve">開始考前一天 Ultimate（約 55 分鐘）</button>
+        <div class="mini-last">${listeningFullLast(history, "mini-eve")}</div>
+      </details>
     </section>
     <section class="card listening-full-card mini-practice" id="nav-listen-top" aria-labelledby="listen-top-title">
       <p class="section-kicker">LISTENING · 最新聽力練習</p>
