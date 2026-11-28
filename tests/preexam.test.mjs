@@ -41,34 +41,36 @@ test("there are ten traps covering listening, grammar and Part 7, plus pacing, r
   for (const source of PREEXAM_SOURCES) assert.match(source.href, /^https:\/\//);
 });
 
-test("the home page opens with listening, Part 5-7 practice and the exam-day card (Paul, 2026-11-26), then today, review and the mocks, each with its own nav pill", () => {
-  assert.ok(app.includes('["nav-listen-top", "聽力"], ["nav-parts", "567"], ["nav-preexam", "考前"]'));
+test("the home page opens with the 30-minute Ultimate Pick, then the exam-day card, today, review and the folded mocks, each with its own nav pill (Paul, 2026-11-29)", () => {
+  assert.ok(app.includes('["nav-ult", "精選"], ["nav-preexam", "考前"]'));
   assert.ok(app.includes('["nav-mock", "模考"]'));
-  const listen = app.indexOf('id="nav-listen-top"');
-  const parts = app.indexOf('id="nav-parts"');
+  const ult = app.indexOf('id="nav-ult"');
   const card = app.indexOf("${preExamCard()}");
   const today = app.indexOf("${todayStrip(");
   const mock = app.indexOf('id="nav-mock"');
-  assert.ok(listen > 0 && parts > listen && card > parts && today > card && mock > today, "order must be listening, parts, exam-day card, today, then the mock");
+  assert.ok(ult > 0 && card > ult && today > card && mock > today, "order must be Ultimate Pick, exam-day card, today, then the mock fold");
   for (const action of ["preexam-open", "preexam-reset", "start-warmup", "preexam-tick"]) assert.ok(app.includes(action), action);
   assert.ok(app.includes('from "./preexam.js"') && app.includes("PREEXAM_BLOCKS"));
+  assert.ok(app.includes('data-action="ultimate"') && app.includes("function renderUltimate"));
 });
 
-test("compact home: nav follows page order and the listening, Part 5-7 and exam-day blocks come first", () => {
-  assert.ok(app.includes('["nav-listen-top", "聽力"], ["nav-parts", "567"], ["nav-preexam", "考前"], ["nav-review", "複習"], ["nav-mini", "快練"], ["nav-phrases", "片語"]'));
+test("compact home: nav follows page order; practice longer than 30 minutes is folded away", () => {
+  assert.ok(app.includes('["nav-ult", "精選"], ["nav-preexam", "考前"], ["nav-review", "複習"], ["nav-more", "更多練習"], ["nav-phrases", "片語"]'));
   assert.ok(app.includes('["nav-practice", "練習"], ["nav-mock", "模考"]];'));
-  assert.ok(app.indexOf('<section class="card" id="nav-review">') > app.indexOf("${preExamCard()}"), "review comes after the first three blocks");
+  assert.ok(app.indexOf('<section class="card" id="nav-review">') > app.indexOf("${preExamCard()}"), "review comes after the first blocks");
+  assert.ok(app.includes('<details class="card fold more-details" id="nav-more">'), "more practice is folded");
+  assert.ok(app.includes('<details class="card fold more-details" id="nav-mock">'), "full mocks are folded");
   assert.ok(app.indexOf('id="offline-card"') > app.indexOf("${phrasesSection()}"), "offline card moves below the study sections");
 });
 
-test("home page order: listening, Part 5-7, exam-day card, today strip, last result, wrong-answer analysis, tips, reading quick practice, mocks, then the 200-question forms", () => {
+test("home page order: Ultimate Pick, exam-day card, today strip, last result, wrong-answer analysis, tips, folded practice, study sections, folded mocks", () => {
   const markers = [
-    'id="nav-listen-top"', 'id="nav-parts"', "${preExamCard()}", "${todayStrip(", 'id="plan-card"', "<h2>最近成績</h2>", 'id="nav-review"', "<h2>錯題複習</h2>", 'class="card tips-card"',
-    'id="nav-mini"', "${phrasesSection()}", "${grammarSection()}", 'class="card quick-card"',
-    'class="card reading-full-card"', 'id="nav-listening-mock"', 'id="offline-card"', "<h2>四套 200 題計時練習</h2>", "<h2>題庫說明與其他練習</h2>", "<h2>作答紀錄</h2>"
+    'id="nav-ult"', "${preExamCard()}", "${todayStrip(", 'id="plan-card"', "<h2>最近成績</h2>", 'id="nav-review"', "<h2>錯題複習</h2>", 'class="card tips-card"',
+    'id="nav-more"', "${phrasesSection()}", "${grammarSection()}",
+    'id="nav-mock"', 'class="card reading-full-card"', 'id="nav-listening-mock"', "<h2>四套 200 題計時練習</h2>", 'id="offline-card"', "<h2>題庫說明與其他練習</h2>", "<h2>作答紀錄</h2>"
   ];
   const at = markers.map((m) => [m, app.indexOf(m)]);
   for (const [m, i] of at) assert.ok(i > 0, "missing " + m);
-  for (let i = 1; i < at.length; i += 1) assert.ok(at[i][1] > at[i - 1][1], at[i][0] + " must come after " + at[i - 1][0]);
-  assert.ok(app.indexOf("${session ? resumeCard()") < app.indexOf('id="nav-listen-top"'), "an unfinished session shows its resume card above everything else");
+  for (let k = 1; k < at.length; k += 1) assert.ok(at[k][1] > at[k - 1][1], at[k][0] + " must come after " + at[k - 1][0]);
+  assert.ok(app.indexOf("${session ? resumeCard()") < app.indexOf('id="nav-ult"'), "an unfinished session shows its resume card above everything else");
 });
