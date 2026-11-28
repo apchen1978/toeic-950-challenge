@@ -24,6 +24,7 @@ import { daysBetween, toISO, addDays, dayPlan, fullPlan, toggleDone } from "./pl
 import { buildDrill, summarize, KIND_LABEL } from "./drill.js";
 import { COLLOCATIONS, PARAPHRASES, EMAIL_PHRASES, clozeOf } from "./phrases.js";
 import { audioEntries, countCached, downloadAll, formatMB } from "./offline.js";
+import { pickEveStudy, eveStudyMinutes, EVE_STUDY_NOTE } from "./eve-study.js";
 
 const EXAM_DATE = "2026-11-29";
 const MAX_PLAYS = 2;
@@ -720,6 +721,8 @@ function renderHome() {
       </ul>
       <p class="muted">想維持耳感，可以在傍晚或睡前聽 10 分鐘內的英文，不看題目、不對答案。</p>
       <button class="btn" data-action="lessons">聽力小課程（不計分，約 10 分鐘內）</button>
+      <p class="muted" style="margin-top:14px">今天如果手癢，可以「用看的」過一遍：Part 1–7 各挑幾題，選了答案立刻看對錯與解析，不計分、不計時。</p>
+      <button class="btn primary" data-action="eve-study">輕鬆看一遍（約 ${eveStudyMinutes(pickEveStudy(bank))} 分鐘，不計分）</button>
       <details class="card-more"><summary>還是想練一份？（累的話請跳過）</summary>
         <p class="muted">這幾份是最後的選擇，不是今天的功課。做完就停，不要檢討太久。</p>
         ${sectionChoiceControl("mock-section-eve")}
@@ -986,6 +989,36 @@ function flashSetup() {
   document.getElementById('flash-level').value = options.level;
   document.getElementById('flash-category').value = options.category;
   window.scrollTo(0, 0);
+}
+
+function eveGroupHtml(group, questionIds) {
+  const qs = group.questions.filter((q) => questionIds.includes(q.id));
+  const transcript = group.section === "listening" && group.part >= 2 && group.script
+    ? `<div class="eve-script"><b>文字稿</b>${group.script.map((line) => `<p>${line.speaker === "N" ? "" : esc(line.speaker) + "： "}${esc(line.text)}</p>`).join("")}</div>` : "";
+  return `<article class="card eve-group"><p class="muted">${esc(group.title ?? "")}</p>${group.image ? `<img class="question-image" src="${esc(group.image)}" alt="題組附圖">` : ""}${graphicHtml(group.graphicView)}${readingPassageHtml(group)}${transcript}${qs.map((q) => `<div class="eve-q" data-q="${esc(q.id)}"><p class="eve-prompt"><b>${esc(q.prompt)}</b></p><div class="eve-options">${q.options.map((o, i) => `<button type="button" class="btn eve-opt" data-action="eve-pick" data-q="${esc(q.id)}" data-i="${i}">${LETTERS[i]}. ${esc(o)}</button>`).join("")}</div><div class="eve-result" hidden></div></div>`).join("")}</article>`;
+}
+function renderEveStudy() {
+  stopTimer(); audio.stop();
+  const sections = pickEveStudy(bank);
+  app.innerHTML = `<section class="card"><p class="section-kicker">THE DAY BEFORE · 輕鬆看一遍</p><h1>考前輕鬆看一遍（約 ${eveStudyMinutes(sections)} 分鐘）</h1><p class="muted">${esc(EVE_STUDY_NOTE)}</p><div class="row"><button class="btn" data-action="home">回首頁</button></div></section>
+    ${sections.map((section) => `<section class="eve-section"><h2>${esc(section.title)} <span class="muted">· 約 ${section.minutes} 分</span></h2><p class="notice">${esc(section.hint)}</p>${section.items.map((item) => eveGroupHtml(item.group, item.questionIds)).join("")}</section>`).join("")}
+    <section class="card"><p>看完了，就把它合上。今晚早點睡，明天證件、鉛筆、出門時間再確認一次。</p><div class="row"><button class="btn primary" data-action="home">回首頁</button></div></section>`;
+  window.scrollTo(0, 0);
+}
+function evePick(d) {
+  const q = flatten(bank).find((item) => item.id === d.q);
+  const box = document.querySelector(`.eve-q[data-q="${CSS.escape(d.q)}"]`);
+  if (!q || !box || box.dataset.done) return;
+  box.dataset.done = "1";
+  const chosen = Number(d.i);
+  box.querySelectorAll(".eve-opt").forEach((button, i) => {
+    button.disabled = true;
+    if (i === q.answer) button.classList.add("is-right");
+    else if (i === chosen) button.classList.add("is-wrong");
+  });
+  const result = box.querySelector(".eve-result");
+  result.hidden = false;
+  result.innerHTML = `<p><b>${chosen === q.answer ? "✓ 正確" : `✗ 不對，正解是 ${LETTERS[q.answer]}`}</b></p><div class="explain">${esc(q.explanation ?? "").replace(/\n/g, "<br>")}</div>`;
 }
 
 function renderLessons() {
@@ -2093,6 +2126,8 @@ app.addEventListener("click", (e) => {
     case "hide-tips": store.set(KEY_TIPS, false); if (session) renderTest(); else renderHome(); break;
     case "show-tips": store.set(KEY_TIPS, true); if (session) renderTest(); else renderHome(); break;
     case "lessons": renderLessons(); break;
+    case "eve-study": renderEveStudy(); break;
+    case "eve-pick": evePick(d); break;
     case "lesson-retry": {
       const card = t.closest('.lesson-card');
       const player = card.querySelector('audio');
