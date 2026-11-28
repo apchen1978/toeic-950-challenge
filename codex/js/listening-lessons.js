@@ -122,5 +122,38 @@ export const LESSONS = [
     transcript: "I would like to update everyone on next month's office move. Our team will relocate to the new building on Canal Street on the fifteenth. Packing boxes will be delivered to each department this Friday, and all items must be labelled with your name and floor number. Parking passes for the new building will be handed out on Monday. Please note that the current office will be closed for cleaning after the move.",
     summary: "下個月十五日團隊搬到 Canal 街新大樓。本週五各部門會收到紙箱，物品須標示姓名與樓層；週一發放新大樓停車證，搬完後舊辦公室關閉清潔。",
     phrases: [["relocate to", "搬遷到"], ["be labelled with", "標示上"], ["parking pass", "停車證"], ["closed for cleaning", "關閉清潔"]]
+  },
+  {
+    id: "catering-order-change", title: "活動訂餐人數變更（兩人對話）", accent: "美式英語", audio: "audio/lesson-catering-order-change.mp3",
+    transcript: "Woman: Hi Marcus, it's Dana. I'm afraid we need to change the lunch order for Thursday's workshop.\nMan: Sure, Dana. How many people are we looking at now?\nWoman: The headcount went from forty to fifty-five after two more departments signed up.\nMan: That's fine, but I'll need your list of dietary restrictions by tomorrow noon so the kitchen can prepare.\nWoman: Understood. I'll send it this afternoon. Could you also add a vegetarian option?\nMan: Of course. We'll include a pasta dish. I'll email you a revised quote within the hour.",
+    summary: "活動企劃 Dana 打給外燴業者 Marcus：週四工作坊的午餐人數從四十人增為五十五人。Marcus 需要明天中午前收到飲食限制名單；Dana 要求加素食選項，Marcus 會加入義大利麵，並在一小時內寄出修正報價。",
+    phrases: [["headcount", "人數"], ["dietary restrictions", "飲食限制"], ["revised quote", "修正報價"], ["sign up", "報名"]],
+    questions: [
+      { id: "LQ-CATER-1", prompt: "Why is the woman calling?", options: ["To order more food","To change a lunch order","To cancel an event","To ask about a price"], answer: 1, explanation: "She says they need to change the lunch order for Thursday's workshop because more people signed up." },
+      { id: "LQ-CATER-2", prompt: "How many people will attend now?", options: ["Forty","Forty-five","Fifty-five","Sixty"], answer: 2, explanation: "The headcount went from forty to fifty-five." },
+      { id: "LQ-CATER-3", prompt: "What will the man do within the hour?", options: ["Visit the venue","Call the kitchen","Cancel a dish","Send a revised quote"], answer: 3, explanation: "He says he will email a revised quote within the hour." }
+    ]
+  },
+  {
+    id: "printer-jam-meeting", title: "影印機故障與稽核報告（三人對話）", accent: "美式英語", audio: "audio/lesson-printer-jam-meeting.mp3",
+    transcript: "Woman 1: Tom, thanks for coming up. The printer on our floor keeps jamming, and the audit reports are due on Monday.\nMan: I checked it this morning. A roller is worn out, so I need to order a replacement part. It should arrive next Wednesday.\nWoman 2: Wednesday is too late for us. Could we use the printer on the fourth floor until then?\nMan: That should work. I'll give you the access codes before lunch.\nWoman 1: Great. Priya, please print the reports in two batches so we don't overload it.\nWoman 2: Will do. And I'll ask the team to avoid color printing for now.\nMan: Good idea. I'll stop by on Thursday to make sure everything is working.",
+    summary: "三樓的影印機一直卡紙，稽核報告週一要交；技師 Tom 說要換滾輪，下週三才到。Priya 說週三太晚，於是改用四樓影印機，Tom 午餐前提供存取碼，報告分兩批印、暫時避免彩色列印，Tom 週四再來檢查。",
+    phrases: [["audit report", "稽核報告"], ["replacement part", "替換零件"], ["access code", "存取碼"], ["in two batches", "分兩批"]],
+    questions: [
+      { id: "LQ-PRINT-1", prompt: "What problem are the speakers discussing?", options: ["A printer is jamming","A computer is slow","A report is missing","A budget is late"], answer: 0, explanation: "The woman says the printer on their floor keeps jamming." },
+      { id: "LQ-PRINT-2", prompt: "What will Tom give Priya before lunch?", options: ["A new printer","Access codes","A repair manual","Color cartridges"], answer: 1, explanation: "He says he will give them the access codes before lunch." },
+      { id: "LQ-PRINT-3", prompt: "Why does Priya say, \"Wednesday is too late for us\"?", options: ["The part is expensive","Tom will be away","The office will be closed","The reports are due Monday"], answer: 3, explanation: "The audit reports are due on Monday, so a part arriving Wednesday is too late." }
+    ]
+  },
+  {
+    id: "client-visit-moved", title: "客戶來訪提前（三人對話）", accent: "美式英語", audio: "audio/lesson-client-visit-moved.mp3",
+    transcript: "Woman 1: Thanks for joining, everyone. The Lakeside Hotels visit has moved from Thursday to Tuesday morning because their director has to travel.\nMan: That's earlier than planned. I'm not sure the new slides will be ready.\nWoman 2: I can finish the pricing section tonight if someone else prepares the product demo.\nMan: I'll take the demo. I just need the sample units from the warehouse.\nWoman 1: I'll email the warehouse now. Maria, could you also book a meeting room with a projector?\nWoman 2: Already done. Room 3B, at nine thirty.\nWoman 1: Perfect. Let's do a short rehearsal on Monday at four.",
+    summary: "Lakeside Hotels 的來訪因其主管要出差，從週四提前到週二上午。Maria 今晚完成報價部分，Paul 負責產品示範並需要倉庫的樣品；經理寄信給倉庫，Maria 已訂好 3B 會議室（九點半），週一下午四點排練。",
+    phrases: [["move up", "提前"], ["sample unit", "樣品"], ["book a meeting room", "預訂會議室"], ["rehearsal", "彩排"]],
+    questions: [
+      { id: "LQ-VISIT-1", prompt: "What has changed?", options: ["A client visit has been moved up","A hotel booking was canceled","A product was recalled","A director resigned"], answer: 0, explanation: "The visit moved from Thursday to Tuesday morning, which is earlier." },
+      { id: "LQ-VISIT-2", prompt: "What does Maria mean when she says, \"Already done\"?", options: ["She forgot the projector","She will cancel the meeting","She has already reserved a room","She has finished the slides"], answer: 2, explanation: "She answers the request to book a meeting room by saying it is done: Room 3B at nine thirty." },
+      { id: "LQ-VISIT-3", prompt: "What will happen on Monday at four?", options: ["A client visit","A rehearsal","A warehouse inspection","A budget review"], answer: 1, explanation: "The manager proposes a short rehearsal on Monday at four." }
+    ]
   }
 ];

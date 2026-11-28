@@ -1011,7 +1011,7 @@ function renderEveStudy() {
   window.scrollTo(0, 0);
 }
 function evePick(d) {
-  const q = flatten(bank).find((item) => item.id === d.q);
+  const q = flatten(bank).find((item) => item.id === d.q) ?? LESSONS.flatMap((lesson) => lesson.questions ?? []).find((item) => item.id === d.q);
   const box = document.querySelector(`.eve-q[data-q="${CSS.escape(d.q)}"]`);
   if (!q || !box || box.dataset.done) return;
   box.dataset.done = "1";
@@ -1026,10 +1026,14 @@ function evePick(d) {
   result.innerHTML = `<p><b>${chosen === q.answer ? "✓ 正確" : `✗ 不對，正解是 ${LETTERS[q.answer]}`}</b></p><div class="explain">${esc(q.explanation ?? "").replace(/\n/g, "<br>")}</div>`;
 }
 
+function lessonQuizHtml(lesson) {
+  if (!lesson.questions?.length) return "";
+  return `<details open><summary>試做 ${lesson.questions.length} 題（答完立刻看對錯）</summary>${lesson.questions.map((q) => `<div class="eve-q" data-q="${esc(q.id)}"><p class="eve-prompt"><b>${esc(q.prompt)}</b></p><div class="eve-options">${q.options.map((o, i) => `<button type="button" class="btn eve-opt" data-action="eve-pick" data-q="${esc(q.id)}" data-i="${i}">${LETTERS[i]}. ${esc(o)}</button>`).join("")}</div><div class="eve-result" hidden></div></div>`).join("")}</details>`;
+}
 function renderLessons() {
   stopTimer(); audio.stop();
   app.innerHTML = `<section class="card"><p class="section-kicker">LISTENING LESSONS</p><h1>聽力小課程</h1><p>先聽錄音，再展開概要與逐字稿。錄音可重播；內容為本站原創，使用合成語音。共 ${LESSONS.length} 段，美式、英式、澳洲、加拿大口音都有。</p><label class="muted"><input type="checkbox" id="lesson-auto" checked> 播完自動接著播下一段（適合在車上連續聽）</label><div class="row"><button class="btn" data-action="home">回首頁</button></div></section>
-    ${LESSONS.map((lesson, index) => `<article class="card lesson-card"><p class="section-kicker">LESSON ${index + 1} · ${esc(lesson.accent)}</p><h2>${esc(lesson.title)}</h2><audio controls preload="none" src="${esc(lesson.audio)}" data-lesson-audio="${esc(lesson.id)}">此瀏覽器無法播放音檔。</audio><div class="row"><button class="btn small" data-action="lesson-retry" data-lesson="${esc(lesson.id)}">重新載入並播放</button><span class="muted lesson-status" role="status"></span></div><details><summary>查看中文概要</summary><p>${esc(lesson.summary)}</p></details><details><summary>查看英文逐字稿</summary><p lang="en">${esc(lesson.transcript)}</p></details><details><summary>實用片語</summary><ul>${lesson.phrases.map(([phrase, meaning]) => `<li><b lang="en">${esc(phrase)}</b> · ${esc(meaning)}</li>`).join('')}</ul></details></article>`).join('')}`;
+    ${LESSONS.map((lesson, index) => `<article class="card lesson-card"><p class="section-kicker">LESSON ${index + 1} · ${esc(lesson.accent)}</p><h2>${esc(lesson.title)}</h2><audio controls preload="none" src="${esc(lesson.audio)}" data-lesson-audio="${esc(lesson.id)}">此瀏覽器無法播放音檔。</audio><div class="row"><button class="btn small" data-action="lesson-retry" data-lesson="${esc(lesson.id)}">重新載入並播放</button><span class="muted lesson-status" role="status"></span></div><details><summary>查看中文概要</summary><p>${esc(lesson.summary)}</p></details><details><summary>查看英文逐字稿</summary><p lang="en" style="white-space: pre-line">${esc(lesson.transcript)}</p></details><details><summary>實用片語</summary><ul>${lesson.phrases.map(([phrase, meaning]) => `<li><b lang="en">${esc(phrase)}</b> · ${esc(meaning)}</li>`).join('')}</ul></details>${lessonQuizHtml(lesson)}</article>`).join('')}`;
   const lessonAudios = [...app.querySelectorAll("audio[data-lesson-audio]")];
   lessonAudios.forEach((el, i) => el.addEventListener("ended", () => {
     const next = lessonAudios[i + 1];
