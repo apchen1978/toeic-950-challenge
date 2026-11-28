@@ -25,6 +25,7 @@ import { buildDrill, summarize, KIND_LABEL } from "./drill.js";
 import { COLLOCATIONS, PARAPHRASES, EMAIL_PHRASES, clozeOf } from "./phrases.js";
 import { audioEntries, countCached, downloadAll, formatMB } from "./offline.js";
 import { pickEveStudy, eveStudyMinutes, EVE_STUDY_NOTE, EVE_DAY_TIPS, pickReadingSkim } from "./eve-study.js";
+import { ZH } from "./eve-zh.js";
 
 const EXAM_DATE = "2026-11-29";
 const MAX_PLAYS = 2;
@@ -992,11 +993,16 @@ function flashSetup() {
   window.scrollTo(0, 0);
 }
 
+function zhPassageHtml(group) {
+  const docs = ZH.groups[group.id]?.docs;
+  if (!docs) return "";
+  return `<div class="zh-passage" lang="zh-Hant"><p class="zh-label">中文翻譯</p>${docs.map((doc) => `<div class="passage zh-doc">${esc(doc).split("\n").join("<br>")}</div>`).join("")}</div>`;
+}
 function eveGroupHtml(group, questionIds) {
   const qs = group.questions.filter((q) => questionIds.includes(q.id));
   const transcript = group.section === "listening" && group.part >= 2 && group.script
     ? `<div class="eve-script"><b>文字稿</b>${group.script.map((line) => `<p>${line.speaker === "N" ? "" : esc(line.speaker) + "： "}${esc(line.text)}</p>`).join("")}</div>` : "";
-  return `<article class="card eve-group"><p class="muted">${esc(group.title ?? "")}</p>${group.image ? `<img class="question-image" src="${esc(group.image)}" alt="題組附圖">` : ""}${graphicHtml(group.graphicView)}${readingPassageHtml(group)}${transcript}${qs.map((q) => `<div class="eve-q" data-q="${esc(q.id)}"><p class="eve-prompt"><b>${esc(q.prompt)}</b></p><div class="eve-options">${q.options.map((o, i) => `<button type="button" class="btn eve-opt" data-action="eve-pick" data-q="${esc(q.id)}" data-i="${i}">${LETTERS[i]}. ${esc(o)}</button>`).join("")}</div><div class="eve-result" hidden></div></div>`).join("")}</article>`;
+  return `<article class="card eve-group"><p class="muted">${esc(group.title ?? "")}</p>${group.image ? `<img class="question-image" src="${esc(group.image)}" alt="題組附圖">` : ""}${graphicHtml(group.graphicView)}${readingPassageHtml(group)}${zhPassageHtml(group)}${transcript}${qs.map((q) => `<div class="eve-q" data-q="${esc(q.id)}"><p class="eve-prompt"><b>${esc(q.prompt)}</b></p>${ZH.questions[q.id]?.p ? `<p class="zh-line" lang="zh-Hant">${esc(ZH.questions[q.id].p)}</p>` : ""}<div class="eve-options">${q.options.map((o, i) => `<button type="button" class="btn eve-opt" data-action="eve-pick" data-q="${esc(q.id)}" data-i="${i}">${LETTERS[i]}. ${esc(o)}${ZH.questions[q.id]?.o?.[i] ? `<span class="zh-opt" lang="zh-Hant">${esc(ZH.questions[q.id].o[i])}</span>` : ""}</button>`).join("")}</div><div class="eve-result" hidden></div></div>`).join("")}</article>`;
 }
 function eveGuideTips(part) {
   const parts = part === 3 ? [3, 4] : [part];
