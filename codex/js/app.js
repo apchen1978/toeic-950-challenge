@@ -714,6 +714,9 @@ function renderHome() {
       ${sectionChoiceControl("mock-section-eve")}
       <button class="btn primary" data-action="start-form" data-form="mini-eve">開始考前一天 Ultimate（約 55 分鐘）</button>
       <div class="mini-last">${listeningFullLast(history, "mini-eve")}</div>
+      <p class="muted" style="margin-top:14px"><b>最後輕量版</b>：聽力 20 題＋閱讀 22 題（Part 5 偏字彙與動詞形式、Part 6 兩組、Part 7 四題含 NOT），約 25 分鐘。累的時候、或考前最後一晚用。</p>
+      <button class="btn primary" data-action="start-form" data-form="mini-last">開始最後輕量版（約 25 分鐘）</button>
+      <div class="mini-last">${listeningFullLast(history, "mini-last")}</div>
     </section>
     <section class="card listening-full-card mini-practice" id="nav-listen-top" aria-labelledby="listen-top-title">
       <p class="section-kicker">LISTENING · 最新聽力練習</p>
@@ -1955,7 +1958,7 @@ app.addEventListener("click", (e) => {
       break;
     }
     case "start-form": {
-      if (d.form === "quick-40" || d.form === "quick-60" || d.form === "mini-ult-1" || d.form === "mini-ult-2" || d.form === "mini-eve") { startQuickForm(d.form); break; }
+      if (d.form === "quick-40" || d.form === "quick-60" || d.form === "mini-ult-1" || d.form === "mini-ult-2" || d.form === "mini-eve" || d.form === "mini-last") { startQuickForm(d.form); break; }
       if (isReadingFullForm(d.form)) { startReadingFull(d.form); break; }
       if (d.form === "mini-listen-15" || d.form === "mini-graphic-24" || d.form === "mini-core-1" || d.form === "mini-core-2" || d.form === "mini-read-12") { startMiniForm(d.form); break; }
       if (/^part(?:[567]|56)-(?:fast-)?\d+$/.test(d.form)) { startPartSet(d.form); break; }

@@ -1435,6 +1435,43 @@
         }
       },
       {
+        "id": "mini-last",
+        "label": "最後輕量版 · 聽力 20＋閱讀 22（約 25 分鐘）",
+        "groupIds": [
+          "g-photo-18",
+          "cov-p1-12",
+          "cov-p2-10",
+          "g-extra-l-10",
+          "g-xs-l10",
+          "g-gx-p2-08",
+          "xf-p2-18",
+          "cov-p2-11",
+          "cov-p3-10",
+          "g-xl3-10",
+          "g-gx-p4-03",
+          "g-x4f-11",
+          "g-rdnew-003",
+          "xr2-p5-07",
+          "g-extra-r-06",
+          "g-rdnew-005",
+          "s03-sentence5",
+          "g-new-r6",
+          "g-a-p5-03",
+          "xf-p5-28",
+          "xr2-p5-03",
+          "g-sp-p5-09",
+          "g-cov-p6-02",
+          "g-form-p6-04",
+          "g-not-p7-16",
+          "g-not-p7-15"
+        ],
+        "durationMin": 25,
+        "timing": {
+          "listening": 9,
+          "reading": 14
+        }
+      },
+      {
         "id": "mini-graphic-24",
         "label": "圖表聽力專練 · 24 題（約 10 分鐘）",
         "groupIds": [
