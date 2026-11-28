@@ -4,7 +4,11 @@ import { statSync } from 'node:fs';
 import { LESSONS } from '../codex/js/listening-lessons.js';
 
 test('lessons include original audio, transcript, summary and useful phrases', () => {
-  assert.equal(LESSONS.length, 20);
+  assert.equal(LESSONS.length, 23);
+  for (const lesson of LESSONS.filter((x) => x.questions)) {
+    assert.equal(lesson.questions.length, 3);
+    for (const k of lesson.questions) assert.ok(k.options.length === 4 && k.answer >= 0 && k.answer < 4 && k.explanation, k.id);
+  }
   assert.equal(new Set(LESSONS.map(x => x.id)).size, LESSONS.length);
   for (const lesson of LESSONS) {
     assert.ok(lesson.title && lesson.accent && lesson.summary && lesson.transcript);
