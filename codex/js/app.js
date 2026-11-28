@@ -26,6 +26,7 @@ import { COLLOCATIONS, PARAPHRASES, EMAIL_PHRASES, clozeOf } from "./phrases.js"
 import { audioEntries, countCached, downloadAll, formatMB } from "./offline.js";
 import { pickEveStudy, eveStudyMinutes, EVE_STUDY_NOTE, EVE_DAY_TIPS, pickReadingSkim } from "./eve-study.js";
 import { ZH } from "./eve-zh.js";
+import { ULT_INTRO_EN, ULT_INTRO_ZH, ULT_DAY_TIPS, ULT_PARTS, ultimateMinutes } from "./ultimate.js";
 
 const EXAM_DATE = "2026-11-29";
 const MAX_PLAYS = 2;
@@ -470,11 +471,11 @@ function todayStrip(wrongDue, history) {
   const grammarDone = grammarRightTotal();
   const go = (form, label, primary = false) => `<button type="button" class="btn${primary ? " primary" : ""}" data-action="start-form" data-form="${form}">${label}</button>`;
   return `<section class="today-strip" aria-label="今日待辦"><p class="today-title">今日<span class="muted"> · ${lastText}</span></p><div class="today-items">${item(wrongDue, "錯題到期", "review-wrong", "複習錯題")}<div class="today-item"><b>${grammarDone}</b><span>/ ${GRAMMAR_QUIZ.length} 文法題答對</span></div></div>
-    <p class="today-start-title">${wrongDue ? "複習完，再練一個（濃縮練習約 17 分鐘）：" : "今天沒有到期的複習。選一個開始（濃縮練習約 17 分鐘）："}</p>
-    <div class="today-start">${go("mini-ult-1", "終極濃縮練習 ①（27 題）", true)}${go("mini-ult-2", "終極濃縮練習 ②（27 題）", true)}${go("part5-fast-15", "Part 5 加速 15 題（字彙＋文法）")}<button type="button" class="btn" data-action="grammar-drill">練 5 題文法</button>${go("part6-8", "Part 6 專練 8 題")}<button type="button" class="btn" data-action="speed-start">快速反應 10 題</button>${go("part7-12", "Part 7 專練 12 題")}${go("mini-listen-15", "聽力快練 15 題")}</div></section>`;
+    <p class="today-start-title">${wrongDue ? "複習完，再練一個：" : "今天沒有到期的複習。選一個開始："}</p>
+    <div class="today-start">${go("part5-fast-15", "Part 5 加速 15 題（字彙＋文法）", true)}<button type="button" class="btn" data-action="grammar-drill">練 5 題文法</button>${go("part6-8", "Part 6 專練 8 題")}<button type="button" class="btn" data-action="speed-start">快速反應 10 題</button>${go("part7-12", "Part 7 專練 12 題")}${go("mini-listen-15", "聽力快練 15 題")}</div></section>`;
 }
 
-const HOME_NAV = [["nav-eve", "考前一天"], ["nav-listen-top", "聽力"], ["nav-parts", "567"], ["nav-preexam", "考前"], ["nav-review", "複習"], ["nav-mini", "快練"], ["nav-phrases", "片語"], ["nav-grammar", "文法"], ["nav-practice", "練習"], ["nav-mock", "模考"]];
+const HOME_NAV = [["nav-ult", "精選"], ["nav-preexam", "考前"], ["nav-review", "複習"], ["nav-more", "更多練習"], ["nav-phrases", "片語"], ["nav-grammar", "文法"], ["nav-practice", "練習"], ["nav-mock", "模考"]];
 const HOME_NAV_EXTRA = new Set(["nav-grammar", "nav-practice"]);
 
 // 考前重點模式：收起文法、聽力小課程與分項練習。沒設定過時，考前 14 天內自動開啟；手動切換後以使用者的選擇為準。
@@ -709,84 +710,14 @@ function renderHome() {
     ${homeNav(dueQuestions.length, focus)}
     ${focusBar(focus)}
     ${session ? resumeCard() : ''}
-    <section class="card eve-card" id="nav-eve" aria-labelledby="eve-title">
-      <p class="section-kicker">THE DAY BEFORE · 考前一天</p>
-      <h2 id="eve-title">今天以休息為主，不用再刷題</h2>
-      <p class="muted">考前一天累了，就是身體在提醒你把精神存起來。常見的建議是：實力已經練好，最後一天再刷題，容易累積疲勞，明天反而不夠清醒。這是一般建議，不是規定。</p>
-      <ul class="eve-list">
-        <li>下午放空：散步、聽喜歡的音樂，或小睡 20–30 分鐘，不要睡太沉。</li>
-        <li>傍晚把明天的東西放進袋子：證件、2B 鉛筆 2–3 支（削好）、橡皮擦、手錶。實際規定以你的考試通知為準。</li>
-        <li>確認出發時間與路線，設好出門提醒；早餐吃平常習慣的。</li>
-        <li>今晚提早躺平。睡不著也沒關係，閉眼平躺一樣能休息。</li>
-        <li>只有一種情況可以翻書：腦中一直惦記某個文法或單字，就查 1 分鐘，立刻合上，不延伸做題。</li>
-      </ul>
-      <p class="muted">想維持耳感，可以在傍晚或睡前聽 10 分鐘內的英文，不看題目、不對答案。</p>
-      <button class="btn" data-action="lessons">聽力小課程（不計分，約 10 分鐘內）</button>
-      <p class="muted" style="margin-top:14px">今天如果手癢，可以「用看的」過一遍：Part 1–7 各挑幾題，選了答案立刻看對錯與解析，不計分、不計時。</p>
-      <button class="btn" data-action="reading-skim">Part 5、6、7 快速過一遍（約 24 分鐘，在聽力小課程下面）</button>
-      <button class="btn primary" data-action="eve-study">輕鬆看一遍（約 ${eveStudyMinutes(pickEveStudy(bank))} 分鐘，不計分）</button>
-      <details class="card-more"><summary>還是想練一份？（累的話請跳過）</summary>
-        <p class="muted">這幾份是最後的選擇，不是今天的功課。做完就停，不要檢討太久。</p>
-        ${sectionChoiceControl("mock-section-eve")}
-        <p class="muted"><b>最後輕量版</b>：聽力 20 題＋閱讀 22 題，約 25 分鐘。</p>
-        <button class="btn" data-action="start-form" data-form="mini-last">開始最後輕量版（約 25 分鐘）</button>
-        <div class="mini-last">${listeningFullLast(history, "mini-last")}</div>
-        <p class="muted" style="margin-top:14px"><b>考前一天 Ultimate</b>：聽力 40 題＋閱讀 52 題，約 55 分鐘，Part 1–7 最容易出錯的題型。</p>
-        <button class="btn" data-action="start-form" data-form="mini-eve">開始考前一天 Ultimate（約 55 分鐘）</button>
-        <div class="mini-last">${listeningFullLast(history, "mini-eve")}</div>
-      </details>
-    </section>
-    <section class="card listening-full-card mini-practice" id="nav-listen-top" aria-labelledby="listen-top-title">
-      <p class="section-kicker">LISTENING · 最新聽力練習</p>
-      <h2 id="listen-top-title">聽力：濃縮 40 題、圖表題、快練</h2>
-      <p class="mini-intro">先練聽力。每次重新抽題，優先避開最近練過的題組；正式模式每題只播一次。</p>
-      <div class="mini-options">
-        <article class="mini-option mini-core" style="grid-column: 1 / -1" aria-labelledby="mini-core-title">
-          <p class="mini-label">LISTENING · CORE 40 <span>Part 1–4</span></p>
-          <h3 id="mini-core-title">聽力濃縮 40 題（做兩次）</h3>
-          <p class="mini-measure"><strong>40<span>題</span></strong><span>約 ${approxListeningMinutes("mini-core-1", 3) ?? 18} 分鐘</span></p>
-          <p class="mini-focus">照片 3 · 應答 10 · 對話 15 · 獨白 12，其中 4 組是圖表題</p>
-          <p class="mini-detail">約為整份聽力的 40%，Part 比例照正式考試。每次重新抽題、避開最近做過的；建議先做 ①，隔一天再做 ②。每題只播一次，作答間隔與完整聽力模擬相同。</p>
-          <div class="mini-last">${listeningFullLast(history, "mini-core-1")}</div>
-          <button class="btn primary" data-action="start-form" data-form="mini-core-1">聽力濃縮 ① </button>
-          <button class="btn primary" data-action="start-form" data-form="mini-core-2">聽力濃縮 ②</button>
-        </article>
-        <article class="mini-option mini-graphic" style="grid-column: 1 / -1" aria-labelledby="mini-graphic-title">
-          <p class="mini-label">LISTENING · LOOK AT THE GRAPHIC <span>Part 3–4</span></p>
-          <h3 id="mini-graphic-title">圖表聽力專練</h3>
-          <p class="mini-measure"><strong>24<span>題</span></strong><span>約 ${approxListeningMinutes("mini-graphic-24", 3) ?? 10} 分鐘</span></p>
-          <p class="mini-focus">一邊看地圖、平面圖、表格或圖表，一邊聽對話與獨白</p>
-          <p class="mini-detail">對話 4 組 · 獨白 4 組，每組一題要對照圖表。<br>答案常是圖上有、但話裡沒念出來的那個詞，先掃一眼圖上的標籤再聽。每題只播一次。</p>
-          <div class="mini-last">${listeningFullLast(history, "mini-graphic-24")}</div>
-          <button class="btn primary" data-action="start-form" data-form="mini-graphic-24">開始圖表聽力專練</button>
-        </article>
-        <article class="mini-option" style="grid-column: 1 / -1" aria-labelledby="mini-listen-title">
-          <p class="mini-label">LISTENING <span>Part 1–4</span></p>
-          <h3 id="mini-listen-title">快速聽力</h3>
-          <p class="mini-measure"><strong>15<span>題</span></strong><span>約 ${approxListeningMinutes("mini-listen-15", 5) ?? 6} 分鐘</span></p>
-          <p class="mini-focus">練抓關鍵資訊與即時理解</p>
-          <p class="mini-detail">照片 1 · 應答 5 · 對話 6 · 獨白 3<br>每題只播一次，包含圖表理解。</p>
-          <div class="mini-last">${listeningFullLast(history, "mini-listen-15")}</div>
-          <button class="btn primary" data-action="start-form" data-form="mini-listen-15">開始聽力快練</button>
-        </article>
-      </div>
+    <section class="card eve-card ult-card" id="nav-ult" aria-labelledby="ult-title">
+      <p class="section-kicker">ULTIMATE PICK · 終極精選</p>
+      <h2 id="ult-title">終極精選 ${ultimateMinutes()} 分鐘：Part 1–7，中英對照</h2>
+      <p class="muted">每個 Part 都有 Tips、重要方向，和最值得看的題目；英文在上、中文在下，選一個答案立刻看到對錯與解析。不計分、不計時，累了就停。</p>
+      <button class="btn primary" data-action="ultimate">開始終極精選（約 ${ultimateMinutes()} 分鐘）</button>
+      <p class="muted" style="margin-top:12px">考前一天以休息為主：證件、2B 鉛筆、橡皮擦、手錶先備好，提早躺平。實際規定以考試通知為準。</p>
     </section>
 
-    <section class="card parts-card" id="nav-parts" aria-labelledby="parts-title">
-      <div class="reading-full-head"><span class="reading-full-badge">5–24 MIN</span><p class="section-kicker">READING BY PART · 閱讀分 Part 專練</p></div>
-      <h2 id="parts-title">Part 5、6、7 分開練</h2>
-      <p>閱讀還沒完整做過也可以從這裡開始：一次只練一個 Part，每組都有短的和整段兩種長度。時間約照正式配速，題目每次重新抽，會避開最近出過的。</p>
-      <div class="reading-full-sets">
-        ${PART_SETS.map(([part, title, note, short, block]) => `<div class="reading-full-set"><div class="rf-info"><h3>${esc(title)}</h3><p class="muted">${esc(note)}</p>${listeningFullLast(history, short.id)}</div><div class="rf-actions"><button class="btn primary" data-action="start-form" data-form="${short.id}">${esc(short.label)}</button><button class="btn" data-action="start-form" data-form="${block.id}">${esc(block.label)}</button></div></div>`).join("")}
-      </div>
-      <div class="reading-full-sets">
-        <div class="reading-full-set"><div class="rf-info"><h3>Part 5＋6 限時衝刺 · 46 題</h3><p class="muted">18 分鐘 · 官方配速（Part 5 約 10 分、Part 6 約 8 分）· 把前面練快，留時間給 Part 7</p>${listeningFullLast(history, "part56-46")}</div><div class="rf-actions"><button class="btn primary" data-action="start-form" data-form="part56-46">開始限時衝刺</button></div></div>
-      </div>
-      <details class="card-more"><summary>配速與題型說明</summary>
-        <p class="muted">正式配速參考：Part 5 約 10 分鐘 30 題、Part 6 約 8 分鐘 16 題、Part 7 約 52 分鐘 54 題。這只是參考，不是必須達到的標準。</p>
-        <p class="muted">Part 5 會涵蓋詞性、時態、介系詞或連接詞、字彙四類；Part 6 每組四題、含句子插入；Part 7 整段含多篇文件的題組。作答時有題型標籤和提醒（可在「題型提示」關閉）。題目為原創模擬題，非 ETS 官方試題。</p>
-      </details>
-    </section>
 
     ${preExamCard()}
 
@@ -842,6 +773,59 @@ function renderHome() {
       <p class="tips-sources">參考：<a href="https://www.dcard.tw/f/english_tests/p/261823171" target="_blank" rel="noopener">Dcard 945 備考心得（2025）</a> · <a href="https://www.ptt.cc/bbs/TOEIC/M.1746338764.A.880.html" target="_blank" rel="noopener">PTT 990 考生心得（2025）</a> · <a href="https://www.toeic.com.tw/quick-links/faq/toeic-listening-reading/test-regulations/skip-section-prohibited" target="_blank" rel="noopener">台灣多益官方作答規定</a></p>
     </details>
 
+
+    <details class="card fold more-details" id="nav-more">
+      <summary><h2>更多練習</h2><span class="fold-hint">聽力濃縮、圖表聽力、Part 5–7 分開練、閱讀快練</span></summary>
+    <section class="card listening-full-card mini-practice" id="nav-listen-top" aria-labelledby="listen-top-title">
+      <p class="section-kicker">LISTENING · 最新聽力練習</p>
+      <h2 id="listen-top-title">聽力：濃縮 40 題、圖表題、快練</h2>
+      <p class="mini-intro">先練聽力。每次重新抽題，優先避開最近練過的題組；正式模式每題只播一次。</p>
+      <div class="mini-options">
+        <article class="mini-option mini-core" style="grid-column: 1 / -1" aria-labelledby="mini-core-title">
+          <p class="mini-label">LISTENING · CORE 40 <span>Part 1–4</span></p>
+          <h3 id="mini-core-title">聽力濃縮 40 題（做兩次）</h3>
+          <p class="mini-measure"><strong>40<span>題</span></strong><span>約 ${approxListeningMinutes("mini-core-1", 3) ?? 18} 分鐘</span></p>
+          <p class="mini-focus">照片 3 · 應答 10 · 對話 15 · 獨白 12，其中 4 組是圖表題</p>
+          <p class="mini-detail">約為整份聽力的 40%，Part 比例照正式考試。每次重新抽題、避開最近做過的；建議先做 ①，隔一天再做 ②。每題只播一次，作答間隔與完整聽力模擬相同。</p>
+          <div class="mini-last">${listeningFullLast(history, "mini-core-1")}</div>
+          <button class="btn primary" data-action="start-form" data-form="mini-core-1">聽力濃縮 ① </button>
+          <button class="btn primary" data-action="start-form" data-form="mini-core-2">聽力濃縮 ②</button>
+        </article>
+        <article class="mini-option mini-graphic" style="grid-column: 1 / -1" aria-labelledby="mini-graphic-title">
+          <p class="mini-label">LISTENING · LOOK AT THE GRAPHIC <span>Part 3–4</span></p>
+          <h3 id="mini-graphic-title">圖表聽力專練</h3>
+          <p class="mini-measure"><strong>24<span>題</span></strong><span>約 ${approxListeningMinutes("mini-graphic-24", 3) ?? 10} 分鐘</span></p>
+          <p class="mini-focus">一邊看地圖、平面圖、表格或圖表，一邊聽對話與獨白</p>
+          <p class="mini-detail">對話 4 組 · 獨白 4 組，每組一題要對照圖表。<br>答案常是圖上有、但話裡沒念出來的那個詞，先掃一眼圖上的標籤再聽。每題只播一次。</p>
+          <div class="mini-last">${listeningFullLast(history, "mini-graphic-24")}</div>
+          <button class="btn primary" data-action="start-form" data-form="mini-graphic-24">開始圖表聽力專練</button>
+        </article>
+        <article class="mini-option" style="grid-column: 1 / -1" aria-labelledby="mini-listen-title">
+          <p class="mini-label">LISTENING <span>Part 1–4</span></p>
+          <h3 id="mini-listen-title">快速聽力</h3>
+          <p class="mini-measure"><strong>15<span>題</span></strong><span>約 ${approxListeningMinutes("mini-listen-15", 5) ?? 6} 分鐘</span></p>
+          <p class="mini-focus">練抓關鍵資訊與即時理解</p>
+          <p class="mini-detail">照片 1 · 應答 5 · 對話 6 · 獨白 3<br>每題只播一次，包含圖表理解。</p>
+          <div class="mini-last">${listeningFullLast(history, "mini-listen-15")}</div>
+          <button class="btn primary" data-action="start-form" data-form="mini-listen-15">開始聽力快練</button>
+        </article>
+      </div>
+    </section>
+    <section class="card parts-card" id="nav-parts" aria-labelledby="parts-title">
+      <div class="reading-full-head"><span class="reading-full-badge">5–24 MIN</span><p class="section-kicker">READING BY PART · 閱讀分 Part 專練</p></div>
+      <h2 id="parts-title">Part 5、6、7 分開練</h2>
+      <p>閱讀還沒完整做過也可以從這裡開始：一次只練一個 Part，每組都有短的和整段兩種長度。時間約照正式配速，題目每次重新抽，會避開最近出過的。</p>
+      <div class="reading-full-sets">
+        ${PART_SETS.map(([part, title, note, short, block]) => `<div class="reading-full-set"><div class="rf-info"><h3>${esc(title)}</h3><p class="muted">${esc(note)}</p>${listeningFullLast(history, short.id)}</div><div class="rf-actions"><button class="btn primary" data-action="start-form" data-form="${short.id}">${esc(short.label)}</button><button class="btn" data-action="start-form" data-form="${block.id}">${esc(block.label)}</button></div></div>`).join("")}
+      </div>
+      <div class="reading-full-sets">
+        <div class="reading-full-set"><div class="rf-info"><h3>Part 5＋6 限時衝刺 · 46 題</h3><p class="muted">18 分鐘 · 官方配速（Part 5 約 10 分、Part 6 約 8 分）· 把前面練快，留時間給 Part 7</p>${listeningFullLast(history, "part56-46")}</div><div class="rf-actions"><button class="btn primary" data-action="start-form" data-form="part56-46">開始限時衝刺</button></div></div>
+      </div>
+      <details class="card-more"><summary>配速與題型說明</summary>
+        <p class="muted">正式配速參考：Part 5 約 10 分鐘 30 題、Part 6 約 8 分鐘 16 題、Part 7 約 52 分鐘 54 題。這只是參考，不是必須達到的標準。</p>
+        <p class="muted">Part 5 會涵蓋詞性、時態、介系詞或連接詞、字彙四類；Part 6 每組四題、含句子插入；Part 7 整段含多篇文件的題組。作答時有題型標籤和提醒（可在「題型提示」關閉）。題目為原創模擬題，非 ETS 官方試題。</p>
+      </details>
+    </section>
     <section class="card listening-full-card mini-practice" id="nav-mini" aria-labelledby="mini-title">
       <p class="section-kicker">QUICK PRACTICE · 題型快練</p>
       <h2 id="mini-title">留一點時間，練一個重點。</h2>
@@ -865,6 +849,7 @@ function renderHome() {
         <p class="muted">閱讀每題約 45 秒，12 題 9 分鐘；聽力依音檔長度，含正式停頓。想練更多可以連做幾組，也可以搭配上方每日排程。題目為原創模擬題，非 ETS 官方試題。</p>
       </details>
     </section>
+    </details>
 
     ${phrasesSection()}
 
@@ -893,7 +878,12 @@ function renderHome() {
       </article>
     </section>
 
-    <section class="card quick-card" id="nav-mock"><p class="section-kicker">PRACTICE TEST</p><h2>快速模考</h2>
+
+
+
+    <details class="card fold more-details" id="nav-mock">
+      <summary><h2>完整模擬考</h2><span class="fold-hint">超過 30 分鐘：快速模考、閱讀 75 分、聽力 45 分、四套 200 題</span></summary>
+    <section class="card quick-card" ><p class="section-kicker">PRACTICE TEST</p><h2>快速模考</h2>
       <p>40 題或 60 題，正式模式；可選只考閱讀或聽力。<br>${quickExamTimeCopy()}</p>
       ${sectionChoiceControl("mock-section-quick")}
       <button class="btn primary" data-action="start-form" data-form="quick-40">開始 40 題快速模考</button>
@@ -909,7 +899,6 @@ function renderHome() {
       <p class="muted">音檔是練習用的合成語音，存在這個網站裡，播放時不連到外部語音服務。不是 ETS 官方錄音。</p>
       </details>
     </section>
-
     <section class="card reading-full-card" aria-labelledby="reading-full-title">
       <div class="reading-full-head"><span class="reading-full-badge">75 MIN</span><p class="section-kicker">READING MOCK · 閱讀完整模擬</p></div>
       <h2 id="reading-full-title">閱讀 100 題 · 75 分鐘（共三組）</h2>
@@ -923,7 +912,6 @@ function renderHome() {
         <p class="muted">題目包含推論、NOT、句子插入位置、同義字、簡訊意圖與跨文件整合題，難度由簡單到進階混合。模擬 2、3 的 Part 7 加重推論與跨文件題（要讀字裡行間、綜合條件推算），文章也比模擬 1 長，更貼近官方的閱讀量與味道。結果頁會顯示每個 Part 的用時與錯題的題型。題目為原創模擬題，不是 ETS 官方試題。</p>
       </details>
     </section>
-
     <section class="card listening-full-card" id="nav-listening-mock" aria-labelledby="listening-full-title">
       <div class="reading-full-head"><span class="reading-full-badge">約 ${listeningFullMinutes("listen-full-1")} MIN</span><p class="section-kicker">LISTENING MOCK · 聽力完整模擬</p></div>
       <h2 id="listening-full-title">聽力 100 題 · 約 ${listeningFullMinutes("listen-full-1")} 分鐘（共兩套）</h2>
@@ -936,9 +924,6 @@ function renderHome() {
         <p class="muted">建議出發前 2–3 天，聽力和閱讀各完整練 1–2 次，找回手感就好，不必追求分數。音檔是練習用合成語音，題目為原創模擬題，非 ETS 官方試題。</p>
       </details>
     </section>
-
-    <section class="card offline-card" id="offline-card" aria-labelledby="offline-title">${offlineCardHtml()}</section>
-
     <section class="card">
       <h2>四套 200 題計時練習</h2>
       <p>每套可選完整模考、只考閱讀或只考聽力。聽力依音檔連續播放一次，沒有聽力倒數。${formExamTimeCopy()}A、B、C 題目維持原樣；D 保留原有 100 題閱讀，聽力則由 B、C 與非模考題池重組。聽力可暫停，暫停時音檔停在這一題。完整模考進入閱讀後不能返回聽力。</p>
@@ -946,6 +931,10 @@ function renderHome() {
       <div class="row">${['a', 'b', 'c', 'd'].map((id) => `<button class="btn primary" data-action="start-form" data-form="form-${id}">開始第 ${id.toUpperCase()} 套</button>`).join('')}</div>
       <p class="muted">正式模式：每題只播一次，依正式考試停頓。</p>
     </section>
+    </details>
+
+    <section class="card offline-card" id="offline-card" aria-labelledby="offline-title">${offlineCardHtml()}</section>
+
 
     <section class="card">
       <h2>題庫說明與其他練習</h2>
@@ -993,6 +982,12 @@ function flashSetup() {
   window.scrollTo(0, 0);
 }
 
+function zhScriptHtml(group) {
+  const entry = ZH.groups[group.id];
+  if (!entry || (!entry.script && !entry.graphic)) return "";
+  const lines = [entry.graphic, entry.script].filter(Boolean).map((text) => `<div class="passage zh-doc">${esc(text).split("\n").join("<br>")}</div>`).join("");
+  return `<div class="zh-passage" lang="zh-Hant"><p class="zh-label">中文翻譯</p>${lines}</div>`;
+}
 function zhPassageHtml(group) {
   const docs = ZH.groups[group.id]?.docs;
   if (!docs) return "";
@@ -1002,7 +997,7 @@ function eveGroupHtml(group, questionIds) {
   const qs = group.questions.filter((q) => questionIds.includes(q.id));
   const transcript = group.section === "listening" && group.part >= 2 && group.script
     ? `<div class="eve-script"><b>文字稿</b>${group.script.map((line) => `<p>${line.speaker === "N" ? "" : esc(line.speaker) + "： "}${esc(line.text)}</p>`).join("")}</div>` : "";
-  return `<article class="card eve-group"><p class="muted">${esc(group.title ?? "")}</p>${group.image ? `<img class="question-image" src="${esc(group.image)}" alt="題組附圖">` : ""}${graphicHtml(group.graphicView)}${readingPassageHtml(group)}${zhPassageHtml(group)}${transcript}${qs.map((q) => `<div class="eve-q" data-q="${esc(q.id)}"><p class="eve-prompt"><b>${esc(q.prompt)}</b></p>${ZH.questions[q.id]?.p ? `<p class="zh-line" lang="zh-Hant">${esc(ZH.questions[q.id].p)}</p>` : ""}<div class="eve-options">${q.options.map((o, i) => `<button type="button" class="btn eve-opt" data-action="eve-pick" data-q="${esc(q.id)}" data-i="${i}">${LETTERS[i]}. ${esc(o)}${ZH.questions[q.id]?.o?.[i] ? `<span class="zh-opt" lang="zh-Hant">${esc(ZH.questions[q.id].o[i])}</span>` : ""}</button>`).join("")}</div><div class="eve-result" hidden></div></div>`).join("")}</article>`;
+  return `<article class="card eve-group"><p class="muted">${esc(group.title ?? "")}</p>${group.image ? `<img class="question-image" src="${esc(group.image)}" alt="題組附圖">` : ""}${graphicHtml(group.graphicView)}${readingPassageHtml(group)}${zhPassageHtml(group)}${transcript}${zhScriptHtml(group)}${qs.map((q) => `<div class="eve-q" data-q="${esc(q.id)}"><p class="eve-prompt"><b>${esc(q.prompt)}</b></p>${ZH.questions[q.id]?.p ? `<p class="zh-line" lang="zh-Hant">${esc(ZH.questions[q.id].p)}</p>` : ""}<div class="eve-options">${q.options.map((o, i) => `<button type="button" class="btn eve-opt" data-action="eve-pick" data-q="${esc(q.id)}" data-i="${i}">${LETTERS[i]}. ${esc(o)}${ZH.questions[q.id]?.o?.[i] ? `<span class="zh-opt" lang="zh-Hant">${esc(ZH.questions[q.id].o[i])}</span>` : ""}</button>`).join("")}</div><div class="eve-result" hidden></div></div>`).join("")}</article>`;
 }
 function eveGuideTips(part) {
   const parts = part === 3 ? [3, 4] : [part];
@@ -1033,14 +1028,44 @@ function evePick(d) {
   result.innerHTML = `<p><b>${chosen === q.answer ? "✓ 正確" : `✗ 不對，正解是 ${LETTERS[q.answer]}`}</b></p><div class="explain">${esc(q.explanation ?? "").replace(/\n/g, "<br>")}</div>`;
 }
 
+function zhQuestionLine(q) {
+  const entry = ZH.questions[q.id];
+  return entry?.p ? `<p class="zh-line" lang="zh-Hant">${esc(entry.p)}</p>` : "";
+}
+function zhOption(q, i) {
+  const text = ZH.questions[q.id]?.o?.[i];
+  return text ? `<span class="zh-opt" lang="zh-Hant">${esc(text)}</span>` : "";
+}
 function lessonQuizHtml(lesson) {
   if (!lesson.questions?.length) return "";
-  return `<details open><summary>試做 ${lesson.questions.length} 題（答完立刻看對錯）</summary>${lesson.questions.map((q) => `<div class="eve-q" data-q="${esc(q.id)}"><p class="eve-prompt"><b>${esc(q.prompt)}</b></p><div class="eve-options">${q.options.map((o, i) => `<button type="button" class="btn eve-opt" data-action="eve-pick" data-q="${esc(q.id)}" data-i="${i}">${LETTERS[i]}. ${esc(o)}</button>`).join("")}</div><div class="eve-result" hidden></div></div>`).join("")}</details>`;
+  return `<details open><summary>試做 ${lesson.questions.length} 題（答完立刻看對錯）</summary>${lesson.questions.map((q) => `<div class="eve-q" data-q="${esc(q.id)}"><p class="eve-prompt"><b>${esc(q.prompt)}</b></p>${zhQuestionLine(q)}<div class="eve-options">${q.options.map((o, i) => `<button type="button" class="btn eve-opt" data-action="eve-pick" data-q="${esc(q.id)}" data-i="${i}">${LETTERS[i]}. ${esc(o)}${zhOption(q, i)}</button>`).join("")}</div><div class="eve-result" hidden></div></div>`).join("")}</details>`;
 }
 function readingSkimHtml() {
   const sections = pickReadingSkim(bank);
   const minutes = eveStudyMinutes(sections) - 3;
   return `<section class="card" id="reading-skim"><p class="section-kicker">READING · 考前快速過一遍</p><h2>Part 5、6、7 重點題型（約 ${minutes} 分鐘）</h2><p class="muted">挑最容易卡關的型態，選一個答案就立刻看到對錯與解析。不計分、不計時；累了就停。全部是題庫既有的題目。</p></section>${sections.map((section) => `<section class="eve-section"><h2>${esc(section.title)} <span class="muted">· 約 ${section.minutes} 分</span></h2><p class="notice">${esc(section.hint)}</p>${eveGuideTips(section.part)}${section.items.map((item) => eveGroupHtml(item.group, item.questionIds)).join("")}</section>`).join("")}`;
+}
+function ultLessonHtml(lesson) {
+  const zhText = ZH.lessons?.[lesson.id]?.transcript;
+  return `<article class="card eve-group"><p class="muted">${esc(lesson.title)} · ${esc(lesson.accent)}</p>${lesson.image ? `<img class="question-image" src="${esc(lesson.image)}" alt="Part 1 練習照片">` : ""}<audio controls preload="none" src="${esc(lesson.audio)}">此瀏覽器無法播放音檔。</audio><div class="eve-script"><b>文字稿 Transcript</b><p lang="en" style="white-space: pre-line">${esc(lesson.transcript)}</p></div>${zhText ? `<div class="zh-passage" lang="zh-Hant"><p class="zh-label">中文翻譯</p><div class="passage zh-doc">${esc(zhText).split("\n").join("<br>")}</div></div>` : ""}${lessonQuizHtml(lesson)}</article>`;
+}
+function renderUltimate() {
+  stopTimer(); audio.stop();
+  const tips = ULT_DAY_TIPS.map((t) => `<li><b>${esc(t.en)}（${esc(t.zh)}）</b><br>${esc(t.tip)}<br><span class="zh-line" lang="zh-Hant">${esc(t.tipZh)}</span></li>`).join("");
+  const sections = ULT_PARTS.map((part) => {
+    const items = part.items.map((item) => {
+      if (item.kind === "lesson") { const lesson = LESSONS.find((x) => x.id === item.id); return lesson ? ultLessonHtml(lesson) : ""; }
+      const group = groupById(item.id);
+      return group ? eveGroupHtml(group, group.questions.map((q) => q.id)) : "";
+    }).join("");
+    const tipList = part.tips.map(([en, zh]) => `<li>${esc(en)}<br><span class="zh-line" lang="zh-Hant">${esc(zh)}</span></li>`).join("");
+    return `<section class="eve-section"><h2>${esc(part.title)} <span class="muted">· 約 ${part.minutes} 分</span></h2><p class="notice"><b>${esc(part.direction.en)}</b><br><span lang="zh-Hant">${esc(part.direction.zh)}</span></p><div class="eve-guide"><p><b>Tips</b></p><ul>${tipList}</ul></div>${items}</section>`;
+  }).join("");
+  app.innerHTML = `<section class="card"><p class="section-kicker">ULTIMATE PICK · 終極精選</p><h1>終極精選（約 ${ultimateMinutes()} 分鐘）</h1><p>${esc(ULT_INTRO_EN)}</p><p class="zh-line" lang="zh-Hant">${esc(ULT_INTRO_ZH)}</p><div class="row"><button class="btn" data-action="home">回首頁</button></div></section>
+    <section class="card eve-tips"><h2>考試當天的 6 個 tips <span class="muted">· 約 3 分</span></h2><ol>${tips}</ol></section>
+    ${sections}
+    <section class="card"><p>看完了，就把它合上。Done — close it and rest.</p><div class="row"><button class="btn primary" data-action="home">回首頁</button></div></section>`;
+  window.scrollTo(0, 0);
 }
 function renderLessons(jumpToSkim = false) {
   stopTimer(); audio.stop();
@@ -2155,6 +2180,7 @@ app.addEventListener("click", (e) => {
     case "show-tips": store.set(KEY_TIPS, true); if (session) renderTest(); else renderHome(); break;
     case "lessons": renderLessons(); break;
     case "eve-study": renderEveStudy(); break;
+    case "ultimate": renderUltimate(); break;
     case "reading-skim": renderLessons(); setTimeout(() => document.getElementById("reading-skim")?.scrollIntoView(), 80); break;
     case "skim-jump": document.getElementById("reading-skim")?.scrollIntoView(); break;
     case "eve-pick": evePick(d); break;
