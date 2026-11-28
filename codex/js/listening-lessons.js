@@ -50,5 +50,77 @@ export const LESSONS = [
     transcript: 'Thank you for registering for the regional business conference. Registration will open at eight thirty on Friday morning in the lobby of the Harbour Centre. Please bring the confirmation email on your phone or as a printed copy. The opening presentation will begin at nine fifteen in Hall B, rather than Hall A as listed in the original programme. Morning tea will be served just outside the hall, and lunch is included for all registered guests. If you have a dietary request that you have not yet mentioned, please contact the events team by Wednesday so they can inform the catering staff.',
     summary: '商務研討會週五上午八點半起在 Harbour Centre 大廳報到，請出示確認郵件。開場演講改到 B 廳；如有特殊飲食需求，請週三前通知活動團隊。',
     phrases: [['registration will open', '開始報到'], ['opening presentation', '開場演講'], ['rather than', '而非'], ['dietary request', '飲食需求']]
+  },
+  {
+    id: "train-platform-change", title: "月台變更與無障礙協助", accent: "英式英語", audio: "audio/lesson-train-platform-change.mp3",
+    transcript: "Good evening, passengers. This is an announcement for the eighteen-forty service to Manchester. Due to a signal fault, this train will now depart from platform nine instead of platform four. Please take care when using the stairs, as the lifts are currently being repaired. Passengers who need assistance should speak to a member of staff near the ticket office. We apologise for the inconvenience and thank you for your patience.",
+    summary: "前往曼徹斯特的 18:40 班車因號誌故障，月台由四號改為九號。電梯維修中，需要協助的旅客請到售票處旁找工作人員。",
+    phrases: [["depart from", "從……出發"], ["instead of", "而不是"], ["signal fault", "號誌故障"], ["ticket office", "售票處"]]
+  },
+  {
+    id: "store-sale-announcement", title: "賣場限時促銷廣播", accent: "澳洲英語", audio: "audio/lesson-store-sale-announcement.mp3",
+    transcript: "Attention shoppers. For the next two hours, all kitchen appliances on the second floor are twenty percent off. This offer applies to both small and large items, but it cannot be combined with other discounts. Customers who spend over two hundred dollars will also receive a free gift card at the checkout counter. The sale ends at five o'clock sharp, so please bring your items to the registers before then.",
+    summary: "二樓廚房電器未來兩小時打八折，大小商品都適用，但不能與其他折扣合併。消費滿兩百元可在結帳櫃台領禮物卡；五點整結束。",
+    phrases: [["be twenty percent off", "打八折"], ["cannot be combined with", "不能與……合併"], ["checkout counter", "結帳櫃台"], ["five o'clock sharp", "五點整"]]
+  },
+  {
+    id: "job-interview-voicemail", title: "面試邀請語音留言", accent: "英式英語", audio: "audio/lesson-job-interview-voicemail.mp3",
+    transcript: "Hello, this is Rachel Evans from Hartley Logistics. Thank you for applying for the operations coordinator position. We would like to invite you for an interview next Tuesday at two thirty. Please bring a copy of your résumé and two references. The office is on the fifth floor, and visitors must sign in at the front desk. If that time is inconvenient, please call me back to arrange another.",
+    summary: "物流公司邀請應徵者下週二下午兩點半面試，請帶履歷與兩位推薦人資料；到五樓、先在櫃台登記。時間不方便可回電改期。",
+    phrases: [["apply for", "應徵"], ["references", "推薦人"], ["sign in", "登記簽到"], ["arrange another time", "另約時間"]]
+  },
+  {
+    id: "product-launch-talk", title: "新品發表會致詞", accent: "澳洲英語", audio: "audio/lesson-product-launch-talk.mp3",
+    transcript: "Good morning, everyone, and thank you for joining our product launch. Today we are introducing a new line of lightweight laptops designed for people who travel frequently. The battery lasts up to fourteen hours, and the screen is brighter than in previous models. Orders will open on Monday, and customers who register in advance will receive free shipping. After my presentation, our engineers will be available to answer your questions.",
+    summary: "公司發表為常出差者設計的輕薄筆電：電池可用十四小時、螢幕更亮。週一開放訂購，事先登記可免運；簡報後工程師回答問題。",
+    phrases: [["product launch", "新品發表"], ["designed for", "專為……設計"], ["in advance", "事先"], ["be available to", "可以來……"]]
+  },
+  {
+    id: "traffic-report", title: "早晨路況報導", accent: "美式英語", audio: "audio/lesson-traffic-report.mp3",
+    transcript: "This is your morning traffic update. A truck has broken down on the eastbound lanes of Highway 12, causing delays of up to thirty minutes. Drivers are encouraged to use Maple Avenue as an alternative route. Meanwhile, the downtown bridge remains open, but one lane will close tonight at ten for repair work. We will bring you another report in fifteen minutes.",
+    summary: "十二號公路東向因卡車拋錨，延誤最長三十分鐘，建議改走 Maple 大道。市區橋樑仍開放，但今晚十點起封閉一線道維修。十五分鐘後再報。",
+    phrases: [["break down", "拋錨"], ["alternative route", "替代路線"], ["delays of up to", "最多延誤"], ["repair work", "維修工程"]]
+  },
+  {
+    id: "museum-tour", title: "博物館導覽開場", accent: "加拿大英語", audio: "audio/lesson-museum-tour.mp3",
+    transcript: "Welcome to the Harbour Science Museum. My name is Daniel, and I will be your guide today. Our tour begins in the main hall, where you can see our collection of early navigation tools. Afterward, we will move to the third floor to visit the new robotics exhibit. Please remember that photography is allowed, but flash photography is not. The tour lasts about forty minutes, and a gift shop is located next to the exit.",
+    summary: "導覽員歡迎大家：先在大廳看早期航海工具，再到三樓看新的機器人展。可拍照但不能用閃光燈；導覽約四十分鐘，出口旁有禮品店。",
+    phrases: [["collection", "收藏品"], ["exhibit", "展覽"], ["flash photography", "閃光燈拍照"], ["next to the exit", "出口旁"]]
+  },
+  {
+    id: "safety-briefing", title: "班前安全叮嚀", accent: "英式英語", audio: "audio/lesson-safety-briefing.mp3",
+    transcript: "Before we begin the morning shift, I would like to remind everyone of two safety rules. First, all employees must wear protective glasses in the production area, even for short visits. Second, any spill should be reported to a supervisor immediately and not cleaned up alone. New staff members will receive a safety handbook this afternoon. If you have any questions, my office is just past the loading dock.",
+    summary: "班前提醒兩條安全規則：進入生產區一律戴護目鏡，即使只是短暫停留；任何溢出物要立刻通報主管，不要自己清理。新人下午領安全手冊。",
+    phrases: [["protective glasses", "護目鏡"], ["production area", "生產區"], ["report to", "向……通報"], ["loading dock", "裝卸碼頭"]]
+  },
+  {
+    id: "restaurant-special", title: "餐廳午間特餐留言", accent: "澳洲英語", audio: "audio/lesson-restaurant-special.mp3",
+    transcript: "Thanks for calling Marlow's Kitchen. Our lunch special this week is grilled salmon with vegetables and a small salad for fourteen dollars. The special is available from eleven thirty to two, Monday through Friday. We also offer a private dining room for groups of up to twenty, and reservations can be made on our website. We close early on Sundays, at four in the afternoon.",
+    summary: "本週午間特餐是烤鮭魚佐蔬菜與小沙拉，十四元，週一到週五十一點半到兩點供應。可預約最多二十人的包廂；週日四點提早打烊。",
+    phrases: [["lunch special", "午間特餐"], ["private dining room", "包廂"], ["make a reservation", "訂位"], ["close early", "提早打烊"]]
+  },
+  {
+    id: "software-update", title: "夜間軟體更新通知", accent: "美式英語", audio: "audio/lesson-software-update.mp3",
+    transcript: "Attention all employees. Tonight at eleven, the IT department will install a security update on all office computers. Please save your work and log out before leaving the building. The update should take about an hour, and you will not need to restart your computer in the morning. If you work remotely, you will receive a notification on your screen. Contact the help desk if you notice any problems tomorrow.",
+    summary: "資訊部今晚十一點為辦公室電腦安裝安全更新，離開前請存檔並登出。約一小時，明早不必重開機；遠端員工會收到螢幕通知。有問題請洽客服台。",
+    phrases: [["security update", "安全更新"], ["log out", "登出"], ["work remotely", "遠端工作"], ["help desk", "客服台"]]
+  },
+  {
+    id: "radio-ad-gym", title: "健身房新會員廣告", accent: "加拿大英語", audio: "audio/lesson-radio-ad-gym.mp3",
+    transcript: "Ready to start the new year feeling stronger? Visit Northside Fitness this month and enjoy our new member offer. Join before the thirty-first, and your first two months are half price. Our modern gym is open twenty-four hours, with free classes every weekday evening. Bring a friend, and you will both receive a free personal training session. Visit our website or stop by our front desk today.",
+    summary: "健身房廣告：本月三十一日前入會，前兩個月半價；全天開放，平日晚上有免費課程。帶朋友一起來，兩人各得一堂免費私人教練課。",
+    phrases: [["new member offer", "新會員優惠"], ["half price", "半價"], ["free classes", "免費課程"], ["stop by", "順道拜訪"]]
+  },
+  {
+    id: "client-visit-voicemail", title: "客戶來訪行程確認", accent: "澳洲英語", audio: "audio/lesson-client-visit-voicemail.mp3",
+    transcript: "Hi Mr. Patel, it's Olivia from Brightway Consulting. I'm calling to confirm your visit to our Sydney office next Wednesday. Your first meeting is at nine with our finance director, followed by a tour of the facility at eleven. A car will pick you up from your hotel at eight fifteen. Please let me know if you have any dietary requirements for lunch. I look forward to seeing you.",
+    summary: "顧問公司確認 Patel 先生下週三到雪梨辦公室：九點與財務長開會，十一點參觀設施，八點十五分派車到飯店接送。午餐若有飲食限制請告知。",
+    phrases: [["confirm your visit", "確認來訪"], ["followed by", "接著是"], ["pick up from", "到……接送"], ["dietary requirements", "飲食需求"]]
+  },
+  {
+    id: "office-relocation", title: "辦公室搬遷說明", accent: "英式英語", audio: "audio/lesson-office-relocation.mp3",
+    transcript: "I would like to update everyone on next month's office move. Our team will relocate to the new building on Canal Street on the fifteenth. Packing boxes will be delivered to each department this Friday, and all items must be labelled with your name and floor number. Parking passes for the new building will be handed out on Monday. Please note that the current office will be closed for cleaning after the move.",
+    summary: "下個月十五日團隊搬到 Canal 街新大樓。本週五各部門會收到紙箱，物品須標示姓名與樓層；週一發放新大樓停車證，搬完後舊辦公室關閉清潔。",
+    phrases: [["relocate to", "搬遷到"], ["be labelled with", "標示上"], ["parking pass", "停車證"], ["closed for cleaning", "關閉清潔"]]
   }
 ];
