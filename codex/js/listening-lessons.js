@@ -155,5 +155,45 @@ export const LESSONS = [
       { id: "LQ-VISIT-2", prompt: "What does Maria mean when she says, \"Already done\"?", options: ["She forgot the projector","She will cancel the meeting","She has already reserved a room","She has finished the slides"], answer: 2, explanation: "She answers the request to book a meeting room by saying it is done: Room 3B at nine thirty." },
       { id: "LQ-VISIT-3", prompt: "What will happen on Monday at four?", options: ["A client visit","A rehearsal","A warehouse inspection","A budget review"], answer: 1, explanation: "The manager proposes a short rehearsal on Monday at four." }
     ]
+  },
+  {
+    id: "part1-measuring-parts", title: "Part 1 照片題：量測金屬零件", accent: "澳洲英語", audio: "audio/lesson-part1-measuring-parts.mp3", image: "images/photo-16.jpg",
+    transcript: "Narrator: Look at the photograph.\nA. A man is writing in a notebook.\nB. A man is measuring a metal part.\nC. Some gears are being packed into boxes.\nD. A lamp is hanging from the ceiling.",
+    summary: "Part 1 照片題練習：先看照片再聽四個敘述。正解 B——照片裡的男子用游標卡尺量金屬零件。A 沒有人在寫字；C 的 are being packed 需要有人正在裝箱，但沒有；D 的燈是附在支架上，不是掛在天花板。",
+    phrases: [["measure a part", "量測零件"], ["are being packed", "正被裝箱（需有人在做）"], ["hang from the ceiling", "懸掛在天花板"], ["safety glasses", "護目鏡"]],
+    questions: [
+      { id: "LQ-P1-1", prompt: "Which statement best describes the photo?", options: ["A man is writing in a notebook.","A man is measuring a metal part.","Some gears are being packed into boxes.","A lamp is hanging from the ceiling."], answer: 1, explanation: "He holds calipers against a small metal part. Nobody is writing or packing, and the lamp is on an arm, not hanging from the ceiling." }
+    ]
+  },
+  {
+    id: "part2-brochures", title: "Part 2 應答題：否定問句與間接回答", accent: "英式英語", audio: "audio/lesson-part2-brochures.mp3",
+    transcript: "Man: Haven't the new brochures been delivered yet?\nA. Yes, the brochure cover is blue.\nB. They're supposed to come this afternoon.\nC. The printer is on the third floor.",
+    summary: "Part 2 應答題：問「新型錄還沒送到嗎？」。正解 B——不直接說 yes/no，而是說下午會到（迂迴回答）。A 重複 brochure 的字但答非所問；C 提到 printer 是相關詞干擾。",
+    phrases: [["be supposed to", "預計／應該"], ["be delivered", "被送達"], ["not yet", "還沒"], ["this afternoon", "今天下午"]],
+    questions: [
+      { id: "LQ-P2-1", prompt: "Choose the best response to the question.", options: ["Yes, the brochure cover is blue.","They're supposed to come this afternoon.","The printer is on the third floor."], answer: 1, explanation: "It answers the question indirectly with the expected time. A repeats \"brochure\" but does not answer; C is a related but unrelated fact." }
+    ]
+  },
+  {
+    id: "part3-room-double-booking", title: "Part 3 對話：會議室重複預約（澳洲）", accent: "澳洲英語", audio: "audio/lesson-part3-room-double-booking.mp3",
+    transcript: "Woman: Hi Jack, I just checked the calendar. The finance team has also booked Room 5 for tomorrow at two.\nMan: Oh, I reserved it last week for the sales presentation. I never got a notice about a conflict.\nWoman: The system must have glitched. They have a client coming, so they can't move.\nMan: Then I'll switch to Room 7. It has a smaller screen, though.\nWoman: I can lend you the portable projector from my office.\nMan: That would be great. I'll pick it up this afternoon.",
+    summary: "5 號會議室明天兩點被財務團隊重複預約（系統出錯）。財務有客戶不能改，男子改用 7 號室，但螢幕較小；女子借他可攜式投影機，他今天下午去拿。",
+    phrases: [["double booking", "重複預約"], ["conflict", "衝突"], ["glitch", "小故障"], ["portable projector", "可攜式投影機"]],
+    questions: [
+      { id: "LQ-P3-1", prompt: "What problem are the speakers discussing?", options: ["A client canceled a visit","A room has been booked twice","A projector is broken","A presentation was postponed"], answer: 1, explanation: "The finance team also booked Room 5 at the same time the man had reserved it." },
+      { id: "LQ-P3-2", prompt: "What is the man concerned about?", options: ["The cost of Room 7","The distance to Room 7","The size of a screen","The time of the meeting"], answer: 2, explanation: "He says Room 7 has a smaller screen." },
+      { id: "LQ-P3-3", prompt: "What will the man do this afternoon?", options: ["Pick up a projector","Call the finance team","Print some slides","Move to Room 5"], answer: 0, explanation: "He says he will pick up the portable projector this afternoon." }
+    ]
+  },
+  {
+    id: "part4-parking-closure", title: "Part 4 獨白：停車場封閉公告（英式）", accent: "英式英語", audio: "audio/lesson-part4-parking-closure.mp3",
+    transcript: "Attention, all employees. Starting next Monday, the main parking lot will be closed for resurfacing for two weeks. During that time, you may park in the lot behind the library, and a free shuttle will run every ten minutes between that lot and the main entrance. Carpool participants will be given priority spaces near the east gate. For more details, please check the notice board in the lobby or contact the facilities office.",
+    summary: "下週一起主停車場因重鋪路面關閉兩週；員工可停在圖書館後方停車場，並有每十分鐘一班的免費接駁車到主入口。共乘者在東門附近有優先車位；詳情看大廳公佈欄或洽總務處。",
+    phrases: [["resurfacing", "重鋪路面"], ["shuttle", "接駁車"], ["carpool", "共乘"], ["priority space", "優先車位"]],
+    questions: [
+      { id: "LQ-P4-1", prompt: "What will happen next Monday?", options: ["A library will open","A parking lot will be repaved","A shuttle service will end","A new gate will be built"], answer: 1, explanation: "The main parking lot will be closed for resurfacing starting next Monday." },
+      { id: "LQ-P4-2", prompt: "What will be provided during the closure?", options: ["A free shuttle","Parking vouchers","Bicycle racks","Taxi fares"], answer: 0, explanation: "A free shuttle will run every ten minutes between the other lot and the main entrance." },
+      { id: "LQ-P4-3", prompt: "Who will receive priority spaces?", options: ["Visitors","Library staff","Facilities managers","Carpool participants"], answer: 3, explanation: "Carpool participants will be given priority spaces near the east gate." }
+    ]
   }
 ];

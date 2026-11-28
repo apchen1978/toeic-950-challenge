@@ -1,5 +1,5 @@
 """Record multi-speaker (2-3 voices) listening-lesson dialogues with edge-tts. MP3 pieces are appended and silences come from lameenc (no ffmpeg).
-Usage: python scripts/generate-dialogue-lesson-audio.py <repo root> <lessons.json>   (items: id, lines [[role, text], ...]; roles W1/M1/W2)
+Usage: python scripts/generate-dialogue-lesson-audio.py <repo root> <lessons.json>   (items: id, lines [[role, text, optional gap seconds], ...]; role W1/M1/W2 or an explicit edge-tts voice name like en-AU-WilliamNeural)
 Needs edge-tts and lameenc under ~/.codex/tools."""
 import asyncio, json, os, sys
 from pathlib import Path
@@ -23,11 +23,12 @@ async def tts(text, voice):
     raise RuntimeError("no audio for: " + text[:40])
 async def main():
     root = Path(sys.argv[1]); items = json.loads(Path(sys.argv[2]).read_text(encoding="utf-8"))
-    gap = silence(0.55)
     for item in items:
         data = b""
-        for role, text in item["lines"]:
-            data += await tts(text, VOICES[role]) + gap
+        for line in item["lines"]:
+            role, text = line[0], line[1]
+            gap = silence(line[2] if len(line) > 2 else 0.55)
+            data += await tts(text, VOICES.get(role, role)) + gap
         (root / "codex/audio" / f"lesson-{item['id']}.mp3").write_bytes(data)
         print("wrote", item["id"], len(data), "bytes", round(len(data) * 8 / 48000, 1), "s", flush=True)
 asyncio.run(main())
