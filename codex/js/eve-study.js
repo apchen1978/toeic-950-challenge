@@ -90,3 +90,47 @@ export function pickEveStudy(bank, seed = 20261128) {
 export function eveStudyMinutes(sections) {
   return sections.reduce((sum, section) => sum + section.minutes, 3);
 }
+
+// Part 5-7 快速過一遍（約 22 分鐘）：挑最容易卡關的型態——Part 5 字彙換字／動詞形式／介連詞，Part 6 字彙功能與句子插入，
+// Part 7 條件字與例外、短行程表的同義替換、NOT 題、兩份文件的交叉比對。全部是題庫既有的題目，固定選題。
+export function pickReadingSkim(bank, seed = 20261129) {
+  const random = createRng(seed);
+  const active = bank.groups.filter(isActiveGroup);
+  const part = (n) => active.filter((group) => group.part === n);
+  const eve = pickEveStudy(bank);
+  const used = new Set(eve.flatMap((section) => section.items.map((item) => item.group.id)));
+  const fresh = (list) => list.filter((group) => !used.has(group.id));
+  const take = (list, count) => { const picked = sample(fresh(list).length >= count ? fresh(list) : list, count, random); picked.forEach((group) => used.add(group.id)); return picked; };
+  const one = (group) => ({ group, questionIds: [group.questions[0].id] });
+  const whole = (group) => ({ group, questionIds: group.questions.map((question) => question.id) });
+  const docs = (group) => group.passage?.docs?.length ?? 0;
+  const text = (group) => JSON.stringify(group.passage ?? "");
+  const sections = [];
+
+  const p5 = part(5);
+  sections.push({
+    part: 5, title: "Part 5 單句填空（字彙換字、動詞形式、介連詞）", minutes: 5,
+    hint: "這三類最花時間：字彙換字看搭配與語意、動詞形式看主詞與時間線索、介系詞與連接詞看後面是名詞還是子句。練「看一眼就能排除」。",
+    items: [...take(p5.filter((group) => typeOf(group) === "vocabulary-collocation"), 3), ...take(p5.filter((group) => typeOf(group) === "verb-tense-voice"), 2), ...take(p5.filter((group) => typeOf(group) === "preposition-conjunction"), 1)].map(one)
+  });
+
+  const p6 = part(6);
+  const insertion = p6.filter((group) => hasType(group, /sentence-insertion/));
+  sections.push({
+    part: 6, title: "Part 6 段落填空（字彙功能、句子插入）", minutes: 6,
+    hint: "字彙題要看這句話在段落裡的功能（例如預防和偵測不同）；句子插入看代名詞、轉折，確認接得上前一句、帶得出下一句。",
+    items: [...take(p6.filter((group) => hasType(group, /^vocabulary$/)), 1), ...take(insertion, 1)].map(whole)
+  });
+
+  const p7 = part(7);
+  const conditions = p7.filter((group) => docs(group) >= 2 && group.questions.some((question) => /unless|except|only if|no later than|at least|less than/i.test(question.explanation ?? "")));
+  const schedules = p7.filter((group) => docs(group) === 1 && group.questions.length === 2 && /schedule|agenda|itinerary|banquet|dinner|session/i.test(text(group)));
+  const nots = p7.filter((group) => hasType(group, /not-question/) && docs(group) <= 2);
+  const cross = p7.filter((group) => isVerifiedCrossRef(group) && docs(group) >= 2);
+  sections.push({
+    part: 7, title: "Part 7 閱讀（條件與例外、短行程表、NOT、交叉比對）", minutes: 13,
+    hint: "unless、no later than 這類條件字要回另一份文件用日期或數字驗證；短行程表注意同義替換（例如 banquet = 特別晚宴）；NOT 題三個選項各找證據；兩份文件有同一個代碼，先找哪份說明它是什麼。",
+    items: [...take(conditions, 1), ...take(schedules, 1), ...take(nots, 1), ...take(cross, 1)].map(whole)
+  });
+  return sections.filter((section) => section.items.length);
+}
