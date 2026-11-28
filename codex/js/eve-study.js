@@ -12,6 +12,15 @@ function sample(list, count, random) {
   return out;
 }
 
+export const EVE_DAY_TIPS = [
+  { title: "劃卡", body: "選好就立刻劃，劃一次、劃滿即可。每換一個 Part，核對一次題號有沒有對上，錯位會連錯一整排。" },
+  { title: "聽力（紙本）", body: "聽到答案就立刻劃卡，劃完馬上預讀下一題或下一組的題幹與選項。Part 3、4 先掃題幹找關鍵字（問誰、問什麼）。" },
+  { title: "圖表題", body: "先掃一眼圖上的標籤，再聽。答案常是圖上有、但話裡沒念出來的那個詞：聽到的條件，要對到圖上的另一欄。" },
+  { title: "閱讀配速", body: "Part 5 每題約 20 秒、Part 6 約 30 秒、Part 7 約 60 秒。看 5 秒決定不了就先跳；最後 5 分鐘把空白全部填滿。" },
+  { title: "條件字與 NOT", body: "unless、only if、except、less than、no later than 圈起來；NOT 題三個選項各找一個證據，剩下的就是答案。兩份文件有同樣的代碼或數字，先找哪份說明它是什麼。" },
+  { title: "穩住自己", body: "覺得心跳快就慢慢呼吸（吸 4 下、吐 6 下）。考前不對答案、不和人討論題目。不會的放掉，下一題才是重點。" }
+];
+
 export const EVE_STUDY_NOTE = "考前輕鬆看一遍：不計分、不計時，選一個答案就立刻看到對錯與解析。全部是題庫裡的既有題目，不出新題。累了就停，看到「對，考題就是這個套路」就可以收手。";
 
 export function pickEveStudy(bank, seed = 20261128) {
@@ -50,7 +59,9 @@ export function pickEveStudy(bank, seed = 20261128) {
     items: [...graphics, ...intent].map(whole)
   });
 
-  const p5 = part(5);
+  const p5all = part(5);
+  const fresh = p5all.filter((group) => group.id.startsWith("g-sp-p5-"));
+  const p5 = fresh.length >= 8 ? fresh : p5all;
   sections.push({
     part: 5, title: "Part 5 單句填空", minutes: 7,
     hint: "只看易混淆的介系詞、連接詞與語意辨析的題目；基本詞性題先跳過。看每個錯誤選項為什麼錯。",
@@ -77,5 +88,5 @@ export function pickEveStudy(bank, seed = 20261128) {
 }
 
 export function eveStudyMinutes(sections) {
-  return sections.reduce((sum, section) => sum + section.minutes, 0);
+  return sections.reduce((sum, section) => sum + section.minutes, 3);
 }

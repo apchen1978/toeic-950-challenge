@@ -24,7 +24,7 @@ import { daysBetween, toISO, addDays, dayPlan, fullPlan, toggleDone } from "./pl
 import { buildDrill, summarize, KIND_LABEL } from "./drill.js";
 import { COLLOCATIONS, PARAPHRASES, EMAIL_PHRASES, clozeOf } from "./phrases.js";
 import { audioEntries, countCached, downloadAll, formatMB } from "./offline.js";
-import { pickEveStudy, eveStudyMinutes, EVE_STUDY_NOTE } from "./eve-study.js";
+import { pickEveStudy, eveStudyMinutes, EVE_STUDY_NOTE, EVE_DAY_TIPS } from "./eve-study.js";
 
 const EXAM_DATE = "2026-11-29";
 const MAX_PLAYS = 2;
@@ -997,11 +997,16 @@ function eveGroupHtml(group, questionIds) {
     ? `<div class="eve-script"><b>文字稿</b>${group.script.map((line) => `<p>${line.speaker === "N" ? "" : esc(line.speaker) + "： "}${esc(line.text)}</p>`).join("")}</div>` : "";
   return `<article class="card eve-group"><p class="muted">${esc(group.title ?? "")}</p>${group.image ? `<img class="question-image" src="${esc(group.image)}" alt="題組附圖">` : ""}${graphicHtml(group.graphicView)}${readingPassageHtml(group)}${transcript}${qs.map((q) => `<div class="eve-q" data-q="${esc(q.id)}"><p class="eve-prompt"><b>${esc(q.prompt)}</b></p><div class="eve-options">${q.options.map((o, i) => `<button type="button" class="btn eve-opt" data-action="eve-pick" data-q="${esc(q.id)}" data-i="${i}">${LETTERS[i]}. ${esc(o)}</button>`).join("")}</div><div class="eve-result" hidden></div></div>`).join("")}</article>`;
 }
+function eveGuideTips(part) {
+  const parts = part === 3 ? [3, 4] : [part];
+  return parts.map((p) => PART_GUIDE.find((item) => item.part === p)).filter(Boolean).map((item) => `<div class="eve-guide"><p><b>Part ${item.part} Tips</b>：${esc(item.glance)}</p><ul>${item.remember.map((text) => `<li>${esc(text)}</li>`).join("")}</ul></div>`).join("");
+}
 function renderEveStudy() {
   stopTimer(); audio.stop();
   const sections = pickEveStudy(bank);
   app.innerHTML = `<section class="card"><p class="section-kicker">THE DAY BEFORE · 輕鬆看一遍</p><h1>考前輕鬆看一遍（約 ${eveStudyMinutes(sections)} 分鐘）</h1><p class="muted">${esc(EVE_STUDY_NOTE)}</p><div class="row"><button class="btn" data-action="home">回首頁</button></div></section>
-    ${sections.map((section) => `<section class="eve-section"><h2>${esc(section.title)} <span class="muted">· 約 ${section.minutes} 分</span></h2><p class="notice">${esc(section.hint)}</p>${section.items.map((item) => eveGroupHtml(item.group, item.questionIds)).join("")}</section>`).join("")}
+    <section class="card eve-tips"><h2>考試當天的 6 個 tips <span class="muted">· 約 3 分</span></h2><ol>${EVE_DAY_TIPS.map((tip) => `<li><b>${esc(tip.title)}</b>：${esc(tip.body)}</li>`).join("")}</ol></section>
+    ${sections.map((section) => `<section class="eve-section"><h2>${esc(section.title)} <span class="muted">· 約 ${section.minutes} 分</span></h2><p class="notice">${esc(section.hint)}</p>${eveGuideTips(section.part)}${section.items.map((item) => eveGroupHtml(item.group, item.questionIds)).join("")}</section>`).join("")}
     <section class="card"><p>看完了，就把它合上。今晚早點睡，明天證件、鉛筆、出門時間再確認一次。</p><div class="row"><button class="btn primary" data-action="home">回首頁</button></div></section>`;
   window.scrollTo(0, 0);
 }
