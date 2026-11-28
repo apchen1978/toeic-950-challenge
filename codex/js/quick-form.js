@@ -116,6 +116,22 @@ export const QUICK_BLUEPRINTS = {
       { part: 7, questions: 25, requireMulti: true }
     ]
   },
+  // 最後輕量版：聽力 20 題（約 9 分）＋閱讀 22 題（約 14 分），合計約 25 分鐘。Part 5 偏字彙與動詞形式，Part 7 有 NOT 題。
+  "mini-last": {
+    minutes: 25,
+    listening: 20,
+    reading: 22,
+    timing: { listening: 9, reading: 14 },
+    parts: [
+      { part: 1, groups: 2 },
+      { part: 2, groups: 6 },
+      { part: 3, groups: 2, questionsEach: 3, preferGraphic: 1 },
+      { part: 4, groups: 2, questionsEach: 3, preferGraphic: 1 },
+      { part: 5, groups: 10, typeMix: { "vocabulary-collocation": 4, "verb-tense-voice": 3, "part-of-speech": 1, "preposition-conjunction": 1, "pronoun|relative-pronoun": 1 } },
+      { part: 6, groups: 2, questionsEach: 4 },
+      { part: 7, questions: 4, requireMulti: false }
+    ]
+  },
   "mini-read-12": {
     minutes: 9,
     listening: 0,
@@ -384,6 +400,7 @@ export function quickCoverageIssues(groups, formId, section = "full") {
     if (long && (!p7Synonym || !p7Intent)) issues.push("P7 synonym and intent");
     if (!long && !mini && !partSet && !p7Synonym && !p7Intent) issues.push("P7 synonym or intent");
   }
+  if (formId === "mini-last" && reading && !hasType(groups, 7, /not-question/i)) issues.push("P7 NOT question");
   if (formId === "mini-eve") {
     if (listening) {
       if (!groups.some((group) => [3, 4].includes(group.part) && questionTypes(group).some((type) => /intent|meaning|implied/i.test(type)))) issues.push("P3/P4 speaker intent");
