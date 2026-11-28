@@ -24,7 +24,7 @@ import { daysBetween, toISO, addDays, dayPlan, fullPlan, toggleDone } from "./pl
 import { buildDrill, summarize, KIND_LABEL } from "./drill.js";
 import { COLLOCATIONS, PARAPHRASES, EMAIL_PHRASES, clozeOf } from "./phrases.js";
 import { audioEntries, countCached, downloadAll, formatMB } from "./offline.js";
-import { pickEveStudy, eveStudyMinutes, EVE_STUDY_NOTE, EVE_DAY_TIPS } from "./eve-study.js";
+import { pickEveStudy, eveStudyMinutes, EVE_STUDY_NOTE, EVE_DAY_TIPS, pickReadingSkim } from "./eve-study.js";
 
 const EXAM_DATE = "2026-11-29";
 const MAX_PLAYS = 2;
@@ -722,6 +722,7 @@ function renderHome() {
       <p class="muted">想維持耳感，可以在傍晚或睡前聽 10 分鐘內的英文，不看題目、不對答案。</p>
       <button class="btn" data-action="lessons">聽力小課程（不計分，約 10 分鐘內）</button>
       <p class="muted" style="margin-top:14px">今天如果手癢，可以「用看的」過一遍：Part 1–7 各挑幾題，選了答案立刻看對錯與解析，不計分、不計時。</p>
+      <button class="btn" data-action="reading-skim">Part 5、6、7 快速過一遍（約 24 分鐘，在聽力小課程下面）</button>
       <button class="btn primary" data-action="eve-study">輕鬆看一遍（約 ${eveStudyMinutes(pickEveStudy(bank))} 分鐘，不計分）</button>
       <details class="card-more"><summary>還是想練一份？（累的話請跳過）</summary>
         <p class="muted">這幾份是最後的選擇，不是今天的功課。做完就停，不要檢討太久。</p>
@@ -1030,10 +1031,15 @@ function lessonQuizHtml(lesson) {
   if (!lesson.questions?.length) return "";
   return `<details open><summary>試做 ${lesson.questions.length} 題（答完立刻看對錯）</summary>${lesson.questions.map((q) => `<div class="eve-q" data-q="${esc(q.id)}"><p class="eve-prompt"><b>${esc(q.prompt)}</b></p><div class="eve-options">${q.options.map((o, i) => `<button type="button" class="btn eve-opt" data-action="eve-pick" data-q="${esc(q.id)}" data-i="${i}">${LETTERS[i]}. ${esc(o)}</button>`).join("")}</div><div class="eve-result" hidden></div></div>`).join("")}</details>`;
 }
-function renderLessons() {
+function readingSkimHtml() {
+  const sections = pickReadingSkim(bank);
+  const minutes = eveStudyMinutes(sections) - 3;
+  return `<section class="card" id="reading-skim"><p class="section-kicker">READING · 考前快速過一遍</p><h2>Part 5、6、7 重點題型（約 ${minutes} 分鐘）</h2><p class="muted">挑最容易卡關的型態，選一個答案就立刻看到對錯與解析。不計分、不計時；累了就停。全部是題庫既有的題目。</p></section>${sections.map((section) => `<section class="eve-section"><h2>${esc(section.title)} <span class="muted">· 約 ${section.minutes} 分</span></h2><p class="notice">${esc(section.hint)}</p>${eveGuideTips(section.part)}${section.items.map((item) => eveGroupHtml(item.group, item.questionIds)).join("")}</section>`).join("")}`;
+}
+function renderLessons(jumpToSkim = false) {
   stopTimer(); audio.stop();
-  app.innerHTML = `<section class="card"><p class="section-kicker">LISTENING LESSONS</p><h1>聽力小課程</h1><p>先聽錄音，再展開概要與逐字稿。錄音可重播；內容為本站原創，使用合成語音。共 ${LESSONS.length} 段，美式、英式、澳洲、加拿大口音都有。</p><label class="muted"><input type="checkbox" id="lesson-auto" checked> 播完自動接著播下一段（適合在車上連續聽）</label><div class="row"><button class="btn" data-action="home">回首頁</button></div></section>
-    ${LESSONS.map((lesson, index) => `<article class="card lesson-card"><p class="section-kicker">LESSON ${index + 1} · ${esc(lesson.accent)}</p><h2>${esc(lesson.title)}</h2>${lesson.image ? `<img class="question-image" src="${esc(lesson.image)}" alt="Part 1 練習照片">` : ""}<audio controls preload="none" src="${esc(lesson.audio)}" data-lesson-audio="${esc(lesson.id)}">此瀏覽器無法播放音檔。</audio><div class="row"><button class="btn small" data-action="lesson-retry" data-lesson="${esc(lesson.id)}">重新載入並播放</button><span class="muted lesson-status" role="status"></span></div><details><summary>查看中文概要</summary><p>${esc(lesson.summary)}</p></details><details><summary>查看英文逐字稿</summary><p lang="en" style="white-space: pre-line">${esc(lesson.transcript)}</p></details><details><summary>實用片語</summary><ul>${lesson.phrases.map(([phrase, meaning]) => `<li><b lang="en">${esc(phrase)}</b> · ${esc(meaning)}</li>`).join('')}</ul></details>${lessonQuizHtml(lesson)}</article>`).join('')}`;
+  app.innerHTML = `<section class="card"><p class="section-kicker">LISTENING LESSONS</p><h1>聽力小課程</h1><p>先聽錄音，再展開概要與逐字稿。錄音可重播；內容為本站原創，使用合成語音。共 ${LESSONS.length} 段，美式、英式、澳洲、加拿大口音都有。</p><label class="muted"><input type="checkbox" id="lesson-auto" checked> 播完自動接著播下一段（適合在車上連續聽）</label><p><button type="button" class="btn small" data-action="skim-jump">跳到最下面：Part 5、6、7 快速過一遍 ↓</button></p><div class="row"><button class="btn" data-action="home">回首頁</button></div></section>
+    ${LESSONS.map((lesson, index) => `<article class="card lesson-card"><p class="section-kicker">LESSON ${index + 1} · ${esc(lesson.accent)}</p><h2>${esc(lesson.title)}</h2>${lesson.image ? `<img class="question-image" src="${esc(lesson.image)}" alt="Part 1 練習照片">` : ""}<audio controls preload="none" src="${esc(lesson.audio)}" data-lesson-audio="${esc(lesson.id)}">此瀏覽器無法播放音檔。</audio><div class="row"><button class="btn small" data-action="lesson-retry" data-lesson="${esc(lesson.id)}">重新載入並播放</button><span class="muted lesson-status" role="status"></span></div><details><summary>查看中文概要</summary><p>${esc(lesson.summary)}</p></details><details><summary>查看英文逐字稿</summary><p lang="en" style="white-space: pre-line">${esc(lesson.transcript)}</p></details><details><summary>實用片語</summary><ul>${lesson.phrases.map(([phrase, meaning]) => `<li><b lang="en">${esc(phrase)}</b> · ${esc(meaning)}</li>`).join('')}</ul></details>${lessonQuizHtml(lesson)}</article>`).join('')}${readingSkimHtml()}`;
   const lessonAudios = [...app.querySelectorAll("audio[data-lesson-audio]")];
   lessonAudios.forEach((el, i) => el.addEventListener("ended", () => {
     const next = lessonAudios[i + 1];
@@ -2143,6 +2149,8 @@ app.addEventListener("click", (e) => {
     case "show-tips": store.set(KEY_TIPS, true); if (session) renderTest(); else renderHome(); break;
     case "lessons": renderLessons(); break;
     case "eve-study": renderEveStudy(); break;
+    case "reading-skim": renderLessons(); setTimeout(() => document.getElementById("reading-skim")?.scrollIntoView(), 80); break;
+    case "skim-jump": document.getElementById("reading-skim")?.scrollIntoView(); break;
     case "eve-pick": evePick(d); break;
     case "lesson-retry": {
       const card = t.closest('.lesson-card');
